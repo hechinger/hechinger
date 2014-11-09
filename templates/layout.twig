@@ -1,5 +1,24 @@
 <html>
-{% block body %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% block title %}Hechinger Report{% endblock %}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-{% endblock %}
+  <link rel="stylesheet" href="/static/css/screen.css">
+  {% block styles %}{# page-specific stylesheets #}{% endblock %}
+</head>
+<body>
+
+  {% include 'components/nav-bar.twig' %}
+
+  {% block body %}{# page content goes here  #}{% endblock %}
+
+  {% include 'components/footer.twig' %}
+
+  {% block scripts %}{# page-specific scripts #}{% endblock %}
+
+  <script type="text/javascript" src="/static/js/main.js"></script>
+</body>
 </html>

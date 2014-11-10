@@ -1,0 +1,4 @@
+.sass-cache*
+vendor*
+static/css/*.css
+.DS_Store

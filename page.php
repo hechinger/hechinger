@@ -20,8 +20,12 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
-
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+
+if ($post->slug == "author") {
+  Timber::render(array('page-' . $post->post_name . '.twig', 'pages/author.twig'), $context);
+} else {
+  Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+}

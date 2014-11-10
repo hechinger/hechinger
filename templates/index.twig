@@ -1,7 +1,9 @@
-<ul class="index--nav-items">
-  {% for item in main.menu.items %}
+{% extends "layout.twig" %}
+
+{% block body %}
+  <ul class="index--nav-items">
     <li class="index--nav-item">
-      <a class="index--nav-item-link" href="{{item.link}}">{{item.title}}</a>
+      <a class="index--nav-item-link" href="/article">article</a>
     </li> <!-- /nav-item -->
-  {% endfor %}
-</ul> <!-- /nav-items -->
+  </ul> <!-- /nav-items -->
+{% endblock %}

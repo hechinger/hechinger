@@ -1,0 +1,22 @@
+{
+
+  "name": "hechinger",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Upstatement/hechinger",
+  "authors": [
+    "Grant Staublin <grant@upstatement.com>",
+    "Chris Plummer <chris@upstatement.com>",
+    "Jared Novack <jared@upstatement.com>",
+		"Tito Bottitta <tito@upstatement.com>",
+		"Emma Baker <emma@upstatement.com>"
+  ],
+  "description": "Hechinger Reports web site redesign",
+  "license": "Custom",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "Upbase": "https://github.com/Upstatement/upbase.git",
+    "jquery": "~1.*"
+  }
+
+}

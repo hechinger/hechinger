@@ -1,1 +1,7 @@
-HHIIII CRIIIISSSS
+<ul class="index--nav-items">
+  {% for item in main.menu.items %}
+    <li class="index--nav-item">
+      <a class="index--nav-item-link" href="{{item.link}}">{{item.title}}</a>
+    </li> <!-- /nav-item -->
+  {% endfor %}
+</ul> <!-- /nav-items -->

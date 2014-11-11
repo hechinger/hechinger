@@ -12,3 +12,36 @@ img { @include resp-img; }
   overflow: hidden;
   border-radius: 50%;
 }
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Social Buttons
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-social-container {
+  float: right;
+  margin-top: 0;
+}
+
+
+.social-items { }
+
+.social-item {
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-top: 0;
+  background-color: $black-10;
+  & + & { margin-left: 10px; }
+  &.twitter { background-color: $twitter-blue; }
+  &.facebook { background-color: $facebook-blue; }
+}
+
+.social-link {
+  display: block;
+}

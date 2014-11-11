@@ -63,3 +63,14 @@
   font-size: 17px;
   line-height: 1.705882353;   // 29/17
 }
+
+
+%bleeding-container {
+  margin-left: $site-margin;
+  margin-right: $site-margin;
+}
+
+
+%bp-trans {
+  @include trans(0.25s);
+}

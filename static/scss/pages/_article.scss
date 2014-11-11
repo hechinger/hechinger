@@ -52,18 +52,28 @@
 // --------------------------------------------
 // --------------------------------------------
 .article-hdr {
+  @extend %bp-trans;
   max-width: $content-max-width;
-  padding: 30px 50px;
+  // padding: 30px 50px;
+  padding: 0 $site-margin;
   background-color: #fff;
-  border-top: 2px solid black;
+  border-top: 2px solid transparent;
   margin: -75px auto 40px auto;
+  @include bp(960px) {
+    border-top-color: black;
+    padding-top: 30px;
+  }
 
-  * + * { margin-top: 40px; }
+  // * + * { margin-top: 40px; }
 }
 
 .article-hdr-inner {
+  @extend %bp-trans;
   max-width: 880px;
   margin: 0 auto;
+  margin-top: -20px;
+  @include bp(960px) { margin-top: 0; }
+
 }
 
 .article-hdr-topic {
@@ -90,6 +100,7 @@
   line-height: 1.272727273;
 }
 
+
 .article-hdr-bottom {
   @include pie-clearfix;
   border-top: $border-thin;
@@ -99,6 +110,11 @@
 
 .article-hdr-middle {
   * + * { margin-top: 10px; }
+}
+
+.article-hdr-top,
+.article-hdr-middle {
+  margin-bottom: 40px;
 }
 
 .article-byline {
@@ -195,7 +211,9 @@
     // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
     // > .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
     // > .size-thumbnail { float: left; margin-right: 2em; }
-    // > img { margin-bottom: 1em; }
+    > img {
+      // @extend %bleeding-container;
+    }
   }
 
   // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
@@ -276,3 +294,12 @@
   text-decoration: none;
 }
 
+
+// protyping images bleeding out of containers.
+// assumes control over the containing element when images are added
+.img-container {
+  @extend %bleeding-container;
+  > img {
+
+  }
+}

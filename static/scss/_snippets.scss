@@ -1,0 +1,55 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Snippets Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.snippets {
+  padding: 3em;
+  background-color: #fff;
+  // * + * { margin-top: 3em;}
+}
+
+.snippet-mod {
+  @include pie-clearfix;
+  max-width: 957px;
+  border: 1px solid $black-10;
+  padding: 2em;
+  & + & { margin-top: 3em; }
+}
+
+
+.snippet-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 2em;
+  font-weight: 700;
+  color: $black-40;
+}
+
+.snippet-color {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  float: left;
+  margin-bottom: 40px;
+  margin-right: 40px;
+  // & + & { margin-left: 40px; }
+  &:nth-child(7n) { margin-left: 0; }
+  &:nth-of-type(1) { background-color: $black-100; }
+  &:nth-of-type(2) { background-color: $black-90; }
+  &:nth-of-type(3) { background-color: $black-80; }
+  &:nth-of-type(4) { background-color: $black-70; }
+  &:nth-of-type(5) { background-color: $black-60; }
+  &:nth-of-type(6) { background-color: $black-50; }
+  &:nth-of-type(7) { background-color: $black-40; }
+  &:nth-of-type(8) { background-color: $black-30; }
+  &:nth-of-type(9) { background-color: $black-20; }
+  &:nth-of-type(10) { background-color: $black-10; }
+
+  &.main-color { background-color: $he-main; }
+  &.secondary-color { background-color: $he-secondary; }
+}

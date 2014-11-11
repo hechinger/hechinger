@@ -1,0 +1,34 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Layout
+//
+// --------------------------------------------
+// --------------------------------------------
+
+
+// Site Margin
+// --------------------------------------------
+$site-margin: 25px;
+
+
+// Spacers
+// --------------------------------------------
+$space-grid--quarter: 12.5px;
+$space-grid--half: 25px;
+$space-grid: 50px;
+$space-grid--double: 100px;
+
+
+// Site Width
+// --------------------------------------------
+$content-max-width:  960px;
+
+.l-content {
+  * + * { margin-top: 50px; }
+  margin: 0 $site-margin;
+  max-width: $content-max-width;
+  @include bp($no-content-margin) {
+    margin: 0 auto;
+  }
+}

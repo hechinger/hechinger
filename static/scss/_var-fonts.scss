@@ -1,0 +1,32 @@
+// Font-mixin
+// --------------------------------------------
+@mixin fontFace($family-name, $file-name, $weight, $style: normal) {
+  @font-face {
+    $font-path: "/static/fonts/" + "#{$family-name}" + "#{$file-name}";
+    font-family: "#{$family-name}";
+    src: url($font-path + '.eot');
+    src: local('☺'),
+       url($font-path + '.eot?iefix') format('eot'),
+       url($font-path + '.woff') format('woff'),
+       url($font-path + '.svg#webfont') format('svg'),
+       local('☺');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+
+
+
+// Font-Calls
+// --------------------------------------------
+@include fontFace(national, Book, 300);
+@include fontFace(national, BookItalic, 300, italic);
+
+@include fontFace(national, Bold, 700);
+@include fontFace(national, BoldItalic, 700, italic);
+
+@include fontFace(national, Black, 900);
+@include fontFace(national, BlackItalic, 900, italic);
+
+@include fontFace(tiempos, Black, 900);

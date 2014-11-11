@@ -1,4 +1,19 @@
+{% extends 'layout.twig' %}
+
 {% block body %}
-	School bus
-{% endblock %}
-THIS IS an archive
+
+  {# archive page layouts go here #}
+    {% block header %}
+      archive header goes here
+    {% endblock header %}
+
+    {% block feed %}
+      <div class="archive-feed-container">
+        {# for each article in articles include tease component #}
+        {% include 'components/tease-archive.twig' %}
+      </div>
+    {% endblock feed %}
+
+{% endblock body %}
+
+{% block scripts %}{% endblock %}

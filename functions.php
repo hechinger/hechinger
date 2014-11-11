@@ -26,8 +26,9 @@ class HechingerSite extends TimberSite {
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
 			$article = new Mesh\Post( 'article', 'page' );
-			$article = new Mesh\Post( 'All About Fred Hechinger', 'page' );
-			$article = new Mesh\Post( 'Special Reports', 'page' );
+                        $article = new Mesh\Post( 'archive', 'page' );
+			$article = new Mesh\Post( 'special-reports', 'page' );
+			$article = new Mesh\Post( 'author', 'page' );
 		}
 	}
 

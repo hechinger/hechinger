@@ -10,6 +10,7 @@
  */
 global $wp_query;
 
+echo 'author';
 $data = Timber::get_context();
 $data['posts'] = Timber::get_posts();
 if (isset($wp_query->query_vars['author'])){

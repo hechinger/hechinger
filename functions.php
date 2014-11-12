@@ -29,6 +29,7 @@ class HechingerSite extends TimberSite {
                         $article = new Mesh\Post( 'archive', 'page' );
 			$article = new Mesh\Post( 'special-reports', 'page' );
 			$article = new Mesh\Post( 'author', 'page' );
+			$article = new Mesh\Post( 'snippets', 'page' );
 		}
 	}
 

@@ -1,0 +1,347 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+
+<div class="snippets">
+
+    <!-- Color Palette -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Color Palette</h3>
+      <div class="snippet-color main-color"></div>
+      <div class="snippet-color secondary-color"></div>
+    </div> <!-- /snippet-mod -->
+
+    <!-- Color Palette -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Black + Gray</h3>
+      {% for i in 1..10 %}
+        <div class="snippet-color"></div>
+      {% endfor %}
+    </div> <!-- /snippet-mod -->
+
+    <!-- Headlines -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Headlines</h3>
+
+      <h1 class="h1">This is an h1</h1>
+      <h2 class="h2">This is an h2</h2>
+      <h3 class="h3">This is an h3</h3>
+      <h4 class="h4">This is an h4</h4>
+      <h5 class="h5">This is an h5</h5>
+      <h6 class="h6">This is an h6</h6>
+
+      <h3 class="tz-h-lg"><a class="h-link" href="#">This is tz-h-lg headline right here</a></h3>
+      <h3 class="tz-h-med"><a class="h-link" href="#">This is tz-h-med headline right here</a></h3>
+      <h3 class="tz-h-sm"><a class="h-link" href="#">This is tz-h-sm headline right here</a></h3>
+
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Section Header Large</h3>
+
+      <h4 class="section-hdr--lg">Read Next</h4>
+
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Article Related</h3>
+      <div class="article-related-mod">
+        <h4 class="article-related-hdr">Related Stories</h4>
+        <ul class="article-related-items">
+          {% for i in 1..3 %}
+          <li class="article-related-item">
+            <h3 class="article-related-head">
+              <a class="article-related-link" href="#">This is a related story headline in an article.</a>
+            </h3> <!-- /article-related-head -->
+          </li> <!-- /article-related-item -->
+          {% endfor %}
+          <li class="article-related-item">
+            <h3 class="article-related-head">
+              <a class="article-related-link" href="#">This is a related story headline in an article. <span class="head-highlight">This is a highlight</span></a>
+            </h3> <!-- /article-related-head -->
+          </li> <!-- /article-related-item -->
+        </ul> <!-- /article-related-items -->
+      </div> <!-- /article-related-mod -->
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Homepage Latest News</h3>
+      <div class="hp-latest-mod">
+        <h4 class="hp-list-hdr">Latest News</h4>
+        <ul class="hp-list-items">
+          {% for i in 1..5 %}
+          <li class="hp-list-item">
+            <h3 class="hp-list-head">
+              <a class="hp-list-link" href="#">This is a Latest News headline on the homepage</a>
+            </h3>
+          </li> <!-- /hp-list-item -->
+          {% endfor %}
+          <li class="hp-list-item">
+            <h3 class="hp-list-head">
+              <a class="hp-list-link" href="#">This is a <span class="head-highlight">Latest News headline</span> on the homepage</a>
+            </h3>
+          </li> <!-- /hp-list-item -->
+        </ul> <!-- /hp-list-items -->
+      </div> <!-- /hp-latest-mod -->
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">xxxxxx</h3>
+      <h1>xxxx</h1>
+    </div> <!-- /snippet-mod -->
+
+
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Article bio</h3>
+
+      <div class="article-bio">
+        <div class="l-article-bio">
+          <div class="art-bd">
+            <div class="img-rounded">
+              <a href="#">
+                <img src="/wp-content/themes/hechinger/static/img/mug_placeholder.jpg" alt="">
+              </a>
+            </div> <!-- img-rounded -->
+          </div> <!-- /art-bd -->
+
+          <div class="txt-bd">
+            <h4 class="article-bio-h"><a class="article-bio-h-link" href="#">Barbara Kantrowitz</a></h4>
+            <p class="article-bio-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quia odio, quidem, voluptatum neque officia aspernatur quod quam voluptas enim tempora animi ut, possimus magnam. <a class="article-bio-link" href="#">See Archive</a></p>
+          </div> <!-- /txt-bd -->
+        </div> <!-- /l-article-bio -->
+      </div> <!-- /article-bio -->
+
+    </div> <!-- /snippet-mod -->
+
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Social icons</h3>
+
+      <ul class="social-items">
+        <li class="social-item icon-twitter">
+          <a target="_blank" class="social-item-link qs-link" data-qs-service="twitter">Twitter<i class="icon"></i></a>
+        </li>
+        <li class="social-item icon-facebook">
+          <a target="_blank" class="social-item-link qs-link" data-qs-service="facebook-share"><i class="icon"></i>Facebook</a>
+        </li>
+      </ul> <!-- /social-items -->
+
+    </div> <!-- /snippet-mod -->
+
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Social icons with name</h3>
+
+      <ul class="social-items social--with-name">
+        <li class="social-item icon-twitter">
+          <a target="_blank" class="social-item-link qs-link" data-qs-service="twitter">Twitter<i class="icon"></i></a>
+        </li>
+        <li class="social-item icon-facebook">
+          <a target="_blank" class="social-item-link qs-link" data-qs-service="facebook-share"><i class="icon"></i>Facebook</a>
+        </li>
+      </ul> <!-- /social-items -->
+
+    </div> <!-- /snippet-mod -->
+
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Social icons footer</h3>
+
+       <ul class="social-items social--footer">
+        <li class="social-item icon-twitter">
+          <a target="_blank" class="social-item-link" href="#">Twitter<i class="icon"></i></a>
+        </li>
+        <li class="social-item icon-facebook">
+          <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Facebook</a>
+        </li>
+         <li class="social-item icon-instagram">
+          <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Instagram</a>
+        </li>
+        </li>
+         <li class="social-item icon-rss">
+          <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Rss</a>
+        </li>
+      </ul> <!-- /social-items -->
+
+    </div> <!-- /snippet-mod -->
+
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Article Tag List</h3>
+
+      <div class="article-tag-container">
+        <h4 class="article-tag-h">In this story</h4>
+        <ul class="article-tag-items">
+          {% for i in 1..5 %}
+          <li class"article-tag-item">
+            <a class="article-tag-link" href="#">This is a sweet xxx</a>
+          </li> <!-- /article-tag-item -->
+          {% endfor %}
+        </ul> <!-- /article-tag-items -->
+
+      </div> <!-- /article-tag-container -->
+
+    </div> <!-- /snippet-mod -->
+
+<h1 class="snippet-head">Layout :: Media grids</h1>
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Grid 2</h3>
+
+      <div class="grid-container">
+        <div class="l-grid-2">
+          {% for i in 1..4 %}
+          <section class="grid-item">
+            <div class="grid-test"></div>
+          </section> <!-- /grid-item -->
+          {% endfor %}
+        </div> <!-- /l-grid-2 -->
+      </div> <!-- /grid-container -->
+
+    </div> <!-- /snippet-mod -->
+
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Grid 3</h3>
+
+      <div class="grid-container">
+        <div class="l-grid-3">
+          {% for i in 1..3 %}
+          <section class="grid-item">
+            <div class="grid-test"></div>
+          </section> <!-- /grid-item -->
+          {% endfor %}
+        </div> <!-- /l-grid-3 -->
+      </div> <!-- /grid-container -->
+
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Grid 4</h3>
+
+      <div class="grid-container">
+        <div class="l-grid-4">
+          {% for i in 1..4 %}
+          <section class="grid-item">
+            <div class="grid-test"></div>
+          </section> <!-- /grid-item -->
+          {% endfor %}
+        </div> <!-- /l-grid-4 -->
+      </div> <!-- /grid-container -->
+
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Grid 2 with rules</h3>
+
+      <div class="grid-container">
+        <div class="l-grid-2--rules">
+          {% for i in 1..2 %}
+          <section class="grid-item">
+            <div class="grid-test"></div>
+          </section> <!-- /grid-item -->
+          {% endfor %}
+        </div> <!-- /l-grid-2 -->
+      </div> <!-- /grid-container -->
+
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Grid 3 with rules</h3>
+
+      <div class="grid-container">
+        <div class="l-grid-3--rules">
+          {% for i in 1..3 %}
+          <section class="grid-item">
+            <div class="grid-test"></div>
+          </section> <!-- /grid-item -->
+          {% endfor %}
+        </div> <!-- /l-grid-2 -->
+      </div> <!-- /grid-container -->
+
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Grid 4 with rules</h3>
+
+      <div class="grid-container">
+        <div class="l-grid-4--rules">
+          {% for i in 1..4 %}
+          <section class="grid-item">
+            <div class="grid-test"></div>
+          </section> <!-- /grid-item -->
+          {% endfor %}
+        </div> <!-- /l-grid-2 -->
+      </div> <!-- /grid-container -->
+
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">xxxx</h3>
+      stuff goes here
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">xxxx</h3>
+      stuff goes here
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">xxxx</h3>
+      stuff goes here
+    </div> <!-- /snippet-mod -->
+
+    <!-- xxx -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">xxxx</h3>
+      stuff goes here
+    </div> <!-- /snippet-mod -->
+
+
+
+  </div> <!-- /snippets -->
+
+{% endblock %}
+
+
+

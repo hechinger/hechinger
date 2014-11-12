@@ -1,1 +1,134 @@
-body { background-color: green; }
+// --------------------------------------------
+// --------------------------------------------
+//
+// Upbase imports
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@import "base";
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Universal Imports
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@import "var-fonts";
+@import "variables";
+@import "mixins";
+@import "placeholders";
+@import "layout";
+@import "objects";
+
+@import "snippets";
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Page Imports
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@import "pages/article";
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+body { font-family: $he-sans; }
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Related Links
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.head-highlight {
+  background-color: $he-main;
+  padding: 0.085em 0.294117647em;
+}
+
+.article-related-hdr {
+  @extend %section-hdr;
+  font-size: 16px;
+}
+
+.article-related-items { }
+
+.article-related-item {
+  font-size: 17px;
+  line-height: 1.294117647;   // 22/17
+  padding-left: 1em;
+  position: relative;
+  & + & { margin-top: 0.85em; }
+}
+
+.article-related-head {
+  @extend %item-bullet;
+}
+
+.article-related-link {
+  @extend %head-link;
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// HP :: Tease list
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.hp-list-hdr {
+  @extend %section-hdr;
+  font-size: 19px;
+}
+
+.hp-list-items { }
+
+.hp-list-item {
+  font-size: 26px;
+  line-height: 1.230769231;   //32/26
+  padding-left: 1em;
+  position: relative;
+  & + & {
+    margin-top: 0.85em;
+    padding-top: 0.85em;
+    border-top: $border-thin--lt;
+  }
+}
+
+
+.hp-list-head {
+  @extend %item-bullet;
+}
+
+
+.hp-list-link {
+  @extend %head-link;
+}
+
+
+

@@ -1,0 +1,402 @@
+.big-yellow-box {
+  background-color: $he-main;
+  height: 183px;
+}
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Layout
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$article-bd-max: 550px;
+
+// checkout layout.scss for l-content and l-content--inner.
+// They're more universal and thus pulled out
+
+.article-main {
+  // padding: 0 50px;
+  // background-color: yellow;
+}
+
+.article-body {
+  @include pie-clearfix;
+  // * + * { margin-top: 29px; }
+  * + * { margin-top: 17px; }
+
+  @include bp(550px) {
+    // max-width: 880px;
+    margin: 0 auto;
+    // padding: 0 50px;
+  }
+}
+
+.recirculation-container {
+  margin-top: 50px;
+  @include pie-clearfix;
+}
+
+.article-aside {
+  // background-color: pink;
+  padding: 17px 10px;
+  border-top: $bdr-med--black;
+  border-bottom: $bdr-thin;
+  max-width: $article-bd-max;
+  @include bp(700px) {
+    float: right;
+    width: 220px;
+    height: 100px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    // margin-right: -60px;
+  }
+}
+
+.page-mod {
+  margin-top: 29px;
+  max-width: $article-bd-max;
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Header
+//
+// --------------------------------------------
+// --------------------------------------------
+.article-hdr {
+  @extend %bp-trans;
+  // max-width: $content-max-width;
+  // padding: 30px 50px;
+  padding: 0 $site-margin;
+  background-color: #fff;
+  border-top: 2px solid transparent;
+  margin: -75px auto 40px auto;
+  @include bp(960px) {
+    border-top-color: black;
+    padding-top: 30px;
+  }
+
+  // * + * { margin-top: 40px; }
+}
+
+.article-hdr-inner {
+  @extend %bp-trans;
+  // max-width: 880px;
+  margin: 0 auto;
+  margin-top: -20px;
+  max-width: $content-max--inner;
+  @include bp(960px) { margin-top: 0; }
+
+}
+
+.article-hdr-topic {
+  font-size: 24px;
+  font-family: $he-serif;
+  @extend %topic-hdr;
+}
+
+.article-topic-link {
+  @extend %head-link;
+}
+
+.article-h {
+  font-weight: 700;
+  font-size: 52px; // 30/33
+  color: black;
+  line-height: 1.057692308;
+  letter-spacing: -2px;
+}
+
+.article-sub-h {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.272727273;
+}
+
+
+.article-hdr-bottom {
+  @include pie-clearfix;
+  border-top: $border-thin;
+  padding-top: 10px;
+  font-size: 11px;
+}
+
+.article-hdr-middle {
+  * + * { margin-top: 10px; }
+}
+
+.article-hdr-top,
+.article-hdr-middle {
+  margin-bottom: 40px;
+}
+
+.article-byline {
+  float: left;
+  display: inline-block;
+}
+
+.article-author {
+  font-weight: 900;
+  margin-left: 1px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: black;
+  text-decoration: none;
+}
+
+.article-date {
+  float: right;
+  display: inline-block;
+  margin-top: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Type
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-text {
+  @extend %article-text;
+
+  // ---------------------------
+  // Paragraphs
+  // > p { margin-bottom: 1em; }
+  > p {
+    max-width: $article-bd-max;
+    &:first-of-type { @include drop-cap; }
+  }
+
+
+  // ---------------------------
+  // Headline Styles
+  > h1 { }
+
+  > h2 { }
+
+  > h3 { }
+
+  > h4 { }
+
+  > h5 { }
+
+  > h6 { }
+
+  // ---------------------------
+  // Blockquote
+  > blockquote {
+    > p { }
+  }
+
+  .pull-quote a { }
+
+
+  // ---------------------------
+  // Lists
+  ul, ol {
+    a { }
+  }
+
+  > ul {
+    > li { }
+  }
+
+  > ol {
+    > li { }
+  }
+
+
+  // ---------------------------
+  // Links
+  a, a:visited {
+    &:hover, &:visited:hover { }
+  }
+
+
+  // ---------------------------
+  // Image stuff
+  > p {
+    // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
+    // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
+    // > .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
+    // > .size-thumbnail { float: left; margin-right: 2em; }
+    > img {
+      // @extend %bleeding-container;
+    }
+  }
+
+  // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
+  // .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
+  // .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
+  // .size-thumbnail { float: left; margin-right: 2em; }
+  // img { margin-bottom: 1em; }
+
+
+  .wp-caption-text { }
+
+
+  .cap-image-right,
+  .cap-image-left { }
+
+
+  .cap-caption { }
+
+  .media-mod { }
+
+  // ---------------------------
+  // Italic
+  em, i { }
+
+  // ---------------------------
+  // Bold
+  strong, b { }
+
+
+} // article-body
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Author Bio
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.l-article-bio {
+  // @include pie-clearfix;
+  @include bp($medium, max) {
+    .art-bd {
+      float: right;
+      width: 20%;
+      max-width: 75px;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  @include bp($medium) {
+    @include pair(100px, $space-grid--half);
+  }
+}
+
+.article-bio-h {
+  @extend %name-hdr;
+  font-size: 16px;
+}
+
+.article-bio-h-link {
+  @extend %head-link;
+}
+
+.author-bio-text {
+  font-size: 15px;
+  line-height:  1.266666667;  // 19/15
+}
+
+.article-bio-link {
+  @extend %link-bullet;
+  padding-: 1em;
+  position: relative;
+  display: inline-block;
+  color: $he-secondary;
+  text-decoration: none;
+}
+
+
+// protyping images bleeding out of containers.
+// assumes control over the containing element when images are added
+.img-container {
+  @extend %bleeding-container;
+  > img {
+
+  }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article tag items
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-tag-container {
+  @include pie-clearfix;
+  padding: 20px 5px;
+  border-top: $border-thin;
+  border-bottom: $border-thin;
+}
+
+.article-tag-h {
+    display: inline-block;
+    float: left;
+    font-weight: 700;
+    color: black;
+    font-size: 15px;
+ }
+
+.article-tag-items {
+  font-size: 15px;
+}
+
+.article-tag-item {
+  display: block;
+  float: left;
+}
+
+.article-tag-link {
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: $he-secondary;
+  margin-left: 10px;
+  font-weight: 300;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: ',';
+    right: -5px;
+    color: inherit;
+  }
+  &:hover { text-decoration: underline; }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Partner
+//
+// --------------------------------------------
+// --------------------------------------------
+.article-partner-logo {
+  width: 100%;
+  height: 25px;
+  background-color: blue;
+  color: #fff;
+}
+
+.article-partner-text {
+  font-size: 12px;
+  line-height: 1;
+  font-family: $he-sans;
+}

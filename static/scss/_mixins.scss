@@ -1,0 +1,54 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Breakpoint Mixin
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin bp($bp-min, $bp-max: null) {
+  @if $bp-max == null {
+    @media screen and (min-width: #{$bp-min} ) { @content; }
+  }
+  @else if $bp-max == max {
+    @media screen and (max-width: #{$bp-min} ) { @content; }
+  }
+  @else {
+    $max-point: $bp-max - $one-px;
+    @media screen and (min-width: #{$bp-min} ) and (max-width: #{$max-point} ) { @content; }
+  }
+}
+
+// @include bp($medium) { Rules go here }
+// @include bp($medium, max) { Rules go here }
+// @include bp($medium, $desktop) { Rules go here }
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Bullet
+//
+// --------------------------------------------
+// --------------------------------------------
+@mixin bullet($pos: before, $color: inherit) {
+  position: relative;
+
+  &:#{$pos} {
+    position: absolute;
+    display: inline-block;
+    content: '→';
+    color: $color;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  @if $pos == before { &:#{$pos} { left: 0;} }
+  @else {
+    padding-right: 0.85em;
+    &:#{$pos} { right: 0; }
+  }
+
+}

@@ -1,0 +1,212 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Images
+//
+// --------------------------------------------
+// --------------------------------------------
+
+img { @include resp-img; }
+
+.img-rounded {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Social Buttons
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-social-container {
+  float: right;
+  margin-top: 0;
+}
+
+
+.social-items {
+  @include pie-clearfix;
+  display: inline-block;
+}
+
+.social-item {
+  display: inline;
+  float: left;
+  text-indent: -9999em;
+  // width: 30px;
+  // height: 30px;
+  margin-top: 0;
+  // line-height: 30px;
+  // background-color: $black-10;
+  // cursor: pointer;
+  // color: #fff;
+  // letter-spacing: 1px;
+
+  & + & { margin-left: 10px; }
+}
+
+.social-item-link {
+  display: block;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #000;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  .icon-twitter & { background-color: $twitter-blue; }
+  .icon-facebook & { background-color: $facebook-blue; }
+
+  .social--with-name & {
+    width: 100px;
+    text-indent: 25px;
+  }
+  .social--footer & {
+    border: 1px solid #000;
+    border-radius: 50%;
+    background-color: transparent;
+  }
+
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Icon types
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$svg-icon-path: /wp-content/themes/hechinger/static/img/xxx;
+$png-icon-path: /wp-content/themes/hechinger/static/img/xxx;
+
+$icons: twitter, facebook, instagram, rss;
+
+
+.icon, %icon {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  opacity: 0.8;
+
+  @each $icon in $icons {
+    .icon-#{$icon} & {
+      background-image: url(#{$svg-icon-path}/icon_#{$icon}.svg);
+      .no-svg & { background-image: url(#{$png-icon-path}/icon_#{$icon}.png)}
+    }
+  }
+}
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Drop Cap
+//
+// --------------------------------------------
+// --------------------------------------------
+@mixin drop-cap($font-family: $he-sans, $font-weight: 900) {
+  &:first-letter {
+    display: block;
+    float: left;
+    margin-top: 0.2em;
+    margin-right: 0.1em;
+    margin-left: -0.1em;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: 4em;
+    text-transform: uppercase;
+    line-height: 0.45;
+    color: $he-secondary;
+  }
+}
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Section Headers
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.section-hdr-container {
+  border-top: 2px solid black;
+  border-bottom: $border-thin;
+  padding: 20px 5px;
+  margin-bottom: 20px;
+}
+
+.section-hdr--lg {
+  border-top: 2px solid black;
+  border-bottom: $border-thin;
+  padding: 20px 5px 18px;
+  margin-bottom: 20px;
+  font-family: $he-accent;
+  font-size: 24px;
+  font-weight: 900;
+  color: $hdr-color;
+}
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Quote Head
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.quote-h {
+  display: inline;
+  position: relative;
+  font-family: $he-accent;
+  font-size: 36px;
+  line-height: 1.194444444;
+  font-weight: 900;
+  color: $he-secondary;
+  margin-bottom: 20px;
+  // &:before {
+  //   position: absolute;
+  //   content: '“';
+  //   left: 0;
+  //   font-size: 1.5em;
+  // }
+  // &:after {
+  //   position: absolute;
+  //   content: '”';
+  //   right: 0;
+  // }
+}
+
+.quote-sub-h {
+  font-size: 24px;
+  font-weight: 700px;
+  color: black;
+}
+
+.quote-link {
+   @include bullet(after);
+  text-decoration: underline;
+  color: $head-color;
+
+}

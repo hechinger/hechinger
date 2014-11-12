@@ -49,24 +49,48 @@ function bootstap_content() {
 
 To populate these you'll need a file called `hechinger/templates/pages/page-my-cool-page.twig` and then populate that as you would other pages on the site
 
-## Datbase Management
+## Database Management
 
-### Export DB
+### Import Database
 
-We may need to export Hechinger's WP database to test our design work. To export the database go to the wp-admin dashboard for Hechinger's live site. From the sidebar select `tools->export`. Make sure that "All content" is checked and click "Download Export File."
+Developers will be using a capture of the actual Hechinger Report database to develop the site. The most recent database dump will be located in the `development` folder in the `Upstatement/Hechinger` dropbox in the form of an sql file.
+
+- Open a terminal and navigate to your `hechinger_vagrant` root directory.
+- You'll be running a these terminal commands import the DB:
+
+```
+
+$ vagrant ssh
+$ cd /srv/database && wget https://www.dropbox.com/s/1be3oh84cujtt2l/he_db_11-12.sql?dl=1 && mysql -u root -proot wordpress_he < he_db_11-12.sql\?dl\=1
+
+```
+
+That's it. You should have a bunch of Hechinger posts and pages imported.
+
+To exit vagrant ssh just run `exit`.
+
+### Admin Only Export DB
+
+If you are reading this you are the db admin for this project. We may need to export Hechinger's WP database to test our design work.
+
+- To export the database go to the wp-admin dashboard for Hechinger's live site. You'll need the credentials for the site. Ask Chris or Grant.
+- From the sidebar select `tools->export`.
+- Make sure that "All content" is checked and click "Download Export File."
 
 You WP database will be saved locally as an xml file. I'd bet that now you want to import that to your local vagrant environment.
 
-### Import DB
+### Admin Only DB Import
 
-Developers will be using a capture of the actual Hechinger Report database to develop the site. The most recent Database dump will be located in the `development` folder in the `Upstatement/Hechinger` dropbox in the form of an xml. Copy that file into your `hechinger_vagrant/database` directory. Then open a terminal and navigate to your `hechinger_vagrant` root directory. You'll be running a couple terminal commands to install an import plugin and import the db.
+Developers will be using a capture of the actual Hechinger Report database to develop the site. The most recent Database dump will be located in the `development` folder in the `Upstatement/Hechinger` dropbox in the form of an xml. Copy that file into your `hechinger_vagrant/database` directory. Then open a terminal and navigate to your `hechinger_vagrant` root directory.
+
+These are the commands you'll run to import the database you copied from Dropbox:
 
 ```shell
 
 $ vagrant ssh
 $ cd /srv/www/wordpress_he
 $ wp plugin install wordpress-importer --activate
-$ wp import /srv/database/thehechingerreport.wordpress.2014-11-12.xml --author=create
+$ wp import /srv/database/thehechingerreport.wordpress.2014-11-12.xml --authors=create
 
 ```
 

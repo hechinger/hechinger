@@ -20,6 +20,12 @@
   & + & { margin-top: 3em; }
 }
 
+.snippet-head {
+  margin: 1em 0 0.5em;
+  font-size: 55px;
+  font-weight: 900;
+  color: black;
+}
 
 .snippet-label {
   font-size: 12px;
@@ -52,4 +58,11 @@
 
   &.main-color { background-color: $he-main; }
   &.secondary-color { background-color: $he-secondary; }
+}
+
+
+.grid-test {
+  width: 100%;
+  height: 150px;
+  background-color: $black-20;
 }

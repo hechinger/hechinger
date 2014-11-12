@@ -11,37 +11,55 @@
 // --------------------------------------------
 // --------------------------------------------
 
+$article-bd-max: 550px;
+
+// checkout layout.scss for l-content and l-content--inner.
+// They're more universal and thus pulled out
+
 .article-main {
   // padding: 0 50px;
+  // background-color: yellow;
 }
 
 .article-body {
   @include pie-clearfix;
-  * + * { margin-top: 29px; }
+  // * + * { margin-top: 29px; }
+  * + * { margin-top: 17px; }
 
   @include bp(550px) {
-    max-width: 880px;
+    // max-width: 880px;
     margin: 0 auto;
-    padding: 0 50px;
+    // padding: 0 50px;
   }
 }
 
-.article-recirculation {
-  height: 500px;
-  background-color: $black-20;
+.recirculation-container {
+  margin-top: 50px;
+  @include pie-clearfix;
 }
 
 .article-aside {
+  // background-color: pink;
+  padding: 17px 10px;
+  border-top: $bdr-med--black;
+  border-bottom: $bdr-thin;
+  max-width: $article-bd-max;
   @include bp(700px) {
     float: right;
     width: 220px;
     height: 100px;
     margin-left: 60px;
     margin-bottom: 30px;
-    background-color: pink;
     // margin-right: -60px;
   }
 }
+
+.page-mod {
+  margin-top: 29px;
+  max-width: $article-bd-max;
+}
+
+
 
 
 // --------------------------------------------
@@ -53,7 +71,7 @@
 // --------------------------------------------
 .article-hdr {
   @extend %bp-trans;
-  max-width: $content-max-width;
+  // max-width: $content-max-width;
   // padding: 30px 50px;
   padding: 0 $site-margin;
   background-color: #fff;
@@ -69,9 +87,10 @@
 
 .article-hdr-inner {
   @extend %bp-trans;
-  max-width: 880px;
+  // max-width: 880px;
   margin: 0 auto;
   margin-top: -20px;
+  max-width: $content-max--inner;
   @include bp(960px) { margin-top: 0; }
 
 }
@@ -156,7 +175,10 @@
   // ---------------------------
   // Paragraphs
   // > p { margin-bottom: 1em; }
-  > p { max-width: 550px; }
+  > p {
+    max-width: $article-bd-max;
+    &:first-of-type { @include drop-cap; }
+  }
 
 
   // ---------------------------
@@ -302,4 +324,79 @@
   > img {
 
   }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article tag items
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-tag-container {
+  @include pie-clearfix;
+  padding: 20px 5px;
+  border-top: $border-thin;
+  border-bottom: $border-thin;
+}
+
+.article-tag-h {
+    display: inline-block;
+    float: left;
+    font-weight: 700;
+    color: black;
+    font-size: 15px;
+ }
+
+.article-tag-items {
+  font-size: 15px;
+}
+
+.article-tag-item {
+  display: block;
+  float: left;
+}
+
+.article-tag-link {
+  display: block;
+  float: left;
+  text-decoration: none;
+  color: $he-secondary;
+  margin-left: 10px;
+  font-weight: 300;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: ',';
+    right: -5px;
+    color: inherit;
+  }
+  &:hover { text-decoration: underline; }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Partner
+//
+// --------------------------------------------
+// --------------------------------------------
+.article-partner-logo {
+  width: 100%;
+  height: 25px;
+  background-color: blue;
+  color: #fff;
+}
+
+.article-partner-text {
+  font-size: 12px;
+  line-height: 1;
+  font-family: $he-sans;
 }

@@ -22,13 +22,126 @@ $space-grid--double: 100px;
 
 // Site Width
 // --------------------------------------------
-$content-max-width:  960px;
+$content-max:         960px;
+$content-max--inner:  860px;
+$has-margin:          800px;
 
+
+// .l-content and .l-content--inner
+// are currently used on article pages
+// the thought is these classes could be used
+// on generic pages as well
+// however, this could stand some more thinking,
+// most likely
 .l-content {
-  * + * { margin-top: 50px; }
+  // * + * { margin-top: 50px; }
   margin: 0 $site-margin;
-  max-width: $content-max-width;
+  max-width: $content-max;
   @include bp($no-content-margin) {
     margin: 0 auto;
+  }
+}
+
+.l-content--inner {
+  margin: 0 auto;
+  max-width: $content-max--inner;
+}
+
+
+// .l-article {
+//   // margin: 0 $site-margin;
+//   max-width: $content-max;
+//   @include bp($no-content-margin) {
+//     margin: 0 auto;
+//   }
+// }
+
+
+// Used for page headers and article page headers
+.l-page-hdr {
+  max-width: $content-max;
+  @include bp($has-margin) { margin: 0 $site-margin; }
+  @include bp($no-content-margin) { margin: 0 auto; }
+}
+
+
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Media Grids
+//
+// --------------------------------------------
+// --------------------------------------------
+
+// $grid-bg-path: '/wp-content/themes/hechinger/static/img/grid_border';
+// .grid-item { &:nth-last-child( 3 ) { margin-bottom: 0; } }
+
+%grid-rule {
+  &:after {
+    position: absolute;
+    content: '\0020';
+    top: 0;
+    bottom: 0;
+    right: -20px;
+    width: 1px;
+    background-color: $black-10;
+  }
+}
+
+
+.grid-container, %grid-container {
+  padding-top: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.grid-container--rule {
+  @extend %grid-container;
+  border-top: $border-thin;
+}
+
+.grid-item { margin-bottom: 20px; position: relative; }
+
+.l-grid-2 { @include media-grid(2, 20px, '.grid-item'); }
+.l-grid-3 { @include media-grid(3, 20px, '.grid-item') }
+.l-grid-4 { @include media-grid(4, 20px, '.grid-item') }
+
+
+// .l-grid-2--rules {
+//   @include media-grid(2, 40px, '.grid-item');
+//   background-image: url(#{$grid-bg-path}.png);
+//   background-repeat: repeat-y;
+//   background-position: 52.75% 0;
+//   .grid-item { margin-top: 20px; }
+// }
+
+
+.l-grid-2--rules {
+  @include media-grid(2, 40px, '.grid-item');
+  .grid-item {
+    @extend %grid-rule;
+    &:nth-child( 2n +2 ) { &:after { background-color: transparent; } }
+  }
+}
+
+.l-grid-3--rules {
+  @include media-grid(3, 40px, '.grid-item');
+  .grid-item {
+    @extend %grid-rule;
+    &:nth-child( 3n + 3 ) { &:after { background-color: transparent; } }
+  }
+}
+
+
+.l-grid-4--rules {
+  @include media-grid(4, 40px, '.grid-item');
+  .grid-item {
+    @extend %grid-rule;
+    &:nth-child( 4n + 4 ) { &:after { background-color: transparent; } }
   }
 }

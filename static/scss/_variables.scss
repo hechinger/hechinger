@@ -68,6 +68,7 @@ $he-secondary:  rgb(0, 174, 239);
 // --------------------------------------------
 $twitter-blue:  rgb(85, 172, 238);
 $facebook-blue: rgb(59, 89, 152);
+$instagram-blue: rgb(63, 114, 155);     //#3f729b
 
 
 
@@ -114,5 +115,11 @@ $one-px:        0.0625;   // 1px
 // --------------------------------------------
 // --------------------------------------------
 
-$border-thin:       1px solid $black-10;
-$border-thin--lt:   1px solid $light-border;
+$border-thin:       1px solid pink;
+$border-thin--lt:   1px solid pink;
+
+
+$bdr-thin:       1px solid $black-10;
+$bdr-thin--lt:   1px solid $light-border;
+
+$bdr-med--black:     6px solid $black-100;

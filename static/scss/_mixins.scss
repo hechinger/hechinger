@@ -22,3 +22,33 @@
 // @include bp($medium) { Rules go here }
 // @include bp($medium, max) { Rules go here }
 // @include bp($medium, $desktop) { Rules go here }
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Bullet
+//
+// --------------------------------------------
+// --------------------------------------------
+@mixin bullet($pos: before, $color: inherit) {
+  position: relative;
+
+  &:#{$pos} {
+    position: absolute;
+    display: inline-block;
+    content: '→';
+    color: $color;
+    font-size: 0.85em;
+    line-height: 1.6;
+  }
+
+  @if $pos == before { &:#{$pos} { left: 0;} }
+  @else {
+    padding-right: 0.85em;
+    &:#{$pos} { right: 0; }
+  }
+
+}

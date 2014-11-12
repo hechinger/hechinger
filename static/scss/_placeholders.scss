@@ -51,9 +51,12 @@
   }
 }
 
+
+
 %head-link {
   text-decoration: none;
   color: $head-color;
+  &:hover { text-decoration: underline; }
 }
 
 
@@ -66,8 +69,8 @@
 
 
 %bleeding-container {
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: -25px;
+  margin-right: -25px;
 }
 
 

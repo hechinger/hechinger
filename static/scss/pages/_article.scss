@@ -93,6 +93,7 @@ $article-bd-max: 550px;
   max-width: $content-max--inner;
   @include bp(960px) { margin-top: 0; }
 
+  &.articleFeat-hdr-inner { max-width: 100%; }
 }
 
 .article-hdr-topic {
@@ -120,7 +121,7 @@ $article-bd-max: 550px;
 }
 
 
-.article-hdr-bottom {
+.article-hdr-meta {
   @include pie-clearfix;
   border-top: $border-thin;
   padding-top: 10px;
@@ -132,7 +133,7 @@ $article-bd-max: 550px;
 }
 
 .article-hdr-top,
-.article-hdr-middle {
+.article-hdr-h {
   margin-bottom: 40px;
 }
 
@@ -159,6 +160,32 @@ $article-bd-max: 550px;
 }
 
 
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Feature Header
+//
+// --------------------------------------------
+// --------------------------------------------
+.articleFeat-mod {
+  position: relative;
+  margin-top: -40px;
+  padding-right: 20px;
+  padding-top: 20px;
+  background-color: #fff;
+  width: 80%;
+  max-width: 800px;
+}
+
+.articleFeat-h {
+  font-size: 72px;
+  font-style: italic;
+  font-weight: 900;
+  color: #000;
+  letter-spacing: -2px;
+}
 
 
 // --------------------------------------------

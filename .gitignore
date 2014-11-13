@@ -4,3 +4,5 @@ static/css/*.css
 .DS_Store
 .swp
 .swo
+.sql
+

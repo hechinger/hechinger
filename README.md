@@ -16,7 +16,7 @@ Setting up the Hechinger theme for development takes a few steps. You'll be inst
 
 ### [Install Timber]
 
-iTimber helps you create fully-customized WordPress themes faster with more sustainable code. With Timber, you write your HTML using the Twig Template Engine separate from your PHP files.
+Timber helps you create fully-customized WordPress themes faster with more sustainable code. With Timber, you write your HTML using the Twig Template Engine separate from your PHP files.
 
 You'll need to install the Timber plugin using the terminal commands below.
 

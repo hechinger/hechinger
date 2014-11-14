@@ -7,55 +7,12 @@
   <div class="big-yellow-box"></div>
 
   <!-- article hdr -->
-  {#
   {% block article_hdr %}
-  <div class="l-page-hdr">
-    <div class="article-hdr">
-      <div class="article-hdr-inner">
-        <div class="article-hdr-top">
-          <h4 class="article-hdr-topic">
-            <a class="article-topic-link" href="#">Topic head</a>
-          </h4>
-
-          <div class="article-social-container">
-              <ul class="social-items">
-                <li class="social-item icon-twitter">
-                  <a target="_blank" class="social-item-link qs-link" data-qs-service="twitter">Twitter<i class="icon"></i></a>
-                </li>
-                <li class="social-item icon-facebook">
-                  <a target="_blank" class="social-item-link qs-link" data-qs-service="facebook-share"><i class="icon"></i>Facebook</a>
-                </li>
-              </ul> <!-- /social-items -->
-          </div> <!-- /article-social-container-->
-        </div> <!-- /article-hdr-top -->
-
-        <div class="article-hdr-middle">
-          <h1 class="article-h">This is the article headline here with words</h1>
-          <h3 class="article-sub-h">Subhead Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, quisquam! consectetur adipisicing elit. Alias, quisquam!</h3>
-        </div> <!-- /article-hdr-middle -->
-
-        <div class="article-hdr-bottom">
-          <p class="article-byline">by
-            <a class="article-author" href="#">George Washington</a>
-            and
-            <a class="article-author" href="#">Barbara Kantrowitz</a>
-          </p>
-
-          <p class="article-date">January 31, 2015</p>
-        </div> <!-- /article-hdr-bottom -->
-      </div> <!-- /article-hdr-inner -->
-    </div> <!-- /article-hdr -->
-  </div> <!-- /l-article -->
+    {% include "/templates/components/article-header.twig" %}
+    {# include "/templates/components/article-header-feat.twig" #}
   {% endblock %} {# /article_header #}
 
-  <!-- article hdr feature -->
-  <div class="article-hdr">
-    <div class="article-hdr-inner">
-      <div class="article-img-feature">
-        <img src="/wp-content/themes/hechinger/static/img/test.jpg">
-      </div>
-    </div> <!-- /article-hdr-inner -->
-  </div> <!-- /article-hdr -->
+
 
   <div class="l-content">
     <div class="l-content--inner">
@@ -66,17 +23,16 @@
           <p class="img-container"> <img src="/wp-content/themes/hechinger/static/img/test.jpg"> </p>
 
           {% block article_partner %}
-          <!-- article-aside -->
-          <div class="article-aside">
-            <div class="article-partner">
-              <div class="article-partner-logo">PartnerLogo</div> <!-- /article-partner-logo -->
-              <p class="article-partner-text">This story also appeared on Upstatement.com</p>
-            </div> <!-- /article-partner -->
-          </div> <!-- /article-aside -->
+            {% include "/templates/components/article-partner.twig" %}
           {% endblock %}
 
           {% for i in 1..5 %}
            <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
+
+           <!-- article in text related -->
+           {% include "/templates/components/article-text-related.twig" %}
+
            <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
           {% endfor %}
 
@@ -87,30 +43,14 @@
       <!-- article-social -->
       {% block article_social %}
         <div class="page-mod">
-          <ul class="social-items social--with-name">
-            <li class="social-item icon-twitter">
-              <a target="_blank" class="social-item-link qs-link" data-qs-service="twitter">Twitter<i class="icon"></i></a>
-            </li>
-            <li class="social-item icon-facebook">
-              <a target="_blank" class="social-item-link qs-link" data-qs-service="facebook-share"><i class="icon"></i>Facebook</a>
-            </li>
-          </ul> <!-- /social-items -->
+        {% include "/templates/components/article-social.twig" with {css_class: "social--with-name"} %}
         </div> <!-- /page-mod -->
       {% endblock %} {# /article-social #}
 
       <!-- article-tag -->
       {% block article_tag %}
         <div class="page-mod">
-          <div class="article-tag-container">
-            <h4 class="article-tag-h">In this story</h4>
-            <ul class="article-tag-items">
-              {% for i in 1..5 %}
-              <li class"article-tag-item">
-                <a class="article-tag-link" href="#">This is a sweet xxx</a>
-              </li> <!-- /article-tag-item -->
-              {% endfor %}
-            </ul> <!-- /article-tag-items -->
-          </div> <!-- /article-tag-container -->
+          {% include "/templates/components/article-tags.twig" %}
         </div> <!-- /page-mod -->
       {% endblock %}  {# /article-tag #}
 

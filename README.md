@@ -14,7 +14,7 @@ Setting up the Hechinger theme for development takes a few steps. You'll be inst
 5. [Install dependencies.](#Install Dependencies)
 6. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
 
-### [Install Timber]
+### Install Timber
 
 Timber helps you create fully-customized WordPress themes faster with more sustainable code. With Timber, you write your HTML using the Twig Template Engine separate from your PHP files.
 
@@ -30,7 +30,7 @@ $ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activ
 $ exit
 ```
 
-### [Install ACF]
+### Install ACF
 
 Advanced Custom Fields v5 powers the custom fields on the new Hechinger site. Downloading and activating this plugin will give you access to the custom fields Upstatement's dev team has created.
 
@@ -41,7 +41,7 @@ $ wp plugin install https://www.dropbox.com/s/msici5rzsadpf0w/advanced-custom-fi
 $ exit
 ```
 
-### [Install Dependencies]
+### Install Dependencies
 
 Hechinger has a few dependencies we need to install. First we'll use Bower to install Upbase, jQuery, and other packages we need. Then're going to compile our `.scss` files with Compass.
 
@@ -52,8 +52,9 @@ $ bower install
 $ compass watch
 ```
 
-> Protip: If you ever find the site is "broken" or has no stylesheets always try `bower install` and `compass watch` before asking for help.
+_Protip: If you ever find the site is "broken" or has no stylesheets always try `bower install` and `compass watch` before asking for help._
 =======
+
 ## Mesh
 
 We use mesh to bootstrap custom taxonomies, pages, and post types. This is especially helpful to avoid DB imports and exports and bootstrap static pages.

@@ -415,6 +415,7 @@ $article-bd-max: 550px;
 //
 // --------------------------------------------
 // --------------------------------------------
+
 .article-partner-logo {
   width: 100%;
   height: 25px;
@@ -426,4 +427,35 @@ $article-bd-max: 550px;
   font-size: 12px;
   line-height: 1;
   font-family: $he-sans;
+}
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Related Text
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-related-h {
+  max-width: $article-bd-max;
+  padding: 5px 3px;
+  font-size: 17px;
+  font-family: $he-sans;
+  border-top: $bdr-thin;
+  border-bottom: $bdr-thin;
+  color: black;
+}
+
+.related-label {
+  margin-right: 2px;
+}
+
+.article-related-text-link {
+  @include bullet(after);
+  color: $he-secondary;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+  &:after { line-height: 2.1; }
 }

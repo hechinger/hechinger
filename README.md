@@ -10,8 +10,8 @@ Setting up the Hechinger theme for development takes a few steps. You'll be inst
 1. Follow the directions [here](https://github.com/Upstatement/hechinger_vagrant) to set up a Vagrant environment. Then come back here.
 2. [Install Timber](#install-timber) following the directions below.
 3. [Install Mesh](#install-mesh).
-4. [Import the Hechinger database](#import-db) to get actual Hechinger content.
-5. [Install dependencies.](#Install-dependencies)
+4. [Import the Hechinger database](#import-database) to get actual Hechinger content.
+5. [Install dependencies.](#install-dependencies)
 6. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
 
 ### Install Timber

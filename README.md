@@ -30,6 +30,17 @@ $ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activ
 $ exit
 ```
 
+### [Install ACF]
+
+Advanced Custom Fields v5 powers the custom fields on the new Hechinger site. Downloading and activating this plugin will give you access to the custom fields Upstatement's dev team has created.
+
+```
+$ vagrant ssh
+$ cd /srv/www/wordpress-he/
+$ wp plugin install https://www.dropbox.com/s/msici5rzsadpf0w/advanced-custom-fields-pro.zip?dl=1 --activate
+$ exit
+```
+
 ### [Install Dependencies]
 
 Hechinger has a few dependencies we need to install. First we'll use Bower to install Upbase, jQuery, and other packages we need. Then're going to compile our `.scss` files with Compass.

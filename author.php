@@ -10,12 +10,13 @@
  */
 global $wp_query;
 
-echo 'author';
 $data = Timber::get_context();
 $data['posts'] = Timber::get_posts();
 if (isset($wp_query->query_vars['author'])){
-	$author = new TimberUser($wp_query->query_vars['author']);
-	$data['author'] = $author;
-	$data['title'] = 'Author Archives: ' . $author->name();
+  $author = new TimberUser($wp_query->query_vars['author']);
+  $data['author'] = $author;
 }
-Timber::render(array('pages/author.twig', 'pages/archive.twig'), $data);
+if (isset($author->author_image) && strlen($author->author_image)) {
+  $author->image = new TimberImage($author->author_image);
+}
+Timber::render(array('pages/author-test.twig', 'pages/author.twig', 'pages/archive.twig'), $data);

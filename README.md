@@ -8,10 +8,10 @@ This repo covers the WordPress theme for the Hechinger Report. If you are new to
 Setting up the Hechinger theme for development takes a few steps. You'll be installing some softwore, runnig some terminal commands, and activating some plugins.
 
 1. Follow the directions [here](https://github.com/Upstatement/hechinger_vagrant) to set up a Vagrant environment. Then come back here.
-2. [Install Timber](#Install Timber) following the directions below.
-3. [Install Mesh](#Install Mesh).
-4. [Import the Hechinger database](#Import DB) to get actual Hechinger content.
-5. [Install dependencies.](#Install Dependencies)
+2. [Install Timber](#install-timber) following the directions below.
+3. [Install Mesh](#install-mesh).
+4. [Import the Hechinger database](#import-db) to get actual Hechinger content.
+5. [Install dependencies.](#Install-dependencies)
 6. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
 
 ### Install Timber

@@ -34,7 +34,11 @@ class HechingerSite extends TimberSite {
 			$article = new Mesh\Post( 'author', 'page' );
 			$article = new Mesh\Post( 'snippets', 'page' );
 		}
-	}
+        }
+
+        function register_post_types() {
+          // this is where you can register custom post types
+        }
 
 	function register_taxonomies() {
 		$labels = array(

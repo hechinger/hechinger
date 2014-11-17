@@ -8,6 +8,9 @@ if ( !class_exists( 'Timber' ) ) {
 }
 
 Timber::$dirname = array( 'templates', 'views' );
+require_once('wp/hechinger-post.php');
+
+add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
 
 class HechingerSite extends TimberSite {
 
@@ -31,10 +34,6 @@ class HechingerSite extends TimberSite {
 			$article = new Mesh\Post( 'author', 'page' );
 			$article = new Mesh\Post( 'snippets', 'page' );
 		}
-	}
-
-	function register_post_types() {
-		//this is where you can register custom post types
 	}
 
 	function register_taxonomies() {

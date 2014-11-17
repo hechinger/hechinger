@@ -1,0 +1,40 @@
+{
+    "key": "group_54661ba9b2d55",
+    "title": "More Article Info",
+    "fields": [
+        {
+            "key": "field_54661bc100a03",
+            "label": "Article Type",
+            "name": "article_type",
+            "prefix": "",
+            "type": "checkbox",
+            "instructions": "Is this article an opinion piece or part of a column or a feature or any combination of those?",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Feature": "Feature",
+                "Column": "Column",
+                "Opinion": "Opinion"
+            },
+            "default_value": "",
+            "layout": "vertical"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "field",
+    "hide_on_screen": [
+        "format"
+    ]
+}

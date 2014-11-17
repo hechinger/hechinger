@@ -1,0 +1,287 @@
+.l-nav-mod {
+  @include mq("max", $medium) {
+    background-color: $he-main;
+  }
+}
+
+.l-nav-wrap {
+  max-width: $content-max;
+  @include bp($has-margin) { margin: 0 $site-margin; }
+  @include bp($no-content-margin) { margin: 0 auto; }
+  @include bp($medium) {
+    font-size: 21px;
+    height: 66px;
+  }
+}
+
+.nav-logo {
+  display: inline-block;
+  padding: 14px 14px 14px;
+  background-color: $black-total;
+  @include bp($medium) {
+    float: left;
+    display: block;
+    padding: 28px 14px 14px;
+  }
+}
+
+// TODO: include Gotham Round font
+.nav-site-h {
+  color: $white;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 24px;
+  @include bp($medium) {
+    font-size: 21px;
+  }
+}
+
+.nav-sub-h {
+  float: left;
+  display: none;
+  padding: 30px 18px 18px;
+  font-family: $he-sans;
+  font-weight: $font-weight-lt;
+  font-size: 17px;
+  @include bp($large) {
+    display: block;
+  }
+}
+
+.nav-item-wrap {
+  display: none;
+  @include bp($medium) {
+    position: relative;
+    float: right;
+    display: initial;
+  }
+}
+
+.nav-is-open {
+  padding-bottom: 30px;
+  .nav-item-wrap {
+    display: initial;
+  }
+  .search-form-wrap {
+    display: block;
+  }
+}
+
+.nav-item {
+  float: left;
+  width: 77px;
+  height: 60px;
+  display: block;
+  border-top: 9px solid transparent;
+  padding-top: 21px;
+  color: $black;
+  font-family: $he-sans;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 1px;
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+  &:hover, &:focus {
+    border-top: 9px solid $black;
+  }
+}
+
+.nav-topics-link {
+  display: none;
+
+  @include bp($medium) {
+    display: block;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 77px;
+    height: 30px;
+  }
+  &:focus ~ .nav-topics-list,
+  &:hover ~ .nav-topics-list {
+    display: block;
+  }
+}
+
+.nav-topics-list {
+  z-index: 2;
+  padding-left: 24px;
+  background-color: $he-main;
+  @include bp($medium) {
+    display: block;
+    position: absolute;
+    top: 74px;
+    left: -50%;
+    margin-left: -12px;
+    display: none;
+    padding: 10px 25px 2px;
+    width: 320px;
+    background-color: $black;
+  }
+  &:hover, &:focus {
+    display: block;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    margin-left: -12px;
+    display: block;
+    @include triangle('up', 12px, $black);
+  }
+}
+
+.nav-sub-item-link {
+  display: block;
+  color: $black;
+  font-family: $he-sans;
+  font-weight: $font-weight-bold;
+  font-size: 30px;
+  line-height: 1.5;
+  text-decoration: none;
+
+  //TODO: give current page an underline
+  &.is-current-page:after{
+  }
+  @include bp($medium) {
+    height: 64px;
+    font-size: 17px;
+    line-height: 64px;
+    color: $white;
+    font-size: 21px;
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $white;
+    }
+    &:hover {
+      color: $black-30;
+    }
+  }
+}
+
+.nav-sub-about {
+  margin-top: 20px;
+  @include bp($medium) {
+    display: none;
+  }
+}
+
+.nav-sub-bullet {
+  @include bullet(after);
+  display: none;
+  margin-left: 5px;
+  position: relative;
+  color: $he-main;
+  &:after {
+    position: relative;
+  }
+  @include bp($medium) {
+    display: initial;
+  }
+}
+
+.all-topics-link {
+  color: $white;
+  @include bp($medium) {
+    color: $black-50;
+  }
+}
+
+.nav-about-link {
+  display: none;
+  @include bp($medium) {
+    display: block;
+  }
+}
+
+.nav-search-button {
+  @include ui-icon('icn-search-black-42-42', transparent);
+  width: 36px;
+  height: 50px;
+  display: none;
+  &.is-open {
+    //TODO: add "X" icon when search is open
+  }
+  @include bp($medium) {
+    display: block;
+  }
+}
+
+.nav-menu-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  border: none;
+  padding: 14px;
+  color: $black;
+  font-family: $he-sans;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 24px;
+  @include bp($medium) {
+    display: none;
+  }
+}
+
+.search-form-wrap {
+  display: none;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  @include bp($medium) {
+    position: relative;
+    margin: 31px auto 0;
+    display: none;
+    max-width: $content-max;
+    &.is-open {
+      display: block;
+    }
+  }
+}
+
+.search-text-input {
+  width: 100%;
+  height: 60px;
+  border: none;
+  padding: 0 0 0 10px;
+  background-color: $black;
+  color: $black-10;
+  font-family: $he-sans;
+  font-size: 30px;
+  font-weight: $font-weight-bold;
+  -webkit-appearance: none;
+  &:focus {
+    outline: none;
+  }
+  @include bp($medium) {
+    height: 90px;
+    padding: 0 0 0 30px;
+    font-size: 40px;
+  }
+}
+
+.search-submit-button {
+  @include ui-icon('icn-search-white-54-54', transparent);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  padding: 30px;
+  display: block;
+  width: 100px;
+  @include mq("max", $medium) {
+    width: 60px;
+    padding: 17px;
+  }
+}

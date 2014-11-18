@@ -11,31 +11,24 @@ class HechingerPost extends TimberPost {
   }
 
   function post_asides() {
-    $asides = array();
-    if( have_rows('aside_group') ) {
-          // loop through the rows of data
-      while ( have_rows('aside_group') ) : the_row();
-        $aside['heading'] = get_sub_field('aside_heading');
-        $aside['content'] = get_sub_field('aside_content');
-        $asides[] = $aside;
-      endwhile;
-
-      return $asides;
+    $asides = $this->get_field('aside_group');
+    if (is_array($asides)) {
+      foreach($asides as &$aside_row) {
+        $aside_row['heading'] = $aside_row['aside_heading'];
+        $aside_row['content'] = $aside_row['aside_content'];
+      }
     }
-    return null;
+    return $asides;
   }
 
   function post_related_aside() {
     $related = array();
-    $links = get_field('relationship_link');
-    if ($links) {
-      foreach ($links as $link) {
-        $l['url'] = get_permalink($link->ID);
-        $l['heading'] = get_the_title($link->ID);
-        $related[] = $l;
+    $links = $this->get_field('relationship_link');
+    if (is_array($links)) {
+      foreach ($links as &$link) {
+        $link = new HechingerPost($link->ID);
       }
-      return $related;
     }
-    return null;
+    return $links;
   }
 }

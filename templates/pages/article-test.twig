@@ -1,0 +1,137 @@
+{% extends "layout.twig" %}
+{% block body %}
+
+  <!-- Article Layout -->
+  <!-- ============================= -->
+
+  <div class="big-yellow-box"></div>
+
+  <!-- article hdr -->
+  {% block article_hdr %}
+    {% include "/templates/components/article-header-test.twig" %}
+  {% endblock %} {# /article_header #}
+
+  <div class="l-content">
+    <div class="l-content--inner">
+      <div class="article-main">
+        <div class="article-body article-text">
+
+          {% block article_aside %}
+            {% for aside in post.post_asides %}
+              {% include "/templates/components/article-aside-test.twig" with aside %}
+            {% endfor %}
+          {% endblock %}
+
+          {% block article_related %}
+            {% include "/templates/components/article-related-test.twig" %}
+          {% endblock %}
+
+          {{ post.content }}
+        </div> <!-- /article-body -->
+      </div> <!-- /article-main -->
+
+
+      <!-- article-social -->
+      {% block article_social %}
+        <div class="page-mod">
+          {% include "/templates/components/article-social.twig" with {css_class: "social--with-name"} %}
+        </div> <!-- /page-mod -->
+      {% endblock %} {# /article-social #}
+
+      <!-- article-tag -->
+      {% block article_tag %}
+        {% if post.categories|length %}
+          <div class="page-mod">
+            {% include "/templates/components/article-tags-test.twig" %}
+          </div> <!-- /page-mod -->
+        {% endif %}
+      {% endblock %}  {# /article-tag #}
+
+      <!-- article-bio -->
+      {% block article_bio %}
+        <div class="page-mod">
+           <div class="article-bio">
+            <div class="l-article-bio">
+              {% if author.image.get_url|length  %}
+                <div class="art-bd">
+                  <div class="img-rounded">
+                    <a href="#">
+                        <img src="{{ author.image.get_url }}" alt="photo of {{ author.name }}">
+                    </a>
+                  </div> <!-- img-rounded -->
+                </div> <!-- /art-bd -->
+              {% endif %}
+            <div class="txt-bd">
+              <h4 class="article-bio-h"><a class="article-bio-h-link" href="/author/{{ author.slug }}">{{ author.name }}</a></h4>
+                  <p class="article-bio-text">{{ author.description }}<a class="article-bio-link" href="#">See Archive</a></p>
+              </div> <!-- /txt-bd -->
+            </div> <!-- /l-article-bio -->
+          </div> <!-- /article-bio -->
+        </div> <!-- /page-mod -->
+      {% endblock %} {# /article_bio #}
+
+    </div> <!-- /l-content-inner -->
+  </div> <!-- /l-content -->
+
+      <!-- article-recirculation -->
+      <!-- ============================ -->
+      {% block article_recirculation %}
+      <div class="l-content">
+        <div class="recirculation-container">
+          <h4 class="section-hdr--lg">Read Next</h4>
+
+          <!-- top area -->
+          <div class="grid-container">
+            <div class="l-grid-3--rules">
+              {% for i in 1..3 %}
+              <section class="grid-item">
+                <div class="grid-test"></div>
+              </section> <!-- /grid-item -->
+              {% endfor %}
+            </div> <!-- /l-grid-3 -->
+          </div> <!-- /grid-container -->
+
+          <!-- middle-area -->
+          <div class="grid-container--rule">
+            <h4 class="quote-h">"This is a big quote head for you to checkout right here"</h4>
+            <h5 class="quote-sub-h">
+              <a class="quote-link" href="#">xxxxx</a>
+            </h5>
+          </div>
+
+          <!-- bottom-area -->
+          <div class="grid-container--rule">
+             <div class="l-grid-2--rules">
+                <section class="grid-item">
+                  <div class="grid-test"></div>
+                </section> <!-- /grid-item -->
+
+                <section class="grid-item">
+                  <div class="hp-latest-mod">
+                    <h4 class="hp-list-hdr">Latest News</h4>
+                    <ul class="hp-list-items">
+                      {% for i in 1..5 %}
+                      <li class="hp-list-item">
+                        <h3 class="hp-list-head">
+                          <a class="hp-list-link" href="#">This is a Latest News headline on the homepage</a>
+                        </h3>
+                      </li> <!-- /hp-list-item -->
+                      {% endfor %}
+                      <li class="hp-list-item">
+                        <h3 class="hp-list-head">
+                          <a class="hp-list-link" href="#">This is a <span class="head-highlight">Latest News headline</span> on the homepage</a>
+                        </h3>
+                      </li> <!-- /hp-list-item -->
+                    </ul> <!-- /hp-list-items -->
+                  </div> <!-- /hp-latest-mod -->
+                </section> <!-- /grid-item -->
+
+              </div> <!-- /l-grid-2 -->
+          </div> <!-- /grid-containter--rule -->
+
+        </div> <!-- /recirculation-container -->
+      {% endblock %} {# /article_recirculation #}
+
+  </div> <!-- /l-content -->
+
+{% endblock %}

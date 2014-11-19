@@ -1,20 +1,30 @@
-%yellow-box {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  background-color: $he-main;
-}
+// --------------------------------------------
+// --------------------------------------------
+//
+// Variables
+//
+// --------------------------------------------
+// --------------------------------------------
 
-.big-yellow-box {
-  @extend %yellow-box;
-  height: 183px;
-}
+// Max width on paragraphs in article
+$article-bd-max:    550px;
 
-.med-yellow-box {
-  @extend %yellow-box;
-  height: 183px;
-}
+// Article image width
+$img-max-sm:        350px;
+$img-max-med:       450px;
+$img-max-lg:        550px;
+
+// Article aside width
+$aside-max:         240px;
+
+// Used on article page for images, determing when they are no
+// longer bleeding out of the rest of the article container.
+$bp-img-no-bleed:   550px;
+
+// When asides (pullquotes) float and take on max-width
+$bp-aside:          550px;
+$bp-aside-negative-margin:  925px;
+
 
 // --------------------------------------------
 // --------------------------------------------
@@ -24,7 +34,7 @@
 // --------------------------------------------
 // --------------------------------------------
 
-$article-bd-max: 550px;
+
 
 // checkout layout.scss for l-content and l-content--inner.
 // They're more universal and thus pulled out
@@ -199,6 +209,14 @@ $article-bd-max: 550px;
   letter-spacing: -2px;
 }
 
+%article-bd-margin {
+  margin-right: auto;
+  margin-left: auto;
+  @include mq(700px) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 
 // --------------------------------------------
 // --------------------------------------------
@@ -215,6 +233,7 @@ $article-bd-max: 550px;
   // Paragraphs
   // > p { margin-bottom: 1em; }
   > p {
+    @extend %article-bd-margin;
     max-width: $article-bd-max;
     &:first-of-type { @include drop-cap; }
   }
@@ -366,14 +385,6 @@ $article-bd-max: 550px;
 // --------------------------------------------
 // --------------------------------------------
 
-$img-max-sm:  350px;
-$img-max-med: 450px;
-$img-max-lg:  550px;
-
-// Used on article page for images, determing when they are no
-// longer bleeding out of the rest of the article container.
-$img-no-bleed:  550px;
-
 
 .media-mod {
   max-width: $article-bd-max;
@@ -394,7 +405,7 @@ $img-no-bleed:  550px;
   font-size: 14px;
   line-height: 1.285714286;   // 18/14
   color: black;
-  @include mq($img-no-bleed) {
+  @include mq($bp-img-no-bleed) {
     margin-right: 0;
     margin-left: 0;
   }
@@ -412,7 +423,7 @@ $img-no-bleed:  550px;
 }
 
 .alignleft {
-  @include mq($img-no-bleed) {
+  @include mq($bp-img-no-bleed) {
     float: left;
     max-width: $img-max-sm;
     margin-left: -$site-margin;
@@ -423,7 +434,7 @@ $img-no-bleed:  550px;
 
 
 .alignright {
-  @include mq($img-no-bleed) {
+  @include mq($bp-img-no-bleed) {
     float: right;
     max-width: $img-max-sm;
     margin-right: -$site-margin;
@@ -434,6 +445,60 @@ $img-no-bleed:  550px;
     margin-right: -($site-margin*2);
   }
 }
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article quote
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-quote {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 17px;
+  border-top: 8px solid black;
+  @include mq($bp-aside) {
+    float: left;
+    max-width: $aside-max;
+    margin-right: $site-margin;
+    border-top-width: 15px;
+  }
+  @include mq($bp-aside-negative-margin) {
+    margin-left: -$site-margin;
+  }
+
+  @include mq($desktop) { margin-left: -($site-margin*2); }
+}
+
+.article-quote-h {
+  font-family: $he-serif;
+  font-weight: $font-weight-bold;
+  font-size: 24px;
+  line-height: 1.291666667;   // 31/24
+  color: black;
+}
+
+.article-quote-attr {
+  font-family: $he-sans;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.article-quote-desc {
+  margin-top: 0;
+  font-family: $he-sans;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+
+
 
 
 // --------------------------------------------
@@ -519,6 +584,7 @@ $img-no-bleed:  550px;
 // --------------------------------------------
 
 .article-related-h {
+  @extend %article-bd-margin;
   max-width: $article-bd-max;
   padding: 5px 3px;
   font-size: 17px;

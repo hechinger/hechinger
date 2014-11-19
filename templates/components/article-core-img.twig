@@ -1,0 +1,10 @@
+<div class="media-mod img-container {{css_class ? css_class : ''}}">
+  <img src="/wp-content/themes/hechinger/static/img/test.jpg" alt="{{image.caption|e}}">
+  <div class="img-caption">
+    <p class="img-caption-text">This is an image caption that goes right here with lots of words to describe the image here. {{image.caption}}
+      {# if image.credit #}
+        <span class="img-byline">George Washington/Associated Press{{image.credit}}</span>
+      {# endif #}
+    </p>
+  </div> <!-- article-img-caption -->
+</div> <!-- /media-mod -->

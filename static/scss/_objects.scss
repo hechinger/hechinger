@@ -87,11 +87,10 @@ img { @include resp-img; }
 // --------------------------------------------
 // --------------------------------------------
 
-$svg-icon-path: /wp-content/themes/hechinger/static/img/xxx;
-$png-icon-path: /wp-content/themes/hechinger/static/img/xxx;
+$svg-icon-path: /wp-content/themes/hechinger/static/img/icons;
+$png-icon-path: /wp-content/themes/hechinger/static/img/icons;
 
 $icons: twitter, facebook, instagram, rss;
-
 
 .icon, %icon {
   background-repeat: no-repeat;
@@ -112,7 +111,11 @@ $icons: twitter, facebook, instagram, rss;
   }
 }
 
-
+@mixin ui-icon($icon_filename, $bg-color) {
+  background: $bg-color url(#{$png-icon-path}/#{$icon_filename}.png) no-repeat content-box center;
+  background: $bg-color url(#{$svg-icon-path}/#{$icon_filename}.svg) no-repeat content-box center;
+  background-size: contain;
+}
 
 
 

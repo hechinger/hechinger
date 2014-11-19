@@ -1,6 +1,10 @@
 .big-yellow-box {
-  background-color: $he-main;
+  top: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
   height: 183px;
+  background-color: $he-main;
 }
 
 // --------------------------------------------
@@ -76,7 +80,7 @@ $article-bd-max: 550px;
   padding: 0 $site-margin;
   background-color: #fff;
   border-top: 2px solid transparent;
-  margin: -75px auto 40px auto;
+  margin: 30px auto 40px auto;
   @include bp(960px) {
     border-top-color: black;
     padding-top: 30px;
@@ -89,7 +93,6 @@ $article-bd-max: 550px;
   @extend %bp-trans;
   // max-width: 880px;
   margin: 0 auto;
-  margin-top: -20px;
   max-width: $content-max--inner;
   @include bp(960px) { margin-top: 0; }
 

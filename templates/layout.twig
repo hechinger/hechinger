@@ -12,8 +12,7 @@
 </head>
 <body>
 
-  {# include 'components/nav-bar.twig' #}
-  {# uncomment this once this actually exists #}
+  {% include 'components/nav-bar.twig' %}
 
   {% block body %}{# page content goes here  #}{% endblock %}
 
@@ -21,6 +20,7 @@
 
   {% block scripts %}{# page-specific scripts #}{% endblock %}
 
-  <script type="text/javascript" src="/static/js/main.js"></script>
+  <script type="text/javascript" src="{{site.theme.uri}}/static/vendor/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="{{site.theme.uri}}/static/js/main.js"></script>
 </body>
 </html>

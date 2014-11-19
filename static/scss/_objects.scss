@@ -150,6 +150,45 @@ $icons: twitter, facebook, disqus, instagram, rss;
 
 
 
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Partners
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$svg-partner-path: /wp-content/themes/hechinger/static/img/partners;
+$png-partner-path: /wp-content/themes/hechinger/static/img/partners;
+
+$partners:  Advocate,
+            American_Prospect;
+
+
+.partner {
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: contain;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  // top: 5px;
+  // left: 5px;
+
+
+  @each $partner in $partners {
+    .icon-#{$partner} & {
+      background-image: url(#{$svg-partner-path}/icn-partner-#{$partner}.svg);
+      .no-svg & { background-image: url(#{$png-partner-path}/icn-partner#{$partner}.png)}
+    }
+  }
+}
+
+
+
 // --------------------------------------------
 // --------------------------------------------
 //

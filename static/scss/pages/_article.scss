@@ -70,7 +70,7 @@ $bp-aside-negative-margin:  925px;
   @include bp(700px) {
     float: right;
     width: 220px;
-    height: 100px;
+    // height: 100px;
     margin-left: 60px;
     margin-bottom: 30px;
     // margin-right: -60px;
@@ -564,9 +564,9 @@ $bp-aside-negative-margin:  925px;
 // --------------------------------------------
 
 .article-partner-logo {
+  position: relative;
   width: 100%;
   height: 25px;
-  background-color: blue;
   color: #fff;
 }
 

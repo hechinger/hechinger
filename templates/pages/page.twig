@@ -1,0 +1,13 @@
+{# generic page #}
+{% extends 'layout.twig' %}
+
+{% block body %}{# page content goes here  #}
+  <div class="big-yellow-box"></div>
+
+  <!-- article hdr -->
+  {% block article_hdr %}
+    {% include "/templates/components/basic-page-header.twig" %}
+    {# include "/templates/components/article-header-feat.twig" #}
+  {% endblock %} {# /article_header #}
+
+{% endblock %}

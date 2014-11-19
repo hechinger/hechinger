@@ -69,7 +69,14 @@
       <!-- article-social -->
       {% block article_social %}
         <div class="page-mod">
-        {% include "/templates/components/article-social.twig" with {css_class: "social--with-name"} %}
+          <div class="article-tools-btm-left">
+            <a class="article-comment-link icon-disqus" href="#"><i class="icon"></i>
+              <span class="article-comment-number">xxx</span> Comments</a>
+          </div> <!-- /article-tool-btm-let -->
+
+          <div class="article-tools-btm-right">
+            {% include "/templates/components/article-social.twig" with {css_class: "social--with-name"} %}
+          </div> <!-- /article-tools-btm-right -->
         </div> <!-- /page-mod -->
       {% endblock %} {# /article-social #}
 

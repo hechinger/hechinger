@@ -78,11 +78,13 @@ $bp-aside-negative-margin:  925px;
 }
 
 .page-mod {
+  @include pie-clearfix;
   margin-top: 29px;
   max-width: $article-bd-max;
 }
 
-
+.article-tools-btm-left { float: left; }
+.article-tools-btm-right { float: right; }
 
 
 // --------------------------------------------

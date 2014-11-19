@@ -1,0 +1,34 @@
+.l-archive-hdr-wrap {
+  margin-top: 30px;
+  @include mq('max', $medium) {
+    margin: 40px 0 0 25px;
+  }
+}
+
+.archive-hdr {
+  color: $black;
+  font-family: $he-sans;
+  font-size: 135px;
+  font-weight: $font-weight-bold;
+  text-decoration: underline;
+  @include mq('max', $medium) {
+    font-size: 40px;
+  }
+}
+
+.archive-feed-container {
+  margin: 0 $site-margin;
+  max-width: $content-max;
+  @include bp($no-content-margin) {
+    margin: 70px auto 0;
+  }
+}
+
+.archive-yellow-box {
+  @extend %yellow-box;
+  height: 183px;
+
+  @include mq('max', $medium) {
+    height: 120px;
+  }
+}

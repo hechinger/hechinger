@@ -30,7 +30,7 @@ class HechingerSite extends TimberSite {
 		if ( class_exists( 'Mesh' ) ) {
 			$article = new Mesh\Post( 'article', 'page' );
                         $article = new Mesh\Post( 'archive', 'page' );
-			$article = new Mesh\Post( 'special-reports', 'page' );
+			$article = new Mesh\Post( 'special-report', 'page' );
 			$article = new Mesh\Post( 'author', 'page' );
 			$article = new Mesh\Post( 'snippets', 'page' );
 		}

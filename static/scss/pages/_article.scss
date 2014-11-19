@@ -1,10 +1,19 @@
-.big-yellow-box {
-  top: 0;
+%yellow-box {
   position: absolute;
+  top: 0;
   z-index: -1;
   width: 100%;
-  height: 183px;
   background-color: $he-main;
+}
+
+.big-yellow-box {
+  @extend %yellow-box;
+  height: 183px;
+}
+
+.med-yellow-box {
+  @extend %yellow-box;
+  height: 183px;
 }
 
 // --------------------------------------------

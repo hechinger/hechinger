@@ -12,7 +12,9 @@
 </head>
 <body>
 
-  {% include 'components/nav-bar.twig' %}
+  {% block navbar %}
+    {% include 'components/nav-bar.twig' %}
+  {% endblock %}
 
   {% block body %}{# page content goes here  #}{% endblock %}
 

@@ -213,3 +213,32 @@ $icons: twitter, facebook, instagram, rss;
   color: $head-color;
 
 }
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Yellow Boxes
+//
+// --------------------------------------------
+// --------------------------------------------
+
+%yellow-box {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  background-color: $he-main;
+}
+
+.big-yellow-box {
+  @extend %yellow-box;
+  height: 183px;
+}
+
+.med-yellow-box {
+  @extend %yellow-box;
+  height: 150px;
+}
+

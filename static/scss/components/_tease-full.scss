@@ -1,0 +1,77 @@
+.tz-full-mod {
+  overflow: auto;
+  &:not(:last-child) {
+    border-bottom: 1px solid $black-30;
+  }
+}
+
+.tz-content-wrap {
+  float: left;
+  display: block;
+  padding: 42px 25px 42px 50px;
+  @include mq('max', $medium) {
+    padding: 42px 0 42px;
+  }
+}
+
+.tz-full-title {
+  margin-bottom: 12px;
+  color: $black;
+  font-family: $he-sans;
+  font-size: 34px;
+  font-weight: $font-weight-bold;
+}
+
+.tz-full-text {
+  margin-bottom: 12px;
+  color: $black;
+  font-family: $he-sans;
+  font-size: 21px;
+  line-height: 1.33;
+}
+
+.tz-full--byline-wrap {
+}
+
+.tz-full--byline-topic {
+  display: inline-block;
+  color: $he-secondary;
+  font-family: $he-sans;
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+
+}
+
+.tz-full--byline-name {
+  display: inline-block;
+}
+
+.tz-full--byline-date {
+  display: inline-block;
+}
+
+.tz--byline-topic-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tz--byline-author-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tz-full-img-wrap {
+  float: right;
+  display: block;
+  padding-left: 20px;
+  width: 30%;
+  min-width: 150px;
+  @include mq('max', $medium) {
+    padding: 20px;
+  }
+}
+
+.tz-full-img {
+  @include resp-img;
+}

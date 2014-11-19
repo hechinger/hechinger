@@ -1,18 +1,23 @@
 {% extends 'layout.twig' %}
 
+{# archive page layouts go here #}
 {% block body %}
 
-  {# archive page layouts go here #}
-    {% block header %}
-      archive header goes here
-    {% endblock header %}
+  {% block header %}
+    <div class="archive-yellow-box"></div>
+    <header class="l-archive-hdr-wrap l-page-hdr">
+      <h1 class="archive-hdr">News</h1>
+    </header>
+  {% endblock header %}
 
-    {% block feed %}
-      <div class="archive-feed-container">
-        {# for each article in articles include tease component #}
-        {% include 'components/tease-archive.twig' %}
-      </div>
-    {% endblock feed %}
+  {% block feed %}
+    <section class="archive-feed-container">
+      {# for each article in articles include tease component #}
+      {% for i in 1..10 %}
+        {% include 'components/tease-full.twig' %}
+      {% endfor %}
+    </section>
+  {% endblock feed %}
 
 {% endblock body %}
 

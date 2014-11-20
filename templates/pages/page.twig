@@ -1,8 +1,8 @@
 {% extends 'layout.twig' %}
 
 {% block body %}{# page content goes here  #}
-  <div class="big-yellow-box"></div>
 
+  <div class="big-yellow-box"></div>
 
   <div class="basic-page-hdr">
     <div class="basic-page-hdr-inner">
@@ -10,16 +10,43 @@
         <h4 class="basic-page-hdr-topic">
           <a class="basic-page-topic-link" href="#">About</a>
         </h4>
-
         <div class="article-social-container">
             {% include "/templates/components/article-social.twig" %}
         </div> <!-- /article-social-container-->
-      </div> <!-- /article-hdr-top -->
-
+      </div> <!-- /basic-page-hdr-top -->
       <div class="basic-page-hdr-h">
         <h1 class="basic-page-h">Awards</h1>
-        <h2 class="basic-page-sub-h">We cover the issues we cover because we believe in them, but our reporting is often recognized by our peers. We appreciate it.</h2>
-      </div> <!-- /article-hdr-middle -->
-    </div> <!-- /article-hdr-inner -->
-  </div> <!-- /article-hdr -->
+        <h2 class="basic-page-sub-h">
+          We cover the issues we cover because we believe in them, but our reporting is often recognized by our peers. We appreciate it.
+        </h2>
+      </div> <!-- /basic-page-hdr-h -->
+    </div> <!-- /basic-page-hdr-inner -->
+  </div> <!-- /basic-page-hdr -->
+
+<div class="basic-page-content">
+  <div class="basic-page-content-inner">
+    <h4 class="basic-page-category-h">
+      2013
+    </h4>
+    <h3 class="basic-page-category-sub-h">
+      Winner, Online-Feature
+    </h3>
+    <p class="basic-page-body-text">
+      Newswomen’s Club of New York Front Page Awards<br>Sarah Garland, “In Remote Alaskan Villages, Teachers Struggle to Make School Meaningful”
+    </p>
+    <h3 class="basic-page-category-sub-h">
+      Winner, Newspaper In-Depth Reporting
+    </h3>
+    <p class="basic-page-body-text">
+      Newswomen’s Club of New York Front Page Awards<br>Jackie Mader, “Literacy and STEM Education in Mississippi”
+    </p>
+    <h3 class="basic-page-category-sub-h">
+      Winner, Internet Continuing Coverage
+    </h3>
+    <p class="basic-page-body-text">
+       The New York Press Club Journalism Awards<br>Sarah Carr, Sarah Garland, Liz Willen, “Mississippi Learning”
+    </p>
+  </div> <!-- /basic-page-content-inner -->
+</div> <!-- /basic-page-content -->
+
 {% endblock %}

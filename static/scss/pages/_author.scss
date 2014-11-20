@@ -1,3 +1,40 @@
-// Author Page Styles
+// --------------------------------------------
+// --------------------------------------------
+//
+// Author Bio
+//
+// --------------------------------------------
+// --------------------------------------------
 
 
+.author-bio-mod {
+  margin-bottom: $space-grid--double;
+}
+
+.l-author-bio {
+  @include bp($medium, max) {
+    .art-bd {
+      float: right;
+      width: 20%;
+      max-width: 75px;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  @include bp($medium) {
+    @include pair(185px, $space-grid--half);
+  }
+}
+
+
+
+.author-bio-title { color: red; }
+
+.author-bio-name { color: blue; }
+
+.article-bio-text { color: green; }
+
+.author-bio-contact {
+  margin-top: 40px;
+  background-color: yellow;
+}

@@ -11,8 +11,9 @@ Setting up the Hechinger theme for development takes a few steps. You'll be inst
 2. [Install Timber](#install-timber) following the directions below.
 3. [Install Mesh](#install-mesh).
 4. [Import the Hechinger database](#import-database) to get actual Hechinger content.
-5. [Install dependencies.](#install-dependencies)
-6. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
+5. [Import Hechinger Uploads folder](#import-uploads-folder) to get images for the site.
+6. [Install dependencies.](#install-dependencies)
+7. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
 
 ### Install Timber
 
@@ -108,6 +109,18 @@ $ cd /srv/database && wget https://www.dropbox.com/s/1be3oh84cujtt2l/he_db_11-12
 That's it. You should have a bunch of Hechinger posts and pages imported.
 
 To exit vagrant ssh just run `exit`.
+
+### Import Uploads Folder
+
+You'll need all the images from Hechinger's uploads folder too. You'll have to copy the folder from dropbox into wp-content.
+
+First find the `uploads` folder in Upstatement's dropbox:
+
+`Upstatement > Clients > Hechinger > 4. Development`
+
+Copy `uploads` into `hechinger_vagant > www > wordpress-he > wp-content`
+
+Now you should have the images for the site. Check out some posts in the WP Admin to make sure they are there.
 
 ## Database Administration
 

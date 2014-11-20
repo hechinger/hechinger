@@ -1,20 +1,30 @@
-%yellow-box {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  background-color: $he-main;
-}
+// --------------------------------------------
+// --------------------------------------------
+//
+// Variables
+//
+// --------------------------------------------
+// --------------------------------------------
 
-.big-yellow-box {
-  @extend %yellow-box;
-  height: 183px;
-}
+// Max width on paragraphs in article
+$article-bd-max:    550px;
 
-.med-yellow-box {
-  @extend %yellow-box;
-  height: 183px;
-}
+// Article image width
+$img-max-sm:        350px;
+$img-max-med:       450px;
+$img-max-lg:        550px;
+
+// Article aside width
+$aside-max:         240px;
+
+// Used on article page for images, determing when they are no
+// longer bleeding out of the rest of the article container.
+$bp-img-no-bleed:   550px;
+
+// When asides (pullquotes) float and take on max-width
+$bp-aside:          550px;
+$bp-aside-negative-margin:  925px;
+
 
 // --------------------------------------------
 // --------------------------------------------
@@ -24,7 +34,7 @@
 // --------------------------------------------
 // --------------------------------------------
 
-$article-bd-max: 550px;
+
 
 // checkout layout.scss for l-content and l-content--inner.
 // They're more universal and thus pulled out
@@ -60,7 +70,7 @@ $article-bd-max: 550px;
   @include bp(700px) {
     float: right;
     width: 220px;
-    height: 100px;
+    // height: 100px;
     margin-left: 60px;
     margin-bottom: 30px;
     // margin-right: -60px;
@@ -68,136 +78,15 @@ $article-bd-max: 550px;
 }
 
 .page-mod {
+  @include pie-clearfix;
   margin-top: 29px;
   max-width: $article-bd-max;
 }
 
+.article-tools-btm-left { float: left; }
+.article-tools-btm-right { float: right; }
 
 
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Article Header
-//
-// --------------------------------------------
-// --------------------------------------------
-.article-hdr {
-  @extend %bp-trans;
-  // max-width: $content-max-width;
-  // padding: 30px 50px;
-  padding: 0 $site-margin;
-  background-color: #fff;
-  border-top: 2px solid transparent;
-  margin: 30px auto 40px auto;
-  @include bp(960px) {
-    border-top-color: black;
-    padding-top: 30px;
-  }
-
-  // * + * { margin-top: 40px; }
-}
-
-.article-hdr-inner {
-  @extend %bp-trans;
-  // max-width: 880px;
-  margin: 0 auto;
-  max-width: $content-max--inner;
-  @include bp(960px) { margin-top: 0; }
-
-  &.articleFeat-hdr-inner { max-width: 100%; }
-}
-
-.article-hdr-topic {
-  font-size: 24px;
-  font-family: $he-serif;
-  @extend %topic-hdr;
-}
-
-.article-topic-link {
-  @extend %head-link;
-}
-
-.article-h {
-  font-weight: 700;
-  font-size: 52px; // 30/33
-  color: black;
-  line-height: 1.057692308;
-  letter-spacing: -2px;
-}
-
-.article-sub-h {
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 1.272727273;
-}
-
-
-.article-hdr-meta {
-  @include pie-clearfix;
-  border-top: $border-thin;
-  padding-top: 10px;
-  font-size: 11px;
-}
-
-.article-hdr-middle {
-  * + * { margin-top: 10px; }
-}
-
-.article-hdr-top,
-.article-hdr-h {
-  margin-bottom: 40px;
-}
-
-.article-byline {
-  float: left;
-  display: inline-block;
-}
-
-.article-author {
-  font-weight: 900;
-  margin-left: 1px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: black;
-  text-decoration: none;
-}
-
-.article-date {
-  float: right;
-  display: inline-block;
-  margin-top: 0;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Article Feature Header
-//
-// --------------------------------------------
-// --------------------------------------------
-.articleFeat-mod {
-  position: relative;
-  margin-top: -40px;
-  padding-right: 20px;
-  padding-top: 20px;
-  background-color: #fff;
-  width: 80%;
-  max-width: 800px;
-}
-
-.articleFeat-h {
-  font-size: 72px;
-  font-style: italic;
-  font-weight: 900;
-  color: #000;
-  letter-spacing: -2px;
-}
 
 
 // --------------------------------------------
@@ -215,6 +104,7 @@ $article-bd-max: 550px;
   // Paragraphs
   // > p { margin-bottom: 1em; }
   > p {
+    @extend %article-bd-margin;
     max-width: $article-bd-max;
     &:first-of-type { @include drop-cap; }
   }
@@ -356,14 +246,128 @@ $article-bd-max: 550px;
 }
 
 
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article images
+//
+// --------------------------------------------
+// --------------------------------------------
+
+
+.media-mod {
+  max-width: $article-bd-max;
+  // max-width: 600px;
+}
+
 // protyping images bleeding out of containers.
 // assumes control over the containing element when images are added
 .img-container {
   @extend %bleeding-container;
-  > img {
+  > img { }
+}
 
+.img-caption {
+  margin: 10px $site-margin 40px;
+  font-family: $he-sans;
+  font-weight: $font-weight-bold;
+  font-size: 14px;
+  line-height: 1.285714286;   // 18/14
+  color: black;
+  @include mq($bp-img-no-bleed) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .alignleft & {
+    margin-left: $site-margin;
   }
 }
+
+.img-caption-text { }
+
+.img-byline {
+  color: $black-30;
+  font-weight: $font-weight-lt;
+}
+
+.alignleft {
+  @include mq($bp-img-no-bleed) {
+    float: left;
+    max-width: $img-max-sm;
+    margin-left: -$site-margin;
+    margin-right: $site-margin;
+  }
+  @include mq($desktop) { margin-left: -100px; }
+}
+
+
+.alignright {
+  @include mq($bp-img-no-bleed) {
+    float: right;
+    max-width: $img-max-sm;
+    margin-right: -$site-margin;
+    margin-left: $site-margin;
+  }
+  @include mq($desktop) {
+    max-width: $img-max-med;
+    margin-right: -($site-margin*2);
+  }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article quote
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-quote {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 17px;
+  border-top: 8px solid black;
+  @include mq($bp-aside) {
+    float: left;
+    max-width: $aside-max;
+    margin-right: $site-margin;
+    border-top-width: 15px;
+  }
+  @include mq($bp-aside-negative-margin) {
+    margin-left: -$site-margin;
+  }
+
+  @include mq($desktop) { margin-left: -($site-margin*2); }
+}
+
+.article-quote-h {
+  font-family: $he-serif;
+  font-weight: $font-weight-bold;
+  font-size: 24px;
+  line-height: 1.291666667;   // 31/24
+  color: black;
+}
+
+.article-quote-attr {
+  font-family: $he-sans;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.article-quote-desc {
+  margin-top: 0;
+  font-family: $he-sans;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
 
 
 
@@ -429,9 +433,9 @@ $article-bd-max: 550px;
 // --------------------------------------------
 
 .article-partner-logo {
+  position: relative;
   width: 100%;
   height: 25px;
-  background-color: blue;
   color: #fff;
 }
 
@@ -451,6 +455,7 @@ $article-bd-max: 550px;
 // --------------------------------------------
 
 .article-related-h {
+  @extend %article-bd-margin;
   max-width: $article-bd-max;
   padding: 5px 3px;
   font-size: 17px;

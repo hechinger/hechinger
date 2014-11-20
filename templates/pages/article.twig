@@ -8,7 +8,8 @@
 
   <!-- article hdr -->
   {% block article_hdr %}
-    {% include "/templates/components/article-header.twig" %}
+    {# include "/templates/components/article-header.twig" #}
+    {% include "/templates/components/article-header-column.twig" %}
     {# include "/templates/components/article-header-feat.twig" #}
   {% endblock %} {# /article_header #}
 
@@ -20,19 +21,45 @@
         <div class="article-body article-text">
           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
 
-          <p class="img-container"> <img src="/wp-content/themes/hechinger/static/img/test.jpg"> </p>
+          <!-- <p class="img-container"> <img src="/wp-content/themes/hechinger/static/img/test.jpg"> </p> -->
+
+          <!-- core image -->
+          {% include "/templates/components/article-core-img.twig" %}
+
 
           {% block article_partner %}
             {% include "/templates/components/article-partner.twig" %}
           {% endblock %}
 
-          {% for i in 1..5 %}
+          {% for i in 1..2 %}
            <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
+           {% include "/templates/components/article-core-img.twig" with {css_class: "alignleft"} %}
            <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
+          {% endfor %}
 
-           <!-- article in text related -->
+           {% for i in 1..2 %}
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
            {% include "/templates/components/article-text-related.twig" %}
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
+          {% endfor %}
 
+          {% for i in 1..2 %}
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
+           <aside class="article-quote">
+            <h4 class="article-quote-h">This is a fantastic pulled quote from this story you're currently reading. Ideally, it will tell you something so amazing, you'll have no choice but to keep reading</h4>
+            <p class="article-quote-attr">George Washington Carver</p>
+            <p class="article-quote-desc">A description of the person who is saying these words here</p>
+           </aside> <!-- /article-quote -->
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
+          {% endfor %}
+
+           {% for i in 1..2 %}
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
+           {% include "/templates/components/article-core-img.twig" with {css_class: "alignright"} %}
+           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
            <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
           {% endfor %}
 
@@ -43,7 +70,14 @@
       <!-- article-social -->
       {% block article_social %}
         <div class="page-mod">
-        {% include "/templates/components/article-social.twig" with {css_class: "social--with-name"} %}
+          <div class="article-tools-btm-left">
+            <a class="article-comment-link icon-disqus" href="#"><i class="icon"></i>
+              <span class="article-comment-number">xxx</span> Comments</a>
+          </div> <!-- /article-tool-btm-let -->
+
+          <div class="article-tools-btm-right">
+            {% include "/templates/components/article-social.twig" with {css_class: "social--with-name"} %}
+          </div> <!-- /article-tools-btm-right -->
         </div> <!-- /page-mod -->
       {% endblock %} {# /article-social #}
 

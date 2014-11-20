@@ -16,15 +16,35 @@
         <h2 class="article-sub-h">Subhead Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, quisquam! consectetur adipisicing elit. Alias, quisquam!</h2>
       </div> <!-- /article-hdr-middle -->
 
-      <div class="article-hdr-meta">
-        <p class="article-byline">by
-          <a class="article-author" href="#">George Washington</a>
-          and
-          <a class="article-author" href="#">Barbara Kantrowitz</a>
-        </p>
+      <div class="article-hdr-meta-container {% block column_context_class %}{% endblock %}">
+        {% block article_column_img %} {% endblock %}
 
-        <p class="article-date">January 31, 2015</p>
-      </div> <!-- /article-hdr-meta -->
+        <div class="article-hdr-meta">
+         {% block article_column_title %} {% endblock %}
+          <div class="article-hdr-meta-inner">
+            {% block article_byline %}
+              <p class="article-byline">by
+                <a class="article-author" href="#">George Washington</a>
+              </p>
+            {% endblock %}
+            <p class="article-date">January 31, 2015</p>
+          </div> <!-- /article-hdr-meta-inner -->
+        </div> <!-- /article-hdr-meta-->
+
+      </div> <!-- /article-hdr-container -->
     </div> <!-- /article-hdr-inner -->
   </div> <!-- /article-hdr -->
 </div> <!-- /l-article -->
+
+
+{#
+<div class="article-hdr-meta">
+  <p class="article-byline">by
+    <a class="article-author" href="#">George Washington</a>
+    and
+    <a class="article-author" href="#">Barbara Kantrowitz</a>
+  </p>
+
+  <p class="article-date">January 31, 2015</p>
+</div> <!-- /article-hdr-meta -->
+#}

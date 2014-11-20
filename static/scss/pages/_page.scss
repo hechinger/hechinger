@@ -1,0 +1,74 @@
+// Article Header
+//
+// --------------------------------------------
+// --------------------------------------------
+.basic-page-hdr {
+  @extend %bp-trans;
+  // max-width: $content-max-width;
+  // padding: 30px 50px;
+  padding: 0 $site-margin;
+  background-color: #fff;
+  border-top: 2px solid transparent;
+  margin: -40px auto 40px auto;
+  width: 100%;
+  max-width: 960px;
+
+  @include bp(960px) {
+    border-top-color: black;
+    padding-top: 30px;
+  }
+
+  // * + * { margin-top: 40px; }
+}
+
+.basic-page-hdr-inner {
+  @extend %bp-trans;
+  // max-width: 880px;
+  margin: 0 auto;
+  margin-top: -20px;
+  max-width: $content-max--inner;
+  @include bp(960px) { margin-top: 0; }
+
+  &.articleFeat-hdr-inner { max-width: 100%; }
+}
+
+.basic-page-hdr-topic {
+  font-size: 24px;
+  font-family: $he-serif;
+  @extend %topic-hdr;
+}
+
+.basic-page-topic-link {
+  @extend %head-link;
+}
+
+.basic-page-h {
+  font-weight: 700;
+  font-size: 52px; // 30/33
+  color: black;
+  line-height: 2;
+  letter-spacing: -1px;
+}
+
+.basic-page-sub-h {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.272727273;
+}
+
+
+.basic-page-hdr-meta {
+  @include pie-clearfix;
+  border-top: $border-thin;
+  padding-top: 10px;
+  font-size: 11px;
+}
+
+.basic-page-hdr-middle {
+  * + * { margin-top: 10px; }
+}
+
+.basic-pagehdr-top,
+.basic-page-hdr-h {
+  margin-bottom: 40px;
+}

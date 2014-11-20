@@ -1,0 +1,25 @@
+{% extends 'layout.twig' %}
+
+{% block body %}{# page content goes here  #}
+  <div class="big-yellow-box"></div>
+
+
+  <div class="basic-page-hdr">
+    <div class="basic-page-hdr-inner">
+      <div class="basic-page-hdr-top">
+        <h4 class="basic-page-hdr-topic">
+          <a class="basic-page-topic-link" href="#">About</a>
+        </h4>
+
+        <div class="article-social-container">
+            {% include "/templates/components/article-social.twig" %}
+        </div> <!-- /article-social-container-->
+      </div> <!-- /article-hdr-top -->
+
+      <div class="basic-page-hdr-h">
+        <h1 class="basic-page-h">Awards</h1>
+        <h2 class="basic-page-sub-h">We cover the issues we cover because we believe in them, but our reporting is often recognized by our peers. We appreciate it.</h2>
+      </div> <!-- /article-hdr-middle -->
+    </div> <!-- /article-hdr-inner -->
+  </div> <!-- /article-hdr -->
+{% endblock %}

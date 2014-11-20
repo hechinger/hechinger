@@ -98,6 +98,10 @@ $has-margin:          800px;
   }
 }
 
+%grid-rule--dark {
+  @extend %grid-rule;
+  &:after { background-color: $black; }
+}
 
 .grid-container, %grid-container {
   padding-top: 25px;

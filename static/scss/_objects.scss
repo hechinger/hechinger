@@ -105,11 +105,9 @@ img { @include resp-img; }
 // --------------------------------------------
 
 
+
 $svg-icon-path: /wp-content/themes/hechinger/static/img/icons;
 $png-icon-path: /wp-content/themes/hechinger/static/img/icons;
-
-
-$icons: twitter, facebook, instagram, rss-footer, twitter-footer, facebook-footer, instagram-footer, coolting-footer;
 
 $icons: twitter,
         facebook,

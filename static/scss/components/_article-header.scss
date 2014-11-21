@@ -10,12 +10,19 @@
   // max-width: $content-max-width;
   // padding: 30px 50px;
   padding: 0 $site-margin;
-  background-color: #fff;
+  // background-color: #fff;
   border-top: 2px solid transparent;
-  margin: 30px auto 40px auto;
-  @include bp(960px) {
-    border-top-color: black;
+  // margin: 30px auto 40px auto;
+  margin: 0 auto 40px auto;
+  @include bp(800px) {
     padding-top: 30px;
+    border-top-color: #000;
+    background-color: #fff;
+  }
+  @include bp(960px) {
+    // border-top-color: black;
+    // padding-top: 30px;
+    // background-color: #fff;
   }
 
   // * + * { margin-top: 40px; }

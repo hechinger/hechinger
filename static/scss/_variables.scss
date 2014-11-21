@@ -37,7 +37,7 @@ $font-weight-black: 900;
 
 // Shades of Gray
 // --------------------------------------------
-$black-total: #000;           // 0, 0, 0
+$black-total: #000000;         // 0, 0, 0
 $black-100:   #2a272b;        // 42, 29, 43
 $black-90:    #383437;        // 56, 52, 55
 $black-80:    #474245;        // 71, 66, 69
@@ -48,16 +48,18 @@ $black-40:    #908b8c;        // 144, 139, 140
 $black-30:    #a6a1a3;        // 166, 161, 163
 $black-20:    #bfbbbc;        // 191, 187, 188
 $black-10:    #dad7d7;        // 218, 215, 215
+
 $black:       $black-100;
 $white:       #FFFFFF;
 
-$hdr-color: #000000;
+$hdr-color:         #000000;
 
-$head-color: $black-90;
+$head-color:        $black-90;
 
-$light-border:  lighten($black-10, 10%);
+$light-border:      lighten($black-10, 10%);
 
-$text-color:  $black-100;
+$text-color:        $black-100;
+$text-color-page:   $black-80;
 
 
 // Hechinger Palette

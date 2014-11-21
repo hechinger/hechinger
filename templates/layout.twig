@@ -12,11 +12,15 @@
 </head>
 <body>
 
-  {% block navbar %}
-    {% include 'components/nav-bar.twig' %}
-  {% endblock %}
+  <header class="site-header">
+    {% block navbar %}
+      {% include 'components/nav-bar.twig' %}
+    {% endblock %}
+  </header> <!-- /site-header -->
 
-  {% block body %}{# page content goes here  #}{% endblock %}
+  <section id="content" role="main" class="content-wrapper">
+    {% block body %}{# page content goes here  #}{% endblock %}
+  </section> <!-- /content content-wrapper -->
 
   {% include 'components/footer.twig' %}
 

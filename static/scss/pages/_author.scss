@@ -1,1 +1,141 @@
-// Author Page Styles
+// --------------------------------------------
+// --------------------------------------------
+//
+// Author Header
+//
+// --------------------------------------------
+// --------------------------------------------
+.l-page-hdr { }
+
+.page-hdr {
+  @extend %bp-trans;
+  padding: 0 $site-margin;
+  border-top: 2px solid transparent;
+  margin: 0 auto 40px auto;
+  @include bp($medium-lg) {
+    padding-top: 30px;
+    border-top-color: #000;
+    background-color: #fff;
+  }
+}
+
+.page-hdr-inner {
+  @extend %bp-trans;
+  margin: 0 auto;
+  max-width: $content-max--inner;
+  @include bp(960px) { margin-top: 0; }
+
+  &.articleFeat-hdr-inner { max-width: 100%; }
+}
+
+.author-hdr-topic {
+  @extend %topic-hdr;
+  display: block;
+  border-bottom: none;
+  padding-bottom: 20px;
+  font-size: 24px;
+  font-family: $he-serif;
+  @include bp($medium-lg) { border-bottom: $bdr-thin; }
+}
+
+.author-topic-link {
+  @extend %head-link;
+  &:hover { text-decoration: none; }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Author Bio
+//
+// --------------------------------------------
+// --------------------------------------------
+.author-bio-mod {
+  margin-bottom: $space-grid--threequarter;
+  @include bp($medium-lg) { padding: 0 $space-grid; }
+}
+
+.l-author-bio {
+  @include bp($medium, max) {
+    .art-bd {
+      float: right;
+      width: 20%;
+      max-width: 75px;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+  }
+  @include bp($medium) {
+    @include pair(185px, $space-grid);
+  }
+}
+
+
+
+.author-bio-title {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: $he-sans;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.author-bio-name {
+  display: inline-block;
+  margin-bottom: 25px;
+  border-bottom: 6px solid black;
+  padding-bottom: 2px;
+  font-family: $he-serif;
+  font-size: 31px;
+  color: black;
+}
+
+.article-bio-text {
+  color: $black-80;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.author-bio-contact {
+  margin-top: 25px;
+}
+
+
+.author-contact-items {
+  font-family: $he-sans;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.author-contact-item {
+  & + & { margin-left: 15px; }
+  display: inline;
+  @include bp($medium) {
+    & + & { margin-left: 30px; }
+  }
+}
+
+.author-contact-link {
+  position: relative;
+  padding-left: 21px;
+  color: $black-40;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Author Feed
+//
+// --------------------------------------------
+// --------------------------------------------

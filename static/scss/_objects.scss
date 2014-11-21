@@ -71,7 +71,7 @@ img { @include resp-img; }
     line-height: 35px;
     text-indent: 25px;
   }
-  .social--footer & {
+  .social--ftr & {
     border: 1px solid #000;
     border-radius: 50%;
     background-color: transparent;
@@ -104,8 +104,15 @@ img { @include resp-img; }
 // --------------------------------------------
 // --------------------------------------------
 
+<<<<<<< HEAD
 $svg-icon-path: /wp-content/themes/hechinger/static/img/icons;
 $png-icon-path: /wp-content/themes/hechinger/static/img/icons;
+=======
+$svg-icon-path: /wp-content/themes/hechinger/static/img/xxx;
+$png-icon-path: /wp-content/themes/hechinger/static/img/xxx;
+
+$icons: twitter, facebook, instagram, rss-footer, twitter-footer, facebook-footer, instagram-footer, coolting-footer;
+>>>>>>> More footer refactoring.
 
 $icons: twitter,
         facebook,

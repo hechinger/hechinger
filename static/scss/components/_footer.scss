@@ -1,106 +1,119 @@
 // --------------------------------------------
 // --------------------------------------------
 //
-// Footer Layout
+// ftr Layout
 //
 // --------------------------------------------
 // --------------------------------------------
 
 .site-ftr {
   @include pie-clearfix;
+  padding-top: $space-grid--half;
+  background-color: $he-main;
+  @include mq($medium) {
+    padding-top: 175px;
+  }
 }
 
 .ftr-top {
   @include pie-clearfix;
-  background-color: $he-main;
-  padding-top: 80px;
+  margin-bottom: $space-grid--half;
+  @include mq($medium) {
+    margin-bottom: $space-grid;
+  }
 }
 
 .ftr-bottom {
   @include pie-clearfix;
+  padding: 20px 0;
   background-color: $black;
 }
 
-.footer-page {
-  width: 88%;
-  max-width: 960px;
-  margin: auto;
-}
 
-
-.l-footer-info {
+// figure out rule
+.l-ftr-info {
   margin-top: $space-grid;
-  @include media-grid(2, 40px, '.grid-item');
-  .grid-item {
-    @extend %grid-rule--dark;
-    &:nth-child( 2n +2 ) { &:after { background-color: transparent; } }
+  @include mq($medium, $medium-lg) {
+     @include media-grid(2, 40px, '.grid-item');
+  }
+
+  @include mq($medium-lg) {
+    @include media-grid(2, 55px, '.grid-item');
+    .grid-item {
+         &:after {
+            position: absolute;
+            content: '\0020';
+            top: 0;
+            bottom: 0;
+            right: -20px;
+            width: 1px;
+            background-color: $black;
+          }
+        &:nth-child( 2n +2 ) { &:after { background-color: transparent; } }
+      }
   }
 }
 
-.l-footer-partners {
-  @include media-grid(4, 25px);
+
+.l-ftr-partners {
+  @include bp($medium, max) { @include media-grid(4, 25px); }
+  @include bp($medium, $medium-lg) { @include media-grid(2, 25px); }
+  @include bp($medium-lg) { @include media-grid(4, 25px); }
+  .media-block {
+    max-width: 125px;
+    margin-top: 10px;
+  }
 }
 
 
 // --------------------------------------------
 // --------------------------------------------
 //
-// Footer
+// ftr
 //
 // --------------------------------------------
 // --------------------------------------------
 
-.footer-top-block {
+.ftr-logo-mod {
+  @include pie-clearfix;
   border-bottom: 1px solid $black;
-  // margin: 78px 9% auto 9%;
   padding-bottom: 25px;
-  // float: left;
-
-  @include mq(402px) {
-    padding-bottom: 17px;
-  }
-
-  @include mq(540px) {
-    padding-bottom: 27px;
-  }
 }
 
-.footer-logo-hech {
+.ftr-logo-container {
   // width: 90%;
   // margin: auto 5%;
   display: block;
+  max-width: 300px;
+  margin: 0 auto 15px;
+  @include mq($medium) {
+    float: left;
+    margin: 0;
+  }
 
+}
 
-  @include mq(580px) {
-  // width: 49%;
-  // min-width: 291px;
-  display: inline-block;
-  float: left;
-  margin: auto;
+.ftr-social-container {
+  @include pie-clearfix;
+  display: block;
+  text-align: center;
+  @include mq($medium) {
+    float: right;
+    margin: 0;
   }
 }
 
-.footer-social-container {
-  // width: 50%;
-  margin: 20px 25% 0;
-  // display: inline-block;
-
-
-  // @include mq(580px) {
-  // width: 20%;
-  // min-width: 120px;
-  // margin: 10px 0 0;
-  // float: right;
-  // }
-}
-
-.footer-social-icons {
-  margin-left: 5%;
+.social--ftr {
   display: inline-block;
-  width: 18%;
+  text-align: center;
 }
 
-.footer-hdr {
+// .ftr-social-icons {
+//   margin-left: 5%;
+//   display: block;
+// }
+
+.ftr-hdr {
   display: inline-block;
   margin-bottom: 10px;
   font-family: $he-accent;
@@ -113,15 +126,18 @@
   padding-bottom: 5px;
 }
 
-.footer-text {
+.ftr-text {
+  margin-bottom: 10px;
   font-style: italic;
   font-family: $he-sans;
   font-size: 18px;
   font-weight: $font-weight-lt;
+  line-height: 1.318181818;
   color: $black;
+  @include mq($medium) { font-size: 22px; }
 }
 
-// .footer-about-block {
+// .ftr-about-block {
 //   color: $black;
 //   font-family: $he-sans;
 //   font-size: 18px;
@@ -152,13 +168,13 @@
 //   }
 // }
 
-.footer-arrow {
+.ftr-arrow {
   width: 11px;
   margin-left: 7px;
   display: inline-block;
 }
 
-.footer-link-black {
+.ftr-link-black {
   font-weight: $font-weight-bold;
   font-size: 16px;
   color: $black;
@@ -166,7 +182,7 @@
   text-decoration: none;
 }
 
-// .footer-partner-block {
+// .ftr-partner-block {
 //   font-family: $he-sans;
 //   font-size: 18px;
 //   font-weight: $font-weight-lt;
@@ -191,7 +207,7 @@
 //   }
 // }
 
-// .footer-partner-logo-container {
+// .ftr-partner-logo-container {
 //   line-height: 40px;
 //   display: block;
 // }
@@ -216,7 +232,7 @@
 //   }
 // }
 
-// .footer-partner-icons {
+// .ftr-partner-icons {
 //   width: 70%;
 //   max-width: 165px;
 //   margin: 10px;
@@ -235,58 +251,58 @@
   margin: auto;
 }
 
-.footer-site-nav {
+.ftr-site-nav {
   // display: none;
 
   @include mq(717px) {
-  // width: 100%;
+  display: inline-block;
+  width: 100%;
   // margin: 25px auto auto;
   // float: left;
   text-align: center;
-  // display: inline;
-  display: block;
   }
 }
 
 
-.footer-nav-items {
+.ftr-nav-items {
   @include pie-clearfix;
-  width: 100%;
-  background-color: yellow;
   margin-left: 20px;
   display: inline-block;
+  text-align: center;
   &:first-child { margin-left: 0; }
 }
 
-.footer-nav-item {
+.ftr-nav-item {
   float: left;
+  margin-left: 25px;
+  text-transform: uppercase;
+  &:first-child { margin-left: 0; }
 }
 
-.footer-nav-link {
+.ftr-nav-link {
+  display: block;
   font-family: $he-sans;
+  font-weight: $font-weight-bold;
   font-size: 13px;
   color: $black-40;
   text-decoration: none;
-  margin: auto 3%;
-  display: block;
-
   @include mq(874px) {
       font-size: 16px;
   }
 }
 
-.footer-copyright-msg {
+.ftr-copyright-msg {
   font-family: $he-sans;
   font-weight: $font-weight-lt;
   font-size: 11px;
   color: $black-40;
   width: 100%;
-  margin: 15px auto auto;
+  margin: 20px auto auto;
   float: left;
   text-align: center;
 }
 
-// .footer-block-yellow {
+// .ftr-block-yellow {
 //   background-color: $he-main;
 //   width: 100%;
 //   height: 790px;
@@ -308,7 +324,7 @@
 //   }
 // }
 
-// .footer-bar-black{
+// .ftr-bar-black{
 //   background-color: $black;
 //   width: 100%;
 //   height: 52px;
@@ -333,38 +349,7 @@
   height: 204px;
   margin-bottom: -50px;
   display: inline-block;
-
-  @include mq(371px) {
-    height: 185px;
-  }
-
-  @include mq(402px) {
-    height: 190px;
-  }
-
-  @include mq(440px) {
-    height: 207px;
-  }
-
-  @include mq(621px) {
-    height: 217px;
-  }
-
-  @include mq(775px) {
-    height: 255px;
-  }
-
-  @include mq(831px) {
-    height: 254px;
-  }
-
-  @include mq(887px) {
-    height: 224px;
-  }
-
-  @include mq(1103px) {
-    height: 237px;
-  }
+  display: none;
 }
 
 

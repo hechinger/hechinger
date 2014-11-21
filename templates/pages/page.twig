@@ -4,12 +4,22 @@
 
   <div class="big-yellow-box"></div>
 
+  <!-- Code Thoughts for Grant -->
+  <!--
+        1. Remove big yellow box div
+        2. The basic-page namespace is too specific. Let's go with page-hdr, rather thank basic-page-hdr
+        3. Using namespaced components from the Article page is confusing.
+        4. Examine how other pages are doing headers, content areas, etc and make more similar.
+  -->
+
   <div class="basic-page-hdr">
     <div class="basic-page-hdr-inner">
       <div class="basic-page-hdr-top">
         <h4 class="basic-page-hdr-topic">
           <a class="basic-page-topic-link" href="#">About</a>
         </h4>
+        <!-- this class needs to be more abstract. -->
+        <!-- ====================================  -->
         <div class="article-social-container">
             {% include "/templates/components/article-social.twig" %}
         </div> <!-- /article-social-container-->

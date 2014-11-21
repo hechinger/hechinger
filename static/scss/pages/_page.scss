@@ -1,0 +1,120 @@
+.basic-page-hdr {
+  @extend %bp-trans;
+  padding: 30px $site-margin 0;
+  background-color: #fff;
+  border-top: 2px solid transparent;
+  margin: 50px auto 10px auto;
+  width: 100%;
+
+  @include mq(500px) {
+    border-top-color: black;
+    width: 93.75%;
+    max-width: 960px;
+    margin-bottom: 40px;
+  }
+}
+
+.basic-page-hdr-inner {
+  @extend %bp-trans;
+  margin: -50px auto 0;
+  max-width: $content-max--inner;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $black-20;
+
+    @include mq(500px) {
+      margin-top: 0;
+  }
+}
+
+.basic-page-hdr-topic {
+  font-size: 24px;
+  font-family: $he-accent;
+  @extend %topic-hdr;
+}
+
+.basic-page-topic-link {
+  @extend %head-link;
+}
+
+.basic-page-h {
+  font-weight: 700;
+  font-size: 42px;
+  color: black;
+  line-height: 2;
+  letter-spacing: -1px;
+
+  @include mq(500px) {
+    font-size: 52px;
+  }
+}
+
+.basic-page-sub-h {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.272727273;
+
+  @include mq(500px) {
+    font-size: 22px;
+  }
+}
+
+.basic-pagehdr-top,
+.basic-page-hdr-h {
+  margin-bottom: 40px;
+}
+
+.basic-page-content {
+  padding: 0 $site-margin;
+  margin: 0 auto;
+  width: 100%;
+
+  @include mq(500px) {
+    width: 93.75%;
+    max-width: 960px;
+  }
+}
+
+.basic-page-content-inner {
+  margin: 0 auto;
+  max-width: $content-max--inner;
+}
+
+.basic-page-category-h {
+  font-family: $he-accent;
+  font-size: 20px;
+  font-weight: 900;
+  padding-bottom: 20px;
+  border-bottom: 0.35em solid black;
+  margin-bottom: 30px;
+  display: inline-block;
+
+  @include mq(500px) {
+    font-size: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+.basic-page-category-sub-h {
+  font-family: $he-sans;
+  font-size: 20px;
+  font-weight: $font-weight-bold;
+  color: $black;
+  margin-bottom: 10px;
+
+  @include mq(500px) {
+    font-size: 22px;
+  }
+}
+
+.basic-page-body-text {
+  font-family: $he-sans;
+  font-size: 14px;
+  font-weight: $font-weight-lt;
+  color: $black;
+  margin-bottom: 20px;
+
+  @include mq(500px) {
+    font-size: 16px;
+  }
+}

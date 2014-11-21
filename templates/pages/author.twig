@@ -8,7 +8,11 @@
           <div class="page-hdr-inner">
             <div class="author-overline">
               <h4 class="author-hdr-topic">
-                <a class="author-topic-link" href="#">{# if author is staff use Staff else use Author #}Staff</a>
+                {# if author is staff member #}
+                  <a class="author-topic-link" href="#">{# if author is staff use Staff else use Author #}Staff</a>
+                  {# else #}
+                    <!-- <a class="author-topic-link">Author</a> -->
+                {# endif #}
               </h4> <!-- /author-hdr-topic -->
             </div> <!-- /author-overline -->
           </div> <!-- /page-hdr-inner -->

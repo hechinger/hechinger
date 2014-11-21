@@ -4,9 +4,15 @@
 
     {% block page_hdr %}
       <div class="l-page-hdr">
-        <div class="author-overline">
-          <h2 class="author-overline">{# if author is staff use Staff else use Author#}Staff</h2>
-        </div> <!-- /author-overline -->
+        <div class="page-hdr">
+          <div class="page-hdr-inner">
+            <div class="author-overline">
+              <h4 class="author-hdr-topic">
+                <a class="author-topic-link" href="#">{# if author is staff use Staff else use Author #}Staff</a>
+              </h4> <!-- /author-hdr-topic -->
+            </div> <!-- /author-overline -->
+          </div> <!-- /page-hdr-inner -->
+        </div> <!-- /page-hdr -->
       </div> <!-- /l-page-hdr -->
     {% endblock %}
 
@@ -24,11 +30,36 @@
             <h3 class="author-bio-title">Executive Editor</h3>
             <h1 class="author-bio-name">Sarah Garland</h1>
             <p class="article-bio-text">Sarah Garland is executive editor. She has written for The New York Times, Newsweek International, Newsday, The New York Sun, The Atlantic, The Washington Post and The Philadelphia Inquirer. She was a 2009 recipient of the Spencer Fellowship in Education Reporting at Columbia University Graduate School of Journalism and received her master’s degree from New York University as a Henry M. MacCracken fellow. Her first book, Gangs in Garden City, was published by Nation Books in July 2009. Her second book, Divided We Fail: The Story of an African American Community That Ended the Era of School Desegregation (Beacon Press) was published in January 2013. She has been a guest on the Diane Rehm Show, the Leonard Lopate Show, PBS NewsHour, Word of Mouth with Virginia Prescott, Bloomberg EDU with Jane Williams, Here and Now, and appeared on MSNBC.</p>
-            <div class="author-bio-contact">contact infos</div>
+            <div class="author-bio-contact">
+              <ul class="author-contact-items">
+                <li class="author-contact-item icon-email">
+                  <a class="author-contact-link" href="mailto:#" target="_blank">
+                    <i class="icon"></i>garland@hechinger.org</a>
+                </li> <!--author-contact-item -->
+
+                <li class="author-contact-item icon-telephone">
+                  <a class="author-contact-link" href="tel:1-888-333-9999">
+                    <i class="icon"></i>888-333-9999</a>
+                </li> <!--author-contact-item -->
+
+
+
+                <li class="author-contact-item icon-twitter-author">
+                  <a class="author-contact-link" href="http://twitter.com" target="_blank">
+                    <i class="icon"></i>@usernamehere</a>
+                </li> <!--author-contact-item -->
+
+              </ul> <!-- /author-contact-items -->
+            </div> <!-- /author-bio-contact -->
         </div> <!-- /txt-bd -->
       </div> <!-- /l-author-bio -->
     </article> <!-- /author-bio-container -->
   </div> <!-- /author-bio-mod -->
+
+<!-- <li class="social-item icon-facebook">
+    <a target="_blank" class="social-item-link qs-link" data-qs-service="facebook-share"><i class="icon"></i>Facebook</a>
+  </li> -->
+
 
   {# recent articles feed goes here #}
   <div class="author-article-feed-container">
@@ -38,30 +69,17 @@
     {# for each article in articles #}
       {# include 'components/tease-author-page.twig' #}
     {# endfor #}
+    {% for i in 1..10 %}
+      {% include 'components/tease-full.twig' %}
+    {% endfor %}
   </div> <!-- /author-article-feed-container -->
 
   </div> <!-- /l-content -->
 
 
 
-<div class="article-bio">
-        <div class="l-article-bio">
-          <div class="art-bd">
-            <div class="img-rounded">
-              <a href="#">
-                <img src="/wp-content/themes/hechinger/static/img/mug_placeholder.jpg" alt="">
-              </a>
-            </div> <!-- img-rounded -->
-          </div> <!-- /art-bd -->
-
-          <div class="txt-bd">
-            <h4 class="article-bio-h"><a class="article-bio-h-link" href="#">Barbara Kantrowitz</a></h4>
-            <p class="article-bio-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quia odio, quidem, voluptatum neque officia aspernatur quod quam voluptas enim tempora animi ut, possimus magnam. <a class="article-bio-link" href="#">See Archive</a></p>
-          </div> <!-- /txt-bd -->
-        </div> <!-- /l-article-bio -->
-      </div> <!-- /article-bio -->
 
 
-{% endblock %}
+{% endblock %} {# /body #}
 
-{% block scripts %}{% endblock %}
+{% block scripts %}{% endblock %} {# /scripts #}

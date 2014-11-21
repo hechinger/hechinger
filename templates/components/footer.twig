@@ -1,3 +1,4 @@
+{% block above_footer %}
 <!-- Newsletter Signup -->
 <div class="newsletter-block">
     <div class="newsletter-border-top"></div>
@@ -28,56 +29,54 @@
     <div class="newsletter-border-bottom"></div>
   </div> <!-- .newsletter-block -->
 
+{% endblock %} {# above_footer #}
+
 <footer class="site-ftr">
+  <div class="l-content">
   <div class="ftr-top">
-  <div class="footer-page">
+
     <!-- Logo/social block -->
-    <div class="footer-top-block">
-      <div class="footer-logo-hech">
-        <img src="/wp-content/themes/hechinger/static/img/icons/icn-footer-logo-599-73.svg">
-      </div>
-      <div class="footer-social-container">
-        <div class="footer-social-icons">
-          <a href="#">
-            <img src="/wp-content/themes/hechinger/static/img/icons/icn-footer-twitter-59-60.svg">
-          </a>
-        </div>
-        <div class="footer-social-icons">
-          <a href="#">
-            <img src="/wp-content/themes/hechinger/static/img/icons/icn-footer-facebook-59-60.svg">
-          </a>
-        </div>
-        <div class="footer-social-icons">
-          <a href="#">
-            <img src="/wp-content/themes/hechinger/static/img/icons/icn-footer-instagram-59-60.svg">
-          </a>
-        </div>
-        <div class="footer-social-icons">
-          <a href="#">
-            <img src="/wp-content/themes/hechinger/static/img/icons/icn-footer-rss-59-60.svg">
-          </a>
-        </div>
-      </div> <!-- .footer-social-container -->
-    </div> <!-- .footer-top-block -->
+    <div class="ftr-logo-mod">
+      <div class="ftr-logo-container">
+        <a href="/"><img src="/wp-content/themes/hechinger/static/img/icons/icn-footer-logo-599-73.svg"></a>
+      </div> <!-- /footer-logo-container -->
+
+      <div class="ftr-social-container">
+        <ul class="social-items social--ftr">
+          <li class="social-item icon-twitter-ftr">
+            <a target="_blank" class="social-item-link" href="#">Twitter<i class="icon"></i></a>
+          </li> <!-- social-items social--footer -->
+          <li class="social-item icon-facebook-ftr">
+            <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Facebook</a>
+          </li> <!-- social-items social--ftr -->
+           <li class="social-item icon-instagram-ftr">
+            <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Instagram</a>
+          </li> <!-- social-items social--ftr -->
+           <li class="social-item icon-rss-ftr">
+            <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Rss</a>
+          </li> <!-- social-items social--ftr -->
+        </ul> <!-- /social-items -->
+      </div> <!-- /ftr-social-container -->
+    </div> <!-- /ftr-logo-mod -->
 
    <!-- About -->
-    <div class="l-footer-info">
+    <div class="l-ftr-info">
     <div class="grid-item">
-      <h4 class="footer-hdr">About Us</h4>
-        <p class="footer-text">We cover inequality and innovation in education with in-depth journalism that uses research, data and stories from classrooms and campuses to show the public how education can be improved and why it matters.</p>
-      <a class="footer-link-black" href="#">
+      <h4 class="ftr-hdr">About Us</h4>
+        <p class="ftr-text">We cover inequality and innovation in education with in-depth journalism that uses research, data and stories from classrooms and campuses to show the public how education can be improved and why it matters.</p>
+      <a class="ftr-link-black" href="#">
         Learn more about us
-        <span class="footer-arrow">
+        <span class="ftr-arrow">
           <img src="/wp-content/themes/hechinger/static/img/icons/icn-arrow-black_bold-36-35.svg">
         </span>
       </a>
-    </div> <!-- .footer-about-block -->
+    </div> <!-- .ftr-about-block -->
 
    <!-- Media Partners -->
     <div class="grid-item">
-      <h4 class="footer-hdr">Media Partners</h4>
-        <p class="footer-text">Our collaborations with news organizations across the nation enable us to reach even wider audiences.</p>
-        <div class="l-footer-partners">
+      <h4 class="ftr-hdr">Media Partners</h4>
+        <p class="ftr-text">Our collaborations with news organizations across the nation enable us to reach even wider audiences.</p>
+        <div class="l-ftr-partners">
           <div class="media-block">
             <img src="/wp-content/themes/hechinger/static/img/partners/icn-partner-NBC_News-300-100.svg">
           </div> <!-- /media-block -->
@@ -93,51 +92,33 @@
            <div class="media-block">
             <img src="/wp-content/themes/hechinger/static/img/partners/icn-partner-US_News_and_World_Report-300-100.svg">
           </div> <!-- /media-block -->
-        </div> <!-- /l-footer-partner -->
+        </div> <!-- /l-ftr-partner -->
 
-      <a class="footer-link-black" href="#">
+      <a class="ftr-link-black" href="#">
         All Media Partners
-        <span class="footer-arrow">
+        <span class="ftr-arrow">
           <img src="/wp-content/themes/hechinger/static/img/icons/icn-arrow-black_bold-36-35.svg">
         </span>
       </a>
-    </div> <!-- .footer-partner-block -->
-  </div> <!-- .footer-page -->
-  </div> <!-- /ftr-top -->
+    </div> <!-- .ftr-partner-block -->
+  </div> <!-- .ftr-page -->
+  </div> <!-- /l-content -->
+</div> <!-- /ftr-top -->
 
   <div class="ftr-bottom">
    <!-- Site Nav & Copyright -->
   <div class="site-nav-copyright">
-    <nav class="footer-site-nav">
-      <ul class="footer-nav-items">
-        <li class="footer-nav-item">
-          <a class="footer-nav-link" href="#">ABOUT</a>
-        </li>
-        <li class="footer-nav-item">
-          <a class="footer-nav-link" href="#">SPECIAL REPORTS</a>
-        </li>
-        <li class="footer-nav-item">
-          <a class="footer-nav-link" href="#">NEWS</a>
-        </li>
-        <li class="footer-nav-item">
-          <a class="footer-nav-link" href="#">K-12</a>
-        </li>
+    <nav class="ftr-site-nav">
+      <ul class="ftr-nav-items">
+        {% for i in 1..6 %}
+          <li class="ftr-nav-item">
+            <a class="ftr-nav-link" href="#">ftr Link</a>
+          </li>
+        {% endfor %}
+      </ul> <!-- /ftr-nav-items -->
+    </nav> <!-- .ftr-site-nav -->
 
-        <li class="footer-nav-item">
-          <a class="footer-nav-link" href="#">HIGHER ED</a>
-        </li>
-
-        <li class="footer-nav-item">
-          <a class="footer-nav-link" href="#">CONTACT</a>
-        </li>
-
-        <li class="footer-nav-item">
-          <a class="footer-nav-link" href="#">STAFF</a>
-        </li>
-      </ul> <!-- /footer-nav-items -->
-    </nav> <!-- .footer-site-nav -->
-
-    <p class="footer-copyright-msg">
+    <p class="ftr-copyright-msg">
       Copyright © 2010-2014 by Teachers College at Columbia University. All rights reserved.
     </p>
   </div> <!-- .site-nav-copyright -->

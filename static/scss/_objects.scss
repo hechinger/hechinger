@@ -255,7 +255,7 @@ $partners:  Advocate,
 }
 
 .section-hdr--med {
-  @extend %topic-header;
+  @extend %topic-header !optional;
 }
 
 

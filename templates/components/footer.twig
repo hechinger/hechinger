@@ -1,35 +1,34 @@
 {% block above_footer %}
-<!-- Newsletter Signup -->
-<div class="newsletter-block">
-    <div class="newsletter-border-top"></div>
-    <p class="newsletter-hdr">
-      The Hechinger Newsletter
-    </p>
-    <p class="newsletter-hdr-stacked">
-      The<br>Hechinger<br>Newsletter
-    </p>
-    <div class="newsletter-slash">
-      <img src="/wp-content/themes/hechinger/static/img/icons/icn-teaser-slash_black-296-310.svg">
-    </div>
-    <div class="newsletter-text">
-      <span class="newsletter-text-bold">
-        Never Miss a Story
-      </span>
-        Stay in the know with weekly updates from The Hechinger Report
+  <!-- Newsletter Signup -->
+  <div class="ftr-promo-mod">
+    <div class="l-content">
+      <div class="ftr-promo-outer">
+        <div class="ftr-promo-bdr ftr-promo-bdr--top"></div>
+        <div class="ftr-promo-inner">
+          <div class="ftr-promo-hdr">
+            <p class="ftr-promo-h">The <br>Hechinger <br>Newsletter</p>
+          </div> <!-- /ftr-promo-hdr -->
 
-    <div class="newsletter-email-form">
-      <p class="newsletter-prompt">
-        Your email address
-      </p>
-      <a class="newsletter-signup" href="#">
-        SIGN UP
-      </a>
-    </div> <!-- .newsletter-email-form -->
-    </div> <!-- .newsletter-text -->
-    <div class="newsletter-border-bottom"></div>
-  </div> <!-- .newsletter-block -->
+          <div class="ftr-promo-main">
+            <p class="ftr-promo-text"><span class="ftr-promo-text--bold">Never Miss a Story</span>
+              Stay in the know with weekly updates from The Hechinger Report</p>
 
+            <div class="ftr-promo-form">
+              <form class="form-block" action="" method="post" id="subscribe-form" name="subscribe-form" target="_blank" novalidate="">
+                <label class="ftr-label" for="email_input">Email address</label>
+                    <input class="ftr-input" type="email" id="email_input" name="EMAIL" placeholder="Enter your email">
+                  <input type="submit" value="Subscribe" name="subscribe" id="subscribe" class="ftr-promo-btn">
+              </form>
+            </div> <!-- /ftr-promo-form -->
+          </div> <!-- /ftr-promo-main -->
+        </div> <!-- /ftr-promo-inner -->
+        <div class="ftr-promo-bdr ftr-promo-bdr--bottom"></div>
+      </div> <!-- /ftr-promo-outer -->
+    </div> <!-- /l-content -->
+  </div> <!-- /ftr-promo-mod -->
 {% endblock %} {# above_footer #}
+
+
 
 <footer class="site-ftr">
   <div class="l-content">
@@ -43,16 +42,20 @@
 
       <div class="ftr-social-container">
         <ul class="social-items social--ftr">
-          <li class="social-item icon-twitter-ftr">
+          <li class="social-item icon-twitter-footer">
             <a target="_blank" class="social-item-link" href="#">Twitter<i class="icon"></i></a>
           </li> <!-- social-items social--footer -->
-          <li class="social-item icon-facebook-ftr">
+          <li class="social-item icon-facebook-footer">
             <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Facebook</a>
           </li> <!-- social-items social--ftr -->
-           <li class="social-item icon-instagram-ftr">
+
+          {#
+           <li class="social-item icon-instagram-footer">
             <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Instagram</a>
           </li> <!-- social-items social--ftr -->
-           <li class="social-item icon-rss-ftr">
+          #}
+
+           <li class="social-item icon-rss-footer">
             <a target="_blank" class="social-item-link" href="#"><i class="icon"></i>Rss</a>
           </li> <!-- social-items social--ftr -->
         </ul> <!-- /social-items -->
@@ -125,5 +128,6 @@
   </div> <!-- /ftr-bottom -->
 
 </footer> <!-- /site-ftr -->
+
 
 

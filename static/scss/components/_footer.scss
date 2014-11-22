@@ -17,9 +17,12 @@
 
 .ftr-top {
   @include pie-clearfix;
+  position: relative;
   margin-bottom: $space-grid--half;
+  padding-bottom: $space-grid;
   @include mq($medium) {
     margin-bottom: $space-grid;
+    padding-bottom: 0;
   }
 }
 
@@ -32,22 +35,24 @@
 
 // figure out rule
 .l-ftr-info {
-  margin-top: $space-grid;
+  margin-top: $space-grid--half;
+
+  @include mq($medium) { margin-top: $space-grid;}
   @include mq($medium, $medium-lg) {
-     @include media-grid(2, 40px, '.grid-item');
+     @include media-grid(2, 50px, '.grid-item');
   }
 
   @include mq($medium-lg) {
-    @include media-grid(2, 55px, '.grid-item');
+    @include media-grid(2, 60px, '.grid-item');
     .grid-item {
          &:after {
             position: absolute;
             content: '\0020';
             top: 0;
             bottom: 0;
-            right: -20px;
+            right: -30px;
             width: 1px;
-            background-color: $black;
+            background-color: $black-80;
           }
         &:nth-child( 2n +2 ) { &:after { background-color: transparent; } }
       }
@@ -69,14 +74,14 @@
 // --------------------------------------------
 // --------------------------------------------
 //
-// ftr
+// Footer Styles
 //
 // --------------------------------------------
 // --------------------------------------------
 
 .ftr-logo-mod {
   @include pie-clearfix;
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid $black-80;
   padding-bottom: 25px;
 }
 
@@ -85,7 +90,7 @@
   // margin: auto 5%;
   display: block;
   max-width: 300px;
-  margin: 0 auto 15px;
+  // margin: 0 auto 15px;
   @include mq($medium) {
     float: left;
     margin: 0;
@@ -95,9 +100,12 @@
 
 .ftr-social-container {
   @include pie-clearfix;
+  position: absolute;
+  bottom: 10px;
   display: block;
   text-align: center;
   @include mq($medium) {
+    position: static;
     float: right;
     margin: 0;
   }
@@ -115,14 +123,14 @@
 
 .ftr-hdr {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   font-family: $he-accent;
   font-size: 19px;
   font-weight: $font-weight-black;
   color: $black;
   // line-height: 60px;
   line-height: 1;
-  border-bottom: 0.35em solid black;
+  border-bottom: 4px solid black;
   padding-bottom: 5px;
 }
 
@@ -137,36 +145,6 @@
   @include mq($medium) { font-size: 22px; }
 }
 
-// .ftr-about-block {
-//   color: $black;
-//   font-family: $he-sans;
-//   font-size: 18px;
-//   font-weight: $font-weight-lt;
-//   border-bottom: 1px solid $black;
-//   padding-bottom: 9px;
-//   margin: 9px 9% auto 9%;
-//   float: left;
-
-//   @include mq(402px) {
-//     padding-bottom: 19px;
-//     margin-top: 19px;
-//   }
-
-//   @include mq(600px) {
-//     font-size: 22px;
-//     padding-bottom: 39px;
-//     margin: 39px 9% auto 9%;
-//   }
-
-//   @include mq(1040px) {
-//     width: 37%;
-//     padding:0 9% 0 0;
-//     margin-right: 0;
-//     clear: left;
-//     border-right: 1px solid $black;
-//     border-bottom: none;
-//   }
-// }
 
 .ftr-arrow {
   width: 11px;
@@ -182,68 +160,6 @@
   text-decoration: none;
 }
 
-// .ftr-partner-block {
-//   font-family: $he-sans;
-//   font-size: 18px;
-//   font-weight: $font-weight-lt;
-//   color: $black;
-//   margin: 9px 9% auto 9%;
-//   float: left;
-
-//   @include mq(388px) {
-//     margin-top: 19px;
-//   }
-
-//   @include mq(600px) {
-//     font-size: 22px;
-//     margin-top: 39px;
-//   }
-
-//   @include mq(1040px) {
-//   width: 37%;
-//   margin-left: auto;
-//   float: right;
-//   clear: right;
-//   }
-// }
-
-// .ftr-partner-logo-container {
-//   line-height: 40px;
-//   display: block;
-// }
-
-// .partner-icons-left {
-//   width: 50%;
-//   float: left;
-
-//   @include mq(741px) {
-//     display: inline;
-//     float: none;
-//   }
-// }
-
-// .partner-icons-right {
-//   width: 50%;
-//   float: right;
-
-//   @include mq(741px) {
-//     display: inline;
-//     float: none;
-//   }
-// }
-
-// .ftr-partner-icons {
-//   width: 70%;
-//   max-width: 165px;
-//   margin: 10px;
-//   display: block;
-
-//   @include mq(741px) {
-//     width: 50%;
-//     max-width: 110px;
-//     display: inline-block;
-//   }
-// }
 
 .site-nav-copyright {
   width: 88%;
@@ -255,11 +171,11 @@
   // display: none;
 
   @include mq(717px) {
-  display: inline-block;
-  width: 100%;
-  // margin: 25px auto auto;
-  // float: left;
-  text-align: center;
+    display: inline-block;
+    width: 100%;
+    // margin: 25px auto auto;
+    // float: left;
+    text-align: center;
   }
 }
 
@@ -274,7 +190,7 @@
 
 .ftr-nav-item {
   float: left;
-  margin-left: 25px;
+  margin-left: 40px;
   text-transform: uppercase;
   &:first-child { margin-left: 0; }
 }
@@ -284,9 +200,10 @@
   font-family: $he-sans;
   font-weight: $font-weight-bold;
   font-size: 13px;
-  color: $black-40;
+  color: $black-20;
   text-decoration: none;
-  @include mq(874px) {
+  letter-spacing: 1px;
+  @include mq($large) {
       font-size: 16px;
   }
 }
@@ -302,211 +219,158 @@
   text-align: center;
 }
 
-// .ftr-block-yellow {
-//   background-color: $he-main;
-//   width: 100%;
-//   height: 790px;
-
-//   @include mq(402px) {
-//     height: 760px;
-//   }
-
-//   @include mq(600px) {
-//     height: 830px;
-//   }
-
-//   @include mq(741px) {
-//     height: 720px;
-//   }
-
-//   @include mq(1040px) {
-//     height: 560px;
-//   }
-// }
-
-// .ftr-bar-black{
-//   background-color: $black;
-//   width: 100%;
-//   height: 52px;
-
-//   @include mq(717px) {
-//   height: 92px;
-//   }
-// }
 
 
 
 // --------------------------------------------
 // --------------------------------------------
 //
-// Newsletter
+// Footer Promo
 //
 // --------------------------------------------
 // --------------------------------------------
-.newsletter-block {
-  background-color: white;
-  width: 100%;
-  height: 204px;
-  margin-bottom: -50px;
-  display: inline-block;
-  display: none;
-}
-
-
-
-.newsletter-border-top{
-  width: 97%;
-  height: 54px;
-  border-top: 10px solid $black;
-  border-left: 10px solid $black;
-  border-right: 10px solid $black;
-  margin: auto 1.5% -25px 1.5%;
-  float: left;
-
-  @include mq(775px) {
-    margin: auto 1.5% -5px 1.5%;
+.ftr-promo-mod {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 25px;
+  @include mq($medium) {
+    margin-bottom: -100px;
   }
 }
 
-.newsletter-border-bottom{
-  width: 96%;
-  height: 54px;
-  border-bottom: 10px solid $black;
-  border-left: 10px solid $black;
-  border-right: 10px solid $black;
-  margin: -25px 2% auto 2%;
-  float: left;
-  @include mq(402px) {
-    margin-top: -20px;
-  }
+.ftr-promo-outer {
+  background-color: #fff;
+  @include mq($medium) { padding: 20px; }
+}
 
-  @include mq(600px) {
-    width: 97%;
-    margin-left: 1.5%;
-    margin-right: 1.5%;
+.ftr-promo-inner {
+  @include pie-clearfix;
+  padding: 20px 25px;
+  @include mq($medium) {
+    padding: 35px 50px;
   }
 }
 
-.newsletter-hdr {
-  font-family: $he-accent;
-  font-size: 17px;
-  font-weight: $font-weight-black;
-  color: $black;
-  margin: 20px auto auto 8%;
-
-  @include mq(440px) {
-    font-size: 25px;
-  }
-
-  @include mq(600px) {
-    margin: 20px auto auto 6%;
-  }
-
-  @include mq(775px) {
-    display: none;
-  }
-}
-
-.newsletter-hdr-stacked {
-  display: none;
-
-  @include mq(775px) {
-    font-family: $he-accent;
-    font-size: 25px;
-    font-weight: $font-weight-black;
-    color: $black;
-    margin: 20px auto auto 6%;
-    display: inline-block;
+.ftr-promo-hdr {
+  position: relative;
+  @include mq($large) {
+    width: 23%;
     float: left;
   }
+  &:after {
+    position: absolute;
+    transform: rotate(30deg);
+    content: '\0020';
+    top: 0;
+    bottom: 0;
+    left: 110%;
+    width: 2px;
+    background-color: transparent;
+    @include mq($large) { background-color: black; }
+  }
 }
 
-.newsletter-slash {
-  display: none;
+.ftr-promo-main {
+  @include mq($large) {
+    float: right;
+    width: 65%;
+  }
+}
 
-  @include mq(1103px) {
-    width: 135px;
-    margin-left: 20px;
-    display: inline-block;
+.ftr-promo-h {
+  font-family: $he-accent;
+  font-size: 18px;
+  font-weight: $font-weight-black;
+  color: $black;
+  margin-bottom: 10px;
+  // padding: 20px 0 30px;
+
+  @include mq($medium) { font-size: 25px; }
+
+  @include mq($large) {
+    padding: 20px 0 30px;
+    margin: 0;
   }
 
+  > br {
+    display: none;
+    @include mq($large) { display: block; }
+  }
 }
 
-.newsletter-text {
+
+.ftr-promo-text {
   font-family: $he-sans;
   font-size: 16px;
   font-weight: $font-weight-lt;
   color: $black;
-  margin: 20px 8% auto 8%;
-
-  @include mq(440px) {
-    font-size: 18px;
-  }
-
-  @include mq(621px) {
-    margin: 20px 6% auto 6%;
-  }
-
-  @include mq(775px) {
-    font-size: 25px;
-    width: 55%;
-    margin: 6px 6% auto auto;
-    display: inline-block;
-    float: right;
-  }
+  @include mq($medium) { font-size: 25px; }
 }
 
-
-.newsletter-text-bold {
+.ftr-promo-text--bold {
   font-weight: $font-weight-bold;
+  margin-right: 5px;
 }
 
-.newsletter-email-form {
-  border-bottom: 1px solid $black-40;
+.ftr-promo-bdr {
+  position: relative;
+  height: 2px;
   width: 100%;
-  margin: 6px 0 0;
-  display: inline-block;
+  background-color: black;
+  @include mq($medium) { height: 10px; }
 
-  @include mq(775px) {
-    margin-top: 20px;
-    float:left;
+  &:after, &:before {
+    position: absolute;
+    content: '\0020';
+    width: 2px;
+    height: 25px;
+    background-color: $black;
+    @include mq($medium) { width: 10px; height: 50px;  }
   }
+  &:before { left: 0; }
+  &:after { right: 0; }
+
 }
 
-.newsletter-prompt {
-  font-family: $he-sans;
-  font-size: 16px;
-  font-weight: $font-weight-lt;
-  color: $black-40;
-  padding-top: 5px;
-  float: left;
-
-  @include mq(402px) {
-    margin-top: 7px;
-  }
-
-  @include mq(440px) {
-    font-size: 18px;
-  }
-
-  @include mq(775px) {
-    font-size: 25px;
-    margin-top: 5px;
-  }
+.ftr-promo-bdr--top {
+  &:after, &:before { top: 0; }
+}
+.ftr-promo-bdr--bottom {
+  &:after, &:before { bottom: 0; }
 }
 
-.newsletter-signup {
-  background-color: $he-secondary;
-  font-family: $he-sans;
-  font-size: 12px;
-  font-weight: $font-weight-lt;
-  color: white;
-  text-decoration: none;
-  padding: 5px 13px;
-  margin: 5px auto;
+.ftr-promo-form {
+  @include pie-clearfix;
+  margin-top: 25px;
+  border-bottom: $bdr-thin;
+  padding-bottom: 15px;
+}
+
+.ftr-label { display: none; }
+
+.ftr-promo-btn {
+  @extend %button;
   float: right;
-
-  @include mq(621px) {
-    font-size: 20px;
-  }
+  font-family: $he-sans;
+  font-weight: $font-weight-lt;
+  font-size: 14px;
+  @include mq($medium) { font-size: 20px; }
 }
+
+
+.ftr-input {
+  display: block;
+  float: left;
+  padding: 0;
+  width: 100%;
+  height: 25px;
+  outline: 0;
+  border: 0;
+  margin: 0 -125px 0 0;
+  -webkit-appearance: none;
+  font-size: 14px;
+  color: $black-80;
+  @include mq($medium) { font-size: 25px; height: 38px; }
+  &:invalid { box-shadow: none; }
+}
+

@@ -1,0 +1,376 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// ftr Layout
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.site-ftr {
+  @include pie-clearfix;
+  padding-top: $space-grid--half;
+  background-color: $he-main;
+  @include mq($medium) {
+    padding-top: 175px;
+  }
+}
+
+.ftr-top {
+  @include pie-clearfix;
+  position: relative;
+  margin-bottom: $space-grid--half;
+  padding-bottom: $space-grid;
+  @include mq($medium) {
+    margin-bottom: $space-grid;
+    padding-bottom: 0;
+  }
+}
+
+.ftr-bottom {
+  @include pie-clearfix;
+  padding: 20px 0;
+  background-color: $black;
+}
+
+
+// figure out rule
+.l-ftr-info {
+  margin-top: $space-grid--half;
+
+  @include mq($medium) { margin-top: $space-grid;}
+  @include mq($medium, $medium-lg) {
+     @include media-grid(2, 50px, '.grid-item');
+  }
+
+  @include mq($medium-lg) {
+    @include media-grid(2, 60px, '.grid-item');
+    .grid-item {
+         &:after {
+            position: absolute;
+            content: '\0020';
+            top: 0;
+            bottom: 0;
+            right: -30px;
+            width: 1px;
+            background-color: $black-80;
+          }
+        &:nth-child( 2n +2 ) { &:after { background-color: transparent; } }
+      }
+  }
+}
+
+
+.l-ftr-partners {
+  @include bp($medium, max) { @include media-grid(4, 25px); }
+  @include bp($medium, $medium-lg) { @include media-grid(2, 25px); }
+  @include bp($medium-lg) { @include media-grid(4, 25px); }
+  .media-block {
+    max-width: 125px;
+    margin-top: 10px;
+  }
+}
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Footer Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.ftr-logo-mod {
+  @include pie-clearfix;
+  border-bottom: 1px solid $black-80;
+  padding-bottom: 25px;
+}
+
+.ftr-logo-container {
+  // width: 90%;
+  // margin: auto 5%;
+  display: block;
+  max-width: 300px;
+  // margin: 0 auto 15px;
+  @include mq($medium) {
+    float: left;
+    margin: 0;
+  }
+
+}
+
+.ftr-social-container {
+  @include pie-clearfix;
+  position: absolute;
+  bottom: 10px;
+  display: block;
+  text-align: center;
+  @include mq($medium) {
+    position: static;
+    float: right;
+    margin: 0;
+  }
+}
+
+.social--ftr {
+  display: inline-block;
+  text-align: center;
+}
+
+// .ftr-social-icons {
+//   margin-left: 5%;
+//   display: block;
+// }
+
+.ftr-hdr {
+  display: inline-block;
+  margin-bottom: 25px;
+  font-family: $he-accent;
+  font-size: 19px;
+  font-weight: $font-weight-black;
+  color: $black;
+  // line-height: 60px;
+  line-height: 1;
+  border-bottom: 4px solid black;
+  padding-bottom: 5px;
+}
+
+.ftr-text {
+  margin-bottom: 10px;
+  font-style: italic;
+  font-family: $he-sans;
+  font-size: 18px;
+  font-weight: $font-weight-lt;
+  line-height: 1.318181818;
+  color: $black;
+  @include mq($medium) { font-size: 22px; }
+}
+
+
+.ftr-arrow {
+  width: 11px;
+  margin-left: 7px;
+  display: inline-block;
+}
+
+.ftr-link-black {
+  font-weight: $font-weight-bold;
+  font-size: 16px;
+  color: $black;
+  line-height: 50px;
+  text-decoration: none;
+}
+
+
+.site-nav-copyright {
+  width: 88%;
+  max-width: 960px;
+  margin: auto;
+}
+
+.ftr-site-nav {
+  // display: none;
+
+  @include mq(717px) {
+    display: inline-block;
+    width: 100%;
+    // margin: 25px auto auto;
+    // float: left;
+    text-align: center;
+  }
+}
+
+
+.ftr-nav-items {
+  @include pie-clearfix;
+  margin-left: 20px;
+  display: inline-block;
+  text-align: center;
+  &:first-child { margin-left: 0; }
+}
+
+.ftr-nav-item {
+  float: left;
+  margin-left: 40px;
+  text-transform: uppercase;
+  &:first-child { margin-left: 0; }
+}
+
+.ftr-nav-link {
+  display: block;
+  font-family: $he-sans;
+  font-weight: $font-weight-bold;
+  font-size: 13px;
+  color: $black-20;
+  text-decoration: none;
+  letter-spacing: 1px;
+  @include mq($large) {
+      font-size: 16px;
+  }
+}
+
+.ftr-copyright-msg {
+  font-family: $he-sans;
+  font-weight: $font-weight-lt;
+  font-size: 11px;
+  color: $black-40;
+  width: 100%;
+  margin: 20px auto auto;
+  float: left;
+  text-align: center;
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Footer Promo
+//
+// --------------------------------------------
+// --------------------------------------------
+.ftr-promo-mod {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 25px;
+  @include mq($medium) {
+    margin-bottom: -100px;
+  }
+}
+
+.ftr-promo-outer {
+  background-color: #fff;
+  @include mq($medium) { padding: 20px; }
+}
+
+.ftr-promo-inner {
+  @include pie-clearfix;
+  padding: 20px 25px;
+  @include mq($medium) {
+    padding: 35px 50px;
+  }
+}
+
+.ftr-promo-hdr {
+  position: relative;
+  @include mq($large) {
+    width: 23%;
+    float: left;
+  }
+  &:after {
+    position: absolute;
+    transform: rotate(30deg);
+    content: '\0020';
+    top: 0;
+    bottom: 0;
+    left: 110%;
+    width: 2px;
+    background-color: transparent;
+    @include mq($large) { background-color: black; }
+  }
+}
+
+.ftr-promo-main {
+  @include mq($large) {
+    float: right;
+    width: 65%;
+  }
+}
+
+.ftr-promo-h {
+  font-family: $he-accent;
+  font-size: 18px;
+  font-weight: $font-weight-black;
+  color: $black;
+  margin-bottom: 10px;
+  // padding: 20px 0 30px;
+
+  @include mq($medium) { font-size: 25px; }
+
+  @include mq($large) {
+    padding: 20px 0 30px;
+    margin: 0;
+  }
+
+  > br {
+    display: none;
+    @include mq($large) { display: block; }
+  }
+}
+
+
+.ftr-promo-text {
+  font-family: $he-sans;
+  font-size: 16px;
+  font-weight: $font-weight-lt;
+  color: $black;
+  @include mq($medium) { font-size: 25px; }
+}
+
+.ftr-promo-text--bold {
+  font-weight: $font-weight-bold;
+  margin-right: 5px;
+}
+
+.ftr-promo-bdr {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  @include mq($medium) { height: 10px; }
+
+  &:after, &:before {
+    position: absolute;
+    content: '\0020';
+    width: 2px;
+    height: 25px;
+    background-color: $black;
+    @include mq($medium) { width: 10px; height: 50px;  }
+  }
+  &:before { left: 0; }
+  &:after { right: 0; }
+
+}
+
+.ftr-promo-bdr--top {
+  &:after, &:before { top: 0; }
+}
+.ftr-promo-bdr--bottom {
+  &:after, &:before { bottom: 0; }
+}
+
+.ftr-promo-form {
+  @include pie-clearfix;
+  margin-top: 25px;
+  border-bottom: $bdr-thin;
+  padding-bottom: 15px;
+}
+
+.ftr-label { display: none; }
+
+.ftr-promo-btn {
+  @extend %button;
+  float: right;
+  font-family: $he-sans;
+  font-weight: $font-weight-lt;
+  font-size: 14px;
+  @include mq($medium) { font-size: 20px; }
+}
+
+
+.ftr-input {
+  display: block;
+  float: left;
+  padding: 0;
+  width: 100%;
+  height: 25px;
+  outline: 0;
+  border: 0;
+  margin: 0 -125px 0 0;
+  -webkit-appearance: none;
+  font-size: 14px;
+  color: $black-80;
+  @include mq($medium) { font-size: 25px; height: 38px; }
+  &:invalid { box-shadow: none; }
+}
+

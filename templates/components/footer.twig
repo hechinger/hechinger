@@ -1,28 +1,9 @@
 {% block above_footer %}
-  <!-- Newsletter Signup -->
   <div class="ftr-promo-mod">
     <div class="l-content">
       <div class="ftr-promo-outer">
-        <div class="ftr-promo-bdr ftr-promo-bdr--top"></div>
-        <div class="ftr-promo-inner">
-          <div class="ftr-promo-hdr">
-            <p class="ftr-promo-h">The <br>Hechinger <br>Newsletter</p>
-          </div> <!-- /ftr-promo-hdr -->
-
-          <div class="ftr-promo-main">
-            <p class="ftr-promo-text"><span class="ftr-promo-text--bold">Never Miss a Story</span>
-              Stay in the know with weekly updates from The Hechinger Report</p>
-
-            <div class="ftr-promo-form">
-              <form class="form-block" action="" method="post" id="subscribe-form" name="subscribe-form" target="_blank" novalidate="">
-                <label class="ftr-label" for="email_input">Email address</label>
-                    <input class="ftr-input" type="email" id="email_input" name="EMAIL" placeholder="Enter your email">
-                  <input type="submit" value="Subscribe" name="subscribe" id="subscribe" class="ftr-promo-btn">
-              </form>
-            </div> <!-- /ftr-promo-form -->
-          </div> <!-- /ftr-promo-main -->
-        </div> <!-- /ftr-promo-inner -->
-        <div class="ftr-promo-bdr ftr-promo-bdr--bottom"></div>
+          <!-- Newsletter Signup -->
+        {% include "/components/promo-signup.twig" %}
       </div> <!-- /ftr-promo-outer -->
     </div> <!-- /l-content -->
   </div> <!-- /ftr-promo-mod -->

@@ -1,0 +1,152 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Promo Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.promo-mod { }
+
+.promo-inner {
+  @include pie-clearfix;
+  padding: 20px 25px;
+  @include mq($medium) {
+    padding: 35px 50px;
+  }
+}
+
+.promo-hdr {
+  position: relative;
+  @include mq($large) {
+    width: 23%;
+    float: left;
+  }
+  &:after {
+    position: absolute;
+    transform: rotate(30deg);
+    content: '\0020';
+    top: 0;
+    bottom: 0;
+    left: 110%;
+    width: 2px;
+    background-color: transparent;
+    @include mq($large) { background-color: black; }
+  }
+}
+
+.promo-main {
+  @include mq($large) {
+    float: right;
+    width: 65%;
+  }
+}
+
+.promo-h {
+  font-family: $he-accent;
+  font-size: 18px;
+  font-weight: $font-weight-black;
+  color: $black;
+  margin-bottom: 10px;
+  // padding: 20px 0 30px;
+
+  @include mq($medium) { font-size: 25px; }
+
+  @include mq($large) {
+    padding: 20px 0 30px;
+    margin: 0;
+  }
+
+  > br {
+    display: none;
+    @include mq($large) { display: block; }
+  }
+}
+
+
+.promo-text {
+  font-family: $he-sans;
+  font-size: 16px;
+  font-weight: $font-weight-lt;
+  color: $black;
+  @include mq($medium) { font-size: 25px; }
+}
+
+.promo-text--bold {
+  font-weight: $font-weight-bold;
+  margin-right: 5px;
+}
+
+.promo-bdr {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  @include mq($medium) { height: 10px; }
+
+  &:after, &:before {
+    position: absolute;
+    content: '\0020';
+    width: 2px;
+    height: 25px;
+    background-color: $black;
+    @include mq($medium) { width: 10px; height: 50px;  }
+  }
+  &:before { left: 0; }
+  &:after { right: 0; }
+
+}
+
+.promo-bdr--top {
+  &:after, &:before { top: 0; }
+}
+.promo-bdr--bottom {
+  &:after, &:before { bottom: 0; }
+}
+
+.promo-form {
+  @include pie-clearfix;
+  margin-top: 25px;
+  border-bottom: $bdr-thin;
+  padding-bottom: 15px;
+}
+
+.promo-label { display: none; }
+
+.promo-btn {
+  @extend %button;
+  float: right;
+  font-family: $he-sans;
+  font-weight: $font-weight-lt;
+  font-size: 14px;
+  @include mq($medium) { font-size: 20px; }
+}
+
+
+.promo-input {
+  display: block;
+  float: left;
+  padding: 0;
+  width: 100%;
+  height: 25px;
+  outline: 0;
+  border: 0;
+  margin: 0 -125px 0 0;
+  -webkit-appearance: none;
+  font-size: 14px;
+  color: $black-80;
+  @include mq($medium) { font-size: 25px; height: 38px; }
+  &:invalid { box-shadow: none; }
+}
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Promo Signup
+//
+// --------------------------------------------
+// --------------------------------------------

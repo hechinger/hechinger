@@ -18,22 +18,42 @@
   width: 100%;
   height: 60px;
   border: none;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 20px;
+  margin-top: 20px;
   background-color: $black;
   color: white;
   font-family: $he-sans;
   font-size: 30px;
   font-weight: $font-weight-bold;
-  -webkit-appearance: none;
+  -webkit-appearance: none !important;
+  -webkit-autofill: $he-secondary;
+
+  #inputID:autofill {
+    background-color: $he-secondary !important;
+  }
+
   &:focus {
     outline: none;
   }
+
   @include bp($medium) {
+    margin-top: 0;
     height: 90px;
     padding: 0 0 0 30px;
     font-size: 40px;
   }
 }
+
+input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px $he-secondary inset;
+    -webkit-text-fill-color: white;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px $he-secondary inset;
+    -webkit-text-fill-color: white;
+} // tricky sticky overriding the webkit autofill color. Thanks, stackoverflow!
+
 
 .search-page-submit-button {
   @include ui-icon('icn-search-white-54-54', transparent);
@@ -43,17 +63,31 @@
   bottom: 0;
   border: none;
   padding: 30px;
+  margin-top: 20px;
   display: block;
   width: 100px;
+
   @include mq("max", $medium) {
     width: 60px;
     padding: 17px;
   }
+
+  @include bp($medium) {
+    margin-top: 0;
+  }
 }
 .l-search-results {
   // * + * { margin-top: 50px; }
-  margin: 0 $site-margin;
-  max-width: $content-max;
+  width: 90%;
+  margin: 0 auto;
+
+  @include bp($medium) {
+    // margin-top: 0;
+    padding-left: 50px;
+    margin: 0 $site-margin;
+    max-width: $content-max;
+  }
+
   @include bp($no-content-margin) {
     margin: 0 auto;
   }
@@ -62,15 +96,24 @@
 .search-results-inner {
   // margin: 0 auto;
   // max-width: $content-max--inner;
-  padding-top: 50px;
+  padding-top: 30px;
+
+  @include bp($medium) {
+    padding-top: 50px;
+  }
 }
 
 .results-number {
   font-family: $he-accent;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: $font-weight-black;
   color: $black;
-  padding-left: 50px;
+  // padding-left: 50px;
+
+    @include bp($medium) {
+    padding-left: 50px;
+    font-size: 16px;
+  }
 }
 
 .no-results {

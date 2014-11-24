@@ -1,10 +1,15 @@
 {% extends 'layout.twig' %}
 
+{% block navbar %}
+  {% include 'components/nav-bar.twig' %}
+{% endblock %}
+
+
 {# archive page layouts go here #}
 {% block body %}
 
   {% block header %}
-    <div class="archive-yellow-box"></div>
+    <!-- <div class="archive-yellow-box"></div> -->
     <header class="l-archive-hdr-wrap l-page-hdr">
       <h1 class="archive-hdr">News</h1>
     </header>

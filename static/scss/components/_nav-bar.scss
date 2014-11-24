@@ -16,6 +16,11 @@
   @include mq($large) { padding-bottom: 130px; }
 }
 
+.site-header--no-pad {
+  background-color: transparent;
+  padding-bottom: 0;
+}
+
 
 
 

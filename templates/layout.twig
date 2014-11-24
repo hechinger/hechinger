@@ -1,32 +1,56 @@
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{% block title %}Hechinger Report{% endblock %}</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{site.language_attributes}}> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" {{site.language_attributes}}> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}Hechinger Report{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="/wp-content/themes/hechinger/static/css/screen.css">
-  <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/modernizr/modernizr.js"></script>
-  {% block styles %}{# page-specific stylesheets #}{% endblock %}
-</head>
-<body>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
 
-  <header class="site-header">
-    {% block navbar %}
-      {% include 'components/nav-bar.twig' %}
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="/wp-content/themes/hechinger/static/css/screen.css">
+
+    <!-- Modernizr -->
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/modernizr/modernizr.js"></script>
+
+    <!-- Template Specific Styles -->
+    {% block styles %}{# page-specific stylesheets #}{% endblock %}
+  </head>
+
+
+  <body>
+
+    <!-- Site Header -->
+    <!-- ===================================== -->
+      {% block navbar %}
+        {% include 'components/nav-bar.twig' %}
+      {% endblock %}
+
+    <!-- Content -->
+    <!-- ===================================== -->
+    <section id="content" role="main" class="content-wrapper">
+      {% block body %}{# page content goes here  #}{% endblock %}
+    </section> <!-- /content content-wrapper -->
+
+    <!-- Footer -->
+    <!-- ===================================== -->
+    {% block site_footer %}
+      {% include 'components/footer.twig' %}
     {% endblock %}
-  </header> <!-- /site-header -->
 
-  <section id="content" role="main" class="content-wrapper">
-    {% block body %}{# page content goes here  #}{% endblock %}
-  </section> <!-- /content content-wrapper -->
+    <!-- Javascript -->
+    <!-- ===================================== -->
+    <script type="text/javascript" src="{{site.theme.uri}}/static/vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="{{site.theme.uri}}/static/js/main.js"></script>
+    {% block scripts %}{# page-specific scripts #}{% endblock %}
 
-  {% include 'components/footer.twig' %}
+  </body>
 
-  {% block scripts %}{# page-specific scripts #}{% endblock %}
-
-  <script type="text/javascript" src="{{site.theme.uri}}/static/vendor/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="{{site.theme.uri}}/static/js/main.js"></script>
-</body>
 </html>

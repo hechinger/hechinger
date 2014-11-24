@@ -1,9 +1,17 @@
-.basic-page-hdr {
+// --------------------------------------------
+// --------------------------------------------
+//
+// Basic Page Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.page-hdr {
   @extend %bp-trans;
   padding: 30px $site-margin 0;
   background-color: #fff;
   border-top: 2px solid transparent;
-  margin: 50px auto 10px auto;
+  margin: 0 auto 10px auto;
   width: 100%;
 
   @include mq(500px) {
@@ -14,7 +22,7 @@
   }
 }
 
-.basic-page-hdr-inner {
+.page-hdr-inner {
   @extend %bp-trans;
   margin: -50px auto 0;
   max-width: $content-max--inner;
@@ -26,17 +34,17 @@
   }
 }
 
-.basic-page-hdr-topic {
+.page-hdr-topic {
+  @extend %topic-hdr;
   font-size: 24px;
   font-family: $he-accent;
-  @extend %topic-hdr;
 }
 
-.basic-page-topic-link {
+.page-topic-link {
   @extend %head-link;
 }
 
-.basic-page-h {
+.page-h {
   font-weight: 700;
   font-size: 42px;
   color: black;
@@ -48,7 +56,7 @@
   }
 }
 
-.basic-page-sub-h {
+.page-sub-h {
   font-weight: 300;
   font-size: 18px;
   line-height: 1.272727273;
@@ -58,12 +66,12 @@
   }
 }
 
-.basic-pagehdr-top,
-.basic-page-hdr-h {
+.pagehdr-top,
+.page-hdr-h {
   margin-bottom: 40px;
 }
 
-.basic-page-content {
+.page-content {
   padding: 0 $site-margin;
   margin: 0 auto;
   width: 100%;
@@ -74,12 +82,12 @@
   }
 }
 
-.basic-page-content-inner {
+.page-content-inner {
   margin: 0 auto;
   max-width: $content-max--inner;
 }
 
-.basic-page-category-h {
+.page-category-h {
   font-family: $he-accent;
   font-size: 20px;
   font-weight: 900;
@@ -95,7 +103,7 @@
   }
 }
 
-.basic-page-category-sub-h {
+.page-category-sub-h {
   font-family: $he-sans;
   font-size: 20px;
   font-weight: $font-weight-bold;
@@ -107,7 +115,7 @@
   }
 }
 
-.basic-page-body-text {
+.page-body-text {
   font-family: $he-sans;
   font-size: 14px;
   font-weight: $font-weight-lt;

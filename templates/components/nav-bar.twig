@@ -1,32 +1,35 @@
 {# TODO: fix yellow box when search is open. Fix hover state on "topics" when hovering on subnav. #}
-<div class="l-nav-mod js-nav-mod">
-  <nav class="l-nav-wrap">
-    <a class="nav-logo-link" href="/">
-      <div class="nav-logo">
-        <h1 class="nav-site-h">The Hechinger Report</h1>
-      </div>
-    </a>
-      <h2 class="nav-sub-h">Covering Innovation & Inequality in Education</h2>
-    <div class="nav-item-wrap">
-      <a class="nav-item nav-topics-link is-active" href="#">Topics</a>
-      <ul class="nav-topics-list">
-        <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
-        <a class="nav-sub-item-link is-current-page" href="#"><li class="nav-sub-item">Common Core <span class="nav-sub-bullet"></span></li></a>
-        <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
-        <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
-        <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
-        <a class="nav-sub-item-link all-topics-link" href="#"><li class="nav-sub-item">All Topics</li></a>
-        <a class="nav-sub-item-link nav-sub-about" href="/about"><li class="nav-sub-item">About Hechinger</li></a>
-      </ul>
-      <a class="nav-item nav-about-link" href="/about">About</a>
-      <a class="nav-item nav-search-button js-nav-search-button" href=""></a>
-    </div>
-    <a class="nav-menu-button js-nav-menu-button" href="">menu</a>
-  </nav>
-  <div class="search-form-wrap">
-    <form id="searchform" method="get" action="/index.php">
-      <input class="search-text-input" type="text" name="s" id="s" size="15" placeholder="Search" />
-      <input class="search-submit-button" type="submit" value="" />
-    </form>
-  </div>
-</div>
+<header class="site-header {{css_class ? css_class : ''}}">
+  <div class="l-nav-mod js-nav-mod">
+    <nav class="l-nav-wrap">
+      <a class="nav-logo-link" href="/">
+        <div class="nav-logo">
+          <h1 class="nav-site-h">The Hechinger Report</h1>
+        </div>
+      </a>
+        <h2 class="nav-sub-h">Covering Innovation & Inequality in Education</h2>
+      <div class="nav-item-wrap">
+        <a class="nav-item nav-topics-link is-active" href="#">Topics</a>
+        <ul class="nav-topics-list">
+          <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
+          <a class="nav-sub-item-link is-current-page" href="#"><li class="nav-sub-item">Common Core <span class="nav-sub-bullet"></span></li></a>
+          <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
+          <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
+          <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
+          <a class="nav-sub-item-link all-topics-link" href="#"><li class="nav-sub-item">All Topics</li></a>
+          <a class="nav-sub-item-link nav-sub-about" href="/about"><li class="nav-sub-item">About Hechinger</li></a>
+        </ul>
+        <a class="nav-item nav-about-link" href="/about">About</a>
+        <a class="nav-item nav-search-button js-nav-search-button" href=""></a>
+      </div> <!-- /nav-item-wrap -->
+      <a class="nav-menu-button js-nav-menu-button" href="">menu</a>
+    </nav> <!-- /l-nav-wrap -->
+
+    <div class="search-form-wrap">
+      <form id="searchform" method="get" action="/index.php">
+        <input class="search-text-input" type="text" name="s" id="s" size="15" placeholder="Search" />
+        <input class="search-submit-button" type="submit" value="" />
+      </form>
+    </div> <!-- /search-form-wrap -->
+  </div> <!-- /l-nav-mod -->
+</header> <!-- /site-header -->

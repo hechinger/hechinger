@@ -1,5 +1,9 @@
 {% extends "pages/archive.twig" %}
 
+{% block navbar %}
+  {% include 'components/nav-bar.twig' with {css_class: "site-header--no-pad"} %}
+{% endblock %}
+
 {% block header %}
   {% include 'components/special-report-header.twig' %}
 {% endblock header %}

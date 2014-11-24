@@ -59,6 +59,7 @@
 @import "components/tease-full";
 @import "components/special-report-header";
 @import "components/article-header";
+@import "components/promo";
 
 
 // --------------------------------------------
@@ -163,3 +164,28 @@ body { font-family: $he-sans; }
 
 
 
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Index Page Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.index--nav-items {
+  margin: 80px auto;
+  padding-left: 50px;
+}
+
+.index--nav-item {
+  font-family: $he-sans;
+  font-size: 45px;
+}
+
+.index--nav-item-link {
+  text-decoration: none;
+  color: black;
+  &:hover { text-decoration: underline; }
+}

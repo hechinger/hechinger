@@ -10,6 +10,14 @@ class HechingerPost extends TimberPost {
     return $this->category();
   }
 
+  function partner() {
+    $part = $this->get_terms('partner');
+    if (is_array($part) && count($part) ) {
+      return $part[0];
+    }
+    return false;
+  }
+
   function post_asides() {
     $asides = $this->get_field('aside_group');
     if (is_array($asides)) {

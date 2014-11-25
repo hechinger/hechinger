@@ -1,0 +1,142 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Homepage Layout
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$zone-has-layout:     700px;
+$subzone-has-layout:  500px;
+$subzone-ends-layout: 800px;
+
+
+
+.l-hp-zone {
+
+  > * + * {
+    padding-top: 45px;
+    margin-top: 45px;
+    border-top: 1px solid blue;
+  }
+
+  & + & {
+    margin-top: 45px;
+    padding-top: 45px;
+    border-top: 1px solid pink;
+  }
+}
+
+.l-hp-zone--reports { }
+
+.l-hp-zone--feat { }
+
+
+
+
+
+
+// Layout Modes
+// --------------------------------------------
+
+.l-hp-dos {
+  @include pie-clearfix;
+  @include mq($zone-has-layout) {
+    @include media-grid(2, 25px, '.grid-item');
+  }
+}
+
+.l-hp-dos--rule {
+  @include pie-clearfix;
+  @include mq($zone-has-layout) {
+    display: flex;
+    @include media-grid(2, 50px, '.grid-item');
+    @include grid-rule(2, -25px);
+    p { background-color: red; }
+  }
+}
+
+
+.l-hp-tres {
+  @include pie-clearfix;
+  @include media-grid(3, 25px, '.grid-item');
+}
+
+.l-hp-tres--rule {
+  @include pie-clearfix;
+  // This for intermediate breakpoints when
+  // There is one item which 100%
+  // and two items that have layout
+  @include mq(600px, 800px) {
+    display: flex;
+    .sub-grid-item {
+      position: relative;
+      width: 45%;
+      float: left;
+      &:after {
+        position: absolute;
+        content: '\0020';
+        top: 0;
+        bottom: 0;
+        right: -25px;
+        width: 1px;
+        background-color: $black-10;
+      }
+      &:nth-of-type(2) {
+        float: right;
+        &:after { background-color: transparent; }
+      }
+    }
+  }
+  // All items three up
+  @include bp(800px) {
+    display: flex;
+    @include media-grid(3, 50px, '.grid-item');
+    @include grid-rule(3, -25px);
+  }
+}
+
+
+.l-hp-cuatro {
+  @include pie-clearfix;
+  @include mq(600px, 900px) {
+    @include media-grid(2, 25px, '.grid-item');
+  }
+  @include mq(900px) {
+    @include media-grid(4, 25px, '.grid-item');
+  }
+}
+
+.l-hp-cuatro--rule {
+  @include pie-clearfix;
+  @include mq(600px, 900px) {
+    @include media-grid(2, 50px, '.grid-item');
+    @include grid-rule(2, -25px);
+  }
+  @include mq(900px) {
+    @include media-grid(4, 50px, '.grid-item');
+    @include grid-rule(4, -25px);
+  }
+}
+
+
+
+// These are the subzones inside
+// A more comples l-hp-zone
+.hp-zone--top { }
+.hp-zone--mid { }
+.hp-zone--bottom { }
+
+
+.hp-special-tz {
+  background-color: blue;
+  padding: 45px;
+  color: #fff;
+}
+
+
+.hp-feat-mod {
+  font-size: 55px;
+  background-color: black;
+  padding: 45px;
+}

@@ -1,5 +1,93 @@
 {% extends "layout.twig" %}
 
 {% block body %}
-hi, homepage
+  <div class="l-content">
+
+    <!-- Homepage Zone 1 -->
+    <!-- ===================================== -->
+    {% block hp_zone1 %}
+      <div class="l-hp-zone">
+        <div class="hp-feat-mod">this is the featured story</div>
+        <div class="hp-latest-mod">
+          <div class="l-hp-dos--rule">
+            <div class="grid-item">
+              <p>This is a featured story</p>
+              <p>This is a featured story</p>
+            </div>
+            <div class="grid-item">
+              {% for i in 1..6 %}
+                <p>News item</p>
+              {% endfor %}
+            </div> <!-- /grid-item -->
+          </div> <!-- /l-hp-dos--rule -->
+        </div> <!-- /hp-latest-mod -->
+      </div> <!-- /l-hp-zone -->
+
+    {% endblock hp_zone1 %}
+
+
+    <!-- Homepage Zone Special Reports -->
+    <!-- ===================================== -->
+    {% block hp_reports %}
+      <div class="l-hp-zone l-hp-zone--reports">
+        <div class="l-hp-dos">
+          {% for i in 1..4 %}
+            <div class="grid-item">
+              <div class="hp-special-tz">
+                Special Report Tease
+              </div> <!-- /hp-special-tz -->
+            </div> <!-- /grid-item -->
+          {% endfor %}
+        </div> <!-- /l-hp-dos -->
+      </div> <!-- l-hp-zone l-hp-zone--reports" -->
+    {% endblock hp_reports %}
+
+
+    <!-- Homepage Zone 2 -->
+    <!-- ===================================== -->
+    {% block hp_zone2 %}
+      <div class="l-hp-zone">
+
+        <!-- Zone 2 Top -->
+        <div class="hp-zone--top">
+          <div class="l-hp-tres--rule">
+            <div class="grid-item">Tease head here</div>
+            <div class="grid-item sub-grid-item">Tease head here</div>
+            <div class="grid-item sub-grid-item">Tease head here</div>
+          </div> <!-- /l-hp-tres -->
+        </div> <!-- /hp-zone--top -->
+
+        <!-- Zone 2 Middle -->
+        <div class="hp-zone--middle">
+          middle
+        </div>
+
+        <!-- Zone 2 Bottom -->
+        <div class="hp-zone--bottom">
+          <div class="l-hp-cuatro--rule">
+            {% for i in 1..4 %}
+              <div class="grid-item">Tease</div>
+            {% endfor %}
+          </div> <!-- /l-hp-tres -->
+        </div> <!-- /hp-zone-bottom -->
+
+      </div> <!-- /l-hp-zone -->
+    {% endblock hp_zone2 %}
+
+
+    <!-- Homepage Featured -->
+    <!-- ===================================== -->
+    {% block hp_zone_feat %}
+      <div class="l-hp-zone l-hp-zone--feat">homepage zone feat</div>
+    {% endblock hp_zone_feat %}
+
+
+    <!-- Homepage Zone 3 -->
+    <!-- ===================================== -->
+    {% block hp_zone3 %}
+      <div class="l-hp-zone">homepage zone 3</div>
+    {% endblock hp_zone3 %}
+
+  </div> <!-- /l-content -->
+
 {% endblock body %}

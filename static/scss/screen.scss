@@ -138,9 +138,13 @@ body { font-family: $he-sans; }
 }
 
 .special-report-tz-black-box {
-  padding: 30px;
+  padding: 20px;
   background-color: rgba($black, 0.3);
   position: relative;
+
+  @include mq(550px) {
+    padding: 30px;
+  }
 }
 
 .special-report-tz-content {
@@ -178,12 +182,17 @@ body { font-family: $he-sans; }
 
   @extend %item-bullet;
 
-  font-size: 17px;
-  line-height: 1.294117647;   // 22/17
+  font-size: 14px;
+  line-height: 1.2;   // 22/17
   color: white;
   padding-left: 1em;
   position: relative;
   & + & { margin-top: 0.85em; }
+
+    @include mq(550px) {
+  font-size: 17px;
+  line-height: 1.294117647;
+  }
 
 }
 

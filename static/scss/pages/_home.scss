@@ -17,13 +17,13 @@ $subzone-ends-layout: 800px;
   > * + * {
     padding-top: 45px;
     margin-top: 45px;
-    border-top: 1px solid blue;
+    border-top: $bdr-thin;
   }
 
   & + & {
     margin-top: 45px;
     padding-top: 45px;
-    border-top: 1px solid pink;
+    border-top: $bdr-thin;
   }
 }
 
@@ -57,6 +57,46 @@ $subzone-ends-layout: 800px;
 }
 
 
+// Used in Zone 3 Top inside Right zone
+.l-hp-dos--split-inside {
+  @include pie-clearfix;
+  @include mq(450px) {
+    @include media-grid(2, 60px, '.grid-item');
+    @include grid-rule(2, -30px);
+    .grid-item { padding-top: 15px; padding-bottom: 15px; }
+  }
+}
+
+// Used in Zone 3 Top on Homepage
+.l-hp-dos--split {
+  @include pie-clearfix;
+
+  // The Zone takes on layout
+  @include mq(800px) {
+    position: relative;
+      &:before {
+        position: absolute;
+        content: '\0020';
+        top: 0;
+        bottom: 0;
+        left: 32.5%;
+        width: 1px;
+        background-color: $black-10;
+      }
+   .top-grid-item {
+      width: 30%;
+      float: left;
+    }
+    .top-grid-item--left { }
+    .top-grid-item--right {
+      float: right;
+      width: 65%;
+    }
+
+  }
+}
+
+
 .l-hp-tres {
   @include pie-clearfix;
   @include media-grid(3, 25px, '.grid-item');
@@ -68,7 +108,6 @@ $subzone-ends-layout: 800px;
   // There is one item which 100%
   // and two items that have layout
   @include mq(600px, 800px) {
-    display: flex;
     .sub-grid-item {
       position: relative;
       width: 45%;
@@ -78,11 +117,11 @@ $subzone-ends-layout: 800px;
         content: '\0020';
         top: 0;
         bottom: 0;
-        right: -25px;
+        right: -11%;
         width: 1px;
         background-color: $black-10;
       }
-      &:nth-of-type(2) {
+      &:nth-of-type(3) {
         float: right;
         &:after { background-color: transparent; }
       }
@@ -135,13 +174,12 @@ $subzone-ends-layout: 800px;
 }
 
 
-.hp-feat-mod {
-  font-size: 55px;
-  background-color: black;
-  padding: 45px;
+.hp-feat-mod { }
+
+.crazy-thing {
+  background-color: pink;
+  height: 300px;
 }
-
-
 
 // --------------------------------------------
 // --------------------------------------------
@@ -153,7 +191,11 @@ $subzone-ends-layout: 800px;
 
 .tz { font-family: $he-sans; }
 
-.tz-container {
+.tz-inner {
+  > * + * { margin-top: 15px; }
+}
+
+.tz-content-mod {
   > * + * { margin-top: 15px; }
 }
 
@@ -206,3 +248,70 @@ $subzone-ends-layout: 800px;
   color: $black;
   &:hover { text-decoration: underline; }
 }
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Specific Homepage Tease Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+
+.hp-top-feat-mod {
+  > * + * {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: $bdr-thin;
+  }
+}
+
+
+// Homepage Main
+// --------------------------------------------
+
+.tz-hp-feat--main {
+  .tz-inner {
+     > * + * { margin-top: 20px; }
+  }
+}
+
+.tz-h--feat-lg {
+  font-size: 100px;
+  line-height: 0.9;
+  font-style: italic;
+  font-weight: $font-weight-black;
+  letter-spacing: -2px;
+
+  .tz-h-link { color: black; }
+}
+
+.tz-text--feat-lg {
+  font-size: 29px;
+  line-height: 1.45;
+}
+
+.tz-author--feat-lg {
+  font-size: 15px;
+}
+
+
+// Homepage Regular
+// --------------------------------------------
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Tease Layout Pairs :: needs thinking
+//
+// --------------------------------------------
+// --------------------------------------------
+
+// .l-pair-tz-hp-reg {
+//   @include mq(425px) {
+//     @include pair(45%, 4%, top, right);
+//   }
+// }

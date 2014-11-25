@@ -1,21 +1,43 @@
 {% extends "layout.twig" %}
 
+
+{% block navbar %}
+  {% include 'components/nav-bar.twig' with {css_class: "site-header--hp"} %}
+{% endblock %}
+
+
 {% block body %}
+
   <div class="l-content">
 
     <!-- Homepage Zone 1 -->
     <!-- ===================================== -->
     {% block hp_zone1 %}
       <div class="l-hp-zone">
-        <div class="hp-feat-mod">this is the featured story</div>
-        <div class="hp-latest-mod">
+
+        <!-- hp main feature -->
+        <div class="hp-feat-mod">
+          {% include "/templates/components/tease-hp-featured.twig" %}
+        </div>
+
+        <!-- hp top -->
+        <div class="hp-top-mod">
           <div class="l-hp-dos--rule">
+
+            <!-- top featured stories -->
             <div class="grid-item">
-              {% include "/templates/components/tease-layout.twig" %}
-            </div>
+              <div class="hp-top-feat-mod">
+                {% for i in 1..2 %}
+                  {% include "/templates/components/tease-hp-regular.twig" with {context_class: "reg-lg"} %}
+                {% endfor %}
+              </div> <!-- /hp-zone1-feat-mod -->
+            </div> <!-- /grid-item -->
+
+            <!-- /latest news feed -->
             <div class="grid-item">
               {% include "/templates/components/tease-list-latest.twig" %}
             </div> <!-- /grid-item -->
+
           </div> <!-- /l-hp-dos--rule -->
         </div> <!-- /hp-latest-mod -->
       </div> <!-- /l-hp-zone -->
@@ -48,9 +70,11 @@
         <!-- Zone 2 Top -->
         <div class="hp-zone--top">
           <div class="l-hp-tres--rule">
-            <div class="grid-item">Tease head here</div>
-            <div class="grid-item sub-grid-item">Tease head here</div>
-            <div class="grid-item sub-grid-item">Tease head here</div>
+            {% for i in 1..3 %}
+              <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
+                {% include "/templates/components/tease-hp-stub.twig" with {context_class: 'stub-lg'} %}
+              </div>
+            {% endfor %}
           </div> <!-- /l-hp-tres -->
         </div> <!-- /hp-zone--top -->
 
@@ -63,7 +87,9 @@
         <div class="hp-zone--bottom">
           <div class="l-hp-cuatro--rule">
             {% for i in 1..4 %}
-              <div class="grid-item">Tease</div>
+              <div class="grid-item">
+                {% include "/templates/components/tease-hp-stub.twig" with {context_class: 'stub-med'} %}
+              </div>
             {% endfor %}
           </div> <!-- /l-hp-tres -->
         </div> <!-- /hp-zone-bottom -->
@@ -82,7 +108,44 @@
     <!-- Homepage Zone 3 -->
     <!-- ===================================== -->
     {% block hp_zone3 %}
-      <div class="l-hp-zone">homepage zone 3</div>
+      <div class="l-hp-zone">
+
+        <!-- Zone 3 Top -->
+        <div class="hp-zone--top">
+            <div class="l-hp-dos--split">
+
+              <!-- Zone 3 Top Left side -->
+              <div class="top-grid-item top-grid-item--left">
+                {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
+              </div> <!-- /top-grid-item -->
+
+              <!-- Zone 3 Top Right side -->
+              <div class="top-grid-item top-grid-item--right">
+                <div class="l-hp-dos--split-inside">
+                  {% for i in 1..2 %}
+                    <div class="grid-item">
+                      {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
+                    </div> <!-- /grid-item -->
+                  {% endfor %}
+                </div> <!-- /l-hp-dos--rule -->
+
+                <div class="crazy-thing"> Quote be here </div>
+
+              </div>
+            </div> <!--/l-hp-dos--split -->
+        </div> <!-- /hp-zone--top -->
+
+        <!-- Zone 3 Bottom -->
+        <div class="hp-zone--bottom">
+          <div class="l-hp-tres--rule">
+            {% for i in 1..3 %}
+              <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
+                {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
+              </div>
+            {% endfor %}
+          </div> <!-- /l-hp-tres -->
+        </div> <!-- /hp-zone--bottom -->
+      </div> <!-- /l-hp-zone -->
     {% endblock hp_zone3 %}
 
   </div> <!-- /l-content -->

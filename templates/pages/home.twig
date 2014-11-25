@@ -11,13 +11,10 @@
         <div class="hp-latest-mod">
           <div class="l-hp-dos--rule">
             <div class="grid-item">
-              <p>This is a featured story</p>
-              <p>This is a featured story</p>
+              {% include "/templates/components/tease-layout.twig" %}
             </div>
             <div class="grid-item">
-              {% for i in 1..6 %}
-                <p>News item</p>
-              {% endfor %}
+              {% include "/templates/components/tease-list-latest.twig" %}
             </div> <!-- /grid-item -->
           </div> <!-- /l-hp-dos--rule -->
         </div> <!-- /hp-latest-mod -->

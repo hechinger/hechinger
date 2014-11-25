@@ -1,0 +1,47 @@
+<article class="tz tz-{{post.post_type}} {{css_class ? css_class : ''}}" id="tz-{{post.id}}">
+
+  {% block tease_content %}
+
+    <div class="tz-container">
+
+      {% block tease_img %}
+        <div class="tz-img-mod">
+          <a href="#">
+            <img src="/wp-content/themes/hechinger/static/img/test.jpg" alt="">
+          </a>
+        </div> <!-- /tz-img-mod -->
+      {% endblock tease_img %}
+
+
+      {% block tease_overline %}
+        <h4 class="tz-overline">
+          <a class="tz-overline-link" href="#">Tease Overline</a>
+        </h4>
+      {% endblock tease_overline %}
+
+
+      {% block tease_headline %}
+        <h2 class="tz-h">
+          <a class="tz-h-link" href="#">This is a tease headline</a>
+        </h2>
+      {% endblock tease_headline %}
+
+
+      {% block tease_text %}
+        <p class="tz-text">This is tease text. And more tease text with words right here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, distinctio.</p>
+      {% endblock tease_text %}
+
+
+      {% block tease_author %}
+        <p class="tz-author">by <a class="tz-author-name" href="#">Author Name Here</a></p>
+      {% endblock tease_author %}
+
+    </div> <!-- /tz-container -->
+  {% endblock tease_content %}
+
+</article> <!-- /tz -->
+
+
+
+{# set css_class = 'tz-course-block' #}
+{# extends "teases/tease.twig" #}

@@ -50,9 +50,9 @@ $subzone-ends-layout: 800px;
   @include pie-clearfix;
   @include mq($zone-has-layout) {
     display: flex;
-    @include media-grid(2, 50px, '.grid-item');
-    @include grid-rule(2, -25px);
-    p { background-color: red; }
+    @include media-grid(2, 60px, '.grid-item');
+    @include grid-rule(2, -30px);
+    .grid-item { padding-top: 15px; padding-bottom: 15px; }
   }
 }
 
@@ -139,4 +139,70 @@ $subzone-ends-layout: 800px;
   font-size: 55px;
   background-color: black;
   padding: 45px;
+}
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Tease Style
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.tz { font-family: $he-sans; }
+
+.tz-container {
+  > * + * { margin-top: 15px; }
+}
+
+.tz-img-mod { margin-bottom: 25px; }
+
+.tz-overline {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  letter-spacing: 1px;
+  color: $black-30;
+}
+
+.tz-overline-link {
+  text-decoration: none;
+  color: $black-30;
+  &:hover { text-decoration: underline; }
+}
+
+.tz-h {
+  font-weight: $font-weight-bold;
+  font-size: 36px;
+  line-height: 1.02;
+  letter-spacing: -1px;
+  color: $tease-head-color;
+}
+
+.tz-h-link {
+  text-decoration: none;
+  color: $tease-head-color;
+  &:hover { text-decoration: underline; }
+}
+
+.tz-text {
+  font-weight: $font-weight-lt;
+  font-size: 21px;
+  line-height: 1.33;
+  color: $black-60;
+}
+
+.tz-author {
+  font-weight: $font-weight-lt;
+  font-size: 12px;
+}
+
+.tz-author-name {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  color: $black;
+  &:hover { text-decoration: underline; }
 }

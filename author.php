@@ -19,4 +19,4 @@ if (isset($wp_query->query_vars['author'])){
 if (isset($author->author_image) && strlen($author->author_image)) {
   $author->image = new TimberImage($author->author_image);
 }
-Timber::render(array('pages/author-test.twig', 'pages/author.twig', 'pages/archive.twig'), $data);
+Timber::render(array('pages/author.twig', 'pages/author.twig', 'pages/archive.twig'), $data);

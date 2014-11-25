@@ -8,11 +8,11 @@
           <div class="page-hdr-inner">
             <div class="author-overline">
               <h4 class="author-hdr-topic">
-                {# if author is staff member #}
-                  <a class="author-topic-link" href="#">{# if author is staff use Staff else use Author #}Staff</a>
-                  {# else #}
-                    <!-- <a class="author-topic-link">Author</a> -->
-                {# endif #}
+                {% if author.hech_role|length %}
+                  <a class="author-topic-link" href="#">{{ author.hech_role }}</a>
+                {% else %}
+                  <a class="author-topic-link" href="#">Author</a>
+                {% endif %}
               </h4> <!-- /author-hdr-topic -->
             </div> <!-- /author-overline -->
           </div> <!-- /page-hdr-inner -->
@@ -24,36 +24,52 @@
    <div class="author-bio-mod">
     <article class="author-bio-container">
       <div class="l-author-bio">
+
+      {% if author.image %}
         <div class="art-bd">
           <div class="img-rounded">
-            <img class="author-photo" src="/wp-content/themes/hechinger/static/img/mug_placeholder.jpg" alt="">
+            <img class="author-photo" src="{{ author.image.get_url }}" alt="Photo of {{ author.name }}">
           </div> <!-- /img-rounded -->
         </div> <!-- /art-bio -->
+      {% endif %}
 
         <div class="txt-bd">
-            <h3 class="author-bio-title">Executive Editor</h3>
-            <h1 class="author-bio-name">Sarah Garland</h1>
-            <p class="article-bio-text">Sarah Garland is executive editor. She has written for The New York Times, Newsweek International, Newsday, The New York Sun, The Atlantic, The Washington Post and The Philadelphia Inquirer. She was a 2009 recipient of the Spencer Fellowship in Education Reporting at Columbia University Graduate School of Journalism and received her master’s degree from New York University as a Henry M. MacCracken fellow. Her first book, Gangs in Garden City, was published by Nation Books in July 2009. Her second book, Divided We Fail: The Story of an African American Community That Ended the Era of School Desegregation (Beacon Press) was published in January 2013. She has been a guest on the Diane Rehm Show, the Leonard Lopate Show, PBS NewsHour, Word of Mouth with Virginia Prescott, Bloomberg EDU with Jane Williams, Here and Now, and appeared on MSNBC.</p>
+
+            {% if atuhor.job_title|length %}
+              <h3 class="author-bio-title">{{ author.job_title }}</h3>
+            {% endif %}
+
+            <h1 class="author-bio-name">{{ author.name }}</h1>
+
+            {% if author.description|length %}
+              <p class="article-bio-text">{{ author.description }}</p>
+            {% endif %}
+
             <div class="author-bio-contact">
-              <ul class="author-contact-items">
-                <li class="author-contact-item icon-email">
-                  <a class="author-contact-link" href="mailto:#" target="_blank">
-                    <i class="icon"></i>garland@hechinger.org</a>
-                </li> <!--author-contact-item -->
 
-                <li class="author-contact-item icon-telephone">
-                  <a class="author-contact-link" href="tel:1-888-333-9999">
-                    <i class="icon"></i>888-333-9999</a>
-                </li> <!--author-contact-item -->
+              {% if author.show_contact_info %}
+                <ul class="author-contact-items">
+                  <li class="author-contact-item icon-email">
+                    <a class="author-contact-link" href="mailto:{{ author.user_email }}" target="_blank">
+                      <i class="icon"></i>{{ author.user_email }}</a>
+                  </li> <!--author-contact-item -->
+
+                  {% if author.phone_number|length %}
+                    <li class="author-contact-item icon-telephone">
+                      <a class="author-contact-link" href="tel:{{ author.phone_number }}">
+                      <i class="icon"></i>{{ author.phone_number }}</a>
+                    </li> <!--author-contact-item -->
+                  {% endif %}
 
 
-
-                <li class="author-contact-item icon-twitter-author">
-                  <a class="author-contact-link" href="http://twitter.com" target="_blank">
-                    <i class="icon"></i>@usernamehere</a>
-                </li> <!--author-contact-item -->
-
-              </ul> <!-- /author-contact-items -->
+                  {% if author.twitter_handle %}
+                    <li class="author-contact-item icon-twitter-author">
+                      <a class="author-contact-link" href="http://twitter.com/{{ author.twitter_handle }}" target="_blank">
+                      <i class="icon"></i>&commat;{{ author.twitter_handle }}</a>
+                    </li> <!--author-contact-item -->
+                  {% endif %}
+                </ul> <!-- /author-contact-items -->
+              {% endif %}
             </div> <!-- /author-bio-contact -->
         </div> <!-- /txt-bd -->
       </div> <!-- /l-author-bio -->
@@ -70,19 +86,14 @@
     <div class="author-article-feed-heading-wrap">
       <h4 class="section-hdr--lg">Recent Stories</h4>
     </div> <!-- /author-article-feed-heading-wrap -->
-    {# for each article in articles #}
-      {# include 'components/tease-author-page.twig' #}
-    {# endfor #}
+
     {% for i in 1..10 %}
       {% include 'components/tease-full.twig' %}
     {% endfor %}
+
   </div> <!-- /author-article-feed-container -->
 
   </div> <!-- /l-content -->
-
-
-
-
 
 {% endblock %} {# /body #}
 

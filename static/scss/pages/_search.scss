@@ -1,5 +1,4 @@
 .search-bar-wrap {
-  // display: none;
   display: block;
   position: relative;
   width: 90%;
@@ -8,9 +7,6 @@
     position: relative;
     margin: 31px auto 0;
     max-width: $content-max;
-    // &.is-open {
-    //   display: block;
-    // }
   }
 }
 
@@ -94,8 +90,6 @@ input:-webkit-autofill:focus {
 }
 
 .search-results-inner {
-  // margin: 0 auto;
-  // max-width: $content-max--inner;
   padding-top: 30px;
 
   @include bp($medium) {
@@ -108,7 +102,6 @@ input:-webkit-autofill:focus {
   font-size: 16px;
   font-weight: $font-weight-black;
   color: $black;
-  // padding-left: 50px;
 
     @include bp($medium) {
     padding-left: 50px;

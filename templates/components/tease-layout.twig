@@ -8,18 +8,18 @@
         {% endblock tease_overline_above_img %}
 
         {% block tease_img %}
-          {# if post.thumbnail #} {# or whatever the test is #}
+          {% if post.thumbnail %} {# or whatever the test is #}
             <div class="tz-img-mod art-bd">
               <a href="#">
                 <img src="/wp-content/themes/hechinger/static/img/test.jpg" alt="">
               </a>
             </div> <!-- /tz-img-mod -->
-          {# endif #}
+          {% endif %}
         {% endblock tease_img %}
 
         <div class="tz-content-mod txt-bd">
           {% block tease_overline %}
-            <h4 class="tz-overline">
+            <h4 class="tz-overline tz-overline--{{context_class ? context_class: ''}}">
               <a class="tz-overline-link" href="#">Tease Overline</a>
             </h4>
           {% endblock tease_overline %}

@@ -82,7 +82,8 @@ $grid-rule-color--dark:   $black;
     }
 
     &:nth-child( #{$num}n + #{$num} ) {
-      &:after { background-color: transparent;}
+      // &:after { background-color: transparent; }
+      &:after { position: static; }
     }
   }
 

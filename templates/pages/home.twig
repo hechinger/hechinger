@@ -80,7 +80,7 @@
 
         <!-- Zone 2 Middle -->
         <div class="hp-zone--middle">
-          middle
+          {% include "/templates/components/tease-special.twig" %}
         </div>
 
         <!-- Zone 2 Bottom -->
@@ -129,9 +129,11 @@
                   {% endfor %}
                 </div> <!-- /l-hp-dos--rule -->
 
-                <div class="crazy-thing"> Quote be here </div>
+                <div class="top-grid-item--right-lower">
+                  {% include "/templates/components/tease-special.twig" %}
+                </div> <!-- /grid-item-lower -->
 
-              </div>
+              </div> <!-- /top-grid-item top-grid-item--right -->
             </div> <!--/l-hp-dos--split -->
         </div> <!-- /hp-zone--top -->
 
@@ -145,6 +147,7 @@
             {% endfor %}
           </div> <!-- /l-hp-tres -->
         </div> <!-- /hp-zone--bottom -->
+
       </div> <!-- /l-hp-zone -->
     {% endblock hp_zone3 %}
 

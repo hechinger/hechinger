@@ -1,0 +1,30 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+
+  <!-- search hdr -->
+
+  <div class="search-bar-wrap">
+    <form id="searchform" method="get" action="/index.php">
+      <input class="search-page-text-input" type="text" name="s" id="s" size="15" placeholder="Search" /> <!-- how to make searched text stay in the box? -->
+      <input class="search-page-submit-button" type="submit" value="" />
+    </form>
+  </div>
+
+  <!-- Will this block interfere with the search block in layout.twig? -->
+
+  <div class="l-search-results">
+    <div class="search-results-inner">
+      <h2 class="no-results">Sorry, we couldn’t find any results
+for your search.</h2>
+      <h3 class="results-number">125 Results for 'Common Core'</h3> <!-- Backend folk - how to plug the number of results in here? -->
+
+    <!-- some backend stuff to display real results -->
+    {% for i in 1..9 %}
+      {% include "/templates/components/tease-full.twig" %}
+    {% endfor %}
+
+    </div>
+  </div>
+
+{% endblock %}

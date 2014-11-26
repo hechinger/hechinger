@@ -10,6 +10,18 @@ class HechingerPost extends TimberPost {
     return $this->category();
   }
 
+  function tease_excerpt() {
+
+    if ($this->subhead) {
+      $excerpt = $this->subhead;
+    } elseif ($this->excerpt) {
+      $excerpt = strip_tags($this->excerpt);
+    } else {
+      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, 40 ));
+    }
+    return $excerpt;
+  }
+
   function post_asides() {
     $asides = $this->get_field('aside_group');
     if (is_array($asides)) {

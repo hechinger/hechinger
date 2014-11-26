@@ -82,16 +82,18 @@
 
 
   {# recent articles feed goes here #}
-  <div class="author-article-feed-container">
-    <div class="author-article-feed-heading-wrap">
-      <h4 class="section-hdr--lg">Recent Stories</h4>
-    </div> <!-- /author-article-feed-heading-wrap -->
+  {% if posts|length %}
+    <div class="author-article-feed-container">
+      <div class="author-article-feed-heading-wrap">
+        <h4 class="section-hdr--lg">Recent Stories</h4>
+      </div> <!-- /author-article-feed-heading-wrap -->
 
-    {% for i in 1..10 %}
-      {% include 'components/tease-full.twig' %}
-    {% endfor %}
+      {% for post in posts %}
+        {% include 'components/tease-full-test.twig' %}
+      {% endfor %}
 
-  </div> <!-- /author-article-feed-container -->
+    </div> <!-- /author-article-feed-container -->
+  {% endif %}
 
   </div> <!-- /l-content -->
 

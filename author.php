@@ -11,7 +11,8 @@
 global $wp_query;
 
 $data = Timber::get_context();
-$data['posts'] = Timber::get_posts();
+$data['posts'] = Timber::get_posts('HechingerPost');
+$data['pagination'] = Timber::get_pagination();
 if (isset($wp_query->query_vars['author'])){
   $author = new TimberUser($wp_query->query_vars['author']);
   $data['author'] = $author;

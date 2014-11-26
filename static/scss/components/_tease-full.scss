@@ -15,6 +15,15 @@
   }
 }
 
+.l-pair-full {
+
+    @include pair(100px, 15px, top, right);
+
+    @include mq($medium) {
+      @include pair(150px, 25px, top, right);
+    }
+}
+
 .tz-full-title {
   margin-bottom: 2px;
   color: $black;
@@ -37,12 +46,10 @@
 
   @include bp($medium) {
     font-size: 16px;
-    width: 60%;
     margin-bottom: 10px;
   }
 
   @include bp(850px) {
-    width: 65%;
     font-size: 21px;
   }
 }
@@ -82,43 +89,43 @@
   color: inherit;
 }
 
-.tz-full-img-wrap {
-  float: right;
-  display: block;
-  padding-left: 0px;
-  margin-bottom: 20px;
-  width: 100%;
-  height: 140px;
-  overflow: hidden;
-  min-width: 150px;
+// .tz-full-img-wrap {
+//   float: right;
+//   display: block;
+//   padding-left: 0px;
+//   margin-bottom: 20px;
+//   width: 100%;
+//   height: 140px;
+//   overflow: hidden;
+//   min-width: 150px;
 
-  @include bp($medium) {
-    padding-left: 20px;
-    width: 35%;
-    height: 180px;
-    overflow: hidden;
-    margin-bottom: 0;
-    margin-left: 15px;
-    min-width: 185px;
-  }
+//   @include bp($medium) {
+//     padding-left: 20px;
+//     width: 35%;
+//     height: 180px;
+//     overflow: hidden;
+//     margin-bottom: 0;
+//     margin-left: 15px;
+//     min-width: 185px;
+//   }
 
-  @include bp(850px) {
-    width: 30%;
-    min-width: 250px;
-  }
+//   @include bp(850px) {
+//     width: 30%;
+//     min-width: 250px;
+//   }
 
-  // @include mq('max', $medium) {
-  //   padding: 20px;
-  // }
-}
+//   // @include mq('max', $medium) {
+//   //   padding: 20px;
+//   // }
+// }
 
-.tz-full-img {
-  @include resp-img;
+// .tz-full-img {
+//   @include resp-img;
 
-  @include bp($medium) {
-    width: auto;
-    height: 100%;
-    float: right;
-    max-width: 200%;
-  }
-}
+//   @include bp($medium) {
+//     width: auto;
+//     height: 100%;
+//     float: right;
+//     max-width: 200%;
+//   }
+// }

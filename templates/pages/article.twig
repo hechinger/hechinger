@@ -8,64 +8,22 @@
 
   <!-- article hdr -->
   {% block article_hdr %}
-    {# include "/templates/components/article-header.twig" #}
-    {% include "/templates/components/article-header-column.twig" %}
-    {# include "/templates/components/article-header-feat.twig" #}
+
+    {% if post.is_column %}
+      {% include "/templates/components/article-header-column.twig" %}
+    {% else %}
+      {% include "/templates/components/article-header.twig" %}
+    {% endif %}
+
   {% endblock %} {# /article_header #}
-
-
 
   <div class="l-content">
     <div class="l-content--inner">
-      <div class="article-main">
+      <article class="article-main">
         <div class="article-body article-text">
-          <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
-
-          <!-- <p class="img-container"> <img src="/wp-content/themes/hechinger/static/img/test.jpg"> </p> -->
-
-          <!-- core image -->
-          {% include "/templates/components/article-core-img.twig" %}
-
-
-          {% block article_partner %}
-            {% include "/templates/components/article-partner.twig" %}
-          {% endblock %}
-
-          {% for i in 1..2 %}
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
-           {% include "/templates/components/article-core-img.twig" with {css_class: "alignleft"} %}
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
-          {% endfor %}
-
-           {% for i in 1..2 %}
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
-           {% include "/templates/components/article-text-related.twig" %}
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
-          {% endfor %}
-
-          {% for i in 1..2 %}
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
-           <aside class="article-quote">
-            <h4 class="article-quote-h">This is a fantastic pulled quote from this story you're currently reading. Ideally, it will tell you something so amazing, you'll have no choice but to keep reading</h4>
-            <p class="article-quote-attr">George Washington Carver</p>
-            <p class="article-quote-desc">A description of the person who is saying these words here</p>
-           </aside> <!-- /article-quote -->
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
-          {% endfor %}
-
-           {% for i in 1..2 %}
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae explicabo, placeat quaerat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt. Culpa ad ea natus ipsam laborum voluptas et temporibus, eum beatae minus autem quis neque corporis eos eligendi, soluta libero ut nostrum deleniti repudiandae rerum.</p>
-           {% include "/templates/components/article-core-img.twig" with {css_class: "alignright"} %}
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
-           <p>This is an article. Lorem ipsum dolor sit amet, consectetur adipisicing elit. At repudiandae rat laboriosam dolorem dignissimos eum soluta ad aut impedit quia quam officia deserunt.</p>
-          {% endfor %}
-
+          {{ post.content }}
         </div> <!-- /article-body -->
-      </div> <!-- /article-main -->
-
+      </article> <!-- /article-main -->
 
       <!-- article-social -->
       {% block article_social %}
@@ -83,9 +41,11 @@
 
       <!-- article-tag -->
       {% block article_tag %}
-        <div class="page-mod">
-          {% include "/templates/components/article-tags.twig" %}
-        </div> <!-- /page-mod -->
+        {% if post.story_tags|length %}
+          <div class="page-mod">
+            {% include "/templates/components/article-tags.twig" %}
+          </div> <!-- /page-mod -->
+        {% endif %}
       {% endblock %}  {# /article-tag #}
 
       <!-- article-bio -->
@@ -93,29 +53,27 @@
         <div class="page-mod">
            <div class="article-bio">
             <div class="l-article-bio">
-              <div class="art-bd">
-                <div class="img-rounded">
-                  <a href="#">
-                    <img src="/wp-content/themes/hechinger/static/img/mug_placeholder.jpg" alt="">
-                  </a>
-                </div> <!-- img-rounded -->
-              </div> <!-- /art-bd -->
+              {% if author.image.get_url|length  %}
+                <div class="art-bd">
+                  <div class="img-rounded">
+                    <a href="/author/{{ post.author.slug }}">
+                      <img src="{{ author.image.get_url }}" alt="Photo of {{ post.author.name }}">
+                    </a>
+                  </div> <!-- img-rounded -->
+                </div> <!-- /art-bd -->
+              {% endif %}
 
               <div class="txt-bd">
-                <h4 class="article-bio-h"><a class="article-bio-h-link" href="#">Barbara Kantrowitz</a></h4>
-                <p class="article-bio-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque quia odio, quidem, voluptatum neque officia aspernatur quod quam voluptas enim tempora animi ut, possimus magnam. <a class="article-bio-link" href="#">See Archive</a></p>
+                <h4 class="article-bio-h"><a class="article-bio-h-link" href="Photo of {{ post.author.name }}">{{ post.author.name }}</a></h4>
+                <p class="article-bio-text">{{ post.author.description }}<a class="article-bio-link" href="/author/{{ post.author.slug }}">See Archive</a></p>
               </div> <!-- /txt-bd -->
             </div> <!-- /l-article-bio -->
           </div> <!-- /article-bio -->
         </div> <!-- /page-mod -->
       {% endblock %} {# /article_bio #}
 
-
-
     </div> <!-- /l-content-inner -->
   </div> <!-- /l-content -->
-
-
 
       <!-- article-recirculation -->
       <!-- ============================ -->

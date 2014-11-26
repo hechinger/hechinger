@@ -10,6 +10,48 @@ class HechingerPost extends TimberPost {
     return $this->category();
   }
 
+  function special_topics() {
+    $st = $this->get_terms('special-topic');
+    if (is_array($st) && count($st) ) {
+      return $st;
+    }
+    return null;
+  }
+
+  function story_tags() {
+    $tags = array();
+
+    if (is_array($this->special_topics) && count($this->special_topics)) {
+      foreach ($this->special_topics as $topic) {
+        $tags[]= $topic;
+      }
+    }
+    if (is_array($this->categories) && count($this->categories)) {
+      foreach ($this->categories as $cat) {
+        $tags[]= $cat;
+      }
+    }
+    if (is_array($this->tags) && count($this->tags)) {
+      foreach ($this->tags as $tag) {
+        $tags[]= $tag;
+      }
+    }
+
+    return $tags;
+  }
+
+  function is_column() {
+    if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
+      return in_array('Column', $this->article_type);
+    }
+  }
+
+  function is_feature() {
+    if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
+      return in_array('Feature', $this->article_type);
+    }
+  }
+
   function post_asides() {
     $asides = $this->get_field('aside_group');
     if (is_array($asides)) {
@@ -30,5 +72,12 @@ class HechingerPost extends TimberPost {
       }
     }
     return $links;
+  }
+
+  function get_lead_image() {
+    $image = new TimberImage($this->get_field('lead_image'));
+    if ( isset($image)) {
+      return $image;
+    }
   }
 }

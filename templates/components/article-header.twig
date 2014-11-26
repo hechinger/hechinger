@@ -1,9 +1,9 @@
 <div class="l-page-hdr">
-  <div class="article-hdr">
+  <header class="article-hdr">
     <div class="article-hdr-inner">
       <div class="article-hdr-top">
         <h4 class="article-hdr-topic">
-          <a class="article-topic-link" href="#">Topic head</a>
+          <a class="article-topic-link" href="{{ post.overline.slug }}">{{ post.overline }}</a>
         </h4>
 
         <div class="article-social-container">
@@ -12,8 +12,8 @@
       </div> <!-- /article-hdr-top -->
 
       <div class="article-hdr-h">
-        <h1 class="article-h">This is the article headline here with words</h1>
-        <h2 class="article-sub-h">Subhead Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, quisquam! consectetur adipisicing elit. Alias, quisquam!</h2>
+        <h1 class="article-h">{{ post.title }}</h1>
+        <h2 class="article-sub-h">{{ post.subhead }}</h2>
       </div> <!-- /article-hdr-middle -->
 
       <div class="article-hdr-meta-container {% block column_context_class %}{% endblock %}">
@@ -24,27 +24,14 @@
           <div class="article-hdr-meta-inner">
             {% block article_byline %}
               <p class="article-byline">by
-                <a class="article-author" href="#">George Washington</a>
+                <a class="article-author" href="/author/{{ post.author.slug }}">{{ post.author.name }}</a>
               </p>
             {% endblock %}
-            <p class="article-date">January 31, 2015</p>
+            <p class="article-date">{{ post.date }}</p>
           </div> <!-- /article-hdr-meta-inner -->
         </div> <!-- /article-hdr-meta-->
 
       </div> <!-- /article-hdr-container -->
     </div> <!-- /article-hdr-inner -->
-  </div> <!-- /article-hdr -->
+  </header> <!-- /article-hdr -->
 </div> <!-- /l-page-hdr-->
-
-
-{#
-<div class="article-hdr-meta">
-  <p class="article-byline">by
-    <a class="article-author" href="#">George Washington</a>
-    and
-    <a class="article-author" href="#">Barbara Kantrowitz</a>
-  </p>
-
-  <p class="article-date">January 31, 2015</p>
-</div> <!-- /article-hdr-meta -->
-#}

@@ -1,0 +1,11 @@
+{% extends '/templates/components/tease-layout.twig' %}
+{# set css_class = 'tz-hp-feat--main' #}
+{% set context_class = 'feat-lg' %}
+
+{% if post.thumbnail %}
+  {% set css_class = 'tz-hp-feat--main tz-hp-feat--main-img' %}
+  {% else %}
+    {% set css_class = 'tz-hp-feat--main' %}
+{% endif %}
+
+

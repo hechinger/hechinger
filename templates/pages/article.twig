@@ -21,14 +21,24 @@
     <div class="l-content--inner">
       <article class="article-main">
 
+        {% block article_partner %}
+          {% if post.partner|length %}
+            {% include "/templates/components/article-partner.twig" with { contextClass: 'article-aside-borders' } %}
+          {% endif %}
+        {% endblock %}
+
         {% block article_related %}
-          {% include "/templates/components/article-aside-related.twig"  %}
+          {% if post.related_heading or post.post_related_aside %}
+            {% include "/templates/components/article-aside-related.twig"  %}
+          {% endif %}
         {% endblock %}
 
         {% block article_aside %}
-          {% for aside in post.post_asides %}
-            {% include "/templates/components/article-aside.twig" with { aside: aside } %}
-          {% endfor %}
+          {% if post.post_asides|length %}
+            {% for aside in post.post_asides %}
+              {% include "/templates/components/article-aside.twig" with { aside: aside } %}
+            {% endfor %}
+          {% endif %}
         {% endblock %}
 
         <div class="article-body article-text">

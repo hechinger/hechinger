@@ -13,7 +13,7 @@
             "conditional_logic": 0,
             "return_format": "url",
             "preview_size": "thumbnail",
-            "library": "all"
+            "library": "uploadedTo"
         },
         {
             "key": "field_54735ab1383f6",

@@ -19,21 +19,13 @@
           {% include "/templates/components/article-aside-related.twig"  %}
         {% endblock %}
 
+        {% block article_aside %}
+          {% for aside in post.post_asides %}
+            {% include "/templates/components/article-aside-test.twig" with { aside: aside, contextClass: 'article-aside-borders' } %}
+          {% endfor %}
+        {% endblock %}
+
         <div class="article-body article-text">
-
-          {% block article_aside %}
-            {% for aside in post.post_asides %}
-              {% include "/templates/components/article-aside-test.twig" with { aside: aside, contextClass: 'article-aside-borders' } %}
-            {% endfor %}
-          {% endblock %}
-
-
-      {% block article_partner %}
-        {% if post.partner|length %}
-          {% include "/templates/components/article-partner-test.twig" %}
-        {% endif %}
-      {% endblock %}
-
           {{ post.content }}
         </div> <!-- /article-body -->
       </div> <!-- /article-main -->

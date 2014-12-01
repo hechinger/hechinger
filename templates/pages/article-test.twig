@@ -21,7 +21,7 @@
 
         {% block article_aside %}
           {% for aside in post.post_asides %}
-            {% include "/templates/components/article-aside-test.twig" with { aside: aside, contextClass: 'article-aside-borders' } %}
+            {% include "/templates/components/article-aside.twig" with { aside: aside } %}
           {% endfor %}
         {% endblock %}
 

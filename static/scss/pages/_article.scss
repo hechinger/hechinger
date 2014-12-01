@@ -46,6 +46,7 @@ $bp-aside-negative-margin:  925px;
 
 .article-body {
   @include pie-clearfix;
+  display: table-caption;
   margin-bottom: 30px;
 
   * + * { margin: 17px; }
@@ -54,6 +55,9 @@ $bp-aside-negative-margin:  925px;
     // max-width: 880px;
     margin: 0 auto;
     // padding: 0 50px;
+  }
+  @include bp(700px) {
+    display: initial;
   }
 }
 

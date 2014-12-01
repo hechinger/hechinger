@@ -68,10 +68,40 @@ class HechingerSite extends TimberSite {
 			'show_admin_column'     => true,
 			'update_count_callback' => '_update_post_term_count',
 			'query_var'             => true,
-			'rewrite'               => array( 'slug' => 'speical-topics' ),
+			'rewrite'               => array( 'slug' => 'special-topics' ),
 		);
 		register_taxonomy( 'special-topic', 'post', $args );
 		//this is where you can register custom taxonomies
+
+		$labels = array(
+			'name'                       => _x( 'Partners', 'taxonomy general name' ),
+			'singular_name'              => _x( 'Partner', 'taxonomy singular name' ),
+			'search_items'               => __( 'Search Partners' ),
+			'popular_items'              => __( 'Popular Partners' ),
+			'all_items'                  => __( 'All Partners' ),
+			'parent_item'                => null,
+			'parent_item_colon'          => null,
+			'edit_item'                  => __( 'Edit Partner' ),
+			'update_item'                => __( 'Update Partner' ),
+			'add_new_item'               => __( 'Add New Partner' ),
+			'new_item_name'              => __( 'New Partner Name' ),
+			'separate_items_with_commas' => __( 'Separate Partners with commas' ),
+			'add_or_remove_items'        => __( 'Add or remove Partners' ),
+			'choose_from_most_used'      => __( 'Choose from the most used Partners' ),
+			'not_found'                  => __( 'No Partners found.' ),
+			'menu_name'                  => __( 'Partners' ),
+		);
+
+		$args = array(
+			'hierarchical'          => true,
+			'labels'                => $labels,
+			'show_ui'               => true,
+			'show_admin_column'     => true,
+			'update_count_callback' => '_update_post_term_count',
+			'query_var'             => true,
+			'rewrite'               => array( 'slug' => 'partners' ),
+		);
+		register_taxonomy( 'partner', 'post', $args );
 	}
 
 	function add_to_context( $context ) {

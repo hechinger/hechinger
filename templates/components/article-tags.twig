@@ -3,7 +3,7 @@
   <ul class="article-tag-items">
     {% for tag in post.story_tags %}
       <li class"article-tag-item">
-        <a class="article-tag-link" href="/{{ tag.slug }}">{{ tag.name }}</a>
+        <a class="article-tag-link" href="{{ tag.link }}">{{ tag.name }}</a>
       </li> <!-- /article-tag-item -->
     {% endfor %}
   </ul> <!-- /article-tag-items -->

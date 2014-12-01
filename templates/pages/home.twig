@@ -53,7 +53,7 @@
           {% for i in 1..4 %}
             <div class="grid-item">
               <div class="hp-special-tz">
-                Special Report Tease
+                {% include "templates/components/tease-hp-report.twig" %}
               </div> <!-- /hp-special-tz -->
             </div> <!-- /grid-item -->
           {% endfor %}
@@ -101,7 +101,9 @@
     <!-- Homepage Featured -->
     <!-- ===================================== -->
     {% block hp_zone_feat %}
-      <div class="l-hp-zone l-hp-zone--feat">homepage zone feat</div>
+      <div class="l-hp-zone l-hp-zone--feat">
+        {% include "/templates/components/tease-hp-second-feat.twig" %}
+      </div> <!-- /l-hp-zone--feat -->
     {% endblock hp_zone_feat %}
 
 

@@ -125,6 +125,196 @@ body { font-family: $he-sans; }
   @extend %head-link;
 }
 
+// --------------------------------------------
+// --------------------------------------------
+//
+// HP :: Special Reports Zone
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.special-report-tz-mod {
+  background-image: url("/wp-content/themes/hechinger/static/img/special reports/img-special_report_tease-California-465-258.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// changed the name of special-report-tz-black-box to special-report-tz-overlay
+// better describing what it is, rather than the color that's currently being applied.
+// more future friendly name, so when the overlay color is red, for instance
+.special-report-tz-overlay {
+  // padding: 20px;
+  position: relative;
+  background-color: rgba($black, 0.3);
+
+
+  // @include mq(550px) {
+  //   padding: 30px;
+  // }
+}
+
+.special-report-tz-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  @include mq(550px) {
+    padding: 30px;
+  }
+}
+
+.special-report-tz-hdr-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.25em;
+}
+
+.special-report-tz-hdr {
+  display: inline-block;
+  font-size: 19px;
+  color: white;
+  padding-bottom: 0.4em;
+  font-family: $he-accent;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: white;
+
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 75px;
+    height: .25em;
+    background-color: #fff;
+  }
+
+  &:hover {
+    color: $he-main;
+    &:after { background-color: $he-main; }
+  }
+}
+
+
+.special-report-tz-item {
+  @extend %item-bullet;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.2;   // 22/17
+  color: white;
+  padding-left: 1em;
+  & + & { margin-top: 0.85em; }
+
+  @include mq(550px) {
+    font-size: 17px;
+    line-height: 1.294117647;
+  }
+
+}
+
+
+.special-report-tz-link {
+  text-decoration: none;
+  color: white;
+  &:hover { text-decoration: underline; }
+}
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// HP :: Second Feature Zone
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.hp-second-feature-mod {
+  position: relative;
+  width: 100%;
+  // max-width: 800px;
+  text-align: center;
+}
+
+.hp-second-feature-img-container {
+  display: inline-block;
+  width: 100%;
+  max-width: 643px;
+}
+
+.hp-second-feature-txt-container {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hp-second-feature-txt-inner {
+  position: relative;
+  margin-top: -150px;
+  // position: absolute;
+  // top: 75%;
+  // left: 0%;
+  // right: 0%;
+  // width: 85%;
+  // max-width: 700px;
+  text-align: left;
+  @include mq(900px) {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    right: 5%;
+    margin-top: 0;
+  }
+}
+
+.hp-second-feature-topic {
+  font-size: 11pt;
+  color: $black;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  width: 16%;
+  min-width: 150px;
+  padding: 6px 10px 0 0;
+  @include mq(400px) { font-size: 12pt; }
+  @include mq(700px) { font-size: 14pt; }
+}
+
+.hp-second-feature-head {
+  font-size: 25pt;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  color: $black;
+  padding: 0 5px 5px 0;
+  background-color: white;
+  display: inline-block;
+  @include mq(500px) { font-size: 35pt; }
+  @include mq(700px) { font-size: 50pt; }
+}
+
+.hp-second-feature-txt {
+  font-size: 14pt;
+  font-weight: $font-weight-lt;
+  color: $black;
+  line-height: 1.3;
+  background-color: white;
+  width: 100%;
+  padding: 0 15px 7px 0;
+  display: inline-block;
+
+  @include mq(900px) {
+    // font-size: 14pt;
+    width: 70%;
+  }
+}
+
+.hp-second-feature-read-more {
+  @extend %link-bullet-readmore; // any way we can put nonbreaking spaces in this?
+  color: $he-secondary;
+  text-decoration: none;
+}
+
+
 
 
 

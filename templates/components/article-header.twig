@@ -32,6 +32,20 @@
         </div> <!-- /article-hdr-meta-->
 
       </div> <!-- /article-hdr-container -->
+
+      {% if post.lead_image %}
+        <figure class="article-img-lead">
+          <div class="img-container">
+            <img src="{{ post.lead_image.get_url }}" alt="{{ post.lead_image.alt }}">
+            {% if post.lead_image.caption|length %}
+              <figcaption class="img-caption">
+                <p class="img-caption-text">{{ post.lead_image.caption }}</p>
+              </figcaption>
+            {% endif %}
+          </div>
+        </figure> <!-- /article-img-lead -->
+      {% endif %}
+
     </div> <!-- /article-hdr-inner -->
   </header> <!-- /article-hdr -->
 </div> <!-- /l-page-hdr-->

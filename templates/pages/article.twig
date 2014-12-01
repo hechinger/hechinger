@@ -53,11 +53,12 @@
         <div class="page-mod">
            <div class="article-bio">
             <div class="l-article-bio">
-              {% if author.image.get_url|length  %}
+
+              {% if post.author.author_image %}
                 <div class="art-bd">
                   <div class="img-rounded">
-                    <a href="/author/{{ post.author.slug }}">
-                      <img src="{{ author.image.get_url }}" alt="Photo of {{ post.author.name }}">
+                    <a href="{{post.author.link }}">
+                      <img src="{{ TimberImage(post.author.author_image).src|resize(200, 200) }}" alt="Photo of {{ post.author.name }}">
                     </a>
                   </div> <!-- img-rounded -->
                 </div> <!-- /art-bd -->

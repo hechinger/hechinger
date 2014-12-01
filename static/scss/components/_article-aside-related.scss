@@ -1,0 +1,43 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Related Aside Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.related-aside {
+  @extend %article-aside;
+  display: table-footer-group;
+  @include bp(700px) {
+    display: block;
+  }
+}
+
+.aside-related-hdr {
+  @extend %section-hdr;
+  font-size: 16px;
+}
+
+.aside-related-items { }
+
+.aside-related-item {
+  font-size: 17px;
+  line-height: 1.294117647;   // 22/17
+  padding-left: 1em;
+  position: relative;
+  & + & { margin-top: 0.85em; }
+}
+
+.aside-related-item-hdr {
+  @extend %item-bullet;
+}
+
+.aside-related-highlight {
+  background-color: $he-main;
+  padding: 0.085em 0.294117647em;
+}
+
+.aside-related-item-link {
+  @extend %head-link;
+}

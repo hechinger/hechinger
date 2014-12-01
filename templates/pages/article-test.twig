@@ -14,17 +14,19 @@
   <div class="l-content">
     <div class="l-content--inner">
       <div class="article-main">
+
+        {% block article_related %}
+          {% include "/templates/components/article-aside-related.twig"  %}
+        {% endblock %}
+
         <div class="article-body article-text">
 
           {% block article_aside %}
             {% for aside in post.post_asides %}
-              {% include "/templates/components/article-aside-test.twig" with aside %}
+              {% include "/templates/components/article-aside-test.twig" with { aside: aside, contextClass: 'article-aside-borders' } %}
             {% endfor %}
           {% endblock %}
 
-          {% block article_related %}
-            {% include "/templates/components/article-related-test.twig" %}
-          {% endblock %}
 
       {% block article_partner %}
         {% if post.partner|length %}

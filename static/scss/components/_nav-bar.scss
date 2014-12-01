@@ -21,7 +21,9 @@
   padding-bottom: 0;
 }
 
-
+.site-header--hp {
+  @include mq($large) { padding-bottom: 250px; }
+}
 
 
 // --------------------------------------------

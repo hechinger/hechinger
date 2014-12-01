@@ -52,3 +52,39 @@
   }
 
 }
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Media Grid Rules
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$grid-rule-color:         $black-10;
+$grid-rule-color--dark:   $black;
+
+
+@mixin grid-rule( $num, $rule-pos: -20px, $color: $grid-rule-color, $target: '.grid-item' ) {
+
+  #{$target} {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '\0020';
+      top: 0;
+      bottom: 0;
+      right: $rule-pos;
+      width: 1px;
+      background-color: $color;
+    }
+
+    &:nth-child( #{$num}n + #{$num} ) {
+      // &:after { background-color: transparent; }
+      &:after { position: static; }
+    }
+  }
+
+}

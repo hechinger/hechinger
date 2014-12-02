@@ -79,7 +79,7 @@
               {% if post.author.author_image %}
                 <div class="art-bd">
                   <div class="img-rounded">
-                    <a href="{{post.author.link }}">
+                    <a href="{{ post.author.link }}">
                       <img src="{{ TimberImage(post.author.author_image).src|resize(200, 200) }}" alt="Photo of {{ post.author.name }}">
                     </a>
                   </div> <!-- img-rounded -->

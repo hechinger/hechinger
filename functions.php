@@ -8,7 +8,7 @@ if ( !class_exists( 'Timber' ) ) {
 }
 
 Timber::$dirname = array( 'templates', 'views' );
-require_once('wp/hechinger-post.php');
+require_once 'wp/hechinger-post.php';
 
 add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
 
@@ -29,17 +29,19 @@ class HechingerSite extends TimberSite {
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
 			$article = new Mesh\Post( 'article', 'page' );
-                        $article = new Mesh\Post( 'archive', 'page' );
+			$article = new Mesh\Post( 'archive', 'page' );
 			$article = new Mesh\Post( 'special-report', 'page' );
 			$article = new Mesh\Post( 'author', 'page' );
 			$article = new Mesh\Post( 'snippets', 'page' );
 			$article = new Mesh\Post( 'home', 'page' );
-		}
-        }
 
-        function register_post_types() {
-          // this is where you can register custom post types
-        }
+			$stream = new Mesh\Post ('homepage', 'sm_stream');
+		}
+	}
+
+	function register_post_types() {
+		// this is where you can register custom post types
+	}
 
 	function register_taxonomies() {
 		$labels = array(

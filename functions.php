@@ -10,6 +10,9 @@ if ( !class_exists( 'Timber' ) ) {
 Timber::$dirname = array( 'templates', 'views' );
 require_once('wp/hechinger-post.php');
 require_once('wp/hechinger-image.php');
+require_once('wp/pull-quote-admin.php');
+
+new PullQuoteAdmin();
 
 add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
 
@@ -147,19 +150,29 @@ class HechingerSite extends TimberSite {
         }
 
         function handle_img_in_editor($output, $attr, $content) {
-                if ( $attr['id'] ) {
-                        $iid = str_replace( 'attachment_', '', $attr['id'] );
-                        $image = new TimberImage( $iid );
-                        $class = $attr['align'] . ' inline-core-image';
-                        $width = $attr['width'];
-                        if ( $attr['align'] == 'alignnone' || $attr['align'] == 'aligncenter') {
-                                $attr['full_width'] = true;
-                        }
-                        $image_string = Timber::compile( 'templates/components/article-core-img.twig', array( 'image' => $image, 'class' => $class, 'width' => $width, 'attr' => $attr ) );
-                        return preg_replace('/\s+/', ' ', $image_string);
+            if ( $attr['id'] ) {
+                $iid = str_replace( 'attachment_', '', $attr['id'] );
+                $image = new TimberImage( $iid );
+                $class = $attr['align'] . ' inline-core-image';
+                $width = $attr['width'];
+                if ( $attr['align'] == 'alignnone' || $attr['align'] == 'aligncenter') {
+                    $attr['full_width'] = true;
                 }
-                return $output;
+                $image_string = Timber::compile( 'templates/components/article-core-img.twig', array( 'image' => $image, 'class' => $class, 'width' => $width, 'attr' => $attr ) );
+                return preg_replace('/\s+/', ' ', $image_string);
+            }
+            return $output;
         }
+
+    static function render_pull_quote($content, $style, $author, $desc) {
+        $args = array(
+            'style_class' => $style,
+            'author' => $author,
+            'description' => $desc,
+            'pull_quote' => $content
+        );
+        return $string = Timber::compile('templates/components/article-pull-quote.twig', $args);
+    }
 }
 
 new HechingerSite();

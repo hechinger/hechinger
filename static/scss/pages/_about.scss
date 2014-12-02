@@ -1,0 +1,25 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// About Page
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.about-content {
+  margin: 70px auto 0;
+}
+
+
+.about-mod {
+  & + & {
+    margin-top: 80px;
+    padding-top: 80px;
+    border-top: $bdr-thin;
+  }
+}
+
+.about-inner {
+  background-color: pink;
+  padding: 80px;
+}

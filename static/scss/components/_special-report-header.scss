@@ -8,7 +8,8 @@
 }
 
 .l-special-report-hdr-wrap {
-  margin-top: 126px;
+  // margin-top: 126px;
+  margin-top: 165px;
   @include mq('max', $medium) {
     margin: 40px 0 0 25px;
   }
@@ -18,7 +19,8 @@
   margin: 0 $site-margin;
   max-width: $content-max;
   @include bp($no-content-margin) {
-    margin: 70px auto 0;
+    // margin: 70px auto 0;
+    margin: 30px auto 0;
   }
 }
 

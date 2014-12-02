@@ -1,0 +1,64 @@
+{% extends 'layout.twig' %}
+
+{% block navbar %}
+  {% include 'components/nav-bar.twig' with {css_class: "site-header--no-pad"} %}
+{% endblock %}
+
+
+{# archive page layouts go here #}
+{% block body %}
+
+  {% block header %}
+    {% include 'components/special-report-header.twig' %}
+  {% endblock header %}
+
+  {% block about_content %}
+    <div class="about-content">
+      <div class="l-content">
+
+        <!-- Our Staff -->
+        <div class="about-mod">
+          <div class="about-inner">
+            <h1>Staff</h1>
+          </div> <!-- /about-inner -->
+        </div> <!-- /about-page-mod -->
+
+        <!-- Our Awards -->
+        <div class="about-mod">
+          <div class="about-inner">
+            <h1>Awards</h1>
+          </div> <!-- /about-inner -->
+        </div> <!-- /about-page-mod -->
+
+        <!-- Our Namesake -->
+        <div class="about-mod">
+          <div class="about-inner">
+            <h1>Fred Hechinger</h1>
+          </div> <!-- /about-inner -->
+        </div> <!-- /about-page-mod -->
+
+        <!-- Our Partners -->
+        <div class="about-mod">
+          <div class="about-inner">
+            <h1>Partners</h1>
+          </div> <!-- /about-inner -->
+        </div> <!-- /about-page-mod -->
+
+        <!-- Our Supporters -->
+        <div class="about-mod">
+          <div class="about-inner">
+            <h1>Supporters</h1>
+          </div> <!-- /about-inner -->
+        </div> <!-- /about-page-mod -->
+
+      </div> <!-- /l-content -->
+    </div> <!-- /about-content -->
+  {% endblock about_content %}
+
+{% endblock body %}
+
+{% block scripts %}{% endblock %}
+
+
+
+

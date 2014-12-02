@@ -4,10 +4,10 @@
     <h4 class="aside-hdr">{{ post.related_heading }}</h4>
   {% endif %}
   <ul class="aside-related-items">
-    {% for link in post.post_related_aside %}
+    {% for rpost in post.post_related_aside %}
     <li class="aside-related-item">
       <h3 class="aside-related-item-hdr">
-        <a class="aside-related-item-link" href="{{ link.link }}">{{ link.title }}</a>
+        <a class="aside-related-item-link" href="{{ rpost.link }}">{{ rpost.title }}</a>
       </h3> <!-- /aside-related-item-hdr -->
     </li> <!-- /aside-related-item -->
     {% endfor %}

@@ -19,11 +19,6 @@
     "location": [
         [
             {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            },
-            {
                 "param": "taxonomy",
                 "operator": "==",
                 "value": "special-topic"

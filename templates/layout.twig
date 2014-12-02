@@ -22,6 +22,7 @@
 
     <!-- Template Specific Styles -->
     {% block styles %}{# page-specific stylesheets #}{% endblock %}
+    {{ function('wp_head') }}
   </head>
 
 
@@ -51,6 +52,7 @@
     <script type="text/javascript" src="{{site.theme.uri}}/static/js/main.js"></script>
     {% block scripts %}{# page-specific scripts #}{% endblock %}
 
+    {{function('wp_footer')}}
   </body>
 
 </html>

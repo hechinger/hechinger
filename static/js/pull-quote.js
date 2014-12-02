@@ -1,6 +1,5 @@
 //TODO: refoctor with modular pattern
 ;(function(){
-  console.log('hey');
   tinymce.create('tinymce.plugins.pullquote', {
     /**
     * Initializes the plugin, this will be executed after the plugin has been created.
@@ -11,7 +10,6 @@
     * @param {string} url Absolute URL to where the plugin is located.
     */
     init : function(ed, url) {
-      console.log(url);
       ed.addCommand('pullquote', function() {
         selected = tinyMCE.activeEditor.selection.getContent();
 

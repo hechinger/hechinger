@@ -2,15 +2,13 @@
 <div class="l-page-hdr">
   <div class="article-hdr">
     <div class="article-hdr-inner">
-      {% if post.get_lead_image %}
+      {% if post.lead_image %}
         <div class="article-img-feature">
-          <img src="{{ post.get_lead_image.get_url }}" alt="{{ post.get_lead_image.alt }}">
+          <img src="{{ post.lead_image.get_url }}" alt="{{ post.lead_image.alt }}">
         </div> <!-- /article-img-feature -->
       {% endif %}
 
-
       <div class="articleFeat-mod">
-
         <div class="article-hdr-top">
           <h4 class="article-hdr-topic">
             <a class="article-topic-link" href="/{{ post.overline.slug }}">{{ post.overline }}</a>

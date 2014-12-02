@@ -44,6 +44,8 @@
 @import "pages/special-report";
 @import "pages/author";
 @import "pages/page";
+@import "pages/search";
+@import "pages/home";
 
 
 
@@ -60,6 +62,7 @@
 @import "components/special-report-header";
 @import "components/article-header";
 @import "components/promo";
+@import "components/tease-full";
 
 
 // --------------------------------------------
@@ -148,7 +151,7 @@ body { font-family: $he-sans; }
   & + & {
     margin-top: 0.85em;
     padding-top: 0.85em;
-    border-top: $border-thin--lt;
+    border-top: $bdr-thin--lt;
   }
 }
 

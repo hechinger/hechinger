@@ -1,0 +1,35 @@
+{% extends '/templates/components/tease-layout.twig' %}
+
+{% if something %}
+  {% set css_class = 'tz-special-stat' %}
+    {% else %}
+      {% set css_class = 'tz-special-stat tz-special' %}
+{% endif %}
+{# set context_class = 'xxx' #}
+
+
+
+
+{% block tease_content %}
+  <div class="tz-inner l-pair-{{css_class ? css_class : ''}}">
+
+    {# if something #} {# if this is a stat tease. make this stuff appear #}
+      {% block tease_stat %}
+        <div class="tz-stat-mod art-bd">
+          <h4 class="tz-special-number tz-overline--{{context_class ? context_class: ''}}">101<span class="tz-special-precent">%</span></h4>
+        </div> <!-- /art-bd -->
+      {% endblock tease_stat %}
+    {# endif #}
+
+    <div class="txt-bd">
+      <h4 class="tz-special-h tz-overline--{{context_class ? context_class: ''}}">"This is a big quote head for you to checkout right here"</h4>
+      <h5 class="tz-special-sub-h tz-overline--{{context_class ? context_class: ''}}">
+        <a class="tz-special-link" href="#">xxxxx</a>
+      </h5>
+    </div> <!-- /txt-bd -->
+
+   </div> <!-- /tz-inner -->
+{% endblock tease_content %}
+
+
+

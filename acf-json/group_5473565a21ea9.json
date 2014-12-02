@@ -1,0 +1,46 @@
+{
+    "key": "group_5473565a21ea9",
+    "title": "Partners",
+    "fields": [
+        {
+            "key": "field_547359d9383f5",
+            "label": "Logo",
+            "name": "logo",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Please upload a Black and White version of the partner's logo.",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
+            "key": "field_54735ab1383f6",
+            "label": "partner homepage url",
+            "name": "partner_homepage_url",
+            "prefix": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "partner"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

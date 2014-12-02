@@ -26,6 +26,12 @@
             {% include "/templates/components/article-related-test.twig" %}
           {% endblock %}
 
+      {% block article_partner %}
+        {% if post.partner|length %}
+          {% include "/templates/components/article-partner-test.twig" %}
+        {% endif %}
+      {% endblock %}
+
           {{ post.content }}
         </div> <!-- /article-body -->
       </div> <!-- /article-main -->

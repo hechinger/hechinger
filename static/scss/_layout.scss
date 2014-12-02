@@ -29,6 +29,7 @@ $has-margin:          800px;
 
 .content-wrapper {
   margin-top: -17px;
+  margin-bottom: 45px;
   @include mq(800px) { margin-top: -$space-grid; }
 }
 

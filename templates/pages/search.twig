@@ -1,0 +1,27 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+
+  <!-- search hdr -->
+
+  <div class="search-bar-wrap">
+    <form id="searchform" method="get" action="/index.php">
+      <input class="search-page-text-input" type="text" name="s" id="s" size="15" placeholder="Search" />
+      <input class="search-page-submit-button" type="submit" value="" />
+    </form>
+  </div>
+
+<div class="l-search-results">
+  <div class="search-results-inner">
+  <h2 class="no-results">Sorry, we couldn’t find any results
+for your search.<h2>
+  <h3 class="results-number">125 Results for 'Common Core'</h3>
+
+  {% for i in 1..9 %}
+    {% include "/templates/components/tease-full.twig" %}
+  {% endfor %}
+
+  </div>
+</div>
+  {% include "/templates/components/pagination.twig" %}
+{% endblock %}

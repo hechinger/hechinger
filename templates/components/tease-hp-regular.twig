@@ -1,0 +1,14 @@
+{% extends '/templates/components/tease-layout.twig' %}
+{% set css_class = 'tz-hp-reg' %}
+{# set context_class = 'foo' #}
+
+
+{% block tease_overline_above_img %}
+  <h4 class="tz-overline">
+    <a class="tz-overline-link" href="#">Tease Overline</a>
+  </h4>
+{% endblock tease_overline_above_img %}
+
+
+{# blows away the regular Tease Overline #}
+{% block tease_overline %} {% endblock tease_overline %}

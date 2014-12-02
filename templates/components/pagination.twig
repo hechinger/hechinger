@@ -1,0 +1,36 @@
+<div class="pagination prev-next-nav">
+
+  <ul class="pagination-list">
+    <li class="pagination-list-item-prev-next pagination-disabled">
+      <a class="pagination-list-item-link" href="{{pagination.prev.link}}">
+        <div class="arrow-left">
+          <div class="arrow-left before pagination-disabled" ></div>
+          <div class="arrow-left after" ></div>
+        </div>
+        {{prev_text | default('Prev')}}
+      </a>
+    </li> <!-- .pagination-list-item new-old -->
+
+    <li class="pagination-list-item-current">
+      1
+    </li>
+    <li class="pagination-list-item-of">
+      of
+    </li>
+
+    <li class="pagination-list-item-total">
+      25
+    </li>
+
+    <li class="pagination-list-item-prev-next">
+      <a class="pagination-list-item-link" href="{{pagination.next.link}}">
+        {{next_text | default('Next')}}
+        <div class="arrow-right">
+          <div class="arrow-right after" ></div>
+          <div class="arrow-right before" ></div>
+        </div>
+      </a>
+    </li>
+  </ul> <!-- .pagination-list -->
+
+</div> <!-- /pagination prev-next-nav-->

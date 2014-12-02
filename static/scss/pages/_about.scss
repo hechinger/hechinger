@@ -8,6 +8,7 @@
 
 $bp-pair-has-layout:    600px;
 
+$about-content-max-width:   820px;
 
 
 .about-content {
@@ -23,8 +24,7 @@ $bp-pair-has-layout:    600px;
 }
 
 .l-about-inner {
-  border: 1px solid pink;
-  max-width: 820px;
+  max-width: $about-content-max-width;
   margin: 0 auto;
   // padding: 80px;
   > * + * { margin-top: 25px; }

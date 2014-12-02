@@ -21,4 +21,8 @@
  * @since    Timber 0.1
  */
 $context = Timber::get_context();
-  Timber::render('pages/home.twig', $context);
+if (class_exists('TimberStream')) {
+	$stream = new TimberStream('homepage');
+	$context['posts'] = $stream->get_posts(array(), 'HechingerPost');
+}
+Timber::render('pages/home.twig', $context);

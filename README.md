@@ -42,6 +42,19 @@ $ wp plugin install https://www.dropbox.com/s/msici5rzsadpf0w/advanced-custom-fi
 $ exit
 ```
 
+### Install Stream Manager
+
+[Stream Manager](http://github.com/Upstatement/Stream-Manager) allows editors to intuitivly sort recent posts for the homepage to install, navigate to your vagrant install for Hechinger
+
+```
+$ cd www/wordpress-he/wp-content/plugins
+$ git clone git@github.com:Upstatement/stream-manager.git
+$ vagrant ssh
+$ cd /srv/www/wordpress-he/
+$ wp plugin activate stream-manager
+```
+ 
+
 ### Install Dependencies
 
 Hechinger has a few dependencies we need to install. First we'll use Bower to install Upbase, jQuery, and other packages we need. Then're going to compile our `.scss` files with Compass.

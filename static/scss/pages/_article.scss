@@ -98,8 +98,6 @@ $bp-aside-negative-margin:  925px;
     font-family: Georgia, serif;
     font-size: 16px;
   }
-
-
   // ---------------------------
   // Headline Styles
   > h1 {
@@ -150,7 +148,31 @@ $bp-aside-negative-margin:  925px;
   // ---------------------------
   // Blockquote
   > blockquote {
-    > p { }
+    padding-left: 25px;
+    margin: 25px 0 !important;
+    border-left: 5px solid black;
+    > p {
+      @extend %article-bd-margin;
+      max-width: $article-bd-max;
+      font-family: Georgia, serif;
+      font-size: 16px;
+    }
+
+    >ul, ol {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      margin-left: 20px;
+      a {}
+    }
+
+    > ul {
+      list-style-type: disc;
+
+      ul {
+        list-style-type: circle !important;
+        margin-left: 20px;
+      }
+    }
   }
 
   .pull-quote a { }
@@ -158,35 +180,42 @@ $bp-aside-negative-margin:  925px;
 
   // ---------------------------
   // Lists
-  ul, ol {
+  >ul, ol {
     font-family: Georgia, serif;
     font-size: 16px;
     margin-left: 20px;
     a {}
   }
 
-  ul {
-    list-style-type: circle;
-  }
   > ul {
     list-style-type: disc;
-    > li {
+
+    ul {
+      list-style-type: circle !important;
+      margin-left: 20px;
     }
   }
 
   > ol {
     > li { }
   }
-
+ // >ul, ol
 
   // ---------------------------
   // Links
   a, a:visited {
     color: $he-secondary;
-    &:hover, &:visited:hover { }
+    &:hover, &:visited:hover {
+      color: $he-main;
+    }
   }
 
-
+  >address {
+    font-family: $he-sans;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: $font-weight-lt;
+  }
   // ---------------------------
   // Image stuff
   > p {
@@ -206,8 +235,18 @@ $bp-aside-negative-margin:  925px;
   // img { margin-bottom: 1em; }
 
 
-  .wp-caption-text { }
-
+  .wp-caption-text {
+    font-family: $he-sans;
+    font-weight: $font-weight-lt;
+    font-size: 14px;
+  }
+  .wp-image-38 {
+    margin-right: 20px;
+  }
+  .alignleft {
+    height: auto;
+    padding-bottom: 10px;
+  }
 
   .cap-image-right,
   .cap-image-left { }

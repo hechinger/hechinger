@@ -1,0 +1,67 @@
+{
+    "key": "group_5464f13f78cb1",
+    "title": "Additional Contact Info",
+    "fields": [
+        {
+            "key": "field_5474fa036d434",
+            "label": "Show Additional Contact Info?",
+            "name": "show_contact_info",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "Check to show author\/staff member's email, twitter, & phone number.",
+            "required": 0,
+            "conditional_logic": 0,
+            "message": "",
+            "default_value": 0
+        },
+        {
+            "key": "field_5464f1d68de6b",
+            "label": "Twitter Handle",
+            "name": "twitter_handle",
+            "prefix": "",
+            "type": "text",
+            "instructions": "The author's twitter handle.",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5464f2548de6c",
+            "label": "Phone Number",
+            "name": "phone_number",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

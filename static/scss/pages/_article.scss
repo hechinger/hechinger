@@ -95,22 +95,57 @@ $bp-aside-negative-margin:  925px;
     @extend %article-bd-margin;
     max-width: $article-bd-max;
     &:first-of-type { @include drop-cap; }
+    font-family: Georgia, serif;
+    font-size: 16px;
   }
 
 
   // ---------------------------
   // Headline Styles
-  > h1 { }
+  > h1 {
+      // @include fontFace(National, WebLF, 900, BlackItalic, italic);
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 30px;
+  }
 
-  > h2 { }
+  > h2 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 24px;
+    }
 
-  > h3 { }
+  > h3 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 20px;
+    }
 
-  > h4 { }
+  > h4 {
+      font-family: $he-serif;
+      font-weight: $font-weight-black;
+      font-size: 22px;
+      border-bottom: 8px solid black;
+      padding-bottom: 15px;
+      display: inline-block;
+  }
 
-  > h5 { }
+  > h5 {
+      font-family: $he-serif;
+      font-weight: $font-weight-black;
+      font-size: 15px;
+      border-bottom: 5px solid black;
+      padding-bottom: 5px;
+      display: inline-block;
+    }
 
-  > h6 { }
+  > h6 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
   // ---------------------------
   // Blockquote
@@ -124,11 +159,19 @@ $bp-aside-negative-margin:  925px;
   // ---------------------------
   // Lists
   ul, ol {
-    a { }
+    font-family: Georgia, serif;
+    font-size: 16px;
+    margin-left: 20px;
+    a {}
   }
 
+  ul {
+    list-style-type: circle;
+  }
   > ul {
-    > li { }
+    list-style-type: disc;
+    > li {
+    }
   }
 
   > ol {
@@ -139,6 +182,7 @@ $bp-aside-negative-margin:  925px;
   // ---------------------------
   // Links
   a, a:visited {
+    color: $he-secondary;
     &:hover, &:visited:hover { }
   }
 

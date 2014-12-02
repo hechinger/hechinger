@@ -67,8 +67,8 @@ $bp-pair-has-layout:    600px;
 }
 
 .about-link {
-  display: inline-block;
-  width: 150px;
+  display: block;
+  width: 100%;
   padding: 10px 0;
   border: $bdr-thin;
   text-decoration: none;
@@ -78,7 +78,13 @@ $bp-pair-has-layout:    600px;
   font-weight: $font-weight-lt;
   font-size: 15px;
   color: black;
-  & + & { margin-left: 25px; }
+  // & + & { margin-left: 25px; }
+  & + & { margin-top: 20px; }
+  @include mq(450px) {
+    width: 175px;
+    display: inline-block;
+    & + & { margin-left: 25px; margin-top: 0; }
+  }
   @include mq(800px) { width: 200px; }
 }
 

@@ -1,14 +1,29 @@
 // Font-mixin
 // --------------------------------------------
-@mixin fontFace($family-name, $file-name, $weight, $style: normal) {
+// @mixin fontFace($family-name, $file-name, $weight, $style: normal) {
+//   @font-face {
+//     $font-path: "/static/fonts/" + "#{$family-name}" + "#{$file-name}";
+//     font-family: "#{$family-name}";
+//     src: url($font-path + '.eot');
+//     src: local('☺'),
+//        url($font-path + '.eot?iefix') format('eot'),
+//        url($font-path + '.woff') format('woff'),
+//        url($font-path + '.svg#webfont') format('svg'),
+//        local('☺');
+//     font-weight: $weight;
+//     font-style: $style;
+//   }
+// }
+
+
+@mixin fontFace($family-name, $file-name, $weight, $font-file-type, $style: normal) {
   @font-face {
-    $font-path: "/static/fonts/" + "#{$family-name}" + "#{$file-name}";
+    $font-path: "/wp-content/themes/hechinger/static/fonts/" + "#{$family-name}" + "#{$file-name}-" + "#{$font-file-type}";
     font-family: "#{$family-name}";
     src: url($font-path + '.eot');
     src: local('☺'),
        url($font-path + '.eot?iefix') format('eot'),
        url($font-path + '.woff') format('woff'),
-       url($font-path + '.svg#webfont') format('svg'),
        local('☺');
     font-weight: $weight;
     font-style: $style;
@@ -20,13 +35,38 @@
 
 // Font-Calls
 // --------------------------------------------
-@include fontFace(national, Book, 300);
-@include fontFace(national, BookItalic, 300, italic);
+// @include fontFace(national, Book, 300);
+// @include fontFace(national, BookItalic, 300, italic);
 
-@include fontFace(national, Bold, 700);
-@include fontFace(national, BoldItalic, 700, italic);
+// @include fontFace(national, Bold, 700);
+// @include fontFace(national, BoldItalic, 700, italic);
 
-@include fontFace(national, Black, 900);
-@include fontFace(national, BlackItalic, 900, italic);
+// @include fontFace(national, Black, 900);
+// @include fontFace(national, BlackItalic, 900, italic);
 
-@include fontFace(tiempos, Black, 900);
+
+// National Font Calls
+// --------------------------------------------
+
+@include fontFace(National, WebLF, 300, Book);
+@include fontFace(National, WebLF, 300, BookItalic, italic);
+
+@include fontFace(National, WebLF, 700, Bold);
+@include fontFace(National, WebLF, 700, BoldItalic, italic);
+
+@include fontFace(National, WebLF, 900, Black);
+@include fontFace(National, WebLF, 900, BlackItalic, italic);
+
+
+
+// Tiempos Font Calls
+// --------------------------------------------
+
+@include fontFace(Tiempos, HeadlineWeb, 900, Black, normal);
+@include fontFace(Tiempos, HeadlineWeb, 900, BlackItalic, italic);
+
+@include fontFace(Tiempos, TextWeb, 300, Regular, normal);
+@include fontFace(Tiempos, TextWeb, 300, RegularItalic, italic);
+
+@include fontFace(Tiempos, TextWeb, 700, Semibold, normal);
+@include fontFace(Tiempos, TextWeb, 700, SemiboldItalic, italic);

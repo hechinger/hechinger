@@ -19,9 +19,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "taxonomy",
                 "operator": "==",
-                "value": "post"
+                "value": "special-topic"
             }
         ]
     ],

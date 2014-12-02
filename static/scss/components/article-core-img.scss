@@ -1,0 +1,68 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article images
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.media-mod {
+  max-width: $article-bd-max;
+  // max-width: 600px;
+}
+
+// protyping images bleeding out of containers.
+// assumes control over the containing element when images are added
+.img-container {
+  @extend %bleeding-container;
+  > img { }
+}
+
+.img-caption {
+  margin: 10px $site-margin 40px;
+  font-family: $he-sans;
+  font-weight: $font-weight-bold;
+  font-size: 14px;
+  line-height: 1.285714286;   // 18/14
+  color: black;
+  @include mq($bp-img-no-bleed) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .alignleft & {
+    margin-left: $site-margin;
+  }
+}
+
+.img-caption-text { }
+
+.img-byline {
+  color: $black-30;
+  font-weight: $font-weight-lt;
+}
+
+.alignleft {
+  @include mq($bp-img-no-bleed) {
+    float: left;
+    max-width: $img-max-sm;
+    margin-left: -$site-margin;
+    margin-right: $site-margin;
+  }
+  @include mq($desktop) { margin-left: -100px; }
+}
+
+
+.alignright {
+  @include mq($bp-img-no-bleed) {
+    float: right;
+    max-width: $img-max-sm;
+    margin-right: -$site-margin;
+    margin-left: $site-margin;
+  }
+  @include mq($desktop) {
+    max-width: $img-max-med;
+    margin-right: -($site-margin*2);
+  }
+}
+

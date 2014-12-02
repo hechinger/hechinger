@@ -9,6 +9,7 @@ if ( !class_exists( 'Timber' ) ) {
 
 Timber::$dirname = array( 'templates', 'views' );
 require_once('wp/hechinger-post.php');
+require_once('wp/hechinger-image.php');
 
 add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
 
@@ -22,6 +23,7 @@ class HechingerSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+                $this->set_shortcodes();
 		parent::__construct();
 		$this->bootstap_content();
 	}
@@ -124,6 +126,40 @@ class HechingerSite extends TimberSite {
 		return $twig;
 	}
 
+        function set_shortcodes() {
+                add_filter( 'img_caption_shortcode', array($this, 'handle_img_in_editor'), 10, 3);
+                add_filter( 'image_send_to_editor', function($html, $id, $caption, $title, $align, $url, $size, $alt ) {
+                        $attr['id'] = 'attachment_'.$id;
+                        $attr['align'] = 'align'.$align;
+                        $attr['caption'] = $caption;
+                        if ($id) {
+                                $image = new HechingerImage($id);
+                                if (isset($image->sizes[$size])) {
+                                        $my_size = $image->sizes[$size];
+                                } else {
+                                        $my_size = array_pop($image->sizes);
+                                }
+                                $attr['width'] = $my_size['width'];
+                                $attr['height'] = $my_size['height'];
+                        }
+                        return $this->handle_img_in_editor($html, $attr, '');
+                }, 10, 8);
+        }
+
+        function handle_img_in_editor($output, $attr, $content) {
+                if ( $attr['id'] ) {
+                        $iid = str_replace( 'attachment_', '', $attr['id'] );
+                        $image = new TimberImage( $iid );
+                        $class = $attr['align'] . ' inline-core-image';
+                        $width = $attr['width'];
+                        if ( $attr['align'] == 'alignnone' || $attr['align'] == 'aligncenter') {
+                                $attr['full_width'] = true;
+                        }
+                        $image_string = Timber::compile( 'templates/components/article-core-img.twig', array( 'image' => $image, 'class' => $class, 'width' => $width, 'attr' => $attr ) );
+                        return preg_replace('/\s+/', ' ', $image_string);
+                }
+                return $output;
+        }
 }
 
 new HechingerSite();

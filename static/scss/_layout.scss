@@ -106,8 +106,13 @@ $has-margin:          800px;
 
 .grid-container, %grid-container {
   padding-top: 25px;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  @include mq (595px) {
   padding-left: 20px;
   padding-right: 20px;
+    }
 }
 
 .grid-container--rule {
@@ -117,7 +122,20 @@ $has-margin:          800px;
 
 .grid-item { margin-bottom: 20px; position: relative; }
 
-.l-grid-2 { @include media-grid(2, 20px, '.grid-item'); }
+.l-grid-2 {
+
+  @include mq (595px) {
+      @include media-grid(2, 20px, '.grid-item');
+    }
+
+  &.grid-item {
+    @include mq (max, 595px) {
+      float: left;
+      width: 50%;
+    }
+  }
+}
+
 .l-grid-3 { @include media-grid(3, 20px, '.grid-item') }
 .l-grid-4 { @include media-grid(4, 20px, '.grid-item') }
 

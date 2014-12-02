@@ -20,9 +20,21 @@
   <div class="l-content">
     <div class="l-content--inner">
       <article class="article-main">
+
+        {% block article_related %}
+          {% include "/templates/components/article-aside-related.twig"  %}
+        {% endblock %}
+
+        {% block article_aside %}
+          {% for aside in post.post_asides %}
+            {% include "/templates/components/article-aside.twig" with { aside: aside } %}
+          {% endfor %}
+        {% endblock %}
+
         <div class="article-body article-text">
           {{ post.content }}
         </div> <!-- /article-body -->
+
       </article> <!-- /article-main -->
 
       <!-- article-social -->

@@ -1,0 +1,43 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Aside Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+%article-aside {
+  max-width: $article-bd-max;
+  padding: 17px 10px;
+  @include bp(700px) {
+    clear: right;
+    float: right;
+    display: initial;
+    width: 220px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+    margin-right: 0;
+  }
+}
+
+.article-aside {
+  @extend %article-aside;
+  display: table-footer-group;
+  @include bp(700px) {
+    display: block;
+  }
+}
+
+.aside-hdr {
+  @extend %section-hdr;
+  font-size: 16px;
+}
+
+.aside-borders {
+  border-top: $bdr-med--black;
+  border-bottom: $bdr-thin;
+}
+
+.aside-body {
+  margin-left: 0
+}

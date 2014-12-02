@@ -51,6 +51,18 @@
   }
 }
 
+%link-bullet-readmore {
+  padding-right: 1em;
+  padding-left: .35em;
+  &:after {
+    padding-left: .35em;
+    position: relative;
+    right: 0;
+    display: inline-block;
+    content: '→';
+    color: inherit;
+  }
+}
 
 
 %head-link {

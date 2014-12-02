@@ -21,10 +21,10 @@ $aside-max:         240px;
 // longer bleeding out of the rest of the article container.
 $bp-img-no-bleed:   550px;
 
+
 // When asides (pullquotes) float and take on max-width
 $bp-aside:          550px;
 $bp-aside-negative-margin:  925px;
-
 
 // --------------------------------------------
 // --------------------------------------------
@@ -34,47 +34,36 @@ $bp-aside-negative-margin:  925px;
 // --------------------------------------------
 // --------------------------------------------
 
-
-
 // checkout layout.scss for l-content and l-content--inner.
 // They're more universal and thus pulled out
 
 .article-main {
-  // padding: 0 50px;
-  // background-color: yellow;
+  display: table;
+  @include bp(700px) {
+    display: block;
+  }
 }
 
 .article-body {
   @include pie-clearfix;
-  // * + * { margin-top: 29px; }
-  * + * { margin-top: 17px; }
+  display: table-caption;
+  margin-bottom: 30px;
+
+  * + * { margin: 17px; }
 
   @include bp(550px) {
     // max-width: 880px;
     margin: 0 auto;
     // padding: 0 50px;
   }
+  @include bp(700px) {
+    display: initial;
+  }
 }
 
 .recirculation-container {
   margin-top: 50px;
   @include pie-clearfix;
-}
-
-.article-aside {
-  // background-color: pink;
-  padding: 17px 10px;
-  border-top: $bdr-med--black;
-  border-bottom: $bdr-thin;
-  max-width: $article-bd-max;
-  @include bp(700px) {
-    float: right;
-    width: 220px;
-    // height: 100px;
-    margin-left: 60px;
-    margin-bottom: 30px;
-    // margin-right: -60px;
-  }
 }
 
 .page-mod {
@@ -85,7 +74,6 @@ $bp-aside-negative-margin:  925px;
 
 .article-tools-btm-left { float: left; }
 .article-tools-btm-right { float: right; }
-
 
 
 
@@ -350,7 +338,6 @@ $bp-aside-negative-margin:  925px;
 
 
 
-
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -372,6 +359,7 @@ $bp-aside-negative-margin:  925px;
   line-height: 1;
   font-family: $he-sans;
 }
+
 
 
 // --------------------------------------------

@@ -1,0 +1,16 @@
+{% if post.related_heading or post.post_related_aside %}
+<div class="related-aside {{ contextClass }}">
+  {% if post.related_heading %}
+    <h4 class="aside-related-hdr">{{ post.related_heading }}</h4>
+  {% endif %}
+  <ul class="aside-related-items">
+    {% for rpost in post.post_related_aside %}
+    <li class="aside-related-item">
+      <h3 class="aside-related-item-hdr">
+        <a class="aside-related-item-link" href="{{ rpost.link }}">{{ rpost.title }}</a>
+      </h3> <!-- /aside-related-item-hdr -->
+    </li> <!-- /aside-related-item -->
+    {% endfor %}
+  </ul> <!-- /aside-related-items -->
+</div> <!-- /aside-related-mod -->
+{% endif %}

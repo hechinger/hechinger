@@ -1,0 +1,29 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Aside Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+%article-aside {
+  max-width: $article-bd-max;
+  padding: 17px 10px;
+  @include bp(700px) {
+    clear: right;
+    float: right;
+    display: initial;
+    width: 220px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+  }
+}
+
+.article-aside {
+  @extend %article-aside;
+}
+
+.article-aside-borders {
+  border-top: $bdr-med--black;
+  border-bottom: $bdr-thin;
+}

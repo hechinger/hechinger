@@ -20,6 +20,11 @@
   <div class="l-content">
     <div class="l-content--inner">
       <article class="article-main">
+
+        {% block article_related %}
+          {% include "/templates/components/article-aside-related.twig"  %}
+        {% endblock %}
+
         <div class="article-body article-text">
           {{ post.content }}
         </div> <!-- /article-body -->

@@ -63,17 +63,10 @@
 @import "components/article-header";
 @import "components/promo";
 @import "components/tease-full";
+@import "components/article-aside";
+@import "components/article-aside-related";
 
 
-// --------------------------------------------
-// --------------------------------------------
-//
-// Page Imports
-//
-// --------------------------------------------
-// --------------------------------------------
-
-@import "components/_article-aside";
 
 
 // --------------------------------------------
@@ -86,44 +79,6 @@
 
 body { font-family: $he-sans; }
 
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Article Related Links
-//
-// --------------------------------------------
-// --------------------------------------------
-
-.head-highlight {
-  background-color: $he-main;
-  padding: 0.085em 0.294117647em;
-}
-
-.article-related-hdr {
-  @extend %section-hdr;
-  font-size: 16px;
-}
-
-.article-related-items { }
-
-.article-related-item {
-  font-size: 17px;
-  line-height: 1.294117647;   // 22/17
-  padding-left: 1em;
-  position: relative;
-  & + & { margin-top: 0.85em; }
-}
-
-.article-related-head {
-  @extend %item-bullet;
-}
-
-.article-related-link {
-  @extend %head-link;
-}
 
 // --------------------------------------------
 // --------------------------------------------
@@ -313,8 +268,6 @@ body { font-family: $he-sans; }
   color: $he-secondary;
   text-decoration: none;
 }
-
-
 
 
 

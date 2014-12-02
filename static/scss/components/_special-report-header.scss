@@ -1,4 +1,4 @@
-.special-report-banner {
+.section-front-banner {
   position: absolute;
   top: 0;
   z-index: -1;
@@ -7,7 +7,7 @@
   background-size: cover;
 }
 
-.l-special-report-hdr-wrap {
+.l-section-front-hdr-wrap {
   // margin-top: 126px;
   margin-top: 165px;
   @include mq('max', $medium) {
@@ -15,7 +15,7 @@
   }
 }
 
-.special-report-summary-wrap {
+.section-front-summary-wrap {
   margin: 0 $site-margin;
   max-width: $content-max;
   @include bp($no-content-margin) {
@@ -24,7 +24,7 @@
   }
 }
 
-.special-report-summary-text {
+.section-front-summary-text {
   font-family: $he-sans;
   font-size: 28px;
   font-weight: $font-weight-lt;
@@ -32,7 +32,7 @@
 
 }
 
-.special-report-summary-link {
+.section-front-summary-link {
   color: $he-secondary;
   &:after {
     content: " →";

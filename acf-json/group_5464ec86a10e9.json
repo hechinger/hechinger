@@ -21,14 +21,14 @@
         },
         {
             "key": "field_5476452d34d97",
-            "label": "lead image",
+            "label": "Lead Image",
             "name": "lead_image",
             "prefix": "",
             "type": "image",
             "instructions": "Select or upload a large image to appear above the headline.",
             "required": 0,
             "conditional_logic": 0,
-            "return_format": "url",
+            "return_format": "array",
             "preview_size": "thumbnail",
             "library": "uploadedTo"
         }

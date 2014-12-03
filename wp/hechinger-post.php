@@ -94,7 +94,7 @@ class HechingerPost extends TimberPost {
     return $links;
   }
 
-  function get_lead_image() {
+  function lead_image() {
     $image = new TimberImage($this->get_field('lead_image'));
     if ( isset($image)) {
       return $image;

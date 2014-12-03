@@ -142,32 +142,6 @@
   color: black;
 }
 
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Article Feature Header
-//
-// --------------------------------------------
-// --------------------------------------------
-.articleFeat-mod {
-  position: relative;
-  margin-top: -40px;
-  padding-right: 20px;
-  padding-top: 20px;
-  background-color: #fff;
-  width: 80%;
-  max-width: 800px;
-}
-
-.articleFeat-h {
-  font-size: 72px;
-  font-style: italic;
-  font-weight: 900;
-  color: #000;
-  letter-spacing: -2px;
-}
-
 %article-bd-margin {
   margin-right: auto;
   margin-left: auto;
@@ -175,4 +149,8 @@
     margin-right: 0;
     margin-left: 0;
   }
+}
+
+.article-img-lead {
+  max-width: 700px;
 }

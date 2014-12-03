@@ -1,0 +1,191 @@
+{% extends 'layout.twig' %}
+
+{% block navbar %}
+  {% include 'components/nav-bar.twig' with {css_class: "site-header--no-pad"} %}
+{% endblock %}
+
+
+{# archive page layouts go here #}
+{% block body %}
+
+  {% block header %}
+    {% include 'components/section-front-header.twig' with {section_front_title : "About" } %}
+  {% endblock header %}
+
+  {% block about_content %}
+    <div class="about-content">
+      <div class="l-content">
+
+
+
+        <!-- Our Staff -->
+        <!-- ============================ -->
+        <div class="about-zone">
+          <div class="l-about-inner">
+            <div class="staff-img-mod">
+              <ul class="staff-img-items l-grid-img">
+                {% for i in 1..12 %}
+                  <li class="staff-img-item media-block">
+                    <a class="staff-img-link" href="#">
+                      <img class="about-staff-img" src="{{ img.src | resize(175, 175) | default('/wp-content/themes/hechinger/static/img/mug_placeholder.jpg' | resize(175, 175) ) }}" alt="">
+                    </a>
+                  </li> <!-- /staff-img-item -->
+                {% endfor %}
+              </ul> <!-- about-img-items -->
+            </div> <!-- /about-img-mod -->
+
+            <div class="about-content-mod">
+              <div class="l-pair-about">
+                <div class="art-bd">
+                  <h2 class="about-h">Our Staff</h2>
+                </div> <!-- /art-bd -->
+
+                <div class="txt-bd">
+                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  <div class="about-link-mod">
+                    <a class="about-link" href="#">Our Link Words</a>
+                    <a class="about-link" href="#">Our Link Words</a>
+                  </div> <!-- /about-link-mod -->
+                </div> <!-- /txt-bd -->
+              </div> <!-- /l-pair-about -->
+            </div> <!-- /about-content-mod -->
+
+
+          </div> <!-- /about-inner -->
+        </div> <!-- /about-page-zone -->
+
+
+
+        <!-- Our Awards -->
+        <!-- ============================ -->
+        <div class="about-zone">
+          <div class="l-about-inner">
+            <div class="about-content-mod">
+              <div class="l-pair-about">
+                <div class="art-bd">
+                  <h2 class="about-h">Our Awards</h2>
+                </div> <!-- /art-bd -->
+
+                <div class="txt-bd">
+                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  <div class="about-bottom-mod">
+                    <ul class="about-award-items">
+                      {% for i in 1..3 %}
+                        <li class="l-pair-award">
+                          <div class="art-bd">
+                            <h4 class="award-year">2999</h4>
+                          </div> <!-- /art-bd -->
+                          <div class="txt-bd">
+                            <h4 class="award-h">
+                              <a class="award-h-link" href="#">Hello. This is a headline here</a>
+                            </h4> <!-- /award-h -->
+                            <p class="award-text">This is tease text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quia corporis omnis eius ex ratione beatae ullam nobis necessitatibus facilis. <a class="award-read-more" href="#">Read More</a></p>
+                          </div> <!-- /txt-bd -->
+                        </li> <!-- /l-pair-award -->
+                      {% endfor %}
+                    </ul> <!-- /about-award-items -->
+                  </div> <!-- /about-bottom-mod -->
+                  <div class="about-link-mod">
+                    <a class="about-link" href="#">Our Link Words</a>
+                  </div> <!-- /about-link-mod -->
+                </div> <!-- /txt-bd -->
+              </div> <!-- /l-pair-about -->
+            </div> <!-- /about-content-mod -->
+          </div> <!-- /l-about-inner -->
+        </div> <!-- /about-page-zone -->
+
+
+
+        <!-- Our Namesake -->
+        <!-- ============================ -->
+        <div class="about-zone">
+          <div class="l-about-inner">
+            <div class="about-img-mod">
+              <img src="{{ img.src | resize(800, 300) | default('/wp-content/themes/hechinger/static/img/test.jpg' | resize(800, 300) ) }}" alt="">
+            </div> <!-- /about-img-mod -->
+
+            <div class="about-content-mod">
+              <div class="l-pair-about">
+                <div class="art-bd">
+                  <h2 class="about-h">Our Namesake</h2>
+                </div> <!-- /art-bd -->
+
+                <div class="txt-bd">
+                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  <div class="about-link-mod">
+                    <a class="about-link" href="#">Our Link Words</a>
+                  </div> <!-- /about-link-mod -->
+                </div> <!-- /txt-bd -->
+              </div> <!-- /l-pair-about -->
+            </div> <!-- /about-content-mod -->
+          </div> <!-- /l-about-inner -->
+        </div> <!-- /about-page-zone -->
+
+
+
+        <!-- Our Partners -->
+        <!-- ============================ -->
+        <div class="about-zone">
+          <div class="l-about-inner">
+            <div class="about-content-mod">
+              <div class="l-pair-about">
+                <div class="art-bd">
+                  <h2 class="about-h">Our Partners</h2>
+                </div> <!-- /art-bd -->
+
+                <div class="txt-bd">
+                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                   <div class="about-bottom-mod">
+                    <ul class="l-about-partners">
+                      {% for i in 1..8 %}
+                        <li class="media-block">
+                          <img src="/wp-content/themes/hechinger/static/img/partners/icn-partner-Advocate.svg" alt="">
+                        </li> <!-- /media-block -->
+                      {% endfor %}
+                    </ul>
+                  </div> <!-- /about-bottom-mod -->
+                  <div class="about-link-mod">
+                    <a class="about-link" href="#">Our Link Words</a>
+                  </div> <!-- /about-link-mod -->
+                </div> <!-- /txt-bd -->
+              </div> <!-- /l-pair-about -->
+            </div> <!-- /about-content-mod -->
+          </div> <!-- /l-about-inner -->
+        </div> <!-- /about-page-zone -->
+
+
+
+
+        <!-- Our Supporters -->
+        <!-- ============================ -->
+        <div class="about-zone">
+          <div class="l-about-inner">
+            <div class="about-content-mod">
+              <div class="l-pair-about">
+                <div class="art-bd">
+                  <h2 class="about-h">Our Supporters</h2>
+                </div> <!-- /art-bd -->
+
+                <div class="txt-bd">
+                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  <div class="about-link-mod">
+                    <a class="about-link" href="#">Our Link Words</a>
+                  </div> <!-- /about-link-mod -->
+                </div> <!-- /txt-bd -->
+              </div> <!-- /l-pair-about -->
+            </div> <!-- /about-content-mod -->
+          </div> <!-- /l-about-inner -->
+        </div> <!-- /about-page-zone -->
+
+
+      </div> <!-- /l-content -->
+    </div> <!-- /about-content -->
+  {% endblock about_content %}
+
+{% endblock body %}
+
+{% block scripts %}{% endblock %}
+
+
+
+

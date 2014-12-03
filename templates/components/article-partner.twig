@@ -1,7 +1,7 @@
 <!-- article-aside -->
 <aside class="partner-aside">
   <div class="aside-partner-logo">
-    <img class="aside-partner-img" src="{{post.partner.logo }}" alt="{{ post.partner.name }}" />
+    <img class="aside-partner-img" src="{{TimberImage(post.partner.logo).src | resize(400) }}" alt="{{ post.partner.name }}" />
   </div> <!-- /article-partner-logo -->
   <p class="aside-partner-text">This story also appeared in {{ post.partner.name }}</p>
 </aside> <!-- /article-aside -->

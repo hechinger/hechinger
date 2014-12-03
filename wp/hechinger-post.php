@@ -10,8 +10,14 @@ class HechingerPost extends TimberPost {
     return $this->category();
   }
 
-  function tease_excerpt() {
+  function getBanner($shape = 'yellow_banner') {
+    $st = $this->overline();
+    if (isset($st->$shape)) {
+      return new TimberImage($st->$shape);
+    }
+  }
 
+  function tease_excerpt() {
     if ($this->subhead) {
       $excerpt = $this->subhead;
     } elseif ($this->excerpt) {

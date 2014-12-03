@@ -1,14 +1,14 @@
 {
-    "key": "group_5474cf7d2fb0c",
-    "title": "Special Reports",
+    "key": "group_547f433859d6e",
+    "title": "Special Reports Images",
     "fields": [
         {
-            "key": "field_5474cf83d5a33",
-            "label": "",
-            "name": "",
+            "key": "field_547f460a7e61e",
+            "label": "Square Image",
+            "name": "square",
             "prefix": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Upload a yellow image of dimensions (___px, ___px).",
             "required": 0,
             "conditional_logic": 0,
             "return_format": "array",

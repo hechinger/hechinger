@@ -134,8 +134,9 @@
   // Links
   a, a:visited {
     color: $he-secondary;
+    text-decoration: none;
     &:hover, &:visited:hover {
-      color: $he-main;
+        text-decoration: underline;
     }
   }
 

@@ -140,35 +140,40 @@ class HechingerSite extends TimberSite {
 
         function set_shortcodes() {
                 add_filter( 'img_caption_shortcode', array($this, 'handle_img_in_editor'), 10, 3);
-                add_filter( 'image_send_to_editor', function($html, $id, $caption, $title, $align, $url, $size, $alt ) {
-                        $attr['id'] = 'attachment_'.$id;
-                        $attr['align'] = 'align'.$align;
-                        $attr['caption'] = $caption;
-                        if ($id) {
-                                $image = new HechingerImage($id);
-                                if (isset($image->sizes[$size])) {
-                                        $my_size = $image->sizes[$size];
-                                } else {
-                                        $my_size = array_pop($image->sizes);
-                                }
-                                $attr['width'] = $my_size['width'];
-                                $attr['height'] = $my_size['height'];
-                        }
-                        return $this->handle_img_in_editor($html, $attr, '');
-                }, 10, 8);
+                add_filter( 'image_send_to_editor', function ($html, $id, $caption, $title, $align, $url, $size, $alt ) {
+
+                  if ( empty($caption) || apply_filters( 'disable_captions', '' ) ) {
+                        $caption =  '&nbsp;'; //forces image to have caption
+                  }
+
+                  $id = ( 0 < (int) $id ) ? 'attachment_' . $id : '';
+
+                  if ( ! preg_match( '/width=["\']([0-9]+)/', $html, $matches ) ) {
+                        return $html;
+                  }
+
+                  $width = $matches[1];
+
+                  $html = preg_replace( '/(class=["\'][^\'"]*)align(none|left|right|center)\s?/', '$1', $html );
+
+                  if ( empty($align) ) {
+                    $align = 'none';
+                  }
+
+                  $shcode = '[caption id="' . $id . '" align="align' . $align . '" width="' . $width . '"]' . $html . ' ' . $caption . '[/caption]';
+
+                  return $shcode;
+
+               }, 10, 8 );
         }
 
         function handle_img_in_editor($output, $attr, $content) {
             if ( $attr['id'] ) {
-                $iid = str_replace( 'attachment_', '', $attr['id'] );
-                $image = new TimberImage( $iid );
-                $class = $attr['align'] . ' inline-core-image';
-                $width = $attr['width'];
-                if ( $attr['align'] == 'alignnone' || $attr['align'] == 'aligncenter') {
-                    $attr['full_width'] = true;
-                }
-                $image_string = Timber::compile( 'templates/components/article-core-img.twig', array( 'image' => $image, 'class' => $class, 'width' => $width, 'attr' => $attr ) );
-                return preg_replace('/\s+/', ' ', $image_string);
+                  $iid = str_replace( 'attachment_', '', $attr['id'] );
+                  $image = new TimberImage( $iid );
+                  $class = $attr['align'] . ' inline-core-image';
+                  $image_string = Timber::compile( 'templates/components/article-core-img.twig', array( 'image' => $image, 'class' => $class, 'attr' => $attr ) );
+                  return preg_replace('/\s+/', ' ', $image_string);
             }
             return $output;
         }

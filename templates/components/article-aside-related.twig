@@ -1,4 +1,3 @@
-{% if post.related_heading or post.post_related_aside %}
 <aside class="related-aside {{ contextClass }}">
   {% if post.related_heading %}
     <h4 class="aside-hdr">{{ post.related_heading }}</h4>
@@ -13,4 +12,3 @@
     {% endfor %}
   </ul> <!-- /aside-related-items -->
 </aside> <!-- /aside-related-mod -->
-{% endif %}

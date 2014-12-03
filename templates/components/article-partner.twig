@@ -1,9 +1,8 @@
 <!-- article-aside -->
-<div class="article-aside">
-  <div class="article-partner">
-    <div class="article-partner-logo icon-american_prospect">
-      <i class="partner"></i>
-    </div> <!-- /article-partner-logo -->
-    <p class="article-partner-text">This story also appeared on Upstatement.com</p>
-  </div> <!-- /article-partner -->
-</div> <!-- /article-aside -->
+<aside class="partner-aside">
+  <div class="aside-partner-logo">
+    <img class="aside-partner-img" src="{{TimberImage(post.partner.logo).src | resize(400) }}" alt="{{ post.partner.name }}" />
+  </div> <!-- /article-partner-logo -->
+  <p class="aside-partner-text">This story also appeared in {{ post.partner.name }}</p>
+</aside> <!-- /article-aside -->
+

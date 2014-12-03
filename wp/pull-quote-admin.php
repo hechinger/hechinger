@@ -9,7 +9,6 @@
       $style = '';
       $author = '';
       $desc = '';
-      echo var_dump($atts);
       if(isset($content)) {
         if ( isset($atts['style']) ) {
           $style = $atts['style'];

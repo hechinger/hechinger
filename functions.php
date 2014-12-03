@@ -26,7 +26,7 @@ class HechingerSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-                $this->set_shortcodes();
+        $this->set_shortcodes();
 		parent::__construct();
 		$this->bootstap_content();
 	}
@@ -34,7 +34,7 @@ class HechingerSite extends TimberSite {
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
 			$article = new Mesh\Post( 'article', 'page' );
-                        $article = new Mesh\Post( 'archive', 'page' );
+            $article = new Mesh\Post( 'archive', 'page' );
 			$article = new Mesh\Post( 'special-report', 'page' );
 			$article = new Mesh\Post( 'author', 'page' );
 			$article = new Mesh\Post( 'snippets', 'page' );
@@ -171,7 +171,7 @@ class HechingerSite extends TimberSite {
             'description' => $desc,
             'pull_quote' => $content
         );
-        return $string = Timber::compile('templates/components/article-pull-quote.twig', $args);
+        return Timber::compile('templates/components/article-pull-quote.twig', $args);
     }
 }
 

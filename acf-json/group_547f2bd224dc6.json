@@ -8,7 +8,7 @@
             "name": "second_feature",
             "prefix": "",
             "type": "relationship",
-            "instructions": "",
+            "instructions": "Select a post to for the second feature slot. If none is selected it will display the most recent.",
             "required": 0,
             "conditional_logic": 0,
             "post_type": [

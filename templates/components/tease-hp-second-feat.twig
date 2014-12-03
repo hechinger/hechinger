@@ -6,13 +6,17 @@
   </div>
   <div class="hp-second-feature-txt-container">
     <div class="hp-second-feature-txt-inner">
-      <h4 class="hp-second-feature-topic">
-        <a class="tz-overline-link" href="{{ feature.overline.link }}">{{ feature.overline }}</a>
-      </h4>
+      {% if feature.overline %}
+        <h4 class="hp-second-feature-topic">
+          <a class="tz-overline-link" href="{{ feature.overline.link }}">{{ feature.overline }}</a>
+        </h4>
+      {% endif %}
       <h1 class="hp-second-feature-head">
         <a class="tz-h-link" href="{{ feature.link }}">{{ feature.title }}</a>
       </h1>
-      <p class="hp-second-feature-txt">{{ feature.tease_excerpt }}<a class="hp-second-feature-read-more" href="{{ feature.link }}">Read more</a></p>
+      {% if feature.tease_excerpt %}
+        <p class="hp-second-feature-txt">{{ feature.tease_excerpt }}<a class="hp-second-feature-read-more" href="{{ feature.link }}">Read more</a></p>
+      {% endif %}
     </div> <!-- /hp-second-feature-txt-inner -->
   </div> <!-- /hp-second-feature-txt-container -->
 </div> <!-- /hp-second-feature-mod -->

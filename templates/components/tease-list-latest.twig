@@ -1,17 +1,17 @@
 <div class="hp-latest-mod">
   <h4 class="hp-list-hdr">Latest News</h4>
   <ul class="hp-list-items">
-    {% for i in 1..4 %}
-    <li class="hp-list-item">
-      <h3 class="hp-list-head">
-        <a class="hp-list-link" href="#">This is a Latest News headline on the homepage</a>
-      </h3>
-    </li> <!-- /hp-list-item -->
+    {% for lpost in latest_posts|slice(0, 4) %}
+      <li class="hp-list-item">
+        {% if lpost.is_column and lpost.author.columnist_image %}
+          <div class="hp-latest-list-img">
+            <img src="{{ lpost.column_image.get_url }}" alt="Photo of {{ lpost.author.name }}">
+          </div> <!-- /article-column-img -->
+        {% endif %}
+        <h3 class="hp-list-head">
+          <a class="hp-list-link" href="{{ lpost.link }}">{{ lpost.title }}</a>
+        </h3>
+      </li> <!-- /hp-list-item -->
     {% endfor %}
-    <li class="hp-list-item">
-      <h3 class="hp-list-head">
-        <a class="hp-list-link" href="#">This is a <span class="head-highlight">Latest News headline</span> on the homepage</a>
-      </h3>
-    </li> <!-- /hp-list-item -->
   </ul> <!-- /hp-list-items -->
 </div> <!-- /hp-latest-mod -->

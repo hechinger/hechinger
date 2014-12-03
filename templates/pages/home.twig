@@ -35,7 +35,9 @@
 
             <!-- /latest news feed -->
             <div class="grid-item">
-              {% include "/templates/components/tease-list-latest.twig" %}
+              {% if latest_posts|length %}
+                {% include "/templates/components/tease-list-latest.twig" %}
+              {% endif %}
             </div> <!-- /grid-item -->
 
           </div> <!-- /l-hp-dos--rule -->

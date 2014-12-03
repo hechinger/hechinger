@@ -21,7 +21,6 @@
         }
         return HechingerSite::render_pull_quote($content, $style, $author, $desc);
       }
-      return 'chees';
     }
 
     function add_mce_button(){

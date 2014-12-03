@@ -14,7 +14,7 @@
 <div class="l-search-results">
   <div class="search-results-inner">
 
-  {% if count > 0 %}
+  {% if count %}
     <h3 class="results-number">{{ count }} Results for '{{ query }}'</h3>
   {% else %}
     <h2 class="no-results">Sorry, we couldn’t find any results for your search.<h2>
@@ -26,7 +26,8 @@
 
   </div>
 </div>
-
-  {% include "/templates/components/pagination.twig" %}
+  {% if count %}
+    {% include "/templates/components/pagination.twig" %}
+  {% endif %}
 
 {% endblock %}

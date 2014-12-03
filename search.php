@@ -1,24 +1,9 @@
 <?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * To generate specific templates for your pages you can use:
- * /mytheme/views/page-mypage.twig
- * (which will still route through this PHP file)
- * OR
- * /mytheme/page-mypage.php
- * (in which case you'll want to duplicate this file and save to the above path)
- *
- * Methods for TimberHelper can be found in the /functions sub-directory
- *
- * @package  WordPress
- * @subpackage  Timber
- * @since    Timber 0.1
- */
-$context = Timber::get_context();
-Timber::render(array('pages/' . $post->slug . '.twig', 'pages/search.twig'), $context);
+
+  global $wp_query;
+  $context = Timber::get_context();
+  $context['query'] = get_search_query();
+  $context['count'] = $wp_query->found_posts;
+  $context['posts'] = Timber::get_posts( 'HechingerPost' );
+  $context['pagination'] = Timber::get_pagination();
+  Timber::render(array('pages/search.twig'), $context);

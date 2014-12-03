@@ -10,8 +10,21 @@ class HechingerPost extends TimberPost {
     return $this->category();
   }
 
-  function tease_excerpt() {
+  function getBanner($shape) {
+    $st = $this->overline;
+    $default = '/wp-content/themes/hechinger/static/img/special reports/img-special_report-desks-528-528.jpg';
 
+    if (!isset($shape)) {
+      $shape = 'yellow_banner';
+    }
+    if (isset($st->$shape)) {
+      return new TimberImage($st->$shape);
+    }
+
+    return new TimberImage($default);
+  }
+
+  function tease_excerpt() {
     if ($this->subhead) {
       $excerpt = $this->subhead;
     } elseif ($this->excerpt) {

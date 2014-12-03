@@ -30,7 +30,7 @@
             "conditional_logic": 0,
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "uploadedTo"
+            "library": "all"
         }
     ],
     "location": [

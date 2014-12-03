@@ -26,6 +26,9 @@ $bp-img-no-bleed:   550px;
 $bp-aside:          550px;
 $bp-aside-negative-margin:  925px;
 
+
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -49,7 +52,7 @@ $bp-aside-negative-margin:  925px;
   display: table-caption;
   margin-bottom: 30px;
 
-  * + * { margin: 17px; }
+  > * + * { margin-top: 17px; }
 
   @include bp(550px) {
     // max-width: 880px;
@@ -77,10 +80,11 @@ $bp-aside-negative-margin:  925px;
 
 
 
+
 // --------------------------------------------
 // --------------------------------------------
 //
-// Article Type
+// Inner Article Type Styles
 //
 // --------------------------------------------
 // --------------------------------------------
@@ -88,84 +92,82 @@ $bp-aside-negative-margin:  925px;
 .article-text {
   @extend %article-text;
 
-  // ---------------------------
   // Paragraphs
-  // > p { margin-bottom: 1em; }
+  // --------------------------------------------
+
   > p {
-    @extend %article-bd-margin;
+    // @extend %article-bd-margin;
     max-width: $article-bd-max;
     &:first-of-type { @include drop-cap; }
-    font-family: Georgia, serif;
-    font-size: 16px;
   }
-  // ---------------------------
+
+
   // Headline Styles
-  > h1 {
-      // @include fontFace(National, WebLF, 900, BlackItalic, italic);
-      font-family: $he-sans;
-      font-weight: $font-weight-bold;
-      font-size: 30px;
+  // --------------------------------------------
+
+  > h1,
+  > h2,
+  > h3,
+  > h6 {
+    font-family: $he-sans;
+    font-weight: $font-weight-bold;
+    + p { margin-top: 5px; }
   }
 
-  > h2 {
-      font-family: $he-sans;
-      font-weight: $font-weight-bold;
-      font-size: 24px;
-    }
+  > h4,
+  > h5 { border-bottom: 6px solid black; }
 
-  > h3 {
-      font-family: $he-sans;
-      font-weight: $font-weight-bold;
-      font-size: 20px;
-    }
+  > h1 { font-size: 30px; margin-top: 45px; }
+
+  > h2 { font-size: 24px; margin-top: 45px;  }
+
+  > h3 { font-size: 20px; margin-top: 45px; }
 
   > h4 {
+      display: inline-block;
+      margin-top: 45px;
       font-family: $he-serif;
       font-weight: $font-weight-black;
       font-size: 22px;
-      border-bottom: 8px solid black;
-      padding-bottom: 7px;
-      margin-top: 35px;
-      display: inline-block;
+      padding-bottom: 3px;
   }
 
   > h5 {
       font-family: $he-serif;
       font-weight: $font-weight-black;
       font-size: 15px;
-      border-bottom: 5px solid black;
-      padding-bottom: 5px;
+      padding-bottom: 3px;
       display: inline-block;
     }
 
   > h6 {
-      font-family: $he-sans;
-      font-weight: $font-weight-bold;
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
-  // ---------------------------
-  // Blockquote
-  > blockquote {
-    padding-left: 25px;
-    margin: 25px 0 !important;
-    border-left: 5px solid black;
-    > p {
-      @extend %article-bd-margin;
-      max-width: $article-bd-max;
-      font-family: Georgia, serif;
-      font-size: 16px;
-    }
 
-    >ul, ol {
-      font-family: Georgia, serif;
+  // Block Quote
+  // --------------------------------------------
+  > blockquote {
+    max-width: $article-bd-max;
+    margin: 25px 0 !important;
+    border-left: 2px solid $black-40;
+    padding-left: 25px;
+    font-size: 18px;
+    font-family: $he-sans;
+    font-weight: $font-weight-lt;
+
+    p { margin-top: 17px; }
+
+    ul, ol {
       font-size: 16px;
+      margin-top: 17px;
+      padding-left: 25px;
       a {}
     }
 
-    > ul {
+    ul {
       list-style-type: disc;
 
       ul {
@@ -178,12 +180,14 @@ $bp-aside-negative-margin:  925px;
   .pull-quote a { }
 
 
-  // ---------------------------
   // Lists
-  >ul, ol {
-    font-family: Georgia, serif;
+  // --------------------------------------------
+  > ul,  > ol {
+    font-family: $he-sans;
     font-size: 16px;
     margin-left: 20px;
+
+    li { margin-top: 10px; }
     a {}
   }
 
@@ -201,23 +205,24 @@ $bp-aside-negative-margin:  925px;
   }
  // >ul, ol
 
-  // ---------------------------
+
   // Links
+  // --------------------------------------------
   a, a:visited {
     color: $he-secondary;
-    &:hover, &:visited:hover {
-      color: $he-main;
-    }
+    &:hover, &:visited:hover { }
   }
 
-  >address {
+  > address {
     font-family: $he-sans;
     font-size: 16px;
     font-style: italic;
     font-weight: $font-weight-lt;
   }
-  // ---------------------------
-  // Image stuff
+
+
+  // Images
+  // --------------------------------------------
   > p {
     // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
     // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
@@ -240,6 +245,7 @@ $bp-aside-negative-margin:  925px;
     font-weight: $font-weight-lt;
     font-size: 14px;
   }
+
   .wp-image-38 {
     margin-right: 20px;
     height: auto;
@@ -252,16 +258,18 @@ $bp-aside-negative-margin:  925px;
 
   .media-mod { }
 
-  // ---------------------------
   // Italic
+  // --------------------------------------------
   em, i { }
 
-  // ---------------------------
   // Bold
+  // --------------------------------------------
   strong, b { }
 
 
 } // article-body
+
+
 
 
 
@@ -311,6 +319,7 @@ $bp-aside-negative-margin:  925px;
   color: $he-secondary;
   text-decoration: none;
 }
+
 
 
 

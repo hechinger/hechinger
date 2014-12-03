@@ -326,58 +326,6 @@ $bp-aside-negative-margin:  925px;
 // --------------------------------------------
 // --------------------------------------------
 //
-// Article quote
-//
-// --------------------------------------------
-// --------------------------------------------
-
-.article-quote {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding-top: 17px;
-  border-top: 8px solid black;
-  @include mq($bp-aside) {
-    float: left;
-    max-width: $aside-max;
-    margin-right: $site-margin;
-    border-top-width: 15px;
-  }
-  @include mq($bp-aside-negative-margin) {
-    margin-left: -$site-margin;
-  }
-
-  @include mq($desktop) { margin-left: -($site-margin*2); }
-}
-
-.article-quote-h {
-  font-family: $he-serif;
-  font-weight: $font-weight-bold;
-  font-size: 24px;
-  line-height: 1.291666667;   // 31/24
-  color: black;
-}
-
-.article-quote-attr {
-  font-family: $he-sans;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  font-size: 11px;
-}
-
-.article-quote-desc {
-  margin-top: 0;
-  font-family: $he-sans;
-  font-size: 12px;
-  line-height: 1.25;
-}
-
-
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
 // Article tag items
 //
 // --------------------------------------------

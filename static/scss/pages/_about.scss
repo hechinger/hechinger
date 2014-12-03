@@ -105,7 +105,7 @@ $about-content-max-width:   820px;
 .l-grid-img {
   .media-block { margin-bottom: 1px; }
 
-  @include mq(800px, max) {
+  @include mq(max, 800px) {
     @include media-grid(4, 1px);
   }
 
@@ -200,7 +200,7 @@ $about-content-max-width:   820px;
 .l-about-partners {
   .media-block { margin-bottom: 25px; }
   img { opacity: 0.6; }
-  @include mq(700px, max) { @include media-grid(4, 15px); }
+  @include mq(max, 700px) { @include media-grid(4, 15px); }
   @include mq(700px) { @include media-grid(4, 25px); }
   // @include mq(450px, 600px) { @include media-grid(4, 25px); }
   // @include mq(600px, 800px) { @include media-grid(3, 25px); }

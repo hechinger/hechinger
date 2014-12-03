@@ -152,11 +152,12 @@ $bp-aside-negative-margin:  925px;
   > blockquote {
     max-width: $article-bd-max;
     margin: 25px 0 !important;
-    border-left: 2px solid $black-40;
+    border-left: 3px solid $he-secondary;
     padding-left: 25px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: $he-sans;
     font-weight: $font-weight-lt;
+    color: $black-40;
 
     p { margin-top: 17px; }
 

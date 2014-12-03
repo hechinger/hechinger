@@ -8,7 +8,7 @@
 
 %article-aside {
   max-width: $article-bd-max;
-  padding: 17px 10px;
+  // padding: 17px 10px;
   @include bp(700px) {
     clear: right;
     float: right;
@@ -20,33 +20,191 @@
   }
 }
 
+
 .article-aside {
   @extend %article-aside;
   display: table-footer-group;
-  @include bp(700px) {
-    display: block;
+  @include bp(700px) { display: block; }
+
+  p {
+    font-family: $he-sans;
+    font-size: 14px;
+    margin: 10px 0;
   }
-}
+  // ---------------------------
+  // Headline Styles
+  // h1 {
+  //     font-family: $he-sans;
+  //     font-weight: $font-weight-bold;
+  //     font-size: 30px;
+  //     color: black;
+  //     margin-top: 15px;
+  // }
 
-.aside-hdr {
-  @extend %section-hdr;
-  font-size: 16px;
-}
+  h1, h2 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 24px;
+      color: black;
+      margin-top: 15px;
+    }
 
-.aside-borders {
-  border-top: $bdr-med--black;
-  border-bottom: $bdr-thin;
-}
+  h3, h4 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 20px;
+      color: black;
+      margin-top: 15px;
+    }
 
-.aside-body {
-  margin-left: 0
-}
+  // h4 {
+  //     font-family: $he-serif;
+  //     font-weight: $font-weight-black;
+  //     font-size: 15px;
+  //     border-bottom: 5px solid black;
+  //     padding-bottom: 5px;
+  //     margin: 15px 0;
+  //     display: inline-block;
+  //     color: black;
+  //   }
 
-.aside-borders {
-  border-top: $bdr-med--black;
-  border-bottom: $bdr-thin;
-}
+  h5, h6 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: black;
+      margin-top: 15px;
+    }
 
-.aside-body {
-  margin-left: 0
-}
+  // ---------------------------
+  // Blockquote
+  blockquote {
+    padding-left: 20px;
+    margin: 25px 0 !important;
+    border-left: 2px solid $black-40;
+    // > p {
+    //   @extend %article-bd-margin;
+    //   max-width: $article-bd-max;
+    //   font-family: Georgia, serif;
+    //   font-size: 16px;
+    // }
+
+    // >ul, ol {
+    //   font-family: Georgia, serif;
+    //   font-size: 16px;
+    //   a {}
+    // }
+
+    // > ul {
+    //   list-style-type: disc;
+
+    //   ul {
+    //     list-style-type: circle !important;
+    //     margin-left: 20px;
+    //   }
+    // }
+  }
+
+  .pull-quote a { }
+
+
+  // ---------------------------
+  // Lists
+  ul, ol {
+    font-family: $he-sans;
+    font-size: 14px;
+    margin: 10px 0 10px 20px;
+    a {}
+  }
+
+  ul {
+    list-style-type: disc;
+
+    ul {
+      list-style-type: circle !important;
+      margin-left: 20px;
+    }
+  }
+
+  li { margin: 5px 0; }
+
+  // ---------------------------
+  // Links
+  a, a:visited {
+    color: $he-secondary;
+    &:hover, &:visited:hover {
+      color: $he-main;
+    }
+  }
+
+  >address {
+    font-family: $he-sans;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: $font-weight-lt;
+  }
+  // ---------------------------
+  // Image stuff
+  p {
+    // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
+    // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
+    // > .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
+    // > .size-thumbnail { float: left; margin-right: 2em; }
+  img {
+      @extend %bleeding-container;
+      margin: 15px 0;
+    }
+  }
+
+  // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
+  // .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
+  // .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
+  // .size-thumbnail { float: left; margin-right: 2em; }
+  // img { margin-bottom: 1em; }
+
+
+    .wp-caption-text {
+      font-family: $he-sans;
+      font-weight: $font-weight-lt;
+      font-size: 14px;
+    }
+    .wp-image-38 {
+      margin-right: 20px;
+      height: auto;
+    }
+    .cap-image-right,
+    .cap-image-left { }
+
+
+    .cap-caption { }
+
+    .media-mod { }
+
+    // ---------------------------
+    // Italic
+    em, i { }
+
+    // ---------------------------
+    // Bold
+    strong, b { }
+
+} // article-aside
+
+
+  .aside-hdr {
+    @extend %section-hdr;
+    font-size: 16px;
+    font-family: $he-serif !important;
+    font-weight: $font-weight-black;
+  }
+
+  .aside-borders {
+    border-top: $bdr-med--black;
+    border-bottom: $bdr-thin;
+  }
+
+  .aside-body {
+    margin-left: 0
+  }

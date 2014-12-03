@@ -75,6 +75,7 @@
 %article-text {
   color: $text-color;
   font-family: $he-serif;
+  font-weight: $font-weight-lt;
   font-size: 17px;
   line-height: 1.705882353;   // 29/17
 }
@@ -92,3 +93,39 @@
 %bp-trans {
   @include trans(0.25s);
 }
+
+
+%burst {
+  position: relative;
+  background-color: $he-main;
+  border-radius: 8%;
+  width: 45px;
+  height: 45px;
+  line-height: 40px;
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 45px;
+    width: 45px;
+    background-color: inherit;
+    z-index: -1;
+    border-radius: 8%;
+  }
+  &:before {
+    -webkit-transform: rotate(30deg);
+       -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+         -o-transform: rotate(30deg);
+  }
+  &:after {
+    -webkit-transform: rotate(60deg);
+     -moz-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+       -o-transform: rotate(60deg);
+  }
+}
+
+
+

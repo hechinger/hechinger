@@ -26,6 +26,9 @@ $bp-img-no-bleed:   550px;
 $bp-aside:          550px;
 $bp-aside-negative-margin:  925px;
 
+
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -49,7 +52,7 @@ $bp-aside-negative-margin:  925px;
   display: table-caption;
   margin-bottom: 30px;
 
-  * + * { margin: 17px; }
+  > * + * { margin-top: 17px; }
 
   @include bp(550px) {
     // max-width: 880px;
@@ -77,10 +80,11 @@ $bp-aside-negative-margin:  925px;
 
 
 
+
 // --------------------------------------------
 // --------------------------------------------
 //
-// Article Type
+// Inner Article Type Styles
 //
 // --------------------------------------------
 // --------------------------------------------
@@ -88,63 +92,137 @@ $bp-aside-negative-margin:  925px;
 .article-text {
   @extend %article-text;
 
-  // ---------------------------
   // Paragraphs
-  // > p { margin-bottom: 1em; }
+  // --------------------------------------------
+
   > p {
-    @extend %article-bd-margin;
+    // @extend %article-bd-margin;
     max-width: $article-bd-max;
     &:first-of-type { @include drop-cap; }
   }
 
 
-  // ---------------------------
   // Headline Styles
-  > h1 { }
+  // --------------------------------------------
 
-  > h2 { }
+  > h1,
+  > h2,
+  > h3,
+  > h6 {
+    font-family: $he-sans;
+    font-weight: $font-weight-bold;
+    + p { margin-top: 5px; }
+  }
 
-  > h3 { }
+  > h4,
+  > h5 { border-bottom: 6px solid black; }
 
-  > h4 { }
+  > h1 { font-size: 30px; margin-top: 45px; }
 
-  > h5 { }
+  > h2 { font-size: 24px; margin-top: 45px;  }
 
-  > h6 { }
+  > h3 { font-size: 20px; margin-top: 45px; }
 
-  // ---------------------------
-  // Blockquote
+  > h4 {
+      display: inline-block;
+      margin-top: 45px;
+      font-family: $he-serif;
+      font-weight: $font-weight-black;
+      font-size: 22px;
+      padding-bottom: 3px;
+  }
+
+  > h5 {
+      font-family: $he-serif;
+      font-weight: $font-weight-black;
+      font-size: 15px;
+      padding-bottom: 3px;
+      display: inline-block;
+    }
+
+  > h6 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+
+  // Block Quote
+  // --------------------------------------------
   > blockquote {
-    > p { }
+    max-width: $article-bd-max;
+    margin: 25px 0 !important;
+    border-left: 2px solid $black-40;
+    padding-left: 25px;
+    font-size: 18px;
+    font-family: $he-sans;
+    font-weight: $font-weight-lt;
+
+    p { margin-top: 17px; }
+
+    ul, ol {
+      font-size: 16px;
+      margin-top: 17px;
+      padding-left: 25px;
+      a {}
+    }
+
+    ul {
+      list-style-type: disc;
+
+      ul {
+        list-style-type: circle !important;
+        margin-left: 20px;
+      }
+    }
   }
 
   .pull-quote a { }
 
 
-  // ---------------------------
   // Lists
-  ul, ol {
-    a { }
+  // --------------------------------------------
+  > ul,  > ol {
+    font-family: $he-sans;
+    font-size: 16px;
+    margin-left: 20px;
+
+    li { margin-top: 10px; }
+    a {}
   }
 
   > ul {
-    > li { }
+    list-style-type: disc;
+
+    ul {
+      list-style-type: circle !important;
+      margin-left: 20px;
+    }
   }
 
   > ol {
     > li { }
   }
+ // >ul, ol
 
 
-  // ---------------------------
   // Links
+  // --------------------------------------------
   a, a:visited {
+    color: $he-secondary;
     &:hover, &:visited:hover { }
   }
 
+  > address {
+    font-family: $he-sans;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: $font-weight-lt;
+  }
 
-  // ---------------------------
-  // Image stuff
+
+  // Images
+  // --------------------------------------------
   > p {
     // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
     // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
@@ -162,9 +240,16 @@ $bp-aside-negative-margin:  925px;
   // img { margin-bottom: 1em; }
 
 
-  .wp-caption-text { }
+  .wp-caption-text {
+    font-family: $he-sans;
+    font-weight: $font-weight-lt;
+    font-size: 14px;
+  }
 
-
+  .wp-image-38 {
+    margin-right: 20px;
+    height: auto;
+  }
   .cap-image-right,
   .cap-image-left { }
 
@@ -173,16 +258,18 @@ $bp-aside-negative-margin:  925px;
 
   .media-mod { }
 
-  // ---------------------------
   // Italic
+  // --------------------------------------------
   em, i { }
 
-  // ---------------------------
   // Bold
+  // --------------------------------------------
   strong, b { }
 
 
 } // article-body
+
+
 
 
 
@@ -235,6 +322,7 @@ $bp-aside-negative-margin:  925px;
 
 
 
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -282,30 +370,6 @@ $bp-aside-negative-margin:  925px;
     color: inherit;
   }
   &:hover { text-decoration: underline; }
-}
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Article Partner
-//
-// --------------------------------------------
-// --------------------------------------------
-
-.article-partner-logo {
-  position: relative;
-  width: 100%;
-  height: 25px;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.article-partner-text {
-  font-size: 12px;
-  line-height: 1;
-  font-family: $he-sans;
 }
 
 

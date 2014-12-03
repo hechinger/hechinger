@@ -1,0 +1,26 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Partner
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.partner-aside {
+  @extend %article-aside;
+}
+
+.aside-partner-logo {
+  position: relative;
+  margin-bottom: 5px;
+  width: 100%;
+  color: #fff;
+}
+
+.aside-partner-img { }
+
+.aside-partner-text {
+  font-size: 12px;
+  line-height: 1;
+  font-family: $he-sans;
+}

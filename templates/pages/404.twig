@@ -9,3 +9,11 @@
     </div> <!-- /four-oh-four-body -->
   </div> <!-- l-content -->
 {% endblock body %}
+
+
+
+{% block site_footer %}
+  {% embed 'components/footer.twig' %}
+    {% block above_footer %} {% endblock %}
+  {% endembed %}
+{% endblock %}

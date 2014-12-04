@@ -53,16 +53,15 @@ $black:       $black-100;
 $white:       #FFFFFF;
 
 $hdr-color:         #000000;
-
 $head-color:        $black-90;
-
-$light-border:      lighten($black-10, 5%);
 
 $text-color:        $black-100;
 $text-color-page:   $black-80;
 
 $tease-text-color:  $black-80;
 $tease-head-color:  $black-90;
+
+
 
 // Hechinger Palette
 // --------------------------------------------
@@ -121,11 +120,15 @@ $one-px:        0.0625;   // 1px
 // --------------------------------------------
 // --------------------------------------------
 
+$bdr-thin-color:          $black-10;
+$light-border:            red;
+$bdr-thin-lt-color:      lighten($black-10, 5%);
+
 $border-thin:       1px solid pink;
 $border-thin--lt:   1px solid pink;
 
 
-$bdr-thin:       1px solid $black-10;
-$bdr-thin--lt:   1px solid $light-border;
+$bdr-thin:       1px solid $bdr-thin-color;
+$bdr-thin--lt:   1px solid $bdr-thin-lt-color;
 
 $bdr-med--black:     6px solid $black-100;

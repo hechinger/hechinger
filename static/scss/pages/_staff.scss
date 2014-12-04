@@ -81,6 +81,7 @@ $staff-content-max-width: 820px;
 }
 
 .staff-bio-link {
+  @include bullet(after);
   display: inline-block;
   margin-top: 15px;
   font-size: 15px;

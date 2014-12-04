@@ -579,6 +579,7 @@ $subzone-ends-layout: 800px;
 
 .hp-list-head {
   @extend %item-bullet;
+  // @include bullet;
 }
 
 
@@ -761,7 +762,7 @@ $subzone-ends-layout: 800px;
 
 
 .special-report-tz-item {
-  @extend %item-bullet;
+  @include bullet(before, $he-main);
   position: relative;
   font-size: 14px;
   line-height: 1.2;   // 22/17

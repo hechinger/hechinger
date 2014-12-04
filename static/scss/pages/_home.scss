@@ -567,7 +567,7 @@ $subzone-ends-layout: 800px;
 .hp-list-item {
   font-size: 26px;
   line-height: 1.230769231;   //32/26
-  padding-left: 1em;
+  // padding-left: 1em;
   position: relative;
   & + & {
     margin-top: 0.85em;
@@ -578,8 +578,9 @@ $subzone-ends-layout: 800px;
 
 
 .hp-list-head {
-  @extend %item-bullet;
-  // @include bullet;
+  // @extend %item-bullet;
+  @include bullet(before, $he-main);
+  padding-left: 1em;
 }
 
 
@@ -682,6 +683,7 @@ $subzone-ends-layout: 800px;
 .hp-second-feature-read-more {
   // @extend %link-bullet-readmore; // any way we can put nonbreaking spaces in this?
   @include bullet(after);
+  white-space: nowrap;
   margin-left: 5px;
   color: $he-secondary;
   text-decoration: none;

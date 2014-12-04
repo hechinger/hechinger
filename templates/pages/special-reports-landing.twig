@@ -1,0 +1,94 @@
+{% extends 'layout.twig' %}
+
+{% block navbar %}
+  {% include 'components/nav-bar.twig' with {css_class: "site-header--no-pad"} %}
+{% endblock %}
+
+
+{# archive page layouts go here #}
+{% block body %}
+
+  {% block header %}
+    {% include 'components/section-front-header.twig' with {section_front_title : "Special Reports" } %}
+  {% endblock header %}
+
+  {% block page_content %}
+    <div class="sr-landing-content">
+      <div class="l-content">
+
+      <!-- Special Report Landing Top -->
+      <!-- ===================================== -->
+      {% block report_landing_top %}
+        <div class="sr-landing-zone">
+          <div class="l-content">
+            <div>
+              <div class="l-sr-landing-dos">
+
+                {% for i in 1..4 %}
+                  <div class="grid-item tz-sr-landing-grid">
+                    <article class="tz-sr-landing">
+                      <div class="sr-landing-grid-img">
+                          <img src="{{ img.src | resize(445, 246) | default('/wp-content/themes/hechinger/static/img/test.jpg' | resize(445, 246) ) }}" alt="">
+                      </div> <!-- /sr-landing-img-mod -->
+
+                      <div class="sr-landing-grid-content">
+                        <h2 class="sr-landing-h">
+                          <a class="sr-landing-h-link" href="#">Special Report {{i}}</a>
+                        </h2> <!-- /sr-landing-grid-h -->
+                        <p class="sr-landing-desc">This is a special report. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ad ipsum, cumque provident placeat odit blanditiis a dolor amet, suscipit harum nihil, culpa id illum. <a class="sr-landing-link" href="#">Read Stories</a></p>
+                      </div> <!-- /sr-landing-grid-content -->
+                    </article> <!-- /tz-sr-landing -->
+                  </div> <!-- /grid-item -->
+                {% endfor %}
+
+              </div> <!-- /l-sr-landing-dos-->
+            </div>
+          </div> <!-- /l-content -->
+        </div> <!-- /sr-report-zone -->
+      {% endblock report_landing_top %}
+
+
+      <!-- Special Report Landing Feed -->
+      <!-- ===================================== -->
+       {% block report_landing_feed %}
+       <div class="sr-landing-zone">
+        <div class="l-content">
+        <h4 class="section-hdr--lg">More Reports</h4>
+          <div class="l-sr-landing-feed">
+
+
+            {% for i in 1..20 %}
+              <article class="tz-sr-feed-grid l-pair-sr-feed">
+                <div class="art-bd">
+                  <a href="#">
+                    <img src="{{ img.src | resize(221, 123) | default('/wp-content/themes/hechinger/static/img/test.jpg' | resize(221, 123) ) }}" alt="">
+                  </a>
+                </div> <!-- /art-bd -->
+
+                <div class="txt-bd">
+                  <h2 class="sr-landing-h">
+                    <a class="sr-landing-h-link" href="#">Special Report {{i}}</a>
+                  </h2> <!-- /sr-landing-grid-h -->
+                  <p class="sr-landing-desc">This is a special report. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ad ipsum, cumque provident placeat odit blanditiis a dolor amet, suscipit harum nihil, culpa id illum. <a class="sr-landing-link" href="#">Read Stories</a></p>
+                </div> <!-- /txt-bd -->
+              </article> <!-- /tz-sr-feed-grid -->
+            {% endfor %}
+
+          </div> <!-- /l-sr-landing-feed -->
+        </div> <!-- /l-content -->
+        </div> <!-- /sr-report-zone -->
+      {% endblock report_landing_feed %}
+
+
+
+      </div> <!-- /l-content -->
+    </div> <!-- /sr-landing-content -->
+  {% endblock page_content %}
+
+{% endblock body %}
+
+{% block scripts %}{% endblock %}
+
+
+
+

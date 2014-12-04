@@ -42,6 +42,7 @@
 @import "pages/404";
 @import "pages/archive";
 @import "pages/special-report";
+@import "pages/special-reports-landing";
 @import "pages/author";
 @import "pages/page";
 @import "pages/search";
@@ -270,9 +271,12 @@ body { font-family: $he-sans; }
 }
 
 .hp-second-feature-read-more {
-  @extend %link-bullet-readmore; // any way we can put nonbreaking spaces in this?
+  // @extend %link-bullet-readmore; // any way we can put nonbreaking spaces in this?
+  @include bullet(after);
+  margin-left: 5px;
   color: $he-secondary;
   text-decoration: none;
+  &:hover { text-decoration: underline; }
 }
 
 

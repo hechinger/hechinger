@@ -33,8 +33,6 @@
 }
 
 .section-front-summary-link {
+  @include bullet(after);
   color: $he-secondary;
-  &:after {
-    content: " →";
-  }
 }

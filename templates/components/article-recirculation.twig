@@ -1,0 +1,60 @@
+<!-- Recirculation Top -->
+<!-- ===================================== -->
+<div class="l-recirc-zone">
+  <div class="recirc-top-mod">
+
+    {# pulling stories from the same category or report #}
+    <div class="l-zone-tres--rule">
+      {% for i in 1..3 %}
+        <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
+          {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub' } %}
+        </div>
+      {% endfor %}
+    </div> <!-- /l-hp-tres--rule -->
+
+  </div> <!-- /recirc-top-mod -->
+</div> <!-- /l-recirc-zone -->
+
+
+
+
+<!-- Recirculation Middle -->
+<!-- ===================================== -->
+{# pulling first quote or number tease #}
+<div class="l-recirc-zone">
+  <div class="recirc-middle-mod">
+
+  {% include "/templates/components/tease-special.twig" %}
+
+  </div> <!-- /recirc-middle-mod -->
+</div> <!-- /l-recirc-zone -->
+
+
+
+
+<!-- Recirculation Bottom -->
+<!-- ===================================== -->
+<div class="l-recirc-zone">
+  <div class="recirc-bottom-mod">
+
+    <div class="l-zone-dos--rule">
+
+      <!-- top featured stories -->
+      <div class="grid-item">
+        <div class="hp-top-feat-mod">
+          {% for i in 1..2 %}
+            {% include "/templates/components/tease-hp-regular.twig" with { context_class: "reg-lg", css_class: 'tz-hp-reg' } %}
+          {% endfor %}
+        </div> <!-- /hp-zone1-feat-mod -->
+      </div> <!-- /grid-item -->
+
+      <!-- /latest news feed -->
+      <div class="grid-item">
+        {% include "/templates/components/tease-list-latest.twig" %}
+      </div> <!-- /grid-item -->
+
+    </div> <!-- /l-hp-dos--rule -->
+
+  </div> <!-- /recirc-bottom-mod -->
+</div> <!-- l-recirc-zone -->
+

@@ -1,13 +1,13 @@
   <div class="special-report-tz-mod">
     <div class="special-report-tz-overlay">
       <div class="special-report-tz-content">
-        <a class="special-report-tz-hdr-container" href="#">
-          <h4 class="special-report-tz-hdr">California</h4>
+        <a class="special-report-tz-hdr-container" href="{{ report.link }}">
+          <h4 class="special-report-tz-hdr">{{ report.title }}</h4>
         </a>
         <ul class="special-report-tz-items">
-          {% for i in 1..3 %}
+          {% for srpost in report.get_posts('numberposts=2') %}
             <li class="special-report-tz-item">
-              <a class="special-report-tz-link" href="#">Hi. This is a headline in a special report tease.</a>
+              <a class="special-report-tz-link" href="{{ srpost.link }}">{{ srpost.title }}</a>
             </li> <!-- /special-report-tz-item -->
          {% endfor %}
         </ul> <!-- /special-report-tz-items -->

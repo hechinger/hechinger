@@ -1,5 +1,5 @@
-  <div class="special-report-tz-mod">
-    <div class="special-report-tz-overlay">
+  <div class="special-report-tz-mod" style="background-image: url({{ report.get_image('bw_rect').get_url|default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg") }})">
+    <div class="special-report-tz-overlay" >
       <div class="special-report-tz-content">
         <a class="special-report-tz-hdr-container" href="{{ report.link }}">
           <h4 class="special-report-tz-hdr">{{ report.title }}</h4>
@@ -14,4 +14,3 @@
       </div> <!-- /special-report-tz-content -->
     </div> <!-- special-report-tz-overlay -->
   </div> <!-- /special-report-tz-mod -->
-

@@ -12,7 +12,7 @@
   @include bp(700px) {
     clear: right;
     float: right;
-    display: initial;
+    // display: initial;
     width: 220px;
     margin-left: 60px;
     margin-bottom: 30px;
@@ -23,8 +23,17 @@
 
 .article-aside {
   @extend %article-aside;
-  display: table-footer-group;
-  @include bp(700px) { display: block; }
+  // display: table-footer-group;
+
+  border-top: .5em solid black;
+  border-bottom: 1px solid $black-20;
+  padding: 5px 0 15px;
+  margin-bottom: 50px;
+      &:first-of-type { margin-top: 50px;}
+
+  @include bp(700px) {
+      display: block;
+    }
 
   p {
     font-family: $he-sans;
@@ -159,12 +168,22 @@
       margin: 15px 0;
       width: 220px;
       height: auto;
+
+      @include mq(max, 700px) {
+        float: left;
+        display: inline-block;
+        width: 25%;
+      }
     }
   }
 
-  .media-mod .img-container {
+  .img-container {
     width: 100%;
-    max-width: 220px;
+    // max-width: 220px;
+
+    @include mq(max, 700px) {
+      display: inline-block;
+    }
   }
 
   // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
@@ -173,6 +192,16 @@
   // .size-thumbnail { float: left; margin-right: 2em; }
   // img { margin-bottom: 1em; }
 
+
+    .img-caption, .img-caption-text { margin: 0; }
+
+    .img-caption {
+      @include mq(max, 700px) {
+        float: right;
+        width: 70%;
+        margin-top: 5px;
+      }
+    }
 
     .wp-caption-text {
       font-family: $he-sans;
@@ -203,11 +232,12 @@
 
 
   .aside-hdr {
-    @extend %section-hdr;
-    margin-bottom: 1em;
+    // @extend %section-hdr;
+    // margin-bottom: 1em;
     font-size: 16px;
     font-family: $he-serif !important;
     font-weight: $font-weight-black;
+    margin-top: 0 !important;
   }
 
   .aside-borders {

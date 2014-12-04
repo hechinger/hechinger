@@ -18,35 +18,23 @@
 
           {% block page_header_social %}
             <div class="article-social-container">
-                {% include "/templates/components/article-social.twig" %}
+              {% include "/templates/components/article-social.twig" %}
             </div> <!-- /article-social-container-->
           </div> <!-- /page-hdr-top -->
         {% endblock %} {# /page_header_social #}
 
         <div class="page-hdr-h">
-          <h1 class="page-h">Awards</h1>
-          <h2 class="page-sub-h">We cover the issues we cover because we believe in them, but our reporting is often recognized by our peers. We appreciate it.</h2>
+          <h1 class="page-h">{{ post.title }}</h1>
+          <h2 class="page-sub-h">{{ post.subhead }}</h2>
         </div> <!-- /page-hdr-h -->
       </div> <!-- /page-hdr-inner -->
     </div> <!-- /page-hdr -->
   {% endblock %} {# /page_header #}
 
-  <div class="page-content">
+  <article class="page-content">
     <div class="page-content-inner">
-      <h4 class="page-category-h">2013</h4>
-      <h3 class="page-category-sub-h">Winner, Online-Feature</h3>
-      <p class="page-body-text">
-        Newswomen’s Club of New York Front Page Awards<br>Sarah Garland, “In Remote Alaskan Villages, Teachers Struggle to Make School Meaningful”
-      </p>
-      <h3 class="page-category-sub-h">Winner, Newspaper In-Depth Reporting</h3>
-      <p class="page-body-text">
-        Newswomen’s Club of New York Front Page Awards<br>Jackie Mader, “Literacy and STEM Education in Mississippi”
-      </p>
-      <h3 class="page-category-sub-h">Winner, Internet Continuing Coverage</h3>
-      <p class="page-body-text">
-         The New York Press Club Journalism Awards<br>Sarah Carr, Sarah Garland, Liz Willen, “Mississippi Learning”
-      </p>
+      {{ post.content }}
     </div> <!-- /page-content-inner -->
-  </div> <!-- /page-content -->
+  </article> <!-- /page-content -->
 
 {% endblock %} {# /body #}

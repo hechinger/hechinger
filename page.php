@@ -21,6 +21,6 @@
  * @since    Timber 0.1
  */
 $context = Timber::get_context();
-$post = new TimberPost();
+$post = new HechingerPost();
 $context['post'] = $post;
 Timber::render(array('pages/' . $post->slug . '.twig', 'pages/page.twig'), $context);

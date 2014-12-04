@@ -23,7 +23,7 @@ class HechingerPost extends TimberPost {
     } elseif ($this->excerpt) {
       $excerpt = strip_tags($this->excerpt);
     } else {
-      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, 40 ));
+      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, 30 ));
     }
     return $excerpt;
   }

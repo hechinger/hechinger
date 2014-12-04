@@ -81,9 +81,10 @@
   // ---------------------------
   // Blockquote
   blockquote {
-    padding-left: 20px;
+    padding-top: 10px;
     margin: 25px 0 !important;
-    border-left: 2px solid $black-40;
+    border-top: 3px solid $he-secondary;
+    color: $black-40;
     // > p {
     //   @extend %article-bd-margin;
     //   max-width: $article-bd-max;
@@ -156,7 +157,14 @@
   img {
       @extend %bleeding-container;
       margin: 15px 0;
+      width: 220px;
+      height: auto;
     }
+  }
+
+  .media-mod .img-container {
+    width: 100%;
+    max-width: 220px;
   }
 
   // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
@@ -168,7 +176,7 @@
 
     .wp-caption-text {
       font-family: $he-sans;
-      font-weight: $font-weight-lt;
+      font-weight: $font-weight-bold;
       font-size: 14px;
     }
     .wp-image-38 {
@@ -196,6 +204,7 @@
 
   .aside-hdr {
     @extend %section-hdr;
+    margin-bottom: 1em;
     font-size: 16px;
     font-family: $he-serif !important;
     font-weight: $font-weight-black;

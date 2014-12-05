@@ -53,7 +53,7 @@
       <div class="l-hp-zone l-hp-zone--reports">
         <div class="l-hp-dos">
           {% for report in special_reports %}
-            {% if report.slug == 'california' or report.slug == 'common-core' or report.slug == 'higher-education' or report.slug == 'mississippi-learning' %}
+            {% if report.slug in ['california', 'common-core', 'higher-education', 'mississippi-learning'] %}
               <div class="grid-item">
                 <div class="hp-special-tz">
                   {% include "templates/components/tease-hp-report.twig" with { report:report } %}

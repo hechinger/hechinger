@@ -8,8 +8,10 @@
 {# archive page layouts go here #}
 {% block body %}
 
+{{ dump(post) }}
+
   {% block header %}
-    {% include 'components/section-front-header.twig' with {section_front_title : "Special Reports" } %}
+    {% include 'components/section-front-header.twig' with { section_front_title : "Special Reports", post: post } %}
   {% endblock header %}
 
   {% block page_content %}
@@ -24,21 +26,25 @@
             <div>
               <div class="l-sr-landing-dos">
 
-                {% for i in 1..4 %}
-                  <div class="grid-item tz-sr-landing-grid">
-                    <article class="tz-sr-landing">
-                      <div class="sr-landing-grid-img">
-                          <img src="{{ img.src | resize(445, 246) | default('/wp-content/themes/hechinger/static/img/test.jpg' | resize(445, 246) ) }}" alt="">
-                      </div> <!-- /sr-landing-img-mod -->
+                {% for report in special_reports %}
+                  {% if report.slug in ['california', 'common-core', 'higher-education', 'mississippi-learning'] %}
+                    <div class="grid-item tz-sr-landing-grid">
+                      <article class="tz-sr-landing">
+                        <div class="sr-landing-grid-img">
+                          <img src="{{ report.get_image('bw_rect').src | resize (445, 246) | default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg") | resize (445, 246)  }}" alt="{{ report.get_image('bw_rect').alt }}">
+                        </div> <!-- /sr-landing-img-mod -->
 
-                      <div class="sr-landing-grid-content">
-                        <h2 class="sr-landing-h">
-                          <a class="sr-landing-h-link" href="#">Special Report {{i}}</a>
-                        </h2> <!-- /sr-landing-grid-h -->
-                        <p class="sr-landing-desc">This is a special report. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ad ipsum, cumque provident placeat odit blanditiis a dolor amet, suscipit harum nihil, culpa id illum. <a class="sr-landing-link" href="#">Read Stories</a></p>
-                      </div> <!-- /sr-landing-grid-content -->
-                    </article> <!-- /tz-sr-landing -->
-                  </div> <!-- /grid-item -->
+                        <div class="sr-landing-grid-content">
+                          <h2 class="sr-landing-h">
+                            <a class="sr-landing-h-link" href="#">{{ report.title }}</a>
+                          </h2> <!-- /sr-landing-grid-h -->
+                          {% if report.description %}
+                            <p class="sr-landing-desc">{{ report.description }} <a class="sr-landing-link" href="{{ report.link }}">Read Stories</a></p>
+                          {% endif %}
+                        </div> <!-- /sr-landing-grid-content -->
+                      </article> <!-- /tz-sr-landing -->
+                    </div> <!-- /grid-item -->
+                  {% endif %}
                 {% endfor %}
 
               </div> <!-- /l-sr-landing-dos-->
@@ -50,33 +56,37 @@
 
       <!-- Special Report Landing Feed -->
       <!-- ===================================== -->
-       {% block report_landing_feed %}
-       <div class="sr-landing-zone">
-        <div class="l-content">
-        <h4 class="section-hdr--lg">More Reports</h4>
-          <div class="l-sr-landing-feed">
+      {% block report_landing_feed %}
+        {% if special_reports|length > 4 %}
+          <div class="sr-landing-zone">
+            <div class="l-content">
+            <h4 class="section-hdr--lg">More Reports</h4>
+              <div class="l-sr-landing-feed">
 
 
-            {% for i in 1..20 %}
-              <article class="tz-sr-feed-grid l-pair-sr-feed">
-                <div class="art-bd">
-                  <a href="#">
-                    <img src="{{ img.src | resize(221, 123) | default('/wp-content/themes/hechinger/static/img/test.jpg' | resize(221, 123) ) }}" alt="">
-                  </a>
-                </div> <!-- /art-bd -->
+                {% for sreport in special_reports %}
+                  {% if sreport.slug not in ['california', 'common-core', 'higher-education', 'mississippi-learning'] %}
+                    <article class="tz-sr-feed-grid l-pair-sr-feed">
+                      <div class="art-bd">
+                        <a href="{{ sreport.link }}">
+                          <img src="{{ sreport.get_image('bw_rect').src | resize(221, 123) | default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg") }}" alt="">
+                        </a>
+                      </div> <!-- /art-bd -->
 
-                <div class="txt-bd">
-                  <h2 class="sr-landing-h">
-                    <a class="sr-landing-h-link" href="#">Special Report {{i}}</a>
-                  </h2> <!-- /sr-landing-grid-h -->
-                  <p class="sr-landing-desc">This is a special report. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ad ipsum, cumque provident placeat odit blanditiis a dolor amet, suscipit harum nihil, culpa id illum. <a class="sr-landing-link" href="#">Read Stories</a></p>
-                </div> <!-- /txt-bd -->
-              </article> <!-- /tz-sr-feed-grid -->
-            {% endfor %}
+                      <div class="txt-bd">
+                        <h2 class="sr-landing-h">
+                          <a class="sr-landing-h-link" href="{{ sreport.link }}">{{ sreport.title }}</a>
+                        </h2> <!-- /sr-landing-grid-h -->
+                        <p class="sr-landing-desc">{{ sreport.description }} <a class="sr-landing-link" href="{{ sreport.link }}">Read Stories</a></p>
+                      </div> <!-- /txt-bd -->
+                    </article> <!-- /tz-sr-feed-grid -->
+                  {% endif %}
+                {% endfor %}
 
-          </div> <!-- /l-sr-landing-feed -->
-        </div> <!-- /l-content -->
-        </div> <!-- /sr-report-zone -->
+              </div> <!-- /l-sr-landing-feed -->
+            </div> <!-- /l-content -->
+          </div> <!-- /sr-report-zone -->
+        {% endif %}
       {% endblock report_landing_feed %}
 
 

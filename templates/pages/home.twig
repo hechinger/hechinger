@@ -35,7 +35,9 @@
 
             <!-- /latest news feed -->
             <div class="grid-item">
-              {% include "/templates/components/tease-list-latest.twig" %}
+              {% if latest_posts|length %}
+                {% include "/templates/components/tease-list-latest.twig" %}
+              {% endif %}
             </div> <!-- /grid-item -->
 
           </div> <!-- /l-hp-dos--rule -->
@@ -50,12 +52,14 @@
     {% block hp_reports %}
       <div class="l-hp-zone l-hp-zone--reports">
         <div class="l-hp-dos">
-          {% for i in 1..4 %}
-            <div class="grid-item">
-              <div class="hp-special-tz">
-                {% include "templates/components/tease-hp-report.twig" %}
-              </div> <!-- /hp-special-tz -->
-            </div> <!-- /grid-item -->
+          {% for report in special_reports %}
+            {% if report.slug in ['california', 'common-core', 'higher-education', 'mississippi-learning'] %}
+              <div class="grid-item">
+                <div class="hp-special-tz">
+                  {% include "templates/components/tease-hp-report.twig" with { report:report } %}
+                </div> <!-- /hp-special-tz -->
+              </div> <!-- /grid-item -->
+            {% endif %}
           {% endfor %}
         </div> <!-- /l-hp-dos -->
       </div> <!-- l-hp-zone l-hp-zone--reports" -->

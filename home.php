@@ -9,12 +9,13 @@ if (class_exists('TimberStream')) {
   $context['posts'] = $stream->get_posts(array(), 'HechingerPost');
 }
 
+//TODO: filter out posts in homepage stream
+$context['latest_posts'] = Timber::get_posts('HechingerPost');
 
-if (isset($second_feature) && is_array($second_feature)) {
-
+if ( isset($second_feature) && is_array($second_feature) ) {
   $context['second_feature'] = new HechingerPost($second_feature[0]->ID);
-} else {
-  $context['second_feature'] = new HechingerPost($post->ID);
 }
+
+$context['special_reports'] = Timber::get_terms('special-topic', 'HechingerTerm');
 
 Timber::render('pages/home.twig', $context);

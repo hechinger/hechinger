@@ -1,18 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * To generate specific templates for your pages you can use:
- * /mytheme/views/page-mypage.twig
- * (which will still route through this PHP file)
- * OR
- * /mytheme/page-mypage.php
- * (in which case you'll want to duplicate this file and save to the above path)
+ * The template for displaying Special Reports Landing.
  *
  * Methods for TimberHelper can be found in the /functions sub-directory
  *
@@ -21,6 +9,9 @@
  * @since    Timber 0.1
  */
 $context = Timber::get_context();
-$post = new HechingerPost();
+
 $context['post'] = Timber::get_post('special-reports-landing', 'HechingerPost');
-Timber::render(array('pages/' . $post->slug . '.twig', 'pages/page.twig'), $context);
+$context['special_reports'] = Timber::get_terms('special-topic', 'HechingerTerm', array('orderby => name'));
+$context['pagination'] = Timber::get_pagination();
+
+Timber::render('pages/special-reports-landing.twig', $context);

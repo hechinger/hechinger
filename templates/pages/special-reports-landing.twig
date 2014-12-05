@@ -8,8 +8,6 @@
 {# archive page layouts go here #}
 {% block body %}
 
-{{ dump(post) }}
-
   {% block header %}
     {% include 'components/section-front-header.twig' with { section_front_title : "Special Reports", post: post } %}
   {% endblock header %}
@@ -63,7 +61,6 @@
             <h4 class="section-hdr--lg">More Reports</h4>
               <div class="l-sr-landing-feed">
 
-
                 {% for sreport in special_reports %}
                   {% if sreport.slug not in ['california', 'common-core', 'higher-education', 'mississippi-learning'] %}
                     <article class="tz-sr-feed-grid l-pair-sr-feed">
@@ -86,6 +83,9 @@
               </div> <!-- /l-sr-landing-feed -->
             </div> <!-- /l-content -->
           </div> <!-- /sr-report-zone -->
+          {% if pagination.pages|length %}
+            {% include "/templates/components/pagination.twig" %}
+          {% endif %}
         {% endif %}
       {% endblock report_landing_feed %}
 
@@ -98,7 +98,3 @@
 {% endblock body %}
 
 {% block scripts %}{% endblock %}
-
-
-
-

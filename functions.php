@@ -37,7 +37,8 @@ class HechingerSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'add_topics' ) );
-        $this->set_shortcodes();
+                $this->set_shortcodes();
+                $this->set_routes();
 		parent::__construct();
 		$this->bootstap_content();
 	}
@@ -53,6 +54,14 @@ class HechingerSite extends TimberSite {
 			$article = new Mesh\Post( 'home', 'page' );
 			$streamm = new Mesh\Post( 'homepage', 'sm_stream' );
 		}
+        }
+        function set_routes(){
+              Timber::add_route('special-reports', function($params){
+                    Timber::load_view('special-reports-landing.php', null, 200, $params);
+              });
+              Timber::add_route('special-reports-landing', function($params){
+                    Timber::load_view('special-reports-landing.php', null, 200, $params);
+              });
         }
 
         function register_post_types() {

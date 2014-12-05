@@ -3,18 +3,16 @@
 {% block column_context_class %}article-hdr-column{% endblock %}
 
 {% block article_column_img %}
-  {% if post.author.image %}
+  {% if post.column_image %}
     <div class="article-column-img">
-      <img src="{{ post.author.columnist_image.get_url }}" alt="Photo of {{ post.author.name }}">
+      <img src="{{ post.column_image.get_url }}" alt="Photo of {{ post.author.name }}">
     </div> <!-- /article-column-img -->
   {% endif %}
 {% endblock %}
 
-
 {% block article_column_title %}
   <p class="article-column-title">{{ post.author.column_name }}</p>
 {% endblock %}
-
 
 {% block article_byline %}
   <p class="article-byline">Column by

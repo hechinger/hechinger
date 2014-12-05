@@ -8,10 +8,10 @@
         {% endblock tease_overline_above_img %}
 
         {% block tease_img %}
-          {% if post.thumbnail %} {# or whatever the test is #}
+          {% if post.lead_image.src %} {# or whatever the test is #}
             <div class="tz-img-mod art-bd">
-              <a href="#">
-                <img src="/wp-content/themes/hechinger/static/img/test.jpg" alt="">
+              <a href="{{ post.link }}">
+                <img src="{{ post.lead_image.src }}" alt="{{ post.lead_image.alt }}">
               </a>
             </div> <!-- /tz-img-mod -->
           {% endif %}
@@ -19,26 +19,26 @@
 
         <div class="tz-content-mod txt-bd">
           {% block tease_overline %}
-            <h4 class="tz-overline tz-overline--{{context_class ? context_class: ''}}">
-              <a class="tz-overline-link" href="#">Tease Overline</a>
+            <h4 class="tz-overline tz-overline--{{ context_class ? context_class: '' }}">
+              <a class="tz-overline-link" href="#">{{ post.overline }}</a>
             </h4>
           {% endblock tease_overline %}
 
 
           {% block tease_headline %}
             <h2 class="tz-h tz-h--{{context_class ? context_class: ''}}">
-              <a class="tz-h-link" href="#">This is a tease headline</a>
+              <a class="tz-h-link" href="{{ post.link }}">{{ post.title }}</a>
             </h2>
           {% endblock tease_headline %}
 
 
           {% block tease_text %}
-            <p class="tz-text tz-text--{{context_class ? context_class: ''}}">This is tease text. And more tease text with words right here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, distinctio.</p>
+            <p class="tz-text tz-text--{{context_class ? context_class: ''}}">{{ post.tease_excerpt }}</p>
           {% endblock tease_text %}
 
 
           {% block tease_author %}
-            <p class="tz-author tz-author--{{context_class ? context_class: ''}}">by <a class="tz-author-name" href="#">Author Name Here</a></p>
+            <p class="tz-author tz-author--{{context_class ? context_class: ''}}">by <a class="tz-author-name" href="{{ post.author.link }}">{{ post.author }}</a></p>
           {% endblock tease_author %}
         </div> <!-- /txt-bd -->
 
@@ -46,12 +46,3 @@
     {% endblock tease_content %}
   </div> <!-- /tz-outer -->
 </article> <!-- /tz -->
-
-
-
-{# set css_class = 'tz-course-block' #}
-{# extends "teases/tease.twig" #}
-
-
-{# set css_class = 'foo' #}
-{# set context_class = 'bar' #}

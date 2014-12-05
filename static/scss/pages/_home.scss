@@ -6,210 +6,35 @@
 // --------------------------------------------
 // --------------------------------------------
 
-$zone-has-layout:     700px;
-$subzone-has-layout:  500px;
-$subzone-ends-layout: 800px;
 
 
 
-.l-hp-zone {
+// .l-hp-zone {
 
-  > * + * {
-    padding-top: 45px;
-    margin-top: 45px;
-    border-top: $bdr-thin;
-  }
+//   > * + * {
+//     padding-top: 45px;
+//     margin-top: 45px;
+//     border-top: $bdr-thin;
+//   }
 
-  & + & {
-    margin-top: 45px;
-    padding-top: 45px;
-    border-top: $bdr-thin;
-  }
-}
+//   & + & {
+//     margin-top: 45px;
+//     padding-top: 45px;
+//     border-top: $bdr-thin;
+//   }
+// }
 
 .l-hp-zone--reports { }
 
 .l-hp-zone--feat { }
 
 
-// this is a very specific thing
-// this is the stat area in zone 3
-.top-grid-item--right-lower {
-  padding-top: 25px;
-  margin-top: 25px;
-  border-top: $bdr-thin;
-}
-
-
-
-
-// Layout Modes
-// --------------------------------------------
-
-.l-hp-dos {
-  @include pie-clearfix;
-  @include mq($zone-has-layout) {
-    @include media-grid(2, 25px, '.grid-item');
-  }
-}
-
-.l-hp-dos--rule {
-  @include pie-clearfix;
-  @include mq($zone-has-layout) {
-    display: flex;
-    @include media-grid(2, 60px, '.grid-item');
-    @include grid-rule(2, -30px);
-    .grid-item { padding-top: 15px; padding-bottom: 15px; }
-  }
-}
-
-
-// Used in Zone 3 Top inside Right zone
-.l-hp-dos--split-inside {
-  @include pie-clearfix;
-  @include mq(600px) {
-    @include media-grid(2, 60px, '.grid-item');
-    @include grid-rule(2, -30px);
-    .grid-item { padding-top: 15px; padding-bottom: 15px; }
-  }
-}
-
-// Used in Zone 3 Top on Homepage
-.l-hp-dos--split {
-  @include pie-clearfix;
-
-  // The Zone takes on layout
-  @include mq(800px) {
-    position: relative;
-      &:before {
-        position: absolute;
-        content: '\0020';
-        top: 0;
-        bottom: 0;
-        left: 32.5%;
-        width: 1px;
-        background-color: $black-10;
-      }
-   .top-grid-item {
-      width: 30%;
-      float: left;
-    }
-    .top-grid-item--left { }
-    .top-grid-item--right {
-      float: right;
-      width: 65%;
-    }
-
-  }
-}
-
-
-.l-hp-tres {
-  @include pie-clearfix;
-  @include media-grid(3, 25px, '.grid-item');
-}
-
-.l-hp-tres--rule {
-  @include pie-clearfix;
-  overflow: hidden;
-  // This for intermediate breakpoints when
-  // There is one item which 100%
-  // and two items that have layout
-  @include mq(600px, 799px) {
-    .sub-grid-item {
-      position: relative;
-      width: 45%;
-      float: left;
-      &:after {
-        position: absolute;
-        content: '\0020';
-        top: 0;
-        bottom: 0;
-        right: -11%;
-        width: 1px;
-        background-color: $black-10;
-      }
-      &:nth-of-type(3) {
-        float: right;
-        &:after { position: static; width: 0; }
-      }
-    }
-  }
-  // All items three up
-  @include bp(800px) {
-    display: flex;
-    @include media-grid(3, 50px, '.grid-item');
-    @include grid-rule(3, -25px);
-  }
-
-  // For smaller breakpoints making a bottom border appear
-  // when the 2d and 3d items have layout but the first
-  // item is still 100% wide
-    .grid-item {
-      &:first-of-type {
-        @include mq(600px, 800px) {
-          margin-bottom: 25px;
-          padding-bottom: 25px;
-          border-bottom: $bdr-thin;
-        }
-      }
-    }
-}
-
-
-.top-grid-item--right {
-  @include mq(600px, 800px) {
-    margin-top: 25px;
-    padding-top: 25px;
-    border-top: $bdr-thin;
-  }
-}
 
 
 
 
 
-.l-hp-cuatro {
-  @include pie-clearfix;
-  @include mq(600px, 900px) {
-    @include media-grid(2, 25px, '.grid-item');
-  }
-  @include mq(900px) {
-    @include media-grid(4, 25px, '.grid-item');
-  }
-}
 
-.l-hp-cuatro--rule {
-  @include pie-clearfix;
-  // overflow: hidden;
-  @include mq(600px, 900px) {
-    @include media-grid(2, 50px, '.grid-item');
-    @include grid-rule(2, -25px);
-  }
-  @include mq(900px) {
-    @include media-grid(4, 50px, '.grid-item');
-    @include grid-rule(4, -25px);
-  }
-}
-
-
-
-// These are the subzones inside
-// A more comples l-hp-zone
-.hp-zone--top { }
-.hp-zone--mid { }
-.hp-zone--bottom { }
-
-
-.hp-special-tz { }
-
-
-.hp-feat-mod { }
-
-.crazy-thing {
-  background-color: pink;
-  height: 300px;
-}
 
 
 
@@ -270,259 +95,7 @@ $subzone-ends-layout: 800px;
 
 
 
-// --------------------------------------------
-// --------------------------------------------
-//
-// Tease Styles
-//
-// --------------------------------------------
-// --------------------------------------------
 
-.tz { font-family: $he-sans; }
-
-.tz-inner {
-  > * + * { margin-top: 15px; }
-}
-
-.tz-content-mod {
-  // > * + * { margin-top: 15px; }
-  > * + * { margin-top: 0.35em; }
-
-  // When the main home page tease
-  // has an image, this stuff happens
-  .tz-hp-feat--main-img & {
-    position: relative;
-    z-index: 1;
-    margin-top: -100px !important;
-    width: 93%;
-    padding: 20px 0 0 20px;
-    background-color: #fff;
-  }
-}
-
-.tz-img-mod { margin-bottom: 25px; }
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Tease Type styles
-//
-// --------------------------------------------
-// --------------------------------------------
-
-.tz-overline {
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: $font-weight-bold;
-  letter-spacing: 1px;
-  color: $black-30;
-}
-
-.tz-overline-link {
-  text-decoration: none;
-  color: $black-30;
-  &:hover { text-decoration: underline; }
-}
-
-.tz-h {
-  font-weight: $font-weight-bold;
-  font-size: 36px;
-  line-height: 1.02;
-  letter-spacing: -1px;
-  // color: $tease-head-color;
-}
-
-
-// prototype animation
-@-webkit-keyframes teaseLink {
-  0% { width: 0; }
-  100% { width: 100%;  }
-}
-
-
-.tz-h-link {
-  text-decoration: none;
-  position: relative;
-  color: $tease-head-color;
-  @include trans(0.1s);
-  &:after {
-    position: static;
-    content: '';
-    bottom: 0.125em;
-    // bottom: 0;
-    height: 0.07em;
-    left: 0;
-    width: 0;
-    background-color: black;
-  }
-  &:hover {
-    // color: lighten($tease-head-color, 20%);
-    &:after {
-      position: absolute;
-      -webkit-animation-duration: 0.75s;
-      -webkit-animation-name: teaseLink;
-      -webkit-animation-fill-mode: forwards
-    }
-  }
-  &:active {
-    color: $he-main;
-    &:after { background-color: $he-main; }
-  }
-  // &:hover { text-decoration: underline; }
-}
-
-
-
-.tz-text {
-  font-weight: $font-weight-lt;
-  font-size: 21px;
-  line-height: 1.33;
-  color: $black-60;
-}
-
-.tz-author {
-  font-weight: $font-weight-lt;
-  font-size: 12px;
-  margin-top: 10px;
-}
-
-.tz-author-name {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: $font-weight-bold;
-  color: $black;
-  &:hover { text-decoration: underline; }
-}
-
-
-// Tease Regular
-// --------------------------------------------
-
-.tz-overline--reg-lg { }
-
-.tz-h--reg-lg {
-  font-size: 36px;
-  line-height: 1.02;
-}
-
-.tz-text--reg-lg {
-  font-size: 21px;
-  line-height: 1.33;
-}
-
-.tz-author--reg-lg { }
-
-
-.tz-overline--reg-med { }
-
-.tz-h--reg-med {
-  font-size: 30px;
-  line-height: 1.2;
-}
-
-.tz-text--reg-med {
-  font-size: 19px;
-  line-height: 1.54;
-}
-
-.tz-author--reg-med { }
-
-
-// Tease Stub
-// --------------------------------------------
-
-.tz-h--stub-lg {
-  font-size: 34px;
-  line-height: 1.2;
-}
-
-.tz-author--stub-lg { }
-
-.tz-h--stub-med {
-  font-size: 28px;
-  line-height: 1.1;
-}
-
-.tz-author--stub-med { }
-
-
-// Tease Feature
-// --------------------------------------------
-
-.tz-h--feat-lg {
-  font-size: 100px;
-  line-height: 0.9;
-  font-style: italic;
-  font-weight: $font-weight-black;
-  letter-spacing: -2px;
-
-  .tz-h-link { color: black; }
-}
-
-.tz-text--feat-lg {
-  font-size: 29px;
-  line-height: 1.45;
-}
-
-.tz-author--feat-lg {
-  font-size: 15px;
-}
-
-
-
-// Tease Special
-// --------------------------------------------
-
-.tz-special-h {
-  display: inline;
-  position: relative;
-  font-family: $he-accent;
-  font-size: 28px;
-  line-height: 1.194444444;
-  font-weight: 900;
-  color: $he-secondary;
-  // margin-bottom: 20px;
-}
-
-.tz-special-sub-h {
-  font-size: 24px;
-  font-weight: 700px;
-  color: black;
-}
-
-.tz-special-link {
-  @include bullet(after);
-  text-decoration: underline;
-  color: $head-color;
-}
-
-.tz-special-number {
-  position: relative;
-  font-family: $he-accent;
-  font-size: 72px;
-  // line-height: 1.194444444;
-  line-height: 0.7;
-  font-weight: 900;
-  color: $he-secondary;
-  letter-spacing: -3px;
-  @include mq(650px) {
-    font-size: 112px;
-    letter-spacing: -8px;
-  }
-}
-
-.tz-special-precent {
-  position: absolute;
-  top: 0.25em;
-  font-size: 0.5em;
-}
-
-.l-pair-tz-special-stat {
-  @include mq(500px, 650px) { @include pair(125px, 35px); }
-  @include mq(650px) { @include pair(200px, 45px); }
-}
 
 
 
@@ -545,3 +118,243 @@ $subzone-ends-layout: 800px;
 //     @include pair(45%, 4%, top, right);
 //   }
 // }
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// HP :: Tease list
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.hp-list-hdr {
+  @extend %section-hdr;
+  font-size: 19px;
+}
+
+.hp-list-items { }
+
+.hp-list-item {
+  font-size: 26px;
+  line-height: 1.230769231;   //32/26
+  // padding-left: 1em;
+  position: relative;
+  & + & {
+    margin-top: 0.85em;
+    padding-top: 0.85em;
+    border-top: $bdr-thin--lt;
+  }
+}
+
+
+.hp-list-head {
+  // @extend %item-bullet;
+  @include bullet(before, $he-main);
+  padding-left: 1em;
+}
+
+
+.hp-list-link {
+  @extend %head-link;
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// HP :: Second Feature Zone
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.hp-second-feature-mod {
+  position: relative;
+  width: 100%;
+  // max-width: 800px;
+  text-align: center;
+}
+
+.hp-second-feature-img-container {
+  display: inline-block;
+  width: 100%;
+  max-width: 643px;
+}
+
+.hp-second-feature-txt-container {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hp-second-feature-txt-inner {
+  position: relative;
+  margin-top: -150px;
+  // position: absolute;
+  // top: 75%;
+  // left: 0%;
+  // right: 0%;
+  // width: 85%;
+  // max-width: 700px;
+  text-align: left;
+  @include mq(900px) {
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    right: 5%;
+    margin-top: 0;
+  }
+}
+
+.hp-second-feature-topic {
+  font-size: 11pt;
+  color: $black;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  width: 16%;
+  min-width: 150px;
+  padding: 6px 10px 0 0;
+  @include mq(400px) { font-size: 12pt; }
+  @include mq(700px) { font-size: 14pt; }
+}
+
+.hp-second-feature-head {
+  font-size: 25pt;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 1;
+  color: $black;
+  padding: 0 5px 5px 0;
+  background-color: white;
+  display: inline-block;
+  @include mq(500px) { font-size: 35pt; }
+  @include mq(700px) { font-size: 50pt; }
+}
+
+.hp-second-feature-txt {
+  font-size: 14pt;
+  font-weight: $font-weight-lt;
+  color: $black;
+  line-height: 1.3;
+  background-color: white;
+  width: 100%;
+  padding: 0 15px 7px 0;
+  display: inline-block;
+
+  @include mq(900px) {
+    // font-size: 14pt;
+    width: 70%;
+  }
+}
+
+.hp-second-feature-read-more {
+  // @extend %link-bullet-readmore; // any way we can put nonbreaking spaces in this?
+  @include bullet(after);
+  white-space: nowrap;
+  margin-left: 5px;
+  color: $he-secondary;
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// HP :: Special Reports Zone
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.special-report-tz-mod {
+  background-image: url("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+// changed the name of special-report-tz-black-box to special-report-tz-overlay
+// better describing what it is, rather than the color that's currently being applied.
+// more future friendly name, so when the overlay color is red, for instance
+.special-report-tz-overlay {
+  // padding: 20px;
+  position: relative;
+  background-color: rgba($black, 0.3);
+
+
+  // @include mq(550px) {
+  //   padding: 30px;
+  // }
+}
+
+.special-report-tz-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  @include mq(550px) {
+    padding: 30px;
+  }
+}
+
+.special-report-tz-hdr-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.25em;
+}
+
+.special-report-tz-hdr {
+  display: inline-block;
+  font-size: 19px;
+  color: white;
+  padding-bottom: 0.4em;
+  font-family: $he-accent;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: white;
+
+  &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 75px;
+    height: .25em;
+    background-color: #fff;
+  }
+
+  &:hover {
+    color: $he-main;
+    &:after { background-color: $he-main; }
+  }
+}
+
+
+.special-report-tz-item {
+  @include bullet(before, $he-main);
+  position: relative;
+  font-size: 14px;
+  line-height: 1.2;   // 22/17
+  color: white;
+  padding-left: 1em;
+  & + & { margin-top: 0.85em; }
+
+  @include mq(550px) {
+    font-size: 17px;
+    line-height: 1.294117647;
+  }
+
+}
+
+
+.special-report-tz-link {
+  text-decoration: none;
+  color: white;
+  &:hover { text-decoration: underline; }
+}

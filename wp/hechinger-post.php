@@ -23,7 +23,7 @@ class HechingerPost extends TimberPost {
     } elseif ($this->excerpt) {
       $excerpt = strip_tags($this->excerpt);
     } else {
-      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, 40 ));
+      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, 30 ));
     }
     return $excerpt;
   }
@@ -102,8 +102,11 @@ class HechingerPost extends TimberPost {
 
   function lead_image() {
     $image = new TimberImage($this->get_field('lead_image'));
-    if ( isset($image)) {
-      return $image;
-    }
+    return isset($image) ? $image : null;
+  }
+
+  function column_image() {
+    $image = new HechingerImage($this->author->columnist_image);
+    return isset($image) ? $image : null;
   }
 }

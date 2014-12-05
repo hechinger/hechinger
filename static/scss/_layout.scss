@@ -46,6 +46,7 @@ $has-margin:          800px;
   @include bp($no-content-margin) {
     margin: 0 auto;
   }
+  .l-content { margin: 0; }
 }
 
 .l-content--inner {
@@ -172,4 +173,262 @@ $has-margin:          800px;
     @extend %grid-rule;
     &:nth-child( 4n + 4 ) { &:after { background-color: transparent; } }
   }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Layout Modes
+//
+// --------------------------------------------
+// --------------------------------------------
+// These are used on the Homepage and within
+// recirculation on article pages
+
+
+// Article Recirculation Zones
+// --------------------------------------------
+
+.l-recirc-zone {
+  margin-top: 45px;
+  & + & {
+    padding-top: 45px;
+    border-top: $bdr-thin;
+  }
+}
+
+// Homepage Zones
+// --------------------------------------------
+
+.l-hp-zone {
+  > * + * {
+    padding-top: 45px;
+    margin-top: 45px;
+    border-top: $bdr-thin;
+    // background-color: blue
+  }
+
+  & + & {
+    margin-top: 45px;
+    padding-top: 45px;
+    border-top: $bdr-thin;
+    // background-color: pink;
+  }
+}
+
+
+// Mode Variable
+// --------------------------------------------
+
+$zone-has-layout:     700px;
+$subzone-has-layout:  500px;
+$subzone-ends-layout: 800px;
+
+
+// Modes
+// --------------------------------------------
+
+.l-hp-tres { border: 1px solid pink; }
+.l-hp-cuatro { border: 1px solid blue; }
+
+.l-hp-tres--rule { border: 1px solid black; }
+
+
+.l-zone-dos {
+  @include pie-clearfix;
+  @include mq($zone-has-layout) {
+    @include media-grid(2, 25px, '.grid-item');
+  }
+}
+
+.l-zone-dos--rule {
+  @include pie-clearfix;
+  @include mq($zone-has-layout) {
+    display: flex;
+    @include media-grid(2, 60px, '.grid-item');
+    @include grid-rule(2, -30px);
+    .grid-item { padding-top: 15px; padding-bottom: 15px; }
+  }
+}
+
+
+// Used in Zone 3 Top inside Right zone
+.l-zone-dos--split-inside {
+  @include pie-clearfix;
+  @include mq(600px) {
+    @include media-grid(2, 60px, '.grid-item');
+    @include grid-rule(2, -30px);
+    .grid-item { padding-top: 15px; padding-bottom: 15px; }
+  }
+}
+
+// Used in Zone 3 Top on Homepage
+.l-zone-dos--split {
+  @include pie-clearfix;
+
+  // The Zone takes on layout
+  @include mq(800px) {
+    position: relative;
+      &:before {
+        position: absolute;
+        content: '\0020';
+        top: 0;
+        bottom: 0;
+        left: 32.5%;
+        width: 1px;
+        background-color: $bdr-thin-color;
+      }
+   .top-grid-item {
+      width: 30%;
+      float: left;
+    }
+    .top-grid-item--left { }
+    .top-grid-item--right {
+      float: right;
+      width: 65%;
+    }
+
+  }
+}
+
+
+// The top right zone within l-zone-dos--split
+.top-grid-item--right {
+  @include mq(600px, 800px) {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: $bdr-thin;
+  }
+}
+
+// The bottom right zone within l-zone-dos--slit
+// this is in the stat area in zone 3 on hp
+.top-grid-item--right-lower {
+  padding-top: 25px;
+  margin-top: 25px;
+  border-top: $bdr-thin;
+}
+
+
+
+.l-zone-tres {
+  @include pie-clearfix;
+  @include media-grid(3, 25px, '.grid-item');
+}
+
+.l-zone-tres--rule {
+  @include pie-clearfix;
+  overflow: hidden;
+  // This for intermediate breakpoints when
+  // There is one item which 100%
+  // and two items that have layout
+  @include mq(600px, 799px) {
+    .sub-grid-item {
+      position: relative;
+      width: 45%;
+      float: left;
+      &:after {
+        position: absolute;
+        content: '\0020';
+        top: 0;
+        bottom: 0;
+        right: -11%;
+        width: 1px;
+        background-color: $bdr-thin-color;
+      }
+      &:nth-of-type(3) {
+        float: right;
+        &:after { position: static; width: 0; }
+      }
+    }
+  }
+  // All items three up
+  @include bp(800px) {
+    display: flex;
+    @include media-grid(3, 50px, '.grid-item');
+    @include grid-rule(3, -25px);
+  }
+
+  // For smaller breakpoints making a bottom border appear
+  // when the 2d and 3d items have layout but the first
+  // item is still 100% wide
+    .grid-item {
+      &:first-of-type {
+        @include mq(600px, 800px) {
+          margin-bottom: 25px;
+          padding-bottom: 25px;
+          border-bottom: $bdr-thin;
+        }
+      }
+    }
+}
+
+
+
+
+
+
+
+.l-zone-cuatro {
+  @include pie-clearfix;
+  @include mq(600px, 900px) {
+    @include media-grid(2, 25px, '.grid-item');
+  }
+  @include mq(900px) {
+    @include media-grid(4, 25px, '.grid-item');
+  }
+}
+
+.l-zone-cuatro--rule {
+  @include pie-clearfix;
+  overflow: hidden;
+  @include mq(600px, 900px) {
+    @include media-grid(2, 50px, '.grid-item');
+    @include grid-rule(2, -25px);
+    > .grid-item {
+      position: relative;
+      &:nth-child(2n + 3),
+      &:nth-child(2n + 4) {
+        position: relative;
+        margin-top: 25px;
+        &:before {
+          position: absolute;
+          content: '';
+          top: -25px;
+          width: 100%;
+          height: 1px;
+          background-color: $bdr-thin-color;
+        }
+      }
+    }
+  }
+
+  @include mq(900px) {
+    display: flex;
+    @include media-grid(4, 50px, '.grid-item');
+    @include grid-rule(4, -25px);
+  }
+  // > .grid-item { background-color: pink; }
+}
+
+
+
+// These are the subzones inside
+// A more comples l-hp-zone
+.hp-zone--top { }
+.hp-zone--mid { }
+.hp-zone--bottom { }
+
+
+.hp-special-tz { }
+
+
+.hp-feat-mod { }
+
+.crazy-thing {
+  background-color: green;
+  height: 300px;
 }

@@ -9,6 +9,7 @@ if ( !class_exists( 'Timber' ) ) {
 
 Timber::$dirname = array( 'templates', 'views' );
 require_once('wp/hechinger-post.php');
+require_once('wp/hechinger-term.php');
 require_once('wp/hechinger-image.php');
 require_once('wp/pull-quote-admin.php');
 
@@ -35,6 +36,7 @@ class HechingerSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'add_topics' ) );
         $this->set_shortcodes();
 		parent::__construct();
 		$this->bootstap_content();
@@ -43,8 +45,9 @@ class HechingerSite extends TimberSite {
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
 			$article = new Mesh\Post( 'article', 'page' );
-            $article = new Mesh\Post( 'archive', 'page' );
+                        $article = new Mesh\Post( 'archive', 'page' );
 			$article = new Mesh\Post( 'special-report', 'page' );
+			$article = new Mesh\Post( 'special-reports-landing', 'page' );
 			$article = new Mesh\Post( 'author', 'page' );
 			$article = new Mesh\Post( 'snippets', 'page' );
 			$article = new Mesh\Post( 'home', 'page' );
@@ -87,6 +90,7 @@ class HechingerSite extends TimberSite {
 		);
 		register_taxonomy( 'special-topic', 'post', $args );
 		//this is where you can register custom taxonomies
+
 
 		$labels = array(
 			'name'                       => _x( 'Partners', 'taxonomy general name' ),
@@ -136,7 +140,46 @@ class HechingerSite extends TimberSite {
 					return $text;
 				} ) );
 		return $twig;
-	}
+        }
+
+        function add_topics( $topics ) {
+
+          $topics = array (
+            array(
+              'name' => 'California',
+              'slug' => 'california'
+            ),
+            array(
+              'name' => 'Mississippi Learning',
+              'slug' => 'mississippi-learning'
+            ),
+            array(
+              'name' => 'Higher Education',
+              'slug' => 'higher-education'
+            ),
+            array(
+              'name' => 'Common Core',
+              'slug' => 'common-core'
+            )
+          );
+
+          foreach ($topics as $topic) {
+            if ( !term_exists( $topic['name'], 'special-topic') ) {
+              $parent_term = term_exists( $topic['name'], 'special-topic' );
+              $parent_term_id = $parent_term['term_id'];
+
+              wp_insert_term(
+                $topic['name'],
+                'special-topic',
+                array(
+                  'description'=> $topic['name'] . ' is the place you want to be.',
+                  'slug' => $topic['slug'],
+                  'parent'=> $parent_term_id
+                )
+              );
+            }
+          }
+        }
 
         function set_shortcodes() {
                 add_filter( 'img_caption_shortcode', array($this, 'handle_img_in_editor'), 10, 3);

@@ -37,6 +37,7 @@
     display: inline-block;
     content: '→';
     color: $he-main;
+    color: green;
   }
 }
 
@@ -48,6 +49,7 @@
     display: inline-block;
     content: '→';
     color: inherit;
+    color: red;
   }
 }
 
@@ -61,6 +63,7 @@
     display: inline-block;
     content: '→';
     color: inherit;
+    color: aqua;
   }
 }
 
@@ -72,6 +75,16 @@
 }
 
 
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Text
+//
+// --------------------------------------------
+// --------------------------------------------
+
 %article-text {
   color: $text-color;
   font-family: $he-serif;
@@ -80,6 +93,16 @@
   line-height: 1.705882353;   // 29/17
 }
 
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Bleeding Container for Images
+//
+// --------------------------------------------
+// --------------------------------------------
 
 %bleeding-container {
   margin-left: -25px;
@@ -90,10 +113,27 @@
 }
 
 
-%bp-trans {
-  @include trans(0.25s);
-}
 
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Breakpoint Transitions
+//
+// --------------------------------------------
+// --------------------------------------------
+
+%bp-trans { @include trans(0.25s); }
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Award Bursts
+//
+// --------------------------------------------
+// --------------------------------------------
 
 %burst {
   position: relative;
@@ -127,5 +167,41 @@
   }
 }
 
+%columnist-img {
+  margin-right: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $he-secondary;
+  overflow: hidden;
+}
 
 
+// --------------------------------------------
+// --------------------------------------------
+//
+// Stylized Images
+//
+// --------------------------------------------
+// --------------------------------------------
+
+%img-stylized {
+  position: relative;
+  // background-color: $black-60;
+  img {
+    opacity: 0.45;
+    -webkit-filter: grayscale(40%);
+       -moz-filter: grayscale(40%);
+            filter: grayscale(40%);
+  }
+  &:before, &:after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+  &:before { background-color: rgba(0, 0, 0, 0.6); }
+  &:after { background-image: radial-gradient( ellipse closest-side, transparent, rgba(0, 0, 0, 0.6) );  }
+}

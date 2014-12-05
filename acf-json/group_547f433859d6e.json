@@ -14,6 +14,19 @@
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "uploadedTo"
+        },
+        {
+            "key": "field_5480ccb1d38cc",
+            "label": "B&W Rectangle",
+            "name": "bw_rect",
+            "prefix": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo"
         }
     ],
     "location": [

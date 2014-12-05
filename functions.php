@@ -11,6 +11,7 @@ Timber::$dirname = array( 'templates', 'views' );
 require_once('wp/hechinger-post.php');
 require_once('wp/hechinger-term.php');
 require_once('wp/hechinger-image.php');
+require_once('wp/hechinger-user.php');
 require_once('wp/pull-quote-admin.php');
 
 new PullQuoteAdmin();
@@ -37,7 +38,8 @@ class HechingerSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'add_topics' ) );
-        $this->set_shortcodes();
+                $this->set_shortcodes();
+                $this->set_routes();
 		parent::__construct();
 		$this->bootstap_content();
 	}
@@ -53,6 +55,16 @@ class HechingerSite extends TimberSite {
 			$article = new Mesh\Post( 'home', 'page' );
 			$streamm = new Mesh\Post( 'homepage', 'sm_stream' );
 		}
+        }
+
+        function set_routes(){
+                Timber::add_route('staff', function($params){
+                        Timber::load_view('staff.php', null, 200, $params);
+                });
+        }
+
+        public function get_current_url() {
+                return TimberHelper::get_current_url();
         }
 
         function register_post_types() {

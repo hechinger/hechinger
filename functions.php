@@ -216,7 +216,9 @@ class HechingerSite extends TimberSite {
         function handle_img_in_editor($output, $attr, $content) {
             if ( $attr['id'] ) {
                 $iid = str_replace( 'attachment_', '', $attr['id'] );
-                $image = new TimberImage( $iid );
+                if (isset($iid) && strlen($iid)) {
+                  $image = new HechingerImage( $iid );
+                }
                 $class = $attr['align'] . ' inline-core-image';
                 $width = $attr['width'];
                 if ( $attr['align'] == 'alignnone' || $attr['align'] == 'aligncenter') {

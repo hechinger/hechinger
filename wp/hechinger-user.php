@@ -8,5 +8,4 @@ class HechingerUser extends TimberUser {
       return $image;
     }
   }
-
 }

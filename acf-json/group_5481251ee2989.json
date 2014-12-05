@@ -1,16 +1,21 @@
 {
     "key": "group_5481251ee2989",
-    "title": "Page Group",
+    "title": "Page Upper Group",
     "fields": [
         {
             "key": "field_548125262dbd6",
-            "label": "Subhead",
-            "name": "subhead",
+            "label": "Page Subhead",
+            "name": "page_subhead",
             "prefix": "",
             "type": "text",
             "instructions": "A short description or subheading for the page.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -21,19 +26,24 @@
         },
         {
             "key": "field_548125c82fc2c",
-            "label": "Page Link",
-            "name": "page_link",
+            "label": "Link to another page",
+            "name": "link_to_page",
             "prefix": "",
             "type": "relationship",
             "instructions": "Link to another page which appears at the end of the heading.",
             "required": 0,
             "conditional_logic": 0,
-            "post_type": "",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
             "taxonomy": "",
             "filters": [
-                "search",
-                "post_type",
-                "taxonomy"
+                "search"
             ],
             "elements": "",
             "max": 1,
@@ -41,13 +51,18 @@
         },
         {
             "key": "field_5481260c2fc2d",
-            "label": "Page Link Heading",
-            "name": "page_link_heading",
+            "label": "Link Heading",
+            "name": "link_heading",
             "prefix": "",
             "type": "text",
             "instructions": "Heading for the page link",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "ex. Read more about our mission.",
             "prepend": "",

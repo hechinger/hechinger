@@ -51,7 +51,7 @@
       {% block article_social %}
         <div class="page-mod">
           <div class="article-tools-btm-left">
-            <a class="article-comment-link icon-disqus" href="#"><i class="icon"></i>
+            <a class="article-comment-link icon-disqus"  id="comment-trigger" href="#"><i class="icon"></i>
               <span class="article-comment-number">xxx</span> Comments</a>
           </div> <!-- /article-tool-btm-let -->
 
@@ -60,6 +60,15 @@
           </div> <!-- /article-tools-btm-right -->
         </div> <!-- /page-mod -->
       {% endblock %} {# /article-social #}
+
+      <!-- article-comments -->
+      {% block article_comments %}
+        <div class="page-mod" id="comment-mod">
+          <div class="comment-inner">
+            {% include "templates/components/disqus.twig" %}
+          </div> <!-- /comment-inner -->
+        </div> <!-- /page-mod -->
+      {% endblock article_comments %}
 
       <!-- article-tag -->
       {% block article_tag %}
@@ -112,4 +121,9 @@
 
   </div> <!-- /l-content -->
 
+{% endblock %}
+
+
+{% block scripts %}
+  <script type="text/javascript" src="{{site.theme.uri}}/static/js/comment.js"></script>
 {% endblock %}

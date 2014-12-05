@@ -152,7 +152,7 @@
 
   }
   ol > li:before {
-      content:counter(li); /* Use the counter as content */
+      content: counter(li)'.'; /* Use the counter as content */
       counter-increment:li; /* Increment the counter by 1 */
       /* Position and style the number */
       position:absolute;

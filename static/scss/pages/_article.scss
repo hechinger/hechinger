@@ -164,53 +164,20 @@ $bp-aside-negative-margin:  925px;
     ul, ol {
       font-size: 16px;
       margin-top: 17px;
+      padding-left: 25px;
       a {}
     }
 
     ul {
       list-style-type: disc;
-      padding-left: 16px;
 
       ul {
         list-style-type: circle !important;
         margin-left: 20px;
       }
     }
-    ol {
-      counter-reset:li; /* Initiate a counter */
-      margin-left:0; /* Remove the default left margin */
-      padding-left:0; /* Remove the default left padding */
-      }
 
-    ol > li {
-      position:relative; /* Create a positioning context */
-      margin:0 0 6px 1.5em; /* Give each list item a left margin to make room for the numbers */
-      padding:4px 0; /* Add some spacing around the content */
-      list-style:none; /* Disable the normal item numbering */
-
-    }
-    ol > li:before {
-      content:counter(li); /* Use the counter as content */
-      counter-increment:li; /* Increment the counter by 1 */
-      /* Position and style the number */
-      position:absolute;
-      top: -2px;
-      left: -40px;;
-      width:2em;
-      /* Some space between the number and the content in browsers that support
-         generated content but not positioning it (Camino 2 is one example) */
-      margin-right:8px;
-      color: $black-40;
-      font-weight:bold;
-      font-size: 22px;
-      font-family: $he-sans;
-      text-align:center;
-    }
-
-    li ol,
-    li ul { margin-top:6px; }
-
-    ol ol li:last-child { margin-bottom:0;}
+    ol > li:before { color: $black-40; }
   }
 
   .pull-quote a { }
@@ -249,7 +216,7 @@ ol > li {
 
 }
 ol > li:before {
-    content:counter(li); /* Use the counter as content */
+    content: counter(li)'.'; /* Use the counter as content */
     counter-increment:li; /* Increment the counter by 1 */
     /* Position and style the number */
     position:absolute;
@@ -474,6 +441,10 @@ ol > li:before {
   text-decoration: none;
   &:hover { text-decoration: underline; }
   &:after { line-height: 2.1; }
+}
+
+
+
 
 // --------------------------------------------
 // --------------------------------------------
@@ -489,3 +460,4 @@ ol > li:before {
 }
 
 .comment-inner { }
+

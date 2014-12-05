@@ -148,8 +148,7 @@ ol > li {
     margin:0 0 6px 1.5em; /* Give each list item a left margin to make room for the numbers */
     padding:4px 0; /* Add some spacing around the content */
     list-style:none; /* Disable the normal item numbering */
-    // border-top:2px solid #666;
-    // background:#f6f6f6;
+
 }
 ol > li:before {
     content:counter(li); /* Use the counter as content */
@@ -158,17 +157,11 @@ ol > li:before {
     position:absolute;
     top: 1px;
     left:-2em;
-    // -moz-box-sizing:border-box;
-    // -webkit-box-sizing:border-box;
-    // box-sizing:border-box;
     width:2em;
     /* Some space between the number and the content in browsers that support
        generated content but not positioning it (Camino 2 is one example) */
     margin-right:8px;
-    // padding:4px;
-    // border-top:2px solid #666;
     color: $he-secondary;
-    // background:#666;
     font-weight:bold;
     font-size: 17px;
     font-family: $he-sans;
@@ -177,19 +170,6 @@ ol > li:before {
 li ol,
 li ul {margin-top:6px;}
 ol ol li:last-child {margin-bottom:0;}
-  // ol {
-  //   .p1{
-
-  //       // &:first-of-type {
-  //         font-weight: bold;
-  //       // }
-  //   }
-  //   .s1 {
-  //     font-weight: normal;
-  //   }
-  // }
-
-  // li { margin: 15px 0; }
 
   // ---------------------------
   // Links

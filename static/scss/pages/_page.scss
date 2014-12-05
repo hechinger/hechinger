@@ -330,7 +330,11 @@ ol > li:before {
   }
 
   .img-caption {
-    margin: 10px 0;
+    margin: 10px 25px;
+
+    @include bp(550px) {
+      margin: 10px 0;
+    }
   }
 
   .wp-caption-text {

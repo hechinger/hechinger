@@ -22,7 +22,7 @@
 
         <!-- hp top -->
         <div class="hp-top-mod">
-          <div class="l-hp-dos--rule">
+          <div class="l-zone-dos--rule">
 
             <!-- top featured stories -->
             <div class="grid-item">
@@ -40,7 +40,7 @@
               {% endif %}
             </div> <!-- /grid-item -->
 
-          </div> <!-- /l-hp-dos--rule -->
+          </div> <!-- /l-zone-dos--rule -->
         </div> <!-- /hp-latest-mod -->
       </div> <!-- /l-hp-zone -->
 
@@ -51,7 +51,7 @@
     <!-- ===================================== -->
     {% block hp_reports %}
       <div class="l-hp-zone l-hp-zone--reports">
-        <div class="l-hp-dos">
+        <div class="l-zone-dos">
           {% for report in special_reports %}
             {% if report.slug in ['california', 'common-core', 'higher-education', 'mississippi-learning'] %}
               <div class="grid-item">
@@ -61,7 +61,7 @@
               </div> <!-- /grid-item -->
             {% endif %}
           {% endfor %}
-        </div> <!-- /l-hp-dos -->
+        </div> <!-- /l-zone-dos -->
       </div> <!-- l-hp-zone l-hp-zone--reports" -->
     {% endblock hp_reports %}
 
@@ -73,13 +73,13 @@
 
         <!-- Zone 2 Top -->
         <div class="hp-zone--top">
-          <div class="l-hp-tres--rule">
+          <div class="l-zone-tres--rule">
             {% for post in posts|slice(2,3) %}
               <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
                 {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub' } %}
               </div>
             {% endfor %}
-          </div> <!-- /l-hp-tres -->
+          </div> <!-- /l-zone-tres--rule -->
         </div> <!-- /hp-zone--top -->
 
         <!-- Zone 2 Middle -->
@@ -89,13 +89,13 @@
 
         <!-- Zone 2 Bottom -->
         <div class="hp-zone--bottom">
-          <div class="l-hp-cuatro--rule">
+          <div class="l-zone-cuatro--rule">
             {% for post in posts|slice(5,4) %}
               <div class="grid-item">
                 {% include "/templates/components/tease-hp-stub.twig" with {context_class: 'stub-med'} %}
               </div>
             {% endfor %}
-          </div> <!-- /l-hp-tres -->
+          </div> <!-- /l-zone-cuatro--rule -->
         </div> <!-- /hp-zone-bottom -->
 
       </div> <!-- /l-hp-zone -->
@@ -118,7 +118,7 @@
 
         <!-- Zone 3 Top -->
         <div class="hp-zone--top">
-            <div class="l-hp-dos--split">
+            <div class="l-zone-dos--split">
 
               <!-- Zone 3 Top Left side -->
               <div class="top-grid-item top-grid-item--left">
@@ -127,31 +127,31 @@
 
               <!-- Zone 3 Top Right side -->
               <div class="top-grid-item top-grid-item--right">
-                <div class="l-hp-dos--split-inside">
+                <div class="l-zone-dos--split-inside">
                   {% for post in posts|slice(10,2) %}
                     <div class="grid-item">
                       {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
                     </div> <!-- /grid-item -->
                   {% endfor %}
-                </div> <!-- /l-hp-dos--rule -->
+                </div> <!-- /l-zone-dos--split-inside -->
 
                 <div class="top-grid-item--right-lower">
                   {% include "/templates/components/tease-special.twig" %}
                 </div> <!-- /grid-item-lower -->
 
               </div> <!-- /top-grid-item top-grid-item--right -->
-            </div> <!--/l-hp-dos--split -->
+            </div> <!--/l-zone-dos--split -->
         </div> <!-- /hp-zone--top -->
 
         <!-- Zone 3 Bottom -->
         <div class="hp-zone--bottom">
-          <div class="l-hp-tres--rule">
+          <div class="l-zone-tres--rule">
             {% for post in posts|slice(12,3) %}
               <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
                 {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
               </div>
             {% endfor %}
-          </div> <!-- /l-hp-tres -->
+          </div> <!-- /l-zone-tres -->
         </div> <!-- /hp-zone--bottom -->
 
       </div> <!-- /l-hp-zone -->

@@ -46,6 +46,7 @@ $has-margin:          800px;
   @include bp($no-content-margin) {
     margin: 0 auto;
   }
+  .l-content { margin: 0; }
 }
 
 .l-content--inner {

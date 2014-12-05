@@ -43,8 +43,9 @@ class HechingerSite extends TimberSite {
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
 			$article = new Mesh\Post( 'article', 'page' );
-            $article = new Mesh\Post( 'archive', 'page' );
+                        $article = new Mesh\Post( 'archive', 'page' );
 			$article = new Mesh\Post( 'special-report', 'page' );
+			$article = new Mesh\Post( 'special-reports-landing', 'page' );
 			$article = new Mesh\Post( 'author', 'page' );
 			$article = new Mesh\Post( 'snippets', 'page' );
 			$article = new Mesh\Post( 'home', 'page' );

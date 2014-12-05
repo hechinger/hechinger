@@ -76,9 +76,9 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "return_format": "url",
+            "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "all"
+            "library": "uploadedTo"
         }
     ],
     "location": [

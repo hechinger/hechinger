@@ -1,11 +1,11 @@
 {
     "key": "group_5481251ee2989",
-    "title": "Page Upper Group",
+    "title": "Page Group",
     "fields": [
         {
             "key": "field_548125262dbd6",
-            "label": "Page Subhead",
-            "name": "page_subhead",
+            "label": "Subheading",
+            "name": "subhead",
             "prefix": "",
             "type": "text",
             "instructions": "A short description or subheading for the page.",

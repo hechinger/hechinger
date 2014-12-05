@@ -29,7 +29,8 @@ add_filter('acf/location/rule_match/page', function($thing, $rule, $current){
 
 class HechingerSite extends TimberSite {
 
-	function __construct() {
+        function __construct() {
+                global $wpdb;
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -41,7 +42,9 @@ class HechingerSite extends TimberSite {
                 $this->set_shortcodes();
                 $this->set_routes();
 		parent::__construct();
-		$this->bootstap_content();
+                $this->bootstap_content();
+
+                $wpdb->query("DELETE FROM wp_postmeta WHERE meta_key = '_wp_page_template'");
 	}
 
 	function bootstap_content() {

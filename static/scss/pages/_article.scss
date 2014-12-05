@@ -404,3 +404,20 @@ $bp-aside-negative-margin:  925px;
   &:hover { text-decoration: underline; }
   &:after { line-height: 2.1; }
 }
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Comments
+//
+// --------------------------------------------
+// --------------------------------------------
+
+#comment-mod {
+  display: none;
+  &.comment-mod--is-active { display: block; }
+}
+
+.comment-inner { }

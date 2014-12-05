@@ -17,7 +17,7 @@
 
         <!-- hp main feature -->
         <div class="hp-feat-mod">
-          {% include "/templates/components/tease-hp-featured.twig" %}
+          {% include "/templates/components/tease-layout.twig" with { post: posts[0], context_class: 'feat-lg', css_class: post.lead_image ? 'tz-hp-feat--main tz-hp-feat--main-img' : 'tz-hp-feat--main' } %}
         </div>
 
         <!-- hp top -->
@@ -27,8 +27,8 @@
             <!-- top featured stories -->
             <div class="grid-item">
               <div class="hp-top-feat-mod">
-                {% for i in 1..2 %}
-                  {% include "/templates/components/tease-hp-regular.twig" with {context_class: "reg-lg"} %}
+                {% for post in posts|slice(1, 2) %}
+                  {% include "/templates/components/tease-hp-regular.twig" with { context_class: "reg-lg", css_class: 'tz-hp-reg' } %}
                 {% endfor %}
               </div> <!-- /hp-zone1-feat-mod -->
             </div> <!-- /grid-item -->
@@ -74,9 +74,9 @@
         <!-- Zone 2 Top -->
         <div class="hp-zone--top">
           <div class="l-hp-tres--rule">
-            {% for i in 1..3 %}
+            {% for post in posts|slice(2,3) %}
               <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
-                {% include "/templates/components/tease-hp-stub.twig" with {context_class: 'stub-lg'} %}
+                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub' } %}
               </div>
             {% endfor %}
           </div> <!-- /l-hp-tres -->
@@ -90,7 +90,7 @@
         <!-- Zone 2 Bottom -->
         <div class="hp-zone--bottom">
           <div class="l-hp-cuatro--rule">
-            {% for i in 1..4 %}
+            {% for post in posts|slice(5,4) %}
               <div class="grid-item">
                 {% include "/templates/components/tease-hp-stub.twig" with {context_class: 'stub-med'} %}
               </div>
@@ -122,13 +122,13 @@
 
               <!-- Zone 3 Top Left side -->
               <div class="top-grid-item top-grid-item--left">
-                {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
+                {% include "/templates/components/tease-hp-regular.twig" with { post: posts[9], context_class: 'reg-med'} %}
               </div> <!-- /top-grid-item -->
 
               <!-- Zone 3 Top Right side -->
               <div class="top-grid-item top-grid-item--right">
                 <div class="l-hp-dos--split-inside">
-                  {% for i in 1..2 %}
+                  {% for post in posts|slice(10,2) %}
                     <div class="grid-item">
                       {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
                     </div> <!-- /grid-item -->
@@ -146,7 +146,7 @@
         <!-- Zone 3 Bottom -->
         <div class="hp-zone--bottom">
           <div class="l-hp-tres--rule">
-            {% for i in 1..3 %}
+            {% for post in posts|slice(12,3) %}
               <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
                 {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
               </div>

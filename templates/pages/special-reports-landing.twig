@@ -29,12 +29,12 @@
                     <div class="grid-item tz-sr-landing-grid">
                       <article class="tz-sr-landing">
                         <div class="sr-landing-grid-img">
-                          <img src="{{ report.get_image('bw_rect').src | resize (445, 246) | default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg") | resize (445, 246)  }}" alt="{{ report.get_image('bw_rect').alt }}">
+                          <img src="{{ report.get_image('bw_rect').src | resize (445, 246) | default(site.theme.path ~ "/static/img/special-reports/img-special_report_tease-California-465-258.jpg") | resize (445, 246)  }}" alt="{{ report.get_image('bw_rect').alt }}">
                         </div> <!-- /sr-landing-img-mod -->
 
                         <div class="sr-landing-grid-content">
                           <h2 class="sr-landing-h">
-                            <a class="sr-landing-h-link" href="#">{{ report.title }}</a>
+                            <a class="sr-landing-h-link" href="{{report.link}}">{{ report.title }}</a>
                           </h2> <!-- /sr-landing-grid-h -->
                           {% if report.description %}
                             <p class="sr-landing-desc">{{ report.description }} <a class="sr-landing-link" href="{{ report.link }}">Read Stories</a></p>
@@ -66,7 +66,7 @@
                     <article class="tz-sr-feed-grid l-pair-sr-feed">
                       <div class="art-bd">
                         <a href="{{ sreport.link }}">
-                          <img src="{{ sreport.get_image('bw_rect').src | resize(221, 123) | default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg") }}" alt="">
+                          <img src="{{ sreport.get_image('bw_rect').src | resize(221, 123) | default(site.theme.path ~ "/static/img/special-reports/img-special_report_tease-California-465-258.jpg") }}" alt="">
                         </a>
                       </div> <!-- /art-bd -->
 

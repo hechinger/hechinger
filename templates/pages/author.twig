@@ -92,7 +92,12 @@
         {% include 'components/tease-full.twig' %}
       {% endfor %}
 
+      {% if pagination.pages|length %}
+        {% include "/templates/components/pagination.twig" %}
+      {% endif %}
+
     </div> <!-- /author-article-feed-container -->
+
   {% endif %}
 
   </div> <!-- /l-content -->

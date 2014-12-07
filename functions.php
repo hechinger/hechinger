@@ -62,29 +62,28 @@ class HechingerSite extends TimberSite {
 			$article = new Mesh\Post( 'home', 'page' );
 			$streamm = new Mesh\Post( 'homepage', 'sm_stream' );
 		}
-        }
-        function set_routes(){
-              Timber::add_route('special-reports', function($params){
-                    Timber::load_view('special-reports-landing.php', null, 200, $params);
-              });
-              Timber::add_route('special-reports-landing', function($params){
-                    Timber::load_view('special-reports-landing.php', null, 200, $params);
-              });
-        }
+  }
 
-        function set_routes(){
-                Timber::add_route('staff', function($params){
-                        Timber::load_view('staff.php', null, 200, $params);
-                });
-        }
+  protected function set_routes(){
+    Timber::add_route('special-reports', function($params){
+          Timber::load_view('special-reports-landing.php', null, 200, $params);
+    });
+    Timber::add_route('special-reports-landing', function($params){
+          Timber::load_view('special-reports-landing.php', null, 200, $params);
+    });
 
-        public function get_current_url() {
-                return TimberHelper::get_current_url();
-        }
+    Timber::add_route('staff', function($params){
+            Timber::load_view('staff.php', null, 200, $params);
+    });
+  }
 
-        function register_post_types() {
-          // this is where you can register custom post types
-        }
+  public function get_current_url() {
+    return TimberHelper::get_current_url();
+  }
+
+  function register_post_types() {
+    // this is where you can register custom post types
+  }
 
 	function register_taxonomies() {
 		$labels = array(

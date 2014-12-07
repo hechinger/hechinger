@@ -34,5 +34,6 @@
 
 .section-front-summary-link {
   @include bullet(after);
+  white-space: nowrap;
   color: $he-secondary;
 }

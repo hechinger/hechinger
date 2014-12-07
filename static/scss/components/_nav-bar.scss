@@ -68,16 +68,19 @@ $logo-ht-lg:    53px;
   }
 }
 
-// TODO: include Gotham Round font
 .nav-site-h {
   color: $white;
   // font-size: 18px;
-  font-size: 15px;
+  // font-size: 15px;
+  width: 195px;
+  // height: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
   // line-height: 24px;
   @include bp($medium) {
-    font-size: 21px;
+    // font-size: 21px;
+    width: 269px;
+    // height: 15px;
   }
 }
 
@@ -95,6 +98,17 @@ $logo-ht-lg:    53px;
     line-height: $logo-ht-lg;
   }
 }
+
+.nav-logo-img {
+  &.logo-fallback { display: none; }
+
+  // Browsers that do not support svg will render the png version of the logo
+  .no-svg & {
+    display: none;
+    &.logo-fallback { display: block; }
+  }
+}
+
 
 .nav-item-wrap {
   display: none;

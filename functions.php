@@ -59,6 +59,14 @@ class HechingerSite extends TimberSite {
 			$streamm = new Mesh\Post( 'homepage', 'sm_stream' );
 		}
         }
+        function set_routes(){
+              Timber::add_route('special-reports', function($params){
+                    Timber::load_view('special-reports-landing.php', null, 200, $params);
+              });
+              Timber::add_route('special-reports-landing', function($params){
+                    Timber::load_view('special-reports-landing.php', null, 200, $params);
+              });
+        }
 
         function set_routes(){
                 Timber::add_route('staff', function($params){

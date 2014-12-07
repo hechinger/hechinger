@@ -134,6 +134,7 @@ $sr-content-max-width: 820px;
 
 .sr-landing-link {
   @include bullet(after);
+  white-space: nowrap;
   // font-size: 95%;
   color: $he-secondary;
   text-decoration: none;

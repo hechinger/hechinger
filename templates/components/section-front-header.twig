@@ -8,7 +8,7 @@
   {% if post.subhead %}
     <p class="section-front-summary-text">{{ post.subhead }}
       {% if post.link_to_page %}
-        <a class="section-front-summary-link" href="{{ post.link_to_page }}">{{ post.link_heading |default('Read more.') }}</a>
+        <a class="section-front-summary-link" href="{{ post.link_to_page }}">{{ post.link_heading | default('Read more.') }}</a>
       {% endif %}
     </p>
   {% endif %}

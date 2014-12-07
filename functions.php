@@ -12,6 +12,7 @@ require_once('wp/hechinger-post.php');
 require_once('wp/hechinger-term.php');
 require_once('wp/hechinger-image.php');
 require_once('wp/hechinger-user.php');
+require_once('wp/hechinger-home.php');
 require_once('wp/pull-quote-admin.php');
 
 new PullQuoteAdmin();

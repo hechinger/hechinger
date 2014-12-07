@@ -17,7 +17,7 @@
 
         <!-- hp main feature -->
         <div class="hp-feat-mod">
-          {% include "/templates/components/tease-layout.twig" with { post: posts[0], context_class: 'feat-lg', css_class: post.lead_image ? 'tz-hp-feat--main tz-hp-feat--main-img' : 'tz-hp-feat--main' } %}
+          {% include "/templates/components/tease-hp-main.twig" with { post: home.get_zone(1)[0], context_class: 'feat-lg', css_class: post.lead_image ? 'tz-hp-feat--main tz-hp-feat--main-img' : 'tz-hp-feat--main' } %}
         </div>
 
         <!-- hp top -->
@@ -27,8 +27,12 @@
             <!-- top featured stories -->
             <div class="grid-item">
               <div class="hp-top-feat-mod">
-                {% for post in posts|slice(1, 2) %}
-                  {% include "/templates/components/tease-hp-regular.twig" with { context_class: "reg-lg", css_class: 'tz-hp-reg' } %}
+                {% for post in home.get_zone(1)|slice(1) %}
+                  {% if loop.index == 1 %}
+                    {% include "/templates/components/tease-hp-regular.twig" with { context_class: "reg-lg", css_class: 'tz-hp-reg' } %}
+                  {% else %}
+                    {% include "/templates/components/tease-hp-regular.twig" with { context_class: "reg-lg", css_class: 'tz-hp-reg', suppress_image : true } %}
+                  {% endif %}
                 {% endfor %}
               </div> <!-- /hp-zone1-feat-mod -->
             </div> <!-- /grid-item -->
@@ -74,7 +78,8 @@
         <!-- Zone 2 Top -->
         <div class="hp-zone--top">
           <div class="l-zone-tres--rule">
-            {% for post in posts|slice(2,3) %}
+            {% for post in home.get_zone_2_posts|slice(0,3) %}
+          
               <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
                 {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub' } %}
               </div>
@@ -90,7 +95,7 @@
         <!-- Zone 2 Bottom -->
         <div class="hp-zone--bottom">
           <div class="l-zone-cuatro--rule">
-            {% for post in posts|slice(5,4) %}
+            {% for post in home.get_zone_2_posts|slice(3,4) %}
               <div class="grid-item">
                 {% include "/templates/components/tease-hp-stub.twig" with {context_class: 'stub-med'} %}
               </div>

@@ -17,6 +17,8 @@ class HechingerHome extends TimberStream {
 			return $this->get_zone_1_posts();
 		} else if ($zone == 2) {
 			return $this->get_zone_2_posts();
+		} else if ($zone == 3) {
+			return $this->get_zone_3_posts();
 		}
 	}
 
@@ -27,6 +29,12 @@ class HechingerHome extends TimberStream {
 		if ($zone == 2) {
 			$z1 = $this->get_zone_1_posts();
 			return count($z1);
+		}
+		if ($zone == 3) {
+			$z1 = $this->get_zone_pointer(2);
+			$z2 = $this->get_zone_2_posts();
+			$pointer = $z1 + count($z2);
+			return $pointer;
 		}
 	}
 
@@ -45,7 +53,17 @@ class HechingerHome extends TimberStream {
 		$avail_posts = $this->get_posts(array(), 'HechingerPost');
 		$pointer = $this->get_zone_pointer(2);
 		$posts = array();
-		for ($i = $pointer; $i < $pointer + 6; $i++ ) {
+		for ($i = $pointer; $i < $pointer + 7; $i++ ) {
+			$posts[] = $avail_posts[$i];
+		}
+		return $posts;
+	}
+
+	protected function get_zone_3_posts() {
+		$avail_posts = $this->get_posts(array(), 'HechingerPost');
+		$pointer = $this->get_zone_pointer(3);
+		$posts = array();
+		for ($i = $pointer; $i < $pointer + 7; $i++ ) {
 			$posts[] = $avail_posts[$i];
 		}
 		return $posts;

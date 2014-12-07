@@ -1,0 +1,90 @@
+{
+    "key": "group_5481251ee2989",
+    "title": "Page Group",
+    "fields": [
+        {
+            "key": "field_548125262dbd6",
+            "label": "Subheading",
+            "name": "subhead",
+            "prefix": "",
+            "type": "text",
+            "instructions": "A short description or subheading for the page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_548125c82fc2c",
+            "label": "Link to another page",
+            "name": "link_to_page",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Link to another page which appears at the end of the heading.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "max": 1,
+            "return_format": "object"
+        },
+        {
+            "key": "field_5481260c2fc2d",
+            "label": "Link Heading",
+            "name": "link_heading",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Heading for the page link",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. Read more about our mission.",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

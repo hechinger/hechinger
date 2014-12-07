@@ -11,6 +11,7 @@ Timber::$dirname = array( 'templates', 'views' );
 require_once('wp/hechinger-post.php');
 require_once('wp/hechinger-term.php');
 require_once('wp/hechinger-image.php');
+require_once('wp/hechinger-user.php');
 require_once('wp/pull-quote-admin.php');
 
 new PullQuoteAdmin();
@@ -28,7 +29,8 @@ add_filter('acf/location/rule_match/page', function($thing, $rule, $current){
 
 class HechingerSite extends TimberSite {
 
-	function __construct() {
+  function __construct() {
+               
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -37,16 +39,22 @@ class HechingerSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'add_topics' ) );
-                $this->set_shortcodes();
-                $this->set_routes();
+    $this->set_shortcodes();
+    $this->set_routes();
 		parent::__construct();
-		$this->bootstap_content();
+    $this->bootstap_content();
+		$this->fix_custom_field_conflict();               
+	}
+
+	function fix_custom_field_conflict() {
+		global $wpdb;
+		$wpdb->query("DELETE FROM wp_postmeta WHERE meta_key = '_wp_page_template'");
 	}
 
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
 			$article = new Mesh\Post( 'article', 'page' );
-                        $article = new Mesh\Post( 'archive', 'page' );
+      $article = new Mesh\Post( 'archive', 'page' );
 			$article = new Mesh\Post( 'special-report', 'page' );
 			$article = new Mesh\Post( 'special-reports-landing', 'page' );
 			$article = new Mesh\Post( 'author', 'page' );
@@ -62,6 +70,16 @@ class HechingerSite extends TimberSite {
               Timber::add_route('special-reports-landing', function($params){
                     Timber::load_view('special-reports-landing.php', null, 200, $params);
               });
+        }
+
+        function set_routes(){
+                Timber::add_route('staff', function($params){
+                        Timber::load_view('staff.php', null, 200, $params);
+                });
+        }
+
+        public function get_current_url() {
+                return TimberHelper::get_current_url();
         }
 
         function register_post_types() {
@@ -213,7 +231,9 @@ class HechingerSite extends TimberSite {
         function handle_img_in_editor($output, $attr, $content) {
             if ( $attr['id'] ) {
                 $iid = str_replace( 'attachment_', '', $attr['id'] );
-                $image = new TimberImage( $iid );
+                if (isset($iid) && strlen($iid)) {
+                  $image = new HechingerImage( $iid );
+                }
                 $class = $attr['align'] . ' inline-core-image';
                 $width = $attr['width'];
                 if ( $attr['align'] == 'alignnone' || $attr['align'] == 'aligncenter') {

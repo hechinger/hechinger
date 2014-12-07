@@ -14,7 +14,8 @@ $homepage = Timber::get_post('home', 'HechingerPost');
 $second_feature = $homepage->get_field('second_feature');
 
 if (class_exists('TimberStream')) {
-  $stream = new TimberStream('homepage');
+  $stream = new HechingerHome();
+  $context['home'] = $stream;
   $context['posts'] = $stream->get_posts(array(), 'HechingerPost');
 }
 

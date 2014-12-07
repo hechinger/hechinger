@@ -29,8 +29,8 @@ add_filter('acf/location/rule_match/page', function($thing, $rule, $current){
 
 class HechingerSite extends TimberSite {
 
-        function __construct() {
-                global $wpdb;
+  function __construct() {
+               
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -39,18 +39,22 @@ class HechingerSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'add_topics' ) );
-                $this->set_shortcodes();
-                $this->set_routes();
+    $this->set_shortcodes();
+    $this->set_routes();
 		parent::__construct();
-                $this->bootstap_content();
+    $this->bootstap_content();
+		$this->fix_custom_field_conflict();               
+	}
 
-                $wpdb->query("DELETE FROM wp_postmeta WHERE meta_key = '_wp_page_template'");
+	function fix_custom_field_conflict() {
+		global $wpdb;
+		$wpdb->query("DELETE FROM wp_postmeta WHERE meta_key = '_wp_page_template'");
 	}
 
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
 			$article = new Mesh\Post( 'article', 'page' );
-                        $article = new Mesh\Post( 'archive', 'page' );
+      $article = new Mesh\Post( 'archive', 'page' );
 			$article = new Mesh\Post( 'special-report', 'page' );
 			$article = new Mesh\Post( 'special-reports-landing', 'page' );
 			$article = new Mesh\Post( 'author', 'page' );

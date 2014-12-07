@@ -11,18 +11,24 @@
   {% block header %}
     <!-- <div class="archive-yellow-box"></div> -->
     <header class="l-archive-hdr-wrap l-page-hdr">
-      <h1 class="archive-hdr">News</h1>
+      <h1 class="archive-hdr">{{ title }}</h1>
     </header>
   {% endblock header %}
 
   {% block feed %}
     <section class="archive-feed-container">
       {# for each article in articles include tease component #}
-      {% for i in 1..10 %}
-        {% include 'components/tease-full-old.twig' %}
+      {% for post in posts %}
+        {% include 'components/tease-full.twig' %}
       {% endfor %}
     </section>
+
+    {% if pagination.pages|length %}
+      {% include "/templates/components/pagination.twig" %}
+    {% endif %}
+
   {% endblock feed %}
+
 
 {% endblock body %}
 

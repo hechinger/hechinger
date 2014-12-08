@@ -67,7 +67,7 @@
             "sub_fields": [
                 {
                     "key": "field_54860f32b3e12",
-                    "label": "year",
+                    "label": "Year",
                     "name": "year",
                     "prefix": "",
                     "type": "number",
@@ -75,7 +75,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "18",
                         "class": "",
                         "id": ""
                     },
@@ -99,7 +99,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "35",
                         "class": "",
                         "id": ""
                     },

@@ -21,7 +21,15 @@
  * @since    Timber 0.1
  */
 $context = Timber::get_context();
-$post = new HechingerPost();
+$context['users'] = array();
 $context['post'] = $post;
-$context['users'] = 'bar';
-Timber::render(array('pages/' . $post->slug . '.twig', 'pages/page.twig'), $context);
+
+$staff_users = new WP_User_Query( array( 'meta_key' => 'hech_role', 'meta_value' => 'staff' ) );
+
+if ( isset($staff_users->results) && is_array($staff_users->results) ) {
+  foreach ($staff_users->results as $user) {
+    $context['users'][] = new HechingerUser($user);
+  }
+}
+
+Timber::render('pages/staff.twig', $context);

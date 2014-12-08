@@ -1,40 +1,43 @@
 {% extends 'layout.twig' %}
-
 {% block navbar %}
   {% include 'components/nav-bar.twig' with {css_class: "site-header--no-pad"} %}
 {% endblock %}
 
-
 {# archive page layouts go here #}
 {% block body %}
 
-
   {% block header %}
-    {% include 'components/section-front-header.twig' with {section_front_title : "About" } %}
+    {% include 'components/section-front-header.twig' with { section_front_title : "Staff", post: post } %}
   {% endblock header %}
 
   {% block staff_content %}
     <div class="staff-content">
       <div class="l-content">
         <ul class="staff-items">
-          {% for i in 1..12 %}
+          {% for user in users %}
             <li class="staff-item">
               <div class="l-pair-staff-page">
-                <div class="art-bd">
-                  <div class="img-rounded">
-                    <a href="#">
-                      <img src="{{ img.src | resize(200, 200) | default('/wp-content/themes/hechinger/static/img/mug_placeholder.jpg' | resize(200, 200) ) }}" alt="">
-                    </a>
-                  </div> <!-- img-rounded -->
-                </div> <!-- /art-bd -->
+                {% if user.get_image %}
+                  <div class="art-bd">
+                    <div class="img-rounded">
+                      <a href="{{ user.link }}">
+                        <img src="{{ user.get_image.src | resize(200, 200) }}" alt="Photo of {{ user.name }}">
+                      </a>
+                    </div> <!-- img-rounded -->
+                  </div> <!-- /art-bd -->
+                {% endif %}
 
                 <div class="txt-bd">
-                  <h4 class="staff-title-h">Title goes here</h4>
+                  {% if user.job_title %}
+                    <h4 class="staff-title-h">{{ user.job_title }}</h4>
+                  {% endif %}
                   <h3 class="staff-name-h">
-                    <a class="staff-name-h-link" href="#">Staff Member {{i}}</a>
+                    <a class="staff-name-h-link" href="{{ user.link }}">{{ user.name }}</a>
                   </h3> <!-- staff-name-h -->
-                  <p class="staff-bio-text">This is a bio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, illo facilis aut impedit officiis. Facilis dicta a animi, nihil eum!</p>
-                  <a class="staff-bio-link">More</a>
+                  {% if user.description %}
+                    <p class="staff-bio-text">{{ user.description }}</p>
+                  {% endif %}
+                  <a class="staff-bio-link" href="{{ user.link }}">More</a>
                 </div> <!-- /txt-bd -->
               </div> <!-- /l-pair-staff-page -->
             </li> <!-- / staff-item -->

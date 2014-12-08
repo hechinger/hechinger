@@ -8,11 +8,11 @@
 
 %article-aside {
   max-width: $article-bd-max;
-  padding: 17px 10px;
+  // padding: 17px 10px;
   @include bp(700px) {
     clear: right;
     float: right;
-    display: initial;
+    // display: initial;
     width: 220px;
     margin-left: 60px;
     margin-bottom: 30px;
@@ -20,33 +20,278 @@
   }
 }
 
+
 .article-aside {
   @extend %article-aside;
-  display: table-footer-group;
-  @include bp(700px) {
-    display: block;
+  // display: table-footer-group;
+
+  border-top: .5em solid black;
+  border-bottom: 1px solid $black-20;
+  padding: 5px 0 15px;
+  margin-bottom: 50px;
+  display: inline-block;
+      &:first-of-type { margin-top: 50px;}
+
+  @include bp($medium-lg) {
+      display: block;
+    }
+
+  p {
+    font-family: $he-sans;
+    font-size: 14px;
+    margin: 10px 0;
   }
-}
+  // ---------------------------
+  // Headline Styles
+  // h1 {
+  //     font-family: $he-sans;
+  //     font-weight: $font-weight-bold;
+  //     font-size: 30px;
+  //     color: black;
+  //     margin-top: 15px;
+  // }
 
-.aside-hdr {
-  @extend %section-hdr;
-  font-size: 16px;
-}
+  h1, h2 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 24px;
+      color: black;
+      margin-top: 15px;
+    }
 
-.aside-borders {
-  border-top: $bdr-med--black;
-  border-bottom: $bdr-thin;
-}
+  h3, h4 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 20px;
+      color: black;
+      margin-top: 15px;
+    }
 
-.aside-body {
-  margin-left: 0
-}
+  // h4 {
+  //     font-family: $he-serif;
+  //     font-weight: $font-weight-black;
+  //     font-size: 15px;
+  //     border-bottom: 5px solid black;
+  //     padding-bottom: 5px;
+  //     margin: 15px 0;
+  //     display: inline-block;
+  //     color: black;
+  //   }
 
-.aside-borders {
-  border-top: $bdr-med--black;
-  border-bottom: $bdr-thin;
-}
+  h5, h6 {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: black;
+      margin-top: 15px;
+    }
 
-.aside-body {
-  margin-left: 0
-}
+  // ---------------------------
+  // Blockquote
+  blockquote {
+    padding-top: 10px;
+    margin: 25px 0 !important;
+    border-top: 3px solid $he-secondary;
+    color: $black-40;
+    // > p {
+    //   @extend %article-bd-margin;
+    //   max-width: $article-bd-max;
+    //   font-family: Georgia, serif;
+    //   font-size: 16px;
+    // }
+
+    // >ul, ol {
+    //   font-family: Georgia, serif;
+    //   font-size: 16px;
+    //   a {}
+    // }
+
+    // > ul {
+    //   list-style-type: disc;
+
+    //   ul {
+    //     list-style-type: circle !important;
+    //     margin-left: 20px;
+    //   }
+    // }
+  }
+
+  .pull-quote a { }
+
+
+  // ---------------------------
+  // Lists
+  ul, ol {
+    font-family: $he-sans;
+    font-size: 14px;
+    margin: 10px 0 10px 20px;
+    a {}
+  }
+
+  ul {
+    list-style-type: disc;
+
+    ul {
+      list-style-type: circle !important;
+      margin-left: 20px;
+    }
+  }
+
+  ol {
+      counter-reset:li; /* Initiate a counter */
+      margin-left:0; /* Remove the default left margin */
+      padding-left:0; /* Remove the default left padding */
+  }
+  ol > li {
+      position:relative; /* Create a positioning context */
+      margin:0 0 6px 1.5em; /* Give each list item a left margin to make room for the numbers */
+      padding:4px 0; /* Add some spacing around the content */
+      list-style:none; /* Disable the normal item numbering */
+
+  }
+  ol > li:before {
+      content: counter(li)'.'; /* Use the counter as content */
+      counter-increment:li; /* Increment the counter by 1 */
+      /* Position and style the number */
+      position:absolute;
+      top: 1px;
+      left:-2em;
+      width:2em;
+      /* Some space between the number and the content in browsers that support
+         generated content but not positioning it (Camino 2 is one example) */
+      margin-right:8px;
+      color: $he-secondary;
+      font-weight:bold;
+      font-size: 17px;
+      font-family: $he-sans;
+      text-align:center;
+  }
+
+  li ol,
+  li ul {margin-top:6px;}
+  ol ol li:last-child {margin-bottom:0;}
+
+  // ---------------------------
+  // Links
+  a, a:visited {
+    color: $he-secondary;
+    text-decoration: none;
+    &:hover, &:visited:hover {
+        text-decoration: underline;
+    }
+  }
+
+  >address {
+    font-family: $he-sans;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: $font-weight-lt;
+  }
+  // ---------------------------
+  // Image stuff
+  p {
+    // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
+    // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
+    // > .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
+    // > .size-thumbnail { float: left; margin-right: 2em; }
+    img {
+      @extend %bleeding-container;
+          margin: 15px 0 15px 25px;
+          float: left;
+          display: inline-block;
+          width: 25%;
+          height: auto;
+
+      @include bp(550px) {
+          margin: 15px 0;
+      }
+
+      @include bp(700px) {
+          width: 100%;
+          float: none;
+      }
+    }
+  }
+
+  .img-container {
+    width: 100%;
+    // max-width: 220px;
+
+    @include bp($medium-lg) {
+      display: inline-block;
+    }
+  }
+
+  // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
+  // .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
+  // .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
+  // .size-thumbnail { float: left; margin-right: 2em; }
+  // img { margin-bottom: 1em; }
+
+
+    .img-caption-text { margin: 0; }
+
+    .img-caption {
+      width: 65%;
+      margin: 15px 0;
+      float: right;
+
+      @include bp(550px) {
+        width: 70%;
+        margin: 5px 0 0;
+      }
+
+      @include bp(700px) {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+    }
+
+    .wp-caption-text {
+      font-family: $he-sans;
+      font-weight: $font-weight-bold;
+      font-size: 14px;
+    }
+    .wp-image-38 {
+      margin-right: 20px;
+      height: auto;
+    }
+    .cap-image-right,
+    .cap-image-left { }
+
+
+    .cap-caption { }
+
+    .media-mod { }
+
+    // ---------------------------
+    // Italic
+    em, i { }
+
+    // ---------------------------
+    // Bold
+    strong, b { }
+
+} // article-aside
+
+
+  .aside-hdr {
+    // @extend %section-hdr;
+    // margin-bottom: 1em;
+    font-size: 16px;
+    font-family: $he-serif !important;
+    font-weight: $font-weight-black;
+    margin-top: 0 !important;
+  }
+
+  .aside-borders {
+    border-top: $bdr-med--black;
+    border-bottom: $bdr-thin;
+  }
+
+  .aside-body {
+    margin-left: 0
+  }

@@ -1,9 +1,15 @@
 <div class="section-front-banner" style="background-image: url({{ site.theme.path }}/static/img/img-special_report-Mississippi-1160-276.jpg)"></div>
 
 <header class="l-section-front-hdr-wrap l-page-hdr">
-  <h1 class="archive-hdr">{{section_front_title}}</h1>
+  <h1 class="archive-hdr">{{ section_front_title }}</h1>
 </header>
 
 <div class="section-front-summary-wrap">
-  <p class="section-front-summary-text">Brief explanation about why we cover what we cover and why it is that we focus more heavily on Common Core, Higher Ed, Blended Learning, and a few other specific subject areas. <a class="section-front-summary-link" href="#">See All Our Reports</a></p>
+  {% if post.subhead %}
+    <p class="section-front-summary-text">{{ post.subhead }}
+      {% if post.link_to_page %}
+        <a class="section-front-summary-link" href="{{ post.link_to_page }}">{{ post.link_heading | default('Read more.') }}</a>
+      {% endif %}
+    </p>
+  {% endif %}
 </div> <!-- /special-report-summary-wrap -->

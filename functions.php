@@ -18,16 +18,9 @@ require_once('wp/pull-quote-admin.php');
 new PullQuoteAdmin();
 
 add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
-add_filter('acf/location/rule_match/page', function($thing, $rule, $current){
-	$pid = $rule['value'];
-	if ($pid == 18113) {
-		$post = new TimberPost($current['post_id']);
-		if ($post->slug == 'home') {
-			return true;
-                }
-        }
-        return $thing;
-}, 10, 3);
+
+ACFHacks::map_page_rule_to_slug(18113, 'home');
+ACFHacks::map_page_rule_to_slug(17996, 'about');
 
 class HechingerSite extends TimberSite {
 

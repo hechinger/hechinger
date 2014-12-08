@@ -152,11 +152,12 @@ $bp-aside-negative-margin:  925px;
   > blockquote {
     max-width: $article-bd-max;
     margin: 25px 0 !important;
-    border-left: 2px solid $black-40;
+    border-left: 3px solid $he-secondary;
     padding-left: 25px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: $he-sans;
     font-weight: $font-weight-lt;
+    color: $black-40;
 
     p { margin-top: 17px; }
 
@@ -175,6 +176,8 @@ $bp-aside-negative-margin:  925px;
         margin-left: 20px;
       }
     }
+
+    ol > li:before { color: $black-40; }
   }
 
   .pull-quote a { }
@@ -183,8 +186,8 @@ $bp-aside-negative-margin:  925px;
   // Lists
   // --------------------------------------------
   > ul,  > ol {
-    font-family: $he-sans;
-    font-size: 16px;
+    // font-family: $he-sans;
+    // font-size: 16px;
     margin-left: 20px;
 
     li { margin-top: 10px; }
@@ -194,23 +197,59 @@ $bp-aside-negative-margin:  925px;
   > ul {
     list-style-type: disc;
 
-    ul {
+     ul {
       list-style-type: circle !important;
       margin-left: 20px;
     }
   }
+    ol {
+    counter-reset:li; /* Initiate a counter */
+    margin-left:0; /* Remove the default left margin */
+    padding-left:0; /* Remove the default left padding */
+    }
 
-  > ol {
-    > li { }
-  }
- // >ul, ol
+ol > li {
+    position:relative; /* Create a positioning context */
+    margin:0 0 6px 1.5em; /* Give each list item a left margin to make room for the numbers */
+    padding:4px 0; /* Add some spacing around the content */
+    list-style:none; /* Disable the normal item numbering */
 
+}
+ol > li:before {
+    content: counter(li)'.'; /* Use the counter as content */
+    counter-increment:li; /* Increment the counter by 1 */
+    /* Position and style the number */
+    position:absolute;
+    top: -5px;
+    left: -43px;;
+    width:2em;
+    /* Some space between the number and the content in browsers that support
+       generated content but not positioning it (Camino 2 is one example) */
+    margin-right:8px;
+    color: $he-secondary;
+    font-weight:bold;
+    font-size: 24px;
+    font-family: $he-sans;
+    text-align:center;
+}
+    li ol,
+    li ul {margin-top:6px;}
+    ol ol li:last-child {margin-bottom:0;}
+
+  // }
+
+  // > ol {
+  //   > li { }
+  // }
 
   // Links
   // --------------------------------------------
   a, a:visited {
     color: $he-secondary;
-    &:hover, &:visited:hover { }
+    text-decoration: none;
+    &:hover, &:visited:hover {
+        text-decoration: underline;
+    }
   }
 
   > address {
@@ -219,7 +258,6 @@ $bp-aside-negative-margin:  925px;
     font-style: italic;
     font-weight: $font-weight-lt;
   }
-
 
   // Images
   // --------------------------------------------
@@ -407,6 +445,7 @@ $bp-aside-negative-margin:  925px;
 
 
 
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -421,3 +460,4 @@ $bp-aside-negative-margin:  925px;
 }
 
 .comment-inner { }
+

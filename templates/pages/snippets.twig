@@ -101,7 +101,6 @@
       <div class="grid-container">
         <div class="l-grid-2">
           {% for i in 1..4 %}
-          {# I think we might need some twig logic in order to get this to break down to a 1up carousel on smaller screens? #}
             {% include "/templates/components/tease-hp-report.twig" %}
           {% endfor %}
         </div> <!-- /l-grid-2 -->
@@ -122,6 +121,13 @@
     <div class="snippet-mod">
       <h3 class="snippet-label">Donate Promo</h3>
       {% include "/templates/components/promo-donate.twig" %}
+    </div> <!-- /snippet-mod -->
+
+    <!-- Special Report House Ad -->
+    <!-- ============================= -->
+    <div class="snippet-mod">
+      <h3 class="snippet-label">Special Report Promo</h3>
+      {% include "/templates/components/promo-report.twig" %}
     </div> <!-- /snippet-mod -->
 
     <!-- xxx -->

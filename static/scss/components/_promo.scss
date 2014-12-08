@@ -6,7 +6,22 @@
 // --------------------------------------------
 // --------------------------------------------
 
-.promo-mod {
+.promo-mod, .promo-mod-donate {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.promo-mod-donate {
+  background-image: url("/wp-content/themes/hechinger/static/img/house-ad/Promo_Cloudy_1.jpg");
+}
+
+.promo-overlay {
+  position: relative;
+  background-color: rgba(42, 39, 43, 0.3);
+}
+
+.promo-link {
+  text-decoration: none;
 }
 
 .promo-inner {
@@ -146,8 +161,8 @@
   text-transform: uppercase;
   margin-top: 30px;
   @include mq($medium) { font-size: 20px; }
-
 }
+
 .promo-input {
   display: block;
   float: left;

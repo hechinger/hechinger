@@ -8,6 +8,7 @@ if ( !class_exists( 'Timber' ) ) {
 }
 
 Timber::$dirname = array( 'templates', 'views' );
+require_once('wp/acf-hacks.php');
 require_once('wp/hechinger-post.php');
 require_once('wp/hechinger-term.php');
 require_once('wp/hechinger-image.php');

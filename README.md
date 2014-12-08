@@ -181,6 +181,7 @@ To run Vagrant Cloud:
  - You'll be asked for your email and password.
 4. Next run `$ vagrant share`
  - The command should return a valid url to visit
+ - It often returns an error the first time you do this. So try running `vagrant share` again
 5. Visit the url in the devices you wish to test.
 
 _When you are done please shut off your share by pushing `ctrl-c` in the terminal with vagrant share running_

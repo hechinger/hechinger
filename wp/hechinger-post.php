@@ -17,13 +17,13 @@ class HechingerPost extends TimberPost {
     }
   }
 
-  function tease_excerpt() {
+  function tease_excerpt( $length = 30 ) {
     if ($this->subhead) {
       $excerpt = $this->subhead;
     } elseif ($this->excerpt) {
       $excerpt = strip_tags($this->excerpt);
     } else {
-      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, 30 ));
+      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, $length ));
     }
     return $excerpt;
   }

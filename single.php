@@ -45,7 +45,7 @@ function get_quote( $qt_str, $homepage ) {
     if ( isset($zquote_subhead) && strlen($zquote_subhead) ) {
       $zquote['subhead'] = $zquote_subhead;
     } else {
-      $zquote['subhead'] = $zquote['post']->subhead;
+      $zquote['subhead'] = $zquote['post']->tease_excerpt(10);
     }
 
     if ( isset($zquote_number) && strlen($zquote_number) ) {

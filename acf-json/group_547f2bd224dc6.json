@@ -11,6 +11,11 @@
             "instructions": "Select a post to for the second feature slot. If none is selected it will display the most recent.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "post_type": [
                 "post"
             ],
@@ -23,6 +28,188 @@
             "elements": "",
             "max": 1,
             "return_format": "object"
+        },
+        {
+            "key": "field_5485c75211fad",
+            "label": "Zone 2 Quote Link",
+            "name": "z2_quote_link",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Select a story to link to with this tease.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5485c7d311fae",
+            "label": "Zone 2 Quote",
+            "name": "z2_quote_text",
+            "prefix": "",
+            "type": "text",
+            "instructions": "The Text of the pull quote or statistic.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. \"I\u2019ve never seen any school \u2014 large or small \u2014 pay such close attention to student data.\"",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5485d6df0e39d",
+            "label": "Zone 2 Stat Number",
+            "name": "z2_quote_number",
+            "prefix": "",
+            "type": "text",
+            "instructions": "If the tease is a statistic, enter the number here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. 98%",
+            "prepend": "",
+            "append": "",
+            "maxlength": 6,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5485c81b11faf",
+            "label": "Zone 2 Quote Subhead",
+            "name": "z2_quote_subhead",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Subheading for this link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. \"Will the Littlest Learners Be Able To Type?\"",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5485c866eba22",
+            "label": "Zone 3 Quote Link",
+            "name": "z3_quote_link",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Select a second story to link with this tease.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
+            "key": "field_5485c878f8231",
+            "label": "Zone 3 Quote",
+            "name": "z3_quote_text",
+            "prefix": "",
+            "type": "text",
+            "instructions": "The Text of the pull quote or statistic.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. \"I\u2019ve never seen any school \u2014 large or small \u2014 pay such close attention to student data.\"",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5485d72295056",
+            "label": "Zone 3 Stat Number",
+            "name": "z3_quote_number",
+            "prefix": "",
+            "type": "text",
+            "instructions": "If the tease is a statistic, enter the number here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. 98%",
+            "prepend": "",
+            "append": "",
+            "maxlength": 4,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5485c89911ec3",
+            "label": "Zone 3 Quote Subhead",
+            "name": "z3_quote_subhead",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Subheading for this link.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ex. \"Will the Littlest Learners Be Able To Type?\"",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -35,7 +222,7 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",

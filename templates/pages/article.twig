@@ -110,13 +110,15 @@
       <!-- article-recirculation -->
       <!-- ============================ -->
       {% block article_recirculation %}
-      <div class="l-content">
-        <div class="recirculation-container">
-          <h4 class="section-hdr--lg">Read Next</h4>
+        {% if recirc_posts|length %}
+          <div class="l-content">
+            <div class="recirculation-container">
+              <h4 class="section-hdr--lg">Read Next</h4>
 
-          {% include "/templates/components/article-recirculation.twig" %}
+              {% include "/templates/components/article-recirculation.twig" %}
 
-        </div> <!-- /recirculation-container -->
+          </div> <!-- /recirculation-container -->
+        {% endif %}
       {% endblock %} {# /article_recirculation #}
 
   </div> <!-- /l-content -->

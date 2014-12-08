@@ -32,26 +32,30 @@ img { @include resp-img; }
 .social-items {
   @include pie-clearfix;
   display: inline-block;
+  &.social--with-name {
+    @include mq(450px, max) { display: block; }
+  }
 }
 
 .social-item {
   display: inline;
   float: left;
   text-indent: -9999em;
-  // width: 30px;
-  // height: 30px;
   margin-top: 0;
-  // line-height: 30px;
-  // background-color: $black-10;
-  // cursor: pointer;
-  // color: #fff;
-  // letter-spacing: 1px;
+  font-size: 12px;
 
   & + & { margin-left: 10px; }
 
   .social--ftr & {
     margin-left: 15px;
     &:first-child { margin-left: 0; }
+  }
+
+  .social--with-name & {
+    @include mq(450px, max) {
+      width: 47%;
+      &.icon-facebook { margin-left: 6%; }
+    }
   }
 }
 
@@ -71,10 +75,17 @@ img { @include resp-img; }
   .icon-facebook & { background-color: $facebook-blue; }
 
   .social--with-name & {
-    width: 100px;
-    height: 35px;
-    line-height: 35px;
-    text-indent: 25px;
+    // width: 100px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    // text-indent: 25px;
+    text-indent: 30px;
+    @include mq(450px) {
+      width: 100px;
+      line-height: 35px;
+      height: 35px;
+    }
   }
   .social--ftr & {
     border: 1px solid #000;
@@ -90,15 +101,23 @@ img { @include resp-img; }
 .article-comment-link {
   position: relative;
   display: block;
-  width: 140px;
-  height: 35px;
-  line-height: 35px;
+  // width: 140px;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  margin-top: 20px;
   padding-left: 35px;
   border: $bdr-thin;
   text-decoration: none;
   text-transform: uppercase;
   color: $he-secondary;
   font-weight: 700;
+  @include mq(450px) {
+    width: 140px;
+    height: 35px;
+    margin-top: 0;
+    line-height: 35px;
+  }
 
 }
 
@@ -143,15 +162,19 @@ $icons: twitter,
   .social--with-name & {
     width: 15px;
     height: 15px;
-    top: 9px;
-    left: 7px;
+    // left: 7px;
+    left: 11px;
+    top: 50%;
+    margin-top: -8px;
   }
 
   .icon-disqus & {
     width: 15px;
     height: 15px;
-    top: 9px;
-    left: 9px;
+    // left: 9px;
+    left: 11px;
+    top: 50%;
+    margin-top: -7px;
   }
 
   .author-contact-item & {

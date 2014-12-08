@@ -96,8 +96,14 @@ $bp-article-not-centered:   900px;
   }
 }
 
-.article-tools-btm-left { float: left; }
-.article-tools-btm-right { float: right; }
+.article-tools-btm-left {
+  // float: left;
+  @include mq(450px) { float: left; }
+}
+.article-tools-btm-right {
+  // float: right;
+  @include mq(450px) { float: right; }
+}
 
 
 

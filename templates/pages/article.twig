@@ -4,7 +4,6 @@
   <!-- Article Layout -->
   <!-- ============================= -->
 
-  <!-- <div class="big-yellow-box"></div> -->
 
   <!-- article hdr -->
   {% block article_hdr %}
@@ -49,7 +48,7 @@
 
       <!-- article-social -->
       {% block article_social %}
-        <div class="page-mod">
+        <div class="page-mod article-mod">
           <div class="article-tools-btm-left">
             <a class="article-comment-link icon-disqus"  id="comment-trigger" href="#"><i class="icon"></i>
               <span class="article-comment-number">xxx</span> Comments</a>
@@ -63,7 +62,7 @@
 
       <!-- article-comments -->
       {% block article_comments %}
-        <div class="page-mod" id="comment-mod">
+        <div class="page-mod article-mod" id="comment-mod">
           <div class="comment-inner">
             {% include "templates/components/disqus.twig" %}
           </div> <!-- /comment-inner -->
@@ -73,7 +72,7 @@
       <!-- article-tag -->
       {% block article_tag %}
         {% if post.story_tags|length %}
-          <div class="page-mod">
+          <div class="page-mod article-mod">
             {% include "/templates/components/article-tags.twig" %}
           </div> <!-- /page-mod -->
         {% endif %}
@@ -81,7 +80,7 @@
 
       <!-- article-bio -->
       {% block article_bio %}
-        <div class="page-mod">
+        <div class="page-mod article-mod">
            <div class="article-bio">
             <div class="l-article-bio">
 

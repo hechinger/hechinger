@@ -1,70 +1,74 @@
 /*
-Error: Undefined variable: "$article-bd-max".
-        on line 10 of /Users/plumcakes/Sites/hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger/static/scss/components/article-core-img.scss
+Error: Undefined variable: "$site-margin".
+        on line 22 of /Users/grant/Sites/hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger/static/scss/components/article-core-img.scss
 
-5: //
-6: // --------------------------------------------
-7: // --------------------------------------------
-8: 
-9: .media-mod {
-10:   max-width: $article-bd-max;
-11:   // max-width: 600px;
-12: }
-13: 
-14: // protyping images bleeding out of containers.
-15: // assumes control over the containing element when images are added
+17:   @extend %bleeding-container;
+18:   > img { }
+19: }
+20:
+21: .img-caption {
+22:   margin: 10px $site-margin 40px;
+23:   font-family: $he-sans;
+24:   font-weight: $font-weight-bold;
+25:   font-size: 14px;
+26:   line-height: 1.285714286;   // 18/14
+27:   color: black;
 
 Backtrace:
-/Users/plumcakes/Sites/hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger/static/scss/components/article-core-img.scss:10
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/script/tree/variable.rb:49:in `_perform'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:384:in `visit_prop'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/stack.rb:79:in `block in with_base'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/stack.rb:115:in `with_frame'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/stack.rb:79:in `with_base'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:420:in `map'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/stack.rb:79:in `block in with_base'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/stack.rb:115:in `with_frame'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/stack.rb:79:in `with_base'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/tree/root_node.rb:20:in `render'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/engine.rb:268:in `render'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:491:in `update_stylesheet'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:469:in `on_file_changed'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/Users/plumcakes/.rvm/gems/ruby-2.1.1/gems/sass-3.4.7/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+/Users/grant/Sites/hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger/static/scss/components/article-core-img.scss:22
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/script/tree/list_literal.rb:62:in `block in _perform'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/script/tree/list_literal.rb:62:in `map'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/script/tree/list_literal.rb:62:in `_perform'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:384:in `visit_prop'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/stack.rb:79:in `block in with_base'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/stack.rb:115:in `with_frame'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/stack.rb:79:in `with_base'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:420:in `block (2 levels) in visit_rule'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:420:in `map'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:420:in `block in visit_rule'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:418:in `visit_rule'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/stack.rb:79:in `block in with_base'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/stack.rb:115:in `with_frame'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/stack.rb:79:in `with_base'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/tree/root_node.rb:20:in `render'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/engine.rb:268:in `render'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:491:in `update_stylesheet'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:469:in `on_file_changed'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/vendor/listen/lib/listen/adapter.rb:254:in `call'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/Users/grant/.rvm/gems/ruby-2.1.1/gems/sass-3.4.8/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$article-bd-max\".\A         on line 10 of /Users/plumcakes/Sites/hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger/static/scss/components/article-core-img.scss\A \A 5: //\A 6: // --------------------------------------------\A 7: // --------------------------------------------\A 8: \A 9: .media-mod {\A 10:   max-width: $article-bd-max;\A 11:   // max-width: 600px;\A 12: }\A 13: \A 14: // protyping images bleeding out of containers.\A 15: // assumes control over the containing element when images are added"; }
+  content: "Error: Undefined variable: \"$site-margin\".\A         on line 22 of /Users/grant/Sites/hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger/static/scss/components/article-core-img.scss\A \A 17:   @extend %bleeding-container;\A 18:   > img { }\A 19: }\A 20: \A 21: .img-caption {\A 22:   margin: 10px $site-margin 40px;\A 23:   font-family: $he-sans;\A 24:   font-weight: $font-weight-bold;\A 25:   font-size: 14px;\A 26:   line-height: 1.285714286;   // 18/14\A 27:   color: black;"; }

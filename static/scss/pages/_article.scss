@@ -6,25 +6,36 @@
 // --------------------------------------------
 // --------------------------------------------
 
-// Max width on paragraphs in article
-$article-bd-max:    550px;
+// Max width of paragraphs in article
+$article-bd-max:          550px;
 
-// Article image width
-$img-max-sm:        350px;
-$img-max-med:       450px;
-$img-max-lg:        550px;
+
+// Article image widths
+$img-max-sm:              350px;
+$img-max-med:             450px;
+$img-max-lg:              650px;
+$img-max-bd:              $article-bd-max;
 
 // Article aside width
-$aside-max:         240px;
+$aside-max:               240px;
+
+
+
+// Breakpoints
+// --------------------------------------------
 
 // Used on article page for images, determing when they are no
 // longer bleeding out of the rest of the article container.
-$bp-img-no-bleed:   550px;
+$bp-img-no-bleed:           550px;
 
 
 // When asides (pullquotes) float and take on max-width
-$bp-aside:          550px;
+$bp-aside:                  550px;
 $bp-aside-negative-margin:  925px;
+
+// When article is no longer centered and take on columnar layout
+$bp-article-not-centered:   900px;
+
 
 
 
@@ -41,27 +52,27 @@ $bp-aside-negative-margin:  925px;
 // They're more universal and thus pulled out
 
 .article-main {
-  display: table;
-  @include bp(700px) {
+  // display: table;
+  @include mq(700px) {
     display: block;
   }
 }
 
 .article-body {
   @include pie-clearfix;
-  display: table-caption;
+  // display: table-caption;
   margin-bottom: 30px;
-
   > * + * { margin-top: 17px; }
 
-  @include bp(550px) {
+  @include mq(550px) {
     // max-width: 880px;
-    margin: 0 auto;
+    // margin: 0 auto;
     // padding: 0 50px;
   }
-  @include bp(700px) {
-    display: initial;
+  @include mq(700px) {
+    // display: initial;
   }
+  @include mq(900px) { }
 }
 
 .recirculation-container {
@@ -73,6 +84,16 @@ $bp-aside-negative-margin:  925px;
   @include pie-clearfix;
   margin-top: 29px;
   max-width: $article-bd-max;
+}
+
+.article-mod {
+  max-width: $article-bd-max;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq($bp-article-not-centered) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .article-tools-btm-left { float: left; }
@@ -98,7 +119,10 @@ $bp-aside-negative-margin:  925px;
   > p {
     // @extend %article-bd-margin;
     max-width: $article-bd-max;
+    margin-left: auto;
+    margin-right: auto;
     &:first-of-type { @include drop-cap; }
+    @include mq($bp-article-not-centered) { margin-left: 0; margin-right: 0;}
   }
 
 
@@ -261,22 +285,45 @@ ol > li:before {
 
   // Images
   // --------------------------------------------
-  > p {
-    // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
-    // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
-    // > .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
-    // > .size-thumbnail { float: left; margin-right: 2em; }
-    > img {
-      // @extend %bleeding-container;
+
+  .aligncenter {
+    max-width: $img-max-lg;
+    // margin-left: auto;
+    // margin-right: auto;
+    @include mq($bp-img-no-bleed) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq($bp-article-not-centered) {
+      max-width: $img-max-bd;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
-  // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
-  // .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
-  // .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
-  // .size-thumbnail { float: left; margin-right: 2em; }
-  // img { margin-bottom: 1em; }
+  .alignleft {
+    @include mq($bp-img-no-bleed) {
+      float: left;
+      max-width: $img-max-sm;
+      margin-left: -$site-margin;
+      margin-right: $site-margin;
+    }
+    @include mq($desktop) { margin-left: -100px; }
+  }
 
+
+  .alignright {
+    @include mq($bp-img-no-bleed) {
+      float: right;
+      max-width: $img-max-sm;
+      margin-right: -$site-margin;
+      margin-left: $site-margin;
+    }
+    @include mq($desktop) {
+      max-width: $img-max-med;
+      margin-right: -($site-margin*2);
+    }
+  }
 
   .wp-caption-text {
     font-family: $he-sans;

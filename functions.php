@@ -205,6 +205,16 @@ class HechingerSite extends TimberSite {
         function set_shortcodes() {
                 // This actually runs the shortcode. It is good
                 add_filter( 'img_caption_shortcode', array($this, 'handle_img_in_editor'), 10, 3);
+                add_filter( 'image_send_to_editor', function($html, $id, $caption, $title, $align, $url, $size, $alt ) {
+                  if (!$caption) {
+                    $caption = 'NOTHING';
+                    preg_match( '/width=["\']([0-9]+)/', $html, $matches );
+                    $width = $matches[1];
+                    $shcode = '[caption id="' . $id . '" align="align' . $align . '" width="' . $width . '"]' . $html . ' ' . $caption . '[/caption]';
+                    return $shcode;
+                  }
+                  return $html;
+                }, 10, 8);
                 add_filter( 'aaimage_send_to_editor', function ($html, $id, $caption, $title, $align, $url, $size, $alt ) {
 
                   if ( empty($caption) || apply_filters( 'disable_captions', '' ) ) {

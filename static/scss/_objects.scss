@@ -393,116 +393,119 @@ $button-main: $he-secondary;
 //
 // --------------------------------------------
 // --------------------------------------------
-.prev-next-nav {
+
+.pagination-mod {
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.pagination-list {
-  text-align: center;
   padding: 1em 0;
   font-family: $he-sans;
   font-size: 16pt;
   font-weight: $font-weight-lt;
   text-transform: uppercase;
+  text-align: center;
 }
 
-.pagination-list-item-prev-next {
-  display: inline;
-  padding-left: 5px;
-  padding-right: 5px;
-
-  &:hover {
-    color: $he-secondary;
-  }
-}
-
-.pagination-list-item-of {
-  text-transform: none;
-  font-style: italic !important;
-  padding: 0 5px;
-  color: $black-40;
-  display: inline-block;
-}
-
-.pagination-list-item-current {
+.pagination-page-current {
   display: inline-block;
   padding: 0 5px 0 15px;
   color: $black-40;
 }
 
-.pagination-list-item-total {
+.pagination-page-of {
+  text-transform: none;
+  font-style: italic;
+  padding: 0 5px;
+  color: $black-40;
+  display: inline-block;
+}
+
+.pagination-page-total {
   display: inline-block;
   padding: 0 15px 0 5px;
   color: $black-40;
 }
 
-.pagination-list-item-link {
-  text-decoration: none;
+//TODO: make this a mixin
+%pagination-arrow {
+  position: relative;
+  display: inline-block;
   color: $black-40;
+  text-decoration: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
 
   &:hover {
     color: $he-secondary;
   }
 
-  .pagination-disabled & {
+  &.pagination-disabled {
     color: $black-20;
-
-    &:hover {
-      color: $black-20;
-    }
   }
 }
 
 .arrow-left {
-  display: inline-block;
-  margin: 0 10px -3px 0;
+  @extend %pagination-arrow;
 
-  &.before {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right:10px solid $black-40;
-    margin-right: -10px;
-
-    &.pagination-disabled {
-      border-right:10px solid $black-20;
-    }
+  &:before {
+    left: -25px;
+    border-right: 10px solid $black-40;
   }
 
-  &.after {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+  &:after {
+    left: -21px;
+    border-right:10px solid $white;
+  }
 
-    border-right:10px solid white;
+  &:hover:before {
+    border-right-color: $he-secondary;
+  }
+
+  &.pagination-disabled {
+    &:before {
+      border-right-color: $black-20;
+    }
   }
 }
 
 .arrow-right {
-  display: inline-block;
-  margin: 0 0 -3px 10px;
+  @extend %pagination-arrow;
 
-  &.before {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left:10px solid white;
-    margin-left: -20px;
+  &:before {
+    right: -25px;
+    border-left:10px solid $black-40;
+    &:hover {
+      border-left-color: $he-secondary;
+    }
   }
 
-  &.after {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left:10px solid $black-40;
+  &:after {
+    right: -21px;
+    border-left:10px solid $white;
+  }
 
-    &:hover {
-      border-left:10px solid $he-secondary;
+  &:hover:before {
+    border-left-color: $he-secondary;
+  }
+
+  &.pagination-disabled {
+    &:before {
+      border-left-color: $black-20;
     }
   }
 }

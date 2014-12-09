@@ -2,54 +2,84 @@
   overflow: auto;
   &:not(:last-child) {
     border-bottom: $bdr-thin;
-    margin-bottom: 25px;
-    padding-bottom: 25px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+
+    @include mq(600px, max) {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
   }
+
 }
 
 
 .tz-content-wrap {
   display: block;
-  padding: 0 25px;
-
-  @include mq('max', $medium) {
-    padding: 22px 0 22px;
+  // padding: 0 50px;
+  @include mq(800px) {
+    padding: 0 50px;
   }
+  .tz-feat-mod & { padding: 0; }
 }
 
 
 .l-pair-full {
-    @include pair(100px, 15px, top, right);
+    // @include pair(100px, 15px, top, right);
+    @include mq($medium, max) {
+      .art-bd {
+        width: 100px;
+        float: right;
+        margin-left: 15px;
+        margin-bottom: 15px;
+       }
+    }
 
     @include mq($medium) {
-      @include pair(150px, 25px, top, right);
+      @include pair(175px, 25px, top, right);
     }
 }
 
+.txt-bd {
+  .tz-full-mod & {
+    max-width: 675px;
+  }
+}
 
-.tz-full-title { background-color: pink; }
+
+// .tz-full-title { background-color: pink; }
 // .tz-full-text-link { background-color: green; }
 
+.tz-full-h,
+.tz-full-text {
+  // max-width: 800px;
+}
 
 .tz-full-h {
-  margin-bottom: 2px;
+  // margin-bottom: 2px;
+  margin-bottom: 5px;
   font-family: $he-sans;
   font-weight: $font-weight-bold;
-  font-size: 28px;
+  // font-size: 28px;
+  font-size: 22px;
+  line-height: 1.2;
   color: black;
+  // letter-spacing: -1px;
 
   @include bp($medium) {
     font-size: 30px;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 }
 
 
 .tz-full-text {
-  margin-bottom: 5px;
+  // margin-bottom: 5px;
+  margin-bottom: 10px;
   font-family: $he-sans;
   font-weight: $font-weight-lt;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.33;
   color: $black-80;
 
@@ -92,8 +122,16 @@
 .tz-full--byline-name,
 .tz-full--byline-date {
   display: inline-block;
+  font-weight: $font-weight-lt;
+  position: relative;
+  top: -1px;
 }
 
+
+.tz-full--byline-date {
+  // position: relative;
+  top: 0;
+}
 
 .tz--byline-topic-link,
 .tz--byline-author-link {
@@ -101,7 +139,10 @@
   color: inherit;
 }
 
-
+.tz-full--byline-name,
+.tz--byline-author-link {
+  color: $black-60;
+}
 
 
 
@@ -121,15 +162,31 @@
 }
 
 .art-bd-feat {
-  margin-bottom: 25px;
+  @include mq(450px, max) {
+    margin-bottom: 15px;
+  }
 }
 
 .txt-bd-feat {
   position: relative;
   background-color: #fff;
-  width: 85%;
   max-width: 750px;
-  margin-top: -150px;
-  padding: 30px;
-  padding-bottom: 25px;
+  padding: 0;
+
+  @include mq(450px) {
+    width: 95%;
+    margin: -50px auto 0 auto;
+    // margin-top: -50px;
+    padding: 10px 20px 20px 20px;
+  }
+
+  @include mq(600px) {
+    width: 85%;
+    padding-left: 0;
+    margin: -50px 0 0;
+  }
+
+  @include mq(800px) {
+    padding: 30px 30px 25px 50px;
+  }
 }

@@ -400,16 +400,6 @@ $button-main: $he-secondary;
 .pagination-mod {
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.prev-next-nav {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-
-.pagination-list {
-  text-align: center;
   padding: 1em 0;
   font-family: $he-sans;
   font-size: 16pt;
@@ -418,26 +408,15 @@ $button-main: $he-secondary;
   text-align: center;
 }
 
+
 .pagination-page-current {
   display: inline-block;
   padding: 0 5px 0 15px;
   color: $black-40;
 }
 
-.pagination-page-of { }
 
-.pagination-list-item-prev-next {
-  display: inline;
-  padding-left: 5px;
-  padding-right: 5px;
-
-  &:hover {
-    color: $he-secondary;
-  }
-}
-
-
-.pagination-list-item-of {
+.pagination-page-of {
   text-transform: none;
   font-style: italic;
   padding: 0 5px;
@@ -446,26 +425,18 @@ $button-main: $he-secondary;
 }
 
 
-.pagination-page-total { }
-
-.pagination-list-item-current {
+.pagination-page-total {
   display: inline-block;
   padding: 0 15px 0 5px;
   color: $black-40;
 }
 
+
 //TODO: make this a mixin
 %pagination-arrow {
   position: relative;
-}
-
-.pagination-list-item-total {
   display: inline-block;
   color: $black-40;
-}
-
-
-.pagination-list-item-link {
   text-decoration: none;
 
   &:before {
@@ -486,13 +457,9 @@ $button-main: $he-secondary;
     border-bottom: 10px solid transparent;
   }
 
-  &:hover {
-    color: $he-secondary;
-  }
+  &:hover { color: $he-secondary; }
+  &.pagination-disabled { color: $black-20; }
 
-  &.pagination-disabled {
-    color: $black-20;
-  }
 }
 
 

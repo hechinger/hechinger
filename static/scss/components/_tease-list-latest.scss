@@ -16,7 +16,7 @@
 .hp-list-item {
   font-size: 26px;
   line-height: 1.230769231;   //32/26
-  padding-left: 1em;
+  // padding-left: 1em;
   position: relative;
   & + & {
     margin-top: 0.85em;
@@ -27,12 +27,15 @@
 
 
 .hp-list-head {
-  @extend %item-bullet;
+  // @extend %item-bullet;
+  @include bullet(before, $he-main);
+  padding-left: 1em;
 }
 
 
 .hp-list-link {
-  @extend %head-link;
+  // @extend %head-link;
+  @include head-link;
 }
 
 .hp-latest-list-img {

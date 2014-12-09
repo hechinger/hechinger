@@ -6,25 +6,60 @@
 // --------------------------------------------
 // --------------------------------------------
 
-// Max width on paragraphs in article
-$article-bd-max:    550px;
+// Max width of paragraphs in article
+$article-bd-max:          550px;
 
-// Article image width
-$img-max-sm:        350px;
-$img-max-med:       450px;
-$img-max-lg:        550px;
+
+// Article image widths
+$img-max-sm:              350px;
+$img-max-med:             450px;
+$img-max-lg:              650px;
+$img-max-bd:              $article-bd-max;
 
 // Article aside width
-$aside-max:         240px;
+$aside-max:               240px;
+
+
+
+// Breakpoints
+// --------------------------------------------
 
 // Used on article page for images, determing when they are no
 // longer bleeding out of the rest of the article container.
-$bp-img-no-bleed:   550px;
+$bp-img-no-bleed:           550px;
 
 
 // When asides (pullquotes) float and take on max-width
-$bp-aside:          550px;
+$bp-aside:                  550px;
 $bp-aside-negative-margin:  925px;
+
+// When article is no longer centered and take on columnar layout
+$bp-article-not-centered:   820px;
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Body Layout Controller
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin article-bd-layout {
+  max-width: $article-bd-max;
+  @include mq($bp-article-not-centered, max) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include mq($bp-article-not-centered) {
+    margin-left: 25px;
+    // padding-left: 25px;
+  }
+}
+
 
 
 
@@ -37,37 +72,33 @@ $bp-aside-negative-margin:  925px;
 // --------------------------------------------
 // --------------------------------------------
 
-// checkout layout.scss for l-content and l-content--inner.
-// They're more universal and thus pulled out
+// checkout layout.scss for l-article and l-article--inner.
 
 .article-main {
-  display: table;
-  @include bp(700px) {
+  // display: table;
+  @include mq(700px) {
     display: block;
   }
 }
 
+
 .article-body {
   @include pie-clearfix;
-  display: table-caption;
+  // display: table-caption;
   margin-bottom: 30px;
-
   > * + * { margin-top: 17px; }
 
-  @include bp(550px) {
-    // max-width: 880px;
-    margin: 0 auto;
-    // padding: 0 50px;
-  }
-  @include bp(700px) {
-    display: initial;
+  @include mq(700px) {
+    // display: initial;
   }
 }
+
 
 .recirculation-container {
   margin-top: 50px;
   @include pie-clearfix;
 }
+
 
 .page-mod {
   @include pie-clearfix;
@@ -75,8 +106,21 @@ $bp-aside-negative-margin:  925px;
   max-width: $article-bd-max;
 }
 
-.article-tools-btm-left { float: left; }
-.article-tools-btm-right { float: right; }
+
+.article-mod {
+  @include article-bd-layout;
+}
+
+
+.article-tools-btm-left {
+  @include mq(450px) { float: left; }
+}
+
+
+.article-tools-btm-right {
+  @include mq(450px) { float: right; }
+}
+
 
 
 
@@ -90,55 +134,75 @@ $bp-aside-negative-margin:  925px;
 // --------------------------------------------
 
 .article-text {
-  @extend %article-text;
+  @include article-text;
+
+
 
   // Paragraphs
   // --------------------------------------------
 
   > p {
-    // @extend %article-bd-margin;
-    max-width: $article-bd-max;
+    @include article-bd-layout;
     &:first-of-type { @include drop-cap; }
   }
+
 
 
   // Headline Styles
   // --------------------------------------------
 
+  > h1, > h2, > h3, > h4, > h5, > h6 { @include article-bd-layout; }
+
+
   > h1,
   > h2,
   > h3,
   > h6 {
-    font-family: $he-sans;
-    font-weight: $font-weight-bold;
+    @include sans-bold;
     + p { margin-top: 5px; }
   }
 
+
+  // rules beneath h4 and h5 headers
   > h4,
-  > h5 { border-bottom: 6px solid black; }
+  > h5 {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: -10px;
+      height: 6px;
+      width: 85px;
+      background-color: black;
+    }
+  }
+
 
   > h1 { font-size: 30px; margin-top: 45px; }
 
+
   > h2 { font-size: 24px; margin-top: 45px;  }
+
 
   > h3 { font-size: 20px; margin-top: 45px; }
 
+
   > h4 {
-      display: inline-block;
+      @include accent-header;
       margin-top: 45px;
-      font-family: $he-serif;
-      font-weight: $font-weight-black;
+      margin-bottom: 25px;
       font-size: 22px;
-      padding-bottom: 3px;
   }
 
+
   > h5 {
-      font-family: $he-serif;
-      font-weight: $font-weight-black;
+      @include accent-header;
       font-size: 15px;
-      padding-bottom: 3px;
-      display: inline-block;
+      margin-bottom: 25px;
+      margin-top: 45px;
     }
+
 
   > h6 {
       font-size: 14px;
@@ -147,25 +211,26 @@ $bp-aside-negative-margin:  925px;
     }
 
 
+
   // Block Quote
   // --------------------------------------------
   > blockquote {
-    max-width: $article-bd-max;
-    margin: 25px 0 !important;
+    @include sans;
+    @include article-bd-layout;
+    margin: 45px inherit;
     border-left: 3px solid $he-secondary;
     padding-left: 25px;
     font-size: 16px;
-    font-family: $he-sans;
-    font-weight: $font-weight-lt;
     color: $black-40;
 
     p { margin-top: 17px; }
 
-    ul, ol {
+    ul,
+    ol {
       font-size: 16px;
       margin-top: 17px;
       padding-left: 25px;
-      a {}
+      a { }
     }
 
     ul {
@@ -180,15 +245,18 @@ $bp-aside-negative-margin:  925px;
     ol > li:before { color: $black-40; }
   }
 
+
   .pull-quote a { }
+
 
 
   // Lists
   // --------------------------------------------
-  > ul,  > ol {
-    // font-family: $he-sans;
-    // font-size: 16px;
-    margin-left: 20px;
+  > ul,
+  > ol {
+    @include article-bd-layout;
+    // margin-left: 20px;
+    padding-left: 20px;
 
     li { margin-top: 10px; }
     a {}
@@ -197,53 +265,26 @@ $bp-aside-negative-margin:  925px;
   > ul {
     list-style-type: disc;
 
-     ul {
+    ul {
       list-style-type: circle !important;
       margin-left: 20px;
     }
   }
-    ol {
-    counter-reset:li; /* Initiate a counter */
-    margin-left:0; /* Remove the default left margin */
-    padding-left:0; /* Remove the default left padding */
-    }
 
-ol > li {
-    position:relative; /* Create a positioning context */
-    margin:0 0 6px 1.5em; /* Give each list item a left margin to make room for the numbers */
-    padding:4px 0; /* Add some spacing around the content */
-    list-style:none; /* Disable the normal item numbering */
+  > ol { @include order-list; }
 
-}
-ol > li:before {
-    content: counter(li)'.'; /* Use the counter as content */
-    counter-increment:li; /* Increment the counter by 1 */
-    /* Position and style the number */
-    position:absolute;
-    top: -5px;
-    left: -43px;;
-    width:2em;
-    /* Some space between the number and the content in browsers that support
-       generated content but not positioning it (Camino 2 is one example) */
-    margin-right:8px;
-    color: $he-secondary;
-    font-weight:bold;
-    font-size: 24px;
-    font-family: $he-sans;
-    text-align:center;
-}
-    li ol,
-    li ul {margin-top:6px;}
-    ol ol li:last-child {margin-bottom:0;}
+  li ol,
+  li ul {
+    margin-top:6px;
+  }
 
-  // }
+  ol ol li:last-child { margin-bottom: 0; }
 
-  // > ol {
-  //   > li { }
-  // }
+
 
   // Links
   // --------------------------------------------
+
   a, a:visited {
     color: $he-secondary;
     text-decoration: none;
@@ -261,21 +302,45 @@ ol > li:before {
 
   // Images
   // --------------------------------------------
-  > p {
-    // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
-    // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
-    // > .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
-    // > .size-thumbnail { float: left; margin-right: 2em; }
-    > img {
-      // @extend %bleeding-container;
+
+  .aligncenter {
+    max-width: $img-max-lg;
+    @include mq($bp-img-no-bleed) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq($bp-article-not-centered) {
+      max-width: $img-max-bd;
+      margin-left: 25px;
+      margin-right: 0;
     }
   }
 
-  // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
-  // .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
-  // .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
-  // .size-thumbnail { float: left; margin-right: 2em; }
-  // img { margin-bottom: 1em; }
+
+  .alignleft {
+    @include mq($bp-img-no-bleed) {
+      float: left;
+      max-width: $img-max-sm;
+      margin-left: -$site-margin;
+      margin-right: $site-margin;
+    }
+    @include mq($desktop) { margin-left: -100px; }
+  }
+
+
+  .alignright {
+    @include mq($bp-img-no-bleed) {
+      float: right;
+      // clear: right;
+      max-width: $img-max-sm;
+      margin-right: -$site-margin;
+      margin-left: $site-margin;
+    }
+    @include mq($desktop) {
+      max-width: $img-max-med;
+      margin-right: -($site-margin*2);
+    }
+  }
 
 
   .wp-caption-text {
@@ -284,25 +349,27 @@ ol > li:before {
     font-size: 14px;
   }
 
-  .wp-image-38 {
-    margin-right: 20px;
-    height: auto;
-  }
+
   .cap-image-right,
   .cap-image-left { }
 
-
   .cap-caption { }
 
-  .media-mod { }
+
 
   // Italic
   // --------------------------------------------
-  em, i { }
+  em, i {
+    font-style: italic;
+  }
+
+
 
   // Bold
   // --------------------------------------------
-  strong, b { }
+  strong, b {
+    font-weight: $font-weight-bold;
+  }
 
 
 } // article-body
@@ -335,28 +402,35 @@ ol > li:before {
   }
 }
 
+
 .article-bio-h {
-  @extend %name-hdr;
+  // @extend %name-hdr;
+  @include accent-header-underline;
   font-size: 16px;
 }
 
+
 .article-bio-h-link {
-  @extend %head-link;
+  @include head-link;
 }
+
 
 .author-bio-text {
   font-size: 15px;
   line-height:  1.266666667;  // 19/15
 }
 
+
 .article-bio-link {
-  @extend %link-bullet;
+  @include bullet(after);
   padding-: 1em;
   position: relative;
   display: inline-block;
   color: $he-secondary;
   text-decoration: none;
+  &:hover { text-decoration: underline; }
 }
+
 
 
 
@@ -372,9 +446,10 @@ ol > li:before {
 .article-tag-container {
   @include pie-clearfix;
   padding: 20px 5px;
-  border-top: $border-thin;
-  border-bottom: $border-thin;
+  border-top: $bdr-thin;
+  border-bottom: $bdr-thin;
 }
+
 
 .article-tag-h {
     display: inline-block;
@@ -384,31 +459,45 @@ ol > li:before {
     font-size: 15px;
  }
 
+
 .article-tag-items {
   font-size: 15px;
+
+  // hack to take comma for last item in a list
+  li { &:last-child {
+      a { &:after { content: ''; } }
+    }
+  }
 }
+
 
 .article-tag-item {
   display: block;
   float: left;
 }
 
+
 .article-tag-link {
   display: block;
   float: left;
   text-decoration: none;
   color: $he-secondary;
-  margin-left: 10px;
+  // margin-left: 10px;
+  margin-left: 8px;
   font-weight: 300;
   position: relative;
   &:after {
     position: absolute;
     content: ',';
-    right: -5px;
+    // right: -5px;
+    right: -4px;
     color: inherit;
   }
+  // &:last-of-type { &:after { content: ''; } }
   &:hover { text-decoration: underline; }
 }
+
+
 
 
 
@@ -431,9 +520,11 @@ ol > li:before {
   color: black;
 }
 
+
 .related-label {
   margin-right: 2px;
 }
+
 
 .article-related-text-link {
   @include bullet(after);
@@ -446,6 +537,7 @@ ol > li:before {
 
 
 
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -454,10 +546,38 @@ ol > li:before {
 // --------------------------------------------
 // --------------------------------------------
 
+.article-comment-link {
+  position: relative;
+  display: block;
+  // width: 140px;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  margin-top: 20px;
+  padding-left: 35px;
+  // border: $bdr-thin;
+  border: 1px solid lighten($black-10, 9%);
+  background-color: lighten($black-10, 11%);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $he-secondary;
+  font-weight: 700;
+
+  @include mq(450px) {
+    width: 140px;
+    height: 35px;
+    margin-top: 0;
+    line-height: 35px;
+  }
+
+}
+
+
 #comment-mod {
   display: none;
   &.comment-mod--is-active { display: block; }
 }
+
 
 .comment-inner { }
 

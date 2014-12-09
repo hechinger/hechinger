@@ -18,15 +18,9 @@ require_once('wp/pull-quote-admin.php');
 new PullQuoteAdmin();
 
 add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
-add_filter('acf/location/rule_match/page', function($thing, $rule, $current){
-	$pid = $rule['value'];
-	if ($pid == 18113) {
-		$post = new TimberPost($current['post_id']);
-		if ($post->slug == 'home') {
-			return true;
-		}
-	}
-}, 10, 3);
+
+ACFHacks::map_page_rule_to_slug(18113, 'home');
+ACFHacks::map_page_rule_to_slug(17996, 'about');
 
 class HechingerSite extends TimberSite {
 
@@ -54,27 +48,27 @@ class HechingerSite extends TimberSite {
 
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
-			$article = new Mesh\Post( 'article', 'page' );
-      $article = new Mesh\Post( 'archive', 'page' );
-			$article = new Mesh\Post( 'special-report', 'page' );
-			$article = new Mesh\Post( 'special-reports-landing', 'page' );
-			$article = new Mesh\Post( 'author', 'page' );
-			$article = new Mesh\Post( 'snippets', 'page' );
-			$article = new Mesh\Post( 'home', 'page' );
-			$streamm = new Mesh\Post( 'homepage', 'sm_stream' );
+			//$article = new Mesh\Post( 'special-report', 'page' );
+			//$article = new Mesh\Post( 'special-reports-landing', 'page' );
+			//$article = new Mesh\Post( 'author', 'page' );
+			//$article = new Mesh\Post( 'snippets', 'page' );
+			//$article = new Mesh\Post( 'home', 'page' );
+			//$streamm = new Mesh\Post( 'homepage', 'sm_stream' );
 		}
   }
 
   protected function set_routes(){
     Timber::add_route('special-reports', function($params){
-          Timber::load_view('special-reports-landing.php', null, 200, $params);
+      Timber::load_view('special-reports-landing.php', null, 200, $params);
     });
     Timber::add_route('special-reports-landing', function($params){
-          Timber::load_view('special-reports-landing.php', null, 200, $params);
+      Timber::load_view('special-reports-landing.php', null, 200, $params);
     });
-
     Timber::add_route('staff', function($params){
-            Timber::load_view('staff.php', null, 200, $params);
+      Timber::load_view('staff.php', null, 200, $params);
+    });
+    Timber::add_route('about', function($params){
+      Timber::load_view('about.php', null, 200, $params);
     });
   }
 
@@ -209,27 +203,22 @@ class HechingerSite extends TimberSite {
         }
 
         function set_shortcodes() {
+                // This actually runs the shortcode. It is good
                 add_filter( 'img_caption_shortcode', array($this, 'handle_img_in_editor'), 10, 3);
                 add_filter( 'image_send_to_editor', function($html, $id, $caption, $title, $align, $url, $size, $alt ) {
-                        $attr['id'] = 'attachment_'.$id;
-                        $attr['align'] = 'align'.$align;
-                        $attr['caption'] = $caption;
-                        if ($id) {
-                                $image = new HechingerImage($id);
-                                if (isset($image->sizes[$size])) {
-                                        $my_size = $image->sizes[$size];
-                                } else {
-                                        $my_size = array_pop($image->sizes);
-                                }
-                                $attr['width'] = $my_size['width'];
-                                $attr['height'] = $my_size['height'];
-                        }
-                        return $this->handle_img_in_editor($html, $attr, '');
+                  if (!$caption) {
+                    $caption = '<span class="placeholder-caption" style="display:none;"> &nbsp; </span>';
+                    preg_match( '/width=["\']([0-9]+)/', $html, $matches );
+                    $width = $matches[1];
+                    $shcode = '[caption id="' . $id . '" align="align' . $align . '" width="' . $width . '"]' . $html . ' ' . $caption . '[/caption]';
+                    return $shcode;
+                  }
+                  return $html;
                 }, 10, 8);
         }
 
         function handle_img_in_editor($output, $attr, $content) {
-            if ( $attr['id'] ) {
+            if ( isset($attr['id']) && $attr['id'] ) {
                 $iid = str_replace( 'attachment_', '', $attr['id'] );
                 if (isset($iid) && strlen($iid)) {
                   $image = new HechingerImage( $iid );

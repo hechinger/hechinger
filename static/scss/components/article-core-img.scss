@@ -52,7 +52,6 @@
   @include mq($desktop) { margin-left: -100px; }
 }
 
-
 .alignright {
   @include mq($bp-img-no-bleed) {
     float: right;
@@ -66,3 +65,11 @@
   }
 }
 
+// Overrides old broken image styles.
+.article-text img.size-full {
+  height: auto;
+}
+
+img.alignright, img.alignleft {
+  height: auto;
+}

@@ -41,6 +41,7 @@ $ cd /srv/www/wordpress-he/
 $ wp plugin install https://www.dropbox.com/s/msici5rzsadpf0w/advanced-custom-fields-pro.zip?dl=1 --activate
 $ exit
 ```
+In the wp-admin, activate the license with the Upstatement license key here: https://github.com/Upstatement/Upstatement/wiki/Upstatement%20WordPress%20Plugins#advanced-custom-fields
 
 ### Install Stream Manager
 

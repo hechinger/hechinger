@@ -98,7 +98,7 @@
             "name": "z2_quote_number",
             "prefix": "",
             "type": "text",
-            "instructions": "If the tease is a statistic, enter the number here.",
+            "instructions": "If the tease is a statistic, enter the number here. (limit: 6 characters)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -107,7 +107,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "ex. 98%",
+            "placeholder": "98%",
             "prepend": "",
             "append": "",
             "maxlength": 6,
@@ -205,7 +205,7 @@
             "name": "z3_quote_number",
             "prefix": "",
             "type": "text",
-            "instructions": "If the tease is a statistic, enter the number here.",
+            "instructions": "If the tease is a statistic, enter the number here. (limit: 4 characters)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -214,7 +214,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "ex. 98%",
+            "placeholder": "98%",
             "prepend": "",
             "append": "",
             "maxlength": 4,

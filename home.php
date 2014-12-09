@@ -35,13 +35,13 @@ function get_quote( $qt_str, $homepage ) {
   $zquote_number = $homepage->get_field($qt_str . '_number');
 
   if ( isset($zquote_link) && is_array($zquote_link) ) {
-    $zquote['post'] = new HechingerPost($zquote_link[0]->ID);
-    $zquote['subhead'] = new HechingerPost($zquote_link[0]->ID);
+    $post = new HechingerPost($zquote_link[0]->ID);
+    $zquote['post'] = $post;
 
     if ( isset($zquote_text) && strlen($zquote_text) ) {
       $zquote['text'] = $zquote_text;
     } else {
-      $zquote['text'] = $zquote['post']->title;
+      $zquote['text'] = $zquote['post']->title();
     }
 
     if ( isset($zquote_subhead) && strlen($zquote_subhead) ) {

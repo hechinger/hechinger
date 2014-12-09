@@ -2,9 +2,9 @@
 <div class="l-page-hdr">
   <div class="article-hdr article-hdr-feat">
     <div class="article-hdr-inner">
-      {% if post.lead_image %}
+      {% if post.thumbnail.src %}
         <div class="article-img-feature">
-          <img src="{{ post.lead_image.get_url | resize(960, 600) }}" alt="{{ post.lead_image.alt }}">
+          <img src="{{ post.thumbnail.src | resize(960, 600) }}" alt="{{ post.thumbnail.alt }}">
         </div> <!-- /article-img-feature -->
       {% endif %}
 

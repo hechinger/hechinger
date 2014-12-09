@@ -203,27 +203,22 @@ class HechingerSite extends TimberSite {
         }
 
         function set_shortcodes() {
+                // This actually runs the shortcode. It is good
                 add_filter( 'img_caption_shortcode', array($this, 'handle_img_in_editor'), 10, 3);
                 add_filter( 'image_send_to_editor', function($html, $id, $caption, $title, $align, $url, $size, $alt ) {
-                        $attr['id'] = 'attachment_'.$id;
-                        $attr['align'] = 'align'.$align;
-                        $attr['caption'] = $caption;
-                        if ($id) {
-                                $image = new HechingerImage($id);
-                                if (isset($image->sizes[$size])) {
-                                        $my_size = $image->sizes[$size];
-                                } else {
-                                        $my_size = array_pop($image->sizes);
-                                }
-                                $attr['width'] = $my_size['width'];
-                                $attr['height'] = $my_size['height'];
-                        }
-                        return $this->handle_img_in_editor($html, $attr, '');
+                  if (!$caption) {
+                    $caption = '<span class="placeholder-caption" style="display:none;"> &nbsp; </span>';
+                    preg_match( '/width=["\']([0-9]+)/', $html, $matches );
+                    $width = $matches[1];
+                    $shcode = '[caption id="' . $id . '" align="align' . $align . '" width="' . $width . '"]' . $html . ' ' . $caption . '[/caption]';
+                    return $shcode;
+                  }
+                  return $html;
                 }, 10, 8);
         }
 
         function handle_img_in_editor($output, $attr, $content) {
-            if ( $attr['id'] ) {
+            if ( isset($attr['id']) && $attr['id'] ) {
                 $iid = str_replace( 'attachment_', '', $attr['id'] );
                 if (isset($iid) && strlen($iid)) {
                   $image = new HechingerImage( $iid );

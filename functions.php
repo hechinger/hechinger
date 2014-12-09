@@ -207,7 +207,7 @@ class HechingerSite extends TimberSite {
                 add_filter( 'img_caption_shortcode', array($this, 'handle_img_in_editor'), 10, 3);
                 add_filter( 'image_send_to_editor', function($html, $id, $caption, $title, $align, $url, $size, $alt ) {
                   if (!$caption) {
-                    $caption = 'NOTHING';
+                    $caption = '<span class="placeholder-caption" style="display:none;"> &nbsp; </span>';
                     preg_match( '/width=["\']([0-9]+)/', $html, $matches );
                     $width = $matches[1];
                     $shcode = '[caption id="' . $id . '" align="align' . $align . '" width="' . $width . '"]' . $html . ' ' . $caption . '[/caption]';
@@ -215,31 +215,6 @@ class HechingerSite extends TimberSite {
                   }
                   return $html;
                 }, 10, 8);
-                add_filter( 'aaimage_send_to_editor', function ($html, $id, $caption, $title, $align, $url, $size, $alt ) {
-
-                  if ( empty($caption) || apply_filters( 'disable_captions', '' ) ) {
-                        $caption =  '&nbsp;'; //forces image to have caption
-                  }
-
-                  $id = ( 0 < (int) $id ) ? 'attachment_' . $id : '';
-
-                  if ( ! preg_match( '/width=["\']([0-9]+)/', $html, $matches ) ) {
-                        return $html;
-                  }
-
-                  $width = $matches[1];
-
-                  $html = preg_replace( '/(class=["\'][^\'"]*)align(none|left|right|center)\s?/', '$1', $html );
-
-                  if ( empty($align) ) {
-                    $align = 'none';
-                  }
-
-                  $shcode = '[caption id="' . $id . '" align="align' . $align . '" width="' . $width . '"]' . $html . ' ' . $caption . '[/caption]';
-
-                  return $shcode;
-
-               }, 10, 8 );
         }
 
         function handle_img_in_editor($output, $attr, $content) {

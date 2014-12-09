@@ -8,6 +8,7 @@ if ( !class_exists( 'Timber' ) ) {
 }
 
 Timber::$dirname = array( 'templates', 'views' );
+require_once('wp/acf-hacks.php');
 require_once('wp/hechinger-post.php');
 require_once('wp/hechinger-term.php');
 require_once('wp/hechinger-image.php');
@@ -17,15 +18,9 @@ require_once('wp/pull-quote-admin.php');
 new PullQuoteAdmin();
 
 add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
-add_filter('acf/location/rule_match/page', function($thing, $rule, $current){
-	$pid = $rule['value'];
-	if ($pid == 18113) {
-		$post = new TimberPost($current['post_id']);
-		if ($post->slug == 'home') {
-			return true;
-		}
-	}
-}, 10, 3);
+
+ACFHacks::map_page_rule_to_slug(18113, 'home');
+ACFHacks::map_page_rule_to_slug(17996, 'about');
 
 class HechingerSite extends TimberSite {
 
@@ -53,27 +48,27 @@ class HechingerSite extends TimberSite {
 
 	function bootstap_content() {
 		if ( class_exists( 'Mesh' ) ) {
-			$article = new Mesh\Post( 'article', 'page' );
-      $article = new Mesh\Post( 'archive', 'page' );
-			$article = new Mesh\Post( 'special-report', 'page' );
-			$article = new Mesh\Post( 'special-reports-landing', 'page' );
-			$article = new Mesh\Post( 'author', 'page' );
-			$article = new Mesh\Post( 'snippets', 'page' );
-			$article = new Mesh\Post( 'home', 'page' );
-			$streamm = new Mesh\Post( 'homepage', 'sm_stream' );
+			//$article = new Mesh\Post( 'special-report', 'page' );
+			//$article = new Mesh\Post( 'special-reports-landing', 'page' );
+			//$article = new Mesh\Post( 'author', 'page' );
+			//$article = new Mesh\Post( 'snippets', 'page' );
+			//$article = new Mesh\Post( 'home', 'page' );
+			//$streamm = new Mesh\Post( 'homepage', 'sm_stream' );
 		}
   }
 
   protected function set_routes(){
     Timber::add_route('special-reports', function($params){
-          Timber::load_view('special-reports-landing.php', null, 200, $params);
+      Timber::load_view('special-reports-landing.php', null, 200, $params);
     });
     Timber::add_route('special-reports-landing', function($params){
-          Timber::load_view('special-reports-landing.php', null, 200, $params);
+      Timber::load_view('special-reports-landing.php', null, 200, $params);
     });
-
     Timber::add_route('staff', function($params){
-            Timber::load_view('staff.php', null, 200, $params);
+      Timber::load_view('staff.php', null, 200, $params);
+    });
+    Timber::add_route('about', function($params){
+      Timber::load_view('about.php', null, 200, $params);
     });
   }
 

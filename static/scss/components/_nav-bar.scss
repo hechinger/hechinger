@@ -276,6 +276,10 @@ $logo-ht-lg:    53px;
   &.is-open {
     //TODO: add "X" icon when search is open
   }
+  &.is-search-page {
+    pointer-events: none;
+    border-top: 9px solid $black;
+  }
   @include bp($medium) {
     display: block;
   }

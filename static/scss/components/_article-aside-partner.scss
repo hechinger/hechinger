@@ -7,7 +7,13 @@
 // --------------------------------------------
 
 .partner-aside {
-  @extend %article-aside;
+  margin-left: 25px;
+  margin-bottom: 30px;
+  @include bp($medium) {
+    clear: right;
+    float: right;
+    width: 220px;
+  }
 }
 
 .aside-partner-logo {
@@ -23,4 +29,5 @@
   font-size: 12px;
   line-height: 1;
   font-family: $he-sans;
+  text-align: center;
 }

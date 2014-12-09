@@ -6,42 +6,32 @@
 // --------------------------------------------
 // --------------------------------------------
 
-%article-aside {
-  // max-width: $article-bd-max;
+.bottom-aside-container {
   @include article-bd-layout;
-  // padding: 17px 10px;
-  @include bp(700px) {
-    // clear: right;
-    // float: right;
-    // display: initial;
-    // width: 220px;
-    // margin-left: 60px;
-    margin-bottom: 30px;
-    // margin-right: 0;
-  }
-  @include mq($bp-article-not-centered) {
-    clear: right;
+  @include bp($large) {
     float: right;
-    width: 220px;
+    clear: right;
     margin-left: 25px;
+    display: block;
+    width: 220px;
+    margin-bottom: -100%;
+    transform: translateY(-100%);
   }
 }
 
-
 .article-aside {
-  @extend %article-aside;
-  // display: table-footer-group;
-
+  @include article-bd-layout;
+  margin-bottom: 50px;
+  padding: 5px 0 15px;
   border-top: .5em solid black;
   border-bottom: 1px solid $black-20;
-  padding: 5px 0 15px;
-  margin-bottom: 50px;
-  // display: inline-block;
-      &:first-of-type { margin-top: 50px;}
 
-  @include bp($medium-lg) {
+  @include bp($large) {
       display: block;
-    }
+      float: right;
+      clear: right;
+      width: 220px;
+  }
 
   p {
     font-family: $he-sans;

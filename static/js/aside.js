@@ -1,6 +1,7 @@
 //TODO: refoctor with modular pattern
 ;(function(){
-  tinymce.create('tinymce.plugins.pullquote', {
+console.log('hey');
+  tinymce.create('tinymce.plugins.aside', {
     /**
     * Initializes the plugin, this will be executed after the plugin has been created.
     * This call is done before the editor instance has finished it's initialization so use the onInit event
@@ -10,22 +11,18 @@
     * @param {string} url Absolute URL to where the plugin is located.
     */
     init : function(ed, url) {
-      ed.addCommand('pullquote', function() {
+      ed.addCommand('aside', function() {
         selected = tinyMCE.activeEditor.selection.getContent();
 
-        if(selected) {
-          content = '[pullquote author="" description="" style="new-pullquote"]' + selected + '[/pullquote]';
-        } else {
-          content =  '[pullquote author="" description="" style="new-pullquote"]Pull Quote Goes Here[/pullquote]';
-        }
+          content =  '[aside notes="" num=""]';
 
         ed.execCommand('mceInsertContent', false, content);
       });
 
-      ed.addButton('pullquote', {
-        title : 'Add a Pull Quote',
-        cmd : 'pullquote',
-        image : '/wp-content/themes/hechinger/static/img/icons/pullquote.png'
+      ed.addButton('aside', {
+        title : 'Place An Aside',
+        cmd : 'aside',
+        image : '/wp-content/themes/hechinger/static/img/icons/aside.png'
       });
     },
 
@@ -60,5 +57,5 @@
   });
 
   // Register plugin
-  tinymce.PluginManager.add('pullquote', tinymce.plugins.pullquote);
+  tinymce.PluginManager.add('aside', tinymce.plugins.aside);
 }());

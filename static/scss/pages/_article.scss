@@ -75,7 +75,6 @@ $bp-article-not-centered:   820px;
 // checkout layout.scss for l-article and l-article--inner.
 
 .article-main {
-  // display: table;
   @include mq(700px) {
     display: block;
   }
@@ -331,7 +330,7 @@ $bp-article-not-centered:   820px;
   .alignright {
     @include mq($bp-img-no-bleed) {
       float: right;
-      // clear: right;
+      clear: right;
       max-width: $img-max-sm;
       margin-right: -$site-margin;
       margin-left: $site-margin;

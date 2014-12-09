@@ -26,23 +26,32 @@
           {% endif %}
         {% endblock %}
 
-        {% block article_related %}
-          {% if post.related_heading or post.post_related_aside %}
-            {% include "/templates/components/article-aside-related.twig"  %}
-          {% endif %}
-        {% endblock %}
-
-        {% block article_aside %}
-          {% if post.post_asides|length %}
-            {% for aside in post.post_asides %}
-              {% include "/templates/components/article-aside.twig" with { aside: aside } %}
-            {% endfor %}
-          {% endif %}
-        {% endblock %}
-
         <div class="article-body article-text">
           {{ post.content }}
+
+          <div class="bottom-aside-container">
+{# TODO allow asides with no shortcode to render in this container #}
+{#
+            {% block article_aside %}
+              {% if post.post_asides|length %}
+                {% for aside in post.post_asides %}
+                  {% if not aside.taken %}
+                    {% include "/templates/components/article-aside.twig" with { aside: aside } %}
+                  {% endif %}
+                {% endfor %}
+              {% endif %}
+            {% endblock %}
+#}
+            {% block article_related %}
+              {% if post.related_heading or post.post_related_aside %}
+                {% include "/templates/components/article-aside-related.twig" %}
+              {% endif %}
+            {% endblock %}
+
+          </div> <!-- /bottom-aside-container -->
         </div> <!-- /article-body -->
+
+
 
       </article> <!-- /article-main -->
 

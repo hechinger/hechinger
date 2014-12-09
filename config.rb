@@ -23,3 +23,12 @@ output_style = :expanded
 # output_style = :compact :compressed :nested :expanded
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
+
+require 'autoprefixer-rails'
+
+on_stylesheet_saved do |file|
+  css = File.read(file)
+  File.open(file, 'w') do |io|
+    io << AutoprefixerRails.process(css)
+  end
+end

@@ -1,15 +1,15 @@
-<div class="section-front-banner" style="background-image: url({{ site.theme.path }}/static/img/img-special_report-Mississippi-1160-276.jpg)"></div>
+<div class="section-front-banner" style="background-image: url({{ banner.src | default(site.theme.path ~ '/static/img/img-special_report-Mississippi-1160-276.jpg') }})"></div>
 
 <header class="l-section-front-hdr-wrap l-page-hdr">
   <h1 class="archive-hdr">{{ section_front_title }}</h1>
 </header>
 
-<div class="section-front-summary-wrap">
-  {% if post.subhead %}
-    <p class="section-front-summary-text">{{ post.subhead }}
-      {% if post.link_to_page %}
-        <a class="section-front-summary-link" href="{{ post.link_to_page }}">{{ post.link_heading | default('Read more.') }}</a>
+{% if subhead %}
+  <div class="section-front-summary-wrap">
+    <p class="section-front-summary-text">{{ subhead }}
+      {% if link_to_page %}
+        <a class="section-front-summary-link" href="{{ link_to_page }}">{{ link_heading | default('Read more.') }}</a>
       {% endif %}
     </p>
-  {% endif %}
-</div> <!-- /special-report-summary-wrap -->
+  </div> <!-- /special-report-summary-wrap -->
+{% endif %}

@@ -25,6 +25,6 @@ if ( isset($second_feature) && is_array($second_feature) ) {
   $context['second_feature'] = new HechingerPost($second_feature[0]->ID);
 }
 
-$context['special_reports'] = Timber::get_terms('special-topic', 'HechingerTerm');
+$context['special_reports'] = Timber::get_terms('special-report', 'HechingerTerm');
 
 Timber::render('pages/home.twig', $context);

@@ -11,6 +11,11 @@
             "instructions": "Upload a yellow image of dimensions (___px, ___px).",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "uploadedTo"
@@ -24,6 +29,29 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo"
+        },
+        {
+            "key": "field_54866d89fa5cf",
+            "label": "Yellow Panoramic",
+            "name": "yellow_pano",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Upload a yellow panoramic image for special-report banners.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "uploadedTo"
@@ -34,7 +62,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "special-topic"
+                "value": "special-report"
             }
         ]
     ],

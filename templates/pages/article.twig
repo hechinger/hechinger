@@ -16,8 +16,8 @@
 
   {% endblock %} {# /article_header #}
 
-  <div class="l-content">
-    <div class="l-content--inner">
+  <div class="l-article">
+    <div class="l-article--inner">
       <article class="article-main">
 
         {% block article_partner %}
@@ -84,7 +84,7 @@
       {% block article_bio %}
         <div class="page-mod article-mod">
            <div class="article-bio">
-            <div class="l-article-bio">
+            <div class="{{ post.author.author_image ? l-article-bio}}">
 
               {% if post.author.author_image %}
                 <div class="art-bd">

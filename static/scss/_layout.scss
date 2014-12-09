@@ -12,6 +12,7 @@
 $site-margin: 25px;
 
 
+
 // Spacers
 // --------------------------------------------
 $space-grid--quarter:       12.5px;
@@ -21,11 +22,13 @@ $space-grid--threequarter:  75px;
 $space-grid--double:        100px;
 
 
+
 // Site Width
 // --------------------------------------------
 $content-max:         960px;
 $content-max--inner:  860px;
 $has-margin:          800px;
+
 
 .content-wrapper {
   margin-top: -17px;
@@ -33,13 +36,13 @@ $has-margin:          800px;
   @include mq(800px) { margin-top: -$space-grid; }
 }
 
-// .l-content and .l-content--inner
-// are currently used on article pages
+// .l-content and .l-content--inner are currently used on article pages
 // the thought is these classes could be used
 // on generic pages as well
 // however, this could stand some more thinking,
 // most likely
-.l-content {
+.l-content,
+.l-article {
   // * + * { margin-top: 50px; }
   margin: 0 $site-margin;
   max-width: $content-max;
@@ -51,17 +54,12 @@ $has-margin:          800px;
 
 .l-content--inner {
   margin: 0 auto;
-  max-width: $content-max--inner;
+  // max-width: $content-max--inner;
 }
 
-
-// .l-article {
-//   // margin: 0 $site-margin;
-//   max-width: $content-max;
-//   @include bp($no-content-margin) {
-//     margin: 0 auto;
-//   }
-// }
+.l-article--inner {
+  margin: 0 auto;
+}
 
 
 // Used for page headers and article page headers

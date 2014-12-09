@@ -1,13 +1,176 @@
-@mixin sans {
+// --------------------------------------------
+// --------------------------------------------
+//
+// General Sans Serif
+//
+// --------------------------------------------
+// --------------------------------------------
 
+@mixin sans($style: normal) {
+  font-family: $he-sans;
+  font-weight: $font-weight-lt;
+  font-style: $style;
 }
 
 
-@mixin serif {
-
+@mixin sans-bold($style: normal) {
+  font-family: $he-sans;
+  font-weight: $font-weight-bold;
+  font-style: $style;
 }
 
 
+@mixin sans-black($style: normal) {
+  font-family: $he-sans;
+  font-weight: $font-weight-black;
+  font-style: $style;
+}
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// General Serif
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin serif($style: normal) {
+  font-family: $he-serif;
+  font-weight: $font-weight-lt;
+  font-style: $style;
+}
+
+
+@mixin serif-bold($style: normal) {
+  font-family: $he-serif;
+  font-weight: $font-weight-bold;
+  font-style: $style;
+}
+
+
+@mixin serif-black($style: normal) {
+  font-family: $he-serif;
+  font-weight: $font-weight-black;
+  font-style: $style;
+}
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Accent Headers
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin accent-header {
+  font-family: $he-accent;
+  font-weight: $font-weight-black;
+  color: $accent-head-color;
+}
+
+
+@mixin accent-header-underline {
+  display: inline-block;
+  // margin-bottom: 1.25em;
+  margin-bottom: 1em;
+  padding-bottom: 0.25em;
+  border-bottom: 0.25em solid black;
+  font-family: $he-accent;
+  font-weight: $font-weight-black;
+  color: $hdr-color;
+}
+
+@mixin head-link {
+  text-decoration: none;
+  color: $hdr-color;
+  &:hover { text-decoration: none; }
+}
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Headlines
+//
+// --------------------------------------------
+// --------------------------------------------
+
+// Used for headlines, page headers, etc
 @mixin headline {
+  font-family: $he-sans;
+  font-weight: $font-weight-black;
+  color: green;
+}
 
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Text
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin article-text {
+  font-family: $he-serif;
+  font-weight: $font-weight-lt;
+  font-size: 17px;
+  line-height: 1.705882353;   // 29/17
+  color: $text-color;
+}
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Ordered List Styling
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin order-list {
+  font-size: 16px;
+  counter-reset: li; // Initiate a counter
+  margin-left: 0;  // Remove the default left margin
+  padding-left: 0; // Remove the default left padding
+
+  li {
+    position: relative; // Create a positioning context
+    margin: 0 0 6px 25px; // Give each list item a left margin to make room for the numbers
+    padding: 4px 0; // Add some spacing around the content
+    list-style: none; // Disable the normal item numbering
+
+    &:before {
+      @include sans-bold;
+      // font-size: 24px;
+      content: counter(li)'.'; // Use the counter as content
+      counter-increment: li; // Increment the counter by 1
+      // Position and styling number
+      position: absolute;
+      // top: -5px;
+      // left: -43px;
+      left: -25px;
+      width: 2em;
+      margin-right: 8px;
+      color: $he-secondary;
+      font-size: inherit;
+    }
+  }
 }

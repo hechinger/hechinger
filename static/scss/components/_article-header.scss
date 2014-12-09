@@ -5,73 +5,71 @@
 //
 // --------------------------------------------
 // --------------------------------------------
+
 .article-hdr {
   @extend %bp-trans;
   // max-width: $content-max-width;
-  // padding: 30px 50px;
   padding: 0 $site-margin;
-  // background-color: #fff;
   border-top: 2px solid transparent;
-  // margin: 30px auto 40px auto;
   margin: 0 auto 40px auto;
-  @include bp(800px) {
+  @include mq(800px) {
     padding-top: 30px;
     border-top-color: #000;
     background-color: #fff;
   }
-  @include bp(960px) {
-    // border-top-color: black;
-    // padding-top: 30px;
-    // background-color: #fff;
-  }
-
-  // * + * { margin-top: 40px; }
 }
+
+
+.article-hdr-feat {
+  padding: 15px 15px 0;
+}
+
 
 .article-hdr-inner {
   @extend %bp-trans;
-  // max-width: 880px;
   margin: 0 auto;
-  max-width: $content-max--inner;
+  // max-width: $content-max--inner;
   @include bp(960px) { margin-top: 0; }
 
-  &.articleFeat-hdr-inner { max-width: 100%; }
+  &.article-feat-hdr-inner { max-width: 100%; }
 }
+
 
 .article-hdr-topic {
-  @extend %topic-hdr;
+  @include accent-header-underline;
   font-size: 24px;
-  // font-family: $he-serif;
-
 }
+
 
 .article-topic-link {
-  @extend %head-link;
+  @include head-link;
 }
+
 
 .article-h {
-  font-weight: 700;
-  font-size: 52px; // 30/33
-  color: black;
+  @include sans-bold;
+  font-size: 52px;
   line-height: 1.057692308;
   letter-spacing: -2px;
+  color: black;
 }
 
+
 .article-sub-h {
+  @include sans(italic);
   font-weight: 400;
   font-size: 22px;
   line-height: 1.272727273;
-  font-style: italic;
   margin-top: 10px;
 }
 
 
 .article-hdr-meta-container {
   @include pie-clearfix;
-  // border-top: $border-thin;
   padding-top: 10px;
   font-size: 11px;
 }
+
 
 .article-hdr-meta {
   @include pie-clearfix;
@@ -83,6 +81,7 @@
     margin-left: 58px;
   }
 }
+
 
 .article-hdr-meta-inner {
   border-top: $bdr-thin;
@@ -96,19 +95,25 @@
   }
 }
 
+
 .article-hdr-middle {
   * + * { margin-top: 10px; }
 }
 
+
 .article-hdr-top,
 .article-hdr-h {
   margin-bottom: 40px;
+
+  .article-hdr-feat & { margin-bottom: 0; }
 }
+
 
 .article-byline {
   float: left;
   display: inline-block;
 }
+
 
 .article-author {
   font-weight: 900;
@@ -119,6 +124,7 @@
   text-decoration: none;
 }
 
+
 .article-date {
   float: right;
   display: inline-block;
@@ -127,21 +133,24 @@
   text-transform: uppercase;
 }
 
+
 .article-column-img {
   @extend %columnist-img;
   float: left;
 }
 
+
 .article-column-title {
-  font-family: $he-serif;
+  @include serif-bold;
   font-size: 13px;
-  font-weight: $font-weight-bold;
-  color: black;
+  color: $hdr-color;
 }
+
 
 %article-bd-margin {
   margin-right: auto;
   margin-left: auto;
+  background-color: pink;
   @include mq(700px) {
     margin-right: 0;
     margin-left: 0;

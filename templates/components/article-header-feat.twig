@@ -1,14 +1,14 @@
 <!-- article hdr feature -->
 <div class="l-page-hdr">
-  <div class="article-hdr">
+  <div class="article-hdr article-hdr-feat">
     <div class="article-hdr-inner">
       {% if post.lead_image %}
         <div class="article-img-feature">
-          <img src="{{ post.lead_image.get_url }}" alt="{{ post.lead_image.alt }}">
+          <img src="{{ post.lead_image.get_url | resize(960, 600) }}" alt="{{ post.lead_image.alt }}">
         </div> <!-- /article-img-feature -->
       {% endif %}
 
-      <div class="articleFeat-mod">
+      <div class="article-feat-mod">
         <div class="article-hdr-top">
           <h4 class="article-hdr-topic">
             <a class="article-topic-link" href="/{{ post.overline.slug }}">{{ post.overline }}</a>
@@ -20,7 +20,7 @@
         </div> <!-- /article-hdr-top -->
 
         <div class="article-hdr-h">
-          <h1 class="articleFeat-h">{{ post.title }}</h1>
+          <h1 class="article-feat-h">{{ post.title }}</h1>
           {% if post.subhead|length %}
             <h2 class="article-sub-h">{{ post.subhead }}</h1>
           {% endif %}

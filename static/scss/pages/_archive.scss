@@ -25,7 +25,8 @@
 }
 
 .archive-yellow-box {
-  @extend %yellow-box;
+  // @extend %yellow-box;
+  background-color: pink;
   height: 183px;
 
   @include mq('max', $medium) {

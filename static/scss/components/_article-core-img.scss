@@ -7,7 +7,7 @@
 // --------------------------------------------
 
 .media-mod {
-  max-width: $article-bd-max;
+  // max-width: $article-bd-max;
   // max-width: 600px;
 }
 
@@ -42,30 +42,13 @@
   font-weight: $font-weight-lt;
 }
 
-.alignleft {
-  @include mq($bp-img-no-bleed) {
-    float: left;
-    max-width: $img-max-sm;
-    margin-left: -$site-margin;
-    margin-right: $site-margin;
-  }
-  @include mq($desktop) { margin-left: -100px; }
-}
 
-.alignright {
-  @include mq($bp-img-no-bleed) {
-    float: right;
-    max-width: $img-max-sm;
-    margin-right: -$site-margin;
-    margin-left: $site-margin;
-  }
-  @include mq($desktop) {
-    max-width: $img-max-med;
-    margin-right: -($site-margin*2);
-  }
-}
 
-// Overrides old broken image styles.
+// *****************************
+// *****************************
+// *****************************
+/// Move into article.scss?
+
 .article-text img.size-full {
   height: auto;
 }

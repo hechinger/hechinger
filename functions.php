@@ -203,8 +203,9 @@ class HechingerSite extends TimberSite {
         }
 
         function set_shortcodes() {
+                // This actually runs the shortcode. It is good
                 add_filter( 'img_caption_shortcode', array($this, 'handle_img_in_editor'), 10, 3);
-                add_filter( 'image_send_to_editor', function ($html, $id, $caption, $title, $align, $url, $size, $alt ) {
+                add_filter( 'aaimage_send_to_editor', function ($html, $id, $caption, $title, $align, $url, $size, $alt ) {
 
                   if ( empty($caption) || apply_filters( 'disable_captions', '' ) ) {
                         $caption =  '&nbsp;'; //forces image to have caption
@@ -232,7 +233,7 @@ class HechingerSite extends TimberSite {
         }
 
         function handle_img_in_editor($output, $attr, $content) {
-            if ( $attr['id'] ) {
+            if ( isset($attr['id']) && $attr['id'] ) {
                 $iid = str_replace( 'attachment_', '', $attr['id'] );
                 if (isset($iid) && strlen($iid)) {
                   $image = new HechingerImage( $iid );

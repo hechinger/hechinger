@@ -15,6 +15,8 @@ img { @include resp-img; }
 
 
 
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -37,6 +39,7 @@ img { @include resp-img; }
   }
 }
 
+
 .social-item {
   display: inline;
   float: left;
@@ -58,6 +61,7 @@ img { @include resp-img; }
     }
   }
 }
+
 
 .social-item-link {
   @include trans(0.25s);
@@ -183,12 +187,12 @@ $icons: twitter,
   }
 }
 
+
 @mixin ui-icon($icon_filename, $bg-color) {
   background: $bg-color url(#{$png-icon-path}/#{$icon_filename}.png) no-repeat content-box center;
   background: $bg-color url(#{$svg-icon-path}/#{$icon_filename}.svg) no-repeat content-box center;
   background-size: contain;
 }
-
 
 
 
@@ -230,6 +234,8 @@ $partners:  Advocate,
 
 
 
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -237,6 +243,7 @@ $partners:  Advocate,
 //
 // --------------------------------------------
 // --------------------------------------------
+
 @mixin drop-cap($font-family: $he-sans, $font-weight: 900) {
   &:first-letter {
     display: block;
@@ -255,6 +262,8 @@ $partners:  Advocate,
 
 
 
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -270,6 +279,7 @@ $partners:  Advocate,
   margin-bottom: 20px;
 }
 
+
 .section-hdr--lg {
   border-top: 2px solid black;
   border-bottom: $bdr-thin;
@@ -281,9 +291,14 @@ $partners:  Advocate,
   color: $hdr-color;
 }
 
+
 .section-hdr--med {
   @extend %topic-header !optional;
+  background-color: pink;
 }
+
+
+
 
 
 // --------------------------------------------
@@ -317,11 +332,13 @@ $partners:  Advocate,
   // }
 }
 
+
 .quote-sub-h {
   font-size: 24px;
   font-weight: 700px;
   color: black;
 }
+
 
 .quote-link {
    @include bullet(after);
@@ -329,6 +346,7 @@ $partners:  Advocate,
   color: $head-color;
 
 }
+
 
 
 
@@ -367,6 +385,10 @@ $button-main: $he-secondary;
   & + & { margin-left: 1em; }
 }
 
+
+
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -378,6 +400,16 @@ $button-main: $he-secondary;
 .pagination-mod {
   margin-top: 50px;
   margin-bottom: 50px;
+}
+
+.prev-next-nav {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+.pagination-list {
+  text-align: center;
   padding: 1em 0;
   font-family: $he-sans;
   font-size: 16pt;
@@ -392,7 +424,20 @@ $button-main: $he-secondary;
   color: $black-40;
 }
 
-.pagination-page-of {
+.pagination-page-of { }
+
+.pagination-list-item-prev-next {
+  display: inline;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  &:hover {
+    color: $he-secondary;
+  }
+}
+
+
+.pagination-list-item-of {
   text-transform: none;
   font-style: italic;
   padding: 0 5px;
@@ -400,7 +445,10 @@ $button-main: $he-secondary;
   display: inline-block;
 }
 
-.pagination-page-total {
+
+.pagination-page-total { }
+
+.pagination-list-item-current {
   display: inline-block;
   padding: 0 15px 0 5px;
   color: $black-40;
@@ -409,8 +457,15 @@ $button-main: $he-secondary;
 //TODO: make this a mixin
 %pagination-arrow {
   position: relative;
+}
+
+.pagination-list-item-total {
   display: inline-block;
   color: $black-40;
+}
+
+
+.pagination-list-item-link {
   text-decoration: none;
 
   &:before {
@@ -440,6 +495,7 @@ $button-main: $he-secondary;
   }
 }
 
+
 .arrow-left {
   @extend %pagination-arrow;
 
@@ -463,6 +519,7 @@ $button-main: $he-secondary;
     }
   }
 }
+
 
 .arrow-right {
   @extend %pagination-arrow;

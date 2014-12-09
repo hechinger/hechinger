@@ -91,7 +91,6 @@ $bp-article-not-centered:   820px;
   @include mq(700px) {
     // display: initial;
   }
-
 }
 
 
@@ -332,6 +331,7 @@ $bp-article-not-centered:   820px;
   .alignright {
     @include mq($bp-img-no-bleed) {
       float: right;
+      // clear: right;
       max-width: $img-max-sm;
       margin-right: -$site-margin;
       margin-left: $site-margin;

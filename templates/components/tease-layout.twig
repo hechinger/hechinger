@@ -8,10 +8,10 @@
         {% endblock tease_overline_above_img %}
 
         {% block tease_img %}
-          {% if post.thumbnail.src and not suppress_image %} {# or whatever the test is #}
+          {% if post.lead_image.src and not hide_image %}
             <div class="tz-img-mod art-bd">
               <a href="{{ post.link }}">
-                <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
+                <img src="{{ post.lead_image.src }}" alt="{{ post.lead_image.alt }}">
               </a>
             </div> <!-- /tz-img-mod -->
           {% endif %}
@@ -20,7 +20,7 @@
         <div class="tz-content-mod txt-bd">
           {% block tease_overline %}
             <h4 class="tz-overline tz-overline--{{ context_class ? context_class: '' }}">
-              <a class="tz-overline-link" href="#">{{ post.overline }}</a>
+              <a class="tz-overline-link" href="{{ post.overline.link }}">{{ post.overline }}</a>
             </h4>
           {% endblock tease_overline %}
 

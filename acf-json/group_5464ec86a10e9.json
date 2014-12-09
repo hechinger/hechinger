@@ -32,15 +32,7 @@
             "type": "image",
             "instructions": "Select or upload a large image to appear above the headline.",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "",
-                        "operator": "==",
-                        "value": ""
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",

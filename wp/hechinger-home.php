@@ -42,10 +42,10 @@ class HechingerHome extends TimberStream {
 		$avail_posts = $this->get_posts(array(), 'HechingerPost');
 		$posts = array();
 		$posts[] = $avail_posts[0];
-		$posts[] = $avail_posts[1];
-		if (!$posts[1]->thumbnail()) {
-			$posts[] = $avail_posts[2];
-		}
+                $posts[] = $avail_posts[1];
+                if (!$posts[1]->lead_image()->src) {
+                  $posts[] = $avail_posts[2];
+                }
 		return $posts;
 	}
 
@@ -65,7 +65,17 @@ class HechingerHome extends TimberStream {
 		$posts = array();
 		for ($i = $pointer; $i < $pointer + 7; $i++ ) {
 			$posts[] = $avail_posts[$i];
-		}
+                }
+                if (isset($posts) && count($posts)) {
+                  for ($i = 0; $i < count($posts); $i++) {
+                    if ( $posts[$i]->lead_image()->src) {
+                      $t = $posts[0];
+                      $posts[0] = $posts[$i];
+                      $posts[$i] = $t;
+                      break;
+                    }
+                  }
+                }
 		return $posts;
 	}
 

@@ -15,6 +15,8 @@ img { @include resp-img; }
 
 
 
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -32,20 +34,18 @@ img { @include resp-img; }
 .social-items {
   @include pie-clearfix;
   display: inline-block;
+  &.social--with-name {
+    @include mq(450px, max) { display: block; }
+  }
 }
+
 
 .social-item {
   display: inline;
   float: left;
   text-indent: -9999em;
-  // width: 30px;
-  // height: 30px;
   margin-top: 0;
-  // line-height: 30px;
-  // background-color: $black-10;
-  // cursor: pointer;
-  // color: #fff;
-  // letter-spacing: 1px;
+  font-size: 12px;
 
   & + & { margin-left: 10px; }
 
@@ -53,9 +53,18 @@ img { @include resp-img; }
     margin-left: 15px;
     &:first-child { margin-left: 0; }
   }
+
+  .social--with-name & {
+    @include mq(450px, max) {
+      width: 47%;
+      &.icon-facebook { margin-left: 6%; }
+    }
+  }
 }
 
+
 .social-item-link {
+  @include trans(0.25s);
   display: block;
   position: relative;
   cursor: pointer;
@@ -67,14 +76,27 @@ img { @include resp-img; }
   letter-spacing: 1px;
   text-transform: uppercase;
 
-  .icon-twitter & { background-color: $twitter-blue; }
-  .icon-facebook & { background-color: $facebook-blue; }
+  .icon-twitter & {
+    background-color: $twitter-blue;
+    &:hover { background-color: darken($twitter-blue, 10%); }
+  }
+  .icon-facebook & {
+    background-color: $facebook-blue;
+    &:hover { background-color: darken($facebook-blue, 10%); }
+  }
 
   .social--with-name & {
-    width: 100px;
-    height: 35px;
-    line-height: 35px;
-    text-indent: 25px;
+    // width: 100px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    // text-indent: 25px;
+    text-indent: 30px;
+    @include mq(450px) {
+      width: 100px;
+      line-height: 35px;
+      height: 35px;
+    }
   }
   .social--ftr & {
     border: 1px solid #000;
@@ -87,20 +109,7 @@ img { @include resp-img; }
 }
 
 
-.article-comment-link {
-  position: relative;
-  display: block;
-  width: 140px;
-  height: 35px;
-  line-height: 35px;
-  padding-left: 35px;
-  border: $bdr-thin;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: $he-secondary;
-  font-weight: 700;
 
-}
 
 
 // --------------------------------------------
@@ -110,8 +119,6 @@ img { @include resp-img; }
 //
 // --------------------------------------------
 // --------------------------------------------
-
-
 
 $svg-icon-path: /wp-content/themes/hechinger/static/img/icons;
 $png-icon-path: /wp-content/themes/hechinger/static/img/icons;
@@ -143,15 +150,19 @@ $icons: twitter,
   .social--with-name & {
     width: 15px;
     height: 15px;
-    top: 9px;
-    left: 7px;
+    // left: 7px;
+    left: 11px;
+    top: 50%;
+    margin-top: -8px;
   }
 
   .icon-disqus & {
     width: 15px;
     height: 15px;
-    top: 9px;
-    left: 9px;
+    // left: 9px;
+    left: 11px;
+    top: 50%;
+    margin-top: -7px;
   }
 
   .author-contact-item & {
@@ -176,12 +187,12 @@ $icons: twitter,
   }
 }
 
+
 @mixin ui-icon($icon_filename, $bg-color) {
   background: $bg-color url(#{$png-icon-path}/#{$icon_filename}.png) no-repeat content-box center;
   background: $bg-color url(#{$svg-icon-path}/#{$icon_filename}.svg) no-repeat content-box center;
   background-size: contain;
 }
-
 
 
 
@@ -223,6 +234,8 @@ $partners:  Advocate,
 
 
 
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -230,6 +243,7 @@ $partners:  Advocate,
 //
 // --------------------------------------------
 // --------------------------------------------
+
 @mixin drop-cap($font-family: $he-sans, $font-weight: 900) {
   &:first-letter {
     display: block;
@@ -248,6 +262,8 @@ $partners:  Advocate,
 
 
 
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -263,6 +279,7 @@ $partners:  Advocate,
   margin-bottom: 20px;
 }
 
+
 .section-hdr--lg {
   border-top: 2px solid black;
   border-bottom: $bdr-thin;
@@ -274,9 +291,14 @@ $partners:  Advocate,
   color: $hdr-color;
 }
 
+
 .section-hdr--med {
   @extend %topic-header !optional;
+  background-color: pink;
 }
+
+
+
 
 
 // --------------------------------------------
@@ -310,11 +332,13 @@ $partners:  Advocate,
   // }
 }
 
+
 .quote-sub-h {
   font-size: 24px;
   font-weight: 700px;
   color: black;
 }
+
 
 .quote-link {
    @include bullet(after);
@@ -325,31 +349,6 @@ $partners:  Advocate,
 
 
 
-// --------------------------------------------
-// --------------------------------------------
-//
-// Yellow Boxes
-//
-// --------------------------------------------
-// --------------------------------------------
-
-%yellow-box {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  background-color: pink;
-}
-
-.big-yellow-box {
-  @extend %yellow-box;
-  height: 183px;
-}
-
-.med-yellow-box {
-  @extend %yellow-box;
-  height: 150px;
-}
 
 
 // --------------------------------------------
@@ -386,6 +385,10 @@ $button-main: $he-secondary;
   & + & { margin-left: 1em; }
 }
 
+
+
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -393,116 +396,121 @@ $button-main: $he-secondary;
 //
 // --------------------------------------------
 // --------------------------------------------
-.prev-next-nav {
+
+.pagination-mod {
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-.pagination-list {
-  text-align: center;
   padding: 1em 0;
   font-family: $he-sans;
   font-size: 16pt;
   font-weight: $font-weight-lt;
   text-transform: uppercase;
+  text-align: center;
 }
 
-.pagination-list-item-prev-next {
-  display: inline;
-  padding-left: 5px;
-  padding-right: 5px;
 
-  &:hover {
-    color: $he-secondary;
-  }
-}
-
-.pagination-list-item-of {
-  text-transform: none;
-  font-style: italic !important;
-  padding: 0 5px;
-  color: $black-40;
-  display: inline-block;
-}
-
-.pagination-list-item-current {
+.pagination-page-current {
   display: inline-block;
   padding: 0 5px 0 15px;
   color: $black-40;
 }
 
-.pagination-list-item-total {
+
+.pagination-page-of {
+  text-transform: none;
+  font-style: italic;
+  padding: 0 5px;
+  color: $black-40;
+  display: inline-block;
+}
+
+
+.pagination-page-total {
   display: inline-block;
   padding: 0 15px 0 5px;
   color: $black-40;
 }
 
-.pagination-list-item-link {
-  text-decoration: none;
+
+//TODO: make this a mixin
+%pagination-arrow {
+  position: relative;
+  display: inline-block;
   color: $black-40;
+  text-decoration: none;
 
-  &:hover {
-    color: $he-secondary;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
   }
 
-  .pagination-disabled & {
-    color: $black-20;
-
-    &:hover {
-      color: $black-20;
-    }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    display: inline-block;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
   }
+
+  &:hover { color: $he-secondary; }
+  &.pagination-disabled { color: $black-20; }
+
 }
+
 
 .arrow-left {
-  display: inline-block;
-  margin: 0 10px -3px 0;
+  @extend %pagination-arrow;
 
-  &.before {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right:10px solid $black-40;
-    margin-right: -10px;
-
-    &.pagination-disabled {
-      border-right:10px solid $black-20;
-    }
+  &:before {
+    left: -25px;
+    border-right: 10px solid $black-40;
   }
 
-  &.after {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+  &:after {
+    left: -21px;
+    border-right:10px solid $white;
+  }
 
-    border-right:10px solid white;
+  &:hover:before {
+    border-right-color: $he-secondary;
+  }
+
+  &.pagination-disabled {
+    &:before {
+      border-right-color: $black-20;
+    }
   }
 }
 
-.arrow-right {
-  display: inline-block;
-  margin: 0 0 -3px 10px;
 
-  &.before {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left:10px solid white;
-    margin-left: -20px;
+.arrow-right {
+  @extend %pagination-arrow;
+
+  &:before {
+    right: -25px;
+    border-left:10px solid $black-40;
+    &:hover {
+      border-left-color: $he-secondary;
+    }
   }
 
-  &.after {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left:10px solid $black-40;
+  &:after {
+    right: -21px;
+    border-left:10px solid $white;
+  }
 
-    &:hover {
-      border-left:10px solid $he-secondary;
+  &:hover:before {
+    border-left-color: $he-secondary;
+  }
+
+  &.pagination-disabled {
+    &:before {
+      border-left-color: $black-20;
     }
   }
 }

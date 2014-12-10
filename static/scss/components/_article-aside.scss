@@ -7,16 +7,23 @@
 // --------------------------------------------
 
 %article-aside {
-  max-width: $article-bd-max;
+  // max-width: $article-bd-max;
+  @include article-bd-layout;
   // padding: 17px 10px;
   @include bp(700px) {
+    // clear: right;
+    // float: right;
+    // display: initial;
+    // width: 220px;
+    // margin-left: 60px;
+    margin-bottom: 30px;
+    // margin-right: 0;
+  }
+  @include mq($bp-article-not-centered) {
     clear: right;
     float: right;
-    // display: initial;
     width: 220px;
-    margin-left: 60px;
-    margin-bottom: 30px;
-    margin-right: 0;
+    margin-left: 25px;
   }
 }
 
@@ -29,7 +36,7 @@
   border-bottom: 1px solid $black-20;
   padding: 5px 0 15px;
   margin-bottom: 50px;
-  display: inline-block;
+  // display: inline-block;
       &:first-of-type { margin-top: 50px;}
 
   @include bp($medium-lg) {

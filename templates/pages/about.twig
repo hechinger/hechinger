@@ -24,12 +24,14 @@
           <div class="l-about-inner">
             <div class="staff-img-mod">
               <ul class="staff-img-items l-grid-img">
-                {% for i in 1..12 %}
-                  <li class="staff-img-item media-block">
-                    <a class="staff-img-link" href="#">
-                      <img class="about-staff-img" src="{{ img.src | resize(175, 175) | default('/wp-content/themes/hechinger/static/img/mug_placeholder.jpg' | resize(175, 175) ) }}" alt="">
-                    </a>
-                  </li> <!-- /staff-img-item -->
+                {% for user in users %}
+                  {% if user.get_image.src %}
+                    <li class="staff-img-item media-block">
+                      <a class="staff-img-link" href="{{ user.link }}">
+                        <img class="about-staff-img" src="{{ user.get_image.src | resize(175, 175) | default('/wp-content/themes/hechinger/static/img/mug_placeholder.jpg' | resize(175, 175) ) }}" alt="">
+                      </a>
+                    </li> <!-- /staff-img-item -->
+                  {% endif %}
                 {% endfor %}
               </ul> <!-- about-img-items -->
             </div> <!-- /about-img-mod -->
@@ -41,10 +43,10 @@
                 </div> <!-- /art-bd -->
 
                 <div class="txt-bd">
-                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  <p class="about-text">{{ post.our_staff }}</p>
                   <div class="about-link-mod">
-                    <a class="about-link" href="#">Our Link Words</a>
-                    <a class="about-link" href="#">Our Link Words</a>
+                    <a class="about-link" href="/staff">Our Staff</a>
+                    <a class="about-link" href="/advisors">Our Advisors</a>
                   </div> <!-- /about-link-mod -->
                 </div> <!-- /txt-bd -->
               </div> <!-- /l-pair-about -->
@@ -67,26 +69,30 @@
                 </div> <!-- /art-bd -->
 
                 <div class="txt-bd">
-                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  {% if post.our_awards %}
+                    <p class="about-text">{{ post.our_awards }}</p>
+                  {% endif %}
                   <div class="about-bottom-mod">
-                    <ul class="about-award-items">
-                      {% for i in 1..3 %}
-                        <li class="l-pair-award">
-                          <div class="art-bd">
-                            <h4 class="award-year">2999</h4>
-                          </div> <!-- /art-bd -->
-                          <div class="txt-bd">
-                            <h4 class="award-h">
-                              <a class="award-h-link" href="#">Hello. This is a headline here</a>
-                            </h4> <!-- /award-h -->
-                            <p class="award-text">This is tease text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam quia corporis omnis eius ex ratione beatae ullam nobis necessitatibus facilis. <a class="award-read-more" href="#">Read More</a></p>
-                          </div> <!-- /txt-bd -->
-                        </li> <!-- /l-pair-award -->
-                      {% endfor %}
-                    </ul> <!-- /about-award-items -->
+                    {% if post.awards|length %}
+                      <ul class="about-award-items">
+                        {% for award in post.awards %}
+                          <li class="l-pair-award">
+                            <div class="art-bd">
+                              <h4 class="award-year">{{ award.year }}</h4>
+                            </div> <!-- /art-bd -->
+                            <div class="txt-bd">
+                              <h4 class="award-h">
+                                <a class="award-h-link" href="/awards">{{ award.name }}</a>
+                              </h4> <!-- /award-h -->
+                              <p class="award-text">{{ award.description }}<a class="award-read-more" href="/awards">Read More</a></p>
+                            </div> <!-- /txt-bd -->
+                          </li> <!-- /l-pair-award -->
+                        {% endfor %}
+                      </ul> <!-- /about-award-items -->
+                    {% endif %}
                   </div> <!-- /about-bottom-mod -->
                   <div class="about-link-mod">
-                    <a class="about-link" href="#">Our Link Words</a>
+                    <a class="about-link" href="#">Our Awards</a>
                   </div> <!-- /about-link-mod -->
                 </div> <!-- /txt-bd -->
               </div> <!-- /l-pair-about -->
@@ -101,7 +107,7 @@
         <div class="about-zone">
           <div class="l-about-inner">
             <div class="about-img-mod">
-              <img src="{{ img.src | resize(800, 300) | default('/wp-content/themes/hechinger/static/img/test.jpg' | resize(800, 300) ) }}" alt="">
+              <img src="{{ post.fred_photo.src | resize(800, 300) | default('/wp-content/themes/hechinger/static/img/img-about-Fred-796-291.jpg') }}" alt="{{ post.fred_photo.alt }}">
             </div> <!-- /about-img-mod -->
 
             <div class="about-content-mod">
@@ -111,9 +117,9 @@
                 </div> <!-- /art-bd -->
 
                 <div class="txt-bd">
-                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  <p class="about-text">{{ post.our_namesake }}</p>
                   <div class="about-link-mod">
-                    <a class="about-link" href="#">Our Link Words</a>
+                    <a class="about-link" href="/about-fred-hechinger">About Fred</a>
                   </div> <!-- /about-link-mod -->
                 </div> <!-- /txt-bd -->
               </div> <!-- /l-pair-about -->
@@ -134,7 +140,7 @@
                 </div> <!-- /art-bd -->
 
                 <div class="txt-bd">
-                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  <p class="about-text">{{ post.our_partners }}</p>
                    <div class="about-bottom-mod">
                     <ul class="l-about-partners">
                       {% for i in 1..8 %}
@@ -145,7 +151,7 @@
                     </ul>
                   </div> <!-- /about-bottom-mod -->
                   <div class="about-link-mod">
-                    <a class="about-link" href="#">Our Link Words</a>
+                    <a class="about-link" href="/partners">Our Partners</a>
                   </div> <!-- /about-link-mod -->
                 </div> <!-- /txt-bd -->
               </div> <!-- /l-pair-about -->
@@ -167,9 +173,9 @@
                 </div> <!-- /art-bd -->
 
                 <div class="txt-bd">
-                  <p class="about-text">Hello this is text. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam nostrum, fugit dignissimos impedit, iste praesentium! Ad alias quod voluptatem excepturi officia quos, a voluptates quibusdam!</p>
+                  <p class="about-text">{{ post.our_supporters }}</p>
                   <div class="about-link-mod">
-                    <a class="about-link" href="#">Our Link Words</a>
+                    <a class="about-link" href="/supporters">Our Supporters</a>
                   </div> <!-- /about-link-mod -->
                 </div> <!-- /txt-bd -->
               </div> <!-- /l-pair-about -->

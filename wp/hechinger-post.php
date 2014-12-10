@@ -114,7 +114,26 @@ class HechingerPost extends TimberPost {
     $links = $this->get_field('link_to_page');
     if (isset($links) && is_array($links)) {
       $link = new HechingerPost($links[0]->ID);
+      return $link->link();
     }
-    return $link->link;
+    
   }
+
+  function awards() {
+    $awards = $this->get_field('awards');
+    if (is_array($awards)) {
+      foreach($awards as &$award_row) {
+        $award_row['year'] = $award_row['year'];
+        $award_row['name'] = $award_row['award_name'];
+        $award_row['description'] = $award_row['award_description'];
+      }
+    }
+    return $awards;
+  }
+
+  function fred_photo() {
+    $image = new HechingerImage($this->fred_photo);
+    return isset($image) ? $image : null;
+  }
+
 }

@@ -69,7 +69,7 @@ class HechingerHome extends TimberStream {
                 
         if (is_array($posts) && count($posts)) {
             for ($i = 0; $i < count($posts); $i++) {
-                if ( $posts[$i]->thumbnail()->src) {
+                if ( isset($posts[$i]->thumbnail()->src)) {
                     $t = $posts[0];
                     $posts[0] = $posts[$i];
                     $posts[$i] = $t;

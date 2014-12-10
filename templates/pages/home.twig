@@ -99,7 +99,7 @@
           <div class="l-zone-cuatro--rule">
             {% for post in home.get_zone(2)|slice(3,4) %}
               <div class="grid-item">
-                {% include "/templates/components/tease-hp-stub.twig" with {context_class: 'stub-med'} %}
+                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-med', hide_image: true } %}
               </div>
             {% endfor %}
           </div> <!-- /l-zone-cuatro--rule -->
@@ -159,7 +159,7 @@
           <div class="l-zone-tres--rule">
             {% for post in home.get_zone(3)|slice(3,3) %}
               <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
-                {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
+                {% include "/templates/components/tease-hp-regular.twig" with { context_class: 'reg-med', hide_image: true } %}
               </div>
             {% endfor %}
           </div> <!-- /l-zone-tres -->

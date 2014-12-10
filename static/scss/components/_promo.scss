@@ -6,15 +6,58 @@
 // --------------------------------------------
 // --------------------------------------------
 
-.promo-mod { }
+.promo-mod {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.promo-donate {
+  background-color: black;
+  background-image: url("/wp-content/themes/hechinger/static/img/house-ad/Promo_Cloudy_1.jpg");
+}
+
+
+.promo-overlay {
+  position: relative;
+  background-color: rgba(42, 39, 43, 0.3);
+}
+
 
 .promo-inner {
   @include pie-clearfix;
+  position: relative;
+  height: 100%;
   padding: 20px 25px;
   @include mq($medium) {
     padding: 35px 50px;
   }
 }
+
+
+.promo-content-bdr,
+.promo-content-bdr--reverse {
+  &:after {
+    position: absolute;
+    content: '\0020';
+    top: 35px;
+    bottom: 35px;
+    left: 28%;
+    width: 2px;
+    transform: rotate(30deg);
+    background-color: transparent;
+    @include mq($large) { background-color: black; }
+  }
+}
+
+
+.promo-content-bdr--reverse {
+  &:after {
+    @include mq($large) { background-color: white; }
+  }
+}
+
 
 .promo-hdr {
   position: relative;
@@ -22,18 +65,8 @@
     width: 23%;
     float: left;
   }
-  &:after {
-    position: absolute;
-    transform: rotate(30deg);
-    content: '\0020';
-    top: 0;
-    bottom: 0;
-    left: 110%;
-    width: 2px;
-    background-color: transparent;
-    @include mq($large) { background-color: black; }
-  }
 }
+
 
 .promo-main {
   @include mq($large) {
@@ -41,6 +74,11 @@
     width: 65%;
   }
 }
+
+
+
+// Promo Typography
+// --------------------------------------------
 
 .promo-h {
   font-family: $he-accent;
@@ -64,7 +102,14 @@
 }
 
 
-.promo-text {
+.promo-h--reverse {
+  color: white;
+  font-weight: $font-weight-bold;
+}
+
+
+.promo-text,
+.promo-text--reverse {
   font-family: $he-sans;
   font-size: 16px;
   font-weight: $font-weight-lt;
@@ -72,10 +117,26 @@
   @include mq($medium) { font-size: 25px; }
 }
 
+
+.promo-text--reverse {
+  color: white;
+}
+
+
 .promo-text--bold {
   font-weight: $font-weight-bold;
   margin-right: 5px;
 }
+
+
+.promo-link {
+  text-decoration: none;
+}
+
+
+
+// Top + Bottom Borders
+// --------------------------------------------
 
 .promo-bdr {
   position: relative;
@@ -97,56 +158,72 @@
 
 }
 
+
 .promo-bdr--top {
   &:after, &:before { top: 0; }
 }
+
+
 .promo-bdr--bottom {
   &:after, &:before { bottom: 0; }
 }
 
+
+
+// Promo Form
+// --------------------------------------------
+
 .promo-form {
   @include pie-clearfix;
   margin-top: 25px;
-  border-bottom: $bdr-thin;
   padding-bottom: 15px;
+  @include mq($medium) {
+    border-bottom: $bdr-thin;
+  }
 }
+
 
 .promo-label { display: none; }
 
-.promo-btn {
+
+.promo-btn,
+.promo-btn-donate {
   @extend %button;
-  float: right;
   font-family: $he-sans;
   font-weight: $font-weight-lt;
   font-size: 14px;
-  @include mq($medium) { font-size: 20px; }
+  @include mq($medium) {
+    float: right;
+    font-size: 20px;
+  }
+}
+
+
+.promo-btn-donate {
+  // text-transform: uppercase;
+  margin-top: 30px;
 }
 
 
 .promo-input {
   display: block;
-  float: left;
-  padding: 0;
+  padding: 20px 10px;
   width: 100%;
   height: 25px;
   outline: 0;
-  border: 0;
-  margin: 0 -125px 0 0;
+  border: $bdr-thin;
+  border-radius: 0;
+  margin-bottom: 10px;
   -webkit-appearance: none;
   font-size: 14px;
   color: $black-80;
-  @include mq($medium) { font-size: 25px; height: 38px; }
   &:invalid { box-shadow: none; }
+  @include mq($medium) {
+    float: left;
+    height: 38px;
+    border: 0;
+    margin: 0 -125px 0 0;
+    padding: 0;
+    font-size: 25px;
+  }
 }
-
-
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Promo Signup
-//
-// --------------------------------------------
-// --------------------------------------------

@@ -22,4 +22,4 @@
  */
 $context = Timber::get_context();
 $context['post'] = new HechingerPost();
-Timber::render(array('pages/' . $post->slug . '.twig', 'pages/page.twig'), $context);
+Timber::render(array('pages/' . $context['post']->slug . '.twig', 'pages/page.twig'), $context);

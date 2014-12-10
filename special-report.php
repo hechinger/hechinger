@@ -27,23 +27,8 @@
   $term = Timber::get_terms('special-report', $args, 'HechingerTerm')[0];
   $context['banner'] = $term->get_image('yellow_pano');
 
+  $context['posts'] = $term->get_posts(array('paged' => $paged));
   $context['term'] = $term;
-    $args = array(
-      'post_type' => 'post',
-      'paged' => $paged,
-      'tax_query' => array(
-        'relation' => 'AND',
-        array(
-          'taxonomy' => 'special-report',
-          'field' => 'slug',
-          'terms' => array( $term->slug )
-        ),
-      )
-  );
-
-  $context['posts'] = Timber::get_posts($args, 'HechingerPost');
-
-  query_posts($args);
   $context['pagination'] = Timber::get_pagination();
 
   Timber::render('pages/special-report.twig', $context);

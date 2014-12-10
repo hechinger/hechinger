@@ -1,52 +1,83 @@
 .tz-full-mod {
   overflow: auto;
   &:not(:last-child) {
-    border-bottom: 1px solid $black-30;
+    border-bottom: $bdr-thin;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+
+    @include mq(600px, max) {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
   }
+
 }
+
 
 .tz-content-wrap {
-  float: left;
   display: block;
-  padding: 42px 25px 42px 25px;
-
-  @include mq('max', $medium) {
-    padding: 22px 0 22px;
+  @include mq(800px) {
+    padding: 0 50px;
   }
+  .tz-feat-mod & { padding: 0; }
 }
 
-.l-pair-full {
 
-    @include pair(100px, 15px, top, right);
+.l-pair-full {
+    @include mq($medium, max) {
+      .art-bd {
+        width: 100px;
+        float: right;
+        margin-left: 15px;
+        margin-bottom: 15px;
+       }
+    }
 
     @include mq($medium) {
-      @include pair(150px, 25px, top, right);
+      @include pair(175px, 25px, top, right);
     }
 }
 
-.tz-full-title {
-  margin-bottom: 2px;
-  color: $black;
-  font-family: $he-sans;
-  font-size: 28px;
-  font-weight: $font-weight-bold;
 
-  @include bp($medium) {
-    font-size: 30px;
-    margin-bottom: 10px;
+.txt-bd {
+  .tz-full-mod & {
+    max-width: 675px;
   }
 }
 
+
+.tz-full-h,
 .tz-full-text {
+  // max-width: 800px;
+}
+
+
+.tz-full-h {
+  @include sans-bold;
   margin-bottom: 5px;
-  color: $black;
-  font-family: $he-sans;
-  font-size: 14px;
-  line-height: 1.33;
+  font-size: 22px;
+  line-height: 1.2;
+  color: black;
 
   @include bp($medium) {
+    font-size: 30px;
+    letter-spacing: -1px;
+    // margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+
+.tz-full-text {
+  @include sans;
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.33;
+  color: $black-80;
+
+  @include bp($medium) {
+    margin-bottom: 25px;
     font-size: 16px;
-    margin-bottom: 10px;
   }
 
   @include bp(850px) {
@@ -54,83 +85,98 @@
   }
 }
 
+
+.tz-full-h-link,
 .tz-full-text-link {
   text-decoration: none;
   color: $black;
 }
 
-.tz-full--byline-wrap {
-}
+
+.tz-full--byline-wrap { }
+
 
 .tz-full--byline-topic {
+  @include sans-bold;
+  margin-right: 15px;
   display: inline-block;
-  color: $he-secondary;
-  font-family: $he-sans;
   font-size: 12px;
-  font-weight: $font-weight-bold;
+  color: $he-secondary;
   text-transform: uppercase;
 
-  @include bp(850px) {
-    font-size: 14px;
-  }
+  @include bp(850px) { font-size: 14px; }
 
 }
 
-.tz-full--byline-name {
-  display: inline-block;
-}
 
+.tz-full--byline-name,
 .tz-full--byline-date {
   display: inline-block;
+  font-weight: $font-weight-lt;
+  position: relative;
+  top: -1px;
 }
 
-.tz--byline-topic-link {
-  text-decoration: none;
-  color: inherit;
+
+.tz-full--byline-date {
+  // position: relative;
+  top: 0;
 }
 
+.tz--byline-topic-link,
 .tz--byline-author-link {
   text-decoration: none;
   color: inherit;
 }
 
-// .tz-full-img-wrap {
-//   float: right;
-//   display: block;
-//   padding-left: 0px;
-//   margin-bottom: 20px;
-//   width: 100%;
-//   height: 140px;
-//   overflow: hidden;
-//   min-width: 150px;
+.tz-full--byline-name,
+.tz--byline-author-link {
+  color: $black-60;
+}
 
-//   @include bp($medium) {
-//     padding-left: 20px;
-//     width: 35%;
-//     height: 180px;
-//     overflow: hidden;
-//     margin-bottom: 0;
-//     margin-left: 15px;
-//     min-width: 185px;
-//   }
 
-//   @include bp(850px) {
-//     width: 30%;
-//     min-width: 250px;
-//   }
 
-//   // @include mq('max', $medium) {
-//   //   padding: 20px;
-//   // }
-// }
+// --------------------------------------------
+// --------------------------------------------
+//
+// Tease Archive Featured
+//
+// --------------------------------------------
+// --------------------------------------------
 
-// .tz-full-img {
-//   @include resp-img;
+.tz-feat-mod {
+  @include pie-clearfix;
+  border-bottom: $bdr-thin;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
 
-//   @include bp($medium) {
-//     width: auto;
-//     height: 100%;
-//     float: right;
-//     max-width: 200%;
-//   }
-// }
+.art-bd-feat {
+  @include mq(450px, max) {
+    margin-bottom: 15px;
+  }
+}
+
+.txt-bd-feat {
+  position: relative;
+  background-color: #fff;
+  max-width: 750px;
+  padding: 0;
+
+  @include mq(450px) {
+    width: 95%;
+    margin: -50px auto 0 auto;
+    // margin-top: -50px;
+    padding: 10px 20px 20px 20px;
+  }
+
+  @include mq(600px) {
+    width: 85%;
+    padding-left: 0;
+    margin: -50px 0 0;
+  }
+
+  @include mq(800px) {
+    padding: 30px 30px 25px 50px;
+  }
+}

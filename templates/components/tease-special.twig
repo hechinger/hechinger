@@ -6,16 +6,18 @@
     {% block tease_stat %}
       {% if show_stat %}
         <div class="tz-stat-mod art-bd">
-          <h4 class="tz-special-number tz-overline--{{ context_class ? context_class: '' }}">{{ quote.number }}</h4>
+          <h4 class="tz-special-number tz-overline--{{ context_class ? context_class : '' }}">{{ quote.number }}</h4>
         </div> <!-- /art-bd -->
       {% endif %}
     {% endblock tease_stat %}
 
     <div class="txt-bd">
       <h4 class="tz-special-h tz-overline--{{ context_class ? context_class: '' }}">{{ quote.text }}</h4>
-      <h5 class="tz-special-sub-h tz-overline--{{ context_class ? context_class: '' }}">
-        <a class="tz-special-link" href="{{ quote.post.link }}">{{ quote.subhead }}</a>
-      </h5>
+      {% if quote.subhead %}
+        <h5 class="tz-special-sub-h tz-overline--{{ context_class ? context_class: '' }}">
+          <a class="tz-special-link" href="{{ quote.post.link }}">{{ quote.subhead }}</a>
+        </h5>
+      {% endif %}
     </div> <!-- /txt-bd -->
 
   </div> <!-- /tz-inner -->

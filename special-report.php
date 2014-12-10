@@ -24,11 +24,16 @@
     'slug' => $params['name']
   );
 
-  $term = Timber::get_terms('special-report', $args, 'HechingerTerm')[0];
-  $context['banner'] = $term->get_image('yellow_pano');
+  $term = Timber::get_terms('special-report', $args, 'HechingerTerm');
 
-  $context['posts'] = $term->get_posts(array('paged' => $paged));
-  $context['term'] = $term;
-  $context['pagination'] = Timber::get_pagination();
+  if ( isset($term[0]) && get_class($term[0]) == 'HechingerTerm' ) {
+    $context['banner'] = $term[0]->get_image('yellow_pano');
+    $context['posts'] = $term[0]->get_posts(array('paged' => $paged), 'HechingerPost');
+    $context['term'] = $term[0];
+    $context['pagination'] = Timber::get_pagination();
+  } else {
+    wp_redirect( '/index.php?s='. $params['name'], 301 );
+    exit;
+  }
 
   Timber::render('pages/special-report.twig', $context);

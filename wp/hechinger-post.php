@@ -100,11 +100,6 @@ class HechingerPost extends TimberPost {
     return $links;
   }
 
-  function lead_image() {
-    $image = new TimberImage($this->get_field('lead_image'));
-    return isset($image) ? $image : null;
-  }
-
   function column_image() {
     $image = new HechingerImage($this->author->columnist_image);
     return isset($image) ? $image : null;

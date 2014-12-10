@@ -34,7 +34,7 @@ class HechingerSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-		add_action( 'init', array( $this, 'add_topics' ) );
+		add_action( 'init', array( $this, 'add_reports' ) );
     $this->set_shortcodes();
     $this->set_routes();
 		parent::__construct();
@@ -59,14 +59,29 @@ class HechingerSite extends TimberSite {
   }
 
   protected function set_routes(){
+
     Timber::add_route('special-reports', function($params){
       Timber::load_view('special-reports-landing.php', null, 200, $params);
     });
+
     Timber::add_route('special-reports-landing', function($params){
       Timber::load_view('special-reports-landing.php', null, 200, $params);
     });
+
     Timber::add_route('staff', function($params){
-      Timber::load_view('staff.php', null, 200, $params);
+          Timber::load_view('staff.php', null, 200, $params);
+    });
+    Timber::add_route('special-reports/:name', function($params){
+          Timber::load_view('special-report.php', null, 200, $params);
+    });
+    Timber::add_route('special-report/:name', function($params){
+          Timber::load_view('special-report.php', null, 200, $params);
+    });
+    Timber::add_route('special-reports/:name/page/:number', function($params){
+          Timber::load_view('special-report.php', null, 200, $params);
+    });
+    Timber::add_route('special-report/:name/page/:number', function($params){
+          Timber::load_view('special-report.php', null, 200, $params);
     });
     Timber::add_route('about', function($params){
       Timber::load_view('about.php', null, 200, $params);
@@ -83,22 +98,22 @@ class HechingerSite extends TimberSite {
 
 	function register_taxonomies() {
 		$labels = array(
-			'name'                       => _x( 'Special Topics', 'taxonomy general name' ),
-			'singular_name'              => _x( 'Special Topic', 'taxonomy singular name' ),
-			'search_items'               => __( 'Search Special Topics' ),
-			'popular_items'              => __( 'Popular Special Topics' ),
-			'all_items'                  => __( 'All Special Topics' ),
+			'name'                       => _x( 'Special Reports', 'taxonomy general name' ),
+			'singular_name'              => _x( 'Special Report', 'taxonomy singular name' ),
+			'search_items'               => __( 'Search Special Reports' ),
+			'popular_items'              => __( 'Popular Special Reports' ),
+			'all_items'                  => __( 'All Special Reports' ),
 			'parent_item'                => null,
 			'parent_item_colon'          => null,
-			'edit_item'                  => __( 'Edit Special Topic' ),
-			'update_item'                => __( 'Update Special Topic' ),
-			'add_new_item'               => __( 'Add New Special Topic' ),
-			'new_item_name'              => __( 'New Special Topic Name' ),
-			'separate_items_with_commas' => __( 'Separate Special Topics with commas' ),
-			'add_or_remove_items'        => __( 'Add or remove Special Topics' ),
-			'choose_from_most_used'      => __( 'Choose from the most used Special Topics' ),
-			'not_found'                  => __( 'No Special Topics found.' ),
-			'menu_name'                  => __( 'Special Topics' ),
+			'edit_item'                  => __( 'Edit Special Report' ),
+			'update_item'                => __( 'Update Special Report' ),
+			'add_new_item'               => __( 'Add New Special Report' ),
+			'new_item_name'              => __( 'New Special Report Name' ),
+			'separate_items_with_commas' => __( 'Separate Special Reports with commas' ),
+			'add_or_remove_items'        => __( 'Add or remove Special Reports' ),
+			'choose_from_most_used'      => __( 'Choose from the most used Special Reports' ),
+			'not_found'                  => __( 'No Special Reports found.' ),
+			'menu_name'                  => __( 'Special Reports' ),
 		);
 
 		$args = array(
@@ -108,9 +123,9 @@ class HechingerSite extends TimberSite {
 			'show_admin_column'     => true,
 			'update_count_callback' => '_update_post_term_count',
 			'query_var'             => true,
-			'rewrite'               => array( 'slug' => 'special-topics' ),
+			'rewrite'               => array( 'slug' => 'special-reports' ),
 		);
-		register_taxonomy( 'special-topic', 'post', $args );
+		register_taxonomy( 'special-report', 'post', $args );
 		//this is where you can register custom taxonomies
 
 
@@ -164,9 +179,9 @@ class HechingerSite extends TimberSite {
 		return $twig;
         }
 
-        function add_topics( $topics ) {
+        function add_reports( $reports ) {
 
-          $topics = array (
+          $reports = array (
             array(
               'name' => 'California',
               'slug' => 'california'
@@ -185,17 +200,17 @@ class HechingerSite extends TimberSite {
             )
           );
 
-          foreach ($topics as $topic) {
-            if ( !term_exists( $topic['name'], 'special-topic') ) {
-              $parent_term = term_exists( $topic['name'], 'special-topic' );
+          foreach ($reports as $report) {
+            if ( !term_exists( $report['name'], 'special-report') ) {
+              $parent_term = term_exists( $report['name'], 'special-report' );
               $parent_term_id = $parent_term['term_id'];
 
               wp_insert_term(
-                $topic['name'],
-                'special-topic',
+                $report['name'],
+                'special-report',
                 array(
-                  'description'=> $topic['name'] . ' is the place you want to be.',
-                  'slug' => $topic['slug'],
+                  'description'=> $report['name'] . ' is the place you want to be.',
+                  'slug' => $report['slug'],
                   'parent'=> $parent_term_id
                 )
               );

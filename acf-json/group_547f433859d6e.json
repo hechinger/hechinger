@@ -11,6 +11,65 @@
             "instructions": "Upload a yellow image of dimensions (___px, ___px).",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo"
+        },
+        {
+            "key": "field_54866d89fa5cf",
+            "label": "Yellow Panoramic",
+            "name": "yellow_pano",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Upload a yellow panoramic image for special-report banners.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo"
+        },
+        {
+            "key": "field_5486792c8884d",
+            "label": "Yellow Rectangle",
+            "name": "yellow_rect",
+            "prefix": "",
+            "type": "image",
+            "instructions": "A yellow rectangular image for shorter boxes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo"
+        },
+        {
+            "key": "field_548678fe8884c",
+            "label": "B&W Panoramic",
+            "name": "bw_pano",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Black and white panoramic image for banners.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "uploadedTo"
@@ -24,9 +83,36 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "uploadedTo"
+        },
+        {
+            "key": "field_548679718884e",
+            "label": "",
+            "name": "",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -34,7 +120,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "special-topic"
+                "value": "special-report"
             }
         ]
     ],

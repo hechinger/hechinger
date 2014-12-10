@@ -167,3 +167,21 @@ $ wp import /srv/database/thehechingerreport.wordpress.2014-11-12.xml --authors=
 That's it. It takes about 10 minutes. Get a coffee or get back to work on something else. When it's done you should have a bunch of Hechinger posts and pages imported.
 
 To exit vagrant ssh just run `exit`.
+
+### QA with Vagrant Cloud
+
+We will be using Vagrant Cloud to help us QA the site across browsers and devices. Vagrant Cloud will set up a tunnel from their site to your Vagrant box. This allows you to visit the site at a url on any device. The tunnel is shut down as soon as you `vagrant halt`.
+
+To run Vagrant Cloud:
+
+1. If this is your first time using Vagrant Cloud. Create an acct with you @upstatement email at http://vagrantcloud.com
+ - You'll select your own username and password, so make it easy to remember.
+2. Next you'll open a terminal window and enter some commands to start sharing.
+3. In the terminal window: `$ vagrant login`.
+ - You'll be asked for your email and password.
+4. Next run `$ vagrant share`
+ - The command should return a valid url to visit
+ - It often returns an error the first time you do this. So try running `vagrant share` again
+5. Visit the url in the devices you wish to test.
+
+_When you are done please shut off your share by pushing `ctrl-c` in the terminal with vagrant share running_

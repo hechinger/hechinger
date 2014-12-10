@@ -31,7 +31,7 @@
                   {% if loop.index == 1 %}
                     {% include "/templates/components/tease-hp-regular.twig" with { context_class: "reg-lg", css_class: 'tz-hp-reg' } %}
                   {% else %}
-                    {% include "/templates/components/tease-hp-regular.twig" with { context_class: "reg-lg", css_class: 'tz-hp-reg', suppress_image : true } %}
+                    {% include "/templates/components/tease-hp-regular.twig" with { context_class: "reg-lg", css_class: 'tz-hp-reg', hide_image: true } %}
                   {% endif %}
                 {% endfor %}
               </div> <!-- /hp-zone1-feat-mod -->
@@ -79,9 +79,9 @@
         <div class="hp-zone--top">
           <div class="l-zone-tres--rule">
             {% for post in home.get_zone(2)|slice(0,3) %}
-
               <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
-                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub' } %}
+                {# TODO: change hide image logic when we have context class for image tease #}
+                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub', hide_image: loop.index > 1 ? true : true } %}
               </div>
             {% endfor %}
           </div> <!-- /l-zone-tres--rule -->

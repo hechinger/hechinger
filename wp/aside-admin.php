@@ -16,7 +16,7 @@
       }
 
       if ( isset($atts['notes']) ) {
-        $id = $atts['notes'];
+        $notes = $atts['notes'];
       }
 
       return $aside ? HechingerSite::render_aside($notes, $id, $aside) : null;

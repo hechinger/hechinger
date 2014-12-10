@@ -1,6 +1,5 @@
 //TODO: refoctor with modular pattern
 ;(function(){
-console.log('hey');
   tinymce.create('tinymce.plugins.aside', {
     /**
     * Initializes the plugin, this will be executed after the plugin has been created.
@@ -14,7 +13,7 @@ console.log('hey');
       ed.addCommand('aside', function() {
         selected = tinyMCE.activeEditor.selection.getContent();
 
-          content =  '[aside notes="" num=""]';
+          content =  '[aside num="" notes=""]';
 
         ed.execCommand('mceInsertContent', false, content);
       });

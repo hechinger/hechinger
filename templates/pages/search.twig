@@ -7,7 +7,8 @@
   <div class="search-bar-wrap">
     <form id="searchform" method="get" action="/">
       <input class="search-page-text-input" type="text" name="s" id="s" size="15" placeholder="{{ query ? query : 'Search' }}" />
-      <input class="search-page-submit-button" type="submit" value="" />
+      <button class="search-page-submit-button icon-search-reverse" type="submit" value=""><span class="icon"></span></button>
+
     </form>
   </div>
 
@@ -31,3 +32,4 @@
   {% endif %}
 
 {% endblock %}
+

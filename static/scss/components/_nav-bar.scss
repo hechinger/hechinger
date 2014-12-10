@@ -5,10 +5,8 @@
 //
 // --------------------------------------------
 // --------------------------------------------
+
 .site-header {
-  // position: absolute;
-  // top: 0;
-  // z-index: -1;
   width: 100%;
   background-color: $he-main;
   padding-bottom: 45px;
@@ -16,14 +14,19 @@
   @include mq($large) { padding-bottom: 130px; }
 }
 
+
 .site-header--no-pad {
   background-color: transparent;
   padding-bottom: 0;
 }
 
+
 .site-header--hp {
   @include mq($large) { padding-bottom: 250px; }
 }
+
+
+
 
 
 // --------------------------------------------
@@ -40,64 +43,65 @@ $logo-ht-lg:    53px;
 
 .l-nav-mod {
   @include pie-clearfix;
-  @include mq("max", $medium) {
+  @include mq($medium, max) {
     background-color: $he-main;
   }
+  @include mq(800px, max) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
+
 
 .l-nav-wrap {
   max-width: $content-max;
   @include pie-clearfix;
-  @include bp($has-margin) { margin: 0 $site-margin; }
-  @include bp($no-content-margin) { margin: 0 auto; }
-  @include bp($medium) {
+  @include mq($has-margin) { margin: 0 $site-margin; }
+  @include mq($no-content-margin) { margin: 0 auto; }
+  @include mq($medium) {
     font-size: 21px;
     // height: 66px;
   }
 }
 
+
 .nav-logo {
   display: inline-block;
   padding: 8px 8px 8px;
   background-color: $black-total;
-  @include bp($medium) {
+  @include mq($medium) {
     float: left;
     display: block;
-    // padding: 28px 14px 14px;
     padding: 14px 14px 14px;
   }
 }
 
+
 .nav-site-h {
   color: $white;
-  // font-size: 18px;
-  // font-size: 15px;
   width: 195px;
-  // height: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  // line-height: 24px;
-  @include bp($medium) {
-    // font-size: 21px;
+  @include mq($medium) {
     width: 269px;
-    // height: 15px;
   }
 }
+
 
 .nav-sub-h {
   float: left;
   display: none;
-  // padding: 30px 18px 18px;
   padding: 0 18px;
   font-family: $he-sans;
   font-weight: $font-weight-lt;
   font-size: 17px;
   line-height: $logo-ht-sm;
-  @include bp($large) {
+  @include mq($large) {
     display: block;
     line-height: $logo-ht-lg;
   }
 }
+
 
 .nav-logo-img {
   &.logo-fallback { display: none; }
@@ -112,12 +116,13 @@ $logo-ht-lg:    53px;
 
 .nav-item-wrap {
   display: none;
-  @include bp($medium) {
+  @include mq($medium) {
     position: relative;
     float: right;
     display: initial;
   }
 }
+
 
 .nav-is-open {
   padding-bottom: 30px;
@@ -126,38 +131,43 @@ $logo-ht-lg:    53px;
   }
   .search-form-wrap {
     display: block;
+
+    // hides search on results pages.
+    .search & { display: none; }
   }
 }
 
+
 .nav-item {
+  display: block;
   float: left;
   width: 77px;
-  // height: 60px;
-  line-height: $logo-ht-lg - 15px;
-  display: block;
   border-top: 9px solid transparent;
-  // padding-top: 21px;
-  color: $black;
-  font-family: $he-sans;
+  line-height: $logo-ht-lg - 15px;
+  @include sans;
   font-size: 17px;
+  color: $black;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
   letter-spacing: 1px;
-  &:not(:first-child) {
-    margin-left: 15px;
-  }
+
+  &:not(:first-child) { margin-left: 15px; }
+
+  // The focus makes the border remain on the search icon
+  // until you click somewhere else on the page
   &:hover, &:focus {
     border-top: 9px solid $black;
   }
+  // &:hover { border-top: 9px solid $black; }
 }
+
 
 .nav-topics-link {
   display: none;
 
-  @include bp($medium) {
-    display: block;
-  }
+  @include mq($medium) { display: block; }
+
   &:after {
     content: "";
     position: absolute;
@@ -171,24 +181,32 @@ $logo-ht-lg:    53px;
   }
 }
 
+
 .nav-topics-list {
   z-index: 2;
-  padding-left: 24px;
+  // padding-left: 24px;
   background-color: $he-main;
-  @include bp($medium) {
+
+  @include mq($medium, max) {
+    margin-top: 20px;
+  }
+
+  @include mq($medium) {
     display: block;
     position: absolute;
-    top: 74px;
+    // top: 74px;
+    top: 60px;
     left: -50%;
-    margin-left: -12px;
+    // margin-left: -12px;
     display: none;
     padding: 10px 25px 2px;
-    width: 320px;
+    // width: 320px;
+    width: 290px;
     background-color: $black;
   }
-  &:hover, &:focus {
-    display: block;
-  }
+
+  &:hover, &:focus { display: block; }
+
   &:before {
     content: "";
     position: absolute;
@@ -200,127 +218,178 @@ $logo-ht-lg:    53px;
   }
 }
 
+
+.nav-sub-item {
+  position: relative;
+  cursor: pointer;
+  & + & {
+    @include mq(600px) {
+       border-top: 1px solid $black-50;
+    }
+  }
+
+  &:hover {
+    .nav-sub-item-link { @include bullet(after, $he-main); }
+    @include mq(600px, max) {
+      .nav-sub-item-link { @include bullet(after, white); }
+    }
+  }
+
+  @include mq($medium) {
+    line-height: 50px;
+  }
+
+}
+
+
 .nav-sub-item-link {
-  display: block;
+  position: relative;
+  display: inline-block;
+  @include sans-bold;
   color: $black;
-  font-family: $he-sans;
-  font-weight: $font-weight-bold;
-  font-size: 30px;
-  line-height: 1.5;
+  font-size: 36px;
+  line-height: 1.25;
+  letter-spacing: -1px;
   text-decoration: none;
 
   //TODO: give current page an underline
-  &.is-current-page:after{
-  }
-  @include bp($medium) {
-    height: 64px;
-    font-size: 17px;
-    line-height: 64px;
+  &.is-current-page:after{ }
+
+  @include mq($medium) {
+    font-weight: $font-weight-lt;
     color: $white;
-    font-size: 21px;
-    &:not(:last-of-type) {
-      border-bottom: 1px solid $white;
-    }
-    &:hover {
-      color: $black-30;
-    }
+    font-size: 20px;
+    letter-spacing: 0;
   }
+
 }
 
-.nav-sub-about {
-  margin-top: 20px;
-  @include bp($medium) {
+
+.sub-about-item {
+  margin: 20px 0 10px;
+  @include mq($medium) {
     display: none;
   }
 }
 
-.nav-sub-bullet {
-  @include bullet(after);
-  display: none;
-  margin-left: 5px;
-  position: relative;
-  color: $he-main;
-  &:after {
-    position: relative;
-  }
-  @include bp($medium) {
-    display: initial;
-  }
-}
+
+// Question: What is this for?
+// What state or situation?
+// .nav-sub-bullet {
+//   @include bullet(after);
+//   display: none;
+//   margin-left: 5px;
+//   position: relative;
+//   color: $he-main;
+
+//   &:after { position: relative; }
+//   @include mq($medium) {
+//     display: initial;
+//   }
+// }
+
 
 .all-topics-link {
   color: $white;
-  @include bp($medium) {
+
+  @include mq($medium) {
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     color: $black-50;
   }
 }
 
+
 .nav-about-link {
   display: none;
-  @include bp($medium) {
-    display: block;
-  }
+  @include mq($medium) { display: block; }
 }
 
-// TO DO: refactor this to use icon pattern
+
 .nav-search-button {
-  @include ui-icon('icn-search-black-42-42', transparent);
-  // position: relative;
-  // top: 8px;
-  // margin-right: 15px;
-  // width: 36px;
-  // height: 50px;
+  position: relative;
   width: 30px;
   height: 30px;
   display: none;
-  &.is-open {
-    //TODO: add "X" icon when search is open
-  }
+  &.is-open { }
   &.is-search-page {
     pointer-events: none;
     border-top: 9px solid $black;
+    display: none;
   }
-  @include bp($medium) {
-    display: block;
-  }
+  @include mq($medium) { display: block; }
+  .icon { top: 9px; }
 }
 
+.nav-search-inactive {
+  display: block;
+  .is-open & { display: none; }
+}
+
+.nav-search-active {
+  display: none;
+  font-weight: $font-weight-bold;
+  .is-open & { display: block; }
+}
+
+
 .nav-menu-button {
+  display: block;
   position: absolute;
   top: 0;
   right: 0;
-  display: block;
   border: none;
   padding: 0 14px;
-  color: $black;
   font-family: $he-sans;
   font-size: 17px;
+  color: $black;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
   text-align: center;
-  // line-height: 24px;
   line-height: $logo-ht-sm;
-  @include bp($medium) {
-    display: none;
-  }
+
+  @include mq($medium) { display: none; }
 }
 
+
+.nav-menu-active {
+  display: none;
+  width: 45px;
+  border: 1px solid black;
+  line-height: $logo-ht-sm - 10px;
+  padding: 0 5px;
+  font-weight: $font-weight-bold;
+  position: relative;
+  top: 5px;
+  .nav-is-open & { display: block; }
+}
+
+.nav-menu-inactive {
+  .nav-is-open & { display: none; }
+}
+
+
 .search-form-wrap {
+  @include mq($has-margin) { margin: 0 $site-margin; }
+  @include mq($no-content-margin) { margin: 0 auto; }
   display: none;
   position: relative;
-  width: 90%;
+  // width: 90%;
   margin: 0 auto;
-  @include bp($medium) {
-    position: relative;
-    margin: 31px auto 0;
+
+  @include mq($medium) {
     display: none;
+    position: relative;
     max-width: $content-max;
-    &.is-open {
-      display: block;
-    }
+    // margin: 31px auto 0;
+    margin-top: 31px;
+    &.is-open { display: block; }
   }
+
 }
+
 
 .search-text-input {
   width: 100%;
@@ -329,22 +398,21 @@ $logo-ht-lg:    53px;
   padding: 0 0 0 10px;
   background-color: $black;
   color: $black-10;
-  font-family: $he-sans;
+  @include sans-bold;
   font-size: 30px;
-  font-weight: $font-weight-bold;
   -webkit-appearance: none;
-  &:focus {
-    outline: none;
-  }
-  @include bp($medium) {
+
+  &:focus { outline: none; }
+
+  @include mq($medium) {
     height: 90px;
     padding: 0 0 0 30px;
     font-size: 40px;
   }
 }
 
+
 .search-submit-button {
-  @include ui-icon('icn-search-white-54-54', transparent);
   position: absolute;
   top: 0;
   right: 0;
@@ -353,8 +421,11 @@ $logo-ht-lg:    53px;
   padding: 30px;
   display: block;
   width: 100px;
-  @include mq("max", $medium) {
+  background-color: transparent;
+
+  @include mq($medium, max) {
     width: 60px;
     padding: 17px;
   }
+
 }

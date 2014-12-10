@@ -3,7 +3,7 @@
 class HechingerPost extends TimberPost {
 
   function overline() {
-    $st = $this->get_terms('special-topic');
+    $st = $this->get_terms('special-report');
     if (is_array($st) && count($st) ) {
       return $st[0];
     }
@@ -29,7 +29,7 @@ class HechingerPost extends TimberPost {
   }
 
   function special_topics() {
-    $st = $this->get_terms('special-topic');
+    $st = $this->get_terms('special-report');
     if (is_array($st) && count($st) ) {
       return $st;
     }
@@ -110,6 +110,15 @@ class HechingerPost extends TimberPost {
     return isset($image) ? $image : null;
   }
 
+  function link_to_page() {
+    $links = $this->get_field('link_to_page');
+    if (isset($links) && is_array($links)) {
+      $link = new HechingerPost($links[0]->ID);
+      return $link->link();
+    }
+    
+  }
+
   function awards() {
     $awards = $this->get_field('awards');
     if (is_array($awards)) {
@@ -126,4 +135,5 @@ class HechingerPost extends TimberPost {
     $image = new HechingerImage($this->fred_photo);
     return isset($image) ? $image : null;
   }
+
 }

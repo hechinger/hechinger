@@ -64,6 +64,6 @@ function get_quote( $qt_str, $homepage ) {
   return $zquote;
 }
 
-$context['special_reports'] = Timber::get_terms('special-topic', 'HechingerTerm');
+$context['special_reports'] = Timber::get_terms('special-report', 'HechingerTerm');
 
 Timber::render('pages/home.twig', $context);

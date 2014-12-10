@@ -22,7 +22,7 @@
  */
 $context = Timber::get_context();
 $context['users'] = array();
-$context['post'] = $post;
+$context['post'] = new HechingerPost($post);
 
 $staff_users = new WP_User_Query( array( 'meta_key' => 'hech_role', 'meta_value' => 'staff' ) );
 

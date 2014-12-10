@@ -3,7 +3,7 @@
 class HechingerPost extends TimberPost {
 
   function overline() {
-    $st = $this->get_terms('special-topic');
+    $st = $this->get_terms('special-report');
     if (is_array($st) && count($st) ) {
       return $st[0];
     }
@@ -17,19 +17,19 @@ class HechingerPost extends TimberPost {
     }
   }
 
-  function tease_excerpt() {
+  function tease_excerpt( $length = 30 ) {
     if ($this->subhead) {
       $excerpt = $this->subhead;
     } elseif ($this->excerpt) {
       $excerpt = strip_tags($this->excerpt);
     } else {
-      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, 30 ));
+      $excerpt = strip_tags(TimberHelper::trim_words( $this->content, $length ));
     }
     return $excerpt;
   }
 
   function special_topics() {
-    $st = $this->get_terms('special-topic');
+    $st = $this->get_terms('special-report');
     if (is_array($st) && count($st) ) {
       return $st;
     }
@@ -105,6 +105,15 @@ class HechingerPost extends TimberPost {
     return isset($image) ? $image : null;
   }
 
+  function link_to_page() {
+    $links = $this->get_field('link_to_page');
+    if (isset($links) && is_array($links)) {
+      $link = new HechingerPost($links[0]->ID);
+      return $link->link();
+    }
+    
+  }
+
   function awards() {
     $awards = $this->get_field('awards');
     if (is_array($awards)) {
@@ -121,4 +130,5 @@ class HechingerPost extends TimberPost {
     $image = new HechingerImage($this->fred_photo);
     return isset($image) ? $image : null;
   }
+
 }

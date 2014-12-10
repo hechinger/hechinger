@@ -7,7 +7,7 @@
 {% block body %}
 
   {% block header %}
-    {% include 'components/section-front-header.twig' with { section_front_title : "Staff", post: post } %}
+    {% include 'components/section-front-header.twig' with { section_front_title : "Staff", post: post, subhead: post.subhead, link_heading: post.link_heading, link_to_page: post.link_to_page } %}
   {% endblock header %}
 
   {% block staff_content %}

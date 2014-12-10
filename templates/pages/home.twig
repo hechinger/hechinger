@@ -83,9 +83,11 @@
         </div> <!-- /hp-zone--top -->
 
         <!-- Zone 2 Middle -->
-        <div class="hp-zone--middle">
-          {% include "/templates/components/tease-special.twig" %}
-        </div>
+        {% if z2_quote|length %}
+          <div class="hp-zone--middle">
+            {% include "/templates/components/tease-special.twig" with { quote: z2_quote, show_stat: z2_quote.show_stat, css_class: 'tz-special-stat tz-special' } %}
+          </div>
+        {% endif %}
 
         <!-- Zone 2 Bottom -->
         <div class="hp-zone--bottom">
@@ -135,9 +137,13 @@
                   {% endfor %}
                 </div> <!-- /l-zone-dos--split-inside -->
 
-                <div class="top-grid-item--right-lower">
-                  {% include "/templates/components/tease-special.twig" %}
-                </div> <!-- /grid-item-lower -->
+                {% if z3_quote|length %}
+                  <div class="top-grid-item--right-lower">
+                    <div class="hp-zone--middle">
+                      {% include "/templates/components/tease-special.twig" with { quote: z3_quote, show_stat: z3_quote.show_stat, css_class: 'tz-special-stat tz-special' } %}
+                    </div>
+                  </div> <!-- /grid-item-lower -->
+                {% endif %}
 
               </div> <!-- /top-grid-item top-grid-item--right -->
             </div> <!--/l-zone-dos--split -->

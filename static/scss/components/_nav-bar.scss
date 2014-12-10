@@ -203,6 +203,12 @@ $logo-ht-lg:    53px;
     // width: 320px;
     width: 290px;
     background-color: $black;
+
+    // Fix for search results page, accounting for the lack of search icon
+    // in the nav
+    .search & {
+      margin-left: -21px;
+    }
   }
 
   &:hover, &:focus { display: block; }

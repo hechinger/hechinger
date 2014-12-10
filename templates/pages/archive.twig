@@ -19,7 +19,11 @@
     <section class="archive-feed-container">
       {# for each article in articles include tease component #}
       {% for post in posts %}
-        {% include 'components/tease-full.twig' %}
+        {% if post.is_feature %}
+          {% include 'components/tease-archive-feat.twig' %}
+          {% else %}
+            {% include 'components/tease-full.twig' %}
+        {% endif %}
       {% endfor %}
     </section>
 

@@ -1,0 +1,11 @@
+{% extends "components/tease-layout.twig" %}
+{% block tease_img %}
+  {% if post.thumbnail.src %} {# or whatever the test is #}
+    <div class="tz-img-mod art-bd">
+      <a href="{{ post.link }}">
+        <img src="{{ post.thumbnail.src|resize(1500, 900) }}" alt="{{ post.thumbnail.alt }}">
+      </a>
+    </div> <!-- /tz-img-mod -->
+  {% endif %}
+{% endblock tease_img %}
+

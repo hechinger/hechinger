@@ -8,9 +8,68 @@
             "name": "square",
             "prefix": "",
             "type": "image",
-            "instructions": "Upload a yellow image of dimensions (___px, ___px).",
+            "instructions": "Upload a yellow image of dimensions. Appears in the homepage Second Feature zone.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo"
+        },
+        {
+            "key": "field_54866d89fa5cf",
+            "label": "Yellow Panoramic",
+            "name": "yellow_pano",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Upload a yellow panoramic image for Special Report page banners.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo"
+        },
+        {
+            "key": "field_5486792c8884d",
+            "label": "Yellow Rectangle",
+            "name": "yellow_rect",
+            "prefix": "",
+            "type": "image",
+            "instructions": "A yellow rectangular image for shorter special report boxes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "uploadedTo"
+        },
+        {
+            "key": "field_548678fe8884c",
+            "label": "B&W Panoramic",
+            "name": "bw_pano",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Black and white panoramic image for banners and full width house ads.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "uploadedTo"
@@ -21,9 +80,14 @@
             "name": "bw_rect",
             "prefix": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "A Black and white rectangular image that appears in house ads for special reports.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "uploadedTo"
@@ -34,7 +98,7 @@
             {
                 "param": "taxonomy",
                 "operator": "==",
-                "value": "special-topic"
+                "value": "special-report"
             }
         ]
     ],

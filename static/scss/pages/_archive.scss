@@ -24,10 +24,13 @@
   }
 }
 
+// **************************
+// to delete
 .archive-yellow-box {
   // @extend %yellow-box;
   background-color: pink;
   height: 183px;
+  background-color: pink;
 
   @include mq('max', $medium) {
     height: 120px;

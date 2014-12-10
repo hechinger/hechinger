@@ -284,6 +284,7 @@
 // better describing what it is, rather than the color that's currently being applied.
 // more future friendly name, so when the overlay color is red, for instance
 .special-report-tz-overlay {
+  min-height: 230px;
   // padding: 20px;
   position: relative;
   background-color: rgba($black, 0.3);

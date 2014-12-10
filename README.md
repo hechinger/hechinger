@@ -65,6 +65,7 @@ Open a terminal and navagte to your hechinger theme folder.
 ```
 $ bower install
 $ compass watch
+$ gem install autoprefixer-rails
 ```
 
 _Protip: If you ever find the site is "broken" or has no stylesheets always try `bower install` and `compass watch` before asking for help._

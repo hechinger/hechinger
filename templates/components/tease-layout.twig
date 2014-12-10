@@ -1,17 +1,17 @@
-<article class="tz tz-{{post.post_type}} {{css_class ? css_class : ''}}" id="tz-{{post.id}}">
+<article class="tz tz-{{ post.post_type }} {{ css_class ? css_class : '' }}" id="tz-{{ post.id }}">
   <div class="tz-outer">
 
     {% block tease_content %}
-      <div class="tz-inner l-pair-{{css_class ? css_class : ''}}">
+      <div class="tz-inner l-pair-{{ css_class ? css_class : '' }}">
         {% block tease_overline_above_img %}
           {# Used on a couple tease variations #}
         {% endblock tease_overline_above_img %}
 
         {% block tease_img %}
-          {% if post.lead_image.src %} {# or whatever the test is #}
+          {% if post.thumbnail.src and not hide_image %}
             <div class="tz-img-mod art-bd">
               <a href="{{ post.link }}">
-                <img src="{{ post.lead_image.src }}" alt="{{ post.lead_image.alt }}">
+                <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
               </a>
             </div> <!-- /tz-img-mod -->
           {% endif %}
@@ -20,25 +20,22 @@
         <div class="tz-content-mod txt-bd">
           {% block tease_overline %}
             <h4 class="tz-overline tz-overline--{{ context_class ? context_class: '' }}">
-              <a class="tz-overline-link" href="#">{{ post.overline }}</a>
+              <a class="tz-overline-link" href="{{ post.overline.link }}">{{ post.overline }}</a>
             </h4>
           {% endblock tease_overline %}
 
-
           {% block tease_headline %}
-            <h2 class="tz-h tz-h--{{context_class ? context_class: ''}}">
+            <h2 class="tz-h tz-h--{{ context_class ? context_class: '' }}">
               <a class="tz-h-link" href="{{ post.link }}">{{ post.title }}</a>
             </h2>
           {% endblock tease_headline %}
 
-
           {% block tease_text %}
-            <p class="tz-text tz-text--{{context_class ? context_class: ''}}">{{ post.tease_excerpt }}</p>
+            <p class="tz-text tz-text--{{ context_class ? context_class: '' }}">{{ post.tease_excerpt }}</p>
           {% endblock tease_text %}
 
-
           {% block tease_author %}
-            <p class="tz-author tz-author--{{context_class ? context_class: ''}}">by <a class="tz-author-name" href="{{ post.author.link }}">{{ post.author }}</a></p>
+            <p class="tz-author tz-author--{{ context_class ? context_class: '' }}">by <a class="tz-author-name" href="{{ post.author.link }}">{{ post.author }}</a></p>
           {% endblock tease_author %}
         </div> <!-- /txt-bd -->
 

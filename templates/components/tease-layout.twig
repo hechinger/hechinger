@@ -8,10 +8,10 @@
         {% endblock tease_overline_above_img %}
 
         {% block tease_img %}
-          {% if post.lead_image.src and not hide_image %} {# or whatever the test is #}
+          {% if post.thumbnail.src and not hide_image %}
             <div class="tz-img-mod art-bd">
               <a href="{{ post.link }}">
-                <img src="{{ post.lead_image.src }}" alt="{{ post.lead_image.alt }}">
+                <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
               </a>
             </div> <!-- /tz-img-mod -->
           {% endif %}

@@ -17,34 +17,21 @@
       </div> <!-- /article-hdr-middle -->
 
       <div class="article-hdr-meta-container {% block column_context_class %}{% endblock %}">
-        {% block article_column_img %} {% endblock %}
+      {% block article_column_img %} {% endblock %}
 
-        <div class="article-hdr-meta">
-         {% block article_column_title %} {% endblock %}
+      <div class="article-hdr-meta">
+        {% block article_column_title %} {% endblock %}
           <div class="article-hdr-meta-inner">
-            {% block article_byline %}
-              <p class="article-byline">by
-                <a class="article-author" href="/author/{{ post.author.slug }}">{{ post.author.name }}</a>
-              </p>
-            {% endblock %}
+             {% block article_byline %}
+               <p class="article-byline">by
+                 <a class="article-author" href="/author/{{ post.author.slug }}">{{ post.author.name }}</a>
+               </p>
+             {% endblock %}
             <p class="article-date">{{ post.date }}</p>
           </div> <!-- /article-hdr-meta-inner -->
         </div> <!-- /article-hdr-meta-->
 
       </div> <!-- /article-hdr-container -->
-
-      {% if post.lead_image %}
-        <figure class="article-img-lead">
-          <div class="img-container">
-            <img src="{{ post.lead_image.get_url }}" alt="{{ post.lead_image.alt }}">
-            {% if post.lead_image.caption|length %}
-              <figcaption class="img-caption">
-                <p class="img-caption-text">{{ post.lead_image.caption }}</p>
-              </figcaption>
-            {% endif %}
-          </div>
-        </figure> <!-- /article-img-lead -->
-      {% endif %}
 
     </div> <!-- /article-hdr-inner -->
   </header> <!-- /article-hdr -->

@@ -17,7 +17,7 @@
 
         <!-- hp main feature -->
         <div class="hp-feat-mod">
-          {% include "/templates/components/tease-layout.twig" with { post: posts[0], context_class: 'feat-lg', css_class: post.lead_image ? 'tz-hp-feat--main tz-hp-feat--main-img' : 'tz-hp-feat--main' } %}
+          {% include "/templates/components/tease-layout.twig" with { post: posts[0], context_class: 'feat-lg', css_class: post.thumbnail.src ? 'tz-hp-feat--main tz-hp-feat--main-img' : 'tz-hp-feat--main' } %}
         </div>
 
         <!-- hp top -->

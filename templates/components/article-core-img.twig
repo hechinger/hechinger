@@ -1,11 +1,11 @@
-<div class="media-mod img-container {{ class ? class : '' }}">
+<figure class="media-mod img-container {{ class ? class : '' }}">
   <img src="{{ image.get_url }}" alt="{{ image.alt|e }}">
-  <div class="img-caption">
+  <figcaption class="img-caption">
     <p class="img-caption-text">
       {{ image.caption }}
       {% if image.credit %}
         <span class="img-byline">{{ image.credit }}</span>
       {% endif %}
     </p>
-  </div> <!-- article-img-caption -->
-</div> <!-- /media-mod -->
+  </figcaption> <!-- article-img-caption -->
+</figure> <!-- /media-mod -->

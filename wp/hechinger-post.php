@@ -13,7 +13,7 @@ class HechingerPost extends TimberPost {
   function getBanner($shape = 'yellow_banner') {
     $st = $this->overline();
     if (isset($st->$shape)) {
-      return new TimberImage($st->$shape);
+      return new HechingerImage($st->$shape);
     }
   }
 
@@ -111,7 +111,6 @@ class HechingerPost extends TimberPost {
       $link = new HechingerPost($links[0]->ID);
       return $link->link();
     }
-    
   }
 
   function awards() {
@@ -131,4 +130,13 @@ class HechingerPost extends TimberPost {
     return isset($image) ? $image : null;
   }
 
+  function thumbnail() {
+    if (function_exists('get_post_thumbnail_id')) {
+      $tid = get_post_thumbnail_id($this->ID);
+      if ($tid) {
+        return new HechingerImage($tid);
+      }
+    }
+    return null;
+  }
 }

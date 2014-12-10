@@ -1,16 +1,16 @@
-  <div class="special-report-tz-mod" style="background-image: url({{ report.get_image('bw_rect').get_url|default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg") }})">
-    <div class="special-report-tz-overlay" >
-      <div class="special-report-tz-content">
-        <a class="special-report-tz-hdr-container" href="{{ report.link }}">
-          <h4 class="special-report-tz-hdr">{{ report.title }}</h4>
-        </a>
-        <ul class="special-report-tz-items">
-          {% for srpost in report.get_posts('numberposts=2') %}
-            <li class="special-report-tz-item">
-              <a class="special-report-tz-link" href="{{ srpost.link }}">{{ srpost.title }}</a>
-            </li> <!-- /special-report-tz-item -->
-         {% endfor %}
-        </ul> <!-- /special-report-tz-items -->
-      </div> <!-- /special-report-tz-content -->
-    </div> <!-- special-report-tz-overlay -->
-  </div> <!-- /special-report-tz-mod -->
+<div class="special-report-tz-mod" style="background-image: url({{ report.get_image('bw_rect').src|resize(200) | default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg")|resize(200) }})" data-resp="{{ report.get_image('bw_rect').src | default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg") }}" data-resp-width="600">
+  <div class="special-report-tz-overlay">
+    <div class="special-report-tz-content">
+      <a class="special-report-tz-hdr-container" href="{{ report.link }}">
+        <h4 class="special-report-tz-hdr">{{ report.title }}</h4>
+      </a>
+      <ul class="special-report-tz-items">
+        {% for srpost in report.get_posts('numberposts=2') %}
+          <li class="special-report-tz-item">
+            <a class="special-report-tz-link" href="{{ srpost.link }}">{{ srpost.title }}</a>
+          </li> <!-- /special-report-tz-item -->
+       {% endfor %}
+      </ul> <!-- /special-report-tz-items -->
+    </div> <!-- /special-report-tz-content -->
+  </div> <!-- special-report-tz-overlay -->
+</div> <!-- /special-report-tz-mod -->

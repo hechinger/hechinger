@@ -18,7 +18,8 @@ if ( isset($second_feature) && is_array($second_feature) ) {
 }
 
 if (class_exists('TimberStream')) {
-  $stream = new TimberStream('homepage');
+  $stream = new HechingerHome();
+  $context['home'] = $stream;
   $context['posts'] = $stream->get_posts(array(), 'HechingerPost');
 }
 

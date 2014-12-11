@@ -28,7 +28,7 @@ ACFHacks::map_page_rule_to_slug(17996, 'about');
 class HechingerSite extends TimberSite {
 
   function __construct() {
-               
+
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -41,7 +41,7 @@ class HechingerSite extends TimberSite {
     $this->set_routes();
 		parent::__construct();
     $this->bootstap_content();
-		$this->fix_custom_field_conflict();               
+		$this->fix_custom_field_conflict();
 	}
 
 	function fix_custom_field_conflict() {
@@ -87,6 +87,9 @@ class HechingerSite extends TimberSite {
     });
     Timber::add_route('about', function($params){
       Timber::load_view('about.php', null, 200, $params);
+    });
+    Timber::add_route('advisors', function($params){
+      Timber::load_view('advisors.php', null, 200, $params);
     });
   }
 

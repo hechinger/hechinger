@@ -8,7 +8,7 @@
 
 .bottom-aside-container {
   @include article-bd-layout;
-  @include bp($large) {
+  @include mq($large) {
     float: right;
     clear: right;
     margin-left: 25px;
@@ -26,7 +26,7 @@
   border-top: .5em solid black;
   border-bottom: 1px solid $black-20;
 
-  @include bp($large) {
+  @include mq($large) {
       display: block;
       float: right;
       clear: right;
@@ -201,11 +201,11 @@
           width: 25%;
           height: auto;
 
-      @include bp(550px) {
+      @include mq(550px) {
           margin: 15px 0;
       }
 
-      @include bp(700px) {
+      @include mq(700px) {
           width: 100%;
           float: none;
       }
@@ -216,7 +216,7 @@
     width: 100%;
     // max-width: 220px;
 
-    @include bp($medium-lg) {
+    @include mq($medium-lg) {
       display: inline-block;
     }
   }
@@ -235,12 +235,12 @@
       margin: 15px 0;
       float: right;
 
-      @include bp(550px) {
+      @include mq(550px) {
         width: 70%;
         margin: 5px 0 0;
       }
 
-      @include bp(700px) {
+      @include mq(700px) {
         float: none;
         width: 100%;
         margin: 0;

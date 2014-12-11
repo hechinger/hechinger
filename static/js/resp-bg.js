@@ -8,7 +8,6 @@
   var dbChangeBackgrounds = debounce(changeBackgrounds, 300);
 
   function backgroundImageSwap(){
-    console.log('hey');
     var $this = $(this);
     var bgImg = $this.attr('data-resp');
     var imgWidth = $this.attr('data-resp-width');

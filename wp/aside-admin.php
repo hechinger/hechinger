@@ -27,7 +27,7 @@
       $hechPost = new HechingerPost($post);
       $aside_to_return = null;
 
-      if (function_exists($hechPost->post_asides)) {
+      if (method_exists($hechPost, 'post_asides')) {
         $asides = $hechPost->post_asides();
       }
 

@@ -18,7 +18,7 @@
 .section-front-summary-wrap {
   margin: 0 $site-margin;
   max-width: $content-max;
-  @include bp($no-content-margin) {
+  @include mq($no-content-margin) {
     // margin: 70px auto 0;
     margin: 30px auto 0;
   }

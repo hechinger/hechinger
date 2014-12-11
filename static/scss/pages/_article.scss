@@ -387,7 +387,7 @@ $bp-article-not-centered:   820px;
 
 .l-article-bio {
   // @include pie-clearfix;
-  @include bp($medium, max) {
+  @include mq($medium, max) {
     .art-bd {
       float: right;
       width: 20%;
@@ -396,7 +396,7 @@ $bp-article-not-centered:   820px;
       margin-bottom: 20px;
     }
   }
-  @include bp($medium) {
+  @include mq($medium) {
     @include pair(100px, $space-grid--half);
   }
 }

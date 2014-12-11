@@ -68,7 +68,7 @@ $logo-ht-lg:    53px;
 .nav-logo {
   display: inline-block;
   padding: 8px 8px 8px;
-  background-color: $black-total;
+  background-color: $black;
   @include mq($medium) {
     float: left;
     display: block;

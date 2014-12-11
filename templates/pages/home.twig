@@ -137,7 +137,7 @@
                 <div class="l-zone-dos--split-inside">
                   {% for post in home.get_zone(3)|slice(1,2) %}
                     <div class="grid-item">
-                      {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med'} %}
+                      {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med', hide_image: true } %}
                     </div> <!-- /grid-item -->
                   {% endfor %}
                 </div> <!-- /l-zone-dos--split-inside -->

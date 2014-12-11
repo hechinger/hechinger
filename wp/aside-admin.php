@@ -24,8 +24,12 @@
 
     function get_aside($id) {
       global $post;
+      $hechPost = new HechingerPost($post);
       $aside_to_return = null;
-      $asides = $post->post_asides();
+
+      if (method_exists($hechPost, 'post_asides')) {
+        $asides = $hechPost->post_asides();
+      }
 
       if (isset($asides) && count($asides)) {
         foreach ($asides as $aside) {

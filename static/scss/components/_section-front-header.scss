@@ -7,13 +7,24 @@
   background-size: cover;
 }
 
+
 .l-section-front-hdr-wrap {
-  // margin-top: 126px;
-  margin-top: 165px;
-  @include mq('max', $medium) {
-    margin: 40px 0 0 25px;
-  }
+  @extend %bp-trans;
+  // margin-top: 165px;
+  max-width: 960px;
+
+  margin: 165px auto 25px auto;
+
+  @include mq($medium, max) { margin-top: 222px; }
+
+  @include mq($medium, 800px) { margin-top: 162px; }
+
+  @include mq(800px, $desktop) { margin-top: 195px; }
+
+  @include mq($desktop, max) { margin-left: 25px; }
+
 }
+
 
 .section-front-summary-wrap {
   margin: 0 $site-margin;
@@ -24,6 +35,7 @@
   }
 }
 
+
 .section-front-summary-text {
   font-family: $he-sans;
   font-size: 28px;
@@ -32,8 +44,12 @@
 
 }
 
+
 .section-front-summary-link {
-  @include bullet(after);
+  // @include bullet(after);
   white-space: nowrap;
   color: $he-secondary;
+
+  @include mq(450px, max) { font-size: 16px; }
+  @include mq(450px) { @include bullet(after); }
 }

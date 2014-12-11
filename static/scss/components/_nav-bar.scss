@@ -359,6 +359,9 @@ $logo-ht-lg:    53px;
   @include mq($medium) { display: none; }
 }
 
+.admin-bar .nav-menu-button {
+  top: 46px;
+}
 
 .nav-menu-active {
   display: none;

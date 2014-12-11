@@ -37,6 +37,8 @@ class HechingerSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'add_reports' ) );
+		add_action( 'init', array( $this, 'register_menus' ) );
+
     $this->set_shortcodes();
     $this->set_routes();
 		parent::__construct();
@@ -96,6 +98,19 @@ class HechingerSite extends TimberSite {
 
   function register_post_types() {
     // this is where you can register custom post types
+  }
+
+  function register_menus() {
+
+    $menu_exists = wp_get_nav_menu_object( 'nav-bar' );
+    if( !$menu_exists){
+      $menu_id = wp_create_nav_menu('nav-bar');
+    }
+
+    $menu_exists = wp_get_nav_menu_object( 'footer-nav' );
+    if( !$menu_exists){
+      $menu_id = wp_create_nav_menu('footer-nav');
+    }
   }
 
 	function register_taxonomies() {
@@ -166,7 +181,8 @@ class HechingerSite extends TimberSite {
 		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
-		$context['menu'] = new TimberMenu();
+		$context['nav_menu'] = new TimberMenu('nav-bar');
+		$context['footer-menu'] = new TimberMenu('footer-nav');
 		$context['site'] = $this;
 		return $context;
 	}

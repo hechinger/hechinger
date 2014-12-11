@@ -13,6 +13,10 @@ img { @include resp-img; }
   border-radius: 50%;
 }
 
+.no-svg .footer-partner-logo {
+  display: none;
+}
+
 
 
 

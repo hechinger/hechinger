@@ -134,7 +134,9 @@ $icons: twitter,
         twitter-footer,
         instagram-footer,
         rss-footer,
-        facebook-footer;
+        facebook-footer,
+        search,
+        search-reverse;
 
 .icon, %icon {
   background-repeat: no-repeat;
@@ -177,6 +179,15 @@ $icons: twitter,
     height: 17px;
     top: 7px;
     left: 8px;
+  }
+
+  .icon-search-reverse & {
+    width: 30px;
+    height: 30px;
+    top: 50%;
+    left: 50%;
+    margin-top: -15px;
+    margin-left: -15px;
   }
 
   @each $icon in $icons {

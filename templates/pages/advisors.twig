@@ -1,0 +1,65 @@
+{% extends '/pages/staff.twig' %}
+
+
+
+
+{% block header %}
+    {% include 'components/section-front-header.twig' with { section_front_title : "Advisors", post: post, subhead: post.subhead, link_heading: post.link_heading, link_to_page: post.link_to_page } %}
+  {% endblock header %}
+
+
+
+{% block staff_content %}
+
+
+{"advisors":[
+    {
+      "name":"John Doe",
+      "image": "/static/mug_placeholder-200x200-c-default.jpg",
+      "description": "Words go here"
+    },
+    {
+      "name":"Jane Doe",
+      "image": "/static/mug_placeholder-200x200-c-default.jpg",
+      "description": "Words go here"
+    },
+
+]}
+
+
+
+  <div class="staff-content">
+    <div class="l-content">
+      <ul class="staff-items">
+        {% for advisor in advisors %}
+          <li class="staff-item">
+            <div class="l-pair-staff-page">
+              {# if advisor.get_image %}
+                <div class="art-bd">
+                  <div class="img-rounded">
+                    <a href="{{ advisor.link }}">
+                      <img src="{{ advisor.get_image.src | resize(200, 200) }}" alt="Photo of {{ advisor.name }}">
+                    </a>
+                  </div> <!-- img-rounded -->
+                </div> <!-- /art-bd -->
+              {% endif #}
+
+              <div class="txt-bd">
+                {% if advisor.job_title %}
+                  <h4 class="staff-title-h">{{ advisor.job_title }}</h4>
+                {% endif %}
+                <h3 class="staff-name-h">
+                  <a class="staff-name-h-link" href="{{ advisor.link }}">{{ advisor.name }}</a>
+                </h3> <!-- staff-name-h -->
+                {% if advisor.description %}
+                  <p class="staff-bio-text">{{ advisor.description }}</p>
+                {% endif %}
+                <a class="staff-bio-link" href="{{ advisor.link }}">More</a>
+              </div> <!-- /txt-bd -->
+            </div> <!-- /l-pair-staff-page -->
+          </li> <!-- / staff-item -->
+        {% endfor %}
+      </ul> <!-- /staff-items -->
+    </div> <!-- /l-content -->
+  </div> <!-- /staff-content -->
+{% endblock staff_content %}

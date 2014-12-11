@@ -17,6 +17,7 @@
     $max-point: $bp-max - $one-px;
     @media screen and (min-width: #{$bp-min} ) and (max-width: #{$max-point} ) { @content; }
   }
+  @warn "No good, yo"
 }
 
 // @include bp($medium) { Rules go here }

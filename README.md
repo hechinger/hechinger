@@ -28,6 +28,7 @@ $ vagrant ssh
 $ cd /srv/www/wordpress-he/
 $ wp plugin install timber-library --activate
 $ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activate
+$ wp plugin install co-authors-plus --activate
 $ exit
 ```
 

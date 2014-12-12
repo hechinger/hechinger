@@ -28,7 +28,6 @@ $ vagrant ssh
 $ cd /srv/www/wordpress-he/
 $ wp plugin install timber-library --activate
 $ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activate
-$ wp plugin install co-authors-plus --activate
 $ exit
 ```
 
@@ -64,6 +63,7 @@ Hechinger has a few dependencies we need to install. First we'll use Bower to in
 Open a terminal and navagte to your hechinger theme folder.
 
 ```
+$ composer update
 $ bower install
 $ compass watch
 $ gem install autoprefixer-rails

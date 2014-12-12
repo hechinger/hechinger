@@ -112,7 +112,6 @@ class HechingerPost extends TimberPost {
       $link = new HechingerPost($links[0]->ID);
       return $link->link();
     }
-    
   }
 
   function awards() {
@@ -132,4 +131,19 @@ class HechingerPost extends TimberPost {
     return isset($image) ? $image : null;
   }
 
+  function coauthors() {
+    $authors = null;
+    if (function_exists('get_coauthors')) {
+      $coauthors = get_coauthors($this->id);
+
+      if (isset($coauthors) && count($coauthors)) {
+        foreach ($coauthors as $author) {
+          $authors[] = new HechingerUser($author);
+        }
+        return $authors;
+      }
+    }
+    // fallback if coauthors disabled or fails
+    return [ new HechingerUser($this->author) ];
+  }
 }

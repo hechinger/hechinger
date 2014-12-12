@@ -325,7 +325,8 @@ $logo-ht-lg:    53px;
     display: none;
   }
   @include mq($medium) { display: block; }
-  .icon { top: 9px; }
+  // .icon { top: 9px; }
+  .icon { margin-top: -1px; }
 }
 
 .nav-search-inactive {

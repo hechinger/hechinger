@@ -1,5 +1,6 @@
 <?php
-  Class AsideAdmin {
+  class AsideAdmin {
+
     function __construct() {
       add_action('init', array($this, 'add_mce_button'));
       add_shortcode('aside', array($this, 'shortcode_aside'));

@@ -1,5 +1,5 @@
 <figure class="media-mod img-container {{ class ? class : '' }}">
-  <img srcset="{{ image.srcset(image.width) }}" sizes="(min-width: 550px) 40vw, 100vw" src="{{ image.src }}" alt="{{ image.alt|e }}">
+  <img srcset="{{ image.srcset(image.width) }}" sizes="(min-width: 550px) 40vw, 100vw" src="{{ image.src | max_width(800) }}" alt="{{ image.alt|e }}">
   <figcaption class="img-caption">
     <p class="img-caption-text">
       {{ image.caption }}

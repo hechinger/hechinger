@@ -25,3 +25,14 @@ class HechingerImage extends TimberImage {
       return $srcset_attr;
   }
 }
+
+add_filter('get_twig', function($twig) {
+  $twig->addFilter( 'max_width', new Twig_Filter_Function( function( $src, $max = 1000) {
+    $ti = new HechingerImage($src);
+    if ($ti->width() > $max) {
+      $src = TimberImageHelper::resize($src, $max);
+    }
+    return $src;
+  } ) );
+  return $twig;
+});

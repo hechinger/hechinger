@@ -17,12 +17,12 @@
         <a class="nav-item nav-topics-link is-active" href="#">Topics</a>
 
         <ul class="nav-topics-list">
-          {% for i in 1..5 %}
+          {% for item in nav_menu.get_items %}
             <li class="nav-sub-item">
-              <a class="nav-sub-item-link" href="#">Topic Goes Here</a>
+              <a class="nav-sub-item-link" href="{{ item.get_link }}">{{ item.title }}</a>
             </li> <!-- /nav-sub-item -->
           {% endfor %}
-          <li class="nav-sub-item all-topics-item"><a class="nav-sub-item-link all-topics-link" href="#">All Topics</a></li>
+          <li class="nav-sub-item all-topics-item"><a class="nav-sub-item-link all-topics-link" href="/special-reports">All Topics</a></li>
           <li class="nav-sub-item sub-about-item"><a class="nav-sub-item-link nav-sub-about" href="/about">About Hechinger</a></li>
         </ul>
 

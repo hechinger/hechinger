@@ -13,6 +13,10 @@ img { @include resp-img; }
   border-radius: 50%;
 }
 
+.no-svg .footer-partner-logo {
+  display: none;
+}
+
 
 
 
@@ -145,8 +149,12 @@ $icons: twitter,
   width: 20px;
   height: 20px;
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 50%;
+  left: 50%;
+  margin-top: -10px;
+  margin-left: -10px;
+  // top: 5px;
+  // left: 5px;
   // opacity: 0.8;
 
   .social--with-name & {
@@ -156,6 +164,7 @@ $icons: twitter,
     left: 11px;
     top: 50%;
     margin-top: -8px;
+    margin-left: 0;
   }
 
   .icon-disqus & {
@@ -164,6 +173,7 @@ $icons: twitter,
     // left: 9px;
     left: 11px;
     top: 50%;
+    margin-left: 0;
     margin-top: -7px;
   }
 
@@ -175,10 +185,10 @@ $icons: twitter,
   }
 
   .social--ftr & {
-    width: 17px;
-    height: 17px;
-    top: 7px;
-    left: 8px;
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    margin-left: -8px;
   }
 
   .icon-search-reverse & {

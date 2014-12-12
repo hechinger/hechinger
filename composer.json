@@ -1,0 +1,17 @@
+{
+	"name"	:	"upstatement/hechinger",
+	 "repositories":[
+        {
+            "type":"composer",
+            "url":"http://wpackagist.org"
+        }
+    ],
+    "require" : {
+    	"wpackagist-plugin/co-authors-plus" : "*"
+    },
+     "extra": {
+        "installer-paths": {
+            "../../plugins/{$name}/": ["type:wordpress-plugin", "wpackagist-plugin/*"]
+        }
+    }
+}

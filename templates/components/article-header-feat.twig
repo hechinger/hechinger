@@ -11,7 +11,7 @@
       <div class="article-feat-mod">
         <div class="article-hdr-top">
           <h4 class="article-hdr-topic">
-            <a class="article-topic-link" href="/{{ post.overline.slug }}">{{ post.overline }}</a>
+            <a class="article-topic-link" href="{{ post.overline.link }}">{{ post.overline }}</a>
           </h4>
 
           <div class="article-social-container">
@@ -28,7 +28,12 @@
 
         <div class="article-hdr-meta">
         <p class="article-byline">by
-          <a class="article-author" href="/author/{{ post.author.slug }}">{{ post.author.name }}</a>
+          {% for author in post.coauthors %}
+            <a class="article-author" href="{{ author.link }}">{{ author.name }}</a>
+            {% if not loop.last %}
+              &nbsp;and&nbsp;
+            {% endif %}
+          {% endfor %}
         </p>
 
         <p class="article-date">{{ post.date }}</p>

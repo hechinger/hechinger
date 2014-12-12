@@ -16,7 +16,15 @@
       {% endif %}
       <div class="tz-full--byline-wrap">
         <h2 class="tz-full--byline-topic"><a class="tz--byline-topic-link" href="{{ post.overline.link }}">{{ post.overline }}</a></h2>
-        <h3 class="tz-full--byline-name">by <a class="tz--byline-author-link" href="{{ post.author.link }}">{{ post.author.name }}</a><span class="tz-full--byline-date">&nbsp;&ndash;&nbsp;{{ post.date }}</span></h3>
+        <h3 class="tz-full--byline-name">by
+          {% for author in post.coauthors %}
+            <a class="tz--byline-author-link" href="{{ author.link }}">{{ author.name }}</a>
+            {% if not loop.last %}
+              &nbsp;and&nbsp;
+            {% endif %}
+          {% endfor %}
+          <span class="tz-full--byline-date">&nbsp;&ndash;&nbsp;{{ post.date }}</span>
+        </h3>
       </div>
     </div>
 

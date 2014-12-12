@@ -91,27 +91,29 @@
 
       <!-- article-bio -->
       {% block article_bio %}
-        <div class="page-mod article-mod">
-           <div class="article-bio">
-            <div class="{{ post.author.author_image ? l-article-bio}}">
+        {% for author in post.coauthors %}
+          <div class="page-mod article-mod">
+            <div class="article-bio">
+              <div class="{{ author.author_image ? l-article-bio}}">
 
-              {% if post.author.author_image %}
-                <div class="art-bd">
-                  <div class="img-rounded">
-                    <a href="{{ post.author.link }}">
-                      <img src="{{ TimberImage(post.author.author_image).src|resize(200, 200) }}" alt="Photo of {{ post.author.name }}">
-                    </a>
-                  </div> <!-- img-rounded -->
-                </div> <!-- /art-bd -->
-              {% endif %}
+                {% if author.author_image %}
+                  <div class="art-bd">
+                    <div class="img-rounded">
+                      <a href="{{ author.link }}">
+                        <img src="{{ TimberImage(author.author_image).src|resize(200, 200) }}" alt="Photo of {{ author.name }}">
+                      </a>
+                    </div> <!-- img-rounded -->
+                  </div> <!-- /art-bd -->
+                {% endif %}
 
-              <div class="txt-bd">
-                <h4 class="article-bio-h"><a class="article-bio-h-link" href="Photo of {{ post.author.name }}">{{ post.author.name }}</a></h4>
-                <p class="article-bio-text">{{ post.author.description }}<a class="article-bio-link" href="/author/{{ post.author.slug }}">See Archive</a></p>
-              </div> <!-- /txt-bd -->
-            </div> <!-- /l-article-bio -->
-          </div> <!-- /article-bio -->
-        </div> <!-- /page-mod -->
+                <div class="txt-bd">
+                  <h4 class="article-bio-h"><a class="article-bio-h-link" href="Photo of {{ author.name }}">{{ author.name }}</a></h4>
+                  <p class="article-bio-text">{{ author.description }}<a class="article-bio-link" href="/author/{{ author.slug }}">See Archive</a></p>
+                </div> <!-- /txt-bd -->
+              </div> <!-- /l-article-bio -->
+            </div> <!-- /article-bio -->
+          </div> <!-- /page-mod -->
+        {% endfor %}
       {% endblock %} {# /article_bio #}
 
     </div> <!-- /l-content-inner -->

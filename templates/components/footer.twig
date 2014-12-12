@@ -94,9 +94,9 @@
    <!-- Site Nav & Copyright -->
   <div class="site-nav-copyright">
     <nav class="ftr-site-nav">
-      <ul class="ftr-nav-items">
+      <ul class="ftr-nav-items l-ftr-nav">
 
-        {% for item in nav_menu.get_items %}
+        {% for item in footer_menu.get_items %}
           <li class="ftr-nav-item">
             <a class="ftr-nav-link" href="{{ item.get_link }}">{{ item.title }}</a>
           </li>

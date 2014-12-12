@@ -28,7 +28,7 @@ ACFHacks::map_page_rule_to_slug(17996, 'about');
 class HechingerSite extends TimberSite {
 
   function __construct() {
-               
+
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -43,7 +43,7 @@ class HechingerSite extends TimberSite {
     $this->set_routes();
 		parent::__construct();
     $this->bootstap_content();
-		$this->fix_custom_field_conflict();               
+		$this->fix_custom_field_conflict();
 	}
 
 	function fix_custom_field_conflict() {
@@ -182,7 +182,7 @@ class HechingerSite extends TimberSite {
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['nav_menu'] = new TimberMenu('nav-bar');
-		$context['footer-menu'] = new TimberMenu('footer-nav');
+		$context['footer_menu'] = new TimberMenu('footer-nav');
 		$context['site'] = $this;
 		return $context;
 	}

@@ -21,7 +21,6 @@
       ed.addButton('aside', {
         title : 'Place An Aside',
         cmd : 'aside',
-        image : '/wp-content/themes/hechinger/static/img/icons/aside.png'
       });
     },
 

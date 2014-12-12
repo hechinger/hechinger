@@ -25,6 +25,10 @@ add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
 ACFHacks::map_page_rule_to_slug(18113, 'home');
 ACFHacks::map_page_rule_to_slug(17996, 'about');
 
+if (class_exists('Jigsaw')) {
+  Jigsaw::add_css('static/css/hechinger-admin.css');
+}
+
 class HechingerSite extends TimberSite {
 
   function __construct() {

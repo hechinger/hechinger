@@ -1,0 +1,12 @@
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+.mce-i-pullquote:before {
+	font-family: "dashicons";
+    content: "\f122";
+}
+
+.mce-i-aside:before {
+	font-family: "dashicons";
+    content: "\f222";
+    font-size:20px;
+}

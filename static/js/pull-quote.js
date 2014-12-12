@@ -25,7 +25,6 @@
       ed.addButton('pullquote', {
         title : 'Add a Pull Quote',
         cmd : 'pullquote',
-        image : '/wp-content/themes/hechinger/static/img/icons/pullquote.png'
       });
     },
 

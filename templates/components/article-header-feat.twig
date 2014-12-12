@@ -4,7 +4,7 @@
     <div class="article-hdr-inner">
       {% if post.thumbnail.src %}
         <div class="article-img-feature">
-          <img src="{{ post.thumbnail.src | resize(960, 600) }}" alt="{{ post.thumbnail.alt }}">
+          <img srcset="{{ post.thumbnail.srcset(960, 600) }}" sizes="80vw" src="{{ post.thumbnail.src | resize(960, 600) }}" alt="{{ post.thumbnail.alt }}">
         </div> <!-- /article-img-feature -->
       {% endif %}
 

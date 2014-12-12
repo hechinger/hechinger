@@ -4,7 +4,7 @@
     {% if post.thumbnail %}
       <div class="art-bd art-bd-feat">
         <figure class="tz-full-img-wrap">
-          <a href="{{ post.link }}"><img class="tz-full-img" src="{{ post.thumbnail.src | resize(960, 446) }}" alt="{{ post.thumbnail.alt }}" /></a>
+          <a href="{{ post.link }}"><img class="tz-full-img" srcset="{{ post.thumbnail.srcset(960, 446) }}" sizes="80vw" src="{{ post.thumbnail.src | resize(960, 446) }}" alt="{{ post.thumbnail.alt }}" /></a>
         </figure>
       </div>
     {% endif %}

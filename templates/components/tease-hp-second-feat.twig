@@ -1,7 +1,7 @@
 <div class="hp-second-feature-mod">
   <div class="hp-second-feature-img-container">
     <div class="img-rounded">
-      <img src="{{ feature.getBanner('square').get_url|default('/wp-content/themes/hechinger/static/img/special-reports/img-special_report-desks-528-528.jpg') }}" />
+      <img srcset="{{ feature.getBanner('square').srcset(550) }}" sizes="70vw" src="{{ feature.getBanner('square').src|default('/wp-content/themes/hechinger/static/img/special-reports/img-special_report-desks-528-528.jpg') }}" />
     </div>
   </div>
   <div class="hp-second-feature-txt-container">

@@ -13,6 +13,7 @@
   border-top: 8px solid black;
   @include mq($bp-aside) {
     float: left;
+    clear: left;
     max-width: $aside-max;
     margin-right: $site-margin;
     border-top-width: 15px;

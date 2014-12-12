@@ -3,7 +3,7 @@
   position: relative;
   width: 90%;
   margin: 0 auto;
-  @include bp($medium) {
+  @include mq($medium) {
     position: relative;
     // margin: 31px auto 0;
     max-width: $content-max;
@@ -72,13 +72,13 @@ input:-webkit-autofill:focus {
   width: 90%;
   margin: 0 auto;
 
-  @include bp($medium) {
+  @include mq($medium) {
     padding-left: 50px;
     margin: 0 $site-margin;
     max-width: $content-max;
   }
 
-  @include bp($no-content-margin) {
+  @include mq($no-content-margin) {
     margin: 0 auto;
   }
 }
@@ -86,7 +86,7 @@ input:-webkit-autofill:focus {
 .search-results-inner {
   padding-top: 30px;
 
-  @include bp($medium) {
+  @include mq($medium) {
     padding-top: 50px;
   }
 }
@@ -97,7 +97,7 @@ input:-webkit-autofill:focus {
   font-weight: $font-weight-black;
   color: $black;
 
-    @include bp($medium) {
+    @include mq($medium) {
     padding-left: 50px;
     font-size: 18px;
   }

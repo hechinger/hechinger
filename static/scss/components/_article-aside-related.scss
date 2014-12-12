@@ -6,13 +6,7 @@
 // --------------------------------------------
 // --------------------------------------------
 
-.related-aside {
-  @extend %article-aside;
-  display: table-footer-group;
-  @include bp(700px) {
-    display: block;
-  }
-}
+.related-aside { }
 
 .aside-related-items { }
 

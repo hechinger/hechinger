@@ -59,7 +59,7 @@
   line-height: 1.2;
   color: black;
 
-  @include bp($medium) {
+  @include mq($medium) {
     font-size: 30px;
     letter-spacing: -1px;
     // margin-bottom: 10px;
@@ -75,12 +75,12 @@
   line-height: 1.33;
   color: $black-80;
 
-  @include bp($medium) {
+  @include mq($medium) {
     margin-bottom: 25px;
     font-size: 16px;
   }
 
-  @include bp(850px) {
+  @include mq(850px) {
     font-size: 21px;
   }
 }
@@ -104,7 +104,7 @@
   color: $he-secondary;
   text-transform: uppercase;
 
-  @include bp(850px) { font-size: 14px; }
+  @include mq(850px) { font-size: 14px; }
 
 }
 

@@ -12,7 +12,7 @@
   padding: 0 $site-margin;
   border-top: 2px solid transparent;
   margin: 0 auto 40px auto;
-  @include bp($medium-lg) {
+  @include mq($medium-lg) {
     padding-top: 30px;
     border-top-color: #000;
     background-color: #fff;
@@ -23,7 +23,7 @@
   @extend %bp-trans;
   margin: 0 auto;
   max-width: $content-max--inner;
-  @include bp(960px) { margin-top: 0; }
+  @include mq(960px) { margin-top: 0; }
 
   &.articleFeat-hdr-inner { max-width: 100%; }
 }
@@ -35,7 +35,7 @@
   padding-bottom: 20px;
   font-size: 24px;
   font-family: $he-serif;
-  @include bp($medium-lg) { border-bottom: $bdr-thin; }
+  @include mq($medium-lg) { border-bottom: $bdr-thin; }
 }
 
 .author-topic-link {
@@ -55,11 +55,11 @@
 // --------------------------------------------
 .author-bio-mod {
   margin-bottom: $space-grid--threequarter;
-  @include bp($medium-lg) { padding: 0 $space-grid; }
+  @include mq($medium-lg) { padding: 0 $space-grid; }
 }
 
 .l-author-bio {
-  @include bp($medium, max) {
+  @include mq($medium, max) {
     .art-bd {
       float: right;
       width: 20%;
@@ -68,7 +68,7 @@
       margin-bottom: 20px;
     }
   }
-  @include bp($medium) {
+  @include mq($medium) {
     @include pair(185px, $space-grid);
   }
 }
@@ -116,7 +116,7 @@
 .author-contact-item {
   & + & { margin-left: 15px; }
   display: inline;
-  @include bp($medium) {
+  @include mq($medium) {
     & + & { margin-left: 30px; }
   }
 }

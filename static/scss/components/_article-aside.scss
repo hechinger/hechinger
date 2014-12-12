@@ -6,42 +6,32 @@
 // --------------------------------------------
 // --------------------------------------------
 
-%article-aside {
-  // max-width: $article-bd-max;
+.bottom-aside-container {
   @include article-bd-layout;
-  // padding: 17px 10px;
-  @include bp(700px) {
-    // clear: right;
-    // float: right;
-    // display: initial;
-    // width: 220px;
-    // margin-left: 60px;
-    margin-bottom: 30px;
-    // margin-right: 0;
-  }
-  @include mq($bp-article-not-centered) {
-    clear: right;
+  @include mq($large) {
     float: right;
-    width: 220px;
+    clear: right;
     margin-left: 25px;
+    display: block;
+    width: 220px;
+    margin-bottom: -100%;
+    transform: translateY(-100%);
   }
 }
 
-
 .article-aside {
-  @extend %article-aside;
-  // display: table-footer-group;
-
+  @include article-bd-layout;
+  margin-bottom: 50px;
+  padding: 5px 0 15px;
   border-top: .5em solid black;
   border-bottom: 1px solid $black-20;
-  padding: 5px 0 15px;
-  margin-bottom: 50px;
-  // display: inline-block;
-      &:first-of-type { margin-top: 50px;}
 
-  @include bp($medium-lg) {
+  @include mq($large) {
       display: block;
-    }
+      float: right;
+      clear: right;
+      width: 220px;
+  }
 
   p {
     font-family: $he-sans;
@@ -211,11 +201,11 @@
           width: 25%;
           height: auto;
 
-      @include bp(550px) {
+      @include mq(550px) {
           margin: 15px 0;
       }
 
-      @include bp(700px) {
+      @include mq(700px) {
           width: 100%;
           float: none;
       }
@@ -226,7 +216,7 @@
     width: 100%;
     // max-width: 220px;
 
-    @include bp($medium-lg) {
+    @include mq($medium-lg) {
       display: inline-block;
     }
   }
@@ -245,12 +235,12 @@
       margin: 15px 0;
       float: right;
 
-      @include bp(550px) {
+      @include mq(550px) {
         width: 70%;
         margin: 5px 0 0;
       }
 
-      @include bp(700px) {
+      @include mq(700px) {
         float: none;
         width: 100%;
         margin: 0;

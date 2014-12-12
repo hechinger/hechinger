@@ -11,6 +11,11 @@
             "instructions": "To add an aside click \"Add Aside.\"",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "min": "",
             "max": 3,
             "layout": "row",
@@ -25,6 +30,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "placeholder": "A heading for the aside",
                     "prepend": "",
@@ -40,12 +50,41 @@
                     "prefix": "",
                     "type": "wysiwyg",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "basic",
                     "media_upload": 0
+                },
+                {
+                    "key": "field_54875d6af3f46",
+                    "label": "Aside Number",
+                    "name": "aside_num",
+                    "prefix": "",
+                    "type": "number",
+                    "instructions": "Number your aside and then place an aside shortcode with \"id=<your-number>\".",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "ex. 1",
+                    "prepend": "",
+                    "append": "",
+                    "min": 1,
+                    "max": 5,
+                    "step": 1,
+                    "readonly": 0,
+                    "disabled": 0
                 }
             ]
         }

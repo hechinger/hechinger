@@ -2,6 +2,7 @@
 <header class="site-header {{css_class ? css_class : ''}}">
   <div class="l-nav-mod js-nav-mod">
     <nav class="l-nav-wrap">
+
       <a class="nav-logo-link" href="/">
         <div class="nav-logo">
           <h1 class="nav-site-h">
@@ -10,29 +11,42 @@
           </h1> <!-- /nav-site-h -->
         </div> <!-- /nav-logo -->
       </a> <!-- /nav-logo-link -->
-        <h2 class="nav-sub-h">Covering Innovation & Inequality in Education</h2>
+      <h2 class="nav-sub-h">Covering Innovation & Inequality in Education</h2>
+
       <div class="nav-item-wrap">
         <a class="nav-item nav-topics-link is-active" href="#">Topics</a>
+
         <ul class="nav-topics-list">
-          <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
-          <a class="nav-sub-item-link is-current-page" href="#"><li class="nav-sub-item">Common Core <span class="nav-sub-bullet"></span></li></a>
-          <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
-          <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
-          <a class="nav-sub-item-link" href="#"><li class="nav-sub-item">Common Core</li></a>
-          <a class="nav-sub-item-link all-topics-link" href="#"><li class="nav-sub-item">All Topics</li></a>
-          <a class="nav-sub-item-link nav-sub-about" href="/about"><li class="nav-sub-item">About Hechinger</li></a>
+          {% for i in 1..5 %}
+            <li class="nav-sub-item">
+              <a class="nav-sub-item-link" href="#">Topic Goes Here</a>
+            </li> <!-- /nav-sub-item -->
+          {% endfor %}
+          <li class="nav-sub-item all-topics-item"><a class="nav-sub-item-link all-topics-link" href="#">All Topics</a></li>
+          <li class="nav-sub-item sub-about-item"><a class="nav-sub-item-link nav-sub-about" href="/about">About Hechinger</a></li>
         </ul>
+
         <a class="nav-item nav-about-link" href="/about">About</a>
-        <a class="nav-item nav-search-button js-nav-search-button" href=""></a>
+
+        <a class="nav-item nav-search-button icon-search {{ is_search ? 'is-search-page' : 'js-nav-search-button' }}" href="">
+          <span class="icon  nav-search-inactive"></span>
+           <span class="nav-search-active">x</span>
+        </a>
       </div> <!-- /nav-item-wrap -->
-      <a class="nav-menu-button js-nav-menu-button" href="">menu</a>
+
+      <a class="nav-menu-button js-nav-menu-button" href="">
+        <span class="nav-menu-inactive">Menu</span>
+        <span class="nav-menu-active">x</span>
+      </a>
     </nav> <!-- /l-nav-wrap -->
 
     <div class="search-form-wrap">
       <form id="searchform" method="get" action="/index.php">
         <input class="search-text-input" type="text" name="s" id="s" size="15" placeholder="Search" />
-        <input class="search-submit-button" type="submit" value="" />
+        <button class="search-submit-button icon-search-reverse" type="submit" value=""><span class="icon"></span></button>
       </form>
     </div> <!-- /search-form-wrap -->
+
   </div> <!-- /l-nav-mod -->
 </header> <!-- /site-header -->
+

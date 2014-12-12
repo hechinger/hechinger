@@ -84,6 +84,7 @@ class HechingerPost extends TimberPost {
       foreach($asides as &$aside_row) {
         $aside_row['heading'] = $aside_row['aside_heading'];
         $aside_row['content'] = $aside_row['aside_content'];
+        $aside_row['id'] = $aside_row['aside_num'];
       }
     }
     return $asides;

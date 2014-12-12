@@ -29,7 +29,7 @@
   @extend %bp-trans;
   margin: 0 auto;
   // max-width: $content-max--inner;
-  @include bp(960px) { margin-top: 0; }
+  @include mq(960px) { margin-top: 0; }
 
   &.article-feat-hdr-inner { max-width: 100%; }
 }

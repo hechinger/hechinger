@@ -180,7 +180,7 @@
       }
     }
 
-         ol {
+     ol {
       counter-reset:li; /* Initiate a counter */
       margin-left:0; /* Remove the default left margin */
       padding-left:0; /* Remove the default left padding */
@@ -332,7 +332,7 @@ ol > li:before {
   .img-caption {
     margin: 10px 25px;
 
-    @include bp(550px) {
+    @include mq(550px) {
       margin: 10px 0;
     }
   }

@@ -1,0 +1,39 @@
+{% extends '/pages/staff.twig' %}
+
+
+
+
+{% block header %}
+    {% include 'components/section-front-header.twig' with { section_front_title : "Supporters", post: post, subhead: post.subhead, link_heading: post.link_heading, link_to_page: post.link_to_page } %}
+  {% endblock header %}
+
+
+
+{% block staff_content %}
+
+  <div class="staff-content">
+    <div class="l-content">
+      <ul class="supporter-items l-logo-grid">
+
+        {% for supporter in supporters %}
+          <li class="grid-item">
+              {% if supporter.image %}
+                <div class="art-bd">
+                    <a href="{{ advisor.link }}">
+                      <img src="/wp-content/themes/hechinger/static/img/supporters/{{ supporter.image }}" alt="Photo of {{ supporter.name }}">
+                    </a>
+                </div> <!-- /art-bd -->
+              {% endif %}
+
+              <div class="txt-bd">
+                <h3 class="logo-name-h">
+                  <a class="logo-name-h-link" href="supporter.link">{{ supporter.name }}</a>
+                </h3> <!-- staff-name-h -->
+              </div> <!-- /txt-bd -->
+          </li> <!-- / staff-item -->
+        {% endfor %}
+
+      </ul> <!-- /supporter-items -->
+    </div> <!-- /l-content -->
+  </div> <!-- /staff-content -->
+{% endblock staff_content %}

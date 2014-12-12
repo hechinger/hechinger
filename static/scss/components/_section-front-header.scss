@@ -5,6 +5,18 @@
   width: 100%;
   height: 276px;
   background-size: cover;
+  overflow: hidden;
+
+  // gradient overlay for section fronts (i.e. special reports headers)
+  &:before {
+    position: absolute;
+    content: '';
+    top: 0;
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient($he-main 25px, rgba($he-main, 0.02));
+
+  }
 }
 
 

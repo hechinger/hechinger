@@ -35,7 +35,14 @@
           {% endblock tease_text %}
 
           {% block tease_author %}
-            <p class="tz-author tz-author--{{ context_class ? context_class: '' }}">by <a class="tz-author-name" href="{{ post.author.link }}">{{ post.author }}</a></p>
+            <p class="tz-author tz-author--{{ context_class ? context_class: '' }}">by&nbsp;
+              {% for author in post.coauthors %}
+                <a class="tz-author-name" href="{{ author.link }}">{{ author }}</a>
+                {% if not loop.last %}
+                  &nbsp;and&nbsp;
+                {% endif %}
+              {% endfor %}
+            </p>
           {% endblock tease_author %}
         </div> <!-- /txt-bd -->
 

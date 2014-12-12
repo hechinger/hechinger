@@ -1,20 +1,35 @@
 .l-archive-hdr-wrap {
-  margin-top: 30px;
+  // margin-top: 30px;
+  margin: 25px auto 25px auto;
+  max-width: 960px;
+  @extend %bp-trans;
   @include mq('max', $medium) {
-    margin: 40px 0 0 25px;
+    // margin: 40px 0 25 25px;
   }
+  @include mq($medium) { margin-top: -60px; }
+
+  @include mq($desktop) { margin-top: -100px; }
+
+  @include mq($desktop, max) { margin-left: 25px; }
 }
+
 
 .archive-hdr {
   color: $black;
-  font-family: $he-sans;
+  @include sans-black;
   font-size: 135px;
-  font-weight: $font-weight-bold;
   text-decoration: underline;
-  @include mq('max', $medium) {
-    font-size: 40px;
-  }
+
+  @include mq($medium, max) { font-size: 40px; }
+
+  @include mq($medium, $desktop) { font-size: 80px; }
+
+  @include mq($medium) { letter-spacing: -1px; }
+
+  @include mq($large) { letter-spacing: -2px; }
+
 }
+
 
 .archive-feed-container {
   margin: 0 $site-margin;
@@ -23,6 +38,10 @@
     margin: 70px auto 0;
   }
 }
+
+
+
+
 
 // **************************
 // to delete

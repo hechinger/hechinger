@@ -90,6 +90,9 @@ class HechingerSite extends TimberSite {
     Timber::add_route('about', function($params){
       Timber::load_view('about.php', null, 200, $params);
     });
+    Timber::add_route('advisors', function($params){
+      Timber::load_view('advisors.php', null, 200, $params);
+    });
   }
 
   public function get_current_url() {

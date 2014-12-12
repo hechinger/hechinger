@@ -23,7 +23,7 @@ $staff-content-max-width: 820px;
 .l-pair-staff-page {
   @include pie-clearfix;
   max-width: $staff-content-max-width;
-  margin: 0 auto 0 40px;
+  margin: 0 auto;
   @include mq(600px, max) {
     .art-bd {
       float: right;

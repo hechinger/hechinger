@@ -7,20 +7,37 @@
 // --------------------------------------------
 
 .partner-aside {
-  margin-left: 25px;
   margin-bottom: 30px;
+  padding: 20px 0;
+  border-top: $bdr-thin;
+  border-bottom: $bdr-thin;
+
   @include mq($medium) {
+    margin-left: 25px;
     clear: right;
     float: right;
     width: 220px;
+    border-top: .5em solid $black;
   }
 }
 
 .aside-partner-logo {
   position: relative;
-  margin-bottom: 5px;
-  width: 100%;
+  margin: 0 20% 15px;
+  width: 60%;
+  max-width: 250px;
+  display: inline-block;
   color: #fff;
+
+ @include mq(416.66666667px) {
+  width: 50%;
+  margin: 0 25% 15px;
+}
+
+  @include mq($medium) {
+    width: 100%;
+    margin: 0 0 15px;
+  }
 }
 
 .aside-partner-img { }
@@ -30,4 +47,8 @@
   line-height: 1;
   font-family: $he-sans;
   text-align: center;
+
+  @include mq($medium) {
+    text-align: left;
+  }
 }

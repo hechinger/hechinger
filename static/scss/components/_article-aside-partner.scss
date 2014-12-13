@@ -7,27 +7,58 @@
 // --------------------------------------------
 
 .partner-aside {
-  margin-left: 25px;
-  margin-bottom: 30px;
-  @include mq($medium) {
-    clear: right;
-    float: right;
-    width: 220px;
+  @include pie-clearfix;
+  padding: 10px 15px;
+  max-width: 550px;
+  margin: 0 auto 15px;
+
+  @include mq(820px, max) {
+    background-color: $ui-bg-color;
   }
+
+  @include mq(820px) {
+    margin-left: 25px;
+    width: 220px;
+    border-top: .5em solid $black;
+    padding: 20px;
+    float: right;
+    clear: right;
+  }
+
 }
 
+
 .aside-partner-logo {
+  display: inline-block;
   position: relative;
-  margin-bottom: 5px;
-  width: 100%;
+  width: 80%;
+  float: left;
   color: #fff;
+
+  @include mq(820px, max) {
+    float: left;
+    border-right: 1px solid #666;
+    margin-right: 25px;
+    width: 90px;
+  }
+
+  @include mq(820px) { margin-bottom: 10px; }
+
 }
+
 
 .aside-partner-img { }
 
+
 .aside-partner-text {
+  float: left;
   font-size: 12px;
-  line-height: 1;
   font-family: $he-sans;
+  line-height: 2em;
   text-align: center;
+
+  @include mq($medium) { text-align: left; }
+
+  @include mq(820px) { line-height: 1.35em; }
+
 }

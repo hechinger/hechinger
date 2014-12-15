@@ -9,9 +9,9 @@
             <div class="author-overline">
               <h4 class="author-hdr-topic">
                 {% if author.hech_role|length %}
-                  <a class="author-topic-link" href="#">{{ author.hech_role }}</a>
+                  <a class="author-topic-link" href="/staff">{{ author.hech_role }}</a>
                 {% else %}
-                  <a class="author-topic-link" href="#">Author</a>
+                  <a class="author-topic-link">Author</a>
                 {% endif %}
               </h4> <!-- /author-hdr-topic -->
             </div> <!-- /author-overline -->
@@ -35,11 +35,11 @@
 
         <div class="txt-bd">
 
-            {% if atuhor.job_title|length %}
+            {% if author.job_title|length %}
               <h3 class="author-bio-title">{{ author.job_title }}</h3>
             {% endif %}
 
-            <h1 class="author-bio-name">{{ author.name }}</h1>
+            <h1 class="author-bio-h">{{ author.name }}</h1>
 
             {% if author.description|length %}
               <p class="article-bio-text">{{ author.description }}</p>
@@ -51,13 +51,13 @@
                 <ul class="author-contact-items">
                   <li class="author-contact-item icon-email">
                     <a class="author-contact-link" href="mailto:{{ author.user_email }}" target="_blank">
-                      <i class="icon"></i>{{ author.user_email }}</a>
+                      <span class="icon"></span>{{ author.user_email }}</a>
                   </li> <!--author-contact-item -->
 
                   {% if author.phone_number|length %}
                     <li class="author-contact-item icon-telephone">
                       <a class="author-contact-link" href="tel:{{ author.phone_number }}">
-                      <i class="icon"></i>{{ author.phone_number }}</a>
+                      <span class="icon"></span>{{ author.phone_number }}</a>
                     </li> <!--author-contact-item -->
                   {% endif %}
 
@@ -65,7 +65,7 @@
                   {% if author.twitter_handle %}
                     <li class="author-contact-item icon-twitter-author">
                       <a class="author-contact-link" href="http://twitter.com/{{ author.twitter_handle }}" target="_blank">
-                      <i class="icon"></i>&commat;{{ author.twitter_handle }}</a>
+                      <span class="icon"></span>&commat;{{ author.twitter_handle }}</a>
                     </li> <!--author-contact-item -->
                   {% endif %}
                 </ul> <!-- /author-contact-items -->

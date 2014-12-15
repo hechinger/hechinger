@@ -1,47 +1,73 @@
 // --------------------------------------------
 // --------------------------------------------
 //
+// Author Variables
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$bp-author-pair: 800px;
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
 // Author Header
 //
 // --------------------------------------------
 // --------------------------------------------
+
 .l-page-hdr { }
+
 
 .page-hdr {
   @extend %bp-trans;
   padding: 0 $site-margin;
   border-top: 2px solid transparent;
   margin: 0 auto 40px auto;
-  @include mq($medium-lg) {
+
+  @include mq($bp-medium-plus) {
     padding-top: 30px;
     border-top-color: #000;
     background-color: #fff;
   }
+
 }
+
 
 .page-hdr-inner {
   @extend %bp-trans;
   margin: 0 auto;
   max-width: $content-max--inner;
-  @include mq(960px) { margin-top: 0; }
+
+  @include mq($bp-large-plus) { margin-top: 0; }
 
   &.articleFeat-hdr-inner { max-width: 100%; }
 }
 
+
 .author-hdr-topic {
-  @extend %topic-hdr;
+  @include accent-header;
+  // @extend %topic-hdr;
   display: block;
   border-bottom: none;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
   font-size: 24px;
   font-family: $he-serif;
-  @include mq($medium-lg) { border-bottom: $bdr-thin; }
+
+  // @include mq($medium-lg) { border-bottom: $bdr-thin; }
+
 }
+
 
 .author-topic-link {
   @include head-link;
   &:hover { text-decoration: none; }
 }
+
 
 
 
@@ -53,46 +79,62 @@
 //
 // --------------------------------------------
 // --------------------------------------------
+
 .author-bio-mod {
   margin-bottom: $space-grid--threequarter;
   @include mq($medium-lg) { padding: 0 $space-grid; }
 }
 
+
 .l-author-bio {
-  @include mq($medium, max) {
+  @include mq($bp-author-pair, max) {
     .art-bd {
-      float: right;
-      width: 20%;
-      max-width: 75px;
-      margin-left: 10px;
+      width: 25%;
+      max-width: 100px;
+      // margin-left: 10px;
       margin-bottom: 20px;
     }
   }
-  @include mq($medium) {
+
+  @include mq(350px, $bp-author-pair) {
+    .art-bd {
+      float: right;
+      margin-left: 10px;
+    }
+  }
+
+  @include mq($bp-author-pair) {
     @include pair(185px, $space-grid);
   }
-}
 
+}
 
 
 .author-bio-title {
+  @include sans-bold;
   margin-bottom: 5px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: $he-sans;
-  font-weight: 700;
   font-size: 12px;
 }
 
-.author-bio-name {
+
+.author-bio-h {
   display: inline-block;
-  margin-bottom: 25px;
+  // margin-bottom: 25px;
   border-bottom: 6px solid black;
   padding-bottom: 2px;
   font-family: $he-serif;
-  font-size: 31px;
+  // font-size: 31px;
+  font-size: 18px;
+  margin-bottom: 15px;
   color: black;
+  @include mq($medium) {
+    font-size: 31px;
+    margin-bottom: 25px;
+  }
 }
+
 
 .article-bio-text {
   color: $black-80;
@@ -101,33 +143,44 @@
   line-height: 1.4;
 }
 
+
 .author-bio-contact {
-  margin-top: 25px;
+  // margin-top: 25px;
+  margin-top: 15px;
+  // @include mq()
 }
 
 
 .author-contact-items {
-  font-family: $he-sans;
-  font-weight: 300;
+  @include sans;
   font-size: 12px;
-  line-height: 1.25;
+  // line-height: 1.25;
 }
 
+
 .author-contact-item {
-  & + & { margin-left: 15px; }
-  display: inline;
-  @include mq($medium) {
+  margin-bottom: 15px;
+  padding-left: 10px;
+  // & + & { margin-left: 15px; }
+  // display: inline;
+  @include mq(450px) {
+    display: inline;
     & + & { margin-left: 30px; }
+  }
+  @include mq($medium) {
+    // & + & { margin-left: 30px; }
   }
 }
 
+
 .author-contact-link {
   position: relative;
-  padding-left: 21px;
+  padding-left: 12px;
   color: $black-40;
   text-decoration: none;
   &:hover { text-decoration: underline; }
 }
+
 
 
 

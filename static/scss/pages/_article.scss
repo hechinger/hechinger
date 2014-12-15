@@ -16,6 +16,11 @@ $img-max-med:             450px;
 $img-max-lg:              650px;
 $img-max-bd:              $article-bd-max;
 
+// Article image heights
+$img-ht-sm:               350px;
+$img-ht-med:              450px;
+$img-ht-lg:               500px;
+
 // Article aside width
 $aside-max:               240px;
 
@@ -302,6 +307,12 @@ $bp-article-not-centered:   820px;
   // Images
   // --------------------------------------------
 
+  .img-container-inner {
+    max-height: $img-ht-med;
+    overflow: hidden;
+  }
+
+
   .aligncenter,
   .alignnone {
     max-width: $img-max-lg;
@@ -324,7 +335,10 @@ $bp-article-not-centered:   820px;
       margin-left: -$site-margin;
       margin-right: $site-margin;
     }
+
     @include mq($desktop) { margin-left: -100px; }
+
+    .img-container-inner { max-height: $img-ht-sm; }
   }
 
 
@@ -336,10 +350,13 @@ $bp-article-not-centered:   820px;
       margin-right: -$site-margin;
       margin-left: $site-margin;
     }
+
     @include mq($desktop) {
       max-width: $img-max-med;
       margin-right: -($site-margin*2);
     }
+
+    .img-container-inner { max-height: $img-ht-sm; }
   }
 
 

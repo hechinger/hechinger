@@ -1,15 +1,15 @@
-<div class="promo-mod promo-content-bdr--reverse" style="background-image: url({{ report.get_image('bw_rect').src|resize(600) | default("/wp-content/themes/hechinger/static/img/defaults/default_bw_pano.jpg")|resize(600) }})" data-resp"{{ report.get_image('bw_rect').src | default("/wp-content/themes/hechinger/static/img/defaults/default_bw_pano.jpg") }}" data-resp-width"600">
+<div class="promo-mod promo-content-bdr--reverse" style="background-image: url({{ report.get_image('bw_rect').src|resize(600) | default("/wp-content/themes/hechinger/static/img/defaults/default_bw_pano.jpg")|resize(600) }})" data-resp="{{ report.get_image('bw_rect').src | default("/wp-content/themes/hechinger/static/img/defaults/default_bw_pano.jpg") }}" data-resp-width="600">
   <div class="promo-overlay">
-    <a class="promo-link" href="#">
+    <a class="promo-link" href="{{ promo.link }}">
 
       <div class="promo-inner">
         <div class="promo-hdr">
-          <h4 class="promo-h promo-h--reverse">California</h4>
+          <h4 class="promo-h promo-h--reverse">{{ promo.name }}</h4>
         </div> <!-- /promo-hdr-white -->
 
         <div class="promo-main">
           <p class="promo-text--reverse">
-            <span class="promo-text--bold">Explore our deep dive in California,</span>a state with large achievement gaps and even larger budget woes — but also exciting innovations in education reform
+            {{ promo.promo_text }}
           </p>
         </div> <!-- /promo-main -->
 

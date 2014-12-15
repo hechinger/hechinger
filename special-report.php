@@ -36,4 +36,13 @@
     exit;
   }
 
+  $promos = Timber::get_terms('special-report', 'HechingerTerm');
+  if (isset($promos) && is_array($promos) && count($promos)) {
+    foreach ($promos as $promo) {
+      if ($promo->is_promoted && $promo->name !== $context['term']->name) {
+        $context['promos'][] = $promo;
+      }
+    }
+  }
+
   Timber::render('pages/special-report.twig', $context);

@@ -18,6 +18,18 @@
 
   $context = Timber::get_context();
   $context['title'] = 'Archive';
+  $context['promos'] = array();
+
+  $promos = Timber::get_terms('special-report', 'HechingerTerm');
+  if (isset($promos) && is_array($promos) && count($promos)) {
+    foreach ($promos as $promo) {
+      if ($promo->is_promoted && $promo->name !== $context['title']) {
+        $context['promos'][] = $promo;
+      }
+    }
+  }
+
+  //echo var_dump($context);
 
   if (is_day()){
     $context['title'] = 'Archive: '.get_the_date( 'D M Y' );

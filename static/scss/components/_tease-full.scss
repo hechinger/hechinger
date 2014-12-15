@@ -1,16 +1,18 @@
 .tz-full-mod {
   overflow: auto;
-  &:not(:last-child) {
-    border-bottom: $bdr-thin;
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-
+  &:not(:first-child) {
+    border-top: $bdr-thin;
+    margin-top: 40px;
+    padding-top: 40px;
     @include mq(600px, max) {
-      margin-bottom: 20px;
-      padding-bottom: 20px;
+      margin-top: 20px;
+      padding-top: 20px;
     }
   }
 
+}
+.promo-mod + .tz-full-mod {
+  border-top: none;
 }
 
 
@@ -146,9 +148,13 @@
 
 .tz-feat-mod {
   @include pie-clearfix;
-  border-bottom: $bdr-thin;
-  margin-bottom: 25px;
-  padding-bottom: 25px;
+  margin-top: 25px;
+  padding-top: 25px;
+  border-top: $bdr-thin;
+}
+
+.promo-mod + .tz-feat-mod {
+  border-top: none;
 }
 
 .art-bd-feat {

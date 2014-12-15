@@ -19,10 +19,16 @@
     <section class="archive-feed-container">
       {# for each article in articles include tease component #}
       {% for post in posts %}
+        {% if loop.index == 4 %}
+          {% include 'components/promo-report.twig' with { promo: random(promos) } %}
+        {% endif %}
+        {% if loop.index == 8 %}
+          {% include 'components/promo-donate.twig' %}
+        {% endif %}
         {% if post.is_feature %}
           {% include 'components/tease-archive-feat.twig' %}
-          {% else %}
-            {% include 'components/tease-full.twig' %}
+        {% else %}
+          {% include 'components/tease-full.twig' %}
         {% endif %}
       {% endfor %}
     </section>

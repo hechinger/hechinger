@@ -7,7 +7,7 @@
       <ul class="special-report-tz-items">
         {% for srpost in report.get_posts('numberposts=2') %}
           <li class="special-report-tz-item">
-            <a class="special-report-tz-link" href="{{ srpost.link }}">{{ srpost.title }}</a>
+            <a class="special-report-tz-link" href="{{ srpost.link }}">{{ srpost.title|striptags }}</a>
           </li> <!-- /special-report-tz-item -->
        {% endfor %}
       </ul> <!-- /special-report-tz-items -->

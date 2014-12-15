@@ -302,7 +302,8 @@ $bp-article-not-centered:   820px;
   // Images
   // --------------------------------------------
 
-  .aligncenter {
+  .aligncenter,
+  .alignnone {
     max-width: $img-max-lg;
     @include mq($bp-img-no-bleed) {
       margin-left: auto;

@@ -94,8 +94,7 @@
         {% for author in post.coauthors %}
           <div class="page-mod article-mod">
             <div class="article-bio">
-              <div class="{{ author.author_image ? l-article-bio}}">
-
+              <div class="{{ author.author_image ? l-article-bio }}">
                 {% if author.author_image %}
                   <div class="art-bd">
                     <div class="img-rounded">
@@ -107,7 +106,7 @@
                 {% endif %}
 
                 <div class="txt-bd">
-                  <h4 class="article-bio-h"><a class="article-bio-h-link" href="Photo of {{ author.name }}">{{ author.name }}</a></h4>
+                  <h4 class="article-bio-h"><a class="article-bio-h-link" href="{{ author.link }}">{{ author.name }}</a></h4>
                   <p class="article-bio-text">{{ author.description }}<a class="article-bio-link" href="/author/{{ author.slug }}">See Archive</a></p>
                 </div> <!-- /txt-bd -->
               </div> <!-- /l-article-bio -->

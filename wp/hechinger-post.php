@@ -70,10 +70,10 @@ class HechingerPost extends TimberPost {
     }
   }
 
-  function partner() {
+  function partners() {
     $part = $this->get_terms('partner');
     if (is_array($part) && count($part) ) {
-      return $part[0];
+      return $part;
     }
     return false;
   }

@@ -8,7 +8,7 @@
         </div> <!-- /article-img-feature -->
       {% endif %}
 
-      <div class="article-feat-mod">
+      <div class="article-feat-mod {{ post.thumbnail.src ? "article-feat-mod--has-img" }}">
         <div class="article-hdr-top">
           <h4 class="article-hdr-topic">
             <a class="article-topic-link" href="{{ post.overline.link }}">{{ post.overline }}</a>

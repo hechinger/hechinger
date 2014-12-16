@@ -35,11 +35,17 @@
   float: left;
   color: #fff;
 
-  @include mq(820px, max) {
+  @include mq(430px, max) {
+    margin: 3px 25% 10px;
+    width: 50%;
+  }
+
+  @include mq(431px, 820px) {
     float: left;
     border-right: 1px solid #666;
-    margin-right: 25px;
-    width: 90px;
+    padding-right: 25px;
+    margin: 3px 25px 10px 0px;
+    width: 150px;
   }
 
   @include mq(820px) { margin-bottom: 10px; }

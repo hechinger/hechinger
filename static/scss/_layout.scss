@@ -439,6 +439,20 @@ $subzone-ends-layout: 800px;
         }
       }
     }
+
+    // When an image appears in slot 2 or three of this layout zone
+    .extra-grid-item {
+      @include mq($bp-medium) {
+        width: 66.666%;
+        &:after {
+          position: static;
+        }
+      }
+      .l-pair-tz-hp-stub {
+        @include pair(40%, 3%);
+      }
+    }
+
 } // l-zone-tres--rule
 
 
@@ -496,7 +510,31 @@ $subzone-ends-layout: 800px;
     @include media-grid(4, 50px, '.grid-item');
     @include grid-rule(4, -25px);
   }
-  // > .grid-item { background-color: pink; }
+
+  // When the first item has an image
+  // This stuff happens
+  .grid-item.extra-grid-item {
+    @include mq($large, max) {
+      width: 100%;
+    }
+    @include mq($large) {
+      width: 50%;
+      .l-pair-tz-hp-stub { @include pair(30%, 3%); }
+    }
+  }
+
+  // This takes away the rule for the third item
+  // when there's an image
+  &.no-last-rule {
+    .grid-item {
+      &:last-of-type {
+        &:after {
+          position: static;
+        }
+      }
+    }
+  }
+
 }
 
 

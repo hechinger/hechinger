@@ -86,6 +86,22 @@
           </div> <!-- /l-zone-tres--rule -->
         </div> <!-- /hp-zone--top -->
 
+        {#  ZONE 2 TOP WITH IMAGE #}
+        {# Chris: I just duplicated the entire hp-zone--top area and changed a couple things. I changed the get zone slice from 3 to 2 and changed the class that's added to the second grid item. The thing I could figure out was how to hide the image on the very first tease #}
+        <!-- Zone 2 Top If there are images -->
+        <div class="hp-zone--top">
+          <div class="l-zone-tres--rule">
+            {% for post in home.get_zone(2)|slice(0,2) %}
+              <div class="grid-item {{ loop.index > 1 ? 'extra-grid-item' }}">
+                {# TODO: change hide image logic when we have context class for image tease #}
+                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub', hide_image: loop.index > 1 ? false : false } %}
+              </div>
+            {% endfor %}
+          </div> <!-- /l-zone-tres--rule -->
+        </div> <!-- /hp-zone--top -->
+        {# END ZONE 2 TOP WITH IMAGE #}
+
+
         <!-- Zone 2 Middle -->
         {% if z2_quote|length %}
           <div class="hp-zone--middle">
@@ -103,6 +119,29 @@
             {% endfor %}
           </div> <!-- /l-zone-cuatro--rule -->
         </div> <!-- /hp-zone-bottom -->
+
+
+        {#  ZONE 2 BOTTOM WITH IMAGE #}
+        {# Chris: I just duplicated the entire hp-zone--bottom area and changed a couple things. I changed the slice from 4 to 3. And for the first item, I'm not hiding the image, as well as adding the extra-grid-item class. The overall l-zone-cuatro--rule container has an added class of no-last-rule to subtract the rule for the third grid-item. #}
+         <div class="hp-zone--bottom">
+          <div class="l-zone-tres--rule no-last-rule">
+            {% for post in home.get_zone(2)|slice(3,3) %}
+              {% if loop.index < 2 %}
+                <div class="grid-item extra-grid-item">
+                  {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-med', hide_image: false } %}
+                </div>
+                {% else %}
+                  <div class="grid-item">
+                    {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-med', hide_image: true } %}
+                  </div> <!-- /grid-item -->
+              {% endif %}
+
+            {% endfor %}
+          </div> <!-- /l-zone-cuatro--rule -->
+        </div> <!-- /hp-zone-bottom -->
+        {#  END ZONE 2 BOTTOM WITH IMAGE #}
+
+
 
       </div> <!-- /l-hp-zone -->
     {% endblock hp_zone2 %}

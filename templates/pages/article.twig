@@ -21,8 +21,8 @@
       <article class="article-main">
 
         {% block article_partner %}
-          {% if post.partner|length %}
-            {% include "/templates/components/article-partner.twig" with { contextClass: 'article-aside-borders' } %}
+          {% if post.partners|length %}
+              {% include "/templates/components/article-partner.twig" with { partner: partner, contextClass: 'article-aside-borders' } %}
           {% endif %}
         {% endblock %}
 

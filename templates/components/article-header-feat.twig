@@ -20,7 +20,7 @@
         </div> <!-- /article-hdr-top -->
 
         <div class="article-hdr-h">
-          <h1 class="article-feat-h">{{ post.title }}</h1>
+          <h1 class="article-feat-h">{{ post.title|striptags }}</h1>
           {% if post.subhead|length %}
             <h2 class="article-sub-h">{{ post.subhead }}</h1>
           {% endif %}

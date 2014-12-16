@@ -39,7 +39,7 @@
 }
 
 .author-topic-link {
-  @extend %head-link;
+  @include head-link;
   &:hover { text-decoration: none; }
 }
 

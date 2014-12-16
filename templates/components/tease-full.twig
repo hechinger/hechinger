@@ -1,4 +1,4 @@
-<div class="tz-full-mod">
+<div class="tz-full-mod {{ hide_border }}">
   <div class="tz-content-wrap {{ post.thumbnail ? 'l-pair-full' }}">
 
     {% if post.thumbnail %}
@@ -11,7 +11,7 @@
 
     <div class="txt-bd">
       <h1 class="tz-full-h">
-        <a class="tz-full-h-link" href="{{ post.link }}">{{ post.title }}</a>
+        <a class="tz-full-h-link" href="{{ post.link }}">{{ post.title|striptags }}</a>
       </h1>
 
       {% if post.tease_excerpt %}

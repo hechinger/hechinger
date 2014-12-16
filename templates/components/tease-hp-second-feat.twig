@@ -1,7 +1,7 @@
 <div class="hp-second-feature-mod">
   <div class="hp-second-feature-img-container">
     <div class="img-rounded">
-      <img srcset="{{ feature.getBanner('square').srcset(550) }}" sizes="70vw" src="{{ feature.getBanner('square').src|default('/wp-content/themes/hechinger/static/img/special-reports/img-special_report-desks-528-528.jpg') }}" />
+      <img srcset="{{ feature.getBanner('square').srcset(550) }}" sizes="70vw" src="{{ feature.getBanner('square').src|default('/wp-content/themes/hechinger/static/img/defaults/default_square.jpg') }}" />
     </div>
   </div>
   <div class="hp-second-feature-txt-container">
@@ -12,7 +12,7 @@
         </h4>
       {% endif %}
       <h1 class="hp-second-feature-head">
-        <a class="tz-h-link" href="{{ feature.link }}">{{ feature.title }}</a>
+        <a class="tz-h-link" href="{{ feature.link }}">{{ feature.title|striptags }}</a>
       </h1>
       {% if feature.tease_excerpt %}
         <p class="hp-second-feature-txt">{{ feature.tease_excerpt }}<a class="hp-second-feature-read-more" href="{{ feature.link }}">Read more</a></p>

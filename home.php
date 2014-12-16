@@ -42,7 +42,7 @@ function get_quote( $qt_str, $homepage ) {
     if ( isset($zquote_text) && strlen($zquote_text) ) {
       $zquote['text'] = $zquote_text;
     } else {
-      $zquote['text'] = $zquote['post']->title();
+      $zquote['text'] = strip_tags($zquote['post']->title());
     }
 
     if ( isset($zquote_subhead) && strlen($zquote_subhead) ) {

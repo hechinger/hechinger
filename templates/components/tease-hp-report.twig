@@ -1,4 +1,4 @@
-<div class="special-report-tz-mod" style="background-image: url({{ report.get_image('bw_rect').src|resize(200) | default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg")|resize(200) }})" data-resp="{{ report.get_image('bw_rect').src | default("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg") }}" data-resp-width="600">
+<div class="special-report-tz-mod" style="background-image: url({{ report.get_image('bw_rect').src|resize(200) | default("/wp-content/themes/hechinger/static/img/defaults/default_bw_rectangle.jpg")|resize(200) }})" data-resp="{{ report.get_image('bw_rect').src | default("/wp-content/themes/hechinger/static/img/defaults/default_bw_rectangle.jpg") }}" data-resp-width="600">
   <div class="special-report-tz-overlay">
     <div class="special-report-tz-content">
       <a class="special-report-tz-hdr-container" href="{{ report.link }}">
@@ -7,7 +7,7 @@
       <ul class="special-report-tz-items">
         {% for srpost in report.get_posts('numberposts=2') %}
           <li class="special-report-tz-item">
-            <a class="special-report-tz-link" href="{{ srpost.link }}">{{ srpost.title }}</a>
+            <a class="special-report-tz-link" href="{{ srpost.link }}">{{ srpost.title|striptags }}</a>
           </li> <!-- /special-report-tz-item -->
        {% endfor %}
       </ul> <!-- /special-report-tz-items -->

@@ -32,7 +32,7 @@ if (class_exists('Jigsaw')) {
 class HechingerSite extends TimberSite {
 
   function __construct() {
-               
+
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
@@ -41,11 +41,13 @@ class HechingerSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'add_reports' ) );
+		add_action( 'init', array( $this, 'register_menus' ) );
+
     $this->set_shortcodes();
     $this->set_routes();
 		parent::__construct();
     $this->bootstap_content();
-		$this->fix_custom_field_conflict();               
+		$this->fix_custom_field_conflict();
 	}
 
 	function fix_custom_field_conflict() {
@@ -92,6 +94,12 @@ class HechingerSite extends TimberSite {
     Timber::add_route('about', function($params){
       Timber::load_view('about.php', null, 200, $params);
     });
+    Timber::add_route('advisors', function($params){
+      Timber::load_view('advisors.php', null, 200, $params);
+    });
+    Timber::add_route('supporters', function($params){
+      Timber::load_view('supporters.php', null, 200, $params);
+    });
   }
 
   public function get_current_url() {
@@ -100,6 +108,32 @@ class HechingerSite extends TimberSite {
 
   function register_post_types() {
     // this is where you can register custom post types
+  }
+
+  function register_menus() {
+
+    $menu_exists = wp_get_nav_menu_object( 'nav-bar' );
+    if( !$menu_exists){
+      $menu_id = wp_create_nav_menu('nav-bar');
+    }
+
+    $menu_exists = wp_get_nav_menu_object( 'footer-nav' );
+    if( !$menu_exists){
+      $menu_id = wp_create_nav_menu('footer-nav');
+    }
+  }
+
+  public static function get_promos($exclude = '') {
+    $return = array();
+    $promos = Timber::get_terms('special-report', 'HechingerTerm');
+    if (isset($promos) && is_array($promos) && count($promos)) {
+      foreach ($promos as $promo) {
+        if ($promo->is_promoted && $promo->name !== $exclude) {
+          $return[] = $promo;
+        }
+      }
+    }
+    return $return;
   }
 
 	function register_taxonomies() {
@@ -170,7 +204,8 @@ class HechingerSite extends TimberSite {
 		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
-		$context['menu'] = new TimberMenu();
+		$context['nav_menu'] = new TimberMenu('nav-bar');
+		$context['footer_menu'] = new TimberMenu('footer-nav');
 		$context['site'] = $this;
 		return $context;
 	}

@@ -36,4 +36,6 @@
     exit;
   }
 
+  $context['promos'] = HechingerSite::get_promos($context['term']->name);
+
   Timber::render('pages/special-report.twig', $context);

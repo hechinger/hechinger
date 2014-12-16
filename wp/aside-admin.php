@@ -32,7 +32,7 @@
         $asides = $hechPost->post_asides();
       }
 
-      if (isset($asides) && count($asides)) {
+      if (isset($asides) && is_array($asides) && count($asides)) {
         foreach ($asides as $aside) {
           if ($aside['id'] == $id) {
             $aside['taken'] = true;

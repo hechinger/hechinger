@@ -36,6 +36,7 @@ $has-margin:          800px;
   @include mq(800px) { margin-top: -$space-grid; }
 }
 
+
 // .l-content and .l-content--inner are currently used on article pages
 // the thought is these classes could be used
 // on generic pages as well
@@ -52,10 +53,12 @@ $has-margin:          800px;
   .l-content { margin: 0; }
 }
 
+
 .l-content--inner {
   margin: 0 auto;
   // max-width: $content-max--inner;
 }
+
 
 .l-article--inner {
   margin: 0 auto;
@@ -68,8 +71,6 @@ $has-margin:          800px;
   @include mq($has-margin) { margin: 0 $site-margin; }
   @include mq($no-content-margin) { margin: 0 auto; }
 }
-
-
 
 
 
@@ -98,10 +99,12 @@ $has-margin:          800px;
   }
 }
 
+
 %grid-rule--dark {
   @extend %grid-rule;
   &:after { background-color: $black; }
 }
+
 
 .grid-container, %grid-container {
   padding-top: 25px;
@@ -109,17 +112,20 @@ $has-margin:          800px;
   padding-right: 0px;
 
   @include mq(595px) {
-  padding-left: 20px;
-  padding-right: 20px;
-    }
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
+
 
 .grid-container--rule {
   @extend %grid-container;
   border-top: $border-thin;
 }
 
+
 .grid-item { margin-bottom: 20px; position: relative; }
+
 
 .l-grid-2 {
 
@@ -135,7 +141,10 @@ $has-margin:          800px;
   }
 }
 
+
 .l-grid-3 { @include media-grid(3, 20px, '.grid-item') }
+
+
 .l-grid-4 { @include media-grid(4, 20px, '.grid-item') }
 
 
@@ -156,6 +165,7 @@ $has-margin:          800px;
   }
 }
 
+
 .l-grid-3--rules {
   @include media-grid(3, 40px, '.grid-item');
   .grid-item {
@@ -172,6 +182,7 @@ $has-margin:          800px;
     &:nth-child( 4n + 4 ) { &:after { background-color: transparent; } }
   }
 }
+
 
 
 
@@ -198,6 +209,8 @@ $has-margin:          800px;
   }
 }
 
+
+
 // Homepage Zones
 // --------------------------------------------
 
@@ -218,6 +231,7 @@ $has-margin:          800px;
 }
 
 
+
 // Mode Variable
 // --------------------------------------------
 
@@ -226,11 +240,15 @@ $subzone-has-layout:  500px;
 $subzone-ends-layout: 800px;
 
 
+
 // Modes
 // --------------------------------------------
 
 .l-hp-tres { border: 1px solid pink; }
+
+
 .l-hp-cuatro { border: 1px solid blue; }
+
 
 .l-hp-tres--rule { border: 1px solid black; }
 
@@ -242,8 +260,19 @@ $subzone-ends-layout: 800px;
   }
 }
 
+
 .l-zone-dos--rule {
   @include pie-clearfix;
+
+  .grid-item + .grid-item {
+    @include mq($zone-has-layout, max) {
+      margin-top: 25px;
+      padding-top: 25px;
+      margin-bottom: 0;
+      border-top: $bdr-thin;
+    }
+
+  }
   @include mq($zone-has-layout) {
     display: flex;
     @include media-grid(2, 60px, '.grid-item');
@@ -256,19 +285,34 @@ $subzone-ends-layout: 800px;
 // Used in Zone 3 Top inside Right zone
 .l-zone-dos--split-inside {
   @include pie-clearfix;
-  @include mq(600px) {
+  @include mq($bp-medium) {
     @include media-grid(2, 60px, '.grid-item');
     @include grid-rule(2, -30px);
     .grid-item { padding-top: 15px; padding-bottom: 15px; }
   }
+
+  .grid-item {
+    @include mq($bp-medium, max) {
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      border-bottom: $bdr-thin;
+      &:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+  }
+
 }
+
 
 // Used in Zone 3 Top on Homepage
 .l-zone-dos--split {
   @include pie-clearfix;
 
   // The Zone takes on layout
-  @include mq(800px) {
+  @include mq($bp-medium-plus) {
     position: relative;
       &:before {
         position: absolute;
@@ -288,19 +332,35 @@ $subzone-ends-layout: 800px;
       float: right;
       width: 65%;
     }
-
   }
-}
+
+  .top-grid-item {
+    @include mq($bp-medium-plus, max) {
+      @include mq($bp-medium, max) {
+        border-bottom: $bdr-thin;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        &:last-child {
+          border-bottom: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+} //l-zone-dos--split
 
 
 // The top right zone within l-zone-dos--split
 .top-grid-item--right {
-  @include mq(600px, 800px) {
+  @include mq($bp-medium, $bp-medium-plus) {
     margin-top: 25px;
     padding-top: 25px;
     border-top: $bdr-thin;
   }
 }
+
 
 // The bottom right zone within l-zone-dos--slit
 // this is in the stat area in zone 3 on hp
@@ -317,13 +377,15 @@ $subzone-ends-layout: 800px;
   @include media-grid(3, 25px, '.grid-item');
 }
 
+
 .l-zone-tres--rule {
   @include pie-clearfix;
   overflow: hidden;
+
   // This for intermediate breakpoints when
   // There is one item which 100%
   // and two items that have layout
-  @include mq(600px, 799px) {
+  @include mq($bp-medium, $bp-medium-plus) {
     .sub-grid-item {
       position: relative;
       width: 45%;
@@ -343,47 +405,59 @@ $subzone-ends-layout: 800px;
       }
     }
   }
+
   // All items three up
-  @include mq(800px) {
+  @include mq($bp-medium-plus) {
     display: flex;
     @include media-grid(3, 50px, '.grid-item');
     @include grid-rule(3, -25px);
+    > .grid-item {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
 
   // For smaller breakpoints making a bottom border appear
   // when the 2d and 3d items have layout but the first
   // item is still 100% wide
     .grid-item {
+      @include mq($bp-medium, max) {
+        border-bottom: $bdr-thin;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        &:last-child {
+          border-bottom: 0;
+          padding-bottom: 0;
+          margin-bottom: 0;
+        }
+      }
       &:first-of-type {
-        @include mq(600px, 800px) {
+        @include mq($bp-medium, $bp-medium-plus) {
           margin-bottom: 25px;
           padding-bottom: 25px;
           border-bottom: $bdr-thin;
         }
       }
     }
-}
-
-
-
-
-
+} // l-zone-tres--rule
 
 
 .l-zone-cuatro {
   @include pie-clearfix;
-  @include mq(600px, 900px) {
+  @include mq($bp-medium, $bp-large) {
     @include media-grid(2, 25px, '.grid-item');
   }
-  @include mq(900px) {
+  @include mq($bp-large) {
     @include media-grid(4, 25px, '.grid-item');
   }
 }
 
+
 .l-zone-cuatro--rule {
   @include pie-clearfix;
   overflow: hidden;
-  @include mq(600px, 900px) {
+
+  @include mq($bp-medium, $bp-large) {
     @include media-grid(2, 50px, '.grid-item');
     @include grid-rule(2, -25px);
     > .grid-item {
@@ -404,14 +478,26 @@ $subzone-ends-layout: 800px;
     }
   }
 
-  @include mq(900px) {
+  .grid-item {
+    @include mq($bp-medium, max) {
+      border-bottom: $bdr-thin;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include mq($bp-large) {
     display: flex;
     @include media-grid(4, 50px, '.grid-item');
     @include grid-rule(4, -25px);
   }
   // > .grid-item { background-color: pink; }
 }
-
 
 
 // These are the subzones inside
@@ -425,8 +511,3 @@ $subzone-ends-layout: 800px;
 
 
 .hp-feat-mod { }
-
-.crazy-thing {
-  background-color: green;
-  height: 300px;
-}

@@ -6,38 +6,49 @@
 // --------------------------------------------
 // --------------------------------------------
 
-.related-aside { }
 
-.aside-related-items { }
+.article-text {
 
-.aside-related-item {
-  padding-left: 1em;
-  position: relative;
-  font-family: $he-sans;
-  font-size: 17px;
-  line-height: 1.294117647;   // 22/17
-  @include bullet(before, $he-main);
-  & + & { margin-top: 0.85em; }
-}
-
-.aside-related-item-hdr {
-}
-
-.aside-related-highlight {
-  @extend %head-highlight;
-}
-
-// nesting to override body text styles...
-.aside-related-item .aside-related-item-link {
-  @include head-link;
-  color: $hdr-color;
-  &:visited, &:hover, &:active {
-    color: $hdr-color;
+  .aside-hdr {
+    @include accent-header;
+    display: inline-block;
+    // background-color: pink;
+    margin-bottom: 10px;
+    border-bottom: 3px solid black;
   }
-  &:hover {
-    text-decoration: underline;
+
+  .related-aside { }
+
+  .aside-related-items { }
+
+  .aside-related-item {
+    @include sans;
+    font-size: 18px;
+    line-height: 1.294117647;   // 22/17
+    position: relative;
+    margin-bottom: 0.85em;
   }
-  em, b, strong {
-    @extend %head-highlight;
+
+  .aside-related-item-hdr {
+    padding-left: 1em;
   }
+
+  .aside-related-highlight {
+    background-color: $he-main;
+    padding: 0.085em 0.294117647em;
+  }
+
+  .aside-related-item-link {
+    @include head-link;
+    @include bullet(before, $he-main);
+    color: black;
+
+    &:before { left: -1.05em; }
+
+    &:visited { color: black; }
+
+    &:hover { text-decoration: underline; }
+
+  }
+
 }

@@ -22,6 +22,10 @@
 
 .article-hdr-feat {
   padding: 15px 15px 0;
+  margin-top: 25px;
+  @include mq(600px) {
+    margin-top: -80px;
+  }
 }
 
 
@@ -37,7 +41,8 @@
 
 .article-hdr-topic {
   @include accent-header-underline;
-  font-size: 24px;
+  // font-size: 24px;
+  font-size: 20px;
 }
 
 
@@ -48,10 +53,14 @@
 
 .article-h {
   @include sans-bold;
-  font-size: 52px;
+  font-size: 36px;
   line-height: 1.057692308;
   letter-spacing: -2px;
   color: black;
+
+  @include mq($article-bd-max) {
+    font-size: 52px;
+  }
 }
 
 

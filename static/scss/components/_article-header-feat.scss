@@ -8,12 +8,26 @@
 
 .article-feat-mod {
   position: relative;
-  margin-top: -40px;
-  padding-right: 20px;
+  // margin-top: -40px;
+  // padding-right: 20px;
   padding-top: 20px;
+  // background-color: #fff;
+  // width: 80%;
+  // max-width: 800px;
+  @include mq(600px) {
+    margin-top: 20px;
+    padding-right: 20px;
+  }
+}
+
+.article-feat-mod--has-img {
+  margin-top: -40px;
   background-color: #fff;
-  width: 80%;
+  // width: 80%;
   max-width: 800px;
+  @include mq(600px) {
+    width: 80%;
+  }
 }
 
 .article-feat-h {

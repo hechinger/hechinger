@@ -59,20 +59,40 @@
 // Homepage Main
 // --------------------------------------------
 
+.hp-feat-mod {
+  // background-color: green;
+}
+
 .tz-hp-feat--main {
   position: relative;
-  margin-top: -175px;
-  padding: 60px 40px 0 40px;
-  border-top: 12px solid black;
+  // margin-top: -175px;
+  // padding: 60px 40px 0 40px;
+  // border-top: 12px solid black;
   // rules for featured main tease
-  &:before, &:after {
-    position: absolute;
-    content: '';
-    width: 12px;
-    background-color: black;
+  margin-top: 45px;
+
+  @include mq(600px) {
+    padding: 30px 40px 0 40px;
+    margin-top: -75px;
+    border-top: 12px solid black;
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      width: 12px;
+      background-color: black;
+    }
+    &:before { top: 0; bottom: 0; left: 0; }
+    &:after { top: 0; bottom: 70%; right: 0; }
   }
-  &:before { top: 0; bottom: 0; left: 0; }
-  &:after { top: 0; bottom: 70%; right: 0; }
+
+  @include mq($large) {
+    margin-top: -175px;
+    padding-top: 60px;
+    &.tz-hp-feat--main-img {
+      padding-top: 30px;
+    }
+  }
+
 
   .tz-inner {
      > * + * { margin-top: 20px; }

@@ -8,30 +8,30 @@
 
 $sr-content-max-width: 820px;
 
+
 .sr-landing-content {
   margin: 70px 0 auto;
 }
 
+
 .sr-landing-zone {
   & + & {
     margin-top: 40px;
-    // padding-top: 40px;
-    // border-top: $bdr-thin;
   }
 }
+
 
 .l-sr-landing-feed {
   max-width: $sr-content-max-width;
   margin: 0 auto;
   padding: 15px 0;
-  @include mq(800px) { padding: 30px 0; }
+  @include mq($bp-medium-plus) { padding: 30px 0; }
 }
 
 
 .l-sr-landing-dos {
   @include pie-clearfix;
   overflow: hidden;
-  // display: flex;
 
   // Grid Layout
   @include mq(700px) {
@@ -56,6 +56,7 @@ $sr-content-max-width: 820px;
     }
   }
 }
+
 
 .sr-landing-grid-img {
   @extend %img-stylized;
@@ -97,13 +98,14 @@ $sr-content-max-width: 820px;
   margin-bottom: 20px;
 }
 
+
 .sr-landing-h {
+  @include accent-header;
   display: inline-block;
   position: relative;
   margin-bottom: 1.25em;
-  font-family: $he-accent;
-  font-weight: $font-weight-black;
-  font-size: 26px;
+  // font-size: 26px;
+  font-size: 24px;
   line-height: 1.35;
   &:after {
     position: absolute;
@@ -116,7 +118,12 @@ $sr-content-max-width: 820px;
     max-width: 70px;
   }
 
-  .tz-sr-landing-grid & { font-size: 32px; }
+  // Slightly larger size for the top grid
+  .tz-sr-landing-grid & {
+    @include mq($bp-medium-plus) {
+      font-size: 32px;
+    }
+  }
 }
 
 
@@ -125,12 +132,14 @@ $sr-content-max-width: 820px;
   text-decoration: none;
 }
 
+
 .sr-landing-desc {
   font-family: $he-sans;
   font-style: italic;
   font-size: 22px;
   line-height: 1.35;
 }
+
 
 .sr-landing-link {
   @include bullet(after);
@@ -162,6 +171,7 @@ $sr-content-max-width: 820px;
   }
 
 }
+
 
 .tz-sr-feed-grid {
   & + & {

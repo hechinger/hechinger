@@ -67,7 +67,7 @@
             "sub_fields": [
                 {
                     "key": "field_54860f32b3e12",
-                    "label": "Year",
+                    "label": "year",
                     "name": "year",
                     "prefix": "",
                     "type": "number",
@@ -75,7 +75,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "18",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -99,7 +99,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "35",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -229,7 +229,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 1,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",

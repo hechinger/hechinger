@@ -92,7 +92,7 @@
                     {% endif %}
                   </div> <!-- /about-bottom-mod -->
                   <div class="about-link-mod">
-                    <a class="about-link" href="#">Our Awards</a>
+                    <a class="about-link" href="/awards">Our Awards</a>
                   </div> <!-- /about-link-mod -->
                 </div> <!-- /txt-bd -->
               </div> <!-- /l-pair-about -->
@@ -143,9 +143,11 @@
                   <p class="about-text">{{ post.our_partners }}</p>
                    <div class="about-bottom-mod">
                     <ul class="l-about-partners">
-                      {% for i in 1..8 %}
+                      {% for partner in partners %}
                         <li class="media-block">
-                          <img src="/wp-content/themes/hechinger/static/img/partners/icn-partner-Advocate.svg" alt="">
+                          {% if partner.logo %}
+                            <img src="{{ TimberImage( partner.logo ).src }}" alt="{{ partner.logo.alt }}">
+                          {% endif %}
                         </li> <!-- /media-block -->
                       {% endfor %}
                     </ul>

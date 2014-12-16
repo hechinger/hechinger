@@ -20,14 +20,7 @@
   $context['title'] = 'Archive';
   $context['promos'] = array();
 
-  $promos = Timber::get_terms('special-report', 'HechingerTerm');
-  if (isset($promos) && is_array($promos) && count($promos)) {
-    foreach ($promos as $promo) {
-      if ($promo->is_promoted && $promo->name !== $context['title']) {
-        $context['promos'][] = $promo;
-      }
-    }
-  }
+  $context['promos'] = HechingerSite::get_promos($context['title']);
 
   //echo var_dump($context);
 

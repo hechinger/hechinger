@@ -159,7 +159,6 @@
 %article-bd-margin {
   margin-right: auto;
   margin-left: auto;
-  background-color: pink;
   @include mq(700px) {
     margin-right: 0;
     margin-left: 0;

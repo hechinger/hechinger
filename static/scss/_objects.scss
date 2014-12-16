@@ -96,6 +96,7 @@ img { @include resp-img; }
     line-height: 45px;
     // text-indent: 25px;
     text-indent: 30px;
+    text-decoration: none;
     @include mq(450px) {
       width: 100px;
       line-height: 35px;

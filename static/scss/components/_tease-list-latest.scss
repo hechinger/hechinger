@@ -34,7 +34,7 @@
 .hp-list-link {
   @include head-link;
   em, b, strong {
-    @extend %head-highlight;
+    @include head-highlight;
   }
 }
 

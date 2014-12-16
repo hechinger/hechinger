@@ -49,6 +49,12 @@
 
     &:hover { text-decoration: underline; }
 
+    // highlight headline
+    em, b, strong {
+      @include head-highlight;
+      font-size: 1em;
+    }
+
   }
 
 }

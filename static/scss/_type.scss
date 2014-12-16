@@ -114,6 +114,17 @@
 }
 
 
+@mixin head-highlight {
+  position: relative;
+  top: -0.01em;
+  background-color: $he-main;
+  vertical-align: text-bottom;
+  font-style: normal;
+  font-size: 0.87em;
+  padding: 0 0.3em 0.1em;
+}
+
+
 
 
 

@@ -331,6 +331,7 @@ $bp-article-not-centered:   820px;
   .alignleft {
     @include mq($bp-img-no-bleed) {
       float: left;
+      clear: left;
       max-width: $img-max-sm;
       margin-left: -$site-margin;
       margin-right: $site-margin;

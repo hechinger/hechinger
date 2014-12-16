@@ -1,8 +1,15 @@
 <!-- article-aside -->
 <aside class="partner-aside">
-  <div class="aside-partner-logo">
-    <img class="aside-partner-img" src="{{ TimberImage(partner.logo).src | resize(400) }}" alt="{{ partner.name }}" />
-  </div> <!-- /article-partner-logo -->
-  <p class="aside-partner-text">This story also appeared in {{ partner.name }}</p>
+  {% for partner in post.partners %}
+    <div class="aside-partner-logo">
+      <img class="aside-partner-img" src="{{ TimberImage(partner.logo).src | resize(400) }}" alt="{{ partner.name }}" />
+    </div> <!-- /article-partner-logo -->
+  {% endfor %}
+
+  <p class="aside-partner-text">This story also appeared in
+  {% for partner in post.partners %}
+    {{ partner.name }}
+  {% endfor %}
+  </p>
 </aside> <!-- /article-aside -->
 

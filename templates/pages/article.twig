@@ -22,9 +22,7 @@
 
         {% block article_partner %}
           {% if post.partners|length %}
-            {% for partner in post.partners %}
               {% include "/templates/components/article-partner.twig" with { partner: partner, contextClass: 'article-aside-borders' } %}
-            {% endfor %}
           {% endif %}
         {% endblock %}
 

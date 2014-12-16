@@ -98,7 +98,9 @@
     color: $he-main;
     &:after { background-color: $he-main; }
   }
-  // &:hover { text-decoration: underline; }
+  em, b, strong {
+    @extend %head-highlight;
+  }
 }
 
 

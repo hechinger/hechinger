@@ -18,6 +18,11 @@
 
   $context = Timber::get_context();
   $context['title'] = 'Archive';
+  $context['promos'] = array();
+
+  $context['promos'] = HechingerSite::get_promos($context['title']);
+
+  //echo var_dump($context);
 
   if (is_day()){
     $context['title'] = 'Archive: '.get_the_date( 'D M Y' );

@@ -10,6 +10,7 @@
   position: relative;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 50px;
 }
 
 
@@ -21,6 +22,7 @@
 
 .promo-overlay {
   position: relative;
+  min-height: 200px;
   background-color: rgba(42, 39, 43, 0.3);
 }
 
@@ -73,6 +75,18 @@
     float: right;
     width: 65%;
   }
+  // styles for wp-created elements
+  p {
+    color: white;
+    font-family: $he-sans;
+    font-size: 16px;
+    font-weight: $font-weight-lt;
+    @include mq($medium) { font-size: 25px; }
+    strong, em, b {
+      font-weight: $font-weight-bold;
+      margin-right: 5px;
+    }
+  }
 }
 
 
@@ -101,12 +115,10 @@
   }
 }
 
-
 .promo-h--reverse {
   color: white;
   font-weight: $font-weight-bold;
 }
-
 
 .promo-text,
 .promo-text--reverse {

@@ -10,7 +10,7 @@
     {% endif %}
 
     <div class="txt-bd txt-bd-feat">
-      <h1 class="tz-full-h"><a class="tz-full-h-link" href="{{ post.link }}">{{ post.title }}</a></h1>
+      <h1 class="tz-full-h"><a class="tz-full-h-link" href="{{ post.link }}">{{ post.title|striptags }}</a></h1>
       {% if post.tease_excerpt %}
         <p class="tz-full-text"><a class="tz-full-text-link" href="{{ post.link }}">{{ post.tease_excerpt }}</a></p>
       {% endif %}

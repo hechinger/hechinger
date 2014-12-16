@@ -93,6 +93,9 @@ class HechingerSite extends TimberSite {
     Timber::add_route('advisors', function($params){
       Timber::load_view('advisors.php', null, 200, $params);
     });
+    Timber::add_route('supporters', function($params){
+      Timber::load_view('supporters.php', null, 200, $params);
+    });
   }
 
   public function get_current_url() {
@@ -114,6 +117,19 @@ class HechingerSite extends TimberSite {
     if( !$menu_exists){
       $menu_id = wp_create_nav_menu('footer-nav');
     }
+  }
+
+  public static function get_promos($exclude = '') {
+    $return = array();
+    $promos = Timber::get_terms('special-report', 'HechingerTerm');
+    if (isset($promos) && is_array($promos) && count($promos)) {
+      foreach ($promos as $promo) {
+        if ($promo->is_promoted && $promo->name !== $exclude) {
+          $return[] = $promo;
+        }
+      }
+    }
+    return $return;
   }
 
 	function register_taxonomies() {

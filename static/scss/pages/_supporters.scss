@@ -1,0 +1,58 @@
+.l-logo-grid {
+  @include mq(400px, 650px) {
+    @include media-grid(2, 45px, '.grid-item');
+  }
+
+  @include mq(650px) {
+    @include media-grid(3, 45px, '.grid-item');
+  }
+}
+
+
+
+.supporter-items {
+  text-align: center;
+
+  .grid-item {
+    margin-bottom: 20px;
+    text-align: center;
+    display: inline-block;
+
+    @include mq(400px) { margin-bottom: 50px; }
+
+    @include mq(400px, max) { max-width: 225px; }
+  }
+
+  .art-bd {
+    border: $bdr-thin;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    // line-height: 165px;
+    line-height: 126px;
+
+    a {
+      opacity: 0.8;
+      &:hover { opacity: 1; }
+    }
+
+    @include mq(650px, $large) { padding: 10px 30px; }
+    @include mq($large) { padding: 20px 40px; }
+
+  }
+}
+
+
+.logo-name-h {
+
+}
+
+.logo-name-h-link {
+  @include sans;
+  font-size: 16px;
+  text-decoration: none;
+  color: $black;
+  &:hover {
+    text-decoration: underline;
+  }
+}

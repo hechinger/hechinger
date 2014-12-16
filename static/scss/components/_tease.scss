@@ -306,9 +306,12 @@
 // --------------------------------------------
 
 .tz-h--reg-med,
+.tz-h--reg-lg,
 .tz-h--stub-med,
 .tz-h--stub-lg {
   .tz-h-link {
     em, b, strong { @include head-highlight; }
   }
 }
+
+

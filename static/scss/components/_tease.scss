@@ -10,13 +10,17 @@
 
 
 .tz-inner {
-  > * + * { margin-top: 15px; }
+  // > * + * { margin-top: 15px; }
+  > * + * { margin-top: 5px; }
+  // > * + * { background-color: red; }
 }
 
 
 .tz-content-mod {
   // > * + * { margin-top: 15px; }
-  > * + * { margin-top: 0.35em; }
+  // > * + * { margin-top: 0.35em; }
+  > * + * { margin-top: 5px; }
+  // > * + * { background-color: green; }
 
   // When the main home page tease
   // has an image, this stuff happens
@@ -60,7 +64,7 @@
   &:hover { text-decoration: underline; }
 
   .tz-overline--feat-lg & {
-    @include mq($medium) { color: black; }
+    @include mq($bp-medium) { color: black; }
   }
 }
 
@@ -75,7 +79,7 @@
 
 
 // prototype animation
-@-webkit-keyframes teaseLink {
+@keyframes teaseLink {
   0% { width: 0; }
   100% { width: 100%;  }
 }
@@ -100,9 +104,9 @@
     // color: lighten($tease-head-color, 20%);
     &:after {
       position: absolute;
-      -webkit-animation-duration: 0.75s;
-      -webkit-animation-name: teaseLink;
-      -webkit-animation-fill-mode: forwards
+      animation-duration: 0.75s;
+      animation-name: teaseLink;
+      animation-fill-mode: forwards
     }
   }
   &:active {
@@ -116,10 +120,12 @@
 
 
 .tz-text {
+  margin-top: 10px;
   font-weight: $font-weight-lt;
   font-size: 21px;
   line-height: 1.33;
   color: $black-60;
+  // background-color: blue;
 }
 
 
@@ -215,16 +221,16 @@
 
   .tz-h-link { color: black; }
 
-  @include mq($medium) { font-size: 65px; }
+  @include mq($bp-medium) { font-size: 65px; }
 
-  @include mq($large) { font-size: 100px; }
+  @include mq($bp-large) { font-size: 100px; }
 }
 
 
 .tz-text--feat-lg {
   // font-size: 29px;
   line-height: 1.45;
-  @include mq($medium) {
+  @include mq($bp-medium) {
     font-size: 29px;
   }
 }
@@ -273,10 +279,10 @@
   line-height: 0.7;
   font-weight: 900;
   color: $he-secondary;
-  letter-spacing: -3px;
+  letter-spacing: -1px;
   @include mq(650px) {
     font-size: 112px;
-    letter-spacing: -8px;
+    letter-spacing: -3px;
   }
 }
 
@@ -289,6 +295,7 @@
 
 
 .l-pair-tz-special-stat {
-  @include mq(500px, 650px) { @include pair(125px, 35px); }
-  @include mq(650px) { @include pair(200px, 45px); }
+  // @include mq(500px, 650px) { @include pair(125px, 35px); }
+  // @include mq(650px) { @include pair(auto, 70px); }
+  @include mq(500px) { @include pair(auto, 70px); }
 }

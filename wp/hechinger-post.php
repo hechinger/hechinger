@@ -166,5 +166,29 @@ class HechingerPost extends TimberPost {
     return $title;
   }
 
-  
+  function partner_names() {
+    if (is_array($this->partners()) && count($this->partners)) {
+      $count = count($this->partners()) - 1;
+      $string = '';
+      foreach ($this->partners as $index=>$partner) {
+        if ($count > 1 ) {
+          if ($index !== $count) {
+            $string .= $partner->name . ',&nbsp;';
+          } else if ($index == $count) {
+            $string .= 'and&nbsp;' . $partner->name;
+          }
+        } else if ($count == 1) {
+          if ($index !== $count) {
+            $string .= $partner->name . '&nbsp;';
+          } else {
+            $string .= 'and&nbsp;' . $partner->name;
+          }
+        } else {
+          $string .= $partner->name;
+        }
+      }
+      return $string;
+    }
+  }
+>>>>>>> 695eff9... Partners punctuation. Closes #283
 }

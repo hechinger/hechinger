@@ -25,6 +25,7 @@ if (class_exists('TimberStream')) {
 
 $context['zquote'] = get_quote('z2_quote', $homepage);
 
+// TODO: refactor to make this part of HechingerSite API
 function get_quote( $qt_str, $homepage ) {
   $zquote = array();
   $zquote_link = $homepage->get_field($qt_str . '_link');

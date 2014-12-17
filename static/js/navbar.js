@@ -1,4 +1,5 @@
 var HE_navbar = (function($){
+  "use strict";
 
   var $searchButton = $('.js-nav-search-button');
   var searchIsOpen = $searchButton.hasClass('is-open');
@@ -8,7 +9,7 @@ var HE_navbar = (function($){
   var navIsOpen = $menuButton.hasClass('is-open');
   var $navbar = $('.js-nav-mod');
 
-  function openMenu() {
+  function openMenu(event) {
     event.preventDefault();
     if (navIsOpen) {
       $menuButton.removeClass('nav-is-open');
@@ -21,7 +22,7 @@ var HE_navbar = (function($){
     }
   }
 
-  function openSearch() {
+  function openSearch(event) {
     event.preventDefault();
     if (searchIsOpen) {
       $searchButton.removeClass('is-open');
@@ -41,6 +42,6 @@ var HE_navbar = (function($){
 
   return {
     init: init
-  }
+  };
 
 }(jQuery));

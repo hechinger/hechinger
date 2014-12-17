@@ -7,7 +7,7 @@
 
     function shortcode($atts, $content) {
       $headline = null;
-      if (isset($atts['id'])) {
+      if (isset($atts['id']) && $atts['id']) {
         if (isset($atts['headline']) && $atts['headline'] && trim($atts['headline']) != 'auto') {
           $headline = $atts['headline'];
         }

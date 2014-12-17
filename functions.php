@@ -16,9 +16,11 @@ require_once('wp/hechinger-user.php');
 require_once('wp/hechinger-home.php');
 require_once('wp/pull-quote-admin.php');
 require_once('wp/aside-admin.php');
+require_once('wp/hechinger-admin-related.php');
 
 new PullQuoteAdmin();
 new AsideAdmin();
+new HechingerAdminRelated();
 
 add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
 
@@ -290,6 +292,16 @@ class HechingerSite extends TimberSite {
             }
             return $output;
         }
+
+    public static function render_related_tease($id, $headline = null) {
+      $post = new HechingerPost($id);
+      if ($headline == null) {
+        $headline = $post->title();
+      }
+      $data = array('link' => $post->link(), 'headline' => $headline);
+      return Timber::compile('templates/components/article-text-related.twig', $data);
+
+    }
 
     static function render_pull_quote($content, $style, $author, $desc) {
         $args = array(

@@ -96,7 +96,7 @@ $logo-ht-lg:    53px;
   font-weight: $font-weight-lt;
   font-size: 17px;
   line-height: $logo-ht-sm;
-  @include mq($large) {
+  @include mq(908px) {
     display: block;
     line-height: $logo-ht-lg;
   }
@@ -125,7 +125,7 @@ $logo-ht-lg:    53px;
 
 
 .nav-is-open {
-  padding-bottom: 30px;
+  padding-bottom: 0px;
   .nav-item-wrap {
     display: initial;
   }
@@ -395,9 +395,13 @@ $logo-ht-lg:    53px;
     max-width: $content-max;
     // margin: 31px auto 0;
     margin-top: 31px;
-    &.is-open { display: block; }
+    &.is-open { display: block;}
   }
 
+}
+
+.nav-is-open .search-form-wrap {
+  margin-top: 20px;
 }
 
 

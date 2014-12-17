@@ -156,4 +156,9 @@ class HechingerPost extends TimberPost {
     // fallback if coauthors disabled or fails
     return array(new HechingerUser($this->author));
   }
+
+  function share_title() {
+    $title = preg_replace('/[^a-zA-Z0-9\/_.;&!?:|+ -]/', '', strip_tags($this->title));
+    return $title;
+  }
 }

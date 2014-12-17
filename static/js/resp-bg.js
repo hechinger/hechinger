@@ -1,5 +1,4 @@
-//TODO: refoctor with modular pattern
-;(function($){
+var HE_responsiveBg = (function($){
 
   var $resp = $('[data-resp]');
   var $window = $(window);
@@ -38,10 +37,16 @@
     };
   };
 
-  if (typeof $resp !== 'undefined' && $resp.length) {
-    changeBackgrounds();
+  function init() {
+    if (typeof $resp !== 'undefined' && $resp.length) {
+      changeBackgrounds();
+    }
+
+    $window.on('resize', dbChangeBackgrounds);
   }
 
-  $window.on('resize', dbChangeBackgrounds);
+  return {
+    init: init,
+  }
 
 }(jQuery));

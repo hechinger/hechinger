@@ -67,7 +67,7 @@
             "sub_fields": [
                 {
                     "key": "field_54860f32b3e12",
-                    "label": "Year",
+                    "label": "year",
                     "name": "year",
                     "prefix": "",
                     "type": "number",

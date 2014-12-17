@@ -128,7 +128,7 @@ $has-margin:          800px;
 
 
 .l-grid-2 {
-
+  background-color: pink;
   @include mq(595px) {
       @include media-grid(2, 20px, '.grid-item');
     }
@@ -142,22 +142,20 @@ $has-margin:          800px;
 }
 
 
-.l-grid-3 { @include media-grid(3, 20px, '.grid-item') }
+.l-grid-3 {
+  background-color: pink;
+  @include media-grid(3, 20px, '.grid-item')
+}
 
 
-.l-grid-4 { @include media-grid(4, 20px, '.grid-item') }
-
-
-// .l-grid-2--rules {
-//   @include media-grid(2, 40px, '.grid-item');
-//   background-image: url(#{$grid-bg-path}.png);
-//   background-repeat: repeat-y;
-//   background-position: 52.75% 0;
-//   .grid-item { margin-top: 20px; }
-// }
+.l-grid-4 {
+  background-color: pink;
+  @include media-grid(4, 20px, '.grid-item')
+}
 
 
 .l-grid-2--rules {
+  background-color: pink;
   @include media-grid(2, 40px, '.grid-item');
   .grid-item {
     @extend %grid-rule;
@@ -167,6 +165,7 @@ $has-margin:          800px;
 
 
 .l-grid-3--rules {
+  background-color: pink;
   @include media-grid(3, 40px, '.grid-item');
   .grid-item {
     @extend %grid-rule;
@@ -176,6 +175,7 @@ $has-margin:          800px;
 
 
 .l-grid-4--rules {
+  background-color: pink;
   @include media-grid(4, 40px, '.grid-item');
   .grid-item {
     @extend %grid-rule;
@@ -253,6 +253,9 @@ $subzone-ends-layout: 800px;
 .l-hp-tres--rule { border: 1px solid black; }
 
 
+
+// Two up
+// --------------------------------------------
 .l-zone-dos {
   @include pie-clearfix;
   @include mq($zone-has-layout) {
@@ -260,6 +263,10 @@ $subzone-ends-layout: 800px;
   }
 }
 
+
+
+// Two up with rules
+// --------------------------------------------
 
 .l-zone-dos--rule {
   @include pie-clearfix;
@@ -282,7 +289,12 @@ $subzone-ends-layout: 800px;
 }
 
 
+
+// Two up with variation inside
+// --------------------------------------------
+
 // Used in Zone 3 Top inside Right zone
+
 .l-zone-dos--split-inside {
   @include pie-clearfix;
   @include mq($bp-medium) {
@@ -307,9 +319,38 @@ $subzone-ends-layout: 800px;
 }
 
 
+
+// xxxx
+// --------------------------------------------
+
 // Used in Zone 3 Top on Homepage
+
 .l-zone-dos--split {
   @include pie-clearfix;
+
+  // padding. matches the padding for grid items in
+  // l-zone-dos--split-inside
+  @include mq($bp-medium) {
+    .top-grid-item--left {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+
+  // size adjustment so art for three across art lines up
+  @include mq($bp-medium-plus) {
+    .top-grid-item--left {
+      // .tz-img-mod { width: 97.4452555%; }
+      .tz-img-mod { width: 95.4452555%; }
+    }
+  }
+
+  @include mq($bp-large) {
+    .top-grid-item--left {
+      .tz-img-mod { width: 97.4452555%; }
+    }
+  }
+
 
   // The Zone takes on layout
   @include mq($bp-medium-plus) {
@@ -334,6 +375,8 @@ $subzone-ends-layout: 800px;
     }
   }
 
+  //
+
   .top-grid-item {
     @include mq($bp-medium-plus, max) {
       @include mq($bp-medium, max) {
@@ -347,6 +390,29 @@ $subzone-ends-layout: 800px;
         }
       }
     }
+  }
+
+  // Controlling art size for all items
+  .art-bd {
+    @include mq(400px, $bp-medium) {
+      max-width: 150px;
+      float: right;
+      margin-left: 25px;
+    }
+  }
+
+  // Controlling art size for the top item
+  // when lower portion of zone has layout
+  .top-grid-item--left {
+    @include mq($bp-medium, $bp-medium-plus) {
+     .art-bd {
+        width: 45%;
+        max-width: 300px;
+        float: right;
+        margin-left: 25px;
+      }
+    }
+
   }
 
 } //l-zone-dos--split
@@ -372,11 +438,18 @@ $subzone-ends-layout: 800px;
 
 
 
+// Three up
+// --------------------------------------------
+
 .l-zone-tres {
   @include pie-clearfix;
   @include media-grid(3, 25px, '.grid-item');
 }
 
+
+
+// Three up with rules
+// --------------------------------------------
 
 .l-zone-tres--rule {
   @include pie-clearfix;
@@ -456,6 +529,11 @@ $subzone-ends-layout: 800px;
 } // l-zone-tres--rule
 
 
+
+
+// Four up
+// --------------------------------------------
+
 .l-zone-cuatro {
   @include pie-clearfix;
   @include mq($bp-medium, $bp-large) {
@@ -511,18 +589,6 @@ $subzone-ends-layout: 800px;
     @include grid-rule(4, -25px);
   }
 
-  // When the first item has an image
-  // This stuff happens
-  .grid-item.extra-grid-item {
-    @include mq($large, max) {
-      width: 100%;
-    }
-    @include mq($large) {
-      width: 50%;
-      .l-pair-tz-hp-stub { @include pair(30%, 3%); }
-    }
-  }
-
   // This takes away the rule for the third item
   // when there's an image
   &.no-last-rule {
@@ -538,8 +604,87 @@ $subzone-ends-layout: 800px;
 }
 
 
+
+// Three up with first grid art
+// --------------------------------------------
+
+// Used on the Home page in Zone 2 Bottom (hp-zone-bottom)
+
+.l-zone-tres--art {
+  @include pie-clearfix;
+  @include mq($bp-medium-plus) {
+    @include media-grid(4, 50px, '.grid-item');
+    @include grid-rule(3, -25px);
+    .grid-item.extra-grid-item {
+      width: 50%;
+    }
+  }
+
+  // Controlling the first grid item
+  .grid-item.extra-grid-item {
+    @include mq($bp-medium-plus, max) {
+      width: 100%;
+      float: none;
+      border-bottom: $bdr-thin;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+    }
+
+    // Controlling size of art for first grid item
+    .l-pair-tz-hp-stub {
+      @include mq(450px) { @include pair(150px, 25px); }
+      @include mq($bp-medium) { @include pair(200px, 25px); }
+    }
+
+  }
+
+  // This for intermediate breakpoints when
+  // There is one item which 100%
+  // and two items that have layout
+  @include mq($bp-medium, $bp-medium-plus) {
+      .grid-item {
+        position: relative;
+        width: 45%;
+        float: left;
+        &:after {
+          position: absolute;
+          content: '\0020';
+          top: 0;
+          bottom: 0;
+          right: -11%;
+          width: 1px;
+          background-color: $bdr-thin-color;
+        }
+        &:nth-of-type(3) {
+          float: right;
+          &:after { position: static; width: 0; }
+        }
+      }
+    }
+
+  .grid-item {
+    @include mq($bp-medium, max) {
+      border-bottom: $bdr-thin;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+}
+
+
+
+// Subzones
+// --------------------------------------------
+
 // These are the subzones inside
 // A more comples l-hp-zone
+
 .hp-zone--top { }
 .hp-zone--mid { }
 .hp-zone--bottom { }

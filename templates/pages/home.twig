@@ -122,9 +122,9 @@
 
 
         {#  ZONE 2 BOTTOM WITH IMAGE #}
-        {# Chris: I just duplicated the entire hp-zone--bottom area and changed a couple things. I changed the slice from 4 to 3. And for the first item, I'm not hiding the image, as well as adding the extra-grid-item class. The overall l-zone-cuatro--rule container has an added class of no-last-rule to subtract the rule for the third grid-item. #}
+        {# Chris: I just duplicated the entire hp-zone--bottom area and changed a couple things. I changed the layout class to l-zone-tres-art. I changed the slice from 4 to 3. #}
          <div class="hp-zone--bottom">
-          <div class="l-zone-tres--rule no-last-rule">
+          <div class="l-zone-tres--art">
             {% for post in home.get_zone(2)|slice(3,3) %}
               {% if loop.index < 2 %}
                 <div class="grid-item extra-grid-item">
@@ -175,7 +175,8 @@
                 <div class="l-zone-dos--split-inside">
                   {% for post in home.get_zone(3)|slice(1,2) %}
                     <div class="grid-item">
-                      {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med', hide_image: true } %}
+                      {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med', hide_image: false } %}
+                      {# grant changed the hide_image variable to false #}
                     </div> <!-- /grid-item -->
                   {% endfor %}
                 </div> <!-- /l-zone-dos--split-inside -->

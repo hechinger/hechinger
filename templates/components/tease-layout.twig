@@ -11,7 +11,7 @@
           {% if post.thumbnail.src and not hide_image %}
             <div class="tz-img-mod art-bd">
               <a href="{{ post.link }}">
-                <img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
+                <img src="{{ post.thumbnail.src | resize(400, 240) }}" alt="{{ post.thumbnail.alt }}">
               </a>
             </div> <!-- /tz-img-mod -->
           {% endif %}

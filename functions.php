@@ -294,11 +294,16 @@ class HechingerSite extends TimberSite {
         }
 
     public static function render_related_tease($id, $headline = null) {
-      $post = new HechingerPost($id);
-      if ($headline == null) {
+      $link = $id;
+      if (is_numeric($id)) {
+        $post = new HechingerPost($id);
+        $link = $post->link();
+      }
+     
+      if ($headline == null && isset($post)) {
         $headline = $post->title();
       }
-      $data = array('link' => $post->link(), 'headline' => $headline);
+      $data = array('link' => $link, 'headline' => $headline);
       return Timber::compile('templates/components/article-text-related.twig', $data);
 
     }

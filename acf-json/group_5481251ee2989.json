@@ -30,7 +30,7 @@
             "name": "link_to_page",
             "prefix": "",
             "type": "relationship",
-            "instructions": "Link to another page which appears at the end of the heading.",
+            "instructions": "Link to another page which appears at the end of the heading. For example you may link to the Mission page or About Fred Hechinger.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -55,7 +55,7 @@
             "name": "link_heading",
             "prefix": "",
             "type": "text",
-            "instructions": "Heading for the page link",
+            "instructions": "Heading for the page link at the end of the subheading.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -96,7 +96,7 @@
             }
         ]
     ],
-    "menu_order": 4,
+    "menu_order": 0,
     "position": "acf_after_title",
     "style": "seamless",
     "label_placement": "top",

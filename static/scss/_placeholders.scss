@@ -78,9 +78,12 @@
 
 %head-highlight {
   //text-decoration: none;
+  // background-color: $he-main;
+  background-color: pink;
   font-style: normal;
-  background-color: $he-main;
-  padding: 0.085em 0.294117647em;
+  font-size: 0.95em;
+  // padding: 0.085em 0.294117647em;
+  padding: 0 0.2em;
 }
 
 

@@ -113,9 +113,9 @@
     color: $he-main;
     &:after { background-color: $he-main; }
   }
-  em, b, strong {
-    @extend %head-highlight;
-  }
+  // em, b, strong {
+  //   @extend %head-highlight;
+  // }
 }
 
 
@@ -299,3 +299,19 @@
   // @include mq(650px) { @include pair(auto, 70px); }
   @include mq(500px) { @include pair(auto, 70px); }
 }
+
+
+
+// Applying Head Highlights
+// --------------------------------------------
+
+.tz-h--reg-med,
+.tz-h--reg-lg,
+.tz-h--stub-med,
+.tz-h--stub-lg {
+  .tz-h-link {
+    em, b, strong { @include head-highlight; }
+  }
+}
+
+

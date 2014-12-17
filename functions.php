@@ -302,7 +302,6 @@ class HechingerSite extends TimberSite {
         $post = new HechingerPost($id);
         $link = $post->link();
       }
-     
       if ($headline == null && isset($post)) {
         $headline = $post->title();
       }

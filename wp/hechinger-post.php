@@ -7,7 +7,7 @@ class HechingerPost extends TimberPost {
     if (is_array($st) && count($st) ) {
       return $st[0];
     }
-    return $this->category();
+    return $this->category()->name !== 'Uncategorized' ? $this->category() : null;
   }
 
   function getBanner($shape = 'yellow_banner') {

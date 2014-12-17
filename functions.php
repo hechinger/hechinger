@@ -280,10 +280,13 @@ class HechingerSite extends TimberSite {
                 if (isset($iid) && strlen($iid)) {
                   $image = new HechingerImage( $iid );
                 }
+                if (!isset($attr['align'])){
+                  $attr['align'] = 'aligncenter';
+                }
                 $class = $attr['align'] . ' inline-core-image';
                 $width = $attr['width'];
                 if ( $attr['align'] == 'alignnone' || $attr['align'] == 'aligncenter') {
-                    $attr['full_width'] = true;
+                  $attr['full_width'] = true;
                 }
                 $image_string = Timber::compile( 'templates/components/article-core-img.twig', array( 'image' => $image, 'class' => $class, 'width' => $width, 'attr' => $attr ) );
                 return preg_replace('/\s+/', ' ', $image_string);

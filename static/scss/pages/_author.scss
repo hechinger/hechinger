@@ -164,7 +164,7 @@ $bp-author-pair: 800px;
   // & + & { margin-left: 15px; }
   // display: inline;
   @include mq(450px) {
-    display: inline;
+    display: inline-block;
     & + & { margin-left: 30px; }
   }
   @include mq($medium) {

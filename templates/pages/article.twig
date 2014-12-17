@@ -64,8 +64,8 @@
           </div> <!-- /article-tools-btm-right -->
 
           <div class="article-tools-btm-left">
-            <a class="article-comment-link icon-disqus"  id="comment-trigger" href="#"><i class="icon"></i>
-              <span class="article-comment-number">xxx</span> Comments</a>
+            <a class="article-comment-link icon-disqus" id="comment-trigger" href="#"><i class="icon"></i>
+              <span class="article-comment-number disqus-comment-count" data-disqus-identifier="{{ post.slug }}">No comments</span></a>
           </div> <!-- /article-tool-btm-let -->
 
         </div> <!-- /page-mod -->
@@ -109,6 +109,14 @@
                   <h4 class="article-bio-h"><a class="article-bio-h-link" href="{{ author.link }}">{{ author.name }}</a></h4>
                   <p class="article-bio-text">{{ author.description }}<a class="article-bio-link" href="/author/{{ author.slug }}">See Archive</a></p>
                 </div> <!-- /txt-bd -->
+                {% if author.show_contact_info %}
+                    {% if author.twitter_handle %}
+                      <div class="author-contact-item icon-twitter-author">
+                        <a class="author-contact-link" href="http://twitter.com/{{ author.twitter_handle }}" target="_blank">
+                        <span class="icon"></span>&commat;{{ author.twitter_handle }}</a>
+                      </div> <!--author-contact-item -->
+                    {% endif %}
+                {% endif %}
               </div> <!-- /l-article-bio -->
             </div> <!-- /article-bio -->
           </div> <!-- /page-mod -->

@@ -5,13 +5,13 @@
 {% block article_column_img %}
   {% if post.column_image %}
     <div class="article-column-img">
-      <img src="{{ post.column_image.get_url }}" alt="Photo of {{ post.author.name }}">
+      <a href="{{ post.author.link }}"><img src="{{ post.column_image.get_url }}" alt="Photo of {{ post.author.name }}"></a>
     </div> <!-- /article-column-img -->
   {% endif %}
 {% endblock %}
 
 {% block article_column_title %}
-  <p class="article-column-title">{{ post.author.column_name }}</p>
+  <p class="article-column-title"><a class="column-author-link" href="{{ post.author.link }}">{{ post.author.column_name }}</a></p>
 {% endblock %}
 
 {% block article_byline %}

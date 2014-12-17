@@ -599,3 +599,15 @@ $bp-article-not-centered:   820px;
 
 .comment-inner { }
 
+
+// Disqus overrides
+// --------------------------------------------
+
+#disqus_thread a {
+  &:link { color: $he-secondary; }
+  &:hover { color: $he-secondary; }
+  &:active { color: $he-secondary; }
+  &:visited { color: $he-secondary; }
+}
+
+

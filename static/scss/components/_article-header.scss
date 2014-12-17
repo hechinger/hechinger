@@ -149,10 +149,19 @@
 }
 
 
-.article-column-title {
-  @include serif-bold;
+// .article-column-title {
+//   @include serif-bold;
+//   font-size: 13px;
+//   color: $hdr-color;
+// }
+
+
+.column-author-link {
+  @include serif-black;
+  text-decoration: none;
   font-size: 13px;
   color: $hdr-color;
+  &:hover { text-decoration: underline; }
 }
 
 

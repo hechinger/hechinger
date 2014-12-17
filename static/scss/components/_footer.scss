@@ -137,6 +137,12 @@
   padding-bottom: 5px;
 }
 
+.ftr-grid-item {
+  @include mq(599px, max) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $black;
+  }
+}
 
 .ftr-text {
   @include sans(italic);

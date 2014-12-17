@@ -32,17 +32,23 @@
   display: inline-block;
   position: relative;
   width: 80%;
-  float: left;
+  max-width: 125px;
+  margin-bottom: 5px;
   color: #fff;
 
-  @include mq(820px, max) {
+  @include mq($bp-medium, 820px) {
     float: left;
     border-right: 1px solid #666;
-    margin-right: 25px;
-    width: 90px;
+    padding-right: 25px;
+    margin: 3px 25px 10px 0px;
+    width: 150px;
   }
 
-  @include mq(820px) { margin-bottom: 10px; }
+
+  @include mq(820px) {
+    max-width: 150px;
+    margin-bottom: 10px;
+  }
 
 }
 
@@ -51,13 +57,15 @@
 
 
 .aside-partner-text {
-  float: left;
   font-size: 12px;
   font-family: $he-sans;
-  line-height: 2em;
-  text-align: center;
+  line-height: 1.35em;
 
-  @include mq($medium) { text-align: left; }
+  @include mq($bp-medium) {
+    text-align: left;
+    float: left;
+    line-height: 33px;
+  }
 
   @include mq(820px) { line-height: 1.35em; }
 

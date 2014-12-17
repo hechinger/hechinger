@@ -125,7 +125,7 @@
   font-family: $he-sans;
   font-size: 16px;
   font-weight: $font-weight-lt;
-  color: $black;
+  color: $black !important;
   @include mq($medium) { font-size: 25px; }
 }
 

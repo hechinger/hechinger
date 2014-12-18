@@ -1573,10 +1573,7 @@ button {
 
 /* line 613, ../scss/_layout.scss */
 .l-zone-tres--art {
-<<<<<<< HEAD
-=======
   overflow: hidden;
->>>>>>> master
   *zoom: 1;
 }
 /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -1629,21 +1626,13 @@ button {
   .l-zone-tres--art .grid-item:nth-child(3n + 3):after {
     position: static;
   }
-<<<<<<< HEAD
-  /* line 618, ../scss/_layout.scss */
-=======
   /* line 619, ../scss/_layout.scss */
->>>>>>> master
   .l-zone-tres--art .grid-item.extra-grid-item {
     width: 50%;
   }
 }
 @media (max-width: 799px) {
-<<<<<<< HEAD
-  /* line 624, ../scss/_layout.scss */
-=======
   /* line 625, ../scss/_layout.scss */
->>>>>>> master
   .l-zone-tres--art .grid-item.extra-grid-item {
     width: 100%;
     float: none;
@@ -1653,11 +1642,7 @@ button {
   }
 }
 @media (min-width: 450px) {
-<<<<<<< HEAD
-  /* line 634, ../scss/_layout.scss */
-=======
   /* line 635, ../scss/_layout.scss */
->>>>>>> master
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
     display: table;
@@ -1702,11 +1687,7 @@ button {
   }
 }
 @media (min-width: 600px) {
-<<<<<<< HEAD
-  /* line 634, ../scss/_layout.scss */
-=======
   /* line 635, ../scss/_layout.scss */
->>>>>>> master
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
     display: table;
@@ -1751,21 +1732,13 @@ button {
   }
 }
 @media (min-width: 600px) and (max-width: 799px) {
-<<<<<<< HEAD
-  /* line 645, ../scss/_layout.scss */
-=======
   /* line 646, ../scss/_layout.scss */
->>>>>>> master
   .l-zone-tres--art .grid-item {
     position: relative;
     width: 45%;
     float: left;
   }
-<<<<<<< HEAD
-  /* line 649, ../scss/_layout.scss */
-=======
   /* line 650, ../scss/_layout.scss */
->>>>>>> master
   .l-zone-tres--art .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -1775,20 +1748,6 @@ button {
     width: 1px;
     background-color: #dad7d7;
   }
-<<<<<<< HEAD
-  /* line 658, ../scss/_layout.scss */
-  .l-zone-tres--art .grid-item:nth-of-type(3) {
-    float: right;
-  }
-  /* line 660, ../scss/_layout.scss */
-  .l-zone-tres--art .grid-item:nth-of-type(3):after {
-    position: static;
-    width: 0;
-  }
-}
-@media (max-width: 599px) {
-  /* line 665, ../scss/_layout.scss */
-=======
   /* line 659, ../scss/_layout.scss */
   .l-zone-tres--art .grid-item:nth-of-type(3n) {
     float: right;
@@ -1796,31 +1755,23 @@ button {
 }
 @media (max-width: 599px) {
   /* line 666, ../scss/_layout.scss */
->>>>>>> master
   .l-zone-tres--art .grid-item {
     border-bottom: 1px solid #dad7d7;
     padding-bottom: 25px;
     margin-bottom: 25px;
   }
-<<<<<<< HEAD
-  /* line 670, ../scss/_layout.scss */
-=======
   /* line 671, ../scss/_layout.scss */
->>>>>>> master
   .l-zone-tres--art .grid-item:last-child {
     border-bottom: 0;
     padding-bottom: 0;
     margin-bottom: 0;
   }
 }
-<<<<<<< HEAD
-=======
 /* line 678, ../scss/_layout.scss */
 .l-zone-tres--art .grid-item:last-child:after {
   position: relative;
   width: 0;
 }
->>>>>>> master
 
 /* line 9, ../scss/_objects.scss */
 img {
@@ -4464,7 +4415,7 @@ img {
   /* Initiate a counter */
   margin-left: 0;
   /* Remove the default left margin */
-  padding-left: 0;
+  padding-left: 0
   /* Remove the default left padding */
 }
 /* line 189, ../scss/pages/_page.scss */
@@ -4475,7 +4426,7 @@ img {
   /* Give each list item a left margin to make room for the numbers */
   padding: 4px 0;
   /* Add some spacing around the content */
-  list-style: none;
+  list-style: none
   /* Disable the normal item numbering */
 }
 /* line 196, ../scss/pages/_page.scss */
@@ -4532,7 +4483,7 @@ img {
   /* Initiate a counter */
   margin-left: 0;
   /* Remove the default left margin */
-  padding-left: 0;
+  padding-left: 0
   /* Remove the default left padding */
 }
 /* line 248, ../scss/pages/_page.scss */
@@ -4543,7 +4494,7 @@ img {
   /* Give each list item a left margin to make room for the numbers */
   padding: 4px 0;
   /* Add some spacing around the content */
-  list-style: none;
+  list-style: none
   /* Disable the normal item numbering */
 }
 /* line 255, ../scss/pages/_page.scss */
@@ -7707,7 +7658,7 @@ img.alignright, img.alignleft {
   /* Initiate a counter */
   margin-left: 0;
   /* Remove the default left margin */
-  padding-left: 0;
+  padding-left: 0
   /* Remove the default left padding */
 }
 /* line 144, ../scss/components/_article-aside.scss */
@@ -7718,7 +7669,7 @@ img.alignright, img.alignleft {
   /* Give each list item a left margin to make room for the numbers */
   padding: 4px 0;
   /* Add some spacing around the content */
-  list-style: none;
+  list-style: none
   /* Disable the normal item numbering */
 }
 /* line 151, ../scss/components/_article-aside.scss */

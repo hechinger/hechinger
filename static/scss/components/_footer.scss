@@ -8,11 +8,11 @@
 
 .site-ftr {
   @include pie-clearfix;
-  padding-top: $space-grid--half;
+  // padding-top: $space-grid--half;
+  padding-top: 35px;
   background-color: $he-main;
-  @include mq($medium) {
-    padding-top: 175px;
-  }
+
+  @include mq($bp-medium) { padding-top: 175px; }
 }
 
 
@@ -21,7 +21,8 @@
   position: relative;
   margin-bottom: $space-grid--half;
   padding-bottom: $space-grid;
-  @include mq($medium) {
+
+  @include mq($bp-medium) {
     margin-bottom: $space-grid;
     padding-bottom: 0;
   }
@@ -39,8 +40,8 @@
 .l-ftr-info {
   margin-top: $space-grid--half;
 
-  @include mq($medium) { margin-top: $space-grid;}
-  @include mq($medium, $medium-lg) {
+  @include mq($bp-medium) { margin-top: $space-grid;}
+  @include mq($bp-medium, $medium-lg) {
      @include media-grid(2, 50px, '.grid-item');
   }
 
@@ -63,8 +64,8 @@
 
 
 .l-ftr-partners {
-  @include mq($medium, max) { @include media-grid(4, 25px); }
-  @include mq($medium, $medium-lg) { @include media-grid(2, 25px); }
+  @include mq($bp-medium, max) { @include media-grid(4, 25px); }
+  @include mq($bp-medium, $medium-lg) { @include media-grid(2, 25px); }
   @include mq($medium-lg) { @include media-grid(4, 25px); }
   .media-block {
     max-width: 125px;
@@ -88,20 +89,22 @@
   @include pie-clearfix;
   border-bottom: 1px solid $black-80;
   padding-bottom: 25px;
+
+  @include mq($bp-medium) { margin-bottom: 50px; }
+
 }
 
 
 .ftr-logo-container {
-  // width: 90%;
-  // margin: auto 5%;
   display: block;
+  width: 90%;
   max-width: 300px;
   // margin: 0 auto 15px;
-  @include mq($medium) {
+
+  @include mq($bp-medium) {
     float: left;
     margin: 0;
   }
-
 }
 
 
@@ -111,7 +114,8 @@
   bottom: 10px;
   display: block;
   text-align: center;
-  @include mq($medium) {
+
+  @include mq($bp-medium) {
     position: static;
     float: right;
     margin: 0;
@@ -135,14 +139,20 @@
   line-height: 1;
   border-bottom: 4px solid black;
   padding-bottom: 5px;
+
+  @include mq($bp-medium, max) { margin-bottom: 10px; }
 }
 
+
 .ftr-grid-item {
-  @include mq(599px, max) {
-    padding-bottom: 20px;
-    border-bottom: 1px solid $black;
+  @include mq($bp-medium, max) {
+    // padding-bottom: 40px;
+    margin-bottom: 50px;
+    // border-bottom: 1px solid lighten($black, 20%);
   }
+  // background-color: green;
 }
+
 
 .ftr-text {
   @include sans(italic);
@@ -150,7 +160,10 @@
   font-size: 18px;
   line-height: 1.318181818;
   color: $black;
-  @include mq($medium) { font-size: 22px; }
+
+  @include mq($bp-medium) { font-size: 22px; }
+
+  @include mq($bp-medium, max) { margin-bottom: 3px; }
 }
 
 
@@ -215,14 +228,14 @@
   &:first-child { margin-left: 0; }
   margin-bottom: 20px;
 
-  @include mq($large) {
+  @include mq($bp-large) {
     float: left;
     margin-left: 25px;
     margin-bottom: 0;
     text-align: center;
   }
 
-  @include mq($desktop) { margin-left: 35px; }
+  @include mq($bp-desktop) { margin-left: 35px; }
 }
 
 
@@ -236,7 +249,7 @@
 
   &:hover { text-decoration: underline; }
 
-  @include mq($large) {
+  @include mq($bp-large) {
       font-size: 14px;
   }
 
@@ -269,7 +282,7 @@
   position: relative;
   z-index: 100;
   margin-bottom: 25px;
-  @include mq($medium) {
+  @include mq($bp-medium) {
     margin-bottom: -100px;
   }
 }
@@ -277,5 +290,5 @@
 
 .ftr-promo-outer {
   background-color: #fff;
-  @include mq($medium) { padding: 20px; }
+  @include mq($bp-medium) { padding: 20px; }
 }

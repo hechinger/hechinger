@@ -62,6 +62,6 @@
   white-space: nowrap;
   color: $he-secondary;
 
-  @include mq(450px, max) { font-size: 16px; }
+  @include mq(450px, max) { font-size: 22px; }
   @include mq(450px) { @include bullet(after); }
 }

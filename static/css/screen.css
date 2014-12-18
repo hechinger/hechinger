@@ -8204,105 +8204,105 @@ img.alignright, img.alignleft {
   font-weight: 300;
   font-size: 21px;
   line-height: 1.33;
-  color: #686265;
+  color: #474245;
 }
 
-/* line 132, ../scss/components/_tease.scss */
+/* line 131, ../scss/components/_tease.scss */
 .tz-author {
   font-weight: 300;
   font-size: 12px;
   margin-top: 10px;
 }
 
-/* line 139, ../scss/components/_tease.scss */
+/* line 138, ../scss/components/_tease.scss */
 .tz-author-name {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   color: #000000;
 }
-/* line 144, ../scss/components/_tease.scss */
+/* line 143, ../scss/components/_tease.scss */
 .tz-author-name:hover {
   text-decoration: underline;
 }
 
-/* line 155, ../scss/components/_tease.scss */
+/* line 154, ../scss/components/_tease.scss */
 .tz-h--reg-lg {
   font-size: 36px;
   line-height: 1.02;
 }
 
-/* line 161, ../scss/components/_tease.scss */
+/* line 160, ../scss/components/_tease.scss */
 .tz-text--reg-lg {
   font-size: 21px;
   line-height: 1.33;
 }
 
-/* line 173, ../scss/components/_tease.scss */
+/* line 172, ../scss/components/_tease.scss */
 .tz-h--reg-med {
   font-size: 30px;
   line-height: 1.2;
 }
 
-/* line 179, ../scss/components/_tease.scss */
+/* line 178, ../scss/components/_tease.scss */
 .tz-text--reg-med {
-  font-size: 19px;
-  line-height: 1.54;
+  font-size: 18px;
+  line-height: 1.3;
 }
 
-/* line 192, ../scss/components/_tease.scss */
+/* line 191, ../scss/components/_tease.scss */
 .tz-h--stub-lg {
   font-size: 34px;
   line-height: 1.2;
 }
 
-/* line 201, ../scss/components/_tease.scss */
+/* line 200, ../scss/components/_tease.scss */
 .tz-h--stub-med {
   font-size: 28px;
   line-height: 1.1;
 }
 
-/* line 214, ../scss/components/_tease.scss */
+/* line 213, ../scss/components/_tease.scss */
 .tz-h--feat-lg {
   line-height: 0.9;
   font-style: italic;
   font-weight: 900;
   letter-spacing: 0;
 }
-/* line 222, ../scss/components/_tease.scss */
+/* line 221, ../scss/components/_tease.scss */
 .tz-h--feat-lg .tz-h-link {
   color: black;
 }
 @media (min-width: 600px) {
-  /* line 214, ../scss/components/_tease.scss */
+  /* line 213, ../scss/components/_tease.scss */
   .tz-h--feat-lg {
     font-size: 65px;
   }
 }
 @media (min-width: 900px) {
-  /* line 214, ../scss/components/_tease.scss */
+  /* line 213, ../scss/components/_tease.scss */
   .tz-h--feat-lg {
     font-size: 100px;
   }
 }
 
-/* line 230, ../scss/components/_tease.scss */
+/* line 229, ../scss/components/_tease.scss */
 .tz-text--feat-lg {
   line-height: 1.45;
 }
 @media (min-width: 600px) {
-  /* line 230, ../scss/components/_tease.scss */
+  /* line 229, ../scss/components/_tease.scss */
   .tz-text--feat-lg {
     font-size: 29px;
   }
 }
 
-/* line 239, ../scss/components/_tease.scss */
+/* line 238, ../scss/components/_tease.scss */
 .tz-author--feat-lg {
   font-size: 15px;
 }
 
-/* line 248, ../scss/components/_tease.scss */
+/* line 247, ../scss/components/_tease.scss */
 .tz-special-h {
   display: inline;
   position: relative;
@@ -8313,14 +8313,14 @@ img.alignright, img.alignleft {
   color: #00aeef;
 }
 
-/* line 260, ../scss/components/_tease.scss */
+/* line 259, ../scss/components/_tease.scss */
 .tz-special-sub-h {
   font-size: 24px;
   font-weight: 700px;
   color: black;
 }
 
-/* line 267, ../scss/components/_tease.scss */
+/* line 266, ../scss/components/_tease.scss */
 .tz-special-link {
   position: relative;
   padding-right: 0.85em;
@@ -8341,7 +8341,7 @@ img.alignright, img.alignleft {
   right: 0;
 }
 
-/* line 274, ../scss/components/_tease.scss */
+/* line 273, ../scss/components/_tease.scss */
 .tz-special-number {
   position: relative;
   font-family: Tiempos, Georgia, Times, serif;
@@ -8352,21 +8352,21 @@ img.alignright, img.alignleft {
   letter-spacing: -1px;
 }
 @media (min-width: 650px) {
-  /* line 274, ../scss/components/_tease.scss */
+  /* line 273, ../scss/components/_tease.scss */
   .tz-special-number {
     font-size: 112px;
     letter-spacing: -3px;
   }
 }
 
-/* line 290, ../scss/components/_tease.scss */
+/* line 289, ../scss/components/_tease.scss */
 .tz-special-precent {
   font-size: 0.5em;
   vertical-align: super;
 }
 
 @media (min-width: 500px) {
-  /* line 298, ../scss/components/_tease.scss */
+  /* line 297, ../scss/components/_tease.scss */
   .l-pair-tz-special-stat {
     *zoom: 1;
     display: table;
@@ -8411,7 +8411,7 @@ img.alignright, img.alignleft {
   }
 }
 
-/* line 314, ../scss/components/_tease.scss */
+/* line 313, ../scss/components/_tease.scss */
 .tz-h--reg-med .tz-h-link em, .tz-h--reg-med .tz-h-link b, .tz-h--reg-med .tz-h-link strong,
 .tz-h--reg-lg .tz-h-link em,
 .tz-h--reg-lg .tz-h-link b,

@@ -94,7 +94,7 @@
         {% for author in post.coauthors %}
           <div class="page-mod article-mod">
             <div class="article-bio">
-              <div class="{{ author.author_image.src ? l-article-bio : '' }}">
+              <div class="{{ author.author_image ? 'l-article-bio' : '' }}">
                 {% if author.author_image %}
                   <div class="art-bd">
                     <div class="img-rounded">
@@ -108,15 +108,15 @@
                 <div class="txt-bd">
                   <h4 class="article-bio-h"><a class="article-bio-h-link" href="{{ author.link }}">{{ author.name }}</a></h4>
                   <p class="article-bio-text">{{ author.description }}<a class="article-bio-link" href="/author/{{ author.slug }}">See Archive</a></p>
-                </div> <!-- /txt-bd -->
-                {% if author.show_contact_info %}
+                  {% if author.show_contact_info %}
                     {% if author.twitter_handle %}
                       <div class="author-contact-item icon-twitter-author">
                         <a class="author-contact-link" href="http://twitter.com/{{ author.twitter_handle }}" target="_blank">
                         <span class="icon"></span>&commat;{{ author.twitter_handle }}</a>
                       </div> <!--author-contact-item -->
                     {% endif %}
-                {% endif %}
+                  {% endif %}
+                </div> <!-- /txt-bd -->
               </div> <!-- /l-article-bio -->
             </div> <!-- /article-bio -->
           </div> <!-- /page-mod -->

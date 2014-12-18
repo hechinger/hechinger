@@ -28,7 +28,7 @@
       {% if author.image %}
         <div class="art-bd">
           <div class="img-rounded">
-            <img class="author-photo" src="{{ author.image.get_url }}" alt="Photo of {{ author.name }}">
+            <img class="author-photo" src="{{ author.image.get_url | resize(200, 200) }}" alt="Photo of {{ author.name }}">
           </div> <!-- /img-rounded -->
         </div> <!-- /art-bio -->
       {% endif %}

@@ -4415,7 +4415,7 @@ img {
   /* Initiate a counter */
   margin-left: 0;
   /* Remove the default left margin */
-  padding-left: 0;
+  padding-left: 0
   /* Remove the default left padding */
 }
 /* line 189, ../scss/pages/_page.scss */
@@ -4426,7 +4426,7 @@ img {
   /* Give each list item a left margin to make room for the numbers */
   padding: 4px 0;
   /* Add some spacing around the content */
-  list-style: none;
+  list-style: none
   /* Disable the normal item numbering */
 }
 /* line 196, ../scss/pages/_page.scss */
@@ -4483,7 +4483,7 @@ img {
   /* Initiate a counter */
   margin-left: 0;
   /* Remove the default left margin */
-  padding-left: 0;
+  padding-left: 0
   /* Remove the default left padding */
 }
 /* line 248, ../scss/pages/_page.scss */
@@ -4494,7 +4494,7 @@ img {
   /* Give each list item a left margin to make room for the numbers */
   padding: 4px 0;
   /* Add some spacing around the content */
-  list-style: none;
+  list-style: none
   /* Disable the normal item numbering */
 }
 /* line 255, ../scss/pages/_page.scss */
@@ -5961,7 +5961,7 @@ input:-webkit-autofill:focus {
   .nav-item-wrap {
     position: relative;
     float: right;
-    display: initial;
+    display: block;
   }
 }
 
@@ -7658,7 +7658,7 @@ img.alignright, img.alignleft {
   /* Initiate a counter */
   margin-left: 0;
   /* Remove the default left margin */
-  padding-left: 0;
+  padding-left: 0
   /* Remove the default left padding */
 }
 /* line 144, ../scss/components/_article-aside.scss */
@@ -7669,7 +7669,7 @@ img.alignright, img.alignleft {
   /* Give each list item a left margin to make room for the numbers */
   padding: 4px 0;
   /* Add some spacing around the content */
-  list-style: none;
+  list-style: none
   /* Disable the normal item numbering */
 }
 /* line 151, ../scss/components/_article-aside.scss */

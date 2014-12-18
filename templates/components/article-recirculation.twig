@@ -39,9 +39,13 @@
       <!-- top featured stories -->
       <div class="grid-item">
         <div class="hp-top-feat-mod">
-          {% for rpost in recirc_posts|slice(4, 2)   %}
-            {% include "/templates/components/tease-hp-regular.twig" with { post: rpost, context_class: "reg-lg", css_class: 'tz-hp-reg' } %}
-          {% endfor %}
+          {% if recirc_posts[4].thumbnail.src|length %}
+            {% include "/templates/components/tease-hp-regular.twig" with { post: recirc_posts[4], context_class: "reg-lg", css_class: 'tz-hp-reg' } %}
+          {% else %}
+            {% for rpost in recirc_posts|slice(4, 2)   %}
+              {% include "/templates/components/tease-hp-regular.twig" with { post: rpost, context_class: "reg-lg", css_class: 'tz-hp-reg', hide_image: loop.index > 1 ? true : false } %}
+            {% endfor %}
+          {% endif %}
         </div> <!-- /hp-zone1-feat-mod -->
       </div> <!-- /grid-item -->
 

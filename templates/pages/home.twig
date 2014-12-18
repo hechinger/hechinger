@@ -11,7 +11,7 @@
 
     <!-- Homepage Zone 1 -->
     <!-- ===================================== -->
-    {% block hp_zone1 %}
+    {% block hp_zoneA %}
       <div class="l-hp-zone">
 
         <!-- hp main feature -->
@@ -47,7 +47,7 @@
         </div> <!-- /hp-latest-mod -->
       </div> <!-- /l-hp-zone -->
 
-    {% endblock hp_zone1 %}
+    {% endblock hp_zoneA %}
 
 
     <!-- Homepage Zone Special Reports -->
@@ -69,73 +69,37 @@
     {% endblock hp_reports %}
 
 
-    <!-- Homepage Zone 2 -->
+    <!-- Homepage Zone B -->
     <!-- ===================================== -->
-    {% block hp_zone2 %}
+    {% block hp_zoneB %}
       <div class="l-hp-zone">
-
-        <!-- Zone 2 Top -->
         <div class="hp-zone--top">
           <div class="l-zone-tres--rule">
-            {% for post in home.get_zone(2)|slice(0,3) %}
-              <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
-                {# TODO: change hide image logic when we have context class for image tease #}
-                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub', hide_image: loop.index > 1 ? true : true } %}
+            {% for post in home.get_zone(2) %}
+              <div class="grid-item {{ loop.index == 2 and post.thumbnail.src ? 'extra-grid-item' }}">
+                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub' } %}
               </div>
             {% endfor %}
           </div> <!-- /l-zone-tres--rule -->
         </div> <!-- /hp-zone--top -->
-
-        {#  ZONE 2 TOP WITH IMAGE #}
-        {# Chris: I just duplicated the entire hp-zone--top area and changed a couple things. I changed the get zone slice from 3 to 2 and changed the class that's added to the second grid item. The thing I could figure out was how to hide the image on the very first tease #}
-        <!-- Zone 2 Top If there are images -->
-        <div class="hp-zone--top">
-          <div class="l-zone-tres--rule">
-            {% for post in home.get_zone(2)|slice(0,2) %}
-              <div class="grid-item {{ loop.index > 1 ? 'extra-grid-item' }}">
-                {# TODO: change hide image logic when we have context class for image tease #}
-                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub', hide_image: loop.index > 1 ? false : false } %}
-              </div>
-            {% endfor %}
-          </div> <!-- /l-zone-tres--rule -->
-        </div> <!-- /hp-zone--top -->
-        {# END ZONE 2 TOP WITH IMAGE #}
+        {# END ZONE 2 #}
 
 
-        <!-- Zone 2 Middle -->
+        <!-- Zone 2 Quote -->
         {% if z2_quote|length %}
           <div class="hp-zone--middle">
             {% include "/templates/components/tease-special.twig" with { quote: z2_quote, show_stat: z2_quote.show_stat, css_class: 'tz-special-stat tz-special' } %}
           </div>
         {% endif %}
 
-        <!-- Zone 2 Bottom -->
-        <div class="hp-zone--bottom">
-          <div class="l-zone-cuatro--rule">
-            {% for post in home.get_zone(2)|slice(3,4) %}
-              <div class="grid-item">
-                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-med', hide_image: true } %}
-              </div>
-            {% endfor %}
-          </div> <!-- /l-zone-cuatro--rule -->
-        </div> <!-- /hp-zone-bottom -->
 
-
-        {#  ZONE 2 BOTTOM WITH IMAGE #}
-        {# Chris: I just duplicated the entire hp-zone--bottom area and changed a couple things. I changed the layout class to l-zone-tres-art. I changed the slice from 4 to 3. #}
+        {#  ZONE 3 BOTTOM WITH IMAGE #}
          <div class="hp-zone--bottom">
           <div class="l-zone-tres--art">
-            {% for post in home.get_zone(2)|slice(3,3) %}
-              {% if loop.index < 2 %}
-                <div class="grid-item extra-grid-item">
-                  {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-med', hide_image: false } %}
-                </div>
-                {% else %}
-                  <div class="grid-item">
-                    {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-med', hide_image: true } %}
-                  </div> <!-- /grid-item -->
-              {% endif %}
-
+            {% for post in home.get_zone(3)|slice(0,4) %}
+              <div class="grid-item {{ loop.index == 2 and post.thumbnail.src ? 'extra-grid-item' : '' }}">
+                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-med', hide_image: loop.index == 2 and post.thumbnail.src ? false : true } %}
+              </div> <!-- /grid-item -->
             {% endfor %}
           </div> <!-- /l-zone-cuatro--rule -->
         </div> <!-- /hp-zone-bottom -->
@@ -144,7 +108,7 @@
 
 
       </div> <!-- /l-hp-zone -->
-    {% endblock hp_zone2 %}
+    {% endblock hp_zoneB %}
 
 
     <!-- Homepage Featured -->
@@ -156,9 +120,9 @@
     {% endblock hp_zone_feat %}
 
 
-    <!-- Homepage Zone 3 -->
+    <!-- Homepage Zone C -->
     <!-- ===================================== -->
-    {% block hp_zone3 %}
+    {% block hp_zoneC %}
       <div class="l-hp-zone">
 
         <!-- Zone 3 Top -->
@@ -167,16 +131,15 @@
 
               <!-- Zone 3 Top Left side -->
               <div class="top-grid-item top-grid-item--left">
-                {% include "/templates/components/tease-hp-regular.twig" with { post: home.get_zone(3)[0], context_class: 'reg-med'} %}
+                {% include "/templates/components/tease-hp-regular.twig" with { post: home.get_zone(4)[0], context_class: 'reg-med'} %}
               </div> <!-- /top-grid-item -->
 
               <!-- Zone 3 Top Right side -->
               <div class="top-grid-item top-grid-item--right">
                 <div class="l-zone-dos--split-inside">
-                  {% for post in home.get_zone(3)|slice(1,2) %}
+                  {% for post in home.get_zone(4)|slice(1,2) %}
                     <div class="grid-item">
-                      {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med', hide_image: false } %}
-                      {# grant changed the hide_image variable to false #}
+                      {% include "/templates/components/tease-hp-regular.twig" with {context_class: 'reg-med', hide_image: true } %}
                     </div> <!-- /grid-item -->
                   {% endfor %}
                 </div> <!-- /l-zone-dos--split-inside -->
@@ -196,7 +159,7 @@
         <!-- Zone 3 Bottom -->
         <div class="hp-zone--bottom">
           <div class="l-zone-tres--rule">
-            {% for post in home.get_zone(3)|slice(3,3) %}
+            {% for post in home.get_zone(4)|slice(3,3) %}
               <div class="grid-item {{ loop.index > 1 ? 'sub-grid-item' }}">
                 {% include "/templates/components/tease-hp-regular.twig" with { context_class: 'reg-med', hide_image: true } %}
               </div>
@@ -205,7 +168,7 @@
         </div> <!-- /hp-zone--bottom -->
 
       </div> <!-- /l-hp-zone -->
-    {% endblock hp_zone3 %}
+    {% endblock hp_zoneC %}
 
   </div> <!-- /l-content -->
 

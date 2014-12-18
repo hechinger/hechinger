@@ -3,8 +3,12 @@
 class HechingerPost extends TimberPost {
 
   function overline() {
+    $primary = $this->get_field('primary_special_report');
+    if ($primary) {
+      return new HechingerTerm($primary);
+    }
     $st = $this->get_terms('special-report');
-    if (is_array($st) && count($st) ) {
+    if (is_array($st) && count($st) ) { 
       return $st[0];
     }
     return $this->category();
@@ -161,4 +165,6 @@ class HechingerPost extends TimberPost {
     $title = preg_replace('/[^a-zA-Z0-9\/_.;&!?:|+ -]/', '', strip_tags($this->title));
     return $title;
   }
+
+  
 }

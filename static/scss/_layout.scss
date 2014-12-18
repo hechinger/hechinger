@@ -611,6 +611,7 @@ $subzone-ends-layout: 800px;
 // Used on the Home page in Zone 2 Bottom (hp-zone-bottom)
 
 .l-zone-tres--art {
+  overflow: hidden;
   @include pie-clearfix;
   @include mq($bp-medium-plus) {
     @include media-grid(4, 50px, '.grid-item');
@@ -655,9 +656,9 @@ $subzone-ends-layout: 800px;
           width: 1px;
           background-color: $bdr-thin-color;
         }
-        &:nth-of-type(3) {
+        &:nth-of-type(3n) {
           float: right;
-          &:after { position: static; width: 0; }
+          // &:after { position: static; width: 0; }
         }
       }
     }
@@ -671,6 +672,12 @@ $subzone-ends-layout: 800px;
         border-bottom: 0;
         padding-bottom: 0;
         margin-bottom: 0;
+      }
+    }
+    &:last-child {
+      &:after {
+        position: relative;
+        width: 0;
       }
     }
   }

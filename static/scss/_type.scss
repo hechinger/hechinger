@@ -114,16 +114,43 @@
 }
 
 
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Headline highlights
+//
+// --------------------------------------------
+// --------------------------------------------
+
+// @mixin head-highlight {
+//   position: relative;
+//   padding: 0 0.2em;
+//   font-style: normal;
+//   &:before {
+//     position: absolute;
+//     z-index: -1;
+//     content: '';
+//     top: 10%;
+//     bottom: -5%;
+//     left: 0;
+//     right: 0;
+//     background-color: $he-main;
+//   }
+// }
+
+
 @mixin head-highlight {
   position: relative;
-  top: -0.01em;
+  z-index: -1;
+  // top: -0.02em;
   background-color: $he-main;
   vertical-align: text-bottom;
   font-style: normal;
-  font-size: 0.87em;
-  padding: 0 0.3em 0.1em;
+  padding: 0 0.2em;
 }
-
 
 
 

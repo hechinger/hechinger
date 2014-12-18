@@ -32,8 +32,9 @@
 
 
 .archive-feed-container {
-  margin: 0 $site-margin;
+  margin: 45px $site-margin 0;
   max-width: $content-max;
+
   @include mq($no-content-margin) {
     margin: 70px auto 0;
   }

@@ -3622,26 +3622,30 @@ img {
 
 /* line 594, ../scss/pages/_article.scss */
 #comment-mod {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 1s cubic-bezier(0.54, 0.24, 0.85, 0.23);
+          transition: max-height 1s cubic-bezier(0.54, 0.24, 0.85, 0.23);
 }
-/* line 596, ../scss/pages/_article.scss */
+/* line 600, ../scss/pages/_article.scss */
 #comment-mod.comment-mod--is-active {
+  max-height: 5500px;
   display: block;
 }
 
-/* line 607, ../scss/pages/_article.scss */
+/* line 614, ../scss/pages/_article.scss */
 #disqus_thread a:link {
   color: #00aeef;
 }
-/* line 608, ../scss/pages/_article.scss */
+/* line 615, ../scss/pages/_article.scss */
 #disqus_thread a:hover {
   color: #00aeef;
 }
-/* line 609, ../scss/pages/_article.scss */
+/* line 616, ../scss/pages/_article.scss */
 #disqus_thread a:active {
   color: #00aeef;
 }
-/* line 610, ../scss/pages/_article.scss */
+/* line 617, ../scss/pages/_article.scss */
 #disqus_thread a:visited {
   color: #00aeef;
 }

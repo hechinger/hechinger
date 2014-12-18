@@ -42,7 +42,7 @@ class HechingerSite extends TimberSite {
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		add_action( 'init', array( $this, 'add_reports' ) );
 		add_action( 'init', array( $this, 'register_menus' ) );
-
+    add_filter( 'acf/load_field/key=field_5492eb43d3984', array($this, 'set_primary_special_report'), 2, 2 );
     $this->set_shortcodes();
     $this->set_routes();
 		parent::__construct();
@@ -201,9 +201,6 @@ class HechingerSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['foo'] = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['nav_menu'] = new TimberMenu('nav-bar');
 		$context['footer_menu'] = new TimberMenu('footer-nav');
 		$context['site'] = $this;
@@ -308,6 +305,21 @@ class HechingerSite extends TimberSite {
             'aside' => $aside
         );
         return Timber::compile('templates/components/article-aside.twig', $args);
+    }
+
+    static function set_primary_special_report( $field ) {
+      global $post;
+      if ( !$post ) {
+        return $field;
+      }
+      $post = new HechingerPost();
+      $terms = $post->special_topics();
+      if ( is_array( $terms ) ) {
+        foreach ( $terms as $term ) {
+          $field['choices'][$term->id] = $term->name;
+        }
+      }
+      return $field;
     }
 }
 

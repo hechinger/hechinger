@@ -119,7 +119,7 @@ $logo-ht-lg:    53px;
   @include mq($medium) {
     position: relative;
     float: right;
-    display: initial;
+    display: block;
   }
 }
 

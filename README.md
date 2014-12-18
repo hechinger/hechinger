@@ -9,52 +9,11 @@ Setting up the Hechinger theme for development takes a few steps. You'll be inst
 
 1. Follow the directions [here](https://github.com/Upstatement/hechinger_vagrant) to set up a Vagrant environment. Then come back here.
 2. [Install Timber](#install-timber) following the directions below.
-3. [Install Mesh](#install-mesh).
-4. [Import the Hechinger database](#import-database) to get actual Hechinger content.
-5. [Import Hechinger Uploads folder](#import-uploads-folder) to get images for the site.
-6. [Install dependencies.](#install-dependencies)
-7. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
+3. [Import the Hechinger database](#import-database) to get actual Hechinger content.
+4. [Import Hechinger Uploads folder](#import-uploads-folder) to get images for the site.
+5. [Install dependencies.](#install-dependencies)
+6. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
 
-### Install Timber
-
-Timber helps you create fully-customized WordPress themes faster with more sustainable code. With Timber, you write your HTML using the Twig Template Engine separate from your PHP files.
-
-You'll need to install the Timber plugin using the terminal commands below.
-
-Open a terminal and navagte to your hechinger_vagrant install
-
-```
-$ vagrant ssh
-$ cd /srv/www/wordpress-he/
-$ wp plugin install timber-library --activate
-$ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activate
-$ exit
-```
-
-### Install ACF
-
-Advanced Custom Fields v5 powers the custom fields on the new Hechinger site. Downloading and activating this plugin will give you access to the custom fields Upstatement's dev team has created.
-
-```
-$ vagrant ssh
-$ cd /srv/www/wordpress-he/
-$ wp plugin install https://www.dropbox.com/s/msici5rzsadpf0w/advanced-custom-fields-pro.zip?dl=1 --activate
-$ exit
-```
-In the wp-admin, activate the license with the Upstatement license key here: https://github.com/Upstatement/Upstatement/wiki/Upstatement%20WordPress%20Plugins#advanced-custom-fields
-
-### Install Stream Manager
-
-[Stream Manager](http://github.com/Upstatement/Stream-Manager) allows editors to intuitivly sort recent posts for the homepage to install, navigate to your vagrant install for Hechinger
-
-```
-$ cd www/wordpress-he/wp-content/plugins
-$ git clone git@github.com:Upstatement/stream-manager.git
-$ vagrant ssh
-$ cd /srv/www/wordpress-he/
-$ wp plugin activate stream-manager
-```
- 
 
 ### Install Dependencies
 
@@ -65,9 +24,14 @@ Open a terminal and navagte to your hechinger theme folder.
 ```
 $ composer update
 $ bower install
-$ compass watch
 $ gem install autoprefixer-rails
+$ compass watch
 ```
+
+Sometimes the wordpress plugins you installed aren't activated. Just go into the wordpress admin and check that you've actiated the plugins.
+
+[Autoprefixer](https://github.com/postcss/autoprefixer) is a gem that works with Compass to add browser prefixes to our compiled sass.
+The site also uses [respond.js](https://github.com/scottjehl/Respond) to provide media queries for IE8 and lower.
 
 _Protip: If you ever find the site is "broken" or has no stylesheets always try `bower install` and `compass watch` before asking for help._
 =======
@@ -76,10 +40,7 @@ _Protip: If you ever find the site is "broken" or has no stylesheets always try 
 
 We use mesh to bootstrap custom taxonomies, pages, and post types. This is especially helpful to avoid DB imports and exports and bootstrap static pages.
 
-To get Mesh follow the new [instructions in the readme](https://github.com/Upstatement/hechinger/compare/43_page_scaffold?expand=1#diff-04c6e90faac2675aa89e2176d2eec7d8R15). Specifically this can be run on an existing Hechinger install...
-
-
-#### Install Mesh
+To get Mesh follow the new [instructions in the readme](https://github.com/Upstatement/hechinger/compare/43_page_scaffold?expand=1#diff-04c6e90faac2675aa89e2176d2eec7d8R15). Specifically this can be run on an existing Hechinger install. Mesh should be installed by composer, but in the event that it isn't open a terminal:
 
 ```
 $ vagrant ssh
@@ -105,6 +66,46 @@ function bootstap_content() {
 #### Now populate that page
 
 To populate these you'll need a file called `hechinger/templates/pages/page-my-cool-page.twig` and then populate that as you would other pages on the site
+
+### Timber
+
+Timber helps you create fully-customized WordPress themes faster with more sustainable code. With Timber, you write your HTML using the Twig Template Engine separate from your PHP files.
+
+If composer doesn't install Timber you'll need to install the Timber plugin using the terminal commands below.
+
+Open a terminal and navagte to your hechinger_vagrant install
+
+```
+$ vagrant ssh
+$ cd /srv/www/wordpress-he/
+$ wp plugin install timber-library --activate
+$ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activate
+$ exit
+```
+
+### ACF
+
+Advanced Custom Fields v5 powers the custom fields on the new Hechinger site. Downloading and activating this plugin will give you access to the custom fields Upstatement's dev team has created. ACF will be install by composer, but if it isn't open a terminal:
+
+```
+$ vagrant ssh
+$ cd /srv/www/wordpress-he/
+$ wp plugin install https://www.dropbox.com/s/msici5rzsadpf0w/advanced-custom-fields-pro.zip?dl=1 --activate
+$ exit
+```
+In the wp-admin, activate the license with the Upstatement license key here: https://github.com/Upstatement/Upstatement/wiki/Upstatement%20WordPress%20Plugins#advanced-custom-fields
+
+### Stream Manager
+
+[Stream Manager](http://github.com/Upstatement/Stream-Manager) allows editors to intuitivly sort recent posts for the homepage to install, navigate to your vagrant install for Hechinger. Composer should install the Stream Manager for us, but if it isn't:
+
+```
+$ cd www/wordpress-he/wp-content/plugins
+$ git clone git@github.com:Upstatement/stream-manager.git
+$ vagrant ssh
+$ cd /srv/www/wordpress-he/
+$ wp plugin activate stream-manager
+```
 
 ## Database Management
 

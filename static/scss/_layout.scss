@@ -219,14 +219,14 @@ $has-margin:          800px;
     padding-top: 45px;
     margin-top: 45px;
     border-top: $bdr-thin;
-    // background-color: blue
+    @include mq($bp-medium, max) { padding-top: 15px; margin-top: 15px; }
   }
 
   & + & {
     margin-top: 45px;
     padding-top: 45px;
     border-top: $bdr-thin;
-    // background-color: pink;
+    @include mq($bp-medium, max) { padding-top: 15px; margin-top: 15px; }
   }
 }
 
@@ -633,8 +633,8 @@ $subzone-ends-layout: 800px;
 
     // Controlling size of art for first grid item
     .l-pair-tz-hp-stub {
-      @include mq(450px) { @include pair(150px, 25px); }
-      @include mq($bp-medium) { @include pair(200px, 25px); }
+      @include mq(450px) { @include pair(150px, 25px, top); }
+      @include mq($bp-medium) { @include pair(200px, 25px, top); }
     }
 
   }

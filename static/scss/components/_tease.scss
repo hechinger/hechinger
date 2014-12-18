@@ -6,6 +6,17 @@
 // --------------------------------------------
 // --------------------------------------------
 
+$bp-display-type:   $bp-medium;
+
+
+// Controllind display type
+@mixin display-type {
+  @include mq($bp-display-type, max) {
+    font-size: 22px;
+  }
+}
+
+
 .tz { font-family: $he-sans; }
 
 
@@ -124,7 +135,9 @@
   font-weight: $font-weight-lt;
   font-size: 21px;
   line-height: 1.33;
-  color: $black-80;
+  color: $black-90;
+  @include mq($bp-display-type, max) { margin-top: 5px; }
+  @include mq($bp-display-type, max) { font-size: 17px; }
 }
 
 
@@ -154,12 +167,14 @@
 .tz-h--reg-lg {
   font-size: 36px;
   line-height: 1.02;
+  @include display-type;
 }
 
 
 .tz-text--reg-lg {
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.33;
+   @include mq($bp-display-type, max) { font-size: 17px; }
 }
 
 
@@ -170,8 +185,10 @@
 
 
 .tz-h--reg-med {
-  font-size: 30px;
-  line-height: 1.2;
+  // font-size: 30px;
+  font-size: 26px;
+  line-height: 1.15;
+  @include display-type;
 }
 
 
@@ -191,6 +208,7 @@
 .tz-h--stub-lg {
   font-size: 34px;
   line-height: 1.2;
+  @include display-type;
 }
 
 
@@ -200,6 +218,7 @@
 .tz-h--stub-med {
   font-size: 28px;
   line-height: 1.1;
+  @include display-type;
 }
 
 
@@ -245,7 +264,7 @@
 // --------------------------------------------
 
 .tz-special-h {
-  display: inline;
+  // display: inline;
   position: relative;
   font-family: $he-accent;
   font-size: 28px;
@@ -253,6 +272,8 @@
   font-weight: 900;
   color: $he-secondary;
   // margin-bottom: 20px;
+  margin: 12px 0 5px;
+  @include mq($bp-medium) { margin-top: 0; }
 }
 
 
@@ -297,7 +318,14 @@
 .l-pair-tz-special-stat {
   // @include mq(500px, 650px) { @include pair(125px, 35px); }
   // @include mq(650px) { @include pair(auto, 70px); }
-  @include mq(500px) { @include pair(auto, 70px); }
+  @include mq($bp-medium) { @include pair(auto, 30px); }
+  @include mq($bp-medium, max) {
+    .art-bd {
+      float: none;
+      max-width: auto;
+      margin-left: 0;
+    }
+  }
 }
 
 

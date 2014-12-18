@@ -842,11 +842,25 @@ button {
   margin-top: 45px;
   border-top: 1px solid #dad7d7;
 }
+@media (max-width: 599px) {
+  /* line 218, ../scss/_layout.scss */
+  .l-hp-zone > * + * {
+    padding-top: 15px;
+    margin-top: 15px;
+  }
+}
 /* line 225, ../scss/_layout.scss */
 .l-hp-zone + .l-hp-zone {
   margin-top: 45px;
   padding-top: 45px;
   border-top: 1px solid #dad7d7;
+}
+@media (max-width: 599px) {
+  /* line 225, ../scss/_layout.scss */
+  .l-hp-zone + .l-hp-zone {
+    padding-top: 15px;
+    margin-top: 15px;
+  }
 }
 
 /* line 247, ../scss/_layout.scss */
@@ -1645,7 +1659,6 @@ button {
   /* line 635, ../scss/_layout.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
-    display: table;
   }
   /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub:after {
@@ -1653,36 +1666,25 @@ button {
     display: table;
     clear: both;
   }
-  /* line 461, ../vendor/Upbase/components/_layout.scss */
+  /* line 494, ../vendor/Upbase/components/_layout.scss */
+  .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd,
+  .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .txt-bd {
+    display: block;
+  }
+  /* line 498, ../vendor/Upbase/components/_layout.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd {
-    display: table-cell;
     width: 150px;
+    float: left;
     margin: 0;
   }
-  /* line 465, ../vendor/Upbase/components/_layout.scss */
+  /* line 506, ../vendor/Upbase/components/_layout.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd > img,
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd > .art {
     width: 100%;
     max-width: 100%;
   }
-  /* line 470, ../vendor/Upbase/components/_layout.scss */
+  /* line 511, ../vendor/Upbase/components/_layout.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .txt-bd {
-    display: table-cell;
-    vertical-align: middle;
-    padding-left: 25px;
-  }
-  /* line 479, ../vendor/Upbase/components/_layout.scss */
-  .lt-ie8 .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd,
-  .lt-ie8 .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .txt-bd {
-    display: block;
-  }
-  /* line 483, ../vendor/Upbase/components/_layout.scss */
-  .lt-ie8 .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd {
-    width: 150px;
-    float: left;
-  }
-  /* line 487, ../vendor/Upbase/components/_layout.scss */
-  .lt-ie8 .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .txt-bd {
     margin-left: 175px;
   }
 }
@@ -1690,7 +1692,6 @@ button {
   /* line 635, ../scss/_layout.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
-    display: table;
   }
   /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub:after {
@@ -1698,36 +1699,25 @@ button {
     display: table;
     clear: both;
   }
-  /* line 461, ../vendor/Upbase/components/_layout.scss */
+  /* line 494, ../vendor/Upbase/components/_layout.scss */
+  .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd,
+  .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .txt-bd {
+    display: block;
+  }
+  /* line 498, ../vendor/Upbase/components/_layout.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd {
-    display: table-cell;
     width: 200px;
+    float: left;
     margin: 0;
   }
-  /* line 465, ../vendor/Upbase/components/_layout.scss */
+  /* line 506, ../vendor/Upbase/components/_layout.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd > img,
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd > .art {
     width: 100%;
     max-width: 100%;
   }
-  /* line 470, ../vendor/Upbase/components/_layout.scss */
+  /* line 511, ../vendor/Upbase/components/_layout.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .txt-bd {
-    display: table-cell;
-    vertical-align: middle;
-    padding-left: 25px;
-  }
-  /* line 479, ../vendor/Upbase/components/_layout.scss */
-  .lt-ie8 .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd,
-  .lt-ie8 .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .txt-bd {
-    display: block;
-  }
-  /* line 483, ../vendor/Upbase/components/_layout.scss */
-  .lt-ie8 .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .art-bd {
-    width: 200px;
-    float: left;
-  }
-  /* line 487, ../vendor/Upbase/components/_layout.scss */
-  .lt-ie8 .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub > .txt-bd {
     margin-left: 225px;
   }
 }
@@ -6973,21 +6963,25 @@ input:-webkit-autofill:focus {
   background-size: cover;
   margin-top: 50px;
 }
+/* line 15, ../scss/components/_promo.scss */
+.ftr-promo-mod .promo-mod {
+  margin-top: 0;
+}
 
-/* line 17, ../scss/components/_promo.scss */
+/* line 19, ../scss/components/_promo.scss */
 .promo-donate {
   background-color: black;
   background-image: url("/wp-content/themes/hechinger/static/img/house-ad/Promo_Cloudy_1.jpg");
 }
 
-/* line 23, ../scss/components/_promo.scss */
+/* line 25, ../scss/components/_promo.scss */
 .promo-overlay {
   position: relative;
   min-height: 200px;
   background-color: rgba(42, 39, 43, 0.3);
 }
 
-/* line 30, ../scss/components/_promo.scss */
+/* line 32, ../scss/components/_promo.scss */
 .promo-inner {
   *zoom: 1;
   position: relative;
@@ -7001,13 +6995,13 @@ input:-webkit-autofill:focus {
   clear: both;
 }
 @media (min-width: 600px) {
-  /* line 30, ../scss/components/_promo.scss */
+  /* line 32, ../scss/components/_promo.scss */
   .promo-inner {
     padding: 35px 50px;
   }
 }
 
-/* line 43, ../scss/components/_promo.scss */
+/* line 45, ../scss/components/_promo.scss */
 .promo-content-bdr:after,
 .promo-content-bdr--reverse:after {
   position: absolute;
@@ -7022,7 +7016,7 @@ input:-webkit-autofill:focus {
   background-color: transparent;
 }
 @media (min-width: 900px) {
-  /* line 43, ../scss/components/_promo.scss */
+  /* line 45, ../scss/components/_promo.scss */
   .promo-content-bdr:after,
   .promo-content-bdr--reverse:after {
     background-color: black;
@@ -7030,18 +7024,18 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 900px) {
-  /* line 58, ../scss/components/_promo.scss */
+  /* line 60, ../scss/components/_promo.scss */
   .promo-content-bdr--reverse:after {
     background-color: white;
   }
 }
 
-/* line 64, ../scss/components/_promo.scss */
+/* line 66, ../scss/components/_promo.scss */
 .promo-hdr {
   position: relative;
 }
 @media (min-width: 900px) {
-  /* line 64, ../scss/components/_promo.scss */
+  /* line 66, ../scss/components/_promo.scss */
   .promo-hdr {
     width: 23%;
     float: left;
@@ -7049,32 +7043,36 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 900px) {
-  /* line 73, ../scss/components/_promo.scss */
+  /* line 75, ../scss/components/_promo.scss */
   .promo-main {
     float: right;
     width: 65%;
   }
 }
-/* line 79, ../scss/components/_promo.scss */
+/* line 81, ../scss/components/_promo.scss */
 .promo-main p {
-  color: white;
+  color: #000000;
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
 @media (min-width: 600px) {
-  /* line 79, ../scss/components/_promo.scss */
+  /* line 81, ../scss/components/_promo.scss */
   .promo-main p {
     font-size: 25px;
   }
 }
-/* line 85, ../scss/components/_promo.scss */
+/* line 87, ../scss/components/_promo.scss */
 .promo-main p strong, .promo-main p em, .promo-main p b {
   font-weight: 700;
   margin-right: 5px;
 }
+/* line 92, ../scss/components/_promo.scss */
+.promo-main p.promo-text--reverse {
+  color: #ffffff;
+}
 
-/* line 97, ../scss/components/_promo.scss */
+/* line 100, ../scss/components/_promo.scss */
 .promo-h {
   font-family: Tiempos, Georgia, Times, serif;
   font-size: 18px;
@@ -7083,68 +7081,52 @@ input:-webkit-autofill:focus {
   margin-bottom: 10px;
 }
 @media (min-width: 600px) {
-  /* line 97, ../scss/components/_promo.scss */
+  /* line 100, ../scss/components/_promo.scss */
   .promo-h {
     font-size: 25px;
   }
 }
 @media (min-width: 900px) {
-  /* line 97, ../scss/components/_promo.scss */
+  /* line 100, ../scss/components/_promo.scss */
   .promo-h {
     padding: 20px 0 30px;
     margin: 0;
   }
 }
-/* line 112, ../scss/components/_promo.scss */
+/* line 115, ../scss/components/_promo.scss */
 .promo-h > br {
   display: none;
 }
 @media (min-width: 900px) {
-  /* line 112, ../scss/components/_promo.scss */
+  /* line 115, ../scss/components/_promo.scss */
   .promo-h > br {
     display: block;
   }
 }
 
-/* line 118, ../scss/components/_promo.scss */
+/* line 121, ../scss/components/_promo.scss */
 .promo-h--reverse {
   color: white;
   font-weight: 700;
 }
 
-/* line 123, ../scss/components/_promo.scss */
-.promo-text,
-.promo-text--reverse {
-  font-family: National, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  color: #000000 !important;
-}
-@media (min-width: 600px) {
-  /* line 123, ../scss/components/_promo.scss */
-  .promo-text,
-  .promo-text--reverse {
-    font-size: 25px;
-  }
-}
-
-/* line 133, ../scss/components/_promo.scss */
+/* line 136, ../scss/components/_promo.scss */
 .promo-text--reverse {
   color: white;
 }
 
-/* line 138, ../scss/components/_promo.scss */
+/* line 141, ../scss/components/_promo.scss */
 .promo-text--bold {
   font-weight: 700;
   margin-right: 5px;
 }
 
-/* line 144, ../scss/components/_promo.scss */
+/* line 147, ../scss/components/_promo.scss */
 .promo-link {
   text-decoration: none;
 }
 
-/* line 153, ../scss/components/_promo.scss */
+/* line 156, ../scss/components/_promo.scss */
 .promo-bdr {
   position: relative;
   height: 2px;
@@ -7152,12 +7134,12 @@ input:-webkit-autofill:focus {
   background-color: black;
 }
 @media (min-width: 600px) {
-  /* line 153, ../scss/components/_promo.scss */
+  /* line 156, ../scss/components/_promo.scss */
   .promo-bdr {
     height: 10px;
   }
 }
-/* line 160, ../scss/components/_promo.scss */
+/* line 163, ../scss/components/_promo.scss */
 .promo-bdr:after, .promo-bdr:before {
   position: absolute;
   content: '\0020';
@@ -7166,32 +7148,32 @@ input:-webkit-autofill:focus {
   background-color: #000000;
 }
 @media (min-width: 600px) {
-  /* line 160, ../scss/components/_promo.scss */
+  /* line 163, ../scss/components/_promo.scss */
   .promo-bdr:after, .promo-bdr:before {
     width: 10px;
     height: 50px;
   }
 }
-/* line 168, ../scss/components/_promo.scss */
+/* line 171, ../scss/components/_promo.scss */
 .promo-bdr:before {
   left: 0;
 }
-/* line 169, ../scss/components/_promo.scss */
+/* line 172, ../scss/components/_promo.scss */
 .promo-bdr:after {
   right: 0;
 }
 
-/* line 175, ../scss/components/_promo.scss */
+/* line 178, ../scss/components/_promo.scss */
 .promo-bdr--top:after, .promo-bdr--top:before {
   top: 0;
 }
 
-/* line 180, ../scss/components/_promo.scss */
+/* line 183, ../scss/components/_promo.scss */
 .promo-bdr--bottom:after, .promo-bdr--bottom:before {
   bottom: 0;
 }
 
-/* line 188, ../scss/components/_promo.scss */
+/* line 191, ../scss/components/_promo.scss */
 .promo-form {
   *zoom: 1;
   margin-top: 25px;
@@ -7204,18 +7186,18 @@ input:-webkit-autofill:focus {
   clear: both;
 }
 @media (min-width: 600px) {
-  /* line 188, ../scss/components/_promo.scss */
+  /* line 191, ../scss/components/_promo.scss */
   .promo-form {
     border-bottom: 1px solid #dad7d7;
   }
 }
 
-/* line 198, ../scss/components/_promo.scss */
+/* line 201, ../scss/components/_promo.scss */
 .promo-label {
   display: none;
 }
 
-/* line 201, ../scss/components/_promo.scss */
+/* line 204, ../scss/components/_promo.scss */
 .promo-btn,
 .promo-btn-donate {
   font-family: National, Helvetica, Arial, sans-serif;
@@ -7223,7 +7205,7 @@ input:-webkit-autofill:focus {
   font-size: 14px;
 }
 @media (min-width: 600px) {
-  /* line 201, ../scss/components/_promo.scss */
+  /* line 204, ../scss/components/_promo.scss */
   .promo-btn,
   .promo-btn-donate {
     float: right;
@@ -7231,12 +7213,12 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 214, ../scss/components/_promo.scss */
+/* line 217, ../scss/components/_promo.scss */
 .promo-btn-donate {
   margin-top: 30px;
 }
 
-/* line 220, ../scss/components/_promo.scss */
+/* line 223, ../scss/components/_promo.scss */
 .promo-input {
   display: block;
   padding: 20px 10px;
@@ -7250,12 +7232,12 @@ input:-webkit-autofill:focus {
   font-size: 14px;
   color: #474245;
 }
-/* line 232, ../scss/components/_promo.scss */
+/* line 235, ../scss/components/_promo.scss */
 .promo-input:invalid {
   box-shadow: none;
 }
 @media (min-width: 600px) {
-  /* line 220, ../scss/components/_promo.scss */
+  /* line 223, ../scss/components/_promo.scss */
   .promo-input {
     float: left;
     height: 38px;
@@ -8082,21 +8064,21 @@ img.alignright, img.alignleft {
   float: right;
 }
 
-/* line 9, ../scss/components/_tease.scss */
+/* line 20, ../scss/components/_tease.scss */
 .tz {
   font-family: National, Helvetica, Arial, sans-serif;
 }
 
-/* line 14, ../scss/components/_tease.scss */
+/* line 25, ../scss/components/_tease.scss */
 .tz-inner > * + * {
   margin-top: 5px;
 }
 
-/* line 22, ../scss/components/_tease.scss */
+/* line 33, ../scss/components/_tease.scss */
 .tz-content-mod > * + * {
   margin-top: 5px;
 }
-/* line 27, ../scss/components/_tease.scss */
+/* line 38, ../scss/components/_tease.scss */
 .tz-hp-feat--main-img .tz-content-mod {
   position: relative;
   z-index: 1;
@@ -8106,12 +8088,12 @@ img.alignright, img.alignleft {
   background-color: #fff;
 }
 
-/* line 38, ../scss/components/_tease.scss */
+/* line 49, ../scss/components/_tease.scss */
 .tz-img-mod {
   margin-bottom: 25px;
 }
 
-/* line 52, ../scss/components/_tease.scss */
+/* line 63, ../scss/components/_tease.scss */
 .tz-overline {
   text-transform: uppercase;
   font-size: 14px;
@@ -8120,23 +8102,23 @@ img.alignright, img.alignleft {
   color: #a6a1a3;
 }
 
-/* line 61, ../scss/components/_tease.scss */
+/* line 72, ../scss/components/_tease.scss */
 .tz-overline-link {
   text-decoration: none;
   color: #a6a1a3;
 }
-/* line 64, ../scss/components/_tease.scss */
+/* line 75, ../scss/components/_tease.scss */
 .tz-overline-link:hover {
   text-decoration: underline;
 }
 @media (min-width: 600px) {
-  /* line 66, ../scss/components/_tease.scss */
+  /* line 77, ../scss/components/_tease.scss */
   .tz-overline--feat-lg .tz-overline-link {
     color: black;
   }
 }
 
-/* line 72, ../scss/components/_tease.scss */
+/* line 83, ../scss/components/_tease.scss */
 .tz-h {
   font-weight: 700;
   font-size: 36px;
@@ -8161,7 +8143,7 @@ img.alignright, img.alignleft {
     width: 100%;
   }
 }
-/* line 88, ../scss/components/_tease.scss */
+/* line 99, ../scss/components/_tease.scss */
 .tz-h-link {
   text-decoration: none;
   position: relative;
@@ -8169,7 +8151,7 @@ img.alignright, img.alignleft {
   -webkit-transition: all 0.1s ease-in;
   transition: all 0.1s ease-in;
 }
-/* line 93, ../scss/components/_tease.scss */
+/* line 104, ../scss/components/_tease.scss */
 .tz-h-link:after {
   position: static;
   content: '';
@@ -8179,7 +8161,7 @@ img.alignright, img.alignleft {
   width: 0;
   background-color: black;
 }
-/* line 105, ../scss/components/_tease.scss */
+/* line 116, ../scss/components/_tease.scss */
 .tz-h-link:hover:after {
   position: absolute;
   -webkit-animation-duration: 0.75s;
@@ -8189,138 +8171,186 @@ img.alignright, img.alignleft {
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
-/* line 112, ../scss/components/_tease.scss */
+/* line 123, ../scss/components/_tease.scss */
 .tz-h-link:active {
   color: #ffcf31;
 }
-/* line 114, ../scss/components/_tease.scss */
+/* line 125, ../scss/components/_tease.scss */
 .tz-h-link:active:after {
   background-color: #ffcf31;
 }
 
-/* line 122, ../scss/components/_tease.scss */
+/* line 133, ../scss/components/_tease.scss */
 .tz-text {
   margin-top: 10px;
   font-weight: 300;
   font-size: 21px;
   line-height: 1.33;
-  color: #474245;
+  color: #383437;
+}
+@media (max-width: 599px) {
+  /* line 133, ../scss/components/_tease.scss */
+  .tz-text {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 599px) {
+  /* line 133, ../scss/components/_tease.scss */
+  .tz-text {
+    font-size: 17px;
+  }
 }
 
-/* line 131, ../scss/components/_tease.scss */
+/* line 144, ../scss/components/_tease.scss */
 .tz-author {
   font-weight: 300;
   font-size: 12px;
   margin-top: 10px;
 }
 
-/* line 138, ../scss/components/_tease.scss */
+/* line 151, ../scss/components/_tease.scss */
 .tz-author-name {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   color: #000000;
 }
-/* line 143, ../scss/components/_tease.scss */
+/* line 156, ../scss/components/_tease.scss */
 .tz-author-name:hover {
   text-decoration: underline;
 }
 
-/* line 154, ../scss/components/_tease.scss */
+/* line 167, ../scss/components/_tease.scss */
 .tz-h--reg-lg {
   font-size: 36px;
   line-height: 1.02;
 }
+@media (max-width: 599px) {
+  /* line 167, ../scss/components/_tease.scss */
+  .tz-h--reg-lg {
+    font-size: 22px;
+  }
+}
 
-/* line 160, ../scss/components/_tease.scss */
+/* line 174, ../scss/components/_tease.scss */
 .tz-text--reg-lg {
-  font-size: 21px;
+  font-size: 22px;
   line-height: 1.33;
 }
-
-/* line 172, ../scss/components/_tease.scss */
-.tz-h--reg-med {
-  font-size: 30px;
-  line-height: 1.2;
+@media (max-width: 599px) {
+  /* line 174, ../scss/components/_tease.scss */
+  .tz-text--reg-lg {
+    font-size: 17px;
+  }
 }
 
-/* line 178, ../scss/components/_tease.scss */
+/* line 187, ../scss/components/_tease.scss */
+.tz-h--reg-med {
+  font-size: 26px;
+  line-height: 1.15;
+}
+@media (max-width: 599px) {
+  /* line 187, ../scss/components/_tease.scss */
+  .tz-h--reg-med {
+    font-size: 22px;
+  }
+}
+
+/* line 195, ../scss/components/_tease.scss */
 .tz-text--reg-med {
   font-size: 18px;
   line-height: 1.3;
 }
 
-/* line 191, ../scss/components/_tease.scss */
+/* line 208, ../scss/components/_tease.scss */
 .tz-h--stub-lg {
   font-size: 34px;
   line-height: 1.2;
 }
+@media (max-width: 599px) {
+  /* line 208, ../scss/components/_tease.scss */
+  .tz-h--stub-lg {
+    font-size: 22px;
+  }
+}
 
-/* line 200, ../scss/components/_tease.scss */
+/* line 218, ../scss/components/_tease.scss */
 .tz-h--stub-med {
   font-size: 28px;
   line-height: 1.1;
 }
+@media (max-width: 599px) {
+  /* line 218, ../scss/components/_tease.scss */
+  .tz-h--stub-med {
+    font-size: 22px;
+  }
+}
 
-/* line 213, ../scss/components/_tease.scss */
+/* line 232, ../scss/components/_tease.scss */
 .tz-h--feat-lg {
   line-height: 0.9;
   font-style: italic;
   font-weight: 900;
   letter-spacing: 0;
 }
-/* line 221, ../scss/components/_tease.scss */
+/* line 240, ../scss/components/_tease.scss */
 .tz-h--feat-lg .tz-h-link {
   color: black;
 }
 @media (min-width: 600px) {
-  /* line 213, ../scss/components/_tease.scss */
+  /* line 232, ../scss/components/_tease.scss */
   .tz-h--feat-lg {
     font-size: 65px;
   }
 }
 @media (min-width: 900px) {
-  /* line 213, ../scss/components/_tease.scss */
+  /* line 232, ../scss/components/_tease.scss */
   .tz-h--feat-lg {
     font-size: 100px;
   }
 }
 
-/* line 229, ../scss/components/_tease.scss */
+/* line 248, ../scss/components/_tease.scss */
 .tz-text--feat-lg {
   line-height: 1.45;
 }
 @media (min-width: 600px) {
-  /* line 229, ../scss/components/_tease.scss */
+  /* line 248, ../scss/components/_tease.scss */
   .tz-text--feat-lg {
     font-size: 29px;
   }
 }
 
-/* line 238, ../scss/components/_tease.scss */
+/* line 257, ../scss/components/_tease.scss */
 .tz-author--feat-lg {
   font-size: 15px;
 }
 
-/* line 247, ../scss/components/_tease.scss */
+/* line 266, ../scss/components/_tease.scss */
 .tz-special-h {
-  display: inline;
   position: relative;
   font-family: Tiempos, Georgia, Times, serif;
   font-size: 28px;
   line-height: 1.194444444;
   font-weight: 900;
   color: #00aeef;
+  margin: 12px 0 5px;
+}
+@media (min-width: 600px) {
+  /* line 266, ../scss/components/_tease.scss */
+  .tz-special-h {
+    margin-top: 0;
+  }
 }
 
-/* line 259, ../scss/components/_tease.scss */
+/* line 280, ../scss/components/_tease.scss */
 .tz-special-sub-h {
   font-size: 24px;
   font-weight: 700px;
   color: black;
 }
 
-/* line 266, ../scss/components/_tease.scss */
+/* line 287, ../scss/components/_tease.scss */
 .tz-special-link {
   position: relative;
   padding-right: 0.85em;
@@ -8341,7 +8371,7 @@ img.alignright, img.alignleft {
   right: 0;
 }
 
-/* line 273, ../scss/components/_tease.scss */
+/* line 294, ../scss/components/_tease.scss */
 .tz-special-number {
   position: relative;
   font-family: Tiempos, Georgia, Times, serif;
@@ -8352,21 +8382,21 @@ img.alignright, img.alignleft {
   letter-spacing: -1px;
 }
 @media (min-width: 650px) {
-  /* line 273, ../scss/components/_tease.scss */
+  /* line 294, ../scss/components/_tease.scss */
   .tz-special-number {
     font-size: 112px;
     letter-spacing: -3px;
   }
 }
 
-/* line 289, ../scss/components/_tease.scss */
+/* line 310, ../scss/components/_tease.scss */
 .tz-special-precent {
   font-size: 0.5em;
   vertical-align: super;
 }
 
-@media (min-width: 500px) {
-  /* line 297, ../scss/components/_tease.scss */
+@media (min-width: 600px) {
+  /* line 318, ../scss/components/_tease.scss */
   .l-pair-tz-special-stat {
     *zoom: 1;
     display: table;
@@ -8393,7 +8423,7 @@ img.alignright, img.alignleft {
   .l-pair-tz-special-stat > .txt-bd {
     display: table-cell;
     vertical-align: middle;
-    padding-left: 70px;
+    padding-left: 30px;
   }
   /* line 479, ../vendor/Upbase/components/_layout.scss */
   .lt-ie8 .l-pair-tz-special-stat > .art-bd,
@@ -8407,11 +8437,19 @@ img.alignright, img.alignleft {
   }
   /* line 487, ../vendor/Upbase/components/_layout.scss */
   .lt-ie8 .l-pair-tz-special-stat > .txt-bd {
-    margin-left: auto70px;
+    margin-left: auto30px;
+  }
+}
+@media (max-width: 599px) {
+  /* line 323, ../scss/components/_tease.scss */
+  .l-pair-tz-special-stat .art-bd {
+    float: none;
+    max-width: auto;
+    margin-left: 0;
   }
 }
 
-/* line 313, ../scss/components/_tease.scss */
+/* line 341, ../scss/components/_tease.scss */
 .tz-h--reg-med .tz-h-link em, .tz-h--reg-med .tz-h-link b, .tz-h--reg-med .tz-h-link strong,
 .tz-h--reg-lg .tz-h-link em,
 .tz-h--reg-lg .tz-h-link b,

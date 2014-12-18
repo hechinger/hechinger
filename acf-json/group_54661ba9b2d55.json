@@ -11,13 +11,48 @@
             "instructions": "Is this article an opinion piece or part of a column or a feature or any combination of those?",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "Feature": "Feature",
                 "Column": "Column",
                 "Opinion": "Opinion"
             },
-            "default_value": "",
+            "default_value": [
+
+            ],
             "layout": "vertical"
+        },
+        {
+            "key": "field_5492eb43d3984",
+            "label": "Primary Special Report",
+            "name": "primary_special_report",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [
+
+            ],
+            "default_value": [
+
+            ],
+            "allow_null": 1,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
         }
     ],
     "location": [
@@ -36,5 +71,6 @@
     "instruction_placement": "field",
     "hide_on_screen": [
         "format"
-    ]
+    ],
+    "modified": 1418914651
 }

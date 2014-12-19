@@ -11,7 +11,9 @@
   font-size: 19px;
 }
 
+
 .hp-list-items { }
+
 
 .hp-list-item {
   font-size: 26px;
@@ -37,6 +39,7 @@
     @include head-highlight;
   }
 }
+
 
 .hp-latest-list-img {
   @extend %columnist-img;

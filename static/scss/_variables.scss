@@ -7,14 +7,16 @@
 // --------------------------------------------
 
 
+
 // Fallback Stack
 // --------------------------------------------
-$fallback-sans: Helvetica, Arial, sans-serif;
-$fallback-serif: Georgia, Times, serif;
+$fallback-sans:     Helvetica, Arial, sans-serif;
+$fallback-serif:    Georgia, Times, serif;
 
-$he-sans: National, $fallback-sans;
-$he-serif: Tiempos, $fallback-serif;
-$he-accent: Tiempos, $fallback-serif; // used for the serif accents
+$he-sans:           National, $fallback-sans;
+$he-serif:          Tiempos, $fallback-serif;
+$he-accent:         Tiempos, $fallback-serif; // used for the serif accents
+
 
 
 // Font weights
@@ -22,6 +24,7 @@ $he-accent: Tiempos, $fallback-serif; // used for the serif accents
 $font-weight-lt:    300;
 $font-weight-bold:  700;
 $font-weight-black: 900;
+
 
 
 
@@ -35,51 +38,66 @@ $font-weight-black: 900;
 // --------------------------------------------
 
 
+
 // Shades of Gray
 // --------------------------------------------
-$black-total: #000000;         // 0, 0, 0
-$black-100:   #2a272b;        // 42, 29, 43
-$black-90:    #383437;        // 56, 52, 55
-$black-80:    #474245;        // 71, 66, 69
-$black-70:    #565153;        // 86, 81, 83
-$black-60:    #686265;        // 104, 98, 101
-$black-50:    #7a7577;        // 122, 117, 119
-$black-40:    #908b8c;        // 144, 139, 140
-$black-30:    #a6a1a3;        // 166, 161, 163
-$black-20:    #bfbbbc;        // 191, 187, 188
-$black-10:    #dad7d7;        // 218, 215, 215
+$black-total:       #000000;         // 0, 0, 0
+$black-100:         #2a272b;        // 42, 29, 43
+$black-90:          #383437;        // 56, 52, 55
+$black-80:          #474245;        // 71, 66, 69
+$black-70:          #565153;        // 86, 81, 83
+$black-60:          #686265;        // 104, 98, 101
+$black-50:          #7a7577;        // 122, 117, 119
+$black-40:          #908b8c;        // 144, 139, 140
+$black-30:          #a6a1a3;        // 166, 161, 163
+$black-20:          #bfbbbc;        // 191, 187, 188
+$black-10:          #dad7d7;        // 218, 215, 215
 
-// $black:       $black-100;
-$black:       #000000;
-$black-total: pink;
 
-$white:       #FFFFFF;
+$black:               #000000;
+$white:               #FFFFFF;
 
-$hdr-color:         #000000;
-$head-color:        $black-90;
 
-$text-color:        $black-100;
-$text-color-page:   $black-80;
 
-$tease-text-color:  $black-80;
-$tease-head-color:  $black-90;
+// Head Color
+// --------------------------------------------
+$hdr-color:           #000000;
+$head-color:          $black-90;
+$accent-head-color:   #000000;
+$tz-overline-color:   $black-30;
 
-$accent-head-color:  #000000;
 
-$ui-bg-color: lighten($black-10, 10%);
+
+// Text Color
+// --------------------------------------------
+$text-color:          $black-100;
+$text-color-page:     $black-80;
+
+$tease-text-color:    $black-90;
+$tease-head-color:    $black; // $black-90
+
+
+
+// Background
+// --------------------------------------------
+$ui-bg-color:         lighten($black-10, 10%);
+
 
 
 // Hechinger Palette
 // --------------------------------------------
-$he-main:       rgb(255, 207, 49);
-$he-secondary:  rgb(0, 174, 239);
+$he-main:             rgb(255, 207, 49);
+$he-secondary:        rgb(0, 174, 239);
+
 
 
 // Third Party Palette
 // --------------------------------------------
-$twitter-blue:  rgb(85, 172, 238);
-$facebook-blue: rgb(59, 89, 152);
-$instagram-blue: rgb(63, 114, 155);     //#3f729b
+$twitter-blue:        rgb(85, 172, 238);
+$facebook-blue:       rgb(59, 89, 152);
+$instagram-blue:      rgb(63, 114, 155);     //#3f729b
+
+
 
 
 
@@ -91,30 +109,19 @@ $instagram-blue: rgb(63, 114, 155);     //#3f729b
 // --------------------------------------------
 // --------------------------------------------
 
-$small:         450px;  // 28.125em;   // 450px;
-$medium:        600px;  // 37.5em;     // 600px
-$medium-lg:     800px;
-$large:         900px;  // 56.25em;    // 900px
-$desktop:       1024px; // 64em;       // 1024px
-$x-large:       1100px; // 68.75em;    // 1100px
+$bp-small:              450px;
+$bp-medium:             600px;
+$bp-medium-plus:        800px;
+$bp-large:              900px;
+$bp-large-plus:         960px;
+$bp-desktop:            1024px;
+$bp-x-large:            1100px;
 
-$no-margin:     71.875em;
-$no-content-margin: 1007px;
-
-// To use for media queries with both min-width and max-width.
-$one-px:        0.0625;   // 1px
+$bp-no-margin:          71.875em;
+$bp-no-content-margin:  1007px;
 
 
-$bp-small:         450px;
-$bp-medium:        600px;
-$bp-medium-plus:   800px;
-$bp-large:         900px;
-$bp-large-plus:    960px;
-$bp-desktop:       1024px;
-$bp-x-large:       1100px;
 
-$bp-no-margin:     71.875em;
-$bp-no-content-margin: 1007px;
 
 
 // --------------------------------------------
@@ -124,6 +131,8 @@ $bp-no-content-margin: 1007px;
 //
 // --------------------------------------------
 // --------------------------------------------
+
+// Specific breakpoints contained in files to specific pages or components
 
 
 
@@ -138,13 +147,13 @@ $bp-no-content-margin: 1007px;
 
 $bdr-thin-color:          $black-10;
 $light-border:            red;
-$bdr-thin-lt-color:      lighten($black-10, 5%);
+$bdr-thin-lt-color:       lighten($black-10, 5%);
 
-$border-thin:       1px solid pink;
-$border-thin--lt:   1px solid pink;
+$border-thin:             1px solid pink;
+$border-thin--lt:         1px solid pink;
 
 
-$bdr-thin:       1px solid $bdr-thin-color;
-$bdr-thin--lt:   1px solid $bdr-thin-lt-color;
+$bdr-thin:                1px solid $bdr-thin-color;
+$bdr-thin--lt:            1px solid $bdr-thin-lt-color;
 
-$bdr-med--black:     6px solid $black-100;
+$bdr-med--black:          6px solid $black-100;

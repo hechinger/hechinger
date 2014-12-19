@@ -8,11 +8,11 @@
 
 .article-hdr {
   @extend %bp-trans;
-  // max-width: $content-max-width;
   padding: 0 $site-margin;
   border-top: 2px solid transparent;
   margin: 0 auto 40px auto;
-  @include mq(800px) {
+
+  @include mq($bp-medium-plus) {
     padding-top: 30px;
     border-top-color: #000;
     background-color: #fff;
@@ -23,7 +23,8 @@
 .article-hdr-feat {
   padding: 15px 15px 0;
   margin-top: 25px;
-  @include mq(600px) {
+
+  @include mq($bp-medium) {
     margin-top: -80px;
   }
 }
@@ -32,8 +33,10 @@
 .article-hdr-inner {
   @extend %bp-trans;
   margin: 0 auto;
-  // max-width: $content-max--inner;
-  @include mq(960px) { margin-top: 0; }
+
+  @include mq($bp-large-plus) {
+    margin-top: 0;
+  }
 
   &.article-feat-hdr-inner { max-width: 100%; }
 }
@@ -41,7 +44,6 @@
 
 .article-hdr-topic {
   @include accent-header-underline;
-  // font-size: 24px;
   font-size: 20px;
 }
 
@@ -86,9 +88,7 @@
 
   // this contextual class is used when the story is a column
   // giving enough left margin for the column sig
-  .article-hdr-column & {
-    margin-left: 58px;
-  }
+  .article-hdr-column & { margin-left: 58px; }
 }
 
 
@@ -99,9 +99,7 @@
 
   // this contextual class decreases the top padding
   // when the story is a column
-  .article-hdr-column & {
-    padding-top: 1px;
-  }
+  .article-hdr-column & { padding-top: 1px; }
 }
 
 
@@ -129,7 +127,7 @@
   margin-left: 1px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: black;
+  color: $black;
   text-decoration: none;
 }
 
@@ -149,13 +147,6 @@
 }
 
 
-// .article-column-title {
-//   @include serif-bold;
-//   font-size: 13px;
-//   color: $hdr-color;
-// }
-
-
 .column-author-link {
   @include serif-black;
   text-decoration: none;
@@ -168,11 +159,13 @@
 %article-bd-margin {
   margin-right: auto;
   margin-left: auto;
+
   @include mq(700px) {
     margin-right: 0;
     margin-left: 0;
   }
 }
+
 
 .article-img-lead {
   max-width: 700px;

@@ -6,33 +6,9 @@
 // --------------------------------------------
 // --------------------------------------------
 
-
-
-
-// .l-hp-zone {
-
-//   > * + * {
-//     padding-top: 45px;
-//     margin-top: 45px;
-//     border-top: $bdr-thin;
-//   }
-
-//   & + & {
-//     margin-top: 45px;
-//     padding-top: 45px;
-//     border-top: $bdr-thin;
-//   }
-// }
-
 .l-hp-zone--reports { }
 
 .l-hp-zone--feat { }
-
-
-
-
-
-
 
 
 
@@ -45,7 +21,6 @@
 //
 // --------------------------------------------
 // --------------------------------------------
-
 
 .hp-top-feat-mod {
   > * + * {
@@ -65,13 +40,9 @@
 
 .tz-hp-feat--main {
   position: relative;
-  // margin-top: -175px;
-  // padding: 60px 40px 0 40px;
-  // border-top: 12px solid black;
-  // rules for featured main tease
   margin-top: 45px;
 
-  @include mq(600px) {
+  @include mq($bp-medium) {
     padding: 30px 40px 0 40px;
     margin-top: -75px;
     border-top: 12px solid black;
@@ -81,11 +52,12 @@
       width: 12px;
       background-color: black;
     }
+
     &:before { top: 0; bottom: 0; left: 0; }
     &:after { top: 0; bottom: 70%; right: 0; }
   }
 
-  @include mq($large) {
+  @include mq($bp-large) {
     margin-top: -175px;
     padding-top: 60px;
     &.tz-hp-feat--main-img {
@@ -113,77 +85,6 @@
 
 
 
-
-
-
-
-
-
-
-// Homepage Regular
-// --------------------------------------------
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Tease Layout Pairs :: needs thinking
-//
-// --------------------------------------------
-// --------------------------------------------
-
-// .l-pair-tz-hp-reg {
-//   @include mq(425px) {
-//     @include pair(45%, 4%, top, right);
-//   }
-// }
-
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// HP :: Tease list
-//
-// --------------------------------------------
-// --------------------------------------------
-
-// .hp-list-hdr {
-//   @extend %section-hdr;
-//   font-size: 19px;
-// }
-
-// .hp-list-items { }
-
-// .hp-list-item {
-//   font-size: 26px;
-//   line-height: 1.230769231;   //32/26
-//   position: relative;
-//   & + & {
-//     margin-top: 0.85em;
-//     padding-top: 0.85em;
-//     border-top: $bdr-thin--lt;
-//   }
-// }
-
-
-// .hp-list-head {
-//   // @extend %item-bullet;
-//   @include bullet(before, $he-main);
-//   padding-left: 1em;
-// }
-
-
-// .hp-list-link {
-//   // @extend %head-link;
-//   @include head-link;
-// }
-
-
-
-
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -195,9 +96,9 @@
 .hp-second-feature-mod {
   position: relative;
   width: 100%;
-  // max-width: 800px;
   text-align: center;
 }
+
 
 .hp-second-feature-img-container {
   display: inline-block;
@@ -205,23 +106,20 @@
   max-width: 643px;
 }
 
+
 .hp-second-feature-txt-container {
   display: inline-block;
   text-align: center;
   margin: 0 auto;
 }
 
+
 .hp-second-feature-txt-inner {
   position: relative;
   margin-top: -150px;
-  // position: absolute;
-  // top: 75%;
-  // left: 0%;
-  // right: 0%;
-  // width: 85%;
-  // max-width: 700px;
   text-align: left;
-  @include mq(900px) {
+
+  @include mq($bp-large) {
     position: absolute;
     top: 40%;
     left: 5%;
@@ -229,6 +127,7 @@
     margin-top: 0;
   }
 }
+
 
 .hp-second-feature-topic {
   font-size: 11pt;
@@ -244,6 +143,7 @@
   @include mq(700px) { font-size: 14pt; }
 }
 
+
 .hp-second-feature-head {
   font-size: 25pt;
   font-weight: 900;
@@ -257,6 +157,7 @@
   @include mq(700px) { font-size: 50pt; }
 }
 
+
 .hp-second-feature-txt {
   font-size: 14pt;
   font-weight: $font-weight-lt;
@@ -267,11 +168,11 @@
   padding: 0 15px 7px 0;
   display: inline-block;
 
-  @include mq(900px) {
-    // font-size: 14pt;
+  @include mq($bp-large) {
     width: 70%;
   }
 }
+
 
 .hp-second-feature-read-more {
   // @extend %link-bullet-readmore; // any way we can put nonbreaking spaces in this?
@@ -282,6 +183,7 @@
   text-decoration: none;
   &:hover { text-decoration: underline; }
 }
+
 
 
 
@@ -305,15 +207,10 @@
 // more future friendly name, so when the overlay color is red, for instance
 .special-report-tz-overlay {
   min-height: 230px;
-  // padding: 20px;
   position: relative;
   background-color: rgba($black, 0.5);
-
-
-  // @include mq(550px) {
-  //   padding: 30px;
-  // }
 }
+
 
 .special-report-tz-content {
   position: relative;
@@ -324,11 +221,13 @@
   }
 }
 
+
 .special-report-tz-hdr-container {
   position: relative;
   display: inline-block;
   margin-bottom: 1.25em;
 }
+
 
 .special-report-tz-hdr {
   display: inline-block;

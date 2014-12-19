@@ -15,25 +15,23 @@
     height: 200px;
     width: 100%;
     background-image: linear-gradient($he-main 25px, rgba($he-main, 0.02));
-
   }
 }
 
 
 .l-section-front-hdr-wrap {
   @extend %bp-trans;
-  // margin-top: 165px;
   max-width: 960px;
 
   margin: 165px auto 25px auto;
 
-  @include mq($medium, max) { margin-top: 222px; }
+  @include mq($bp-medium, max) { margin-top: 222px; }
 
-  @include mq($medium, 800px) { margin-top: 162px; }
+  @include mq($bp-medium, 800px) { margin-top: 162px; }
 
-  @include mq(800px, $desktop) { margin-top: 195px; }
+  @include mq($bp-medium-plus, $bp-desktop) { margin-top: 195px; }
 
-  @include mq($desktop, max) { margin-left: 25px; }
+  @include mq($bp-desktop, max) { margin-left: 25px; }
 
 }
 
@@ -41,8 +39,8 @@
 .section-front-summary-wrap {
   margin: 0 $site-margin;
   max-width: $content-max;
-  @include mq($no-content-margin) {
-    // margin: 70px auto 0;
+
+  @include mq($bp-no-content-margin) {
     margin: 30px auto 0;
   }
 }
@@ -58,10 +56,10 @@
 
 
 .section-front-summary-link {
-  // @include bullet(after);
   white-space: nowrap;
   color: $he-secondary;
 
-  @include mq(450px, max) { font-size: 22px; }
-  @include mq(450px) { @include bullet(after); }
+  @include mq($bp-small, max) { font-size: 22px; }
+
+  @include mq($bp-small) { @include bullet(after); }
 }

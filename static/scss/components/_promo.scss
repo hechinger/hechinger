@@ -34,7 +34,7 @@
   position: relative;
   height: 100%;
   padding: 20px 25px;
-  @include mq($medium) {
+  @include mq($bp-medium) {
     padding: 35px 50px;
   }
 }
@@ -51,21 +51,22 @@
     width: 2px;
     transform: rotate(30deg);
     background-color: transparent;
-    @include mq($large) { background-color: black; }
+
+    @include mq($bp-large) { background-color: black; }
   }
 }
 
 
 .promo-content-bdr--reverse {
   &:after {
-    @include mq($large) { background-color: white; }
+    @include mq($bp-large) { background-color: white; }
   }
 }
 
 
 .promo-hdr {
   position: relative;
-  @include mq($large) {
+  @include mq($bp-large) {
     width: 23%;
     float: left;
   }
@@ -73,22 +74,26 @@
 
 
 .promo-main {
-  @include mq($large) {
+  @include mq($bp-large) {
     float: right;
     width: 65%;
   }
+
   // styles for wp-created elements
   p {
     color: $black;
     font-family: $he-sans;
     font-size: 16px;
     font-weight: $font-weight-lt;
-    @include mq($medium) { font-size: 25px; }
+
+    @include mq($bp-medium) { font-size: 25px; }
+
     strong, em, b {
       font-weight: $font-weight-bold;
       margin-right: 5px;
     }
   }
+
   p.promo-text--reverse { color: #ffffff; }
 }
 
@@ -103,18 +108,17 @@
   font-weight: $font-weight-black;
   color: $black;
   margin-bottom: 10px;
-  // padding: 20px 0 30px;
 
-  @include mq($medium) { font-size: 25px; }
+  @include mq($bp-medium) { font-size: 25px; }
 
-  @include mq($large) {
+  @include mq($bp-large) {
     padding: 20px 0 30px;
     margin: 0;
   }
 
   > br {
     display: none;
-    @include mq($large) { display: block; }
+    @include mq($bp-large) { display: block; }
   }
 }
 
@@ -122,15 +126,6 @@
   color: white;
   font-weight: $font-weight-bold;
 }
-
-// .promo-text,
-// .promo-text--reverse {
-//   font-family: $he-sans;
-//   font-size: 16px;
-//   font-weight: $font-weight-lt;
-//   color: $black !important;
-//   @include mq($medium) { font-size: 25px; }
-// }
 
 
 .promo-text--reverse {
@@ -158,16 +153,20 @@
   height: 2px;
   width: 100%;
   background-color: black;
-  @include mq($medium) { height: 10px; }
 
-  &:after, &:before {
+  @include mq($bp-medium) { height: 10px; }
+
+  &:after,
+  &:before {
     position: absolute;
     content: '\0020';
     width: 2px;
     height: 25px;
     background-color: $black;
-    @include mq($medium) { width: 10px; height: 50px;  }
+
+    @include mq($bp-medium) { width: 10px; height: 50px;  }
   }
+
   &:before { left: 0; }
   &:after { right: 0; }
 
@@ -192,7 +191,7 @@
   @include pie-clearfix;
   margin-top: 25px;
   padding-bottom: 15px;
-  @include mq($medium) {
+  @include mq($bp-medium) {
     border-bottom: $bdr-thin;
   }
 }
@@ -207,7 +206,7 @@
   font-family: $he-sans;
   font-weight: $font-weight-lt;
   font-size: 14px;
-  @include mq($medium) {
+  @include mq($bp-medium) {
     float: right;
     font-size: 20px;
   }
@@ -215,7 +214,6 @@
 
 
 .promo-btn-donate {
-  // text-transform: uppercase;
   margin-top: 30px;
 }
 
@@ -233,7 +231,8 @@
   font-size: 14px;
   color: $black-80;
   &:invalid { box-shadow: none; }
-  @include mq($medium) {
+
+  @include mq($bp-medium) {
     float: left;
     height: 38px;
     border: 0;

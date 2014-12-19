@@ -8,7 +8,8 @@
 
 .bottom-aside-container {
   @include article-bd-layout;
-  @include mq($large) {
+
+  @include mq($bp-large) {
     float: right;
     clear: right;
     margin-left: 25px;
@@ -19,6 +20,7 @@
   }
 }
 
+
 .article-aside {
   @include article-bd-layout;
   margin-bottom: 50px;
@@ -26,11 +28,11 @@
   border-top: .5em solid black;
   border-bottom: 1px solid $black-20;
 
-  @include mq($large) {
-      display: block;
-      float: right;
-      clear: right;
-      width: 220px;
+  @include mq($bp-large) {
+    display: block;
+    float: right;
+    clear: right;
+    width: 220px;
   }
 
   p {
@@ -38,93 +40,63 @@
     font-size: 14px;
     margin: 10px 0;
   }
+
+
+
   // ---------------------------
   // Headline Styles
-  // h1 {
-  //     font-family: $he-sans;
-  //     font-weight: $font-weight-bold;
-  //     font-size: 30px;
-  //     color: black;
-  //     margin-top: 15px;
-  // }
 
-  h1, h2 {
-      font-family: $he-sans;
-      font-weight: $font-weight-bold;
-      font-size: 24px;
-      color: black;
-      margin-top: 15px;
-    }
+  h1,
+  h2 {
+    @include sans-bold;
+    font-size: 24px;
+    color: black;
+    margin-top: 15px;
+  }
 
-  h3, h4 {
-      font-family: $he-sans;
-      font-weight: $font-weight-bold;
-      font-size: 20px;
-      color: black;
-      margin-top: 15px;
-    }
+  h3,
+  h4 {
+    @include sans-bold;
+    font-size: 20px;
+    color: black;
+    margin-top: 15px;
+  }
 
-  // h4 {
-  //     font-family: $he-serif;
-  //     font-weight: $font-weight-black;
-  //     font-size: 15px;
-  //     border-bottom: 5px solid black;
-  //     padding-bottom: 5px;
-  //     margin: 15px 0;
-  //     display: inline-block;
-  //     color: black;
-  //   }
 
-  h5, h6 {
-      font-family: $he-sans;
-      font-weight: $font-weight-bold;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: black;
-      margin-top: 15px;
-    }
+  h5,
+  h6 {
+    @include sans-bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    margin-top: 15px;
+  }
+
+
 
   // ---------------------------
   // Blockquote
+
   blockquote {
     padding-top: 10px;
     margin: 25px 0 !important;
     border-top: 3px solid $he-secondary;
     color: $black-40;
-    // > p {
-    //   @extend %article-bd-margin;
-    //   max-width: $article-bd-max;
-    //   font-family: Georgia, serif;
-    //   font-size: 16px;
-    // }
-
-    // >ul, ol {
-    //   font-family: Georgia, serif;
-    //   font-size: 16px;
-    //   a {}
-    // }
-
-    // > ul {
-    //   list-style-type: disc;
-
-    //   ul {
-    //     list-style-type: circle !important;
-    //     margin-left: 20px;
-    //   }
-    // }
   }
 
   .pull-quote a { }
 
 
+
   // ---------------------------
   // Lists
+
   ul, ol {
     font-family: $he-sans;
     font-size: 14px;
     margin: 10px 0 10px 20px;
-    a {}
+    a { }
   }
 
   ul {
@@ -137,17 +109,18 @@
   }
 
   ol {
-      counter-reset:li; /* Initiate a counter */
-      margin-left:0; /* Remove the default left margin */
-      padding-left:0; /* Remove the default left padding */
+    counter-reset:li; /* Initiate a counter */
+    margin-left:0; /* Remove the default left margin */
+    padding-left:0; /* Remove the default left padding */
   }
-  ol > li {
-      position:relative; /* Create a positioning context */
-      margin:0 0 6px 1.5em; /* Give each list item a left margin to make room for the numbers */
-      padding:4px 0; /* Add some spacing around the content */
-      list-style:none; /* Disable the normal item numbering */
 
+  ol > li {
+    position:relative; /* Create a positioning context */
+    margin:0 0 6px 1.5em; /* Give each list item a left margin to make room for the numbers */
+    padding:4px 0; /* Add some spacing around the content */
+    list-style:none; /* Disable the normal item numbering */
   }
+
   ol > li:before {
       content: counter(li)'.'; /* Use the counter as content */
       counter-increment:li; /* Increment the counter by 1 */
@@ -167,11 +140,15 @@
   }
 
   li ol,
-  li ul {margin-top:6px;}
-  ol ol li:last-child {margin-bottom:0;}
+  li ul { margin-top:6px; }
+
+  ol ol li:last-child { margin-bottom:0; }
+
+
 
   // ---------------------------
   // Links
+
   a, a:visited {
     color: $he-secondary;
     text-decoration: none;
@@ -189,21 +166,16 @@
   // ---------------------------
   // Image stuff
   p {
-    // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
-    // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
-    // > .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
-    // > .size-thumbnail { float: left; margin-right: 2em; }
+
     img {
       @extend %bleeding-container;
-          margin: 15px 0 15px 25px;
-          float: left;
-          display: inline-block;
-          width: 25%;
-          height: auto;
+      margin: 15px 0 15px 25px;
+      float: left;
+      display: inline-block;
+      width: 25%;
+      height: auto;
 
-      @include mq(550px) {
-          margin: 15px 0;
-      }
+      @include mq(550px) { margin: 15px 0; }
 
       @include mq(700px) {
           width: 100%;
@@ -214,81 +186,71 @@
 
   .img-container {
     width: 100%;
-    // max-width: 220px;
+    @include mq($bp-medium-plus) { display: inline-block; }
+  }
 
-    @include mq($medium-lg) {
-      display: inline-block;
+  .img-caption-text { margin: 0; }
+
+  .img-caption {
+    width: 65%;
+    margin: 15px 0;
+    float: right;
+
+    @include mq(550px) {
+      width: 70%;
+      margin: 5px 0 0;
+    }
+
+    @include mq(700px) {
+      float: none;
+      width: 100%;
+      margin: 0;
     }
   }
 
-  // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
-  // .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
-  // .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
-  // .size-thumbnail { float: left; margin-right: 2em; }
-  // img { margin-bottom: 1em; }
+  .wp-caption-text {
+    @include sans-bold;
+    font-size: 14px;
+  }
+
+  .wp-image-38 {
+    margin-right: 20px;
+    height: auto;
+  }
+
+  .cap-image-right,
+  .cap-image-left { }
+
+  .cap-caption { }
+
+  .media-mod { }
 
 
-    .img-caption-text { margin: 0; }
-
-    .img-caption {
-      width: 65%;
-      margin: 15px 0;
-      float: right;
-
-      @include mq(550px) {
-        width: 70%;
-        margin: 5px 0 0;
-      }
-
-      @include mq(700px) {
-        float: none;
-        width: 100%;
-        margin: 0;
-      }
-    }
-
-    .wp-caption-text {
-      font-family: $he-sans;
-      font-weight: $font-weight-bold;
-      font-size: 14px;
-    }
-    .wp-image-38 {
-      margin-right: 20px;
-      height: auto;
-    }
-    .cap-image-right,
-    .cap-image-left { }
+  // ---------------------------
+  // Italic
+  em, i { }
 
 
-    .cap-caption { }
-
-    .media-mod { }
-
-    // ---------------------------
-    // Italic
-    em, i { }
-
-    // ---------------------------
-    // Bold
-    strong, b { }
+  // ---------------------------
+  // Bold
+  strong, b { }
 
 } // article-aside
 
 
-  .aside-hdr {
-    // @extend %section-hdr;
-    // margin-bottom: 1em;
-    font-size: 16px;
-    font-family: $he-serif !important;
-    font-weight: $font-weight-black;
-    margin-top: 0 !important;
-  }
 
-  .aside-borders {
-    border-top: $bdr-med--black;
-    border-bottom: $bdr-thin;
-  }
+.aside-hdr {
+  font-size: 16px;
+  font-family: $he-serif !important;
+  font-weight: $font-weight-black;
+  margin-top: 0 !important;
+}
 
-  .aside-body {
-    margin-left: 0
-  }
+
+.aside-borders {
+  border-top: $bdr-med--black;
+  border-bottom: $bdr-thin;
+}
+
+
+.aside-body { margin-left: 0 }

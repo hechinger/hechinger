@@ -79,10 +79,9 @@
 
 @mixin accent-header-underline {
   display: inline-block;
-  // margin-bottom: 1.25em;
   margin-bottom: 1em;
   padding-bottom: 0.25em;
-  border-bottom: 0.25em solid black;
+  border-bottom: 0.25em solid $black;
   font-family: $he-accent;
   font-weight: $font-weight-black;
   color: $hdr-color;
@@ -145,7 +144,6 @@
 @mixin head-highlight {
   position: relative;
   z-index: -1;
-  // top: -0.02em;
   background-color: $he-main;
   vertical-align: text-bottom;
   font-style: normal;
@@ -197,13 +195,9 @@
 
     &:before {
       @include sans-bold;
-      // font-size: 24px;
       content: counter(li)'.'; // Use the counter as content
       counter-increment: li; // Increment the counter by 1
-      // Position and styling number
       position: absolute;
-      // top: -5px;
-      // left: -43px;
       left: -25px;
       width: 2em;
       margin-right: 8px;

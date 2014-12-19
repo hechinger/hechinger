@@ -9,7 +9,6 @@
 }
 
 
-
 .supporter-items {
   text-align: center;
 
@@ -23,12 +22,12 @@
     @include mq(400px, max) { max-width: 225px; }
   }
 
+
   .art-bd {
     border: $bdr-thin;
     padding: 0 20px;
     margin-bottom: 10px;
     text-align: center;
-    // line-height: 165px;
     line-height: 126px;
 
     a {
@@ -36,16 +35,16 @@
       &:hover { opacity: 1; }
     }
 
-    @include mq(650px, $large) { padding: 10px 30px; }
-    @include mq($large) { padding: 20px 40px; }
+    @include mq(650px, $bp-large) { padding: 10px 30px; }
+
+    @include mq($bp-large) { padding: 20px 40px; }
 
   }
 }
 
 
-.logo-name-h {
+.logo-name-h { }
 
-}
 
 .logo-name-h-link {
   @include sans;

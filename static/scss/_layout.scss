@@ -33,154 +33,37 @@ $has-margin:          800px;
 .content-wrapper {
   margin-top: -17px;
   margin-bottom: 45px;
-  @include mq(800px) { margin-top: -$space-grid; }
+
+  @include mq($bp-medium-plus) { margin-top: -$space-grid; }
 }
 
 
 // .l-content and .l-content--inner are currently used on article pages
-// the thought is these classes could be used
-// on generic pages as well
-// however, this could stand some more thinking,
-// most likely
 .l-content,
 .l-article {
-  // * + * { margin-top: 50px; }
   margin: 0 $site-margin;
   max-width: $content-max;
-  @include mq($no-content-margin) {
-    margin: 0 auto;
-  }
+
+  @include mq($bp-no-content-margin) { margin: 0 auto; }
+
+  // Eliminates double margin for l-content  inside of l-content
   .l-content { margin: 0; }
 }
 
 
-.l-content--inner {
-  margin: 0 auto;
-  // max-width: $content-max--inner;
-}
+.l-content--inner { margin: 0 auto; }
 
 
-.l-article--inner {
-  margin: 0 auto;
-}
+.l-article--inner { margin: 0 auto; }
 
 
 // Used for page headers and article page headers
 .l-page-hdr {
   max-width: $content-max;
+
   @include mq($has-margin) { margin: 0 $site-margin; }
-  @include mq($no-content-margin) { margin: 0 auto; }
-}
 
-
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Media Grids
-//
-// --------------------------------------------
-// --------------------------------------------
-
-// $grid-bg-path: '/wp-content/themes/hechinger/static/img/grid_border';
-// .grid-item { &:nth-last-child( 3 ) { margin-bottom: 0; } }
-
-%grid-rule {
-  &:after {
-    position: absolute;
-    content: '\0020';
-    top: 0;
-    bottom: 0;
-    right: -20px;
-    width: 1px;
-    background-color: $black-10;
-  }
-}
-
-
-%grid-rule--dark {
-  @extend %grid-rule;
-  &:after { background-color: $black; }
-}
-
-
-.grid-container, %grid-container {
-  padding-top: 25px;
-  padding-left: 0px;
-  padding-right: 0px;
-
-  @include mq(595px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-
-.grid-container--rule {
-  @extend %grid-container;
-  border-top: $border-thin;
-}
-
-
-.grid-item { margin-bottom: 20px; position: relative; }
-
-
-.l-grid-2 {
-  background-color: pink;
-  @include mq(595px) {
-      @include media-grid(2, 20px, '.grid-item');
-    }
-
-  &.grid-item {
-    @include mq (max, 595px) {
-      float: left;
-      width: 50%;
-    }
-  }
-}
-
-
-.l-grid-3 {
-  background-color: pink;
-  @include media-grid(3, 20px, '.grid-item')
-}
-
-
-.l-grid-4 {
-  background-color: pink;
-  @include media-grid(4, 20px, '.grid-item')
-}
-
-
-.l-grid-2--rules {
-  background-color: pink;
-  @include media-grid(2, 40px, '.grid-item');
-  .grid-item {
-    @extend %grid-rule;
-    &:nth-child( 2n +2 ) { &:after { background-color: transparent; } }
-  }
-}
-
-
-.l-grid-3--rules {
-  background-color: pink;
-  @include media-grid(3, 40px, '.grid-item');
-  .grid-item {
-    @extend %grid-rule;
-    &:nth-child( 3n + 3 ) { &:after { background-color: transparent; } }
-  }
-}
-
-
-.l-grid-4--rules {
-  background-color: pink;
-  @include media-grid(4, 40px, '.grid-item');
-  .grid-item {
-    @extend %grid-rule;
-    &:nth-child( 4n + 4 ) { &:after { background-color: transparent; } }
-  }
+  @include mq($bp-no-content-margin) { margin: 0 auto; }
 }
 
 
@@ -219,38 +102,35 @@ $has-margin:          800px;
     padding-top: 45px;
     margin-top: 45px;
     border-top: $bdr-thin;
-    @include mq($bp-medium, max) { padding-top: 15px; margin-top: 15px; }
+
+    @include mq($bp-medium, max) {
+      padding-top: 15px;
+      margin-top: 15px;
+    }
   }
 
   & + & {
     margin-top: 45px;
     padding-top: 45px;
     border-top: $bdr-thin;
-    @include mq($bp-medium, max) { padding-top: 15px; margin-top: 15px; }
+
+    @include mq($bp-medium, max) {
+      padding-top: 15px;
+      margin-top: 15px;
+    }
   }
 }
 
 
 
-// Mode Variable
+// Mode Variables
 // --------------------------------------------
 
-$zone-has-layout:     700px;
-$subzone-has-layout:  500px;
-$subzone-ends-layout: 800px;
+$bp-zone-has-layout:     700px;
+$bp-subzone-has-layout:  500px;
+$bp-subzone-ends-layout: 800px;
 
 
-
-// Modes
-// --------------------------------------------
-
-.l-hp-tres { border: 1px solid pink; }
-
-
-.l-hp-cuatro { border: 1px solid blue; }
-
-
-.l-hp-tres--rule { border: 1px solid black; }
 
 
 
@@ -258,7 +138,7 @@ $subzone-ends-layout: 800px;
 // --------------------------------------------
 .l-zone-dos {
   @include pie-clearfix;
-  @include mq($zone-has-layout) {
+  @include mq($bp-zone-has-layout) {
     @include media-grid(2, 25px, '.grid-item');
   }
 }
@@ -272,7 +152,7 @@ $subzone-ends-layout: 800px;
   @include pie-clearfix;
 
   .grid-item + .grid-item {
-    @include mq($zone-has-layout, max) {
+    @include mq($bp-zone-has-layout, max) {
       margin-top: 25px;
       padding-top: 25px;
       margin-bottom: 0;
@@ -280,7 +160,7 @@ $subzone-ends-layout: 800px;
     }
 
   }
-  @include mq($zone-has-layout) {
+  @include mq($bp-zone-has-layout) {
     display: flex;
     @include media-grid(2, 60px, '.grid-item');
     @include grid-rule(2, -30px);
@@ -536,9 +416,11 @@ $subzone-ends-layout: 800px;
 
 .l-zone-cuatro {
   @include pie-clearfix;
+
   @include mq($bp-medium, $bp-large) {
     @include media-grid(2, 25px, '.grid-item');
   }
+
   @include mq($bp-large) {
     @include media-grid(4, 25px, '.grid-item');
   }
@@ -596,6 +478,7 @@ $subzone-ends-layout: 800px;
       &:last-of-type {
         &:after {
           position: static;
+          width: 0;
         }
       }
     }
@@ -634,6 +517,7 @@ $subzone-ends-layout: 800px;
     // Controlling size of art for first grid item
     .l-pair-tz-hp-stub {
       @include mq(450px) { @include pair(150px, 25px, top); }
+
       @include mq($bp-medium) { @include pair(200px, 25px, top); }
     }
 
@@ -689,15 +573,8 @@ $subzone-ends-layout: 800px;
 // Subzones
 // --------------------------------------------
 
-// These are the subzones inside
-// A more comples l-hp-zone
-
 .hp-zone--top { }
 .hp-zone--mid { }
 .hp-zone--bottom { }
-
-
 .hp-special-tz { }
-
-
 .hp-feat-mod { }

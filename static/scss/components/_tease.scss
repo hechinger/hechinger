@@ -128,7 +128,7 @@ $bp-display-type:   $bp-medium;
   font-weight: $font-weight-lt;
   font-size: 21px;
   line-height: 1.33;
-  color: $tz-text-color;
+  color: $tease-text-color;
   @include mq($bp-display-type, max) { margin-top: 5px; }
   @include mq($bp-display-type, max) { font-size: 17px; }
 }

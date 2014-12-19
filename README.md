@@ -8,7 +8,7 @@ This repo covers the WordPress theme for the Hechinger Report. If you are new to
 Setting up the Hechinger theme for development takes a few steps. You'll be installing some softwore, runnig some terminal commands, and activating some plugins.
 
 1. Follow the directions [here](https://github.com/Upstatement/hechinger_vagrant) to set up a Vagrant environment. Then come back here.
-2. [Install Timber](#install-timber) following the directions below.
+2. Install Dependencies Using Composer following the directions below.
 3. [Import the Hechinger database](#import-database) to get actual Hechinger content.
 4. [Import Hechinger Uploads folder](#import-uploads-folder) to get images for the site.
 5. [Install dependencies.](#install-dependencies)
@@ -17,7 +17,7 @@ Setting up the Hechinger theme for development takes a few steps. You'll be inst
 
 ### Install Dependencies
 
-Hechinger has a few dependencies we need to install. First we'll use Bower to install Upbase, jQuery, and other packages we need. Then're going to compile our `.scss` files with Compass.
+Hechinger has a few dependencies we need to install. First we'll use Bower to install Upbase, jQuery, and other packages we need. Then're going to compile our `.scss` files with Compass. You will need [Composer](https://getcomposer.org/doc/00-intro.md#globally).
 
 Open a terminal and navagte to your hechinger theme folder.
 
@@ -28,7 +28,7 @@ $ gem install autoprefixer-rails
 $ compass watch
 ```
 
-Sometimes the wordpress plugins you installed aren't activated. Just go into the wordpress admin and check that you've actiated the plugins.
+Sometimes the WordPress plugins you installed aren't activated. Just go into the WordPress admin and check that you've actiated the plugins.
 
 [Autoprefixer](https://github.com/postcss/autoprefixer) is a gem that works with Compass to add browser prefixes to our compiled sass.
 The site also uses [respond.js](https://github.com/scottjehl/Respond) to provide media queries for IE8 and lower.
@@ -78,7 +78,6 @@ Open a terminal and navagte to your hechinger_vagrant install
 ```
 $ vagrant ssh
 $ cd /srv/www/wordpress-he/
-$ wp plugin install timber-library --activate
 $ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activate
 $ exit
 ```

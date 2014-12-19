@@ -23,15 +23,16 @@
         {% block article_column_title %} {% endblock %}
           <div class="article-hdr-meta-inner">
              {% block article_byline %}
-               <p class="article-byline">by
-               {# dump(post)|raw #}
-                 {% for author in post.coauthors %}
-                   <a class="article-author" href="/author/{{ author.slug }}">{{ author.name }}</a>
-                   {% if not loop.last %}
-                     &nbsp;and&nbsp;
-                   {% endif %}
-                 {% endfor %}
-               </p>
+               {% if post.coauthors|length %}
+                 <p class="article-byline">by
+                   {% for author in post.coauthors %}
+                     <a class="article-author" href="/author/{{ author.slug }}">{{ author.name }}</a>
+                     {% if not loop.last %}
+                       &nbsp;and&nbsp;
+                     {% endif %}
+                   {% endfor %}
+                 </p>
+               {% endif %}
              {% endblock %}
             <p class="article-date">{{ post.date }}</p>
           </div> <!-- /article-hdr-meta-inner -->

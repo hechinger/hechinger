@@ -15,7 +15,9 @@
 {% endblock %}
 
 {% block article_byline %}
-  <p class="article-byline">Column by
-    <a class="article-author" href="/author/{{ post.author.slug }}">{{ post.author.name }}</a>
-  </p>
+  {% if post.author %}
+    <p class="article-byline">Column by
+      <a class="article-author" href="/author/{{ post.author.slug }}">{{ post.author.name }}</a>
+    </p>
+  {% endif %}
 {% endblock %}

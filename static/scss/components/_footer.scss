@@ -40,11 +40,11 @@
   margin-top: $space-grid--half;
 
   @include mq($bp-medium) { margin-top: $space-grid;}
-  @include mq($bp-medium, $medium-lg) {
+  @include mq($bp-medium, $bp-medium-plus) {
      @include media-grid(2, 50px, '.grid-item');
   }
 
-  @include mq($medium-lg) {
+  @include mq($bp-medium-plus) {
     @include media-grid(2, 60px, '.grid-item');
     .grid-item {
          &:after {
@@ -64,8 +64,8 @@
 
 .l-ftr-partners {
   @include mq($bp-medium, max) { @include media-grid(4, 25px); }
-  @include mq($bp-medium, $medium-lg) { @include media-grid(2, 25px); }
-  @include mq($medium-lg) { @include media-grid(4, 25px); }
+  @include mq($bp-medium, $bp-medium-plus) { @include media-grid(2, 25px); }
+  @include mq($bp-medium-plus) { @include media-grid(4, 25px); }
   .media-block {
     max-width: 125px;
     margin-top: 10px;

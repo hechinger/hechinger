@@ -51,15 +51,10 @@ $bp-author-pair: 800px;
 
 .author-hdr-topic {
   @include accent-header;
-  // @extend %topic-hdr;
   display: block;
   border-bottom: none;
-  // padding-bottom: 20px;
   font-size: 24px;
   font-family: $he-serif;
-
-  // @include mq($medium-lg) { border-bottom: $bdr-thin; }
-
 }
 
 
@@ -82,7 +77,7 @@ $bp-author-pair: 800px;
 
 .author-bio-mod {
   margin-bottom: $space-grid--threequarter;
-  @include mq($medium-lg) { padding: 0 $space-grid; }
+  @include mq($bp-medium-plus) { padding: 0 $space-grid; }
 }
 
 
@@ -91,7 +86,6 @@ $bp-author-pair: 800px;
     .art-bd {
       width: 25%;
       max-width: 100px;
-      // margin-left: 10px;
       margin-bottom: 20px;
     }
   }
@@ -121,15 +115,14 @@ $bp-author-pair: 800px;
 
 .author-bio-h {
   display: inline-block;
-  // margin-bottom: 25px;
   border-bottom: 6px solid black;
   padding-bottom: 2px;
   font-family: $he-serif;
-  // font-size: 31px;
   font-size: 18px;
   margin-bottom: 15px;
   color: black;
-  @include mq($medium) {
+
+  @include mq($bp-medium) {
     font-size: 31px;
     margin-bottom: 25px;
   }
@@ -145,29 +138,26 @@ $bp-author-pair: 800px;
 
 
 .author-bio-contact {
-  // margin-top: 25px;
   margin-top: 15px;
-  // @include mq()
 }
 
 
 .author-contact-items {
   @include sans;
   font-size: 12px;
-  // line-height: 1.25;
 }
 
 
 .author-contact-item {
   margin-bottom: 15px;
   padding-left: 10px;
-  // & + & { margin-left: 15px; }
-  // display: inline;
-  @include mq(450px) {
+
+  @include mq($bp-small) {
     display: inline-block;
     & + & { margin-left: 30px; }
   }
-  @include mq($medium) {
+
+  @include mq($bp-medium) {
     // & + & { margin-left: 30px; }
   }
 }
@@ -181,14 +171,3 @@ $bp-author-pair: 800px;
   &:hover { text-decoration: underline; }
 }
 
-
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Author Feed
-//
-// --------------------------------------------
-// --------------------------------------------

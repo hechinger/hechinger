@@ -414,31 +414,6 @@ button {
   font-weight: 700;
   font-style: italic;
 }
-/* line 42, ../scss/_deprecated.scss */
-.l-grid-2--rules .grid-item:after, .l-grid-3--rules .grid-item:after, .l-grid-4--rules .grid-item:after {
-  position: absolute;
-  content: '\0020';
-  top: 0;
-  bottom: 0;
-  right: -20px;
-  width: 1px;
-  background-color: pink;
-}
-
-/* line 64, ../scss/_deprecated.scss */
-.grid-container, .grid-container--rule {
-  padding-top: 25px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-@media (min-width: 595px) {
-  /* line 64, ../scss/_deprecated.scss */
-  .grid-container, .grid-container--rule {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
 /* line 76, ../scss/_deprecated.scss */
 .grid-container--rule {
   border-top: 1px solid green;
@@ -642,47 +617,6 @@ button {
 /* line 138, ../scss/_deprecated.scss */
 .l-grid-4--rules .grid-item:nth-child(4n + 4):after {
   background-color: transparent;
-}
-
-/* line 147, ../scss/_deprecated.scss */
-.l-hp-tres {
-  border: 1px solid pink;
-}
-
-/* line 149, ../scss/_deprecated.scss */
-.l-hp-cuatro {
-  border: 1px solid blue;
-}
-
-/* line 151, ../scss/_deprecated.scss */
-.l-hp-tres--rule {
-  border: 1px solid black;
-}
-
-/* line 211, ../scss/_deprecated.scss */
-.partner {
-  background-repeat: no-repeat;
-  background-position: 0 50%;
-  background-size: contain;
-  width: 200px;
-  height: 50px;
-  position: absolute;
-}
-/* line 223, ../scss/_deprecated.scss */
-.icon-Advocate .partner {
-  background-image: url(/wp-content/themes/hechinger/static/img/partners/icn-partner-Advocate.svg);
-}
-/* line 225, ../scss/_deprecated.scss */
-.no-svg .icon-Advocate .partner {
-  background-image: url(/wp-content/themes/hechinger/static/img/partners/icn-partnerAdvocate.png);
-}
-/* line 223, ../scss/_deprecated.scss */
-.icon-American_Prospect .partner {
-  background-image: url(/wp-content/themes/hechinger/static/img/partners/icn-partner-American_Prospect.svg);
-}
-/* line 225, ../scss/_deprecated.scss */
-.no-svg .icon-American_Prospect .partner {
-  background-image: url(/wp-content/themes/hechinger/static/img/partners/icn-partnerAmerican_Prospect.png);
 }
 
 /* line 9, ../scss/_placeholders.scss */
@@ -4035,7 +3969,7 @@ img {
   font-family: Tiempos, Georgia, Times, serif;
 }
 
-/* line 66, ../scss/pages/_author.scss */
+/* line 61, ../scss/pages/_author.scss */
 .author-topic-link {
   text-decoration: none;
   color: #000000;
@@ -4044,24 +3978,24 @@ img {
 .author-topic-link:hover {
   text-decoration: none;
 }
-/* line 68, ../scss/pages/_author.scss */
+/* line 63, ../scss/pages/_author.scss */
 .author-topic-link:hover {
   text-decoration: none;
 }
 
-/* line 83, ../scss/pages/_author.scss */
+/* line 78, ../scss/pages/_author.scss */
 .author-bio-mod {
   margin-bottom: 75px;
 }
 @media (min-width: 800px) {
-  /* line 83, ../scss/pages/_author.scss */
+  /* line 78, ../scss/pages/_author.scss */
   .author-bio-mod {
     padding: 0 50px;
   }
 }
 
 @media (max-width: 799px) {
-  /* line 91, ../scss/pages/_author.scss */
+  /* line 86, ../scss/pages/_author.scss */
   .l-author-bio .art-bd {
     width: 25%;
     max-width: 100px;
@@ -4069,14 +4003,14 @@ img {
   }
 }
 @media (min-width: 350px) and (max-width: 799px) {
-  /* line 100, ../scss/pages/_author.scss */
+  /* line 94, ../scss/pages/_author.scss */
   .l-author-bio .art-bd {
     float: right;
     margin-left: 10px;
   }
 }
 @media (min-width: 800px) {
-  /* line 89, ../scss/pages/_author.scss */
+  /* line 84, ../scss/pages/_author.scss */
   .l-author-bio {
     *zoom: 1;
     display: table;
@@ -4121,7 +4055,7 @@ img {
   }
 }
 
-/* line 113, ../scss/pages/_author.scss */
+/* line 107, ../scss/pages/_author.scss */
 .author-bio-title {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -4132,7 +4066,7 @@ img {
   font-size: 12px;
 }
 
-/* line 122, ../scss/pages/_author.scss */
+/* line 116, ../scss/pages/_author.scss */
 .author-bio-h {
   display: inline-block;
   border-bottom: 6px solid black;
@@ -4143,14 +4077,14 @@ img {
   color: black;
 }
 @media (min-width: 600px) {
-  /* line 122, ../scss/pages/_author.scss */
+  /* line 116, ../scss/pages/_author.scss */
   .author-bio-h {
     font-size: 31px;
     margin-bottom: 25px;
   }
 }
 
-/* line 139, ../scss/pages/_author.scss */
+/* line 132, ../scss/pages/_author.scss */
 .article-bio-text {
   color: #474245;
   font-size: 17px;
@@ -4158,12 +4092,12 @@ img {
   line-height: 1.4;
 }
 
-/* line 147, ../scss/pages/_author.scss */
+/* line 140, ../scss/pages/_author.scss */
 .author-bio-contact {
   margin-top: 15px;
 }
 
-/* line 154, ../scss/pages/_author.scss */
+/* line 145, ../scss/pages/_author.scss */
 .author-contact-items {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -4171,30 +4105,30 @@ img {
   font-size: 12px;
 }
 
-/* line 161, ../scss/pages/_author.scss */
+/* line 151, ../scss/pages/_author.scss */
 .author-contact-item {
   margin-bottom: 15px;
   padding-left: 10px;
 }
 @media (min-width: 450px) {
-  /* line 161, ../scss/pages/_author.scss */
+  /* line 151, ../scss/pages/_author.scss */
   .author-contact-item {
     display: inline-block;
   }
-  /* line 168, ../scss/pages/_author.scss */
+  /* line 157, ../scss/pages/_author.scss */
   .author-contact-item + .author-contact-item {
     margin-left: 30px;
   }
 }
 
-/* line 176, ../scss/pages/_author.scss */
+/* line 166, ../scss/pages/_author.scss */
 .author-contact-link {
   position: relative;
   padding-left: 12px;
   color: #908b8c;
   text-decoration: none;
 }
-/* line 181, ../scss/pages/_author.scss */
+/* line 171, ../scss/pages/_author.scss */
 .author-contact-link:hover {
   text-decoration: underline;
 }
@@ -4675,17 +4609,14 @@ input:-webkit-autofill {
   -webkit-text-fill-color: white;
 }
 
-/* line 49, ../scss/pages/_search.scss */
+/* line 50, ../scss/pages/_search.scss */
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 50px #00aeef inset;
   -webkit-text-fill-color: white;
 }
 
-/* line 54, ../scss/pages/_search.scss */
+/* line 56, ../scss/pages/_search.scss */
 .search-page-submit-button {
-  background: transparent url(/wp-content/themes/hechinger/static/img/icons/icn-search-white-54-54.png) no-repeat content-box center;
-  background: transparent url(/wp-content/themes/hechinger/static/img/icons/icn-search-white-54-54.svg) no-repeat content-box center;
-  background-size: contain;
   position: absolute;
   top: 0;
   right: 0;
@@ -4695,22 +4626,23 @@ input:-webkit-autofill:focus {
   margin-top: 0px;
   display: block;
   width: 100px;
+  background-color: #000000;
 }
 @media (max-width: 599px) {
-  /* line 54, ../scss/pages/_search.scss */
+  /* line 56, ../scss/pages/_search.scss */
   .search-page-submit-button {
     width: 60px;
     padding: 17px;
   }
 }
 
-/* line 71, ../scss/pages/_search.scss */
+/* line 75, ../scss/pages/_search.scss */
 .l-search-results {
   width: 90%;
   margin: 0 auto;
 }
 @media (min-width: 600px) {
-  /* line 71, ../scss/pages/_search.scss */
+  /* line 75, ../scss/pages/_search.scss */
   .l-search-results {
     padding-left: 50px;
     margin: 0 25px;
@@ -4718,24 +4650,24 @@ input:-webkit-autofill:focus {
   }
 }
 @media (min-width: 1007px) {
-  /* line 71, ../scss/pages/_search.scss */
+  /* line 75, ../scss/pages/_search.scss */
   .l-search-results {
     margin: 0 auto;
   }
 }
 
-/* line 86, ../scss/pages/_search.scss */
+/* line 91, ../scss/pages/_search.scss */
 .search-results-inner {
   padding-top: 30px;
 }
 @media (min-width: 600px) {
-  /* line 86, ../scss/pages/_search.scss */
+  /* line 91, ../scss/pages/_search.scss */
   .search-results-inner {
     padding-top: 50px;
   }
 }
 
-/* line 94, ../scss/pages/_search.scss */
+/* line 100, ../scss/pages/_search.scss */
 .results-number {
   font-family: Tiempos, Georgia, Times, serif;
   font-size: 16px;
@@ -4743,14 +4675,14 @@ input:-webkit-autofill:focus {
   color: #000000;
 }
 @media (min-width: 600px) {
-  /* line 94, ../scss/pages/_search.scss */
+  /* line 100, ../scss/pages/_search.scss */
   .results-number {
     padding-left: 50px;
     font-size: 18px;
   }
 }
 
-/* line 106, ../scss/pages/_search.scss */
+/* line 113, ../scss/pages/_search.scss */
 .no-results {
   font-family: National, Helvetica, Arial, sans-serif;
   font-style: italic;
@@ -5741,24 +5673,24 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 13, ../scss/pages/_supporters.scss */
+/* line 12, ../scss/pages/_supporters.scss */
 .supporter-items {
   text-align: center;
 }
-/* line 16, ../scss/pages/_supporters.scss */
+/* line 15, ../scss/pages/_supporters.scss */
 .supporter-items .grid-item {
   margin-bottom: 20px;
   text-align: center;
   display: inline-block;
 }
 @media (min-width: 400px) {
-  /* line 16, ../scss/pages/_supporters.scss */
+  /* line 15, ../scss/pages/_supporters.scss */
   .supporter-items .grid-item {
     margin-bottom: 50px;
   }
 }
 @media (max-width: 399px) {
-  /* line 16, ../scss/pages/_supporters.scss */
+  /* line 15, ../scss/pages/_supporters.scss */
   .supporter-items .grid-item {
     max-width: 225px;
   }
@@ -5771,11 +5703,11 @@ input:-webkit-autofill:focus {
   text-align: center;
   line-height: 126px;
 }
-/* line 34, ../scss/pages/_supporters.scss */
+/* line 33, ../scss/pages/_supporters.scss */
 .supporter-items .art-bd a {
   opacity: 0.8;
 }
-/* line 36, ../scss/pages/_supporters.scss */
+/* line 35, ../scss/pages/_supporters.scss */
 .supporter-items .art-bd a:hover {
   opacity: 1;
 }
@@ -5792,7 +5724,7 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 50, ../scss/pages/_supporters.scss */
+/* line 49, ../scss/pages/_supporters.scss */
 .logo-name-h-link {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -5801,7 +5733,7 @@ input:-webkit-autofill:focus {
   text-decoration: none;
   color: #000000;
 }
-/* line 55, ../scss/pages/_supporters.scss */
+/* line 54, ../scss/pages/_supporters.scss */
 .logo-name-h-link:hover {
   text-decoration: underline;
 }

@@ -6,19 +6,19 @@
 // --------------------------------------------
 // --------------------------------------------
 
-@mixin bp($bp-min, $bp-max: null) {
-  @if $bp-max == null {
-    @media screen and (min-width: #{$bp-min} ) { @content; }
-  }
-  @else if $bp-max == max {
-    @media screen and (max-width: #{$bp-min} ) { @content; }
-  }
-  @else {
-    $max-point: $bp-max - $one-px;
-    @media screen and (min-width: #{$bp-min} ) and (max-width: #{$max-point} ) { @content; }
-  }
-  // @warn "Hi. This is being deprecated. Use mq, instead."
-}
+// @mixin bp($bp-min, $bp-max: null) {
+//   @if $bp-max == null {
+//     @media screen and (min-width: #{$bp-min} ) { @content; }
+//   }
+//   @else if $bp-max == max {
+//     @media screen and (max-width: #{$bp-min} ) { @content; }
+//   }
+//   @else {
+//     $max-point: $bp-max - $one-px;
+//     @media screen and (min-width: #{$bp-min} ) and (max-width: #{$max-point} ) { @content; }
+//   }
+//   // @warn "Hi. This is being deprecated. Use mq, instead."
+// }
 
 // @include bp($medium) { Rules go here }
 // @include bp($medium, max) { Rules go here }
@@ -38,43 +38,43 @@
 // --------------------------------------------
 // --------------------------------------------
 
-%grid-rule {
-  &:after {
-    position: absolute;
-    content: '\0020';
-    top: 0;
-    bottom: 0;
-    right: -20px;
-    width: 1px;
-    // background-color: $black-10;
-    background-color: pink;
-  }
-}
+// %grid-rule {
+//   &:after {
+//     position: absolute;
+//     content: '\0020';
+//     top: 0;
+//     bottom: 0;
+//     right: -20px;
+//     width: 1px;
+//     // background-color: $black-10;
+//     background-color: pink;
+//   }
+// }
 
 
-%grid-rule--dark {
-  @extend %grid-rule;
-  &:after {
-    // background-color: $black;
-    background-color: blue;
-  }
-}
+// %grid-rule--dark {
+//   @extend %grid-rule;
+//   &:after {
+//     // background-color: $black;
+//     background-color: blue;
+//   }
+// }
 
 
-.grid-container, %grid-container {
-  padding-top: 25px;
-  padding-left: 0px;
-  padding-right: 0px;
+// .grid-container, %grid-container {
+//   padding-top: 25px;
+//   padding-left: 0px;
+//   padding-right: 0px;
 
-  @include mq(595px) {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
+//   @include mq(595px) {
+//     padding-left: 20px;
+//     padding-right: 20px;
+//   }
+// }
 
 
 .grid-container--rule {
-  @extend %grid-container;
+  // @extend %grid-container;
   // border-top: $border-thin;
   border-top: 1px solid green;
 }
@@ -114,7 +114,7 @@
   background-color: pink;
   @include media-grid(2, 40px, '.grid-item');
   .grid-item {
-    @extend %grid-rule;
+    // @extend %grid-rule;
     &:nth-child( 2n +2 ) { &:after { background-color: transparent; } }
   }
 }
@@ -124,7 +124,7 @@
   background-color: pink;
   @include media-grid(3, 40px, '.grid-item');
   .grid-item {
-    @extend %grid-rule;
+    // @extend %grid-rule;
     &:nth-child( 3n + 3 ) { &:after { background-color: transparent; } }
   }
 }
@@ -134,7 +134,7 @@
   background-color: pink;
   @include media-grid(4, 40px, '.grid-item');
   .grid-item {
-    @extend %grid-rule;
+    // @extend %grid-rule;
     &:nth-child( 4n + 4 ) { &:after { background-color: transparent; } }
   }
 }
@@ -144,11 +144,11 @@
 // Modes
 // --------------------------------------------
 
-.l-hp-tres { border: 1px solid pink; }
+// .l-hp-tres { border: 1px solid pink; }
 
-.l-hp-cuatro { border: 1px solid blue; }
+// .l-hp-cuatro { border: 1px solid blue; }
 
-.l-hp-tres--rule { border: 1px solid black; }
+// .l-hp-tres--rule { border: 1px solid black; }
 
 
 
@@ -162,17 +162,17 @@
 // --------------------------------------------
 // --------------------------------------------
 
-$small:         450px;  // 28.125em;   // 450px;
-$medium:        600px;  // 37.5em;     // 600px
-$medium-lg:     800px;
-$large:         900px;  // 56.25em;    // 900px
-$desktop:       1024px; // 64em;       // 1024px
-$x-large:       1100px; // 68.75em;    // 1100px
+// $small:         450px;  // 28.125em;   // 450px;
+// $medium:        600px;  // 37.5em;     // 600px
+// $medium-lg:     800px;
+// $large:         900px;  // 56.25em;    // 900px
+// $desktop:       1024px; // 64em;       // 1024px
+// $x-large:       1100px; // 68.75em;    // 1100px
 
-$no-margin:     71.875em;
-$no-content-margin: 1007px;
+// $no-margin:     71.875em;
+// $no-content-margin: 1007px;
 
-$black-total:       pink;
+// $black-total:       pink;
 
 
 
@@ -185,11 +185,11 @@ $black-total:       pink;
 // --------------------------------------------
 // --------------------------------------------
 
-@mixin ui-icon($icon_filename, $bg-color) {
-  background: $bg-color url(#{$png-icon-path}/#{$icon_filename}.png) no-repeat content-box center;
-  background: $bg-color url(#{$svg-icon-path}/#{$icon_filename}.svg) no-repeat content-box center;
-  background-size: contain;
-}
+// @mixin ui-icon($icon_filename, $bg-color) {
+//   background: $bg-color url(#{$png-icon-path}/#{$icon_filename}.png) no-repeat content-box center;
+//   background: $bg-color url(#{$svg-icon-path}/#{$icon_filename}.svg) no-repeat content-box center;
+//   background-size: contain;
+// }
 
 
 
@@ -201,30 +201,30 @@ $black-total:       pink;
 // --------------------------------------------
 // --------------------------------------------
 
-$svg-partner-path: /wp-content/themes/hechinger/static/img/partners;
-$png-partner-path: /wp-content/themes/hechinger/static/img/partners;
+// $svg-partner-path: /wp-content/themes/hechinger/static/img/partners;
+// $png-partner-path: /wp-content/themes/hechinger/static/img/partners;
 
-$partners:  Advocate,
-            American_Prospect;
+// $partners:  Advocate,
+//             American_Prospect;
 
 
 .partner {
-  background-repeat: no-repeat;
-  background-position: 0 50%;
-  background-size: contain;
-  width: 200px;
-  height: 50px;
-  position: absolute;
+  // background-repeat: no-repeat;
+  // background-position: 0 50%;
+  // background-size: contain;
+  // width: 200px;
+  // height: 50px;
+  // position: absolute;
   // top: 5px;
   // left: 5px;
 
 
-  @each $partner in $partners {
-    .icon-#{$partner} & {
-      background-image: url(#{$svg-partner-path}/icn-partner-#{$partner}.svg);
-      .no-svg & { background-image: url(#{$png-partner-path}/icn-partner#{$partner}.png)}
-    }
-  }
+  // @each $partner in $partners {
+  //   .icon-#{$partner} & {
+  //     background-image: url(#{$svg-partner-path}/icn-partner-#{$partner}.svg);
+  //     .no-svg & { background-image: url(#{$png-partner-path}/icn-partner#{$partner}.png)}
+  //   }
+  // }
 }
 
 
@@ -237,68 +237,68 @@ $partners:  Advocate,
 // --------------------------------------------
 // --------------------------------------------
 
-%topic-hdr {
-  @extend %section-hdr;
-  border-bottom-width: 0.2em;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  background-color: pink;
-}
+// %topic-hdr {
+//   @extend %section-hdr;
+//   border-bottom-width: 0.2em;
+//   padding-bottom: 0;
+//   margin-bottom: 0;
+//   background-color: pink;
+// }
 
-%item-bullet {
-   &:before {
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    content: '→';
-    color: $he-main;
-    color: green;
-  }
-}
+// %item-bullet {
+//    &:before {
+//     position: absolute;
+//     left: 0;
+//     display: inline-block;
+//     content: '→';
+//     color: $he-main;
+//     color: green;
+//   }
+// }
 
-%link-bullet {
-  padding-right: 1em;
-  &:after {
-    position: absolute;
-    right: 0;
-    display: inline-block;
-    content: '→';
-    color: inherit;
-    color: red;
-  }
-}
+// %link-bullet {
+//   padding-right: 1em;
+//   &:after {
+//     position: absolute;
+//     right: 0;
+//     display: inline-block;
+//     content: '→';
+//     color: inherit;
+//     color: red;
+//   }
+// }
 
-%link-bullet-readmore {
-  padding-right: 1em;
-  padding-left: .35em;
-  &:after {
-    padding-left: .35em;
-    position: relative;
-    right: 0;
-    display: inline-block;
-    content: '→';
-    color: inherit;
-    color: aqua;
-  }
-}
+// %link-bullet-readmore {
+//   padding-right: 1em;
+//   padding-left: .35em;
+//   &:after {
+//     padding-left: .35em;
+//     position: relative;
+//     right: 0;
+//     display: inline-block;
+//     content: '→';
+//     color: inherit;
+//     color: aqua;
+//   }
+// }
 
 
-%head-link {
-  text-decoration: none;
-  color: $head-color;
-  &:hover { text-decoration: underline; }
-  background-color: aqua;
-}
+// %head-link {
+//   text-decoration: none;
+//   color: $head-color;
+//   &:hover { text-decoration: underline; }
+//   background-color: aqua;
+// }
 
-%head-highlight {
-  //text-decoration: none;
-  // background-color: $he-main;
-  background-color: pink;
-  font-style: normal;
-  font-size: 0.95em;
-  // padding: 0.085em 0.294117647em;
-  padding: 0 0.2em;
-}
+// %head-highlight {
+//   //text-decoration: none;
+//   // background-color: $he-main;
+//   background-color: pink;
+//   font-style: normal;
+//   font-size: 0.95em;
+//   // padding: 0.085em 0.294117647em;
+//   padding: 0 0.2em;
+// }
 
 
 
@@ -310,10 +310,10 @@ $partners:  Advocate,
 // --------------------------------------------
 // --------------------------------------------
 
-%article-text {
-  color: green;
-  font-family: $he-serif;
-  font-weight: $font-weight-lt;
-  font-size: 17px;
-  line-height: 1.705882353;   // 29/17
-}
+// %article-text {
+//   color: green;
+//   font-family: $he-serif;
+//   font-weight: $font-weight-lt;
+//   font-size: 17px;
+//   line-height: 1.705882353;   // 29/17
+// }

@@ -8,7 +8,6 @@
 
 .site-ftr {
   @include pie-clearfix;
-  // padding-top: $space-grid--half;
   padding-top: 35px;
   background-color: $he-main;
 
@@ -99,7 +98,6 @@
   display: block;
   width: 90%;
   max-width: 300px;
-  // margin: 0 auto 15px;
 
   @include mq($bp-medium) {
     float: left;
@@ -135,7 +133,6 @@
   margin-bottom: 25px;
   font-size: 19px;
   color: $black;
-  // line-height: 60px;
   line-height: 1;
   border-bottom: 4px solid black;
   padding-bottom: 5px;
@@ -146,11 +143,8 @@
 
 .ftr-grid-item {
   @include mq($bp-medium, max) {
-    // padding-bottom: 40px;
     margin-bottom: 50px;
-    // border-bottom: 1px solid lighten($black, 20%);
   }
-  // background-color: green;
 }
 
 
@@ -187,13 +181,10 @@
 
 
 .ftr-site-nav {
-  // display: none;
 
   @include mq(717px) {
     display: inline-block;
     width: 100%;
-    // margin: 25px auto auto;
-    // float: left;
     text-align: center;
   }
 }
@@ -204,26 +195,21 @@
     @include media-grid(2, 20px, '.ftr-nav-item');
   }
 
-  @include mq(500px, $large) {
+  @include mq(500px, $bp-large) {
     @include media-grid(3, 20px, '.ftr-nav-item');
   }
-  @include mq($large) { display: inline-block; }
+  @include mq($bp-large) { display: inline-block; }
 }
 
 
 .ftr-nav-items {
   @include pie-clearfix;
-  // margin-left: 20px;
-  // display: inline-block;
-  // text-align: center;
   text-align: left;
   &:first-child { margin-left: 0; }
 }
 
 
 .ftr-nav-item {
-  // float: left;
-  // margin-left: 40px;
   text-transform: uppercase;
   &:first-child { margin-left: 0; }
   margin-bottom: 20px;

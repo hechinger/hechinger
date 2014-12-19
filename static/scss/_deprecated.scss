@@ -1,0 +1,143 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Media Grids :: Pulled from layout.scss
+//
+// --------------------------------------------
+// --------------------------------------------
+
+%grid-rule {
+  &:after {
+    position: absolute;
+    content: '\0020';
+    top: 0;
+    bottom: 0;
+    right: -20px;
+    width: 1px;
+    // background-color: $black-10;
+    background-color: pink;
+  }
+}
+
+
+%grid-rule--dark {
+  @extend %grid-rule;
+  &:after {
+    // background-color: $black;
+    background-color: blue;
+  }
+}
+
+
+.grid-container, %grid-container {
+  padding-top: 25px;
+  padding-left: 0px;
+  padding-right: 0px;
+
+  @include mq(595px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+.grid-container--rule {
+  @extend %grid-container;
+  // border-top: $border-thin;
+  border-top: 1px solid green;
+}
+
+
+.grid-item { margin-bottom: 20px; position: relative; }
+
+
+.l-grid-2 {
+  background-color: pink;
+  @include mq(595px) {
+      @include media-grid(2, 20px, '.grid-item');
+    }
+
+  &.grid-item {
+    @include mq (max, 595px) {
+      float: left;
+      width: 50%;
+    }
+  }
+}
+
+
+.l-grid-3 {
+  background-color: pink;
+  @include media-grid(3, 20px, '.grid-item')
+}
+
+
+.l-grid-4 {
+  background-color: pink;
+  @include media-grid(4, 20px, '.grid-item')
+}
+
+
+.l-grid-2--rules {
+  background-color: pink;
+  @include media-grid(2, 40px, '.grid-item');
+  .grid-item {
+    @extend %grid-rule;
+    &:nth-child( 2n +2 ) { &:after { background-color: transparent; } }
+  }
+}
+
+
+.l-grid-3--rules {
+  background-color: pink;
+  @include media-grid(3, 40px, '.grid-item');
+  .grid-item {
+    @extend %grid-rule;
+    &:nth-child( 3n + 3 ) { &:after { background-color: transparent; } }
+  }
+}
+
+
+.l-grid-4--rules {
+  background-color: pink;
+  @include media-grid(4, 40px, '.grid-item');
+  .grid-item {
+    @extend %grid-rule;
+    &:nth-child( 4n + 4 ) { &:after { background-color: transparent; } }
+  }
+}
+
+
+
+// Modes
+// --------------------------------------------
+
+.l-hp-tres { border: 1px solid pink; }
+
+.l-hp-cuatro { border: 1px solid blue; }
+
+.l-hp-tres--rule { border: 1px solid black; }
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+//  Universal Breakpoints
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$small:         450px;  // 28.125em;   // 450px;
+$medium:        600px;  // 37.5em;     // 600px
+$medium-lg:     800px;
+$large:         900px;  // 56.25em;    // 900px
+$desktop:       1024px; // 64em;       // 1024px
+$x-large:       1100px; // 68.75em;    // 1100px
+
+$no-margin:     71.875em;
+$no-content-margin: 1007px;
+
+$black-total:       pink;

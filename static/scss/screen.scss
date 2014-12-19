@@ -11,6 +11,7 @@
 
 
 
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -21,6 +22,7 @@
 
 @import "var-fonts";
 @import "variables";
+@import "deprecated.scss";
 @import "type";
 @import "mixins";
 @import "placeholders";
@@ -29,6 +31,7 @@
 
 @import "snippets";
 @import "components/footer";
+
 
 
 
@@ -79,6 +82,9 @@
 @import "components/article-aside-partner";
 @import "components/tease-list-latest";
 @import "components/tease";
+
+
+
 
 
 

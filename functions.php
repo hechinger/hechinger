@@ -104,6 +104,15 @@ class HechingerSite extends TimberSite {
     Timber::add_route('search', function($params){
       Timber::load_view('search.php', null, 200, $params);
     });
+    Timber::add_route('advisory-committee', function($params){
+      Timber::load_view('advisors.php', null, 200, $params);
+    });
+    Timber::add_route('use-our-stories', function($params){
+      Timber::load_view('page.php', null, 200, $params);
+    });
+    Timber::add_route('category/special_reports', function($params){
+      Timber::load_view('special-reports-landing.php', null, 200, $params);
+    });
   }
 
   public function get_current_url() {

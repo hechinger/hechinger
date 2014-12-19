@@ -6378,42 +6378,42 @@ input:-webkit-autofill:focus {
 .tz-full-mod {
   overflow: auto;
 }
-/* line 3, ../scss/components/_tease-full.scss */
+/* line 4, ../scss/components/_tease-full.scss */
 .tz-full-mod:not(:first-child) {
   border-top: 1px solid #dad7d7;
   margin-top: 40px;
   padding-top: 40px;
 }
 @media (max-width: 599px) {
-  /* line 3, ../scss/components/_tease-full.scss */
+  /* line 4, ../scss/components/_tease-full.scss */
   .tz-full-mod:not(:first-child) {
     margin-top: 20px;
     padding-top: 20px;
   }
 }
 
-/* line 14, ../scss/components/_tease-full.scss */
+/* line 18, ../scss/components/_tease-full.scss */
 .promo-mod + .tz-full-mod {
   border-top: none;
 }
 
-/* line 19, ../scss/components/_tease-full.scss */
+/* line 23, ../scss/components/_tease-full.scss */
 .tz-content-wrap {
   display: block;
 }
 @media (min-width: 800px) {
-  /* line 19, ../scss/components/_tease-full.scss */
+  /* line 23, ../scss/components/_tease-full.scss */
   .tz-content-wrap {
     padding: 0 50px;
   }
 }
-/* line 24, ../scss/components/_tease-full.scss */
+/* line 29, ../scss/components/_tease-full.scss */
 .tz-feat-mod .tz-content-wrap {
   padding: 0;
 }
 
 @media (max-width: 599px) {
-  /* line 30, ../scss/components/_tease-full.scss */
+  /* line 35, ../scss/components/_tease-full.scss */
   .l-pair-full .art-bd {
     width: 100px;
     float: right;
@@ -6422,7 +6422,7 @@ input:-webkit-autofill:focus {
   }
 }
 @media (min-width: 600px) {
-  /* line 28, ../scss/components/_tease-full.scss */
+  /* line 33, ../scss/components/_tease-full.scss */
   .l-pair-full {
     *zoom: 1;
   }
@@ -6455,62 +6455,61 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 45, ../scss/components/_tease-full.scss */
+/* line 50, ../scss/components/_tease-full.scss */
 .tz-full-mod .txt-bd {
   max-width: 675px;
 }
 
-/* line 57, ../scss/components/_tease-full.scss */
+/* line 62, ../scss/components/_tease-full.scss */
 .tz-full-h {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
   margin-bottom: 5px;
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 1.02;
   color: black;
 }
 @media (min-width: 600px) {
-  /* line 57, ../scss/components/_tease-full.scss */
+  /* line 62, ../scss/components/_tease-full.scss */
   .tz-full-h {
     font-size: 30px;
     letter-spacing: -1px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 }
 
-/* line 73, ../scss/components/_tease-full.scss */
+/* line 77, ../scss/components/_tease-full.scss */
 .tz-full-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 21px;
   line-height: 1.33;
-  color: #474245;
+  color: #383437;
 }
 @media (min-width: 600px) {
-  /* line 73, ../scss/components/_tease-full.scss */
+  /* line 77, ../scss/components/_tease-full.scss */
   .tz-full-text {
-    margin-bottom: 25px;
-    font-size: 16px;
+    margin-bottom: 15px;
   }
 }
-@media (min-width: 850px) {
-  /* line 73, ../scss/components/_tease-full.scss */
+@media (max-width: 599px) {
+  /* line 77, ../scss/components/_tease-full.scss */
   .tz-full-text {
-    font-size: 21px;
+    font-size: 17px;
   }
 }
 
-/* line 91, ../scss/components/_tease-full.scss */
+/* line 90, ../scss/components/_tease-full.scss */
 .tz-full-h-link,
 .tz-full-text-link {
   text-decoration: none;
   color: #000000;
 }
 
-/* line 101, ../scss/components/_tease-full.scss */
+/* line 100, ../scss/components/_tease-full.scss */
 .tz-full--byline-topic {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -6522,13 +6521,13 @@ input:-webkit-autofill:focus {
   text-transform: uppercase;
 }
 @media (min-width: 850px) {
-  /* line 101, ../scss/components/_tease-full.scss */
+  /* line 100, ../scss/components/_tease-full.scss */
   .tz-full--byline-topic {
     font-size: 14px;
   }
 }
 
-/* line 114, ../scss/components/_tease-full.scss */
+/* line 113, ../scss/components/_tease-full.scss */
 .tz-full--byline-name,
 .tz-full--byline-date {
   display: inline-block;
@@ -6537,12 +6536,12 @@ input:-webkit-autofill:focus {
   top: -1px;
 }
 
-/* line 123, ../scss/components/_tease-full.scss */
+/* line 122, ../scss/components/_tease-full.scss */
 .tz-full--byline-date {
   top: 0;
 }
 
-/* line 128, ../scss/components/_tease-full.scss */
+/* line 127, ../scss/components/_tease-full.scss */
 .tz--byline-topic-link,
 .tz--byline-author-link {
   text-decoration: none;
@@ -6555,7 +6554,7 @@ input:-webkit-autofill:focus {
   color: #686265;
 }
 
-/* line 149, ../scss/components/_tease-full.scss */
+/* line 151, ../scss/components/_tease-full.scss */
 .tz-feat-mod {
   *zoom: 1;
   margin-top: 25px;
@@ -6568,45 +6567,48 @@ input:-webkit-autofill:focus {
   display: table;
   clear: both;
 }
+@media (min-width: 800px) {
+  /* line 157, ../scss/components/_tease-full.scss */
+  .tz-feat-mod .tz-content-wrap {
+    padding: 0 50px;
+  }
+}
 
-/* line 156, ../scss/components/_tease-full.scss */
+/* line 165, ../scss/components/_tease-full.scss */
 .promo-mod + .tz-feat-mod {
   border-top: none;
 }
 
-@media (max-width: 449px) {
-  /* line 160, ../scss/components/_tease-full.scss */
+@media (max-width: 599px) {
+  /* line 170, ../scss/components/_tease-full.scss */
   .art-bd-feat {
     margin-bottom: 15px;
   }
 }
 
-/* line 166, ../scss/components/_tease-full.scss */
+/* line 177, ../scss/components/_tease-full.scss */
 .txt-bd-feat {
   position: relative;
   background-color: #fff;
-  max-width: 750px;
   padding: 0;
 }
-@media (min-width: 450px) {
-  /* line 166, ../scss/components/_tease-full.scss */
-  .txt-bd-feat {
-    width: 95%;
-    margin: -50px auto 0 auto;
+/* line 183, ../scss/components/_tease-full.scss */
+.tz-feat-mod--has-art .txt-bd-feat {
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  /* line 183, ../scss/components/_tease-full.scss */
+  .tz-feat-mod--has-art .txt-bd-feat {
+    margin: -50px 0 0;
+    width: 90%;
+    max-width: 750px;
     padding: 10px 20px 20px 20px;
   }
 }
-@media (min-width: 600px) {
-  /* line 166, ../scss/components/_tease-full.scss */
-  .txt-bd-feat {
-    width: 85%;
-    padding-left: 0;
-    margin: -50px 0 0;
-  }
-}
 @media (min-width: 800px) {
-  /* line 166, ../scss/components/_tease-full.scss */
-  .txt-bd-feat {
+  /* line 183, ../scss/components/_tease-full.scss */
+  .tz-feat-mod--has-art .txt-bd-feat {
+    width: 85%;
     padding: 30px 30px 25px 50px;
   }
 }
@@ -7261,42 +7263,42 @@ input:-webkit-autofill:focus {
 .tz-full-mod {
   overflow: auto;
 }
-/* line 3, ../scss/components/_tease-full.scss */
+/* line 4, ../scss/components/_tease-full.scss */
 .tz-full-mod:not(:first-child) {
   border-top: 1px solid #dad7d7;
   margin-top: 40px;
   padding-top: 40px;
 }
 @media (max-width: 599px) {
-  /* line 3, ../scss/components/_tease-full.scss */
+  /* line 4, ../scss/components/_tease-full.scss */
   .tz-full-mod:not(:first-child) {
     margin-top: 20px;
     padding-top: 20px;
   }
 }
 
-/* line 14, ../scss/components/_tease-full.scss */
+/* line 18, ../scss/components/_tease-full.scss */
 .promo-mod + .tz-full-mod {
   border-top: none;
 }
 
-/* line 19, ../scss/components/_tease-full.scss */
+/* line 23, ../scss/components/_tease-full.scss */
 .tz-content-wrap {
   display: block;
 }
 @media (min-width: 800px) {
-  /* line 19, ../scss/components/_tease-full.scss */
+  /* line 23, ../scss/components/_tease-full.scss */
   .tz-content-wrap {
     padding: 0 50px;
   }
 }
-/* line 24, ../scss/components/_tease-full.scss */
+/* line 29, ../scss/components/_tease-full.scss */
 .tz-feat-mod .tz-content-wrap {
   padding: 0;
 }
 
 @media (max-width: 599px) {
-  /* line 30, ../scss/components/_tease-full.scss */
+  /* line 35, ../scss/components/_tease-full.scss */
   .l-pair-full .art-bd {
     width: 100px;
     float: right;
@@ -7305,7 +7307,7 @@ input:-webkit-autofill:focus {
   }
 }
 @media (min-width: 600px) {
-  /* line 28, ../scss/components/_tease-full.scss */
+  /* line 33, ../scss/components/_tease-full.scss */
   .l-pair-full {
     *zoom: 1;
   }
@@ -7338,62 +7340,61 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 45, ../scss/components/_tease-full.scss */
+/* line 50, ../scss/components/_tease-full.scss */
 .tz-full-mod .txt-bd {
   max-width: 675px;
 }
 
-/* line 57, ../scss/components/_tease-full.scss */
+/* line 62, ../scss/components/_tease-full.scss */
 .tz-full-h {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
   margin-bottom: 5px;
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 1.02;
   color: black;
 }
 @media (min-width: 600px) {
-  /* line 57, ../scss/components/_tease-full.scss */
+  /* line 62, ../scss/components/_tease-full.scss */
   .tz-full-h {
     font-size: 30px;
     letter-spacing: -1px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 }
 
-/* line 73, ../scss/components/_tease-full.scss */
+/* line 77, ../scss/components/_tease-full.scss */
 .tz-full-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 21px;
   line-height: 1.33;
-  color: #474245;
+  color: #383437;
 }
 @media (min-width: 600px) {
-  /* line 73, ../scss/components/_tease-full.scss */
+  /* line 77, ../scss/components/_tease-full.scss */
   .tz-full-text {
-    margin-bottom: 25px;
-    font-size: 16px;
+    margin-bottom: 15px;
   }
 }
-@media (min-width: 850px) {
-  /* line 73, ../scss/components/_tease-full.scss */
+@media (max-width: 599px) {
+  /* line 77, ../scss/components/_tease-full.scss */
   .tz-full-text {
-    font-size: 21px;
+    font-size: 17px;
   }
 }
 
-/* line 91, ../scss/components/_tease-full.scss */
+/* line 90, ../scss/components/_tease-full.scss */
 .tz-full-h-link,
 .tz-full-text-link {
   text-decoration: none;
   color: #000000;
 }
 
-/* line 101, ../scss/components/_tease-full.scss */
+/* line 100, ../scss/components/_tease-full.scss */
 .tz-full--byline-topic {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -7405,13 +7406,13 @@ input:-webkit-autofill:focus {
   text-transform: uppercase;
 }
 @media (min-width: 850px) {
-  /* line 101, ../scss/components/_tease-full.scss */
+  /* line 100, ../scss/components/_tease-full.scss */
   .tz-full--byline-topic {
     font-size: 14px;
   }
 }
 
-/* line 114, ../scss/components/_tease-full.scss */
+/* line 113, ../scss/components/_tease-full.scss */
 .tz-full--byline-name,
 .tz-full--byline-date {
   display: inline-block;
@@ -7420,12 +7421,12 @@ input:-webkit-autofill:focus {
   top: -1px;
 }
 
-/* line 123, ../scss/components/_tease-full.scss */
+/* line 122, ../scss/components/_tease-full.scss */
 .tz-full--byline-date {
   top: 0;
 }
 
-/* line 128, ../scss/components/_tease-full.scss */
+/* line 127, ../scss/components/_tease-full.scss */
 .tz--byline-topic-link,
 .tz--byline-author-link {
   text-decoration: none;
@@ -7438,7 +7439,7 @@ input:-webkit-autofill:focus {
   color: #686265;
 }
 
-/* line 149, ../scss/components/_tease-full.scss */
+/* line 151, ../scss/components/_tease-full.scss */
 .tz-feat-mod {
   *zoom: 1;
   margin-top: 25px;
@@ -7451,45 +7452,48 @@ input:-webkit-autofill:focus {
   display: table;
   clear: both;
 }
+@media (min-width: 800px) {
+  /* line 157, ../scss/components/_tease-full.scss */
+  .tz-feat-mod .tz-content-wrap {
+    padding: 0 50px;
+  }
+}
 
-/* line 156, ../scss/components/_tease-full.scss */
+/* line 165, ../scss/components/_tease-full.scss */
 .promo-mod + .tz-feat-mod {
   border-top: none;
 }
 
-@media (max-width: 449px) {
-  /* line 160, ../scss/components/_tease-full.scss */
+@media (max-width: 599px) {
+  /* line 170, ../scss/components/_tease-full.scss */
   .art-bd-feat {
     margin-bottom: 15px;
   }
 }
 
-/* line 166, ../scss/components/_tease-full.scss */
+/* line 177, ../scss/components/_tease-full.scss */
 .txt-bd-feat {
   position: relative;
   background-color: #fff;
-  max-width: 750px;
   padding: 0;
 }
-@media (min-width: 450px) {
-  /* line 166, ../scss/components/_tease-full.scss */
-  .txt-bd-feat {
-    width: 95%;
-    margin: -50px auto 0 auto;
+/* line 183, ../scss/components/_tease-full.scss */
+.tz-feat-mod--has-art .txt-bd-feat {
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  /* line 183, ../scss/components/_tease-full.scss */
+  .tz-feat-mod--has-art .txt-bd-feat {
+    margin: -50px 0 0;
+    width: 90%;
+    max-width: 750px;
     padding: 10px 20px 20px 20px;
   }
 }
-@media (min-width: 600px) {
-  /* line 166, ../scss/components/_tease-full.scss */
-  .txt-bd-feat {
-    width: 85%;
-    padding-left: 0;
-    margin: -50px 0 0;
-  }
-}
 @media (min-width: 800px) {
-  /* line 166, ../scss/components/_tease-full.scss */
-  .txt-bd-feat {
+  /* line 183, ../scss/components/_tease-full.scss */
+  .tz-feat-mod--has-art .txt-bd-feat {
+    width: 85%;
     padding: 30px 30px 25px 50px;
   }
 }

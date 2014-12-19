@@ -1,16 +1,20 @@
 .tz-full-mod {
   overflow: auto;
+
   &:not(:first-child) {
     border-top: $bdr-thin;
     margin-top: 40px;
     padding-top: 40px;
-    @include mq(600px, max) {
+
+    @include mq($bp-medium, max) {
       margin-top: 20px;
       padding-top: 20px;
     }
   }
 
 }
+
+
 .promo-mod + .tz-full-mod {
   border-top: none;
 }
@@ -18,7 +22,8 @@
 
 .tz-content-wrap {
   display: block;
-  @include mq(800px) {
+
+  @include mq($bp-medium-plus) {
     padding: 0 50px;
   }
   .tz-feat-mod & { padding: 0; }
@@ -26,7 +31,7 @@
 
 
 .l-pair-full {
-    @include mq($medium, max) {
+    @include mq($bp-medium, max) {
       .art-bd {
         width: 100px;
         float: right;
@@ -35,7 +40,7 @@
        }
     }
 
-    @include mq($medium) {
+    @include mq($bp-medium) {
       @include pair(175px, 25px, top, right);
     }
 }
@@ -58,14 +63,13 @@
   @include sans-bold;
   margin-bottom: 5px;
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 1.02;
   color: black;
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     font-size: 30px;
     letter-spacing: -1px;
-    // margin-bottom: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 }
 
@@ -73,18 +77,13 @@
 .tz-full-text {
   @include sans;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 21px;
   line-height: 1.33;
-  color: $black-80;
+  color: $tease-text-color;
 
-  @include mq($medium) {
-    margin-bottom: 25px;
-    font-size: 16px;
-  }
+  @include mq($bp-medium) { margin-bottom: 15px; }
 
-  @include mq(850px) {
-    font-size: 21px;
-  }
+  @include mq($bp-medium, max) { font-size: 17px; }
 }
 
 
@@ -121,9 +120,9 @@
 
 
 .tz-full--byline-date {
-  // position: relative;
   top: 0;
 }
+
 
 .tz--byline-topic-link,
 .tz--byline-author-link {
@@ -131,10 +130,13 @@
   color: inherit;
 }
 
+
 .tz-full--byline-name,
 .tz--byline-author-link {
   color: $black-60;
 }
+
+
 
 
 
@@ -151,38 +153,46 @@
   margin-top: 25px;
   padding-top: 25px;
   border-top: $bdr-thin;
+
+  .tz-content-wrap {
+    @include mq($bp-medium-plus) {
+      padding: 0 50px;
+    }
+  }
 }
+
 
 .promo-mod + .tz-feat-mod {
   border-top: none;
 }
 
+
 .art-bd-feat {
-  @include mq(450px, max) {
+  @include mq($bp-medium, max) {
     margin-bottom: 15px;
   }
 }
 
+
 .txt-bd-feat {
   position: relative;
   background-color: #fff;
-  max-width: 750px;
+  // max-width: 750px;
   padding: 0;
 
-  @include mq(450px) {
-    width: 95%;
-    margin: -50px auto 0 auto;
-    // margin-top: -50px;
-    padding: 10px 20px 20px 20px;
-  }
+  .tz-feat-mod--has-art & {
+    margin: 0 auto;
 
-  @include mq(600px) {
-    width: 85%;
-    padding-left: 0;
-    margin: -50px 0 0;
-  }
+    @include mq($bp-medium) {
+      margin: -50px 0 0;
+      width: 90%;
+      max-width: 750px;
+      padding: 10px 20px 20px 20px;
+    }
 
-  @include mq(800px) {
-    padding: 30px 30px 25px 50px;
+    @include mq($bp-medium-plus) {
+      width: 85%;
+      padding: 30px 30px 25px 50px;
+    }
   }
 }

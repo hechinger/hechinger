@@ -77,7 +77,7 @@
           <div class="l-zone-tres--rule">
             {% for post in home.get_zone(2) %}
               <div class="grid-item {{ loop.index == 2 and post.thumbnail.src ? 'extra-grid-item' }}">
-                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub' } %}
+                {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub', hide_image: loop.index != 2 ? true : false } %}
               </div>
             {% endfor %}
           </div> <!-- /l-zone-tres--rule -->

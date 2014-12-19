@@ -11,6 +11,7 @@
   margin-bottom: 40px;
   padding-top: 17px;
   border-top: 8px solid black;
+
   @include mq($bp-aside) {
     float: left;
     clear: left;
@@ -18,12 +19,14 @@
     margin-right: $site-margin;
     border-top-width: 15px;
   }
+
   @include mq($bp-aside-negative-margin) {
     margin-left: -$site-margin;
   }
 
-  @include mq($desktop) { margin-left: -($site-margin*2); }
+  @include mq($bp-desktop) { margin-left: -($site-margin*2); }
 }
+
 
 .article-quote-h {
   font-family: $he-serif;
@@ -32,6 +35,7 @@
   line-height: 1.291666667;   // 31/24
   color: black;
 }
+
 
 .article-quote-attr {
   margin-left: 0;
@@ -44,6 +48,7 @@
 
 }
 
+
 .article-quote-desc {
   margin-top: 0;
   margin-left: 0;
@@ -52,6 +57,8 @@
   line-height: 1.25;
 }
 
+
 .new-pullquote {
   // new pull quote styles go here
+  // quotes currently getting all styles from above
 }

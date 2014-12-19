@@ -7913,7 +7913,7 @@ img.alignleft {
   }
 }
 
-/* line 28, ../scss/components/_article-pull-quote.scss */
+/* line 31, ../scss/components/_article-pull-quote.scss */
 .article-quote-h {
   font-family: Tiempos, Georgia, Times, serif;
   font-weight: 700;
@@ -7922,7 +7922,7 @@ img.alignleft {
   color: black;
 }
 
-/* line 36, ../scss/components/_article-pull-quote.scss */
+/* line 40, ../scss/components/_article-pull-quote.scss */
 .article-quote-attr {
   margin-left: 0;
   margin-top: 15px;
@@ -7933,7 +7933,7 @@ img.alignleft {
   letter-spacing: 1px;
 }
 
-/* line 47, ../scss/components/_article-pull-quote.scss */
+/* line 52, ../scss/components/_article-pull-quote.scss */
 .article-quote-desc {
   margin-top: 0;
   margin-left: 0;

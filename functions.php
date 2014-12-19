@@ -44,7 +44,6 @@ class HechingerSite extends TimberSite {
     add_action( 'init', array( $this, 'add_reports' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
     add_filter( 'acf/load_field/key=field_5492eb43d3984', array($this, 'set_primary_special_report'), 2, 2 );
-    add_filter( 'coauthors_edit_author_cap', array($this, 'set_primary_special_report'), 2, 2 );
     add_filter( 'coauthors_edit_author_cap', function(){ return 'read'; } );
 
     $this->set_shortcodes();

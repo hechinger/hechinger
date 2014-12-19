@@ -9,7 +9,7 @@
 $bp-display-type:   $bp-medium;
 
 
-// Controllind display type
+// Controlling display type
 @mixin display-type {
   @include mq($bp-display-type, max) {
     font-size: 22px;
@@ -21,17 +21,12 @@ $bp-display-type:   $bp-medium;
 
 
 .tz-inner {
-  // > * + * { margin-top: 15px; }
   > * + * { margin-top: 5px; }
-  // > * + * { background-color: red; }
 }
 
 
 .tz-content-mod {
-  // > * + * { margin-top: 15px; }
-  // > * + * { margin-top: 0.35em; }
   > * + * { margin-top: 5px; }
-  // > * + * { background-color: green; }
 
   // When the main home page tease
   // has an image, this stuff happens
@@ -65,17 +60,17 @@ $bp-display-type:   $bp-medium;
   font-size: 14px;
   font-weight: $font-weight-bold;
   letter-spacing: 1px;
-  color: $black-30;
+  color: $tz-overline-color;
 }
 
 
 .tz-overline-link {
   text-decoration: none;
-  color: $black-30;
+  color: $tz-overline-color;
   &:hover { text-decoration: underline; }
 
   .tz-overline--feat-lg & {
-    @include mq($bp-medium) { color: black; }
+    @include mq($bp-medium) { color: $black; }
   }
 }
 
@@ -85,7 +80,6 @@ $bp-display-type:   $bp-medium;
   font-size: 36px;
   line-height: 1.02;
   letter-spacing: -1px;
-  // color: $tease-head-color;
 }
 
 
@@ -101,16 +95,17 @@ $bp-display-type:   $bp-medium;
   position: relative;
   color: $tease-head-color;
   @include trans(0.1s);
+
   &:after {
     position: static;
     content: '';
     bottom: 0.125em;
-    // bottom: 0;
     height: 0.07em;
     left: 0;
     width: 0;
-    background-color: black;
+    background-color: $black;
   }
+
   &:hover {
     // color: lighten($tease-head-color, 20%);
     &:after {
@@ -120,13 +115,11 @@ $bp-display-type:   $bp-medium;
       animation-fill-mode: forwards
     }
   }
+
   &:active {
-    color: $he-main;
-    &:after { background-color: $he-main; }
+    color: $black;
+    &:after { background-color: $black; }
   }
-  // em, b, strong {
-  //   @extend %head-highlight;
-  // }
 }
 
 
@@ -135,7 +128,7 @@ $bp-display-type:   $bp-medium;
   font-weight: $font-weight-lt;
   font-size: 21px;
   line-height: 1.33;
-  color: $black-90;
+  color: $tz-text-color;
   @include mq($bp-display-type, max) { margin-top: 5px; }
   @include mq($bp-display-type, max) { font-size: 17px; }
 }
@@ -174,7 +167,7 @@ $bp-display-type:   $bp-medium;
 .tz-text--reg-lg {
   font-size: 22px;
   line-height: 1.33;
-   @include mq($bp-display-type, max) { font-size: 17px; }
+  @include mq($bp-display-type, max) { font-size: 17px; }
 }
 
 
@@ -185,7 +178,6 @@ $bp-display-type:   $bp-medium;
 
 
 .tz-h--reg-med {
-  // font-size: 30px;
   font-size: 26px;
   line-height: 1.15;
   @include display-type;
@@ -230,14 +222,12 @@ $bp-display-type:   $bp-medium;
 // --------------------------------------------
 
 .tz-h--feat-lg {
-  // font-size: 100px;
   line-height: 0.9;
   font-style: italic;
   font-weight: $font-weight-black;
-  // letter-spacing: -2px;
   letter-spacing: 0;
 
-  .tz-h-link { color: black; }
+  .tz-h-link { color: $tease-head-color; }
 
   @include mq($bp-medium) { font-size: 65px; }
 
@@ -246,7 +236,6 @@ $bp-display-type:   $bp-medium;
 
 
 .tz-text--feat-lg {
-  // font-size: 29px;
   line-height: 1.45;
   @include mq($bp-medium) {
     font-size: 29px;
@@ -264,15 +253,14 @@ $bp-display-type:   $bp-medium;
 // --------------------------------------------
 
 .tz-special-h {
-  // display: inline;
   position: relative;
   font-family: $he-accent;
   font-size: 28px;
   line-height: 1.194444444;
   font-weight: 900;
   color: $he-secondary;
-  // margin-bottom: 20px;
   margin: 12px 0 5px;
+
   @include mq($bp-medium) { margin-top: 0; }
 }
 
@@ -280,14 +268,14 @@ $bp-display-type:   $bp-medium;
 .tz-special-sub-h {
   font-size: 24px;
   font-weight: 700px;
-  color: black;
+  color: $tease-head-color;
 }
 
 
 .tz-special-link {
   @include bullet(after);
   text-decoration: underline;
-  color: $head-color;
+  color: $tease-head-color;
 }
 
 
@@ -295,11 +283,11 @@ $bp-display-type:   $bp-medium;
   position: relative;
   font-family: $he-accent;
   font-size: 72px;
-  // line-height: 1.194444444;
   line-height: 0.7;
   font-weight: 900;
   color: $he-secondary;
   letter-spacing: -1px;
+
   @include mq(650px) {
     font-size: 112px;
     letter-spacing: -3px;
@@ -308,17 +296,14 @@ $bp-display-type:   $bp-medium;
 
 
 .tz-special-precent {
-  // position: absolute;
-  // top: 0.25em;
   font-size: 0.5em;
   vertical-align: super;
 }
 
 
 .l-pair-tz-special-stat {
-  // @include mq(500px, 650px) { @include pair(125px, 35px); }
-  // @include mq(650px) { @include pair(auto, 70px); }
   @include mq($bp-medium) { @include pair(auto, 30px); }
+
   @include mq($bp-medium, max) {
     .art-bd {
       float: none;

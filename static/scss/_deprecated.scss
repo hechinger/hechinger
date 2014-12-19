@@ -173,3 +173,56 @@ $no-margin:     71.875em;
 $no-content-margin: 1007px;
 
 $black-total:       pink;
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+//  Ui mixin from mixins
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin ui-icon($icon_filename, $bg-color) {
+  background: $bg-color url(#{$png-icon-path}/#{$icon_filename}.png) no-repeat content-box center;
+  background: $bg-color url(#{$svg-icon-path}/#{$icon_filename}.svg) no-repeat content-box center;
+  background-size: contain;
+}
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Partners from mixins
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$svg-partner-path: /wp-content/themes/hechinger/static/img/partners;
+$png-partner-path: /wp-content/themes/hechinger/static/img/partners;
+
+$partners:  Advocate,
+            American_Prospect;
+
+
+.partner {
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: contain;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  // top: 5px;
+  // left: 5px;
+
+
+  @each $partner in $partners {
+    .icon-#{$partner} & {
+      background-image: url(#{$svg-partner-path}/icn-partner-#{$partner}.svg);
+      .no-svg & { background-image: url(#{$png-partner-path}/icn-partner#{$partner}.png)}
+    }
+  }
+}

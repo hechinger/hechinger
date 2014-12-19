@@ -7494,40 +7494,42 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 21, ../scss/components/_article-core-img.scss */
+/* line 18, ../scss/components/_article-core-img.scss */
 .img-caption {
-  margin: 10px 25px 40px;
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
+  font-style: normal;
+  margin: 10px 25px 40px;
   font-size: 14px;
   line-height: 1.285714286;
   color: black;
 }
 @media (min-width: 550px) {
-  /* line 21, ../scss/components/_article-core-img.scss */
+  /* line 18, ../scss/components/_article-core-img.scss */
   .img-caption {
     margin-right: 0;
     margin-left: 0;
   }
 }
-/* line 33, ../scss/components/_article-core-img.scss */
+/* line 30, ../scss/components/_article-core-img.scss */
 .alignleft .img-caption {
   margin-left: 25px;
 }
 
-/* line 40, ../scss/components/_article-core-img.scss */
+/* line 37, ../scss/components/_article-core-img.scss */
 .img-byline {
   color: #a6a1a3;
   font-weight: 300;
 }
 
-/* line 52, ../scss/components/_article-core-img.scss */
+/* line 43, ../scss/components/_article-core-img.scss */
 .article-text img.size-full {
   height: auto;
 }
 
-/* line 56, ../scss/components/_article-core-img.scss */
-img.alignright, img.alignleft {
+/* line 45, ../scss/components/_article-core-img.scss */
+img.alignright,
+img.alignleft {
   height: auto;
 }
 
@@ -7563,7 +7565,7 @@ img.alignright, img.alignleft {
   }
 }
 
-/* line 22, ../scss/components/_article-aside.scss */
+/* line 24, ../scss/components/_article-aside.scss */
 .article-aside {
   max-width: 550px;
   margin-bottom: 50px;
@@ -7572,20 +7574,20 @@ img.alignright, img.alignleft {
   border-bottom: 1px solid #bfbbbc;
 }
 @media (max-width: 819px) {
-  /* line 22, ../scss/components/_article-aside.scss */
+  /* line 24, ../scss/components/_article-aside.scss */
   .article-aside {
     margin-left: auto;
     margin-right: auto;
   }
 }
 @media (min-width: 820px) {
-  /* line 22, ../scss/components/_article-aside.scss */
+  /* line 24, ../scss/components/_article-aside.scss */
   .article-aside {
     margin-left: 25px;
   }
 }
 @media (min-width: 900px) {
-  /* line 22, ../scss/components/_article-aside.scss */
+  /* line 24, ../scss/components/_article-aside.scss */
   .article-aside {
     display: block;
     float: right;
@@ -7593,61 +7595,67 @@ img.alignright, img.alignleft {
     width: 220px;
   }
 }
-/* line 36, ../scss/components/_article-aside.scss */
+/* line 38, ../scss/components/_article-aside.scss */
 .article-aside p {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 14px;
   margin: 10px 0;
 }
-/* line 51, ../scss/components/_article-aside.scss */
-.article-aside h1, .article-aside h2 {
+/* line 49, ../scss/components/_article-aside.scss */
+.article-aside h1,
+.article-aside h2 {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
+  font-style: normal;
   font-size: 24px;
   color: black;
   margin-top: 15px;
 }
-/* line 59, ../scss/components/_article-aside.scss */
-.article-aside h3, .article-aside h4 {
+/* line 57, ../scss/components/_article-aside.scss */
+.article-aside h3,
+.article-aside h4 {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
+  font-style: normal;
   font-size: 20px;
   color: black;
   margin-top: 15px;
 }
-/* line 78, ../scss/components/_article-aside.scss */
-.article-aside h5, .article-aside h6 {
+/* line 66, ../scss/components/_article-aside.scss */
+.article-aside h5,
+.article-aside h6 {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
+  font-style: normal;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: black;
   margin-top: 15px;
 }
-/* line 90, ../scss/components/_article-aside.scss */
+/* line 81, ../scss/components/_article-aside.scss */
 .article-aside blockquote {
   padding-top: 10px;
   margin: 25px 0 !important;
   border-top: 3px solid #00aeef;
   color: #908b8c;
 }
-/* line 123, ../scss/components/_article-aside.scss */
+/* line 95, ../scss/components/_article-aside.scss */
 .article-aside ul, .article-aside ol {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 14px;
   margin: 10px 0 10px 20px;
 }
-/* line 130, ../scss/components/_article-aside.scss */
+/* line 102, ../scss/components/_article-aside.scss */
 .article-aside ul {
   list-style-type: disc;
 }
-/* line 133, ../scss/components/_article-aside.scss */
+/* line 105, ../scss/components/_article-aside.scss */
 .article-aside ul ul {
   list-style-type: circle !important;
   margin-left: 20px;
 }
-/* line 139, ../scss/components/_article-aside.scss */
+/* line 111, ../scss/components/_article-aside.scss */
 .article-aside ol {
   counter-reset: li;
   /* Initiate a counter */
@@ -7656,7 +7664,7 @@ img.alignright, img.alignleft {
   padding-left: 0;
   /* Remove the default left padding */
 }
-/* line 144, ../scss/components/_article-aside.scss */
+/* line 117, ../scss/components/_article-aside.scss */
 .article-aside ol > li {
   position: relative;
   /* Create a positioning context */
@@ -7667,7 +7675,7 @@ img.alignright, img.alignleft {
   list-style: none;
   /* Disable the normal item numbering */
 }
-/* line 151, ../scss/components/_article-aside.scss */
+/* line 124, ../scss/components/_article-aside.scss */
 .article-aside ol > li:before {
   content: counter(li) ".";
   /* Use the counter as content */
@@ -7687,32 +7695,32 @@ img.alignright, img.alignleft {
   font-family: National, Helvetica, Arial, sans-serif;
   text-align: center;
 }
-/* line 169, ../scss/components/_article-aside.scss */
+/* line 142, ../scss/components/_article-aside.scss */
 .article-aside li ol,
 .article-aside li ul {
   margin-top: 6px;
 }
-/* line 171, ../scss/components/_article-aside.scss */
+/* line 145, ../scss/components/_article-aside.scss */
 .article-aside ol ol li:last-child {
   margin-bottom: 0;
 }
-/* line 175, ../scss/components/_article-aside.scss */
+/* line 152, ../scss/components/_article-aside.scss */
 .article-aside a, .article-aside a:visited {
   color: #00aeef;
   text-decoration: none;
 }
-/* line 178, ../scss/components/_article-aside.scss */
+/* line 155, ../scss/components/_article-aside.scss */
 .article-aside a:hover, .article-aside a:visited:hover, .article-aside a:visited:hover, .article-aside a:visited:visited:hover {
   text-decoration: underline;
 }
-/* line 183, ../scss/components/_article-aside.scss */
+/* line 160, ../scss/components/_article-aside.scss */
 .article-aside > address {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-style: italic;
   font-weight: 300;
 }
-/* line 196, ../scss/components/_article-aside.scss */
+/* line 170, ../scss/components/_article-aside.scss */
 .article-aside p img {
   margin: 15px 0 15px 25px;
   float: left;
@@ -7721,66 +7729,67 @@ img.alignright, img.alignleft {
   height: auto;
 }
 @media (min-width: 550px) {
-  /* line 196, ../scss/components/_article-aside.scss */
+  /* line 170, ../scss/components/_article-aside.scss */
   .article-aside p img {
     margin: 15px 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 196, ../scss/components/_article-aside.scss */
+  /* line 170, ../scss/components/_article-aside.scss */
   .article-aside p img {
     width: 100%;
     float: none;
   }
 }
-/* line 215, ../scss/components/_article-aside.scss */
+/* line 187, ../scss/components/_article-aside.scss */
 .article-aside .img-container {
   width: 100%;
 }
 @media (min-width: 800px) {
-  /* line 215, ../scss/components/_article-aside.scss */
+  /* line 187, ../scss/components/_article-aside.scss */
   .article-aside .img-container {
     display: inline-block;
   }
 }
-/* line 231, ../scss/components/_article-aside.scss */
+/* line 192, ../scss/components/_article-aside.scss */
 .article-aside .img-caption-text {
   margin: 0;
 }
-/* line 233, ../scss/components/_article-aside.scss */
+/* line 194, ../scss/components/_article-aside.scss */
 .article-aside .img-caption {
   width: 65%;
   margin: 15px 0;
   float: right;
 }
 @media (min-width: 550px) {
-  /* line 233, ../scss/components/_article-aside.scss */
+  /* line 194, ../scss/components/_article-aside.scss */
   .article-aside .img-caption {
     width: 70%;
     margin: 5px 0 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 233, ../scss/components/_article-aside.scss */
+  /* line 194, ../scss/components/_article-aside.scss */
   .article-aside .img-caption {
     float: none;
     width: 100%;
     margin: 0;
   }
 }
-/* line 250, ../scss/components/_article-aside.scss */
+/* line 211, ../scss/components/_article-aside.scss */
 .article-aside .wp-caption-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
+  font-style: normal;
   font-size: 14px;
 }
-/* line 255, ../scss/components/_article-aside.scss */
+/* line 216, ../scss/components/_article-aside.scss */
 .article-aside .wp-image-38 {
   margin-right: 20px;
   height: auto;
 }
 
-/* line 278, ../scss/components/_article-aside.scss */
+/* line 242, ../scss/components/_article-aside.scss */
 .aside-hdr {
   font-size: 16px;
   font-family: Tiempos, Georgia, Times, serif !important;
@@ -7788,13 +7797,13 @@ img.alignright, img.alignleft {
   margin-top: 0 !important;
 }
 
-/* line 287, ../scss/components/_article-aside.scss */
+/* line 250, ../scss/components/_article-aside.scss */
 .aside-borders {
   border-top: 6px solid #2a272b;
   border-bottom: 1px solid #dad7d7;
 }
 
-/* line 292, ../scss/components/_article-aside.scss */
+/* line 256, ../scss/components/_article-aside.scss */
 .aside-body {
   margin-left: 0;
 }
@@ -7808,7 +7817,7 @@ img.alignright, img.alignleft {
   margin-bottom: 10px;
   border-bottom: 3px solid black;
 }
-/* line 24, ../scss/components/_article-aside-related.scss */
+/* line 23, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-item {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -7818,16 +7827,16 @@ img.alignright, img.alignleft {
   position: relative;
   margin-bottom: 0.85em;
 }
-/* line 32, ../scss/components/_article-aside-related.scss */
+/* line 31, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-item-hdr {
   padding-left: 1em;
 }
-/* line 36, ../scss/components/_article-aside-related.scss */
+/* line 35, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-highlight {
   background-color: #ffcf31;
   padding: 0.085em 0.294117647em;
 }
-/* line 41, ../scss/components/_article-aside-related.scss */
+/* line 40, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-item-link {
   text-decoration: none;
   color: #000000;
@@ -7851,19 +7860,19 @@ img.alignright, img.alignleft {
 .article-text .aside-related-item-link:before {
   left: 0;
 }
-/* line 46, ../scss/components/_article-aside-related.scss */
+/* line 45, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-item-link:before {
   left: -1.05em;
 }
-/* line 48, ../scss/components/_article-aside-related.scss */
+/* line 47, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-item-link:visited {
   color: black;
 }
-/* line 50, ../scss/components/_article-aside-related.scss */
+/* line 49, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-item-link:hover {
   text-decoration: underline;
 }
-/* line 53, ../scss/components/_article-aside-related.scss */
+/* line 52, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-item-link em, .article-text .aside-related-item-link b, .article-text .aside-related-item-link strong {
   position: relative;
   z-index: -1;

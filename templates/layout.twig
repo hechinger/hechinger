@@ -29,6 +29,11 @@
 
     <!-- Template Specific Styles -->
     {% block styles %}{# page-specific stylesheets #}{% endblock %}
+
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/respondJs/dest/respond.min.js"></script>
+    <![endif]-->
+
     {{ function('wp_head') }}
   </head>
 
@@ -59,6 +64,7 @@
     <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/resp-bg.js"></script>
     <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/navbar.js"></script>
     <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/main.js"></script>
+
     {% block scripts %}{# page-specific scripts #}{% endblock %}
 
     {{function('wp_footer')}}

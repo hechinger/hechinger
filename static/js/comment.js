@@ -9,7 +9,7 @@ var HE_comments = (function($){
     $commentTrigger.on('click', showComments);
   }
 
-  function showComments() {
+  function showComments(event) {
     event.preventDefault();
     if (commentIsActive) {
       $commentMod.removeClass(commentClass);

@@ -13,6 +13,7 @@ img { @include resp-img; }
   border-radius: 50%;
 }
 
+
 .no-svg .footer-partner-logo {
   display: none;
 }
@@ -39,7 +40,7 @@ img { @include resp-img; }
   @include pie-clearfix;
   display: inline-block;
   &.social--with-name {
-    @include mq(450px, max) { display: block; }
+    @include mq($bp-small, max) { display: block; }
   }
 }
 
@@ -59,7 +60,7 @@ img { @include resp-img; }
   }
 
   .social--with-name & {
-    @include mq(450px, max) {
+    @include mq($bp-small, max) {
       width: 47%;
       &.icon-facebook { margin-left: 6%; }
     }
@@ -90,18 +91,18 @@ img { @include resp-img; }
   }
 
   .social--with-name & {
-    // width: 100px;
     width: 100%;
     height: 45px;
     line-height: 45px;
-    // text-indent: 25px;
     text-indent: 30px;
     text-decoration: none;
-    @include mq(450px) {
+
+    @include mq($bp-small) {
       width: 100px;
       line-height: 35px;
       height: 35px;
     }
+
   }
   .social--ftr & {
     border: 1px solid #000;
@@ -154,14 +155,10 @@ $icons: twitter,
   left: 50%;
   margin-top: -10px;
   margin-left: -10px;
-  // top: 5px;
-  // left: 5px;
-  // opacity: 0.8;
 
   .social--with-name & {
     width: 15px;
     height: 15px;
-    // left: 7px;
     left: 11px;
     top: 50%;
     margin-top: -8px;
@@ -171,7 +168,6 @@ $icons: twitter,
   .icon-disqus & {
     width: 15px;
     height: 15px;
-    // left: 9px;
     left: 11px;
     top: 50%;
     margin-left: 0;
@@ -205,51 +201,6 @@ $icons: twitter,
     .icon-#{$icon} & {
       background-image: url(#{$svg-icon-path}/icn-#{$icon}.svg);
       .no-svg & { background-image: url(#{$png-icon-path}/icn-#{$icon}.png)}
-    }
-  }
-}
-
-
-@mixin ui-icon($icon_filename, $bg-color) {
-  background: $bg-color url(#{$png-icon-path}/#{$icon_filename}.png) no-repeat content-box center;
-  background: $bg-color url(#{$svg-icon-path}/#{$icon_filename}.svg) no-repeat content-box center;
-  background-size: contain;
-}
-
-
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Partners
-//
-// --------------------------------------------
-// --------------------------------------------
-
-$svg-partner-path: /wp-content/themes/hechinger/static/img/partners;
-$png-partner-path: /wp-content/themes/hechinger/static/img/partners;
-
-$partners:  Advocate,
-            American_Prospect;
-
-
-.partner {
-  background-repeat: no-repeat;
-  background-position: 0 50%;
-  background-size: contain;
-  width: 200px;
-  height: 50px;
-  position: absolute;
-  // top: 5px;
-  // left: 5px;
-
-
-  @each $partner in $partners {
-    .icon-#{$partner} & {
-      background-image: url(#{$svg-partner-path}/icn-partner-#{$partner}.svg);
-      .no-svg & { background-image: url(#{$png-partner-path}/icn-partner#{$partner}.png)}
     }
   }
 }
@@ -341,24 +292,13 @@ $partners:  Advocate,
   color: $he-secondary;
   color: green;
   margin-bottom: 20px;
-  // &:before {
-  //   position: absolute;
-  //   content: '“';
-  //   left: 0;
-  //   font-size: 1.5em;
-  // }
-  // &:after {
-  //   position: absolute;
-  //   content: '”';
-  //   right: 0;
-  // }
 }
 
 
 .quote-sub-h {
   font-size: 24px;
   font-weight: 700px;
-  color: black;
+  color: $tease-head-color;
 }
 
 
@@ -366,7 +306,6 @@ $partners:  Advocate,
    @include bullet(after);
   text-decoration: underline;
   color: $head-color;
-
 }
 
 
@@ -422,6 +361,9 @@ $button-main: $he-secondary;
 // --------------------------------------------
 // --------------------------------------------
 
+$pagination-color:          $black-40;
+$pagination-color-disable:  $black-20;
+
 .pagination-mod {
   margin-top: 50px;
   margin-bottom: 50px;
@@ -437,7 +379,7 @@ $button-main: $he-secondary;
 .pagination-page-current {
   display: inline-block;
   padding: 0 5px 0 15px;
-  color: $black-40;
+  color: $pagination-color;
 }
 
 
@@ -445,7 +387,7 @@ $button-main: $he-secondary;
   text-transform: none;
   font-style: italic;
   padding: 0 5px;
-  color: $black-40;
+  color: $pagination-color;
   display: inline-block;
 }
 
@@ -453,7 +395,7 @@ $button-main: $he-secondary;
 .pagination-page-total {
   display: inline-block;
   padding: 0 15px 0 5px;
-  color: $black-40;
+  color: $pagination-color;
 }
 
 
@@ -461,7 +403,7 @@ $button-main: $he-secondary;
 %pagination-arrow {
   position: relative;
   display: inline-block;
-  color: $black-40;
+  color: $pagination-color;
   text-decoration: none;
 
   &:before {
@@ -483,7 +425,7 @@ $button-main: $he-secondary;
   }
 
   &:hover { color: $he-secondary; }
-  &.pagination-disabled { color: $black-20; }
+  &.pagination-disabled { color: $pagination-color-disable; }
 
 }
 
@@ -493,7 +435,7 @@ $button-main: $he-secondary;
 
   &:before {
     left: -25px;
-    border-right: 10px solid $black-40;
+    border-right: 10px solid $pagination-color;
   }
 
   &:after {
@@ -507,7 +449,7 @@ $button-main: $he-secondary;
 
   &.pagination-disabled {
     &:before {
-      border-right-color: $black-20;
+      border-right-color: $pagination-color-disable;
     }
   }
 }
@@ -518,7 +460,7 @@ $button-main: $he-secondary;
 
   &:before {
     right: -25px;
-    border-left:10px solid $black-40;
+    border-left: 10px solid $pagination-color;
     &:hover {
       border-left-color: $he-secondary;
     }
@@ -535,7 +477,7 @@ $button-main: $he-secondary;
 
   &.pagination-disabled {
     &:before {
-      border-left-color: $black-20;
+      border-left-color: $pagination-color-disable;
     }
   }
 }

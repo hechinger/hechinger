@@ -6,10 +6,6 @@
     </div> <!-- /article-partner-logo -->
   {% endfor %}
 
-  <p class="aside-partner-text">This story also appeared in
-  {% for partner in post.partners %}
-    {{ partner.name }}
-  {% endfor %}
-  </p>
+  <p class="aside-partner-text">This story also appeared in {{ post.partner_names }}</p>
 </aside> <!-- /article-aside -->
 

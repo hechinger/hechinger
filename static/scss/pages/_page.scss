@@ -22,6 +22,7 @@
   }
 }
 
+
 .page-hdr-inner {
   @extend %bp-trans;
   margin: -50px auto 0;
@@ -34,15 +35,18 @@
   }
 }
 
+
 .page-hdr-topic {
-  @extend %topic-hdr;
+  @include accent-header-underline;
   font-size: 24px;
   font-family: $he-accent;
 }
 
+
 .page-topic-link {
-  @extend %head-link;
+  @include head-link;
 }
+
 
 .page-h {
   font-weight: 700;
@@ -56,6 +60,7 @@
   }
 }
 
+
 .page-sub-h {
   font-weight: 300;
   font-size: 18px;
@@ -66,10 +71,12 @@
   }
 }
 
+
 .pagehdr-top,
 .page-hdr-h {
   margin-bottom: 40px;
 }
+
 
 .page-content {
   padding: 0 $site-margin;
@@ -82,23 +89,23 @@
   }
 }
 
+
 .page-content-inner {
   margin: 0 auto;
   max-width: $content-max--inner;
 
-    > p {
-    // @extend %article-bd-margin;
+  > p {
     max-width: $article-bd-max;
     font-family: $he-sans;
     font-size: 16px;
     margin: 10px 0;
-    }
+  }
 
 
   // Headline Styles
   // --------------------------------------------
 
- > h1,
+  > h1,
   > h2,
   > h3,
   > h4,
@@ -107,6 +114,7 @@
     margin: 30px 0 20px;
     color: black;
   }
+
 
   > h1,
   > h2,
@@ -117,14 +125,19 @@
     + p { margin-top: 5px; }
   }
 
+
   > h4,
   > h5 { border-bottom: 6px solid black;}
 
+
   > h1 { font-size: 30px;}
+
 
   > h2 { font-size: 24px;}
 
+
   > h3 { font-size: 20px;}
+
 
   > h4 {
       display: inline-block;
@@ -142,11 +155,13 @@
       display: inline-block;
     }
 
+
   > h6 {
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
+
 
 
   // Block Quote
@@ -304,21 +319,9 @@ ol > li:before {
 
 
   > p {
-    // > .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
-    // > .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
-    // > .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
-    // > .size-thumbnail { float: left; margin-right: 2em; }
-
-    >iframe {
-      margin: 20px 0;
-    }
+    > iframe { margin: 20px 0; }
   }
 
-  // .size-full { /*width: 100%;*/ max-width: 100%; height: auto; }
-  // .alignright { float: right; margin-left: 1em; margin-bottom: 1em; }
-  // .alignleft { float: left; margin-right: 1em; margin-bottom: 1em; }
-  // .size-thumbnail { float: left; margin-right: 2em; }
-  // img { margin-bottom: 1em; }
 
   .media-mod {
     // margin: 20px 0;
@@ -361,6 +364,7 @@ ol > li:before {
 
 }
 
+
 .page-category-h {
   font-family: $he-accent;
   font-size: 20px;
@@ -377,6 +381,7 @@ ol > li:before {
   }
 }
 
+
 .page-category-sub-h {
   font-family: $he-sans;
   font-size: 20px;
@@ -388,6 +393,7 @@ ol > li:before {
     font-size: 22px;
   }
 }
+
 
 .page-body-text {
   font-family: $he-sans;

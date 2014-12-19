@@ -3,12 +3,12 @@
   position: relative;
   width: 90%;
   margin: 0 auto;
-  @include mq($medium) {
+  @include mq($bp-medium) {
     position: relative;
-    // margin: 31px auto 0;
     max-width: $content-max;
   }
 }
+
 
 .search-page-text-input {
   width: 100%;
@@ -33,26 +33,27 @@
     outline: none;
   }
 
-  @include mq($medium) {
-    // margin-top: 0;
+  @include mq($bp-medium) {
     height: 90px;
     padding: 0 0 0 30px;
     font-size: 40px;
   }
 }
 
+
 input:-webkit-autofill {
     -webkit-box-shadow:0 0 0 50px $he-secondary inset;
     -webkit-text-fill-color: white;
 }
+
 
 input:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0 50px $he-secondary inset;
     -webkit-text-fill-color: white;
 } // tricky sticky overriding the webkit autofill color. Thanks, stackoverflow!
 
+
 .search-page-submit-button {
-  @include ui-icon('icn-search-white-54-54', transparent);
   position: absolute;
   top: 0;
   right: 0;
@@ -62,34 +63,39 @@ input:-webkit-autofill:focus {
   margin-top: 0px;
   display: block;
   width: 100px;
+  background-color: $black;
 
-  @include mq("max", $medium) {
+  @include mq($bp-medium, max) {
     width: 60px;
     padding: 17px;
   }
 }
+
+
 .l-search-results {
   width: 90%;
   margin: 0 auto;
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     padding-left: 50px;
     margin: 0 $site-margin;
     max-width: $content-max;
   }
 
-  @include mq($no-content-margin) {
+  @include mq($bp-no-content-margin) {
     margin: 0 auto;
   }
 }
 
+
 .search-results-inner {
   padding-top: 30px;
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     padding-top: 50px;
   }
 }
+
 
 .results-number {
   font-family: $he-accent;
@@ -97,11 +103,12 @@ input:-webkit-autofill:focus {
   font-weight: $font-weight-black;
   color: $black;
 
-    @include mq($medium) {
+    @include mq($bp-medium) {
     padding-left: 50px;
     font-size: 18px;
   }
 }
+
 
 .no-results {
   font-family: $he-sans;

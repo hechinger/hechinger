@@ -10,8 +10,8 @@
   width: 100%;
   background-color: $he-main;
   padding-bottom: 45px;
-  @include mq($medium) { padding-bottom: 115px; }
-  @include mq($large) { padding-bottom: 130px; }
+  @include mq($bp-medium) { padding-bottom: 115px; }
+  @include mq($bp-large) { padding-bottom: 130px; }
 }
 
 
@@ -22,7 +22,7 @@
 
 
 .site-header--hp {
-  @include mq($large) { padding-bottom: 250px; }
+  @include mq($bp-large) { padding-bottom: 250px; }
 }
 
 
@@ -43,10 +43,12 @@ $logo-ht-lg:    53px;
 
 .l-nav-mod {
   @include pie-clearfix;
-  @include mq($medium, max) {
+
+  @include mq($bp-medium, max) {
     background-color: $he-main;
   }
-  @include mq(800px, max) {
+
+  @include mq($bp-medium-plus, max) {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -56,12 +58,12 @@ $logo-ht-lg:    53px;
 .l-nav-wrap {
   max-width: $content-max;
   @include pie-clearfix;
+
   @include mq($has-margin) { margin: 0 $site-margin; }
-  @include mq($no-content-margin) { margin: 0 auto; }
-  @include mq($medium) {
-    font-size: 21px;
-    // height: 66px;
-  }
+
+  @include mq($bp-no-content-margin) { margin: 0 auto; }
+
+  @include mq($bp-medium) { font-size: 21px; }
 }
 
 
@@ -69,7 +71,7 @@ $logo-ht-lg:    53px;
   display: inline-block;
   padding: 8px 8px 8px;
   background-color: $black;
-  @include mq($medium) {
+  @include mq($bp-medium) {
     float: left;
     display: block;
     padding: 14px 14px 14px;
@@ -82,20 +84,21 @@ $logo-ht-lg:    53px;
   width: 195px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  @include mq($medium) {
+
+  @include mq($bp-medium) {
     width: 269px;
   }
 }
 
 
 .nav-sub-h {
+  @include sans;
   float: left;
   display: none;
   padding: 0 18px;
-  font-family: $he-sans;
-  font-weight: $font-weight-lt;
   font-size: 17px;
   line-height: $logo-ht-sm;
+
   @include mq(908px) {
     display: block;
     line-height: $logo-ht-lg;
@@ -116,7 +119,8 @@ $logo-ht-lg:    53px;
 
 .nav-item-wrap {
   display: none;
-  @include mq($medium) {
+
+  @include mq($bp-medium) {
     position: relative;
     float: right;
     display: block;
@@ -139,12 +143,12 @@ $logo-ht-lg:    53px;
 
 
 .nav-item {
+  @include sans;
   display: block;
   float: left;
   width: 77px;
   border-top: 9px solid transparent;
   line-height: $logo-ht-lg - 15px;
-  @include sans;
   font-size: 17px;
   color: $black;
   text-transform: uppercase;
@@ -166,7 +170,7 @@ $logo-ht-lg:    53px;
 .nav-topics-link {
   display: none;
 
-  @include mq($medium) { display: block; }
+  @include mq($bp-medium) { display: block; }
 
   &:after {
     content: "";
@@ -184,31 +188,25 @@ $logo-ht-lg:    53px;
 
 .nav-topics-list {
   z-index: 2;
-  // padding-left: 24px;
   background-color: $he-main;
 
-  @include mq($medium, max) {
+  @include mq($bp-medium, max) {
     margin-top: 20px;
   }
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     display: block;
     position: absolute;
-    // top: 74px;
     top: 60px;
     left: -50%;
-    // margin-left: -12px;
     display: none;
     padding: 10px 25px 2px;
-    // width: 320px;
     width: 290px;
     background-color: $black;
 
     // Fix for search results page, accounting for the lack of search icon
     // in the nav
-    .search & {
-      margin-left: -21px;
-    }
+    .search & { margin-left: -21px; }
   }
 
   &:hover, &:focus { display: block; }
@@ -229,19 +227,19 @@ $logo-ht-lg:    53px;
   position: relative;
   cursor: pointer;
   & + & {
-    @include mq(600px) {
+    @include mq($bp-medium) {
        border-top: 1px solid $black-50;
     }
   }
 
   &:hover {
     .nav-sub-item-link { @include bullet(after, $he-main); }
-    @include mq(600px, max) {
+    @include mq($bp-medium, max) {
       .nav-sub-item-link { @include bullet(after, white); }
     }
   }
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     line-height: 50px;
   }
 
@@ -261,7 +259,7 @@ $logo-ht-lg:    53px;
   //TODO: give current page an underline
   &.is-current-page:after{ }
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     font-weight: $font-weight-lt;
     color: $white;
     font-size: 20px;
@@ -273,32 +271,16 @@ $logo-ht-lg:    53px;
 
 .sub-about-item {
   margin: 20px 0 10px;
-  @include mq($medium) {
+  @include mq($bp-medium) {
     display: none;
   }
 }
 
 
-// Question: What is this for?
-// What state or situation?
-// .nav-sub-bullet {
-//   @include bullet(after);
-//   display: none;
-//   margin-left: 5px;
-//   position: relative;
-//   color: $he-main;
-
-//   &:after { position: relative; }
-//   @include mq($medium) {
-//     display: initial;
-//   }
-// }
-
-
 .all-topics-link {
   color: $white;
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     font-size: 80%;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -309,7 +291,7 @@ $logo-ht-lg:    53px;
 
 .nav-about-link {
   display: none;
-  @include mq($medium) { display: block; }
+  @include mq($bp-medium) { display: block; }
 }
 
 
@@ -324,8 +306,8 @@ $logo-ht-lg:    53px;
     border-top: 9px solid $black;
     display: none;
   }
-  @include mq($medium) { display: block; }
-  // .icon { top: 9px; }
+  @include mq($bp-medium) { display: block; }
+
   .icon { margin-top: -1px; }
 }
 
@@ -357,7 +339,7 @@ $logo-ht-lg:    53px;
   text-align: center;
   line-height: $logo-ht-sm;
 
-  @include mq($medium) { display: none; }
+  @include mq($bp-medium) { display: none; }
 }
 
 .admin-bar .nav-menu-button {
@@ -383,17 +365,15 @@ $logo-ht-lg:    53px;
 
 .search-form-wrap {
   @include mq($has-margin) { margin: 0 $site-margin; }
-  @include mq($no-content-margin) { margin: 0 auto; }
+  @include mq($bp-no-content-margin) { margin: 0 auto; }
   display: none;
   position: relative;
-  // width: 90%;
   margin: 0 auto;
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     display: none;
     position: relative;
     max-width: $content-max;
-    // margin: 31px auto 0;
     margin-top: 31px;
     &.is-open { display: block;}
   }
@@ -406,19 +386,19 @@ $logo-ht-lg:    53px;
 
 
 .search-text-input {
+  @include sans-bold;
   width: 100%;
   height: 60px;
   border: none;
   padding: 0 0 0 10px;
   background-color: $black;
   color: $black-10;
-  @include sans-bold;
   font-size: 30px;
   -webkit-appearance: none;
 
   &:focus { outline: none; }
 
-  @include mq($medium) {
+  @include mq($bp-medium) {
     height: 90px;
     padding: 0 0 0 30px;
     font-size: 40px;
@@ -437,7 +417,7 @@ $logo-ht-lg:    53px;
   width: 100px;
   background-color: transparent;
 
-  @include mq($medium, max) {
+  @include mq($bp-medium, max) {
     width: 60px;
     padding: 17px;
   }

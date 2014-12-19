@@ -6,36 +6,33 @@
 // --------------------------------------------
 // --------------------------------------------
 
-.media-mod {
-  // max-width: $article-bd-max;
-  // max-width: 600px;
-}
+.media-mod { }
 
-// protyping images bleeding out of containers.
-// assumes control over the containing element when images are added
+
 .img-container {
   @extend %bleeding-container;
   > img { }
 }
 
+
 .img-caption {
+  @include sans-bold;
   margin: 10px $site-margin 40px;
-  font-family: $he-sans;
-  font-weight: $font-weight-bold;
   font-size: 14px;
   line-height: 1.285714286;   // 18/14
   color: black;
+
   @include mq($bp-img-no-bleed) {
     margin-right: 0;
     margin-left: 0;
   }
 
-  .alignleft & {
-    margin-left: $site-margin;
-  }
+  .alignleft & { margin-left: $site-margin; }
 }
 
+
 .img-caption-text { }
+
 
 .img-byline {
   color: $black-30;
@@ -43,16 +40,9 @@
 }
 
 
+.article-text img.size-full { height: auto; }
 
-// *****************************
-// *****************************
-// *****************************
-/// Move into article.scss?
-
-.article-text img.size-full {
-  height: auto;
-}
-
-img.alignright, img.alignleft {
+img.alignright,
+img.alignleft {
   height: auto;
 }

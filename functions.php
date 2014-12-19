@@ -87,10 +87,22 @@ class HechingerSite extends TimberSite {
     Timber::add_route('special-report/:name', function($params){
       Timber::load_view('special-report.php', null, 200, $params);
     });
+    Timber::add_route('content/special-reports/:name', function($params){
+      Timber::load_view('special-report.php', null, 200, $params);
+    });
+    Timber::add_route('content/special-report/:name', function($params){
+      Timber::load_view('special-report.php', null, 200, $params);
+    });
     Timber::add_route('special-reports/:name/page/:number', function($params){
       Timber::load_view('special-report.php', null, 200, $params);
     });
     Timber::add_route('special-report/:name/page/:number', function($params){
+      Timber::load_view('special-report.php', null, 200, $params);
+    });
+    Timber::add_route('content/special-reports/:name/page/:number', function($params){
+      Timber::load_view('special-report.php', null, 200, $params);
+    });
+    Timber::add_route('content/special-report/:name/page/:number', function($params){
       Timber::load_view('special-report.php', null, 200, $params);
     });
     Timber::add_route('about', function($params){

@@ -190,5 +190,4 @@ class HechingerPost extends TimberPost {
       return $string;
     }
   }
->>>>>>> 695eff9... Partners punctuation. Closes #283
 }

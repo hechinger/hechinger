@@ -196,7 +196,7 @@ $black-total:       pink;
 // --------------------------------------------
 // --------------------------------------------
 //
-// Partners from mixins
+// Partners from objects
 //
 // --------------------------------------------
 // --------------------------------------------
@@ -225,4 +225,95 @@ $partners:  Advocate,
       .no-svg & { background-image: url(#{$png-partner-path}/icn-partner#{$partner}.png)}
     }
   }
+}
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Placeholders
+//
+// --------------------------------------------
+// --------------------------------------------
+
+%topic-hdr {
+  @extend %section-hdr;
+  border-bottom-width: 0.2em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  background-color: pink;
+}
+
+%item-bullet {
+   &:before {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    content: '→';
+    color: $he-main;
+    color: green;
+  }
+}
+
+%link-bullet {
+  padding-right: 1em;
+  &:after {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    content: '→';
+    color: inherit;
+    color: red;
+  }
+}
+
+%link-bullet-readmore {
+  padding-right: 1em;
+  padding-left: .35em;
+  &:after {
+    padding-left: .35em;
+    position: relative;
+    right: 0;
+    display: inline-block;
+    content: '→';
+    color: inherit;
+    color: aqua;
+  }
+}
+
+
+%head-link {
+  text-decoration: none;
+  color: $head-color;
+  &:hover { text-decoration: underline; }
+  background-color: aqua;
+}
+
+%head-highlight {
+  //text-decoration: none;
+  // background-color: $he-main;
+  background-color: pink;
+  font-style: normal;
+  font-size: 0.95em;
+  // padding: 0.085em 0.294117647em;
+  padding: 0 0.2em;
+}
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Text
+//
+// --------------------------------------------
+// --------------------------------------------
+
+%article-text {
+  color: green;
+  font-family: $he-serif;
+  font-weight: $font-weight-lt;
+  font-size: 17px;
+  line-height: 1.705882353;   // 29/17
 }

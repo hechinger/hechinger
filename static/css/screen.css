@@ -696,25 +696,25 @@ button {
   color: #000000;
 }
 
-/* line 119, ../scss/_placeholders.scss */
+/* line 38, ../scss/_placeholders.scss */
 .page-content-inner .alignnone, .img-container, .article-aside p img {
   margin-left: -25px;
   margin-right: -25px;
 }
 @media (min-width: 550px) {
-  /* line 119, ../scss/_placeholders.scss */
+  /* line 38, ../scss/_placeholders.scss */
   .page-content-inner .alignnone, .img-container, .article-aside p img {
     margin: 0;
   }
 }
 
-/* line 138, ../scss/_placeholders.scss */
+/* line 57, ../scss/_placeholders.scss */
 .l-archive-hdr-wrap, .page-hdr, .page-hdr-inner, .l-section-front-hdr-wrap, .article-hdr, .article-hdr-inner {
   -webkit-transition: all 0.25s ease-in;
   transition: all 0.25s ease-in;
 }
 
-/* line 150, ../scss/_placeholders.scss */
+/* line 69, ../scss/_placeholders.scss */
 .award-year {
   position: relative;
   background-color: #ffcf31;
@@ -723,7 +723,7 @@ button {
   height: 45px;
   line-height: 40px;
 }
-/* line 157, ../scss/_placeholders.scss */
+/* line 76, ../scss/_placeholders.scss */
 .award-year:before, .award-year:after {
   content: "";
   position: absolute;
@@ -735,14 +735,14 @@ button {
   z-index: -1;
   border-radius: 8%;
 }
-/* line 168, ../scss/_placeholders.scss */
+/* line 87, ../scss/_placeholders.scss */
 .award-year:before {
   -webkit-transform: rotate(30deg);
   -moz-transform: rotate(30deg);
   -ms-transform: rotate(30deg);
   -o-transform: rotate(30deg);
 }
-/* line 174, ../scss/_placeholders.scss */
+/* line 93, ../scss/_placeholders.scss */
 .award-year:after {
   -webkit-transform: rotate(60deg);
   -moz-transform: rotate(60deg);
@@ -750,7 +750,7 @@ button {
   -o-transform: rotate(60deg);
 }
 
-/* line 182, ../scss/_placeholders.scss */
+/* line 101, ../scss/_placeholders.scss */
 .article-column-img, .hp-latest-list-img {
   margin-right: 5px;
   width: 50px;
@@ -760,18 +760,18 @@ button {
   overflow: hidden;
 }
 
-/* line 200, ../scss/_placeholders.scss */
+/* line 119, ../scss/_placeholders.scss */
 .sr-landing-grid-img, .l-pair-sr-feed .art-bd {
   position: relative;
 }
-/* line 203, ../scss/_placeholders.scss */
+/* line 122, ../scss/_placeholders.scss */
 .sr-landing-grid-img img, .l-pair-sr-feed .art-bd img {
   opacity: 0.45;
   -webkit-filter: grayscale(40%);
   -moz-filter: grayscale(40%);
   filter: grayscale(40%);
 }
-/* line 209, ../scss/_placeholders.scss */
+/* line 128, ../scss/_placeholders.scss */
 .sr-landing-grid-img:before, .l-pair-sr-feed .art-bd:before, .sr-landing-grid-img:after, .l-pair-sr-feed .art-bd:after {
   position: absolute;
   content: '';
@@ -780,11 +780,11 @@ button {
   top: 0;
   bottom: 0;
 }
-/* line 217, ../scss/_placeholders.scss */
+/* line 136, ../scss/_placeholders.scss */
 .sr-landing-grid-img:before, .l-pair-sr-feed .art-bd:before {
   background-color: rgba(0, 0, 0, 0.6);
 }
-/* line 218, ../scss/_placeholders.scss */
+/* line 137, ../scss/_placeholders.scss */
 .sr-landing-grid-img:after, .l-pair-sr-feed .art-bd:after {
   background-image: -webkit-radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
   background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));

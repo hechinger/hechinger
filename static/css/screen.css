@@ -6632,49 +6632,49 @@ input:-webkit-autofill:focus {
   background-image: linear-gradient(#ffcf31 25px, rgba(255, 207, 49, 0.02));
 }
 
-/* line 23, ../scss/components/_section-front-header.scss */
+/* line 22, ../scss/components/_section-front-header.scss */
 .l-section-front-hdr-wrap {
   max-width: 960px;
   margin: 165px auto 25px auto;
 }
 @media (max-width: 599px) {
-  /* line 23, ../scss/components/_section-front-header.scss */
+  /* line 22, ../scss/components/_section-front-header.scss */
   .l-section-front-hdr-wrap {
     margin-top: 222px;
   }
 }
 @media (min-width: 600px) and (max-width: 799px) {
-  /* line 23, ../scss/components/_section-front-header.scss */
+  /* line 22, ../scss/components/_section-front-header.scss */
   .l-section-front-hdr-wrap {
     margin-top: 162px;
   }
 }
 @media (min-width: 800px) and (max-width: 1023px) {
-  /* line 23, ../scss/components/_section-front-header.scss */
+  /* line 22, ../scss/components/_section-front-header.scss */
   .l-section-front-hdr-wrap {
     margin-top: 195px;
   }
 }
 @media (max-width: 1023px) {
-  /* line 23, ../scss/components/_section-front-header.scss */
+  /* line 22, ../scss/components/_section-front-header.scss */
   .l-section-front-hdr-wrap {
     margin-left: 25px;
   }
 }
 
-/* line 41, ../scss/components/_section-front-header.scss */
+/* line 39, ../scss/components/_section-front-header.scss */
 .section-front-summary-wrap {
   margin: 0 25px;
   max-width: 960px;
 }
 @media (min-width: 1007px) {
-  /* line 41, ../scss/components/_section-front-header.scss */
+  /* line 39, ../scss/components/_section-front-header.scss */
   .section-front-summary-wrap {
     margin: 30px auto 0;
   }
 }
 
-/* line 51, ../scss/components/_section-front-header.scss */
+/* line 49, ../scss/components/_section-front-header.scss */
 .section-front-summary-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 28px;
@@ -6682,19 +6682,19 @@ input:-webkit-autofill:focus {
   font-style: italic;
 }
 
-/* line 60, ../scss/components/_section-front-header.scss */
+/* line 58, ../scss/components/_section-front-header.scss */
 .section-front-summary-link {
   white-space: nowrap;
   color: #00aeef;
 }
 @media (max-width: 449px) {
-  /* line 60, ../scss/components/_section-front-header.scss */
+  /* line 58, ../scss/components/_section-front-header.scss */
   .section-front-summary-link {
     font-size: 22px;
   }
 }
 @media (min-width: 450px) {
-  /* line 60, ../scss/components/_section-front-header.scss */
+  /* line 58, ../scss/components/_section-front-header.scss */
   .section-front-summary-link {
     position: relative;
     padding-right: 0.85em;

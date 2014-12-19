@@ -659,6 +659,32 @@ button {
   border: 1px solid black;
 }
 
+/* line 211, ../scss/_deprecated.scss */
+.partner {
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: contain;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+}
+/* line 223, ../scss/_deprecated.scss */
+.icon-Advocate .partner {
+  background-image: url(/wp-content/themes/hechinger/static/img/partners/icn-partner-Advocate.svg);
+}
+/* line 225, ../scss/_deprecated.scss */
+.no-svg .icon-Advocate .partner {
+  background-image: url(/wp-content/themes/hechinger/static/img/partners/icn-partnerAdvocate.png);
+}
+/* line 223, ../scss/_deprecated.scss */
+.icon-American_Prospect .partner {
+  background-image: url(/wp-content/themes/hechinger/static/img/partners/icn-partner-American_Prospect.svg);
+}
+/* line 225, ../scss/_deprecated.scss */
+.no-svg .icon-American_Prospect .partner {
+  background-image: url(/wp-content/themes/hechinger/static/img/partners/icn-partnerAmerican_Prospect.png);
+}
+
 /* line 9, ../scss/_placeholders.scss */
 .page-hdr-topic, .hp-list-hdr {
   display: inline-block;

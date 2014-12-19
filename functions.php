@@ -74,7 +74,6 @@ class HechingerSite extends TimberSite {
     Timber::add_route('special-reports', function($params){
       Timber::load_view('special-reports-landing.php', null, 200, $params);
     });
-
     Timber::add_route('special-reports-landing', function($params){
       Timber::load_view('special-reports-landing.php', null, 200, $params);
     });

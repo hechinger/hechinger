@@ -1,7 +1,7 @@
 {% extends '/pages/staff.twig' %}
 
 {% block header %}
-    {% include 'components/section-front-header.twig' with { section_front_title : "Supporters", post: post, subhead: post.subhead, link_heading: post.link_heading, link_to_page: post.link_to_page } %}
+    {% include 'components/section-front-header.twig' with { banner: post.thumbnail, section_front_title : "Supporters", post: post, subhead: post.subhead, link_heading: post.link_heading, link_to_page: post.link_to_page } %}
   {% endblock header %}
 
 {% block staff_content %}

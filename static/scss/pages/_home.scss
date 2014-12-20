@@ -225,33 +225,49 @@
 .special-report-tz-hdr-container {
   position: relative;
   display: inline-block;
-  margin-bottom: 1.25em;
+  margin-bottom: 1.5em;
 }
 
+// prototype animation
+@keyframes reportUnderline {
+  0% { width: 0; }
+  100% { width: 75px;  }
+}
 
 .special-report-tz-hdr {
   display: inline-block;
-  font-size: 19px;
-  color: white;
-  padding-bottom: 0.4em;
+  font-size: 23px;
+  padding-bottom: 0.5em;
   font-family: $he-accent;
   font-weight: 900;
-  letter-spacing: 1px;
-  color: white;
+  color: #fff;
+  @include trans(0.1s, all, linear);
 
+  &:before,
   &:after {
     position: absolute;
     content: '';
     left: 0;
     bottom: 0;
-    width: 75px;
     height: .25em;
+  }
+
+  &:before {
+    width: 75px;
     background-color: #fff;
   }
 
-  &:hover {
-    color: $he-main;
-    &:after { background-color: $he-main; }
+  &:after {
+    width: 0;
+    background-color: $he-main;
+  }
+
+
+  &:hover:after {
+    background-color: $he-main;
+    animation-duration: 0.75s;
+    animation-name: reportUnderline;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -266,7 +282,7 @@
   & + & { margin-top: 0.85em; }
 
   @include mq(550px) {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.294117647;
   }
 

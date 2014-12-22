@@ -228,11 +228,19 @@
   margin-bottom: 1.5em;
 }
 
-// prototype animation
-@keyframes reportUnderline {
+
+$specialReport--underlineWidth: 75px;
+
+@keyframes reportAddUnderline {
   0% { width: 0; }
-  100% { width: 75px;  }
+  100% { width: $specialReport--underlineWidth;  }
 }
+
+@keyframes reportRemoveUnderline {
+  0% { width: $specialReport--underlineWidth; }
+  100% { width: 0;  }
+}
+
 
 .special-report-tz-hdr {
   display: inline-block;
@@ -253,20 +261,22 @@
   }
 
   &:before {
-    width: 75px;
+    width: $specialReport--underlineWidth;
     background-color: #fff;
   }
 
   &:after {
     width: 0;
     background-color: $he-main;
+    animation-duration: 0.35s;
+    animation-name: reportRemoveUnderline;
+    animation-fill-mode: forwards;
   }
-
 
   &:hover:after {
     background-color: $he-main;
     animation-duration: 0.75s;
-    animation-name: reportUnderline;
+    animation-name: reportAddUnderline;
     animation-fill-mode: forwards;
   }
 }

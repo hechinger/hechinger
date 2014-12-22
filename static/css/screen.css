@@ -4923,7 +4923,7 @@ input:-webkit-autofill:focus {
   margin-bottom: 1.5em;
 }
 
-@-webkit-keyframes reportUnderline {
+@-webkit-keyframes reportAddUnderline {
   0% {
     width: 0;
   }
@@ -4932,7 +4932,7 @@ input:-webkit-autofill:focus {
   }
 }
 
-@keyframes reportUnderline {
+@keyframes reportAddUnderline {
   0% {
     width: 0;
   }
@@ -4940,7 +4940,23 @@ input:-webkit-autofill:focus {
     width: 75px;
   }
 }
-/* line 237, ../scss/pages/_home.scss */
+@-webkit-keyframes reportRemoveUnderline {
+  0% {
+    width: 75px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes reportRemoveUnderline {
+  0% {
+    width: 75px;
+  }
+  100% {
+    width: 0;
+  }
+}
+/* line 245, ../scss/pages/_home.scss */
 .special-report-tz-hdr {
   display: inline-block;
   font-size: 23px;
@@ -4951,7 +4967,7 @@ input:-webkit-autofill:focus {
   -webkit-transition: all 0.1s linear;
   transition: all 0.1s linear;
 }
-/* line 246, ../scss/pages/_home.scss */
+/* line 254, ../scss/pages/_home.scss */
 .special-report-tz-hdr:before, .special-report-tz-hdr:after {
   position: absolute;
   content: '';
@@ -4959,28 +4975,34 @@ input:-webkit-autofill:focus {
   bottom: 0;
   height: .25em;
 }
-/* line 255, ../scss/pages/_home.scss */
+/* line 263, ../scss/pages/_home.scss */
 .special-report-tz-hdr:before {
   width: 75px;
   background-color: #fff;
 }
-/* line 260, ../scss/pages/_home.scss */
+/* line 268, ../scss/pages/_home.scss */
 .special-report-tz-hdr:after {
   width: 0;
   background-color: #ffcf31;
+  -webkit-animation-duration: 0.35s;
+          animation-duration: 0.35s;
+  -webkit-animation-name: reportRemoveUnderline;
+          animation-name: reportRemoveUnderline;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
-/* line 266, ../scss/pages/_home.scss */
+/* line 276, ../scss/pages/_home.scss */
 .special-report-tz-hdr:hover:after {
   background-color: #ffcf31;
   -webkit-animation-duration: 0.75s;
           animation-duration: 0.75s;
-  -webkit-animation-name: reportUnderline;
-          animation-name: reportUnderline;
+  -webkit-animation-name: reportAddUnderline;
+          animation-name: reportAddUnderline;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
 
-/* line 275, ../scss/pages/_home.scss */
+/* line 285, ../scss/pages/_home.scss */
 .special-report-tz-item {
   position: relative;
   position: relative;
@@ -5002,24 +5024,24 @@ input:-webkit-autofill:focus {
 .special-report-tz-item:before {
   left: 0;
 }
-/* line 282, ../scss/pages/_home.scss */
+/* line 292, ../scss/pages/_home.scss */
 .special-report-tz-item + .special-report-tz-item {
   margin-top: 0.85em;
 }
 @media (min-width: 550px) {
-  /* line 275, ../scss/pages/_home.scss */
+  /* line 285, ../scss/pages/_home.scss */
   .special-report-tz-item {
     font-size: 18px;
     line-height: 1.294117647;
   }
 }
 
-/* line 292, ../scss/pages/_home.scss */
+/* line 302, ../scss/pages/_home.scss */
 .special-report-tz-link {
   text-decoration: none;
   color: white;
 }
-/* line 295, ../scss/pages/_home.scss */
+/* line 305, ../scss/pages/_home.scss */
 .special-report-tz-link:hover {
   text-decoration: underline;
 }

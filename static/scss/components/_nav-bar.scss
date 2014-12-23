@@ -22,7 +22,9 @@
 
 
 .site-header--hp {
-  @include mq($bp-large) { padding-bottom: 250px; }
+  padding-bottom: 100px;
+  @include mq($bp-medium) { padding-bottom: 135px; }
+  @include mq($bp-large) { padding-bottom: 220px; }
 }
 
 

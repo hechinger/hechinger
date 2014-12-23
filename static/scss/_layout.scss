@@ -104,8 +104,9 @@ $has-margin:          800px;
     border-top: $bdr-thin;
 
     @include mq($bp-medium, max) {
-      padding-top: 15px;
-      margin-top: 15px;
+      // Spacing matches `hp-top-feat-mod`
+      padding-top: 25px;
+      margin-top: 25px;
     }
   }
 
@@ -115,8 +116,8 @@ $has-margin:          800px;
     border-top: $bdr-thin;
 
     @include mq($bp-medium, max) {
-      padding-top: 15px;
-      margin-top: 15px;
+      padding-top: 25px;
+      margin-top: 25px;
     }
   }
 }

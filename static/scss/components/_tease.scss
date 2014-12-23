@@ -67,10 +67,17 @@ $bp-display-type:   $bp-medium;
 .tz-overline-link {
   text-decoration: none;
   color: $tz-overline-color;
-  &:hover { text-decoration: underline; }
+  &:hover {
+    text-decoration: underline;
+  }
 
   .tz-overline--feat-lg & {
-    @include mq($bp-medium) { color: $black; }
+    color: $black;
+    @include mq($bp-medium) {
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
   }
 }
 
@@ -226,19 +233,30 @@ $bp-display-type:   $bp-medium;
   font-style: italic;
   font-weight: $font-weight-black;
   letter-spacing: 0;
+  margin-bottom: 24px;
 
   .tz-h-link { color: $tease-head-color; }
 
-  @include mq($bp-medium) { font-size: 65px; }
+  @include mq($bp-medium) {
+    font-size: 65px;
+    margin-bottom: 24px;
+  }
 
-  @include mq($bp-large) { font-size: 100px; }
+  @include mq($bp-large) {
+    font-size: 100px;
+    margin-bottom: 32px;
+  }
 }
 
 
 .tz-text--feat-lg {
-  line-height: 1.45;
+  line-height: 1.25;
   @include mq($bp-medium) {
-    font-size: 29px;
+    font-size: 21px;
+    margin-bottom: 21px;
+  }
+  @include mq($bp-large) {
+    font-size: 26px;
   }
 }
 

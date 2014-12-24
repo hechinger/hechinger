@@ -251,7 +251,7 @@ $specialReport--underlineWidth: 75px;
   font-family: $he-accent;
   font-weight: 900;
   color: #fff;
-  @include trans(0.1s, all, linear);
+  @include trans(0.1s, all, $animation-timing);
 
   &:before,
   &:after {
@@ -287,7 +287,7 @@ $specialReport--underlineWidth: 75px;
 .special-report-tz-item {
   @include bullet(before, $he-main);
   position: relative;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.2;   // 22/17
   color: white;
   padding-left: 1em;

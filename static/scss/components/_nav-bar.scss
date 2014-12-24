@@ -71,7 +71,7 @@ $logo-ht-lg:    53px;
 
 .nav-logo {
   display: inline-block;
-  padding: 8px 8px 8px;
+  padding: 17px 10px 10px;
   background-color: $black;
   @include mq($bp-medium) {
     float: left;
@@ -94,7 +94,7 @@ $logo-ht-lg:    53px;
 
 
 .nav-sub-h {
-  @include sans;
+  @include sans(italic);
   float: left;
   display: none;
   padding: 0 18px;
@@ -227,7 +227,6 @@ $logo-ht-lg:    53px;
 
 .nav-sub-item {
   position: relative;
-  cursor: pointer;
   & + & {
     @include mq($bp-medium) {
        border-top: 1px solid $black-50;
@@ -235,9 +234,10 @@ $logo-ht-lg:    53px;
   }
 
   &:hover {
-    .nav-sub-item-link { @include bullet(after, $he-main); }
-    @include mq($bp-medium, max) {
-      .nav-sub-item-link { @include bullet(after, white); }
+    @include mq($bp-medium) {
+      .nav-sub-item-link {
+        @include bullet(after, $he-main);
+      }
     }
   }
 
@@ -246,7 +246,6 @@ $logo-ht-lg:    53px;
   }
 
 }
-
 
 .nav-sub-item-link {
   position: relative;
@@ -257,9 +256,7 @@ $logo-ht-lg:    53px;
   line-height: 1.25;
   letter-spacing: -1px;
   text-decoration: none;
-
-  //TODO: give current page an underline
-  &.is-current-page:after{ }
+  @include trans(0.1s, all, $animation-timing);
 
   @include mq($bp-medium) {
     font-weight: $font-weight-lt;
@@ -267,8 +264,52 @@ $logo-ht-lg:    53px;
     font-size: 20px;
     letter-spacing: 0;
   }
-
 }
+
+// Add Underline Animation
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Because it's complex, it's a flourish,
+// and it's only used on small screen sizes,
+// Tito chose to use a max-width media query.
+// Saves us from undoing allllll this code.
+
+// prototype animation
+@keyframes teaseLink {
+  0% { width: 0; }
+  100% { width: 100%;  }
+}
+
+.nav-sub-item-link {
+  @include mq(max, $bp-medium) {
+    &:after {
+      position: static;
+      content: '';
+      bottom: 0;
+      left: 0;
+      height: 5px;
+      width: 0;
+      background-color: $black;
+    }
+    &.all-topics-link:after {
+      background-color: $white;
+    }
+
+    &:hover {
+      // color: lighten($tease-head-color, 20%);
+      &:after {
+        position: absolute;
+        animation-duration: 0.75s;
+        animation-name: teaseLink;
+        animation-fill-mode: forwards
+      }
+    }
+
+    &:active {
+      color: $black;
+      &:after { background-color: $black; }
+    }
+  } //mq
+} // nav-sub-item-link
 
 
 .sub-about-item {
@@ -333,7 +374,7 @@ $logo-ht-lg:    53px;
   border: none;
   padding: 0 14px;
   font-family: $he-sans;
-  font-size: 17px;
+  font-size: 15px;
   color: $black;
   text-transform: uppercase;
   text-decoration: none;
@@ -348,15 +389,17 @@ $logo-ht-lg:    53px;
   top: 46px;
 }
 
-.nav-menu-active {
-  display: none;
-  width: 45px;
-  border: 1px solid black;
-  line-height: $logo-ht-sm - 10px;
-  padding: 0 5px;
-  font-weight: $font-weight-bold;
+.nav-menu-active,
+.nav-menu-inactive {
   position: relative;
   top: 5px;
+  padding: 0 5px;
+  line-height: $logo-ht-sm - 10px;
+  font-weight: $font-weight-bold;
+}
+
+.nav-menu-active {
+  display: none;
   .nav-is-open & { display: block; }
 }
 
@@ -388,40 +431,43 @@ $logo-ht-lg:    53px;
 
 
 .search-text-input {
+  // Follows style from navigation
+  // search-page-text-input
+  @include input-default;
   @include sans-bold;
   width: 100%;
-  height: 60px;
-  border: none;
-  padding: 0 0 0 10px;
+  height: 61px;
+  padding: 6px 63px 10px 14px;
   background-color: $black;
-  color: $black-10;
   font-size: 30px;
-  -webkit-appearance: none;
-
-  &:focus { outline: none; }
+  color: #fff;
+  @include placeholder-state(
+      rgba(255,255,255,.4), // default
+      rgba(255,255,255,.4), // hover
+      rgba(255,255,255,.7)  // focus
+  );
 
   @include mq($bp-medium) {
-    height: 90px;
-    padding: 0 0 0 30px;
-    font-size: 40px;
+    height: 76px;
+    padding: 4px 85px 10px 23px;
+    font-size: 36px;
   }
 }
 
 
 .search-submit-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border: none;
-  padding: 30px;
+  // Follows style from navigation
+  // search-page-submit-button
+  @include input-default;
+  @include absolute(0 0 0 n);
   display: block;
-  width: 100px;
+  padding: 17px;
+  width: 60px;
   background-color: transparent;
 
-  @include mq($bp-medium, max) {
-    width: 60px;
-    padding: 17px;
+  @include mq($bp-medium) {
+    width: 80px;
+    padding: 30px;
   }
 
 }

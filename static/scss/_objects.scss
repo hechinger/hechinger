@@ -189,12 +189,23 @@ $icons: twitter,
   }
 
   .icon-search-reverse & {
-    width: 30px;
-    height: 30px;
+    @include size(24px);
+
+    // Center the search icon
     top: 50%;
     left: 50%;
-    margin-top: -15px;
-    margin-left: -15px;
+    // Margin is half the size
+    margin-top: -12px;
+    margin-left: -12px;
+
+    @include mq($bp-medium) {
+      @include size(28px);
+      // Center the search icon
+      // Margin is half the size
+      margin-top: -14px;
+      margin-left: -14px;
+    }
+
   }
 
   @each $icon in $icons {

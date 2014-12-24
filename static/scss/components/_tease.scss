@@ -65,6 +65,7 @@ $bp-display-type:   $bp-medium;
 
 
 .tz-overline-link {
+  display: block;
   text-decoration: none;
   color: $tz-overline-color;
   &:hover {
@@ -72,11 +73,13 @@ $bp-display-type:   $bp-medium;
   }
 
   .tz-overline--feat-lg & {
+    position: relative;
+    // positioning ensures it's fully clickable even with a DOM box that overlaps it from below
     color: $black;
     @include mq($bp-medium) {
       font-size: 16px;
       letter-spacing: 2px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
   }
 }
@@ -90,43 +93,9 @@ $bp-display-type:   $bp-medium;
 }
 
 
-// prototype animation
-@keyframes teaseLink {
-  0% { width: 0; }
-  100% { width: 100%;  }
-}
-
-
 .tz-h-link {
   text-decoration: none;
-  position: relative;
   color: $tease-head-color;
-  @include trans(0.1s);
-
-  &:after {
-    position: static;
-    content: '';
-    bottom: 0.125em;
-    height: 0.07em;
-    left: 0;
-    width: 0;
-    background-color: $black;
-  }
-
-  &:hover {
-    // color: lighten($tease-head-color, 20%);
-    &:after {
-      position: absolute;
-      animation-duration: 0.75s;
-      animation-name: teaseLink;
-      animation-fill-mode: forwards
-    }
-  }
-
-  &:active {
-    color: $black;
-    &:after { background-color: $black; }
-  }
 }
 
 
@@ -166,7 +135,7 @@ $bp-display-type:   $bp-medium;
 
 .tz-h--reg-lg {
   font-size: 36px;
-  line-height: 1.02;
+  line-height: 1.1;
   @include display-type;
 }
 

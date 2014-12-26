@@ -198,20 +198,19 @@ $icons: twitter,
     margin-top: -12px;
     margin-left: -12px;
 
-    @include mq($bp-medium) {
+    @include mq($bp-large) {
       @include size(28px);
       // Center the search icon
       // Margin is half the size
       margin-top: -14px;
       margin-left: -14px;
     }
-
   }
 
   @each $icon in $icons {
     .icon-#{$icon} & {
+      background-image: url(#{$png-icon-path}/icn-#{$icon}.png);
       background-image: url(#{$svg-icon-path}/icn-#{$icon}.svg);
-      .no-svg & { background-image: url(#{$png-icon-path}/icn-#{$icon}.png)}
     }
   }
 }

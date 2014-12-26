@@ -39,9 +39,6 @@
 // --------------------------------------------
 // --------------------------------------------
 
-$logo-ht-sm:    34px;
-$logo-ht-lg:    53px;
-
 
 .l-nav-mod {
   @include pie-clearfix;
@@ -72,24 +69,21 @@ $logo-ht-lg:    53px;
 .nav-logo {
   display: inline-block;
   padding: 17px 10px 10px;
+  width: 195px;
   background-color: $black;
   @include mq($bp-medium) {
     float: left;
     display: block;
-    padding: 14px 14px 14px;
+    width: 260px;
+    padding: 16px 12px 10px;
   }
 }
 
 
 .nav-site-h {
   color: $white;
-  width: 195px;
   text-transform: uppercase;
   letter-spacing: 1px;
-
-  @include mq($bp-medium) {
-    width: 269px;
-  }
 }
 
 
@@ -97,13 +91,11 @@ $logo-ht-lg:    53px;
   @include sans(italic);
   float: left;
   display: none;
-  padding: 0 18px;
+  padding: 20px 18px 0;
   font-size: 17px;
-  line-height: $logo-ht-sm;
 
   @include mq(908px) {
     display: block;
-    line-height: $logo-ht-lg;
   }
 }
 
@@ -136,11 +128,15 @@ $logo-ht-lg:    53px;
     display: initial;
   }
   .search-form-wrap {
-    display: block;
+    @include mq($bp-medium, max) {
+      display: block;
+    }
 
     // hides search on results pages.
-    .search & { display: none; }
-  }
+    .search & {
+      display: none;
+    }
+  } //search-form-wrap
 }
 
 
@@ -149,30 +145,31 @@ $logo-ht-lg:    53px;
   display: block;
   float: left;
   width: 77px;
-  border-top: 9px solid transparent;
-  line-height: $logo-ht-lg - 15px;
-  font-size: 17px;
+  padding-top: 22px;
+  font-size: 15px;
+  font-weight: $font-weight-bold;
   color: $black;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
   letter-spacing: 1px;
+  box-shadow: 0 0 0 #000 inset;
+  @include trans(.1s, all, $animation-timing);
 
   &:not(:first-child) { margin-left: 15px; }
-
-  // The focus makes the border remain on the search icon
-  // until you click somewhere else on the page
-  &:hover, &:focus {
-    border-top: 9px solid $black;
-  }
-  // &:hover { border-top: 9px solid $black; }
 }
 
+.nav-topics-link:hover,
+.nav-about-link:hover {
+    box-shadow: 0 9px 0 #000 inset;
+}
 
 .nav-topics-link {
   display: none;
 
-  @include mq($bp-medium) { display: block; }
+  @include mq($bp-medium) {
+    display: block;
+  }
 
   &:after {
     content: "";
@@ -206,12 +203,15 @@ $logo-ht-lg:    53px;
     width: 290px;
     background-color: $black;
 
-    // Fix for search results page, accounting for the lack of search icon
-    // in the nav
+    // Fix for search results page, accounting
+    // for the lack of search icon in the nav
     .search & { margin-left: -21px; }
   }
 
-  &:hover, &:focus { display: block; }
+  &:hover,
+  &:focus {
+    display: block;
+  }
 
   &:before {
     content: "";
@@ -227,6 +227,12 @@ $logo-ht-lg:    53px;
 
 .nav-sub-item {
   position: relative;
+
+  // base state for arrow bullets
+  &:after {
+    opacity: 0;
+  }
+
   & + & {
     @include mq($bp-medium) {
        border-top: 1px solid $black-50;
@@ -237,6 +243,7 @@ $logo-ht-lg:    53px;
     @include mq($bp-medium) {
       .nav-sub-item-link {
         @include bullet(after, $he-main);
+        opacity: 1;
       }
     }
   }
@@ -256,7 +263,7 @@ $logo-ht-lg:    53px;
   line-height: 1.25;
   letter-spacing: -1px;
   text-decoration: none;
-  @include trans(0.1s, all, $animation-timing);
+  @include trans(0.15s, all, $animation-timing);
 
   @include mq($bp-medium) {
     font-weight: $font-weight-lt;
@@ -300,13 +307,15 @@ $logo-ht-lg:    53px;
         position: absolute;
         animation-duration: 0.75s;
         animation-name: teaseLink;
-        animation-fill-mode: forwards
+        animation-fill-mode: forwards;
       }
     }
 
     &:active {
       color: $black;
-      &:after { background-color: $black; }
+      &:after {
+        background-color: $black;
+      }
     }
   } //mq
 } // nav-sub-item-link
@@ -334,35 +343,87 @@ $logo-ht-lg:    53px;
 
 .nav-about-link {
   display: none;
-  @include mq($bp-medium) { display: block; }
+  @include mq($bp-medium) {
+    display: block;
+  }
+}
+
+//
+// Nav Search
+//
+
+// Search Icons
+.nav-search-icon,
+.nav-search-icon--reverse {
+  @include absolute-center(16px 16px);
+  @include trans(.15s);
+}
+
+.nav-search-icon {
+  @include svg(icn-search);
+}
+
+.nav-search-icon--reverse {
+  opacity: 0;
+  @include svg(icn-search-reverse);
+}
+
+.nav-search-icon--close {
+  @include absolute-center(14px 14px);
+  @include svg(icn-close-reverse);
+  @include trans(.15s);
+  transform: translateY(-22px);
+
+  // Hide fallback close button (&times;)
+  display: block;
+  text-indent: -99999em;
 }
 
 
+// Search Button
 .nav-search-button {
-  position: relative;
-  width: 30px;
-  height: 30px;
   display: none;
-  &.is-open { }
+  position: relative;
+  overflow: hidden;
+
+  width: 32px;
+  height: 32px;
+  margin-top: 15px;
+  border-radius: 50%;
+  @include trans;
+
+  @include mq($bp-medium) {
+    display: block;
+  }
+
   &.is-search-page {
     pointer-events: none;
-    border-top: 9px solid $black;
     display: none;
   }
-  @include mq($bp-medium) { display: block; }
-
-  .icon { margin-top: -1px; }
 }
 
-.nav-search-inactive {
-  display: block;
-  .is-open & { display: none; }
+.nav-search-button:hover,
+.nav-search-button.is-open {
+  background-color: #000;
 }
 
-.nav-search-active {
-  display: none;
-  font-weight: $font-weight-bold;
-  .is-open & { display: block; }
+.nav-search-button:hover {
+  .nav-search-icon {
+    opacity: 0;
+  }
+
+  .nav-search-icon--reverse {
+    opacity: 1;
+  }
+}
+
+.nav-search-button.is-open {
+  .nav-search-icon--close {
+    transform: translateY(0);
+  }
+  .nav-search-icon--reverse {
+    transform: translateY(26px);
+  }
 }
 
 
@@ -380,7 +441,6 @@ $logo-ht-lg:    53px;
   text-decoration: none;
   letter-spacing: 1px;
   text-align: center;
-  line-height: $logo-ht-sm;
 
   @include mq($bp-medium) { display: none; }
 }
@@ -394,41 +454,60 @@ $logo-ht-lg:    53px;
   position: relative;
   top: 5px;
   padding: 0 5px;
-  line-height: $logo-ht-sm - 10px;
   font-weight: $font-weight-bold;
 }
 
 .nav-menu-active {
   display: none;
-  .nav-is-open & { display: block; }
+  .nav-is-open & {
+    display: block;
+  }
 }
 
 .nav-menu-inactive {
-  .nav-is-open & { display: none; }
+  .nav-is-open & {
+    display: none;
+  }
 }
 
 
 .search-form-wrap {
-  @include mq($has-margin) { margin: 0 $site-margin; }
-  @include mq($bp-no-content-margin) { margin: 0 auto; }
+  @include mq($has-margin) {
+    margin: 0 $site-margin;
+  }
+  @include mq($bp-no-content-margin) {
+    margin: 0 auto;
+  }
+
   display: none;
   position: relative;
   margin: 0 auto;
+  @include trans;
 
   @include mq($bp-medium) {
-    display: none;
+    display: block;
+    overflow: hidden;
+    height: 0;
     position: relative;
     max-width: $content-max;
     margin-top: 31px;
-    &.is-open { display: block;}
-  }
+    @include trans(.3s, height, $animation-timing);
+    &.is-open {
+      overflow: visible;
+      height: 61px; // see also - search-text-input (below)
+    }
+  }//mq
 
+  @include mq($bp-large) {
+    &.is-open {
+      height: 76px; // see also - search-text-input (below)
+    }
+  }
 }
 
 .nav-is-open .search-form-wrap {
   margin-top: 20px;
 }
-
 
 .search-text-input {
   // Follows style from navigation
@@ -436,24 +515,25 @@ $logo-ht-lg:    53px;
   @include input-default;
   @include sans-bold;
   width: 100%;
-  height: 61px;
+  height: 61px; // see also - search-form-wrap (above)
   padding: 6px 63px 10px 14px;
   background-color: $black;
   font-size: 30px;
   color: #fff;
+
+  // Placeholder text styles
   @include placeholder-state(
       rgba(255,255,255,.4), // default
       rgba(255,255,255,.4), // hover
       rgba(255,255,255,.7)  // focus
   );
 
-  @include mq($bp-medium) {
-    height: 76px;
+  @include mq($bp-large) {
+    height: 76px; // see also - search-form-wrap (above)
     padding: 4px 85px 10px 23px;
     font-size: 36px;
-  }
-}
-
+  } //mq
+} // search-text-input
 
 .search-submit-button {
   // Follows style from navigation
@@ -465,9 +545,36 @@ $logo-ht-lg:    53px;
   width: 60px;
   background-color: transparent;
 
-  @include mq($bp-medium) {
+  @include mq($bp-large) {
     width: 80px;
     padding: 30px;
   }
+}
 
+// Show/hide animation
+.search-text-input,
+.search-submit-button {
+  @include mq($bp-medium) {
+    opacity: 0;
+    transform: translateY(-10px);
+    @include trans(.2s, all, $animation-timing);
+
+    .search-form-wrap.is-open & {
+      animation-delay: .05s;
+      animation-duration: 0.4s;
+      animation-name: navSearchAnimation;
+      animation-fill-mode: forwards;
+    }
+  } //mq
+}
+
+@keyframes navSearchAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

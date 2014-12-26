@@ -87,6 +87,9 @@
   }
 }
 
+.nav-logo-link {
+  display: block;
+}
 
 .nav-site-h {
   color: $white;
@@ -435,8 +438,12 @@
   }
 }
 
+//
+// Nav Menu Button
+//
 
 .nav-menu-button {
+  @include input-default;
   display: block;
   position: absolute;
   top: 0;
@@ -461,14 +468,28 @@
   }
 }
 
+// For hiding menu + close buttons
+.nav-menu-mask {
+  position: relative;
+  height: 18px;
+  width: 70px;
+  overflow: hidden;
+  @include mq($bp-medium) {
+    display: none;
+  }
+}
+
+.nav-menu,
+.nav-menu-close {
+  position: absolute;
+}
+
 // Nav menu icons
 .nav-menu-icon,
 .nav-menu-close-icon {
   position: relative;
   display: inline-block;
   @include size(12px);
-  margin-left: 3px;
-  top: 2px;
   @include mq($bp-small) {
     @include size(14px);
   }
@@ -476,10 +497,13 @@
 
 .nav-menu-icon {
   @include svg(icn-menu);
+  top: 2px;
+  left: 3px;
 }
 
 .nav-menu-close-icon {
   @include svg(icn-close);
+  top: 3px;
 
   // Hide fallback close button (&times;)
   text-indent: -99999em;
@@ -487,15 +511,21 @@
 
 .nav-menu {
   display: block;
+  @include trans(.2s, all, $animation-timing);
+  transform: translateY(0);
+
   .nav-is-open & {
-    display: none;
+    transform: translateY(22px);
   }
 }
 
 .nav-menu-close {
-  display: none;
+  display: block;
+  @include trans(.2s, all, $animation-timing);
+  transform: translateY(-22px);
+
   .nav-is-open & {
-    display: block;
+    transform: translateY(0);
   }
 }
 

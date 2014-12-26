@@ -69,8 +69,16 @@
 .nav-logo {
   display: inline-block;
   padding: 17px 10px 10px;
-  width: 195px;
+  margin-left: -10px;
+  width: 220px;
   background-color: $black;
+  @include trans(.15s);
+
+  @include mq($bp-small) {
+    margin-left: 0;
+    width: 240px;
+  }
+
   @include mq($bp-medium) {
     float: left;
     display: block;
@@ -402,6 +410,7 @@
   }
 }
 
+// Search hover/open states
 .nav-search-button:hover,
 .nav-search-button.is-open {
   background-color: #000;
@@ -433,41 +442,65 @@
   top: 0;
   right: 0;
   border: none;
-  padding: 0 14px;
+  padding: 16px 13px 13px;
   font-family: $he-sans;
-  font-size: 15px;
+  font-size: 13px;
+  font-weight: $font-weight-bold;
   color: $black;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
   text-align: center;
 
-  @include mq($bp-medium) { display: none; }
+  @include mq($bp-small) {
+    font-size: 15px;
+  }
+
+  @include mq($bp-medium) {
+    display: none;
+  }
 }
 
-.admin-bar .nav-menu-button {
-  top: 46px;
-}
-
-.nav-menu-active,
-.nav-menu-inactive {
+// Nav menu icons
+.nav-menu-icon,
+.nav-menu-close-icon {
   position: relative;
-  top: 5px;
-  padding: 0 5px;
-  font-weight: $font-weight-bold;
+  display: inline-block;
+  @include size(12px);
+  margin-left: 3px;
+  top: 2px;
+  @include mq($bp-small) {
+    @include size(14px);
+  }
 }
 
-.nav-menu-active {
+.nav-menu-icon {
+  @include svg(icn-menu);
+}
+
+.nav-menu-close-icon {
+  @include svg(icn-close);
+
+  // Hide fallback close button (&times;)
+  text-indent: -99999em;
+}
+
+.nav-menu {
+  display: block;
+  .nav-is-open & {
+    display: none;
+  }
+}
+
+.nav-menu-close {
   display: none;
   .nav-is-open & {
     display: block;
   }
 }
 
-.nav-menu-inactive {
-  .nav-is-open & {
-    display: none;
-  }
+.admin-bar .nav-menu-button {
+  top: 46px;
 }
 
 

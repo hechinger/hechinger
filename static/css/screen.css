@@ -6510,9 +6510,15 @@ input:-webkit-autofill:focus {
 .nav-menu-mask {
   position: relative;
   height: 20px;
-  width: 70px;
+  width: 59px;
   padding-top: 2px;
   overflow: hidden;
+}
+@media (min-width: 450px) {
+  /* line 515, ../scss/components/_nav-bar.scss */
+  .nav-menu-mask {
+    width: 70px;
+  }
 }
 @media (min-width: 600px) {
   /* line 515, ../scss/components/_nav-bar.scss */
@@ -6521,13 +6527,13 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 526, ../scss/components/_nav-bar.scss */
+/* line 529, ../scss/components/_nav-bar.scss */
 .nav-menu,
 .nav-menu-close {
   position: absolute;
 }
 
-/* line 532, ../scss/components/_nav-bar.scss */
+/* line 535, ../scss/components/_nav-bar.scss */
 .nav-menu-icon,
 .nav-menu-close-icon {
   position: relative;
@@ -6536,7 +6542,7 @@ input:-webkit-autofill:focus {
   height: 12px;
 }
 @media (min-width: 450px) {
-  /* line 532, ../scss/components/_nav-bar.scss */
+  /* line 535, ../scss/components/_nav-bar.scss */
   .nav-menu-icon,
   .nav-menu-close-icon {
     width: 14px;
@@ -6544,7 +6550,7 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 542, ../scss/components/_nav-bar.scss */
+/* line 545, ../scss/components/_nav-bar.scss */
 .nav-menu-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -6561,7 +6567,7 @@ input:-webkit-autofill:focus {
   background-image: url('../img/icons/icn-menu.png');
 }
 
-/* line 548, ../scss/components/_nav-bar.scss */
+/* line 551, ../scss/components/_nav-bar.scss */
 .nav-menu-close-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -6578,13 +6584,13 @@ input:-webkit-autofill:focus {
   background-image: url('../img/icons/icn-close.png');
 }
 @media (min-width: 450px) {
-  /* line 548, ../scss/components/_nav-bar.scss */
+  /* line 551, ../scss/components/_nav-bar.scss */
   .nav-menu-close-icon {
     top: 3px;
   }
 }
 
-/* line 560, ../scss/components/_nav-bar.scss */
+/* line 563, ../scss/components/_nav-bar.scss */
 .nav-menu {
   display: block;
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -6593,14 +6599,14 @@ input:-webkit-autofill:focus {
       -ms-transform: translateY(0);
           transform: translateY(0);
 }
-/* line 565, ../scss/components/_nav-bar.scss */
+/* line 568, ../scss/components/_nav-bar.scss */
 .nav-is-open .nav-menu {
   -webkit-transform: translateY(22px);
       -ms-transform: translateY(22px);
           transform: translateY(22px);
 }
 
-/* line 570, ../scss/components/_nav-bar.scss */
+/* line 573, ../scss/components/_nav-bar.scss */
 .nav-menu-close {
   display: block;
   -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -6609,19 +6615,19 @@ input:-webkit-autofill:focus {
       -ms-transform: translateY(-22px);
           transform: translateY(-22px);
 }
-/* line 575, ../scss/components/_nav-bar.scss */
+/* line 578, ../scss/components/_nav-bar.scss */
 .nav-is-open .nav-menu-close {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
 }
 
-/* line 580, ../scss/components/_nav-bar.scss */
+/* line 583, ../scss/components/_nav-bar.scss */
 .admin-bar .nav-menu-button {
   top: 46px;
 }
 
-/* line 585, ../scss/components/_nav-bar.scss */
+/* line 588, ../scss/components/_nav-bar.scss */
 .search-form-wrap {
   display: none;
   position: relative;
@@ -6630,19 +6636,19 @@ input:-webkit-autofill:focus {
   transition: all 0.2s ease-in;
 }
 @media (min-width: 800px) {
-  /* line 585, ../scss/components/_nav-bar.scss */
+  /* line 588, ../scss/components/_nav-bar.scss */
   .search-form-wrap {
     margin: 0 25px;
   }
 }
 @media (min-width: 1007px) {
-  /* line 585, ../scss/components/_nav-bar.scss */
+  /* line 588, ../scss/components/_nav-bar.scss */
   .search-form-wrap {
     margin: 0 auto;
   }
 }
 @media (min-width: 600px) {
-  /* line 585, ../scss/components/_nav-bar.scss */
+  /* line 588, ../scss/components/_nav-bar.scss */
   .search-form-wrap {
     display: block;
     overflow: hidden;
@@ -6653,25 +6659,25 @@ input:-webkit-autofill:focus {
     -webkit-transition: height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
-  /* line 606, ../scss/components/_nav-bar.scss */
+  /* line 609, ../scss/components/_nav-bar.scss */
   .search-form-wrap.is-open {
     overflow: visible;
     height: 61px;
   }
 }
 @media (min-width: 900px) {
-  /* line 613, ../scss/components/_nav-bar.scss */
+  /* line 616, ../scss/components/_nav-bar.scss */
   .search-form-wrap.is-open {
     height: 76px;
   }
 }
 
-/* line 619, ../scss/components/_nav-bar.scss */
+/* line 622, ../scss/components/_nav-bar.scss */
 .nav-is-open .search-form-wrap {
   margin-top: 20px;
 }
 
-/* line 623, ../scss/components/_nav-bar.scss */
+/* line 626, ../scss/components/_nav-bar.scss */
 .search-text-input {
   border: 0;
   background-color: transparent;
@@ -6717,7 +6723,7 @@ input:-webkit-autofill:focus {
   color: rgba(255, 255, 255, 0.7);
 }
 @media (min-width: 900px) {
-  /* line 623, ../scss/components/_nav-bar.scss */
+  /* line 626, ../scss/components/_nav-bar.scss */
   .search-text-input {
     height: 76px;
     padding: 4px 85px 10px 23px;
@@ -6725,7 +6731,7 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 649, ../scss/components/_nav-bar.scss */
+/* line 652, ../scss/components/_nav-bar.scss */
 .search-submit-button {
   border: 0;
   background-color: transparent;
@@ -6746,7 +6752,7 @@ input:-webkit-autofill:focus {
   outline: 0;
 }
 @media (min-width: 900px) {
-  /* line 649, ../scss/components/_nav-bar.scss */
+  /* line 652, ../scss/components/_nav-bar.scss */
   .search-submit-button {
     width: 80px;
     padding: 30px;
@@ -6754,7 +6760,7 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 600px) {
-  /* line 666, ../scss/components/_nav-bar.scss */
+  /* line 669, ../scss/components/_nav-bar.scss */
   .search-text-input,
   .search-submit-button {
     opacity: 0;
@@ -6764,7 +6770,7 @@ input:-webkit-autofill:focus {
     -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
-  /* line 673, ../scss/components/_nav-bar.scss */
+  /* line 676, ../scss/components/_nav-bar.scss */
   .search-form-wrap.is-open .search-text-input, .search-form-wrap.is-open
   .search-submit-button {
     -webkit-animation-delay: .05s;

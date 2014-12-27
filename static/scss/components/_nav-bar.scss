@@ -515,9 +515,12 @@
 .nav-menu-mask {
   position: relative;
   height: 20px;
-  width: 70px;
+  width: 59px;
   padding-top: 2px;
   overflow: hidden;
+  @include mq($bp-small) {
+    width: 70px;
+  }
   @include mq($bp-medium) {
     display: none;
   }

@@ -17,6 +17,7 @@
     "Upbase": "https://github.com/Upstatement/upbase.git",
     "jquery": "~1.*",
     "QuickShare": "~1.2.6",
-    "respondJs": "~1.4.2"
+    "respondJs": "~1.4.2",
+    "fastclick": "~1.0.3"
   }
 }

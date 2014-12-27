@@ -1,6 +1,11 @@
 window.onload = (function($){
   "use strict";
 
+  // enable fastclick
+  $(function() {
+      FastClick.attach(document.body);
+  });
+
   var navbar, responsiveBg;
 
   if (typeof HE_navbar !== undefined && typeof HE_navbar.init !== undefined) {

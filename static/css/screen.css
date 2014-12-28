@@ -8492,23 +8492,30 @@ img.alignleft {
 
 /* line 9, ../scss/components/_tease-list-latest.scss */
 .hp-list-hdr {
-  font-size: 19px;
+  font-size: 14px;
+  margin-bottom: 2em;
+}
+@media (min-width: 600px) {
+  /* line 9, ../scss/components/_tease-list-latest.scss */
+  .hp-list-hdr {
+    font-size: 17px;
+  }
 }
 
-/* line 18, ../scss/components/_tease-list-latest.scss */
+/* line 22, ../scss/components/_tease-list-latest.scss */
 .hp-list-item {
   font-size: 26px;
   line-height: 1.1;
   position: relative;
 }
-/* line 22, ../scss/components/_tease-list-latest.scss */
+/* line 26, ../scss/components/_tease-list-latest.scss */
 .hp-list-item + .hp-list-item {
   margin-top: 0.85em;
   padding-top: 0.85em;
   border-top: 1px solid #e6e4e4;
 }
 
-/* line 30, ../scss/components/_tease-list-latest.scss */
+/* line 34, ../scss/components/_tease-list-latest.scss */
 .hp-list-head {
   position: relative;
   padding-left: 1em;
@@ -8527,7 +8534,7 @@ img.alignleft {
   left: 0;
 }
 
-/* line 36, ../scss/components/_tease-list-latest.scss */
+/* line 40, ../scss/components/_tease-list-latest.scss */
 .hp-list-link {
   text-decoration: none;
   color: #000000;
@@ -8536,7 +8543,7 @@ img.alignleft {
 .hp-list-link:hover {
   text-decoration: none;
 }
-/* line 38, ../scss/components/_tease-list-latest.scss */
+/* line 42, ../scss/components/_tease-list-latest.scss */
 .hp-list-link em, .hp-list-link b, .hp-list-link strong {
   position: relative;
   z-index: -1;
@@ -8546,7 +8553,7 @@ img.alignleft {
   padding: 0 0.2em;
 }
 
-/* line 44, ../scss/components/_tease-list-latest.scss */
+/* line 48, ../scss/components/_tease-list-latest.scss */
 .hp-latest-list-img {
   float: right;
 }
@@ -8738,12 +8745,9 @@ img.alignleft {
   line-height: 0.9;
   font-style: italic;
   font-weight: 900;
-  letter-spacing: 0;
-  margin-bottom: 24px;
-}
-/* line 207, ../scss/components/_tease.scss */
-.tz-h--feat-lg .tz-h-link {
   color: #000000;
+  letter-spacing: 0;
+  margin-bottom: 18px;
 }
 @media (min-width: 600px) {
   /* line 200, ../scss/components/_tease.scss */
@@ -8760,30 +8764,61 @@ img.alignleft {
   }
 }
 
-/* line 221, ../scss/components/_tease.scss */
+/* line 241, ../scss/components/_tease.scss */
+.tz-h--feat-lg .tz-h-link {
+  -webkit-transition: box-shadow 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: box-shadow 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 0 -12px 0px -4px #fff inset, 0 -12px 0px -4px #000 inset;
+}
+/* line 233, ../scss/components/_tease.scss */
+.tz-h--feat-lg .tz-h-link:hover {
+  box-shadow: 0 -8px 0px -4px #fff inset, 0 -12px 0px -4px #000 inset;
+}
+@media (min-width: 600px) {
+  /* line 241, ../scss/components/_tease.scss */
+  .tz-h--feat-lg .tz-h-link {
+    box-shadow: 0 -16px 0px -4px #fff inset, 0 -16px 0px -4px #000 inset;
+  }
+  /* line 233, ../scss/components/_tease.scss */
+  .tz-h--feat-lg .tz-h-link:hover {
+    box-shadow: 0 -10px 0px -4px #fff inset, 0 -16px 0px -4px #000 inset;
+  }
+}
+@media (min-width: 900px) {
+  /* line 241, ../scss/components/_tease.scss */
+  .tz-h--feat-lg .tz-h-link {
+    box-shadow: 0 -25px 0px -4px #fff inset, 0 -25px 0px -4px #000 inset;
+  }
+  /* line 233, ../scss/components/_tease.scss */
+  .tz-h--feat-lg .tz-h-link:hover {
+    box-shadow: 0 -16px 0px -4px #fff inset, 0 -25px 0px -4px #000 inset;
+  }
+}
+
+/* line 254, ../scss/components/_tease.scss */
 .tz-text--feat-lg {
   line-height: 1.25;
 }
 @media (min-width: 600px) {
-  /* line 221, ../scss/components/_tease.scss */
+  /* line 254, ../scss/components/_tease.scss */
   .tz-text--feat-lg {
     font-size: 21px;
     margin-bottom: 21px;
   }
 }
 @media (min-width: 900px) {
-  /* line 221, ../scss/components/_tease.scss */
+  /* line 254, ../scss/components/_tease.scss */
   .tz-text--feat-lg {
     font-size: 26px;
   }
 }
 
-/* line 233, ../scss/components/_tease.scss */
+/* line 266, ../scss/components/_tease.scss */
 .tz-author--feat-lg {
   font-size: 15px;
 }
 
-/* line 242, ../scss/components/_tease.scss */
+/* line 275, ../scss/components/_tease.scss */
 .tz-special-h {
   position: relative;
   font-family: Tiempos, Georgia, Times, serif;
@@ -8794,20 +8829,20 @@ img.alignleft {
   margin: 12px 0 5px;
 }
 @media (min-width: 600px) {
-  /* line 242, ../scss/components/_tease.scss */
+  /* line 275, ../scss/components/_tease.scss */
   .tz-special-h {
     margin-top: 0;
   }
 }
 
-/* line 255, ../scss/components/_tease.scss */
+/* line 288, ../scss/components/_tease.scss */
 .tz-special-sub-h {
   font-size: 24px;
   font-weight: 700px;
   color: #000000;
 }
 
-/* line 262, ../scss/components/_tease.scss */
+/* line 295, ../scss/components/_tease.scss */
 .tz-special-link {
   position: relative;
   padding-right: 0.85em;
@@ -8828,7 +8863,7 @@ img.alignleft {
   right: 0;
 }
 
-/* line 269, ../scss/components/_tease.scss */
+/* line 302, ../scss/components/_tease.scss */
 .tz-special-number {
   position: relative;
   font-family: Tiempos, Georgia, Times, serif;
@@ -8839,21 +8874,21 @@ img.alignleft {
   letter-spacing: -1px;
 }
 @media (min-width: 650px) {
-  /* line 269, ../scss/components/_tease.scss */
+  /* line 302, ../scss/components/_tease.scss */
   .tz-special-number {
     font-size: 112px;
     letter-spacing: -3px;
   }
 }
 
-/* line 285, ../scss/components/_tease.scss */
+/* line 318, ../scss/components/_tease.scss */
 .tz-special-precent {
   font-size: 0.5em;
   vertical-align: super;
 }
 
 @media (min-width: 600px) {
-  /* line 291, ../scss/components/_tease.scss */
+  /* line 324, ../scss/components/_tease.scss */
   .l-pair-tz-special-stat {
     *zoom: 1;
     display: table;
@@ -8898,7 +8933,7 @@ img.alignleft {
   }
 }
 @media (max-width: 599px) {
-  /* line 295, ../scss/components/_tease.scss */
+  /* line 328, ../scss/components/_tease.scss */
   .l-pair-tz-special-stat .art-bd {
     float: none;
     max-width: auto;
@@ -8906,7 +8941,7 @@ img.alignleft {
   }
 }
 
-/* line 313, ../scss/components/_tease.scss */
+/* line 346, ../scss/components/_tease.scss */
 .tz-h--reg-med .tz-h-link em, .tz-h--reg-med .tz-h-link b, .tz-h--reg-med .tz-h-link strong,
 .tz-h--reg-lg .tz-h-link em,
 .tz-h--reg-lg .tz-h-link b,

@@ -403,7 +403,7 @@ $bp-subzone-ends-layout: 800px;
         }
       }
       .l-pair-tz-hp-stub {
-        @include pair(40%, 3%);
+        @include pair(40%, 3%, top);
       }
     }
 

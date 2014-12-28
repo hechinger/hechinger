@@ -1,6 +1,29 @@
 // --------------------------------------------
 // --------------------------------------------
 //
+// Display Type Controls
+//
+// --------------------------------------------
+// --------------------------------------------
+
+
+$bp-display-type:   $bp-medium;
+
+
+// Controlling display type
+@mixin display-type {
+  @include mq($bp-display-type, max) {
+    font-size: 22px;
+  }
+}
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
 // General Sans Serif
 //
 // --------------------------------------------
@@ -90,7 +113,9 @@
 @mixin head-link {
   text-decoration: none;
   color: $hdr-color;
-  &:hover { text-decoration: none; }
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 

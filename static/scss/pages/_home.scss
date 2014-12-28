@@ -275,27 +275,28 @@
 }
 
 
-$specialReport--underlineWidth: 75px;
-
-@keyframes reportAddUnderline {
-  0% { width: 0; }
-  100% { width: $specialReport--underlineWidth;  }
-}
-
-@keyframes reportRemoveUnderline {
-  0% { width: $specialReport--underlineWidth; }
-  100% { width: 0;  }
-}
-
-
 .special-report-tz-hdr {
   display: inline-block;
-  font-size: 23px;
+  font-size: 21px;
   padding-bottom: 0.5em;
   font-family: $he-accent;
   font-weight: 900;
   color: #fff;
   @include trans(0.1s, all, $animation-timing);
+
+  @include mq($bp-small, $bp-zone-has-layout) {
+    font-size: 23px;
+  }
+
+  @include mq($bp-large) {
+    font-size: 23px;
+  }
+
+  // Underline animation
+  // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  // White underline fills up with yellow
+
+  $specialReport--underlineWidth: 75px;
 
   &:before,
   &:after {
@@ -314,32 +315,35 @@ $specialReport--underlineWidth: 75px;
   &:after {
     width: 0;
     background-color: $he-main;
-    animation-duration: 0.35s;
-    animation-name: reportRemoveUnderline;
-    animation-fill-mode: forwards;
+    transition-duration: 0.35s;
   }
 
   &:hover:after {
     background-color: $he-main;
-    animation-duration: 0.75s;
-    animation-name: reportAddUnderline;
-    animation-fill-mode: forwards;
+    width: $specialReport--underlineWidth;
+    transition-duration: 0.75s;
   }
 }
 
 
 .special-report-tz-item {
   @include bullet(before, $he-main);
-  position: relative;
   font-size: 16px;
   line-height: 1.2;   // 22/17
-  color: white;
+  color: #fff;
   padding-left: 1em;
   & + & { margin-top: 0.85em; }
 
-  @include mq(550px) {
+  @include mq($bp-small) {
+    font-size: 17px;
+  }
+
+  @include mq(550px, $bp-zone-has-layout) {
     font-size: 18px;
-    line-height: 1.294117647;
+  }
+
+  @include mq($bp-large-plus) {
+    font-size: 18px;
   }
 
 }

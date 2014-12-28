@@ -189,12 +189,20 @@
   line-height: 1;
   color: $black;
   padding: 0 5px 5px 0;
-  background-color: white;
+  background-color: #fff;
   display: inline-block;
-  @include mq(500px) { font-size: 35pt; }
-  @include mq(700px) { font-size: 50pt; }
+  @include mq(500px) {
+    font-size: 35pt;
+  }
+  @include mq(700px) {
+    font-size: 50pt;
+  }
 }
 
+// Remove standard link hover style
+.hp-second-feature-head .tz-h-link:hover {
+  text-decoration: none;
+}
 
 .hp-second-feature-txt {
   font-size: 14pt;

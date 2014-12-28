@@ -62,3 +62,72 @@ $grid-rule-color--dark:   $black;
   }
 
 }
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Hi Resolution (Cross browser)
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin hidpi($ratio: 1.3) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+  only screen and (min--moz-device-pixel-ratio: $ratio),
+  only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
+  only screen and (min-resolution: #{round($ratio*96)}dpi),
+  only screen and (min-resolution: #{$ratio}dppx) {
+    @content;
+  }
+}
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Faux Underline
+//
+// --------------------------------------------
+// --------------------------------------------
+
+@mixin faux-underline (
+  $color: #000,
+  $bg-color: #fff,
+  $weight: 1px,
+  $offset: 2px,
+  $breaking-underlines: true ){
+
+  $weight-hidpi: $weight/2;
+
+  @include background-image(
+    linear-gradient(
+      bottom,
+      transparent,
+      transparent $offset,
+      $color $offset,
+      $color ($offset + $weight),
+      transparent ($offset + $weight)
+    )
+  );
+
+  @include hidpi(1.5) {
+    @include background-image(
+      linear-gradient(
+        bottom,
+        transparent,
+        transparent $offset,
+        $color $offset,
+        $color ($offset + $weight-hidpi),
+        transparent ($offset + $weight-hidpi)
+      )
+    );
+  }
+
+  @if $breaking-underlines {
+    text-shadow: -1px 1px 0 $bg-color,
+    1px 1px 0 $bg-color,
+    -1px 1px 0 $bg-color,
+    1px 1px 0 $bg-color;
+    }
+} // faux-underline

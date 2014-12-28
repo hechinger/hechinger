@@ -39,6 +39,9 @@
 
 .hp-list-link {
   @include head-link;
+  &:hover {
+    text-decoration: underline;
+  }
   em, b, strong {
     @include head-highlight;
   }

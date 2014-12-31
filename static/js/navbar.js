@@ -9,6 +9,10 @@ var HE_navbar = (function($){
   var navIsOpen = $menuButton.hasClass('is-open');
   var $navbar = $('.js-nav-mod');
 
+  var $topicsButton = $('.js-topics-trigger');
+  var $body = $('body');
+  var topicsIsOpen = $body.hasClass('topics-is-open');
+
   function openMenu(event) {
     event.preventDefault();
     if (navIsOpen) {
@@ -35,9 +39,27 @@ var HE_navbar = (function($){
     }
   }
 
+  function openTopics(event) {
+    event.preventDefault();
+    if (!topicsIsOpen) {
+      $body.addClass('topics-is-open');
+      topicsIsOpen = true;
+    }
+  }
+
+  function closeTopics(event) {
+    event.preventDefault();
+    if (topicsIsOpen)  {
+      $body.removeClass('topics-is-open');
+      topicsIsOpen = false;
+    }
+  }
+
   function init() {
     $menuButton.on('click', openMenu);
     $searchButton.on('click', openSearch);
+    $topicsButton.on('mouseenter', openTopics);
+    $topicsButton.on('mouseleave', closeTopics);
   }
 
   return {

@@ -14,17 +14,22 @@
       <h2 class="nav-sub-h"><a class="nav-sub-h-link" href="/about">Covering Innovation &amp; Inequality in Education</a></h2>
 
       <div class="nav-item-wrap">
-        <a class="nav-item nav-topics-link is-active" href="/special-reports">Topics</a>
+        <div class="nav-item nav-topics-menu-mod js-topics-trigger">
+          <a class="nav-topics-link" href="/special-reports">Topics</a>
 
-        <ul class="nav-topics-list">
-          {% for item in nav_menu.get_items %}
-            <li class="nav-sub-item">
-              <a class="nav-sub-item-link" href="{{ item.get_link }}">{{ item.title }}</a>
-            </li> <!-- /nav-sub-item -->
-          {% endfor %}
-          <li class="nav-sub-item all-topics-item"><a class="nav-sub-item-link all-topics-link" href="/special-reports">All Topics</a></li>
-          <li class="nav-sub-item sub-about-item"><a class="nav-sub-item-link nav-sub-about" href="/about">About Hechinger</a></li>
-        </ul>
+          <div class="nav-topics-menu">
+            <span class="nav-topics-menu-tick"></span>
+            <ul class="nav-topics-list">
+              {% for item in nav_menu.get_items %}
+                <li class="nav-sub-item">
+                  <a class="nav-sub-item-link" href="{{ item.get_link }}">{{ item.title }}</a>
+                </li> <!-- /nav-sub-item -->
+              {% endfor %}
+              <li class="nav-sub-item all-topics-item"><a class="nav-sub-item-link all-topics-link" href="/special-reports">All Topics</a></li>
+              <li class="nav-sub-item sub-about-item"><a class="nav-sub-item-link nav-sub-about" href="/about">About Hechinger</a></li>
+            </ul>
+          </div> <!-- /nav-topics-menu -->
+        </div> <!-- /nav-topics-menu-mod -->
 
         <a class="nav-item nav-about-link" href="/about">About</a>
 

@@ -136,9 +136,16 @@
     position: relative;
     float: right;
     display: block;
+
+    // Stops nav-topic-list from
+    // inadvertently triggering outside
+    // of main nav item area
+    overflow: hidden;
+    &:hover {
+      overflow: visible;
+    }
   }
 }
-
 
 .nav-is-open {
   padding-bottom: 0px;
@@ -157,13 +164,20 @@
   } //search-form-wrap
 }
 
-
 .nav-item {
+  display: block;
+  @include mq($bp-medium) {
+    float: left;
+    width: 77px;
+  } //mq
+}
+
+.nav-about-link,
+.nav-topics-link {
   @include sans;
   display: block;
-  float: left;
-  width: 77px;
   padding-top: 22px;
+  padding-bottom: 10px;
   font-size: 15px;
   font-weight: $font-weight-bold;
   color: $black;
@@ -172,111 +186,99 @@
   text-align: center;
   letter-spacing: 1px;
   box-shadow: 0 0 0 #000 inset;
-  @include trans(.1s, all, $animation-timing);
 
-  &:not(:first-child) { margin-left: 15px; }
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
 }
 
-.nav-topics-link:hover,
-.nav-about-link:hover {
+.nav-about-link:hover,
+.topics-is-open .nav-topics-link,
+.nav-topics-menu-mod:hover .nav-topics-link {
     box-shadow: 0 9px 0 #000 inset;
+    @include trans(.1s, all, $animation-timing);
 }
 
 .nav-topics-link {
+  // Don't display the general topics link
+  // on smaller screen sizes
   display: none;
-
   @include mq($bp-medium) {
     display: block;
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 77px;
-    height: 30px;
-  }
-  &:focus ~ .nav-topics-list,
-  &:hover ~ .nav-topics-list {
-    display: block;
+    position: relative;
+    // relative position ensures link is clickable even
+    // with the invisibe trigger helper sitting behind
+    // See :before element on nav-topics-menu-mod
   }
 }
 
+.nav-topics-menu-mod {
+  @include mq($bp-medium) {
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      overflow: visible;
+    }
 
-.nav-topics-list {
+    // This hidden element ensures that the
+    // hover state doesn't get lost as user
+    // mouses between link and dropdown menu
+    &:before {
+      @include content;
+      position: absolute;
+      bottom: -12px;
+      margin-left: -38px;
+      width: 130px;
+      height: 65px;
+      background-color: transparent;
+    }
+  } //mq
+}
+
+.nav-topics-menu {
+  // Also see animation properties below
   z-index: 2;
   background-color: $he-main;
-
-  @include mq($bp-medium, max) {
-    margin-top: 20px;
-  }
+  margin-top: 20px;
 
   @include mq($bp-medium) {
-    display: block;
-    position: absolute;
+    @include absolute-center(290px);
     top: 60px;
-    left: -50%;
-    display: none;
+
     padding: 10px 25px 2px;
-    width: 290px;
+    margin-top: 0;
     background-color: $black;
 
     // Fix for search results page, accounting
     // for the lack of search icon in the nav
     .search & { margin-left: -21px; }
-  }
-
-  &:hover,
-  &:focus {
-    display: block;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    margin-left: -12px;
-    display: block;
-    @include triangle('up', 12px, $black);
-  }
+  } //mq
 }
 
 
-.nav-sub-item {
-  position: relative;
-
-  // base state for arrow bullets
-  &:after {
-    opacity: 0;
-  }
-
-  & + & {
-    @include mq($bp-medium) {
-       border-top: 1px solid $black-50;
-    }
-  }
-
-  &:hover {
-    @include mq($bp-medium) {
-      .nav-sub-item-link {
-        @include bullet(after, $he-main);
-        opacity: 1;
-      }
-    }
-  }
-
+.nav-topics-menu-tick {
+  // Also see animation properties below
   @include mq($bp-medium) {
-    line-height: 50px;
+    @include absolute(n n n 50%);
+    @include triangle('up', 12px, $black);
+    margin-left: -12px;
+    pointer-events: none;
   }
-
 }
 
-// Nav open animation
-@keyframes navItemAnimation {
+//
+// Topics List Show/Hide Animation
+//
+
+// Toipcs Menu Animation
+// - - - - - - - - - - - - - - -
+// Bring to full opacity and
+// add subtle downward animation
+
+@keyframes navListAnimation {
   0% {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-6px);
   }
   50% {
     opacity: 0;
@@ -287,32 +289,118 @@
   }
 }
 
-.nav-is-open .nav-sub-item {
-  animation-duration: 0.3s;
-  animation-name: navItemAnimation;
-  animation-fill-mode: forwards;
+.nav-topics-menu {
+  // Only applies to expanded navigation menu
+  @include mq($bp-medium) {
+    opacity: 0;
+    transform: translateY(-6px);
+    overflow: hidden;
+    @include trans(.2s, all, $animation-timing);
+
+    .topics-is-open &,
+    .nav-topics-menu-mod:hover &,
+    .nav-topics-menu-mod:focus & {
+      overflow: visible;
+      animation-delay: 0.2s; // matches delay on nav-sub-item
+      animation-duration: 0.4s;
+      animation-name: navItemAnimation;
+      animation-fill-mode: forwards;
+    }
+  } //mq
+} // nav-topics-menu
+
+
+// Tick Mark Animation
+// - - - - - - - - - - - - - - -
+// When topics nav opens, subtly
+// animate the tick mark upwards
+
+@keyframes navTickAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-22px);
+  }
+}
+
+.nav-topics-menu-tick {
+  transform: translateY(12px);
+  @include trans(.2s, all, $animation-timing);
+
+  .topics-is-open &,
+  .nav-topics-menu-mod:hover &
+  .nav-topics-menu-mod:focus & {
+    // Match topic menu animation timing
+    animation-delay: 0.4s;
+    animation-duration: 0.3s;
+    animation-name: navTickAnimation;
+    animation-fill-mode: forwards;
+  }
+}
+
+// Lead Tease Animation
+// - - - - - - - - - - - - - - -
+// When topics nav is open,
+// lighten the lead tease to make
+// make it easier to focus on menu
+
+@keyframes navBgAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .6;
+  }
+}
+
+.hp-feat-mod {
+  @include trans(.3s, opacity, $animation-timing);
+  .topics-is-open & {
+    // Match topic menu animation timing
+    animation-delay: 0.4s;
+    animation-duration: 0.3s;
+    animation-name: navBgAnimation;
+    animation-fill-mode: forwards;
+  }
 }
 
 
 .nav-sub-item {
-  opacity: 0;
-  transform: translateY(-30px);
-  @include trans(.4s, all, $animation-timing);
+  position: relative;
+
   & + & {
-    animation-delay: .04s;
+    @include mq($bp-medium) {
+       border-top: 1px solid $black-50;
+    }
   }
-  & + & + & {
-    animation-delay: .08s;
-  }
-  & + & + & + & {
-    animation-delay: .12s;
-  }
-  & + & + & + & + & {
-    animation-delay: .16s;
-  }
-  & + & + & + & + & + & {
-    animation-delay: .2s;
-  }
+
+  @include mq($bp-medium) {
+    line-height: 50px;
+  } //mq
+} // nav-sub-item
+
+.nav-sub-item-link {
+  @include mq($bp-medium) {
+    @include bullet(after, $he-main);
+
+    // base state for arrow bullets
+    &:after {
+      opacity: 0;
+      transform: translateX(-20px);
+      @include trans(.2s, all, $animation-timing);
+    }
+
+    .nav-sub-item:hover &:after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  } //mq
 }
 
 .nav-sub-item-link {
@@ -334,14 +422,77 @@
   }
 }
 
+
+// Nav Open Animation
+// - - - - - - - - - - - - - - - - - - -
+// Nav text appears to cascade into view
+// when mobile navigation is twirled open
+
+@keyframes navItemAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-is-open .nav-sub-item,
+.topics-is-open .nav-sub-item,
+.nav-topics-menu-mod:hover .nav-sub-item,
+.nav-topics-menu-mod:focus .nav-sub-item {
+  animation-duration: 0.3s;
+  animation-name: navItemAnimation;
+  animation-fill-mode: forwards;
+}
+
+// Add timing delays
+.nav-sub-item {
+  // Only applicable for mobile nav
+  @include mq($bp-medium, max) {
+    opacity: 0;
+    transform: translateY(-30px);
+    @include trans(.4s, all, $animation-timing);
+    & + & {
+      animation-delay: .04s;
+    }
+    & + & + & {
+      animation-delay: .08s;
+    }
+    & + & + & + & {
+      animation-delay: .12s;
+    }
+    & + & + & + & + & {
+      animation-delay: .16s;
+    }
+    & + & + & + & + & + & {
+      animation-delay: .2s;
+    }
+    & + & + & + & + & + & + & {
+      animation-delay: .24s;
+    }
+    & + & + & + & + & + & + & + & {
+      animation-delay: .28s;
+    }
+    & + & + & + & + & + & + & + & + & {
+      animation-delay: .32s;
+    }
+  } //mq
+}
+
+
 // Add Underline Animation
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// - - - - - - - - - - - - - - - - - - -
 // Because it's complex, it's a flourish,
 // and it's only used on small screen sizes,
 // Tito chose to use a max-width media query.
 // Saves us from undoing allllll this code.
 
-// prototype animation
 @keyframes teaseLink {
   0% { width: 0; }
   100% { width: 100%;  }

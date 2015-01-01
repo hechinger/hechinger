@@ -1,32 +1,60 @@
 .l-archive-hdr-wrap {
-  // margin-top: 30px;
-  margin: 25px auto 25px auto;
+  margin: -30px $site-margin 50px;
   max-width: 960px;
   @extend %bp-trans;
-  @include mq('max', $bp-medium) {
-    // margin: 40px 0 25 25px;
+
+  // Font sizes change in archive-hdr, below
+  @include mq($bp-small) {
+    margin-top: -38px;
+    margin-bottom: 65px;
   }
-  @include mq($bp-medium) { margin-top: -60px; }
 
-  @include mq($bp-desktop) { margin-top: -100px; }
+  @include mq($bp-medium) {
+    margin-top: -50px;
+    margin-bottom: 75px;
+  }
 
-  @include mq($bp-desktop, max) { margin-left: 25px; }
+  @include mq($bp-medium-plus) {
+    margin-top: -58px;
+    margin-bottom: 100px;
+  }
+
+  @include mq($bp-large) {
+    margin-top: -66px;
+  }
+
+  @include mq($bp-desktop) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 
 .archive-hdr {
+  @include sans-bold;
   color: $black;
-  @include sans-black;
-  font-size: 135px;
+  font-size: 50px;
+  letter-spacing: -2px;
+  line-height: 100%;
   text-decoration: underline;
 
-  @include mq($bp-medium, max) { font-size: 40px; }
+  // Position changes in archive-hdr-wrap, above
+  @include mq($bp-small) {
+    font-size: 67px;
+  }
 
-  @include mq($bp-medium, $bp-desktop) { font-size: 80px; }
+  @include mq($bp-medium) {
+    font-size: 87px;
+  }
 
-  @include mq($bp-medium) { letter-spacing: -1px; }
+  @include mq($bp-medium-plus) {
+    font-size: 100px;
+    letter-spacing: -3px;
+  }
 
-  @include mq($bp-large) { letter-spacing: -2px; }
+  @include mq($bp-large) {
+    font-size: 110px;
+  }
 
 }
 

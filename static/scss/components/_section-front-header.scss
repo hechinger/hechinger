@@ -1,41 +1,3 @@
-.section-front-banner {
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 276px;
-  background-size: cover;
-  overflow: hidden;
-
-  // gradient overlay for section fronts (i.e. special reports headers)
-  &:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    height: 200px;
-    width: 100%;
-    background-image: linear-gradient($he-main 25px, rgba($he-main, 0.02));
-  }
-}
-
-
-.l-section-front-hdr-wrap {
-  @extend %bp-trans;
-  max-width: 960px;
-
-  margin: 165px auto 25px auto;
-
-  @include mq($bp-medium, max) { margin-top: 222px; }
-
-  @include mq($bp-medium, 800px) { margin-top: 162px; }
-
-  @include mq($bp-medium-plus, $bp-desktop) { margin-top: 195px; }
-
-  @include mq($bp-desktop, max) { margin-left: 25px; }
-
-}
-
-
 .section-front-summary-wrap {
   margin: 0 $site-margin;
   max-width: $content-max;
@@ -59,7 +21,11 @@
   white-space: nowrap;
   color: $he-secondary;
 
-  @include mq($bp-small, max) { font-size: 22px; }
+  @include mq($bp-small, max) {
+    font-size: 22px;
+  }
 
-  @include mq($bp-small) { @include bullet(after); }
+  @include mq($bp-small) {
+    @include bullet(after);
+  }
 }

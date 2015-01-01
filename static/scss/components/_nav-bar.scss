@@ -42,6 +42,32 @@
 }
 
 
+// Site Header with Background Image
+// Used primarily on section fronts (About, California, etc.)
+
+.site-header--with-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include mq($full-nav-appears, max) {
+    .nav-is-open & {
+      background-size: contain;
+      background-position: 50% 100%;
+    }
+  }
+
+  // gradient overlay for section fronts (i.e. special reports headers)
+  // helps make sure nav text is readable no matter the image
+  &:before {
+    @include psuedo(0 0 n 0);
+    height: 120px;
+    background-image: linear-gradient($he-main 25px, rgba($he-main, 0.02));
+
+    @include mq($full-nav-appears) {
+      height: 200px;
+    }
+  }
+}
 
 
 
@@ -55,10 +81,19 @@
 
 
 .l-nav-mod {
+  position: relative;
+  // position ensures nav controls are visible/clickable
+  // on pages with background image and gradient overlay
   @include pie-clearfix;
 
-  @include mq($bp-medium, max) {
-    background-color: $he-main;
+  @include mq($full-nav-appears, max) {
+    // Smoothes spot where hard image edge
+    // and yellow background color meet
+    .nav-is-open &:before {
+      @include psuedo(n 0 -60px 0);
+      height: 80px;
+      background-image: linear-gradient($he-main 25px, rgba($he-main, 0.02));
+    }
   }
 
   @include mq($bp-medium-plus, max) {
@@ -81,7 +116,7 @@
 
 
 .nav-logo {
-  display: inline-block;
+  display: block;
   padding: 17px 10px 10px;
   margin-left: -10px;
   width: 220px;
@@ -95,7 +130,6 @@
 
   @include mq($bp-medium) {
     float: left;
-    display: block;
     width: 260px;
     padding: 16px 12px 10px;
   }
@@ -245,7 +279,6 @@
 .nav-topics-menu {
   // Also see animation properties below
   z-index: 2;
-  background-color: $he-main;
   margin-top: 20px;
 
   @include mq($bp-medium) {
@@ -353,9 +386,9 @@
 
 // Lead Tease Animation
 // - - - - - - - - - - - - - - -
-// When topics nav is open,
-// lighten the lead tease to make
-// make it easier to focus on menu
+// When topics nav is open, lighten
+// elements close to page top in order
+// to make it easier to focus on menu
 
 @keyframes navBgAnimation {
   0% {
@@ -366,7 +399,9 @@
   }
 }
 
-.hp-feat-mod {
+.l-page-hdr,
+.hp-feat-mod,
+.search-form-wrap.is-open {
   @include trans(.3s, opacity, $animation-timing);
   .topics-is-open & {
     // Match topic menu animation timing
@@ -744,11 +779,6 @@
     transform: translateY(0);
   }
 }
-
-.admin-bar .nav-menu-button {
-  top: 46px;
-}
-
 
 .search-form-wrap {
   @include mq($has-margin) {

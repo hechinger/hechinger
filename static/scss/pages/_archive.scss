@@ -1,4 +1,5 @@
-.l-archive-hdr-wrap {
+.l-archive-hdr-wrap,
+.l-section-front-hdr-wrap {
   margin: -30px $site-margin 50px;
   max-width: 960px;
   @extend %bp-trans;

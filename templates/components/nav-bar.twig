@@ -1,5 +1,9 @@
-{# TODO: fix yellow box when search is open. Fix hover state on "topics" when hovering on subnav. #}
-<header class="site-header {{css_class ? css_class : ''}}">
+{% if background_image == true %}
+  <header class="site-header site-header--with-image {{css_class ? css_class : ''}}" style="background-image: url({{ banner.src|resize(700) | default(site.theme.path ~ '/static/img/defaults/default_yellow_pano.jpg')|resize(700) }})" data-resp="{{ banner.src | default(site.theme.path ~ '/static/img/defaults/default_yellow_pano.jpg') }}" data-resp-width="700" >
+{% else %}
+  <header class="site-header {{css_class ? css_class : ''}}">
+{% endif %}
+
   <div class="l-nav-mod js-nav-mod">
     <nav class="l-nav-wrap">
 

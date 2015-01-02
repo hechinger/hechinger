@@ -23,9 +23,6 @@
 .tz-content-wrap {
   display: block;
 
-  @include mq($bp-medium-plus) {
-    padding: 0 15px;
-  }
   .tz-feat-mod & {
     padding: 0;
   }
@@ -171,12 +168,6 @@
   margin-top: 25px;
   padding-top: 25px;
   border-top: $bdr-thin;
-
-  .tz-content-wrap {
-    @include mq($bp-medium-plus) {
-      padding: 0 15px; // see also, tz-content-wrap, above
-    }
-  }
 }
 
 

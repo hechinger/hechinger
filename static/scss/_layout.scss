@@ -34,7 +34,9 @@ $has-margin:          800px;
   margin-top: -17px;
   margin-bottom: 45px;
 
-  @include mq($bp-medium-plus) { margin-top: -$space-grid; }
+  @include mq($bp-medium-plus) {
+    margin-top: -$space-grid;
+  }
 }
 
 

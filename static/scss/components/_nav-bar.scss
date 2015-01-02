@@ -43,11 +43,24 @@
 
 
 // Site Header with Background Image
+// - - - - - - - - - - - - - - - - - - - - -
 // Used primarily on section fronts (About, California, etc.)
 
 .site-header--with-image {
   background-repeat: no-repeat;
   background-size: cover;
+
+    padding-bottom: 105px;
+  @include mq($bp-small) {
+    padding-bottom: 130px;
+  }
+  @include mq($bp-medium) {
+    padding-bottom: 165px;
+  }
+  @include mq($bp-large) {
+    padding-bottom: 205px;
+  }
+
 
   @include mq($full-nav-appears, max) {
     .nav-is-open & {

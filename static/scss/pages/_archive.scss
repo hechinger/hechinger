@@ -61,27 +61,26 @@
 
 
 .archive-feed-container {
-  margin: 45px $site-margin 0;
+  margin: 0 $site-margin;
   max-width: $content-max;
 
+  @include mq($bp-large) {
+    margin: 0 $site-margin 0 90px;
+    // margin-left lets section header hang
+    // to the left of the feed container
+    // matches section-front-summary-text
+   }
+
   @include mq($bp-no-content-margin) {
-    margin: 70px auto 0;
+    margin: 0 auto;
+    padding-left: 90px;
+    // lets section header hang to the left
+    // of the feed container
+    // matches section-front-summary-text
   }
+
 }
 
 
 
 
-
-// **************************
-// to delete
-.archive-yellow-box {
-  // @extend %yellow-box;
-  background-color: pink;
-  height: 183px;
-  background-color: pink;
-
-  @include mq('max', $bp-medium) {
-    height: 120px;
-  }
-}

@@ -64,19 +64,23 @@
   margin: 0 $site-margin;
   max-width: $content-max;
 
+  @include mq($bp-medium-plus) {
+    margin: 0 $site-margin 0 50px;
+    // margin-left lets section header hang left of feed container
+    // - matches section-front-summary-text
+  }
+
   @include mq($bp-large) {
     margin: 0 $site-margin 0 90px;
-    // margin-left lets section header hang
-    // to the left of the feed container
-    // matches section-front-summary-text
+    // margin-left lets section header hang left of feed container
+    // - matches section-front-summary-text
    }
 
   @include mq($bp-no-content-margin) {
     margin: 0 auto;
     padding-left: 90px;
-    // lets section header hang to the left
-    // of the feed container
-    // matches section-front-summary-text
+    // lets section header hang left of feed container
+    // - matches section-front-summary-text
   }
 
 }

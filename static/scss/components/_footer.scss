@@ -63,15 +63,33 @@
 
 
 .l-ftr-partners {
-  @include mq($bp-medium, max) { @include media-grid(4, 25px); }
-  @include mq($bp-medium, $bp-medium-plus) { @include media-grid(2, 25px); }
-  @include mq($bp-medium-plus) { @include media-grid(4, 25px); }
+  max-width: 420px;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  @include media-grid(4, 5px);
+
   .media-block {
     max-width: 125px;
-    margin-top: 10px;
+    margin-bottom: 20px;
   }
 }
 
+// Even out partner logo sizes
+.ftr-partner-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ftr-partner-logo--time {
+  max-width: 60%;
+  margin-top: 5px;
+}
+
+.ftr-partner-logo--slate {
+  max-width: 70%;
+  margin-top: 3px;
+}
 
 
 
@@ -152,12 +170,14 @@
   @include sans(italic);
   margin-bottom: 10px;
   font-size: 18px;
-  line-height: 1.318181818;
+  line-height: 130%;
   color: $black;
+  margin-bottom: 3px;
 
-  @include mq($bp-medium) { font-size: 22px; }
-
-  @include mq($bp-medium, max) { margin-bottom: 3px; }
+  @include mq($bp-medium) {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
 }
 
 
@@ -170,6 +190,9 @@
   font-size: 16px;
   color: $black;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 

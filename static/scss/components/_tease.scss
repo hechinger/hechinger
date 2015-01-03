@@ -105,7 +105,7 @@
 
 .tz-author {
   font-weight: $font-weight-lt;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 10px;
 }
 
@@ -311,15 +311,10 @@
 .tz-special-link {
   @include bullet(after);
   color: $tease-head-color;
-  @include faux-underline (
-    $color: #000,
-    $bg-color: #fff,
-    $weight: 4px,
-    $offset: 2px,
-    $breaking-underlines: true );
+  text-decoration: underline;
 
   &:hover {
-    @include faux-underline(#fff);
+    text-decoration: none;
   }
 
   // Center the bullet and make sure

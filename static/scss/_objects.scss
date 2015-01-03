@@ -333,21 +333,20 @@ $icons: twitter,
 $button-main: $he-secondary;
 
 .button, %button {
+  @include input-default;
   background-color: $button-main;
-  font: inherit;
-  line-height: 1em;
   padding: 0.45em 0.65em;
-  text-decoration: none;
-  text-align: center;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
-  color: #fff;
-  outline: 0;
-  border: 0;
-  border-radius: 0;
 
-  -webkit-appearance: none;
+  font: inherit;
+  line-height: 1em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
 
   &:hover {
     // background-color: darken($button-main, 5%);
@@ -356,7 +355,9 @@ $button-main: $he-secondary;
     // background-color: darken($button-main, 8%);
     // text-shadow: 0 -1px darken($button-main, 15%);
   }
-  & + & { margin-left: 1em; }
+  & + & {
+    margin-left: 1em;
+  }
 }
 
 

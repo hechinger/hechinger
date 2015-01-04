@@ -1,11 +1,19 @@
+// Don't show search bar in nav
+// on search pages
+.search.nav-is-open .search-form-wrap {
+  display: none;
+}
+
 .search-bar-wrap {
   display: block;
   position: relative;
-  width: 90%;
-  margin: 0 auto;
+  margin: -30px $site-margin 0;
   @include mq($bp-medium) {
     position: relative;
     max-width: $content-max;
+  }
+  @include mq($bp-no-content-margin) {
+    margin: 0 auto;
   }
 }
 
@@ -41,8 +49,13 @@
       rgba(255,255,255,.7)  // focus
   );
 
-
   @include mq($bp-medium) {
+    height: 75px;
+    padding: 4px 81px 10px 21px;
+    font-size: 34px;
+  }
+
+  @include mq($bp-large) {
     height: 90px;
     padding: 4px 96px 10px 28px;
     font-size: 40px;
@@ -74,6 +87,11 @@ input:-webkit-autofill:focus {
   background-color: $black;
 
   @include mq($bp-medium) {
+    width: 75px;
+    padding: 23px;
+  }
+
+  @include mq($bp-large) {
     width: 90px;
     padding: 30px;
   }
@@ -88,16 +106,10 @@ input:-webkit-autofill:focus {
 
 
 .l-search-results {
-  width: 90%;
-  margin: 0 auto;
+  margin: 0 $site-margin;
+  max-width: 850px;
 
-  @include mq($bp-medium) {
-    padding-left: 50px;
-    margin: 0 $site-margin;
-    max-width: $content-max;
-  }
-
-  @include mq($bp-no-content-margin) {
+  @include mq(890px) {
     margin: 0 auto;
   }
 }
@@ -119,7 +131,6 @@ input:-webkit-autofill:focus {
   color: $black;
 
     @include mq($bp-medium) {
-    padding-left: 50px;
     font-size: 18px;
   }
 }

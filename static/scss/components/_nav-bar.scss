@@ -108,11 +108,6 @@
       background-image: linear-gradient($he-main 25px, rgba($he-main, 0.02));
     }
   }
-
-  @include mq($bp-medium-plus, max) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
 }
 
 
@@ -120,24 +115,28 @@
   max-width: $content-max;
   @include pie-clearfix;
 
-  @include mq($has-margin) { margin: 0 $site-margin; }
+  @include mq($bp-small) {
+    margin: 0 $site-margin;
+  }
 
-  @include mq($bp-no-content-margin) { margin: 0 auto; }
+  @include mq($bp-no-content-margin) {
+    margin: 0 auto;
+  }
 
-  @include mq($bp-medium) { font-size: 21px; }
+  @include mq($bp-medium) {
+    font-size: 21px;
+  }
 }
 
 
 .nav-logo {
   display: block;
   padding: 17px 10px 10px;
-  margin-left: -10px;
   width: 220px;
   background-color: $black;
   @include trans(.15s);
 
   @include mq($bp-small) {
-    margin-left: 0;
     width: 240px;
   }
 
@@ -173,12 +172,17 @@
 
 
 .nav-logo-img {
-  &.logo-fallback { display: none; }
+  &.logo-fallback {
+    display: none;
+  }
 
-  // Browsers that do not support svg will render the png version of the logo
+  // Browsers that do not support svg
+  // will render the png version of the logo
   .no-svg & {
     display: none;
-    &.logo-fallback { display: block; }
+    &.logo-fallback {
+      display: block;
+    }
   }
 }
 
@@ -292,7 +296,12 @@
 .nav-topics-menu {
   // Also see animation properties below
   z-index: 2;
-  margin-top: 20px;
+  margin: 20px 10px 0;
+
+  @include mq($bp-small) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   @include mq($bp-medium) {
     @include absolute-center(290px);
@@ -301,10 +310,6 @@
     padding: 10px 25px 2px;
     margin-top: 0;
     background-color: $black;
-
-    // Fix for search results page, accounting
-    // for the lack of search icon in the nav
-    .search & { margin-left: -21px; }
   } //mq
 }
 
@@ -794,17 +799,17 @@
 }
 
 .search-form-wrap {
-  @include mq($has-margin) {
+  display: none;
+  position: relative;
+  @include trans;
+  margin: 0 10px;
+
+  @include mq($bp-small) {
     margin: 0 $site-margin;
   }
   @include mq($bp-no-content-margin) {
     margin: 0 auto;
   }
-
-  display: none;
-  position: relative;
-  margin: 0 auto;
-  @include trans;
 
   @include mq($bp-medium) {
     display: block;

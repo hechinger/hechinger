@@ -10,8 +10,11 @@
   @include pie-clearfix;
   padding-top: 35px;
   background-color: $he-main;
+  overflow: hidden;
 
-  @include mq($bp-medium) { padding-top: 175px; }
+  @include mq($bp-medium) {
+    padding-top: 175px;
+  }
 }
 
 

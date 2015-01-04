@@ -4852,35 +4852,61 @@ input:-webkit-autofill:focus {
   background-color: transparent;
 }
 
-/* line 146, ../scss/pages/_home.scss */
+@media (max-width: 699px) {
+  /* line 138, ../scss/pages/_home.scss */
+  .l-pair-tz-hp-reg .tz-img-mod {
+    float: right;
+    margin: 0 0 10px 20px;
+  }
+}
+@media (min-width: 450px) {
+  /* line 138, ../scss/pages/_home.scss */
+  .l-pair-tz-hp-reg .tz-img-mod {
+    width: 125px;
+  }
+}
+@media (min-width: 600px) {
+  /* line 138, ../scss/pages/_home.scss */
+  .l-pair-tz-hp-reg .tz-img-mod {
+    width: 175px;
+  }
+}
+@media (min-width: 700px) {
+  /* line 138, ../scss/pages/_home.scss */
+  .l-pair-tz-hp-reg .tz-img-mod {
+    width: auto;
+  }
+}
+
+/* line 168, ../scss/pages/_home.scss */
 .hp-second-feature-mod {
   position: relative;
   width: 100%;
   text-align: center;
 }
 
-/* line 153, ../scss/pages/_home.scss */
+/* line 175, ../scss/pages/_home.scss */
 .hp-second-feature-img-container {
   display: inline-block;
   width: 100%;
   max-width: 643px;
 }
 
-/* line 160, ../scss/pages/_home.scss */
+/* line 182, ../scss/pages/_home.scss */
 .hp-second-feature-txt-container {
   display: inline-block;
   text-align: center;
   margin: 0 auto;
 }
 
-/* line 167, ../scss/pages/_home.scss */
+/* line 189, ../scss/pages/_home.scss */
 .hp-second-feature-txt-inner {
   position: relative;
   margin-top: -150px;
   text-align: left;
 }
 @media (min-width: 900px) {
-  /* line 167, ../scss/pages/_home.scss */
+  /* line 189, ../scss/pages/_home.scss */
   .hp-second-feature-txt-inner {
     position: absolute;
     top: 40%;
@@ -4890,7 +4916,7 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 182, ../scss/pages/_home.scss */
+/* line 204, ../scss/pages/_home.scss */
 .hp-second-feature-topic {
   font-size: 11pt;
   color: #000000;
@@ -4903,19 +4929,19 @@ input:-webkit-autofill:focus {
   padding: 6px 10px 0 0;
 }
 @media (min-width: 400px) {
-  /* line 182, ../scss/pages/_home.scss */
+  /* line 204, ../scss/pages/_home.scss */
   .hp-second-feature-topic {
     font-size: 12pt;
   }
 }
 @media (min-width: 700px) {
-  /* line 182, ../scss/pages/_home.scss */
+  /* line 204, ../scss/pages/_home.scss */
   .hp-second-feature-topic {
     font-size: 14pt;
   }
 }
 
-/* line 197, ../scss/pages/_home.scss */
+/* line 219, ../scss/pages/_home.scss */
 .hp-second-feature-head {
   font-size: 25pt;
   font-weight: 900;
@@ -4927,24 +4953,24 @@ input:-webkit-autofill:focus {
   display: inline-block;
 }
 @media (min-width: 500px) {
-  /* line 197, ../scss/pages/_home.scss */
+  /* line 219, ../scss/pages/_home.scss */
   .hp-second-feature-head {
     font-size: 35pt;
   }
 }
 @media (min-width: 700px) {
-  /* line 197, ../scss/pages/_home.scss */
+  /* line 219, ../scss/pages/_home.scss */
   .hp-second-feature-head {
     font-size: 50pt;
   }
 }
 
-/* line 215, ../scss/pages/_home.scss */
+/* line 237, ../scss/pages/_home.scss */
 .hp-second-feature-head .tz-h-link:hover {
   text-decoration: none;
 }
 
-/* line 219, ../scss/pages/_home.scss */
+/* line 241, ../scss/pages/_home.scss */
 .hp-second-feature-txt {
   font-size: 14pt;
   font-weight: 300;
@@ -4956,13 +4982,13 @@ input:-webkit-autofill:focus {
   display: inline-block;
 }
 @media (min-width: 900px) {
-  /* line 219, ../scss/pages/_home.scss */
+  /* line 241, ../scss/pages/_home.scss */
   .hp-second-feature-txt {
     width: 70%;
   }
 }
 
-/* line 235, ../scss/pages/_home.scss */
+/* line 257, ../scss/pages/_home.scss */
 .hp-second-feature-read-more {
   position: relative;
   padding-right: 0.85em;
@@ -4984,12 +5010,12 @@ input:-webkit-autofill:focus {
 .hp-second-feature-read-more:after {
   right: 0;
 }
-/* line 242, ../scss/pages/_home.scss */
+/* line 264, ../scss/pages/_home.scss */
 .hp-second-feature-read-more:hover {
   text-decoration: underline;
 }
 
-/* line 257, ../scss/pages/_home.scss */
+/* line 279, ../scss/pages/_home.scss */
 .special-report-tz-background {
   background-image: url("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg");
   background-repeat: no-repeat;
@@ -5001,7 +5027,7 @@ input:-webkit-autofill:focus {
   left: 0;
 }
 @media (min-width: 700px) {
-  /* line 257, ../scss/pages/_home.scss */
+  /* line 279, ../scss/pages/_home.scss */
   .special-report-tz-background {
     position: absolute;
     top: 0;
@@ -5010,7 +5036,7 @@ input:-webkit-autofill:focus {
     left: 25px;
   }
 }
-/* line 281, ../scss/pages/_home.scss */
+/* line 303, ../scss/pages/_home.scss */
 .special-report-tz-background:after {
   content: " ";
   display: block;
@@ -5022,33 +5048,33 @@ input:-webkit-autofill:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 287, ../scss/pages/_home.scss */
+/* line 309, ../scss/pages/_home.scss */
 .special-report-tz-content {
   position: relative;
   z-index: 1;
   padding: 23px 20px 30px;
 }
 @media (min-width: 550px) {
-  /* line 287, ../scss/pages/_home.scss */
+  /* line 309, ../scss/pages/_home.scss */
   .special-report-tz-content {
     padding: 30px 30px 40px;
   }
 }
 @media (min-width: 700px) {
-  /* line 287, ../scss/pages/_home.scss */
+  /* line 309, ../scss/pages/_home.scss */
   .special-report-tz-content {
     padding: 30px 30px 35px;
   }
 }
 
-/* line 300, ../scss/pages/_home.scss */
+/* line 322, ../scss/pages/_home.scss */
 .special-report-tz-hdr-container {
   position: relative;
   display: inline-block;
   margin-bottom: 1.5em;
 }
 
-/* line 307, ../scss/pages/_home.scss */
+/* line 329, ../scss/pages/_home.scss */
 .special-report-tz-hdr {
   display: inline-block;
   font-size: 21px;
@@ -5060,18 +5086,18 @@ input:-webkit-autofill:focus {
   transition: all 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 @media (min-width: 450px) and (max-width: 699px) {
-  /* line 307, ../scss/pages/_home.scss */
+  /* line 329, ../scss/pages/_home.scss */
   .special-report-tz-hdr {
     font-size: 23px;
   }
 }
 @media (min-width: 900px) {
-  /* line 307, ../scss/pages/_home.scss */
+  /* line 329, ../scss/pages/_home.scss */
   .special-report-tz-hdr {
     font-size: 23px;
   }
 }
-/* line 330, ../scss/pages/_home.scss */
+/* line 352, ../scss/pages/_home.scss */
 .special-report-tz-hdr:before, .special-report-tz-hdr:after {
   position: absolute;
   content: '';
@@ -5079,19 +5105,19 @@ input:-webkit-autofill:focus {
   bottom: 0;
   height: .25em;
 }
-/* line 339, ../scss/pages/_home.scss */
+/* line 361, ../scss/pages/_home.scss */
 .special-report-tz-hdr:before {
   width: 75px;
   background-color: #fff;
 }
-/* line 344, ../scss/pages/_home.scss */
+/* line 366, ../scss/pages/_home.scss */
 .special-report-tz-hdr:after {
   width: 0;
   background-color: #ffcf31;
   -webkit-transition-duration: 0.35s;
           transition-duration: 0.35s;
 }
-/* line 350, ../scss/pages/_home.scss */
+/* line 372, ../scss/pages/_home.scss */
 .special-report-tz-hdr:hover:after {
   background-color: #ffcf31;
   width: 75px;
@@ -5099,7 +5125,7 @@ input:-webkit-autofill:focus {
           transition-duration: 0.75s;
 }
 
-/* line 358, ../scss/pages/_home.scss */
+/* line 380, ../scss/pages/_home.scss */
 .special-report-tz-item {
   position: relative;
   font-size: 16px;
@@ -5120,40 +5146,40 @@ input:-webkit-autofill:focus {
 .special-report-tz-item:before {
   left: 0;
 }
-/* line 364, ../scss/pages/_home.scss */
+/* line 386, ../scss/pages/_home.scss */
 .special-report-tz-item + .special-report-tz-item {
   margin-top: 0.85em;
 }
 @media (min-width: 450px) {
-  /* line 358, ../scss/pages/_home.scss */
+  /* line 380, ../scss/pages/_home.scss */
   .special-report-tz-item {
     font-size: 17px;
   }
 }
 @media (min-width: 550px) and (max-width: 699px) {
-  /* line 358, ../scss/pages/_home.scss */
+  /* line 380, ../scss/pages/_home.scss */
   .special-report-tz-item {
     font-size: 18px;
   }
 }
 @media (min-width: 960px) {
-  /* line 358, ../scss/pages/_home.scss */
+  /* line 380, ../scss/pages/_home.scss */
   .special-report-tz-item {
     font-size: 18px;
   }
 }
 
-/* line 381, ../scss/pages/_home.scss */
+/* line 403, ../scss/pages/_home.scss */
 .special-report-tz-link {
   text-decoration: none;
   color: white;
 }
-/* line 384, ../scss/pages/_home.scss */
+/* line 406, ../scss/pages/_home.scss */
 .special-report-tz-link:hover {
   text-decoration: underline;
 }
 
-/* line 396, ../scss/pages/_home.scss */
+/* line 418, ../scss/pages/_home.scss */
 .home .ftr-promo-mod {
   margin-top: 0;
 }

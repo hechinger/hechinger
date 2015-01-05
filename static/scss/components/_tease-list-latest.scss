@@ -8,9 +8,11 @@
 
 .hp-list-hdr {
   @extend %section-hdr;
-  font-size: 14px;
+  display: none;
+  font-size: 16px;
   margin-bottom: 2em;
-  @include mq($bp-medium) {
+  @include mq($bp-zone-has-layout) {
+    display: inline-block;
     font-size: 17px;
   }
 }

@@ -48,8 +48,10 @@ window.onload = (function($){
     }
   }
 
+  // Run resizer on page load
   headlineResizer();
 
+  // Run resizer on window resize
   $(window).resize(function() {
       windowWidth = $(window).width();
       headlineResizer();

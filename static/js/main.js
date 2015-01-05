@@ -1,12 +1,12 @@
-window.onload = (function($){
+window.onload = (function($, FastClick){
   "use strict";
 
-  // enable fastclick
-  $(function() {
-      FastClick.attach(document.body);
-  });
-
   var navbar, responsiveBg;
+
+  // enable fastclick
+  if (typeof FastClick !== undefined && typeof FastClick.attach !== undefined) {
+    FastClick.attach(document.body);
+  }
 
   if (typeof HE_navbar !== undefined && typeof HE_navbar.init !== undefined) {
     navbar = HE_navbar.init();
@@ -16,4 +16,4 @@ window.onload = (function($){
     responsiveBg = HE_responsiveBg.init();
   }
 
-}(jQuery));
+}(jQuery, FastClick));

@@ -10,6 +10,8 @@
 
     {% if post.is_column %}
       {% include "/templates/components/article-header-column.twig" %}
+    {% elseif post.is_feature %}
+      {% include "/templates/components/article-header-feat.twig" %}
     {% else %}
       {% include "/templates/components/article-header.twig" %}
     {% endif %}
@@ -30,18 +32,6 @@
           {{ post.content }}
 
           <div class="bottom-aside-container">
-{# TODO allow asides with no shortcode to render in this container #}
-{#
-            {% block article_aside %}
-              {% if post.post_asides|length %}
-                {% for aside in post.post_asides %}
-                  {% if not aside.taken %}
-                    {% include "/templates/components/article-aside.twig" with { aside: aside } %}
-                  {% endif %}
-                {% endfor %}
-              {% endif %}
-            {% endblock %}
-#}
             {% block article_related %}
               {% if post.related_heading or post.post_related_aside %}
                 {% include "/templates/components/article-aside-related.twig" %}
@@ -50,9 +40,6 @@
 
           </div> <!-- /bottom-aside-container -->
         </div> <!-- /article-body -->
-
-
-
       </article> <!-- /article-main -->
 
       <!-- article-social -->
@@ -65,7 +52,8 @@
 
           <div class="article-tools-btm-left">
             <a class="article-comment-link icon-disqus" id="comment-trigger" href="#"><i class="icon"></i>
-              <span class="article-comment-number disqus-comment-count" data-disqus-identifier="{{ post.slug }}">No comments</span></a>
+              <span class="article-comment-number disqus-comment-count" data-disqus-identifier="{{ post.slug }}">No comments</span>
+            </a>
           </div> <!-- /article-tool-btm-let -->
 
         </div> <!-- /page-mod -->
@@ -136,11 +124,10 @@
 
               {% include "/templates/components/article-recirculation.twig" %}
 
-          </div> <!-- /recirculation-container -->
+            </div> <!-- /recirculation-container -->
+          </div> <!-- /l-content -->
         {% endif %}
       {% endblock %} {# /article_recirculation #}
-
-  </div> <!-- /l-content -->
 
 {% endblock %}
 

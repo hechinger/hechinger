@@ -1,26 +1,14 @@
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * To generate specific templates for your pages you can use:
- * /mytheme/views/page-mypage.twig
- * (which will still route through this PHP file)
- * OR
- * /mytheme/page-mypage.php
- * (in which case you'll want to duplicate this file and save to the above path)
- *
- * Methods for TimberHelper can be found in the /functions sub-directory
+ * The template for advisors page
  *
  * @package  WordPress
  * @subpackage  Timber
  * @since    Timber 0.1
  */
+
 $context = Timber::get_context();
+
 $context['advisors'] = array(
   array(
     "name" => "Joshua Benton",
@@ -118,6 +106,7 @@ $context['advisors'] = array(
     "description" => "Richard Tofel is general manager of ProPublica, with responsibility for all of its non-journalism operations, including communications, legal, finance and budgeting and human resources. He was formerly the assistant publisher of The Wall Street Journal and, earlier, an assistant managing editor of the paper, vice president, corporate communications for Dow Jones & Company, and an assistant general counsel of Dow Jones. Most recently, he served as vice president, general counsel and secretary of The Rockefeller Foundation, and earlier as president and chief operating officer of The International Freedom Center, a museum and cultural center that was planned for the World Trade Center site."
   )
 );
+
 $context['post'] = new HechingerPost($post);
 
 Timber::render('pages/advisors.twig', $context);

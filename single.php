@@ -63,11 +63,8 @@ function get_quote( $qt_str, $homepage ) {
   return $zquote;
 }
 
-// TODO: refactor to allow any arbitrary article type to load a template of that type
 if (post_password_required($post->ID)){
 	Timber::render('single-password.twig', $context);
-} elseif ( $post->is_feature() ) {
-	Timber::render(array('single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'pages/article-feature.twig'), $context);
 } else {
 	Timber::render(array('single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'pages/article.twig'), $context);
 }

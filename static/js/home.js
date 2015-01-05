@@ -3,7 +3,7 @@ window.onload = (function($, fitText){
 
   var $window = $(window);
   var windowWidth = $window.width();
-  var $topHeadline = $(".js-tz-h--feat-lg");
+  var $topHeadline = $(".js-tz-hp-lead");
 
   function headlineResizer() {
     if (windowWidth > 400  && windowWidth < 499) {

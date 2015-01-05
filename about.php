@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying Special Reports Landing.
+ * The template for displaying About page
  *
  * Methods for TimberHelper can be found in the /functions sub-directory
  *
@@ -8,10 +8,10 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
+
 $context = Timber::get_context();
 $context['post'] = Timber::get_post('about', 'HechingerPost');
 $staff_users = new WP_User_Query( array( 'meta_key' => 'hech_role', 'meta_value' => 'staff' ) );
-
 $partners = $context['post']->get_field('partner_list');
 
 if (isset($partners) && is_array($partners) && count($partners)) {

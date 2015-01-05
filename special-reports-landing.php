@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying Special Reports Landing.
  *
@@ -8,6 +9,7 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
+
 $context = Timber::get_context();
 
 $context['post'] = Timber::get_post('special-reports-landing', 'HechingerPost');

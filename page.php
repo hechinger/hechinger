@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages.
  *
@@ -20,6 +21,7 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
+
 $context = Timber::get_context();
 $context['post'] = new HechingerPost();
 Timber::render(array('pages/' . $context['post']->slug . '.twig', 'pages/page.twig'), $context);

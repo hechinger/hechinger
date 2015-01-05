@@ -147,6 +147,17 @@
   text-align: center;
 }
 
+.icon-twitter-footer .icon--reverse {
+  @include svg("icn-twitter-footer--white", contain);
+}
+
+.icon-facebook-footer .icon--reverse {
+  @include svg("icn-facebook-footer--white", contain);
+}
+
+.icon-rss-footer .icon--reverse {
+  @include svg("icn-rss-footer--white", contain);
+}
 
 .ftr-hdr {
   @include accent-header;

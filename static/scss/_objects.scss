@@ -69,17 +69,19 @@ img { @include resp-img; }
 
 
 .social-item-link {
-  @include trans(0.25s);
   display: block;
   position: relative;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  overflow: hidden;
+  z-index: 1;
+
+  @include size(30px);
   line-height: 30px;
   background-color: #000;
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
+  @include trans(0.25s);
 
   .icon-twitter & {
     background-color: $twitter-blue;
@@ -108,12 +110,35 @@ img { @include resp-img; }
     border: 1px solid #000;
     border-radius: 50%;
     background-color: transparent;
-    width: 35px;
-    height: 35px;
+    @include size(35px);
   }
 
+} //social-item-link
+
+// Hover state for footer
+.social-item-link:hover {
+  .icon--reg {
+    transform: translateY(34px);
+  }
+  .social-item-hover {
+    transform: translateY(0);
+  }
 }
 
+// Black circle that appears in footer hover state
+.social-item-hover {
+  position: absolute;
+  display: block;
+  @include size(35px);
+  border-radius: 50%;
+  background-color: #000;
+  transform: translateY(-35px);
+  @include trans(.2s);
+}
+
+.icon--reg {
+  @include trans(.2s);
+}
 
 
 
@@ -209,8 +234,7 @@ $icons: twitter,
 
   @each $icon in $icons {
     .icon-#{$icon} & {
-      background-image: url(#{$png-icon-path}/icn-#{$icon}.png);
-      background-image: url(#{$svg-icon-path}/icn-#{$icon}.svg);
+      @include svg("icn-#{$icon}", contain);
     }
   }
 }

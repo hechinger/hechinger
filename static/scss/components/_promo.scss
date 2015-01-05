@@ -6,8 +6,6 @@
 // --------------------------------------------
 // --------------------------------------------
 
-$promo-has-layout: $bp-medium-plus;
-
 .promo-mod {
   position: relative;
   background-repeat: no-repeat;
@@ -69,7 +67,7 @@ $promo-has-layout: $bp-medium-plus;
 
 .promo-content-bdr--reverse {
   &:after {
-    @include mq($bp-large) { background-color: white; }
+    @include mq($promo-has-layout) { background-color: white; }
   }
 }
 
@@ -159,10 +157,6 @@ $promo-has-layout: $bp-medium-plus;
 
 .promo-text--bold {
   font-weight: $font-weight-bold;
-  display: none;
-  @include mq($promo-has-layout) {
-    display: inline;
-  }
 }
 
 .promo-link {

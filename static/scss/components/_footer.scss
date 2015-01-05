@@ -315,7 +315,16 @@
       margin-right: 10px;
     }
   }
-}
+
+  // Hide bold text at small screen sizes
+  .promo-text--bold {
+    display: none;
+    @include mq($promo-has-layout) {
+      display: inline;
+    }
+  }
+
+} //ftr-promo-mod
 
 
 .ftr-promo-outer {

@@ -168,7 +168,7 @@ $bp-display-type:   $bp-medium;
 
 @mixin head-highlight {
   position: relative;
-  z-index: -1;
+  // z-index: -1;
   background-color: $he-main;
   vertical-align: text-bottom;
   font-style: normal;

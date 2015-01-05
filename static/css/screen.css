@@ -630,6 +630,14 @@ a {
   text-decoration: none;
 }
 
+/* line 26, ../scss/_universal.scss */
+mark {
+  background-color: transparent;
+  color: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+
 /* line 9, ../scss/_placeholders.scss */
 .hp-list-hdr {
   display: inline-block;
@@ -9035,7 +9043,6 @@ img.alignleft {
 /* line 52, ../scss/components/_article-aside-related.scss */
 .article-text .aside-related-item-link em, .article-text .aside-related-item-link b, .article-text .aside-related-item-link strong {
   position: relative;
-  z-index: -1;
   background-color: #ffcf31;
   vertical-align: text-bottom;
   font-style: normal;
@@ -9195,16 +9202,23 @@ img.alignleft {
 
 /* line 22, ../scss/components/_tease-list-latest.scss */
 .hp-list-item {
+  *zoom: 1;
   position: relative;
 }
-/* line 24, ../scss/components/_tease-list-latest.scss */
+/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+.hp-list-item:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 25, ../scss/components/_tease-list-latest.scss */
 .hp-list-item + .hp-list-item {
   margin-top: 0.85em;
   padding-top: 0.85em;
   border-top: 1px solid #e6e4e4;
 }
 
-/* line 32, ../scss/components/_tease-list-latest.scss */
+/* line 33, ../scss/components/_tease-list-latest.scss */
 .hp-list-head {
   position: relative;
   font-size: 24px;
@@ -9212,7 +9226,7 @@ img.alignleft {
   padding-left: 1em;
 }
 @media (max-width: 599px) {
-  /* line 32, ../scss/components/_tease-list-latest.scss */
+  /* line 33, ../scss/components/_tease-list-latest.scss */
   .hp-list-head {
     font-size: 22px;
   }
@@ -9231,7 +9245,7 @@ img.alignleft {
   left: 0;
 }
 
-/* line 42, ../scss/components/_tease-list-latest.scss */
+/* line 43, ../scss/components/_tease-list-latest.scss */
 .hp-list-link {
   text-decoration: none;
   color: #000000;
@@ -9240,21 +9254,20 @@ img.alignleft {
 .hp-list-link:hover {
   text-decoration: none;
 }
-/* line 44, ../scss/components/_tease-list-latest.scss */
+/* line 45, ../scss/components/_tease-list-latest.scss */
 .hp-list-link:hover {
   text-decoration: underline;
 }
-/* line 47, ../scss/components/_tease-list-latest.scss */
-.hp-list-link em, .hp-list-link b, .hp-list-link strong {
+/* line 51, ../scss/components/_tease-list-latest.scss */
+.hp-list-link mark {
   position: relative;
-  z-index: -1;
   background-color: #ffcf31;
   vertical-align: text-bottom;
   font-style: normal;
   padding: 0 0.2em;
 }
 
-/* line 53, ../scss/components/_tease-list-latest.scss */
+/* line 57, ../scss/components/_tease-list-latest.scss */
 .hp-latest-list-img {
   float: right;
 }
@@ -9660,19 +9673,12 @@ img.alignleft {
   }
 }
 
-/* line 374, ../scss/components/_tease.scss */
-.tz-h--reg-med .tz-h-link em, .tz-h--reg-med .tz-h-link b, .tz-h--reg-med .tz-h-link strong,
-.tz-h--reg-lg .tz-h-link em,
-.tz-h--reg-lg .tz-h-link b,
-.tz-h--reg-lg .tz-h-link strong,
-.tz-h--stub-med .tz-h-link em,
-.tz-h--stub-med .tz-h-link b,
-.tz-h--stub-med .tz-h-link strong,
-.tz-h--stub-lg .tz-h-link em,
-.tz-h--stub-lg .tz-h-link b,
-.tz-h--stub-lg .tz-h-link strong {
+/* line 375, ../scss/components/_tease.scss */
+.tz-h--reg-med .tz-h-link mark,
+.tz-h--reg-lg .tz-h-link mark,
+.tz-h--stub-med .tz-h-link mark,
+.tz-h--stub-lg .tz-h-link mark {
   position: relative;
-  z-index: -1;
   background-color: #ffcf31;
   vertical-align: text-bottom;
   font-style: normal;

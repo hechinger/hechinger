@@ -1,13 +1,13 @@
 {% extends 'layout.twig' %}
 {% block navbar %}
-  {% include 'components/nav-bar.twig' with {css_class: "site-header--no-pad"} %}
+  {% include 'components/nav-bar.twig' with {background_image: true, banner: post.thumbnail } %}
 {% endblock %}
 
 {# archive page layouts go here #}
 {% block body %}
 
   {% block header %}
-    {% include 'components/section-front-header.twig' with { banner: post.thumbnail, section_front_title : "Staff", post: post, subhead: post.subhead, link_heading: post.link_heading, link_to_page: post.link_to_page } %}
+    {% include 'components/section-front-header.twig' with { section_front_title : "Staff", post: post, subhead: post.subhead, link_heading: post.link_heading, link_to_page: post.link_to_page } %}
   {% endblock header %}
 
   {% block staff_content %}

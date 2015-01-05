@@ -23,6 +23,7 @@
 @import "var-fonts";
 @import "variables";
 @import "deprecated.scss";
+@import "universal";
 @import "type";
 @import "mixins";
 @import "placeholders";
@@ -87,22 +88,6 @@
 
 
 
-
-
-
-
-// --------------------------------------------
-// --------------------------------------------
-//
-// Styles
-//
-// --------------------------------------------
-// --------------------------------------------
-
-// This line overwrites Upbase's body setting.
-// This sets our base font to our project specific
-// sans-serif face.
-body { font-family: $he-sans; }
 
 
 

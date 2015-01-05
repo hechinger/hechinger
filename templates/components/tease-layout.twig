@@ -25,7 +25,7 @@
           {% endblock tease_overline %}
 
           {% block tease_headline %}
-            <h2 class="tz-h tz-h--{{ context_class ? context_class: '' }}">
+            <h2 class="tz-h tz-h--{{ context_class ? context_class: '' }} {{ js_class ? js_class : '' }}">
               <a class="tz-h-link" href="{{ post.link }}">{{ strip_highlight ? post.title|striptags : post.title }}</a>
             </h2>
           {% endblock tease_headline %}

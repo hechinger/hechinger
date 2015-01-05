@@ -111,7 +111,7 @@ $instagram-blue:      rgb(63, 114, 155);     //#3f729b
 
 $bp-small:              450px;
 $bp-medium:             600px;
-$bp-medium-plus:        800px;
+$bp-medium-plus:        750px;
 $bp-large:              900px;
 $bp-large-plus:         960px;
 $bp-desktop:            1024px;
@@ -120,7 +120,8 @@ $bp-x-large:            1100px;
 $bp-no-margin:          71.875em;
 $bp-no-content-margin:  1007px;
 
-
+$full-nav-appears: $bp-medium;
+$promo-has-layout: $bp-medium-plus;
 
 
 
@@ -157,3 +158,19 @@ $bdr-thin:                1px solid $bdr-thin-color;
 $bdr-thin--lt:            1px solid $bdr-thin-lt-color;
 
 $bdr-med--black:          6px solid $black-100;
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Overrides & Miscellaneous
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$animation-timing: cubic-bezier(0.645,0.045,0.355,1);
+
+
+
+
+

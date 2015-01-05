@@ -9,9 +9,16 @@
 .site-header {
   width: 100%;
   background-color: $he-main;
-  padding-bottom: 45px;
-  @include mq($bp-medium) { padding-bottom: 115px; }
-  @include mq($bp-large) { padding-bottom: 130px; }
+  padding-bottom: 80px;
+  @include mq($bp-small) {
+    padding-bottom: 100px;
+  }
+  @include mq($bp-medium) {
+    padding-bottom: 115px;
+  }
+  @include mq($bp-large) {
+    padding-bottom: 130px;
+  }
 }
 
 
@@ -22,10 +29,58 @@
 
 
 .site-header--hp {
-  @include mq($bp-large) { padding-bottom: 250px; }
+    padding-bottom: 105px;
+  @include mq($bp-small) {
+    padding-bottom: 115px;
+  }
+  @include mq($bp-medium) {
+    padding-bottom: 135px;
+  }
+  @include mq($bp-large) {
+    padding-bottom: 220px;
+  }
 }
 
 
+// Site Header with Background Image
+// - - - - - - - - - - - - - - - - - - - - -
+// Used primarily on section fronts (About, California, etc.)
+
+.site-header--with-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+    padding-bottom: 105px;
+  @include mq($bp-small) {
+    padding-bottom: 130px;
+  }
+  @include mq($bp-medium) {
+    padding-bottom: 165px;
+  }
+  @include mq($bp-large) {
+    padding-bottom: 205px;
+  }
+
+
+  @include mq($full-nav-appears, max) {
+    .nav-is-open & {
+      background-size: contain;
+      background-position: 50% 100%;
+    }
+  }
+
+  // gradient overlay for section fronts (i.e. special reports headers)
+  // helps make sure nav text is readable no matter the image
+  &:before {
+    @include psuedo(0 0 n 0);
+    height: 120px;
+    background-image: linear-gradient($he-main 25px, rgba($he-main, 0.02));
+
+    @include mq($full-nav-appears) {
+      height: 200px;
+    }
+  }
+}
 
 
 
@@ -37,20 +92,21 @@
 // --------------------------------------------
 // --------------------------------------------
 
-$logo-ht-sm:    34px;
-$logo-ht-lg:    53px;
-
 
 .l-nav-mod {
+  position: relative;
+  // position ensures nav controls are visible/clickable
+  // on pages with background image and gradient overlay
   @include pie-clearfix;
 
-  @include mq($bp-medium, max) {
-    background-color: $he-main;
-  }
-
-  @include mq($bp-medium-plus, max) {
-    padding-left: 10px;
-    padding-right: 10px;
+  @include mq($full-nav-appears, max) {
+    // Smoothes spot where hard image edge
+    // and yellow background color meet
+    .nav-is-open &:before {
+      @include psuedo(n 0 -60px 0);
+      height: 80px;
+      background-image: linear-gradient($he-main 25px, rgba($he-main, 0.02));
+    }
   }
 }
 
@@ -59,60 +115,74 @@ $logo-ht-lg:    53px;
   max-width: $content-max;
   @include pie-clearfix;
 
-  @include mq($has-margin) { margin: 0 $site-margin; }
+  @include mq($bp-small) {
+    margin: 0 $site-margin;
+  }
 
-  @include mq($bp-no-content-margin) { margin: 0 auto; }
+  @include mq($bp-no-content-margin) {
+    margin: 0 auto;
+  }
 
-  @include mq($bp-medium) { font-size: 21px; }
+  @include mq($bp-medium) {
+    font-size: 21px;
+  }
 }
 
 
 .nav-logo {
-  display: inline-block;
-  padding: 8px 8px 8px;
+  display: block;
+  padding: 17px 10px 10px;
+  width: 220px;
   background-color: $black;
+  @include trans(.15s);
+
+  @include mq($bp-small) {
+    width: 240px;
+  }
+
   @include mq($bp-medium) {
     float: left;
-    display: block;
-    padding: 14px 14px 14px;
+    width: 260px;
+    padding: 16px 12px 10px;
   }
 }
 
+.nav-logo-link {
+  display: block;
+}
 
 .nav-site-h {
   color: $white;
-  width: 195px;
   text-transform: uppercase;
   letter-spacing: 1px;
-
-  @include mq($bp-medium) {
-    width: 269px;
-  }
 }
 
 
 .nav-sub-h {
-  @include sans;
+  @include sans(italic);
   float: left;
   display: none;
-  padding: 0 18px;
+  padding: 20px 18px 0;
   font-size: 17px;
-  line-height: $logo-ht-sm;
 
   @include mq(908px) {
     display: block;
-    line-height: $logo-ht-lg;
   }
 }
 
 
 .nav-logo-img {
-  &.logo-fallback { display: none; }
+  &.logo-fallback {
+    display: none;
+  }
 
-  // Browsers that do not support svg will render the png version of the logo
+  // Browsers that do not support svg
+  // will render the png version of the logo
   .no-svg & {
     display: none;
-    &.logo-fallback { display: block; }
+    &.logo-fallback {
+      display: block;
+    }
   }
 }
 
@@ -124,9 +194,16 @@ $logo-ht-lg:    53px;
     position: relative;
     float: right;
     display: block;
+
+    // Stops nav-topic-list from
+    // inadvertently triggering outside
+    // of main nav item area
+    overflow: hidden;
+    &:hover {
+      overflow: visible;
+    }
   }
 }
-
 
 .nav-is-open {
   padding-bottom: 0px;
@@ -134,117 +211,257 @@ $logo-ht-lg:    53px;
     display: initial;
   }
   .search-form-wrap {
-    display: block;
+    @include mq($bp-medium, max) {
+      display: block;
+    }
 
     // hides search on results pages.
-    .search & { display: none; }
-  }
+    .search & {
+      display: none;
+    }
+  } //search-form-wrap
 }
 
-
 .nav-item {
+  display: block;
+  @include mq($bp-medium) {
+    float: left;
+    width: 77px;
+  } //mq
+}
+
+.nav-about-link,
+.nav-topics-link {
   @include sans;
   display: block;
-  float: left;
-  width: 77px;
-  border-top: 9px solid transparent;
-  line-height: $logo-ht-lg - 15px;
-  font-size: 17px;
+  padding-top: 22px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  font-weight: $font-weight-bold;
   color: $black;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
   letter-spacing: 1px;
+  box-shadow: 0 0 0 #000 inset;
 
-  &:not(:first-child) { margin-left: 15px; }
-
-  // The focus makes the border remain on the search icon
-  // until you click somewhere else on the page
-  &:hover, &:focus {
-    border-top: 9px solid $black;
+  &:not(:first-child) {
+    margin-left: 15px;
   }
-  // &:hover { border-top: 9px solid $black; }
 }
 
+.nav-about-link:hover,
+.topics-is-open .nav-topics-link,
+.nav-topics-menu-mod:hover .nav-topics-link {
+    box-shadow: 0 9px 0 #000 inset;
+    @include trans(.1s, all, $animation-timing);
+}
 
 .nav-topics-link {
+  // Don't display the general topics link
+  // on smaller screen sizes
   display: none;
-
-  @include mq($bp-medium) { display: block; }
-
-  &:after {
-    content: "";
-    position: absolute;
+  @include mq($bp-medium) {
     display: block;
-    width: 77px;
-    height: 30px;
-  }
-  &:focus ~ .nav-topics-list,
-  &:hover ~ .nav-topics-list {
-    display: block;
+    position: relative;
+    // relative position ensures link is clickable even
+    // with the invisibe trigger helper sitting behind
+    // See :before element on nav-topics-menu-mod
   }
 }
 
+.nav-topics-menu-mod {
+  @include mq($bp-medium) {
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      overflow: visible;
+    }
 
-.nav-topics-list {
+    // This hidden element ensures that the
+    // hover state doesn't get lost as user
+    // mouses between link and dropdown menu
+    &:before {
+      @include content;
+      position: absolute;
+      bottom: -12px;
+      margin-left: -38px;
+      width: 130px;
+      height: 65px;
+      background-color: transparent;
+    }
+  } //mq
+}
+
+.nav-topics-menu {
+  // Also see animation properties below
   z-index: 2;
-  background-color: $he-main;
+  margin: 20px 10px 0;
 
-  @include mq($bp-medium, max) {
-    margin-top: 20px;
+  @include mq($bp-small) {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @include mq($bp-medium) {
-    display: block;
-    position: absolute;
+    @include absolute-center(290px);
     top: 60px;
-    left: -50%;
-    display: none;
+
     padding: 10px 25px 2px;
-    width: 290px;
+    margin-top: 0;
     background-color: $black;
+  } //mq
+}
 
-    // Fix for search results page, accounting for the lack of search icon
-    // in the nav
-    .search & { margin-left: -21px; }
-  }
 
-  &:hover, &:focus { display: block; }
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    margin-left: -12px;
-    display: block;
+.nav-topics-menu-tick {
+  // Also see animation properties below
+  @include mq($bp-medium) {
+    @include absolute(n n n 50%);
     @include triangle('up', 12px, $black);
+    margin-left: -12px;
+    pointer-events: none;
+  }
+}
+
+//
+// Topics List Show/Hide Animation
+//
+
+// Toipcs Menu Animation
+// - - - - - - - - - - - - - - -
+// Bring to full opacity and
+// add subtle downward animation
+
+@keyframes navListAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-topics-menu {
+  // Only applies to expanded navigation menu
+  @include mq($bp-medium) {
+    opacity: 0;
+    transform: translateY(-6px);
+    overflow: hidden;
+    @include trans(.2s, all, $animation-timing);
+
+    .topics-is-open &,
+    .nav-topics-menu-mod:hover &,
+    .nav-topics-menu-mod:focus & {
+      overflow: visible;
+      animation-delay: 0.2s; // matches delay on nav-sub-item
+      animation-duration: 0.4s;
+      animation-name: navItemAnimation;
+      animation-fill-mode: forwards;
+    }
+  } //mq
+} // nav-topics-menu
+
+
+// Tick Mark Animation
+// - - - - - - - - - - - - - - -
+// When topics nav opens, subtly
+// animate the tick mark upwards
+
+@keyframes navTickAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-22px);
+  }
+}
+
+.nav-topics-menu-tick {
+  transform: translateY(12px);
+  @include trans(.2s, all, $animation-timing);
+
+  .topics-is-open &,
+  .nav-topics-menu-mod:hover &
+  .nav-topics-menu-mod:focus & {
+    // Match topic menu animation timing
+    animation-delay: 0.4s;
+    animation-duration: 0.3s;
+    animation-name: navTickAnimation;
+    animation-fill-mode: forwards;
+  }
+}
+
+// Lead Tease Animation
+// - - - - - - - - - - - - - - -
+// When topics nav is open, lighten
+// elements close to page top in order
+// to make it easier to focus on menu
+
+@keyframes navBgAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .6;
+  }
+}
+
+.l-page-hdr,
+.hp-feat-mod,
+.search-form-wrap.is-open {
+  @include trans(.3s, opacity, $animation-timing);
+  .topics-is-open & {
+    // Match topic menu animation timing
+    animation-delay: 0.4s;
+    animation-duration: 0.3s;
+    animation-name: navBgAnimation;
+    animation-fill-mode: forwards;
   }
 }
 
 
 .nav-sub-item {
   position: relative;
-  cursor: pointer;
+
   & + & {
     @include mq($bp-medium) {
        border-top: 1px solid $black-50;
     }
   }
 
-  &:hover {
-    .nav-sub-item-link { @include bullet(after, $he-main); }
-    @include mq($bp-medium, max) {
-      .nav-sub-item-link { @include bullet(after, white); }
-    }
-  }
-
   @include mq($bp-medium) {
     line-height: 50px;
-  }
+  } //mq
+} // nav-sub-item
 
+.nav-sub-item-link {
+  @include mq($bp-medium) {
+    @include bullet(after, $he-main);
+
+    // base state for arrow bullets
+    &:after {
+      opacity: 0;
+      transform: translateX(-20px);
+      @include trans(.2s, all, $animation-timing);
+    }
+
+    .nav-sub-item:hover &:after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  } //mq
 }
-
 
 .nav-sub-item-link {
   position: relative;
@@ -255,9 +472,7 @@ $logo-ht-lg:    53px;
   line-height: 1.25;
   letter-spacing: -1px;
   text-decoration: none;
-
-  //TODO: give current page an underline
-  &.is-current-page:after{ }
+  @include trans(0.15s, all, $animation-timing);
 
   @include mq($bp-medium) {
     font-weight: $font-weight-lt;
@@ -265,8 +480,117 @@ $logo-ht-lg:    53px;
     font-size: 20px;
     letter-spacing: 0;
   }
-
 }
+
+
+// Nav Open Animation
+// - - - - - - - - - - - - - - - - - - -
+// Nav text appears to cascade into view
+// when mobile navigation is twirled open
+
+@keyframes navItemAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-is-open .nav-sub-item,
+.topics-is-open .nav-sub-item,
+.nav-topics-menu-mod:hover .nav-sub-item,
+.nav-topics-menu-mod:focus .nav-sub-item {
+  animation-duration: 0.3s;
+  animation-name: navItemAnimation;
+  animation-fill-mode: forwards;
+}
+
+// Add timing delays
+.nav-sub-item {
+  // Only applicable for mobile nav
+  @include mq($bp-medium, max) {
+    opacity: 0;
+    transform: translateY(-30px);
+    @include trans(.4s, all, $animation-timing);
+    & + & {
+      animation-delay: .04s;
+    }
+    & + & + & {
+      animation-delay: .08s;
+    }
+    & + & + & + & {
+      animation-delay: .12s;
+    }
+    & + & + & + & + & {
+      animation-delay: .16s;
+    }
+    & + & + & + & + & + & {
+      animation-delay: .2s;
+    }
+    & + & + & + & + & + & + & {
+      animation-delay: .24s;
+    }
+    & + & + & + & + & + & + & + & {
+      animation-delay: .28s;
+    }
+    & + & + & + & + & + & + & + & + & {
+      animation-delay: .32s;
+    }
+  } //mq
+}
+
+
+// Add Underline Animation
+// - - - - - - - - - - - - - - - - - - -
+// Because it's complex, it's a flourish,
+// and it's only used on small screen sizes,
+// Tito chose to use a max-width media query.
+// Saves us from undoing allllll this code.
+
+@keyframes teaseLink {
+  0% { width: 0; }
+  100% { width: 100%;  }
+}
+
+.nav-sub-item-link {
+  @include mq(max, $bp-medium) {
+    &:after {
+      position: static;
+      content: '';
+      bottom: 0;
+      left: 0;
+      height: 5px;
+      width: 0;
+      background-color: $black;
+    }
+    &.all-topics-link:after {
+      background-color: $white;
+    }
+
+    &:hover {
+      // color: lighten($tease-head-color, 20%);
+      &:after {
+        position: absolute;
+        animation-duration: 0.75s;
+        animation-name: teaseLink;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    &:active {
+      color: $black;
+      &:after {
+        background-color: $black;
+      }
+    }
+  } //mq
+} // nav-sub-item-link
 
 
 .sub-about-item {
@@ -291,135 +615,293 @@ $logo-ht-lg:    53px;
 
 .nav-about-link {
   display: none;
-  @include mq($bp-medium) { display: block; }
+  @include mq($bp-medium) {
+    display: block;
+  }
+}
+
+//
+// Nav Search
+//
+
+// Search Icons
+.nav-search-icon,
+.nav-search-icon--reverse {
+  @include absolute-center(16px 16px);
+  @include trans(.15s);
+}
+
+.nav-search-icon {
+  @include svg(icn-search);
+}
+
+.nav-search-icon--reverse {
+  opacity: 0;
+  @include svg(icn-search-reverse);
+}
+
+.nav-search-icon--close {
+  @include absolute-center(14px 14px);
+  @include svg(icn-close-reverse);
+  @include trans(.15s);
+  transform: translateY(-22px);
+
+  // Hide fallback close button (&times;)
+  display: block;
+  text-indent: -99999em;
 }
 
 
+// Search Button
 .nav-search-button {
-  position: relative;
-  width: 30px;
-  height: 30px;
   display: none;
-  &.is-open { }
+  position: relative;
+  overflow: hidden;
+
+  width: 32px;
+  height: 32px;
+  margin-top: 15px;
+  border-radius: 50%;
+  @include trans;
+
+  @include mq($bp-medium) {
+    display: block;
+  }
+
   &.is-search-page {
     pointer-events: none;
-    border-top: 9px solid $black;
     display: none;
   }
-  @include mq($bp-medium) { display: block; }
-
-  .icon { margin-top: -1px; }
 }
 
-.nav-search-inactive {
-  display: block;
-  .is-open & { display: none; }
+// Search hover/open states
+.nav-search-button:hover,
+.nav-search-button.is-open {
+  background-color: #000;
 }
 
-.nav-search-active {
-  display: none;
-  font-weight: $font-weight-bold;
-  .is-open & { display: block; }
+.nav-search-button:hover {
+  .nav-search-icon {
+    opacity: 0;
+  }
+
+  .nav-search-icon--reverse {
+    opacity: 1;
+  }
 }
 
+.nav-search-button.is-open {
+  .nav-search-icon--close {
+    transform: translateY(0);
+  }
+  .nav-search-icon--reverse {
+    transform: translateY(26px);
+  }
+}
+
+//
+// Nav Menu Button
+//
 
 .nav-menu-button {
+  @include input-default;
   display: block;
   position: absolute;
   top: 0;
   right: 0;
   border: none;
-  padding: 0 14px;
+  padding: 16px 13px 13px;
   font-family: $he-sans;
-  font-size: 17px;
+  font-size: 13px;
+  font-weight: $font-weight-bold;
   color: $black;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
   text-align: center;
-  line-height: $logo-ht-sm;
 
-  @include mq($bp-medium) { display: none; }
-}
-
-.admin-bar .nav-menu-button {
-  top: 46px;
-}
-
-.nav-menu-active {
-  display: none;
-  width: 45px;
-  border: 1px solid black;
-  line-height: $logo-ht-sm - 10px;
-  padding: 0 5px;
-  font-weight: $font-weight-bold;
-  position: relative;
-  top: 5px;
-  .nav-is-open & { display: block; }
-}
-
-.nav-menu-inactive {
-  .nav-is-open & { display: none; }
-}
-
-
-.search-form-wrap {
-  @include mq($has-margin) { margin: 0 $site-margin; }
-  @include mq($bp-no-content-margin) { margin: 0 auto; }
-  display: none;
-  position: relative;
-  margin: 0 auto;
+  @include mq($bp-small) {
+    font-size: 15px;
+  }
 
   @include mq($bp-medium) {
     display: none;
+  }
+}
+
+// For hiding menu + close buttons
+.nav-menu-mask {
+  position: relative;
+  height: 20px;
+  width: 59px;
+  padding-top: 2px;
+  overflow: hidden;
+  @include mq($bp-small) {
+    width: 70px;
+  }
+  @include mq($bp-medium) {
+    display: none;
+  }
+}
+
+.nav-menu,
+.nav-menu-close {
+  position: absolute;
+}
+
+// Nav menu icons
+.nav-menu-icon,
+.nav-menu-close-icon {
+  position: relative;
+  display: inline-block;
+  @include size(12px);
+  @include mq($bp-small) {
+    @include size(14px);
+  }
+}
+
+.nav-menu-icon {
+  @include svg(icn-menu);
+  top: 2px;
+  left: 3px;
+}
+
+.nav-menu-close-icon {
+  @include svg(icn-close);
+  top: 2px;
+
+  @include mq($bp-small) {
+    top: 3px;
+  }
+
+  // Hide fallback close button (&times;)
+  text-indent: -99999em;
+}
+
+.nav-menu {
+  display: block;
+  @include trans(.2s, all, $animation-timing);
+  transform: translateY(0);
+
+  .nav-is-open & {
+    transform: translateY(22px);
+  }
+}
+
+.nav-menu-close {
+  display: block;
+  @include trans(.2s, all, $animation-timing);
+  transform: translateY(-22px);
+
+  .nav-is-open & {
+    transform: translateY(0);
+  }
+}
+
+.search-form-wrap {
+  display: none;
+  position: relative;
+  @include trans;
+  margin: 0 10px;
+
+  @include mq($bp-small) {
+    margin: 0 $site-margin;
+  }
+  @include mq($bp-no-content-margin) {
+    margin: 0 auto;
+  }
+
+  @include mq($bp-medium) {
+    display: block;
+    overflow: hidden;
+    height: 0;
     position: relative;
     max-width: $content-max;
     margin-top: 31px;
-    &.is-open { display: block;}
-  }
+    @include trans(.3s, height, $animation-timing);
+    &.is-open {
+      overflow: visible;
+      height: 61px; // see also - search-text-input (below)
+    }
+  }//mq
 
+  @include mq($bp-large) {
+    &.is-open {
+      height: 76px; // see also - search-text-input (below)
+    }
+  }
 }
 
 .nav-is-open .search-form-wrap {
   margin-top: 20px;
 }
 
-
 .search-text-input {
+  // Follows style from navigation
+  // search-page-text-input
+  @include input-default;
   @include sans-bold;
   width: 100%;
-  height: 60px;
-  border: none;
-  padding: 0 0 0 10px;
+  height: 61px; // see also - search-form-wrap (above)
+  padding: 6px 63px 10px 14px;
   background-color: $black;
-  color: $black-10;
   font-size: 30px;
-  -webkit-appearance: none;
+  color: #fff;
 
-  &:focus { outline: none; }
+  // Placeholder text styles
+  @include placeholder-state(
+      rgba(255,255,255,.4), // default
+      rgba(255,255,255,.4), // hover
+      rgba(255,255,255,.7)  // focus
+  );
 
-  @include mq($bp-medium) {
-    height: 90px;
-    padding: 0 0 0 30px;
-    font-size: 40px;
+  @include mq($bp-large) {
+    height: 76px; // see also - search-form-wrap (above)
+    padding: 4px 85px 10px 23px;
+    font-size: 36px;
+  } //mq
+} // search-text-input
+
+.search-submit-button {
+  // Follows style from navigation
+  // search-page-submit-button
+  @include input-default;
+  @include absolute(0 0 0 n);
+  display: block;
+  padding: 17px;
+  width: 60px;
+  background-color: transparent;
+
+  @include mq($bp-large) {
+    width: 80px;
+    padding: 30px;
   }
 }
 
-
+// Show/hide animation
+.search-text-input,
 .search-submit-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border: none;
-  padding: 30px;
-  display: block;
-  width: 100px;
-  background-color: transparent;
+  @include mq($bp-medium) {
+    opacity: 0;
+    transform: translateY(-10px);
+    @include trans(.2s, all, $animation-timing);
 
-  @include mq($bp-medium, max) {
-    width: 60px;
-    padding: 17px;
+    .search-form-wrap.is-open & {
+      animation-delay: .05s;
+      animation-duration: 0.4s;
+      animation-name: navSearchAnimation;
+      animation-fill-mode: forwards;
+    }
+  } //mq
+}
+
+@keyframes navSearchAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -34,7 +34,13 @@
   position: relative;
   height: 100%;
   padding: 20px 25px;
+  @include mq($bp-small) {
+    padding: 30px;
+  }
   @include mq($bp-medium) {
+    padding: 35px;
+  }
+  @include mq($bp-large) {
     padding: 35px 50px;
   }
 }
@@ -52,21 +58,23 @@
     transform: rotate(30deg);
     background-color: transparent;
 
-    @include mq($bp-large) { background-color: black; }
+    @include mq($promo-has-layout) {
+      background-color: black;
+    }
   }
 }
 
 
 .promo-content-bdr--reverse {
   &:after {
-    @include mq($bp-large) { background-color: white; }
+    @include mq($promo-has-layout) { background-color: white; }
   }
 }
 
 
 .promo-hdr {
   position: relative;
-  @include mq($bp-large) {
+  @include mq($promo-has-layout) {
     width: 23%;
     float: left;
   }
@@ -74,9 +82,10 @@
 
 
 .promo-main {
-  @include mq($bp-large) {
+  @include mq($promo-has-layout) {
     float: right;
     width: 65%;
+    padding-top: 12px;
   }
 
   // styles for wp-created elements
@@ -86,7 +95,13 @@
     font-size: 16px;
     font-weight: $font-weight-lt;
 
-    @include mq($bp-medium) { font-size: 25px; }
+    @include mq($bp-small) {
+      font-size: 18px;
+    }
+
+    @include mq($promo-has-layout) {
+      font-size: 21px;
+    }
 
     strong, em, b {
       font-weight: $font-weight-bold;
@@ -94,7 +109,7 @@
     }
   }
 
-  p.promo-text--reverse { color: #ffffff; }
+  p.promo-text--reverse { color: #fff; }
 }
 
 
@@ -109,16 +124,25 @@
   color: $black;
   margin-bottom: 10px;
 
-  @include mq($bp-medium) { font-size: 25px; }
+  @include mq($bp-small) {
+    font-size: 20px;
+  }
 
-  @include mq($bp-large) {
+  @include mq($bp-medium) {
+    font-size: 21px;
+  }
+
+  @include mq($promo-has-layout) {
+    font-size: 22px;
     padding: 20px 0 30px;
     margin: 0;
   }
 
   > br {
     display: none;
-    @include mq($bp-large) { display: block; }
+    @include mq($promo-has-layout) {
+      display: block;
+    }
   }
 }
 
@@ -127,17 +151,13 @@
   font-weight: $font-weight-bold;
 }
 
-
 .promo-text--reverse {
-  color: white;
+  color: $white;
 }
-
 
 .promo-text--bold {
   font-weight: $font-weight-bold;
-  margin-right: 5px;
 }
-
 
 .promo-link {
   text-decoration: none;
@@ -150,26 +170,37 @@
 
 .promo-bdr {
   position: relative;
-  height: 2px;
+  height: 6px;
   width: 100%;
   background-color: black;
 
-  @include mq($bp-medium) { height: 10px; }
+  @include mq($bp-medium) {
+    height: 8px;
+  }
 
   &:after,
   &:before {
     position: absolute;
     content: '\0020';
-    width: 2px;
+    width: 6px;
     height: 25px;
     background-color: $black;
 
-    @include mq($bp-medium) { width: 10px; height: 50px;  }
+    @include mq($bp-medium) {
+      width: 8px;
+    }
+
+    @include mq($bp-large) {
+      height: 50px;
+    }
   }
 
-  &:before { left: 0; }
-  &:after { right: 0; }
-
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
 }
 
 
@@ -189,55 +220,77 @@
 
 .promo-form {
   @include pie-clearfix;
-  margin-top: 25px;
-  padding-bottom: 15px;
-  @include mq($bp-medium) {
-    border-bottom: $bdr-thin;
+  position: relative;
+  margin-top: 35px;
+  padding-bottom: 8px;
+  border-bottom: $bdr-thin;
+
+  @include mq($bp-large) {
+    margin-top: 18px;
   }
 }
 
-
-.promo-label { display: none; }
-
+.promo-label {
+  display: none;
+}
 
 .promo-btn,
 .promo-btn-donate {
   @extend %button;
+
   font-family: $he-sans;
   font-weight: $font-weight-lt;
   font-size: 14px;
+
   @include mq($bp-medium) {
-    float: right;
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
+.promo-form-btn {
+  @include absolute(0 0 n n);
+
+  @include mq($bp-medium) {
+    top: 6px;
+  }
+}
 
 .promo-btn-donate {
   margin-top: 30px;
 }
 
-
 .promo-input {
+  @include input-default;
   display: block;
-  padding: 20px 10px;
+  padding-right: 81px;
   width: 100%;
-  height: 25px;
-  outline: 0;
-  border: $bdr-thin;
-  border-radius: 0;
-  margin-bottom: 10px;
-  -webkit-appearance: none;
-  font-size: 14px;
-  color: $black-80;
-  &:invalid { box-shadow: none; }
+  height: 25px; // ensures uniform height across browsers
+
+  @include sans;
+  font-size: 16px;
+  color: $black-40;
+
+  @include placeholder-state(
+      $black-40, // default
+      $black-40, // hover
+      $black-60  // focus
+  );
+  &:invalid {
+    box-shadow: none;
+  }
+
+  @include mq($bp-small) {
+    font-size: 20px;
+  }
 
   @include mq($bp-medium) {
-    float: left;
-    height: 38px;
-    border: 0;
+    height: 38px; // ensures uniform height across browsers
+    padding-right: 91px;
+    font-size: 22px;
+  }
+
+  @include mq($bp-large) {
     margin: 0 -125px 0 0;
-    padding: 0;
-    font-size: 25px;
+    padding: 0 91px 0 0;
   }
 }

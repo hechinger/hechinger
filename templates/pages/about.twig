@@ -1,7 +1,7 @@
 {% extends 'layout.twig' %}
 
 {% block navbar %}
-  {% include 'components/nav-bar.twig' with {css_class: "site-header--no-pad"} %}
+  {% include 'components/nav-bar.twig' with {background_image: true, banner: post.thumbnail } %}
 {% endblock %}
 
 

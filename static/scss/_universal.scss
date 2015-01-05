@@ -1,0 +1,22 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Universal Styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+// This line overwrites Upbase's body setting.
+// This sets our base font to our project specific
+// sans-serif face.
+body {
+  font-family: $he-sans;
+}
+
+// This makes sure that all links take on a
+// normal-looking style (not internet standard
+// default blue/purple) no matter where invoked
+a {
+  color: inherit;
+  text-decoration: none;
+}

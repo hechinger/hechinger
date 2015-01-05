@@ -1,23 +1,27 @@
 var HE_navbar = (function($){
   "use strict";
 
+  var $body = $('body');
+
   var $searchButton = $('.js-nav-search-button');
   var searchIsOpen = $searchButton.hasClass('is-open');
   var $searchForm = $('.search-form-wrap');
 
   var $menuButton = $('.js-nav-menu-button');
   var navIsOpen = $menuButton.hasClass('is-open');
-  var $navbar = $('.js-nav-mod');
+
+  var $topicsButton = $('.js-topics-trigger');
+  var topicsIsOpen = $body.hasClass('topics-is-open');
 
   function openMenu(event) {
     event.preventDefault();
     if (navIsOpen) {
-      $menuButton.removeClass('nav-is-open');
-      $navbar.removeClass('nav-is-open');
+      $menuButton.removeClass('is-open');
+      $body.removeClass('nav-is-open');
       navIsOpen = false;
     } else {
-      $menuButton.addClass('nav-is-open');
-      $navbar.addClass('nav-is-open');
+      $menuButton.addClass('is-open');
+      $body.addClass('nav-is-open');
       navIsOpen = true;
     }
   }
@@ -35,9 +39,27 @@ var HE_navbar = (function($){
     }
   }
 
+  function openTopics(event) {
+    event.preventDefault();
+    if (!topicsIsOpen) {
+      $body.addClass('topics-is-open');
+      topicsIsOpen = true;
+    }
+  }
+
+  function closeTopics(event) {
+    event.preventDefault();
+    if (topicsIsOpen)  {
+      $body.removeClass('topics-is-open');
+      topicsIsOpen = false;
+    }
+  }
+
   function init() {
     $menuButton.on('click', openMenu);
     $searchButton.on('click', openSearch);
+    $topicsButton.on('mouseenter', openTopics);
+    $topicsButton.on('mouseleave', closeTopics);
   }
 
   return {

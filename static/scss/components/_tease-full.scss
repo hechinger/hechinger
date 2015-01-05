@@ -7,8 +7,8 @@
     padding-top: 40px;
 
     @include mq($bp-medium, max) {
-      margin-top: 20px;
-      padding-top: 20px;
+      margin-top: 25px;
+      padding-top: 25px;
     }
   }
 
@@ -23,25 +23,32 @@
 .tz-content-wrap {
   display: block;
 
-  @include mq($bp-medium-plus) {
-    padding: 0 50px;
+  .tz-feat-mod & {
+    padding: 0;
   }
-  .tz-feat-mod & { padding: 0; }
 }
 
 
 .l-pair-full {
-    @include mq($bp-medium, max) {
-      .art-bd {
-        width: 100px;
-        float: right;
-        margin-left: 15px;
-        margin-bottom: 15px;
-       }
+    .art-bd {
+      width: 90px;
+      float: right;
+      margin-left: 15px;
+      margin-bottom: 15px;
+      @include mq($bp-small) {
+          width: 120px;
+      }
+      @include mq($bp-medium) {
+          width: 140px;
+      }
+    } //art-bd
+
+    @include mq($bp-medium-plus, $bp-large) {
+      @include pair(175px, 25px, top, right);
     }
 
-    @include mq($bp-medium) {
-      @include pair(175px, 25px, top, right);
+    @include mq($bp-large) {
+      @include pair(205px, 25px, top, right);
     }
 }
 
@@ -52,24 +59,21 @@
   }
 }
 
-
-.tz-full-h,
-.tz-full-text {
-  // max-width: 800px;
-}
-
-
 .tz-full-h {
   @include sans-bold;
   margin-bottom: 5px;
   font-size: 22px;
-  line-height: 1.02;
-  color: black;
+  line-height: 110%;
+  letter-spacing: -1px;
+  color: #000;
+  margin-bottom: 6px;
 
-  @include mq($bp-medium) {
-    font-size: 30px;
-    letter-spacing: -1px;
+  @include mq($bp-small) {
+    font-size: 24px;
     margin-bottom: 10px;
+  }
+  @include mq($bp-medium-plus) {
+    font-size: 28px;
   }
 }
 
@@ -77,13 +81,17 @@
 .tz-full-text {
   @include sans;
   margin-bottom: 10px;
-  font-size: 21px;
+  font-size: 18px;
   line-height: 1.33;
   color: $tease-text-color;
 
-  @include mq($bp-medium) { margin-bottom: 15px; }
+  @include mq($bp-medium) {
+    margin-bottom: 15px;
+  }
 
-  @include mq($bp-medium, max) { font-size: 17px; }
+  @include mq($bp-medium, max) {
+    font-size: 17px;
+  }
 }
 
 
@@ -91,6 +99,9 @@
 .tz-full-text-link {
   text-decoration: none;
   color: $black;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 
@@ -99,13 +110,15 @@
 
 .tz-full--byline-topic {
   @include sans-bold;
-  margin-right: 15px;
   display: inline-block;
-  font-size: 12px;
+  font-size: 13px;
   color: $he-secondary;
   text-transform: uppercase;
+  margin-right: 10px;
 
-  @include mq(850px) { font-size: 14px; }
+  @include mq($bp-medium) {
+    font-size: 14px;
+  }
 
 }
 
@@ -113,9 +126,14 @@
 .tz-full--byline-name,
 .tz-full--byline-date {
   display: inline-block;
+  font-size: 13px;
   font-weight: $font-weight-lt;
   position: relative;
   top: -1px;
+
+  @include mq($bp-medium) {
+    font-size: 14px;
+  }
 }
 
 
@@ -133,7 +151,7 @@
 
 .tz-full--byline-name,
 .tz--byline-author-link {
-  color: $black-60;
+  color: $black-40;
 }
 
 
@@ -153,12 +171,6 @@
   margin-top: 25px;
   padding-top: 25px;
   border-top: $bdr-thin;
-
-  .tz-content-wrap {
-    @include mq($bp-medium-plus) {
-      padding: 0 50px;
-    }
-  }
 }
 
 

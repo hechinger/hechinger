@@ -8,7 +8,11 @@
 
 .hp-list-hdr {
   @extend %section-hdr;
-  font-size: 19px;
+  font-size: 14px;
+  margin-bottom: 2em;
+  @include mq($bp-medium) {
+    font-size: 17px;
+  }
 }
 
 
@@ -16,8 +20,6 @@
 
 
 .hp-list-item {
-  font-size: 26px;
-  line-height: 1.230769231;   //32/26
   position: relative;
   & + & {
     margin-top: 0.85em;
@@ -28,13 +30,20 @@
 
 
 .hp-list-head {
+  @include display-type;
   @include bullet(before, $he-main);
+
+  font-size: 24px;
+  line-height: 1.1;
   padding-left: 1em;
 }
 
 
 .hp-list-link {
   @include head-link;
+  &:hover {
+    text-decoration: underline;
+  }
   em, b, strong {
     @include head-highlight;
   }

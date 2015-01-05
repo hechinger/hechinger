@@ -1,23 +1,33 @@
+// Don't show search bar in nav
+// on search pages
+.search.nav-is-open .search-form-wrap {
+  display: none;
+}
+
 .search-bar-wrap {
   display: block;
   position: relative;
-  width: 90%;
-  margin: 0 auto;
+  margin: -30px $site-margin 0;
   @include mq($bp-medium) {
     position: relative;
     max-width: $content-max;
+  }
+  @include mq($bp-no-content-margin) {
+    margin: 0 auto;
   }
 }
 
 
 .search-page-text-input {
+  // Follows style from navigation
+  // search-text-input
+  @include input-default;
   width: 100%;
-  height: 60px;
-  border: none;
-  padding: 0 0 0 20px;
+  height: 61px;
+  padding: 6px 63px 10px 14px;
   margin-top: 0px;
   background-color: $black;
-  color: white;
+  color: #fff;
   font-family: $he-sans;
   font-size: 30px;
   font-weight: $font-weight-bold;
@@ -33,9 +43,21 @@
     outline: none;
   }
 
+  @include placeholder-state(
+      rgba(255,255,255,.4), // default
+      rgba(255,255,255,.4), // hover
+      rgba(255,255,255,.7)  // focus
+  );
+
   @include mq($bp-medium) {
+    height: 75px;
+    padding: 4px 81px 10px 21px;
+    font-size: 34px;
+  }
+
+  @include mq($bp-large) {
     height: 90px;
-    padding: 0 0 0 30px;
+    padding: 4px 96px 10px 28px;
     font-size: 40px;
   }
 }
@@ -54,35 +76,40 @@ input:-webkit-autofill:focus {
 
 
 .search-page-submit-button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  border: none;
-  padding: 30px;
-  margin-top: 0px;
+  // Follows style from navigation
+  // search-submit-button
+  @include input-default;
+  @include absolute(0 0 0 n);
   display: block;
-  width: 100px;
+  width: 60px;
+  margin-top: 0px;
+  padding: 17px;
   background-color: $black;
 
-  @include mq($bp-medium, max) {
-    width: 60px;
-    padding: 17px;
+  @include mq($bp-medium) {
+    width: 75px;
+    padding: 23px;
+  }
+
+  @include mq($bp-large) {
+    width: 90px;
+    padding: 30px;
+  }
+
+  .icon-search-reverse .icon {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
   }
 }
 
 
 .l-search-results {
-  width: 90%;
-  margin: 0 auto;
+  margin: 0 $site-margin;
+  max-width: 850px;
 
-  @include mq($bp-medium) {
-    padding-left: 50px;
-    margin: 0 $site-margin;
-    max-width: $content-max;
-  }
-
-  @include mq($bp-no-content-margin) {
+  @include mq(890px) {
     margin: 0 auto;
   }
 }
@@ -104,7 +131,6 @@ input:-webkit-autofill:focus {
   color: $black;
 
     @include mq($bp-medium) {
-    padding-left: 50px;
     font-size: 18px;
   }
 }

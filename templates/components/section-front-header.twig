@@ -1,15 +1,11 @@
-<div class="section-front-banner" style="background-image: url({{ banner.src|resize(700) | default(site.theme.path ~ '/static/img/defaults/default_yellow_pano.jpg')|resize(700) }})" data-resp="{{ banner.src | default(site.theme.path ~ '/static/img/defaults/default_yellow_pano.jpg') }}" data-resp-width="700" ></div>
-
 <header class="l-section-front-hdr-wrap l-page-hdr">
   <h1 class="archive-hdr">{{ section_front_title }}</h1>
-</header>
-
-{% if subhead %}
-  <div class="section-front-summary-wrap">
+  {% if subhead %}
     <p class="section-front-summary-text">{{ subhead }}
       {% if link_to_page %}
         <a class="section-front-summary-link" href="{{ link_to_page }}">{{ link_heading | default('Read more.') }}</a>
       {% endif %}
     </p>
-  </div> <!-- /special-report-summary-wrap -->
-{% endif %}
+  {% endif %}
+</header>
+

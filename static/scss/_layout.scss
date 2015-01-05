@@ -9,7 +9,7 @@
 
 // Site Margin
 // --------------------------------------------
-$site-margin: 25px;
+$site-margin: 20px;
 
 
 
@@ -34,7 +34,9 @@ $has-margin:          800px;
   margin-top: -17px;
   margin-bottom: 45px;
 
-  @include mq($bp-medium-plus) { margin-top: -$space-grid; }
+  @include mq($bp-medium-plus) {
+    margin-top: -$space-grid;
+  }
 }
 
 
@@ -104,8 +106,9 @@ $has-margin:          800px;
     border-top: $bdr-thin;
 
     @include mq($bp-medium, max) {
-      padding-top: 15px;
-      margin-top: 15px;
+      // Spacing matches `hp-top-feat-mod`
+      padding-top: 25px;
+      margin-top: 25px;
     }
   }
 
@@ -115,8 +118,8 @@ $has-margin:          800px;
     border-top: $bdr-thin;
 
     @include mq($bp-medium, max) {
-      padding-top: 15px;
-      margin-top: 15px;
+      padding-top: 25px;
+      margin-top: 25px;
     }
   }
 }
@@ -140,7 +143,11 @@ $bp-subzone-ends-layout: 800px;
   @include pie-clearfix;
   @include mq($bp-zone-has-layout) {
     @include media-grid(2, 25px, '.grid-item');
+    .grid-item {
+      margin-bottom: 25px;
+    }
   }
+
 }
 
 
@@ -402,7 +409,7 @@ $bp-subzone-ends-layout: 800px;
         }
       }
       .l-pair-tz-hp-stub {
-        @include pair(40%, 3%);
+        @include pair(40%, 3%, top);
       }
     }
 

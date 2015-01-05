@@ -14,7 +14,7 @@ img { @include resp-img; }
 }
 
 
-.no-svg .footer-partner-logo {
+.no-svg .ftr-partner-logo {
   display: none;
 }
 
@@ -69,17 +69,19 @@ img { @include resp-img; }
 
 
 .social-item-link {
-  @include trans(0.25s);
   display: block;
   position: relative;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  overflow: hidden;
+  z-index: 1;
+
+  @include size(30px);
   line-height: 30px;
   background-color: #000;
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
+  @include trans(0.25s);
 
   .icon-twitter & {
     background-color: $twitter-blue;
@@ -108,12 +110,35 @@ img { @include resp-img; }
     border: 1px solid #000;
     border-radius: 50%;
     background-color: transparent;
-    width: 35px;
-    height: 35px;
+    @include size(35px);
   }
 
+} //social-item-link
+
+// Hover state for footer
+.social-item-link:hover {
+  .icon--reg {
+    transform: translateY(34px);
+  }
+  .social-item-hover {
+    transform: translateY(0);
+  }
 }
 
+// Black circle that appears in footer hover state
+.social-item-hover {
+  position: absolute;
+  display: block;
+  @include size(35px);
+  border-radius: 50%;
+  background-color: #000;
+  transform: translateY(-35px);
+  @include trans(.2s);
+}
+
+.icon--reg {
+  @include trans(.2s);
+}
 
 
 
@@ -189,18 +214,27 @@ $icons: twitter,
   }
 
   .icon-search-reverse & {
-    width: 30px;
-    height: 30px;
+    @include size(24px);
+
+    // Center the search icon
     top: 50%;
     left: 50%;
-    margin-top: -15px;
-    margin-left: -15px;
+    // Margin is half the size
+    margin-top: -12px;
+    margin-left: -12px;
+
+    @include mq($bp-large) {
+      @include size(28px);
+      // Center the search icon
+      // Margin is half the size
+      margin-top: -14px;
+      margin-left: -14px;
+    }
   }
 
   @each $icon in $icons {
     .icon-#{$icon} & {
-      background-image: url(#{$svg-icon-path}/icn-#{$icon}.svg);
-      .no-svg & { background-image: url(#{$png-icon-path}/icn-#{$icon}.png)}
+      @include svg("icn-#{$icon}", contain);
     }
   }
 }
@@ -297,7 +331,7 @@ $icons: twitter,
 
 .quote-sub-h {
   font-size: 24px;
-  font-weight: 700px;
+  font-weight: $font-weight-bold;
   color: $tease-head-color;
 }
 
@@ -323,21 +357,20 @@ $icons: twitter,
 $button-main: $he-secondary;
 
 .button, %button {
+  @include input-default;
   background-color: $button-main;
-  font: inherit;
-  line-height: 1em;
   padding: 0.45em 0.65em;
-  text-decoration: none;
-  text-align: center;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
-  color: #fff;
-  outline: 0;
-  border: 0;
-  border-radius: 0;
 
-  -webkit-appearance: none;
+  font: inherit;
+  line-height: 1em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
 
   &:hover {
     // background-color: darken($button-main, 5%);
@@ -346,7 +379,9 @@ $button-main: $he-secondary;
     // background-color: darken($button-main, 8%);
     // text-shadow: 0 -1px darken($button-main, 15%);
   }
-  & + & { margin-left: 1em; }
+  & + & {
+    margin-left: 1em;
+  }
 }
 
 

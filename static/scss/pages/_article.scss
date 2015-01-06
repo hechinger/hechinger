@@ -6,40 +6,40 @@
 // --------------------------------------------
 // --------------------------------------------
 
-// Max width of paragraphs in article
-$article-bd-max:          550px;
+// // Max width of paragraphs in article
+// $article-bd-max:          550px;
 
 
-// Article image widths
-$img-max-sm:              350px;
-$img-max-med:             450px;
-$img-max-lg:              650px;
-$img-max-bd:              $article-bd-max;
+// // Article image widths
+// $img-max-sm:              350px;
+// $img-max-med:             450px;
+// $img-max-lg:              650px;
+// $img-max-bd:              $article-bd-max;
 
-// Article image heights
-$img-ht-sm:               350px;
-$img-ht-med:              450px;
-$img-ht-lg:               500px;
+// // Article image heights
+// $img-ht-sm:               350px;
+// $img-ht-med:              450px;
+// $img-ht-lg:               500px;
 
-// Article aside width
-$aside-max:               240px;
-
-
-
-// Breakpoints
-// --------------------------------------------
-
-// Used on article page for images, determing when they are no
-// longer bleeding out of the rest of the article container.
-$bp-img-no-bleed:           550px;
+// // Article aside width
+// $aside-max:               240px;
 
 
-// When asides (pullquotes) float and take on max-width
-$bp-aside:                  550px;
-$bp-aside-negative-margin:  925px;
 
-// When article is no longer centered and take on columnar layout
-$bp-article-not-centered:   820px;
+// // Breakpoints
+// // --------------------------------------------
+
+// // Used on article page for images, determing when they are no
+// // longer bleeding out of the rest of the article container.
+// $bp-img-no-bleed:           550px;
+
+
+// // When asides (pullquotes) float and take on max-width
+// $bp-aside:                  550px;
+// $bp-aside-negative-margin:  925px;
+
+// // When article is no longer centered and take on columnar layout
+// $bp-article-not-centered:   820px;
 
 
 
@@ -304,61 +304,61 @@ $bp-article-not-centered:   820px;
     font-weight: $font-weight-lt;
   }
 
-  // Images
-  // --------------------------------------------
+  // // Images
+  // // --------------------------------------------
 
-  .img-container-inner {
-    max-height: $img-ht-med;
-    overflow: hidden;
-  }
-
-
-  .aligncenter,
-  .alignnone {
-    max-width: $img-max-lg;
-    @include mq($bp-img-no-bleed) {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    @include mq($bp-article-not-centered) {
-      max-width: $img-max-bd;
-      margin-left: 25px;
-      margin-right: 0;
-    }
-  }
+  // .img-container-inner {
+  //   max-height: $img-ht-med;
+  //   overflow: hidden;
+  // }
 
 
-  .alignleft {
-    @include mq($bp-img-no-bleed) {
-      float: left;
-      clear: left;
-      max-width: $img-max-sm;
-      margin-left: -$site-margin;
-      margin-right: $site-margin;
-    }
+  // .aligncenter,
+  // .alignnone {
+  //   max-width: $img-max-lg;
+  //   @include mq($bp-img-no-bleed) {
+  //     margin-left: auto;
+  //     margin-right: auto;
+  //   }
+  //   @include mq($bp-article-not-centered) {
+  //     max-width: $img-max-bd;
+  //     margin-left: 25px;
+  //     margin-right: 0;
+  //   }
+  // }
 
-    @include mq($bp-desktop) { margin-left: -100px; }
 
-    .img-container-inner { max-height: $img-ht-sm; }
-  }
+  // .alignleft {
+  //   @include mq($bp-img-no-bleed) {
+  //     float: left;
+  //     clear: left;
+  //     max-width: $img-max-sm;
+  //     margin-left: -$site-margin;
+  //     margin-right: $site-margin;
+  //   }
+
+  //   @include mq($bp-desktop) { margin-left: -100px; }
+
+  //   .img-container-inner { max-height: $img-ht-sm; }
+  // }
 
 
-  .alignright {
-    @include mq($bp-img-no-bleed) {
-      float: right;
-      clear: right;
-      max-width: $img-max-sm;
-      margin-right: -$site-margin;
-      margin-left: $site-margin;
-    }
+  // .alignright {
+  //   @include mq($bp-img-no-bleed) {
+  //     float: right;
+  //     clear: right;
+  //     max-width: $img-max-sm;
+  //     margin-right: -$site-margin;
+  //     margin-left: $site-margin;
+  //   }
 
-    @include mq($bp-desktop) {
-      max-width: $img-max-med;
-      margin-right: -($site-margin*2);
-    }
+  //   @include mq($bp-desktop) {
+  //     max-width: $img-max-med;
+  //     margin-right: -($site-margin*2);
+  //   }
 
-    .img-container-inner { max-height: $img-ht-sm; }
-  }
+  //   .img-container-inner { max-height: $img-ht-sm; }
+  // }
 
 
   .wp-caption-text {

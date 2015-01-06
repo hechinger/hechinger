@@ -125,6 +125,8 @@ $promo-has-layout: $bp-medium-plus;
 
 
 
+
+
 // --------------------------------------------
 // --------------------------------------------
 //
@@ -133,7 +135,45 @@ $promo-has-layout: $bp-medium-plus;
 // --------------------------------------------
 // --------------------------------------------
 
-// Specific breakpoints contained in files to specific pages or components
+// Other specific breakpoints contained in files to specific pages or components
+
+
+// Max width of paragraphs in article
+$article-bd-max:          550px;
+
+
+// Article image widths
+$img-max-sm:              350px;
+$img-max-med:             450px;
+$img-max-lg:              650px;
+$img-max-bd:              $article-bd-max;
+
+// Article image heights
+$img-ht-sm:               350px;
+$img-ht-med:              450px;
+$img-ht-lg:               500px;
+
+// Article aside width
+$aside-max:               240px;
+
+
+
+// Breakpoints
+// --------------------------------------------
+
+// Used on article page for images, determing when they are no
+// longer bleeding out of the rest of the article container.
+$bp-img-no-bleed:           550px;
+
+
+// When asides (pullquotes) float and take on max-width
+$bp-aside:                  550px;
+$bp-aside-negative-margin:  925px;
+
+// When article is no longer centered and take on columnar layout
+$bp-article-not-centered:   820px;
+
+
 
 
 

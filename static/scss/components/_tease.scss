@@ -371,7 +371,8 @@
 .tz-h--stub-med,
 .tz-h--stub-lg {
   .tz-h-link {
-    em, b, strong { @include head-highlight; }
+    // em, b, strong { @include head-highlight; }
+    mark { @include head-highlight; }
   }
 }
 

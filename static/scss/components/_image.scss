@@ -1,0 +1,88 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Used on article pages and generic pages
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.article-text,
+.page-content {
+
+  .img-container-inner {
+    max-height: $img-ht-med;
+    overflow: hidden;
+  }
+
+
+  .aligncenter,
+  .alignnone {
+    max-width: $img-max-lg;
+    @include mq($bp-img-no-bleed) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include mq($bp-article-not-centered) {
+      max-width: $img-max-bd;
+      margin-left: 25px;
+      margin-right: 0;
+    }
+  }
+
+
+  .alignleft {
+    @include mq($bp-img-no-bleed) {
+      float: left;
+      clear: left;
+      max-width: $img-max-sm;
+      margin-left: -$site-margin;
+      margin-right: $site-margin;
+    }
+
+    @include mq($bp-desktop) { margin-left: -100px; }
+
+    .img-container-inner { max-height: $img-ht-sm; }
+  }
+
+
+  .alignright {
+    @include mq($bp-img-no-bleed) {
+      float: right;
+      clear: right;
+      max-width: $img-max-sm;
+      margin-right: -$site-margin;
+      margin-left: $site-margin;
+    }
+
+    @include mq($bp-desktop) {
+      max-width: $img-max-med;
+      margin-right: -($site-margin*2);
+    }
+
+    .img-container-inner { max-height: $img-ht-sm; }
+  }
+
+}
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Generic Page specific styles
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.page-content {
+
+  .aligncenter,
+  .alignnone {
+    @include mq($bp-article-not-centered) {
+      max-width: $img-max-bd;
+      margin-left: 25px;
+      margin-right: 0;
+    }
+  }
+
+}

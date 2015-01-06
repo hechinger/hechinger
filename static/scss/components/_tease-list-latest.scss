@@ -20,6 +20,7 @@
 
 
 .hp-list-item {
+  @include pie-clearfix;
   position: relative;
   & + & {
     margin-top: 0.85em;
@@ -44,7 +45,10 @@
   &:hover {
     text-decoration: underline;
   }
-  em, b, strong {
+  // em, b, strong {
+  //   @include head-highlight;
+  // }
+  mark {
     @include head-highlight;
   }
 }

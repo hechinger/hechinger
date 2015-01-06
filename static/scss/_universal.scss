@@ -20,3 +20,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+
+// Overwrite Upbase's settings for mark.
+mark {
+  background-color: transparent;
+  color: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}

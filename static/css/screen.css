@@ -8122,7 +8122,7 @@ input:-webkit-autofill:focus {
   margin-right: 5px;
 }
 /* line 112, ../scss/components/_promo.scss */
-.promo-main p.promo-text--reverse {
+.promo-main .promo-text--reverse p {
   color: #fff;
 }
 

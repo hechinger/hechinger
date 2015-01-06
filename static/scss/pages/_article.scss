@@ -527,15 +527,22 @@
 // --------------------------------------------
 // --------------------------------------------
 
-.article-related-h {
-  @extend %article-bd-margin;
+.article-text h4.article-related-h {
+  // @extend %article-bd-margin;
   max-width: $article-bd-max;
-  padding: 5px 3px;
+  // margin: 25px 0 25px 25px;
+  // padding: 5px 3px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   font-size: 17px;
   font-family: $he-sans;
-  border-top: $bdr-thin;
-  border-bottom: $bdr-thin;
+  font-weight: $font-weight-bold;
+  // border-top: $bdr-thin;
+  // border-bottom: $bdr-thin;
   color: black;
+  &:after {
+    position: static;
+  }
 }
 
 
@@ -549,7 +556,8 @@
   color: $he-secondary;
   text-decoration: none;
   &:hover { text-decoration: underline; }
-  &:after { line-height: 1.5; }
+  // &:after { line-height: 1.5; }
+  &:after{ line-height: 2.2; }
 }
 
 

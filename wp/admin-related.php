@@ -2,10 +2,7 @@
 
 class RelatedAdmin extends EditorTool_Core implements EditorTool_Interface {
 
-  function __construct() {
-    $this->slug = 'related';
-    parent::__construct();
-  }
+  var $slug = 'related';
 
   function shortcode($atts, $content) {
     $atts['headline'] = null;

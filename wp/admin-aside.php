@@ -2,10 +2,7 @@
 
 class AsideAdmin extends EditorTool_Core implements EditorTool_Interface {
 
-  function __construct() {
-    $this->slug = 'aside';
-    parent::__construct();
-  }
+  var $slug = 'aside';
 
   function shortcode($atts, $content) {
     $aside = null;

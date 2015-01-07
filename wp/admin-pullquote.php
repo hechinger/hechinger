@@ -2,10 +2,7 @@
 
 class PullQuoteAdmin extends EditorTool_Core implements EditorTool_Interface {
 
-  function __construct() {
-    $this->slug = 'pullquote';
-    parent::__construct();
-  }
+  var $slug = 'pullquote';
 
   function shortcode($atts, $content) {
     if(isset($content)) {

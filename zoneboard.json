@@ -1,0 +1,57 @@
+{
+    "bricks" : [
+        {
+            "label"     :   "Home Page",
+            "icon"      :   "fa-home",
+            "links"     :   [
+                {
+                    "label" :   "Manage Main Stream",
+                    "url"   :   "/wp-admin"
+                },
+                {
+                    "label" :   "Manage Secondary Feature",
+                    "url"   :   "/wp-admin/"
+                }
+            ]
+        },
+        {
+            "label"     :   "Tech Info",
+            "icon"      :   "fa-github-alt",
+            "links"     :   [
+                {
+                    "label" :   "GitHub Repo",
+                    "url"   :   "https://github.com/upstatement/hechinger/"
+                }
+            ]
+        },
+        {
+            "label"     :   "Links, Etc.",
+            "icon"      :   "fa-link",
+            "links"     :   [
+                {
+                    "label" :   "Manage redirects",
+                    "url"   :   "/wp-admin/edit.php?post_type=redirect_rule"
+                },
+                {
+                    "label" :   "Create a new redirect",
+                    "url"   :   "/wp-admin/post-new.php?post_type=redirect_rule"
+                }
+            ]
+        },
+        {
+            "label"     :   "Authors",
+            "icon"      :   "dashicons-admin-users",
+            "links"     :   [
+                {
+                    "label" :   "Manage users",
+                    "url"   :   "/wp-admin/users.php"
+                },
+                {
+                    "label" :   "Add a new author/user",
+                    "url"   :   "/wp-admin/user-new.php"
+                }
+            ]
+        }
+    ]
+
+}

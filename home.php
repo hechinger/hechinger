@@ -12,6 +12,7 @@
 $context = Timber::get_context();
 $homepage = Timber::get_post('home', 'HechingerPost');
 $second_feature = $homepage->get_field('second_feature');
+$latest_posts_query = array();
 
 if ( isset($second_feature) && is_array($second_feature) ) {
   $context['second_feature'] = new HechingerPost($second_feature[0]->ID);
@@ -21,10 +22,10 @@ if (class_exists('TimberStream')) {
   $stream = new HechingerHome();
   $context['home'] = $stream;
   $context['posts'] = $stream->get_posts(array(), 'HechingerPost');
+  $latest_posts_query['post__not_in'] = $stream->get_used_post_ids() ? $stream->get_used_post_ids() : null;
 }
-
 //TODO: filter out posts in homepage stream
-$context['latest_posts'] = Timber::get_posts('HechingerPost');
+$context['latest_posts'] = Timber::get_posts( $latest_posts_query, 'HechingerPost');
 $context['z2_quote'] = get_quote('z2_quote', $homepage);
 $context['z3_quote'] = get_quote('z3_quote', $homepage);
 

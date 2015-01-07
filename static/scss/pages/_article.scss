@@ -590,12 +590,19 @@
   text-transform: uppercase;
   color: $he-secondary;
   font-weight: 700;
+  @include trans(0.25s);
 
   @include mq(450px) {
     width: 140px;
     height: 35px;
     margin-top: 0;
     line-height: 35px;
+  }
+  &:hover {
+    background-color: black
+  }
+  &:active {
+    background-color: #000;
   }
 
 }

@@ -3939,6 +3939,8 @@ img {
   text-transform: uppercase;
   color: #00aeef;
   font-weight: 700;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
 }
 @media (min-width: 450px) {
   /* line 577, ../scss/pages/_article.scss */
@@ -3949,8 +3951,16 @@ img {
     line-height: 35px;
   }
 }
-
+/* line 601, ../scss/pages/_article.scss */
+.article-comment-link:hover {
+  background-color: black;
+}
 /* line 604, ../scss/pages/_article.scss */
+.article-comment-link:active {
+  background-color: #000;
+}
+
+/* line 611, ../scss/pages/_article.scss */
 #comment-mod {
   max-height: 0;
   margin-top: 0;
@@ -3958,26 +3968,26 @@ img {
   -webkit-transition: max-height 1s cubic-bezier(0.54, 0.24, 0.85, 0.23);
           transition: max-height 1s cubic-bezier(0.54, 0.24, 0.85, 0.23);
 }
-/* line 611, ../scss/pages/_article.scss */
+/* line 618, ../scss/pages/_article.scss */
 #comment-mod.comment-mod--is-active {
   max-height: 5500px;
   margin-top: 17px;
   display: block;
 }
 
-/* line 626, ../scss/pages/_article.scss */
+/* line 633, ../scss/pages/_article.scss */
 #disqus_thread a:link {
   color: #00aeef;
 }
-/* line 627, ../scss/pages/_article.scss */
+/* line 634, ../scss/pages/_article.scss */
 #disqus_thread a:hover {
   color: #00aeef;
 }
-/* line 628, ../scss/pages/_article.scss */
+/* line 635, ../scss/pages/_article.scss */
 #disqus_thread a:active {
   color: #00aeef;
 }
-/* line 629, ../scss/pages/_article.scss */
+/* line 636, ../scss/pages/_article.scss */
 #disqus_thread a:visited {
   color: #00aeef;
 }

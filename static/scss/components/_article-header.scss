@@ -79,6 +79,7 @@
   @include pie-clearfix;
   padding-top: 10px;
   font-size: 11px;
+  font-size: 13px;
 }
 
 
@@ -99,7 +100,10 @@
 
   // this contextual class decreases the top padding
   // when the story is a column
-  .article-hdr-column & { padding-top: 1px; }
+  .article-hdr-column & {
+    // padding-top: 1px;
+    padding-top: 3px;
+  }
 }
 
 
@@ -123,10 +127,11 @@
 
 
 .article-author {
-  font-weight: 900;
+  // font-weight: 900;
+  font-weight: 700;
   margin-left: 1px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  // letter-spacing: 1px;
   color: $black;
   text-decoration: none;
 }
@@ -137,7 +142,7 @@
   display: inline-block;
   margin-top: 0;
   font-weight: 700;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 
 
@@ -146,11 +151,15 @@
   float: left;
 }
 
+.article-column-title {
+  padding-bottom: 2px;
+}
 
 .column-author-link {
   @include serif-black;
   text-decoration: none;
-  font-size: 13px;
+  // font-size: 13px;
+  font-size: 14px;
   color: $hdr-color;
   &:hover { text-decoration: underline; }
 }

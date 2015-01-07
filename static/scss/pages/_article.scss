@@ -599,7 +599,7 @@
 }
 
 
-#comment-mod {
+.comment-mod {
   // display: none;
   max-height: 0;
   overflow: hidden;
@@ -624,5 +624,3 @@
   &:active { color: $he-secondary; }
   &:visited { color: $he-secondary; }
 }
-
-

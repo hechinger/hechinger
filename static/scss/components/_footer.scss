@@ -23,7 +23,8 @@
   @include pie-clearfix;
   position: relative;
   margin-bottom: $space-grid--half;
-  padding-bottom: $space-grid;
+  // padding-bottom: $space-grid--half;
+  padding-bottom: 35px;
 
   @include mq($bp-medium) {
     margin-bottom: $space-grid;
@@ -81,6 +82,9 @@
     max-width: 125px;
     margin-bottom: 20px;
   }
+  @include mq($bp-medium, max) {
+    margin-top: 10px;
+  }
 }
 
 // Even out partner logo sizes
@@ -136,7 +140,8 @@
 .ftr-social-container {
   @include pie-clearfix;
   position: absolute;
-  bottom: 10px;
+  // bottom: 10px;
+  bottom: 0px;
   display: block;
   text-align: center;
 
@@ -179,8 +184,18 @@
 }
 
 
-.ftr-grid-item {
-  margin-bottom: 30px;
+.grid-item {
+
+  .ftr-grid-item {
+    margin-bottom: 30px;
+  }
+
+  &:last-of-type {
+    .ftr-grid-item {
+      @include mq($bp-medium, max) { margin-bottom: 10px; }
+    }
+  }
+  // margin-bottom: 30px;
 
   // @include mq($bp-medium, max) {
   //   margin-bottom: 50px;

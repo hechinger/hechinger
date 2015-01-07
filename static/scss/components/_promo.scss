@@ -45,6 +45,19 @@
   }
 }
 
+.promo-signup-inner {
+  @include pie-clearfix;
+  position: relative;
+  height: 100%;
+  padding: 30px 0 0;
+
+  @include mq($bp-medium) {
+    padding: 35px;
+  }
+  @include mq($bp-large) {
+    padding: 35px 50px;
+  }
+}
 
 .promo-content-bdr,
 .promo-content-bdr--reverse {
@@ -184,10 +197,11 @@
     content: '\0020';
     width: 6px;
     height: 25px;
-    background-color: $black;
+    background-color: transparent;
 
     @include mq($bp-medium) {
       width: 8px;
+      background-color: $black;
     }
 
     @include mq($bp-large) {
@@ -210,6 +224,12 @@
 
 
 .promo-bdr--bottom {
+  display: none;
+
+  @include mq($bp-medium) {
+    display: block;
+  }
+
   &:after, &:before { bottom: 0; }
 }
 

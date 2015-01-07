@@ -99,8 +99,9 @@
 
 
 .recirculation-container {
-  margin-top: 50px;
+  margin-top: 30px;
   @include pie-clearfix;
+  @include mq($bp-medium) { margin-top: 50px; }
 }
 
 

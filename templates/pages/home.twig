@@ -74,13 +74,13 @@
     {% block hp_zoneB %}
       <div class="l-hp-zone">
         <div class="hp-zone--top">
-          <div class="l-zone-tres--rule">
+          <div class="l-zone-dos--art">
             {% for post in home.get_zone(2) %}
               <div class="grid-item {{ loop.index == 2 and post.thumbnail.src ? 'extra-grid-item' }}">
                 {% include "/templates/components/tease-hp-stub.twig" with { context_class: 'stub-lg', css_class: 'tz-hp-stub', hide_image: loop.index != 2 ? true : false } %}
               </div>
             {% endfor %}
-          </div> <!-- /l-zone-tres--rule -->
+          </div> <!-- /l-zone-dos--art -->
         </div> <!-- /hp-zone--top -->
         {# END ZONE 2 #}
 

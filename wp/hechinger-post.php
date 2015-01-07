@@ -120,14 +120,9 @@ class HechingerPost extends TimberPost {
 
   function awards() {
     $awards = $this->get_field('awards');
-    if (is_array($awards)) {
-      foreach($awards as &$award_row) {
-        $award_row['year'] = $award_row['year'];
-        $award_row['name'] = $award_row['award_name'];
-        $award_row['description'] = $award_row['award_description'];
-      }
+    if ( isset($awards) && is_array($awards)) {
+      return $awards;
     }
-    return $awards;
   }
 
   function fred_photo() {

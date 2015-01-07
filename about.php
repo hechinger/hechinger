@@ -11,8 +11,8 @@
 
 $context = Timber::get_context();
 $context['post'] = Timber::get_post('about', 'HechingerPost');
-$staff_users = new WP_User_Query( array( 'meta_key' => 'hech_role', 'meta_value' => 'staff' ) );
 $partners = $context['post']->get_field('partner_list');
+$users = $context['post']->get_field('staff');
 
 if (isset($partners) && is_array($partners) && count($partners)) {
   foreach ($partners as $partner) {
@@ -20,8 +20,8 @@ if (isset($partners) && is_array($partners) && count($partners)) {
   }
 }
 
-if ( isset($staff_users->results) && is_array($staff_users->results) ) {
-  foreach ($staff_users->results as $user) {
+if ( isset($users) && is_array($users) ) {
+  foreach ($users as $user) {
     $context['users'][] = new HechingerUser($user);
   }
 }

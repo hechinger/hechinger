@@ -25,6 +25,24 @@
             "disabled": 0
         },
         {
+            "key": "field_54ad8e1dbc4b5",
+            "label": "Staff Images",
+            "name": "staff",
+            "prefix": "",
+            "type": "user",
+            "instructions": "Select staff members to feature on the About page. Only members with photos will display.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 0,
+            "multiple": 1
+        },
+        {
             "key": "field_54862728ad1c6",
             "label": "Our Awards",
             "name": "our_awards",
@@ -67,7 +85,7 @@
             "sub_fields": [
                 {
                     "key": "field_54860f32b3e12",
-                    "label": "year",
+                    "label": "Year",
                     "name": "year",
                     "prefix": "",
                     "type": "number",
@@ -91,8 +109,8 @@
                 },
                 {
                     "key": "field_54860f65b3e13",
-                    "label": "Award Name",
-                    "name": "award_name",
+                    "label": "Headline",
+                    "name": "headline",
                     "prefix": "",
                     "type": "text",
                     "instructions": "",
@@ -113,8 +131,8 @@
                 },
                 {
                     "key": "field_54861013b3e14",
-                    "label": "Award Description",
-                    "name": "award_description",
+                    "label": "Description",
+                    "name": "description",
                     "prefix": "",
                     "type": "textarea",
                     "instructions": "",
@@ -132,6 +150,23 @@
                     "new_lines": "wpautop",
                     "readonly": 0,
                     "disabled": 0
+                },
+                {
+                    "key": "field_54ad8a17804de",
+                    "label": "Link",
+                    "name": "link",
+                    "prefix": "",
+                    "type": "url",
+                    "instructions": "URL of the article or Award.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
                 }
             ]
         },

@@ -106,7 +106,8 @@
 
 .page-mod {
   @include pie-clearfix;
-  margin-top: 29px;
+  // margin-top: 29px;
+  margin-top: 17px;
   max-width: $article-bd-max;
 }
 
@@ -602,11 +603,13 @@
 #comment-mod {
   // display: none;
   max-height: 0;
+  margin-top: 0;
   overflow: hidden;
   // transition: max-height 4s cubic-bezier(0, 1.05, 0, 1);
   transition: max-height 1s cubic-bezier(.54, .24, .85, .23);
   &.comment-mod--is-active {
     max-height: 5500px;
+    margin-top: 17px;
     display: block;
     // overflow: visible;
   }

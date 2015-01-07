@@ -31,14 +31,14 @@
         <div class="article-body article-text">
           {{ post.content }}
 
-          <div class="bottom-aside-container">
             {% block article_related %}
               {% if post.related_heading or post.post_related_aside %}
+                <div class="bottom-aside-container">
                 {% include "/templates/components/article-aside-related.twig" %}
+                </div> <!-- /bottom-aside-container -->
               {% endif %}
             {% endblock %}
 
-          </div> <!-- /bottom-aside-container -->
         </div> <!-- /article-body -->
       </article> <!-- /article-main -->
 

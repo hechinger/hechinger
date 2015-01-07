@@ -38,7 +38,7 @@ class HechingerHome extends TimberStream {
     }
   }
 
-  public function get_zone($zone = 1, $caller = 'template') {
+  public function get_zone($zone = 1) {
     if( isset( $this->zone_posts[$zone] ) ) {
       return $this->zone_posts[$zone];
     }

@@ -255,9 +255,12 @@ $icons: twitter,
   &:first-letter {
     display: block;
     float: left;
-    margin-top: 0.2em;
-    margin-right: 0.1em;
-    margin-left: -0.1em;
+    // margin-top: 0.2em;
+    margin-top: 0.15em;
+    // margin-right: 0.1em;
+    margin-right: 0.05em;
+    // margin-left: -0.1em;
+    margin-left: -0.05em;
     font-family: $font-family;
     font-weight: $font-weight;
     font-size: 4em;

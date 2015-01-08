@@ -9398,17 +9398,22 @@ img.alignleft {
   color: black;
 }
 /* line 43, ../scss/components/_article-pull-quote.scss */
-.is-quote .article-quote-h {
+.is-double-quote .article-quote-h {
   text-indent: -17px;
   padding-left: 17px;
 }
-/* line 51, ../scss/components/_article-pull-quote.scss */
+/* line 48, ../scss/components/_article-pull-quote.scss */
+.is-single-quote .article-quote-h {
+  text-indent: -11px;
+  padding-left: 11px;
+}
+/* line 56, ../scss/components/_article-pull-quote.scss */
 .article-quote-h p + p {
   margin-top: 17px;
   text-indent: 0;
 }
 
-/* line 58, ../scss/components/_article-pull-quote.scss */
+/* line 63, ../scss/components/_article-pull-quote.scss */
 .article-quote-attr {
   margin-left: 0;
   margin-top: 15px;
@@ -9418,8 +9423,16 @@ img.alignleft {
   font-size: 11px;
   letter-spacing: 1px;
 }
+/* line 72, ../scss/components/_article-pull-quote.scss */
+.is-double-quote .article-quote-attr {
+  padding-left: 17px;
+}
+/* line 73, ../scss/components/_article-pull-quote.scss */
+.is-single-quote .article-quote-attr {
+  padding-left: 11px;
+}
 
-/* line 70, ../scss/components/_article-pull-quote.scss */
+/* line 78, ../scss/components/_article-pull-quote.scss */
 .article-quote-desc {
   margin-top: 0;
   margin-left: 0;

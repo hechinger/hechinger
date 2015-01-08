@@ -40,9 +40,14 @@
 
   // If the quote begins with quote marks.
   // This class is added via JS
-  .is-quote & {
+  .is-double-quote & {
     text-indent: -17px;
     padding-left: 17px;
+  }
+
+  .is-single-quote & {
+    text-indent: -11px;
+    padding-left: 11px;
   }
 
   // If the quote has more than one paragraph.
@@ -63,6 +68,9 @@
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 1px;
+
+  .is-double-quote & { padding-left: 17px; }
+  .is-single-quote & { padding-left: 11px; }
 
 }
 

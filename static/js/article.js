@@ -13,24 +13,32 @@ window.onload = (function($){
   // Testing whether quote begins with a quote mark
   if( $('.article-quote') ) {
 
-    var string1 = '"';
-    var string2 = "'";
+    var string1 = "\“";
+    var string2 = "\‘";
 
     $('.article-quote').each(function(i) {
       var quoteContainer = $('.article-quote');
       var theQuote = $(this).text();
       var testQuote = $('.article-quote-h').text();
+      var theTest = theQuote.substring(2,4);
 
-      console.log(theQuote.substring(2,4) );
-      console.log(testQuote);
+      // console.log(theQuote.substring(2,4) );
+      console.log(theQuote, i);
+      console.log(theTest, i);
+      console.log("i am" + string1);
+      console.log("i am" + string2);
 
-      if ( theQuote.substring(2,4) === string2 ) {
-        $(this).addClass('is-quote');
-        console.log('i added a class');
+      if ( typeof theTest=="string" && theTest.match(string1) ) {
+        $(this).addClass('is-double-quote');
+        console.log('i added a is-double-quoteclass');
+      } else if( typeof theTest=="string" && theTest.match(string2)  ) {
+          $(this).addClass('is-single-quote');
+          console.log('i added a is-single-quoteclass');
       }
-
     });
 
-  }
+  } // article quote test
 
 }(jQuery));
+
+

@@ -9382,20 +9382,14 @@ img.alignleft {
     border-top-width: 15px;
   }
 }
-@media (min-width: 925px) {
+@media (min-width: 1024px) {
   /* line 9, ../scss/components/_article-pull-quote.scss */
   .article-quote {
     margin-left: -20px;
   }
 }
-@media (min-width: 1024px) {
-  /* line 9, ../scss/components/_article-pull-quote.scss */
-  .article-quote {
-    margin-left: -40px;
-  }
-}
 
-/* line 31, ../scss/components/_article-pull-quote.scss */
+/* line 34, ../scss/components/_article-pull-quote.scss */
 .article-quote-h {
   font-family: Tiempos, Georgia, Times, serif;
   font-weight: 700;
@@ -9403,8 +9397,18 @@ img.alignleft {
   line-height: 1.291666667;
   color: black;
 }
+/* line 43, ../scss/components/_article-pull-quote.scss */
+.is-quote .article-quote-h {
+  text-indent: -17px;
+  padding-left: 17px;
+}
+/* line 51, ../scss/components/_article-pull-quote.scss */
+.article-quote-h p + p {
+  margin-top: 17px;
+  text-indent: 0;
+}
 
-/* line 40, ../scss/components/_article-pull-quote.scss */
+/* line 58, ../scss/components/_article-pull-quote.scss */
 .article-quote-attr {
   margin-left: 0;
   margin-top: 15px;
@@ -9415,7 +9419,7 @@ img.alignleft {
   letter-spacing: 1px;
 }
 
-/* line 52, ../scss/components/_article-pull-quote.scss */
+/* line 70, ../scss/components/_article-pull-quote.scss */
 .article-quote-desc {
   margin-top: 0;
   margin-left: 0;

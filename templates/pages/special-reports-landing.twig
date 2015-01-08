@@ -28,9 +28,11 @@
                   {% if report.slug in ['california', 'common-core', 'higher-education', 'mississippi-learning'] %}
                     <div class="grid-item tz-sr-landing-grid">
                       <article class="tz-sr-landing">
-                        <div class="sr-landing-grid-img">
-                          <img src="{{ report.get_image('bw_rect').src | resize (445, 246) | default(site.theme.path ~ "/static/img/defaults/default_bw_rectangle.jpg") | resize (445, 246)  }}" alt="{{ report.get_image('bw_rect').alt }}">
-                        </div> <!-- /sr-landing-img-mod -->
+                        <a href="{{report.link}}">
+                          <div class="sr-landing-grid-img">
+                            <img src="{{ report.get_image('bw_rect').src | resize (445, 246) | default(site.theme.path ~ "/static/img/defaults/default_bw_rectangle.jpg") | resize (445, 246)  }}" alt="{{ report.get_image('bw_rect').alt }}">
+                          </div> <!-- /sr-landing-img-mod -->
+                        </a>
 
                         <div class="sr-landing-grid-content">
                           <h2 class="sr-landing-h">
@@ -64,11 +66,9 @@
                 {% for sreport in special_reports %}
                   {% if sreport.slug not in ['california', 'common-core', 'higher-education', 'mississippi-learning'] %}
                     <article class="tz-sr-feed-grid l-pair-sr-feed">
-                      <div class="art-bd">
-                        <a href="{{ sreport.link }}">
+                      <a class="art-bd" href="{{sreport.link}}">
                           <img src="{{ sreport.get_image('bw_rect').src | resize(221, 123) | default(site.theme.path ~ "/static/img/defaults/default_bw_rectangle.jpg") }}" alt="">
-                        </a>
-                      </div> <!-- /art-bd -->
+                        </a><!-- /art-bd -->
 
                       <div class="txt-bd">
                         <h2 class="sr-landing-h">

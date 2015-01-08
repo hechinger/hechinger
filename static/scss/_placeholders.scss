@@ -118,21 +118,21 @@
 
 %img-stylized {
   position: relative;
-  // background-color: $black-60;
+
   img {
-    opacity: 0.45;
+    opacity: 1;
     -webkit-filter: grayscale(40%);
        -moz-filter: grayscale(40%);
             filter: grayscale(40%);
   }
-  &:before, &:after {
+
+  &:after {
     position: absolute;
     content: '';
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    background-image: radial-gradient( ellipse closest-side, transparent, rgba(0, 0, 0, 0.5) );
   }
-  &:before { background-color: rgba(0, 0, 0, 0.6); }
-  &:after { background-image: radial-gradient( ellipse closest-side, transparent, rgba(0, 0, 0, 0.6) );  }
 }

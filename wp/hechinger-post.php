@@ -62,16 +62,21 @@ class HechingerPost extends TimberPost {
     return $tags;
   }
 
+  function article_type() {
+    $terms = wp_get_post_terms( $this->ID, 'article-type', array( 'fields' => 'names' ) );
+    return is_wp_error( $terms ) ? array() : $terms;
+  }
+
   function is_column() {
-    if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
-      return in_array('Column', $this->article_type);
-    }
+    return has_term( 'column', 'article-type', $this );
+  }
+
+  function is_opinion() {
+    return has_term( 'opinion', 'article-type', $this );
   }
 
   function is_feature() {
-    if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
-      return in_array('Feature', $this->article_type);
-    }
+    return has_term( 'feature', 'article-type', $this );
   }
 
   function partners() {

@@ -10,7 +10,6 @@ class AsideAdmin extends EditorTool_Core implements EditorTool_Interface {
     if ( isset($atts['num']) ) {
       $atts['aside'] = $this->get_aside($atts['num']);
     }
-
     return $atts['aside'] ? $this->render('templates/components/article-aside.twig', $atts) : null;
   }
 

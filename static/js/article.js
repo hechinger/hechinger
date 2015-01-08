@@ -10,7 +10,7 @@ window.onload = (function($){
   }
 
 
-  // Testing whether quote begins with a quote mark
+  // Testing whether quote begins with a double or single quote mark
   if( $('.article-quote') ) {
 
     var string1 = "\“";
@@ -22,23 +22,13 @@ window.onload = (function($){
       var testQuote = $('.article-quote-h').text();
       var theTest = theQuote.substring(2,4);
 
-      // console.log(theQuote.substring(2,4) );
-      console.log(theQuote, i);
-      console.log(theTest, i);
-      console.log("i am" + string1);
-      console.log("i am" + string2);
-
       if ( typeof theTest=="string" && theTest.match(string1) ) {
         $(this).addClass('is-double-quote');
-        console.log('i added a is-double-quoteclass');
       } else if( typeof theTest=="string" && theTest.match(string2)  ) {
           $(this).addClass('is-single-quote');
-          console.log('i added a is-single-quoteclass');
       }
     });
 
   } // article quote test
 
 }(jQuery));
-
-

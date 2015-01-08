@@ -31,7 +31,11 @@ class ImageShortcodes {
       if ( $attr['align'] == 'alignnone' || $attr['align'] == 'aligncenter') {
         $attr['full_width'] = true;
       }
-      $image_string = Timber::compile( 'templates/components/article-core-img.twig', array( 'image' => $image, 'class' => $class, 'width' => $width, 'attr' => $attr ) );
+      if( isset( $attr['caption'] ) && !empty( $attr['caption'] ) ) {
+        $image->caption = $attr['caption'];
+      }
+      $data = array( 'image' => $image, 'class' => $class, 'width' => $width, 'attr' => $attr );
+      $image_string = Timber::compile( 'templates/components/article-core-img.twig', $data );
       return preg_replace('/\s+/', ' ', $image_string);
     }
     return $output;

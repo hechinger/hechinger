@@ -136,15 +136,16 @@
 
 .l-pair-tz-hp-reg {
   .tz-img-mod {
+    width: 100px;
     @include mq($bp-zone-has-layout, max) {
       // makes sure we don't override
       // layout rules applied later
       float: right;
       margin: 0 0 10px 20px;
     }
-    @include mq($bp-small) {
-      width: 125px;
-    }
+    // @include mq($bp-small) {
+    //   width: 100px;
+    // }
     @include mq($bp-medium) {
       width: 175px;
     }

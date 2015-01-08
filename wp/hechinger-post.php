@@ -68,6 +68,12 @@ class HechingerPost extends TimberPost {
     }
   }
 
+  function is_opinion() {
+    if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
+      return in_array('Opinion', $this->article_type);
+    }
+  }
+
   function is_feature() {
     if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
       return in_array('Feature', $this->article_type);

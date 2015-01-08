@@ -7,6 +7,7 @@
 // --------------------------------------------
 
 .site-ftr {
+  width: 100%;
   @include pie-clearfix;
   padding-top: 35px;
   background-color: $he-main;
@@ -22,7 +23,8 @@
   @include pie-clearfix;
   position: relative;
   margin-bottom: $space-grid--half;
-  padding-bottom: $space-grid;
+  // padding-bottom: $space-grid--half;
+  padding-bottom: 35px;
 
   @include mq($bp-medium) {
     margin-bottom: $space-grid;
@@ -40,9 +42,14 @@
 
 // figure out rule
 .l-ftr-info {
-  margin-top: $space-grid--half;
+  margin: $space-grid--half 0;
+  // margin-bottom: $space-grid--half;
+  border-bottom: 1px solid $black-80;
 
-  @include mq($bp-medium) { margin-top: $space-grid;}
+  @include mq($bp-medium) {
+    margin: $space-grid 0 0;
+    border-bottom: none;
+  }
   @include mq($bp-medium, $bp-medium-plus) {
      @include media-grid(2, 50px, '.grid-item');
   }
@@ -74,6 +81,9 @@
   .media-block {
     max-width: 125px;
     margin-bottom: 20px;
+  }
+  @include mq($bp-medium, max) {
+    margin-top: 10px;
   }
 }
 
@@ -130,7 +140,8 @@
 .ftr-social-container {
   @include pie-clearfix;
   position: absolute;
-  bottom: 10px;
+  // bottom: 10px;
+  bottom: 0px;
   display: block;
   text-align: center;
 
@@ -173,10 +184,22 @@
 }
 
 
-.ftr-grid-item {
-  @include mq($bp-medium, max) {
-    margin-bottom: 50px;
+.grid-item {
+
+  .ftr-grid-item {
+    margin-bottom: 30px;
   }
+
+  &:last-of-type {
+    .ftr-grid-item {
+      @include mq($bp-medium, max) { margin-bottom: 10px; }
+    }
+  }
+  // margin-bottom: 30px;
+
+  // @include mq($bp-medium, max) {
+  //   margin-bottom: 50px;
+  // }
 }
 
 
@@ -199,13 +222,17 @@
   @include bullet(after);
   @include sans-bold;
   position: relative;
-  display: inline-block;
+  display: none;
   margin-top: 15px;
   font-size: 16px;
   color: $black;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
+  }
+
+  @include mq($bp-medium) {
+    display: inline-block;
   }
 }
 

@@ -1,5 +1,7 @@
 <?php
-	class HechingerSite extends TimberSite {
+class HechingerSite extends TimberSite {
+
+  const VERSION = '1.0';
 
   function __construct() {
     add_theme_support( 'post-formats', array( 'article', 'column', 'opinion' ) );
@@ -9,9 +11,43 @@
     HechingerRoutes::set_routes();
     $this->addFilters();
     $this->addActions();
-    $this->bootstap_content();
     $this->fix_custom_field_conflict();
     parent::__construct();
+  }
+
+  function bootstrap_content() {
+    $bootstrap = get_option('hechinger_bootstrap');
+    if( $bootstrap != $this::VERSION ) {
+      $this->do_bootstrap_content();
+      update_option( 'hechinger_bootstrap', $this::VERSION );
+    }
+  }
+
+  function do_bootstrap_content() {
+    $this->do_bootstrap_taxonomies();
+  }
+
+  function do_bootstrap_taxonomies() {
+    $taxonomies = array(
+        'article-type' => array(
+            'feature',
+            'column',
+            'opinion'
+          )
+    );
+    foreach( $taxonomies as $taxonomy => $terms ) {
+      foreach( $terms as $term ) {
+        if( !term_exists( $term, $taxonomy ) ) {
+          wp_insert_term(
+              ucwords($term),
+              $taxonomy,
+              array(
+                  'slug' => $term
+              )
+          );
+        }
+      }
+    }
   }
 
   function addFilters() {
@@ -26,6 +62,7 @@
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action( 'init', array( $this, 'add_reports' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
+    add_action( 'admin_init', array( $this, 'bootstrap_content' ) );
   }
 
   function fix_custom_field_conflict() {
@@ -126,6 +163,36 @@
       'rewrite'               => array( 'slug' => 'partners' ),
     );
     register_taxonomy( 'partner', 'post', $args );
+
+    $labels = array(
+        'name'                       => _x( 'Article Types', 'taxonomy general name' ),
+        'singular_name'              => _x( 'Article Type', 'taxonomy singular name' ),
+        'search_items'               => __( 'Search Article Types' ),
+        'popular_items'              => __( 'Popular Article Types' ),
+        'all_items'                  => __( 'All Article Types' ),
+        'parent_item'                => null,
+        'parent_item_colon'          => null,
+        'edit_item'                  => __( 'Edit Article Type' ),
+        'update_item'                => __( 'Update Article Type' ),
+        'add_new_item'               => __( 'Add New Article Type' ),
+        'new_item_name'              => __( 'New Article Type Name' ),
+        'separate_items_with_commas' => __( 'Separate Article Types with commas' ),
+        'add_or_remove_items'        => __( 'Add or remove Article Types' ),
+        'choose_from_most_used'      => __( 'Choose from the most used Article Types' ),
+        'not_found'                  => __( 'No Article Types found.' ),
+        'menu_name'                  => __( 'Article Types' ),
+    );
+
+    $args = array(
+        'hierarchical'          => true,
+        'labels'                => $labels,
+        'show_ui'               => true,
+        'show_admin_column'     => true,
+        'update_count_callback' => '_update_post_term_count',
+        'query_var'             => true,
+        'rewrite'               => array( 'slug' => 'article-type' ),
+    );
+    register_taxonomy( 'article-type', 'post', $args );
   }
 
   function add_to_context( $context ) {

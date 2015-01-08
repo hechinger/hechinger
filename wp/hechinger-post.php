@@ -63,21 +63,15 @@ class HechingerPost extends TimberPost {
   }
 
   function is_column() {
-    if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
-      return in_array('Column', $this->article_type);
-    }
+    return has_term( 'column', 'article-type', $this );
   }
 
   function is_opinion() {
-    if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
-      return in_array('Opinion', $this->article_type);
-    }
+    return has_term( 'opinion', 'article-type', $this );
   }
 
   function is_feature() {
-    if (isset($this->article_type) && is_array($this->article_type) && count($this->article_type)) {
-      return in_array('Feature', $this->article_type);
-    }
+    return has_term( 'feature', 'article-type', $this );
   }
 
   function partners() {

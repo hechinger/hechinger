@@ -62,6 +62,11 @@ class HechingerPost extends TimberPost {
     return $tags;
   }
 
+  function article_type() {
+    $terms = wp_get_post_terms( $this->ID, 'article-type', array( 'fields' => 'names' ) );
+    return is_wp_error( $terms ) ? array() : $terms;
+  }
+
   function is_column() {
     return has_term( 'column', 'article-type', $this );
   }

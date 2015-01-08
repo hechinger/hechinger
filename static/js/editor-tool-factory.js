@@ -2,7 +2,7 @@
   "use strict";
 
   // TODO: refoctor to combine initializations
-  function WP_AdminTool(name, initFunction) {
+  function EditorTool_Admin(name, initFunction) {
 
     var builtTool;
     var toolName = 'tinymce.plugins.' + name;
@@ -39,7 +39,7 @@
     return tinymce.PluginManager.add(name, tinymce.plugins[name]);
   }
 
-  var asideTool = new WP_AdminTool('aside', function(ed, url) {
+  var asideTool = new EditorTool_Admin('aside', function(ed, url) {
     ed.addCommand('aside', function() {
       var selected = tinyMCE.activeEditor.selection.getContent();
       var content =  '[aside num="" notes=""]';
@@ -52,7 +52,7 @@
     });
   });
 
-  var relatedTool = new WP_AdminTool('related', function(ed, url) {
+  var relatedTool = new EditorTool_Admin('related', function(ed, url) {
     ed.addCommand('related', function() {
       var selected = tinyMCE.activeEditor.selection.getContent();
       var content =  '[related id="" headline="auto"]';
@@ -65,7 +65,7 @@
     });
   });
 
-  var pullquoteTool = new WP_AdminTool('pullquote', function(ed, url) {
+  var pullquoteTool = new EditorTool_Admin('pullquote', function(ed, url) {
     ed.addCommand('pullquote', function() {
       var selected = tinyMCE.activeEditor.selection.getContent();
       var content = "";

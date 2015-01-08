@@ -1,7 +1,8 @@
 var HE_comments = (function($){
+  "use strict";
 
-  var $commentTrigger = $('#comment-trigger');
-  var $commentMod = $('#comment-mod');
+  var $commentTrigger = $('.js-comment-trigger');
+  var $commentMod = $('.js-comment-mod');
   var commentClass = 'comment-mod--is-active';
   var commentIsActive = $commentMod.hasClass(commentClass);
 
@@ -23,6 +24,6 @@ var HE_comments = (function($){
   return {
     init: init,
     showComments: showComments
-  }
+  };
 
 }(jQuery));

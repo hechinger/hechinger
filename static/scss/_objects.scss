@@ -132,6 +132,9 @@ img { @include resp-img; }
   @include size(35px);
   border-radius: 50%;
   background-color: #000;
+  border: 1px solid #000;
+  margin-left: -1px; // offsets borders, correctly centering circle
+  margin-top: -1px; // offsets borders, correctly centering circle
   transform: translateY(-35px);
   @include trans(.2s);
 }

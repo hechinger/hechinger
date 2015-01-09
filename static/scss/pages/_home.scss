@@ -193,6 +193,12 @@
   max-width: 650px;
   text-align: left;
 
+  @include mq(500px) {
+    // border creates appearance of padding
+    // around all the text inside the element
+    border-left: 10px solid #fff;
+  }
+
   @include mq($bp-medium) {
     margin-top: -320px;
   }
@@ -208,6 +214,7 @@
 
 
 .hp-second-feature-topic {
+  position: relative;
   font-size: 11pt;
   color: $black;
   background-color: #fff;
@@ -215,17 +222,16 @@
   font-weight: 700;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 4px 6px 10px 0;
+  padding: 4px 6px 6px 0;
   @include mq(500px) {
     font-size: 13pt;
-    padding: 6px 10px 10px 10px;
+    padding: 6px 10px 10px 0;
   }
 }
 
 
 .hp-second-feature-head {
   display: block;
-  margin-top: -7px;
   padding: 0 5px 5px 0;
 
   font-size: 28pt;
@@ -237,11 +243,7 @@
   // box-shadow value tz-h-link must change if font-size does
   @include mq(500px) {
     font-size: 34pt;
-    margin-top: -11px;
     width: 90%;
-    border-left: 10px solid #fff;
-    // border creates appearance of left padding along text
-    // value matches padding-left of of hp-second-feature-topic
   }
   @include mq(600px) {
     font-size: 42pt;
@@ -249,39 +251,39 @@
   @include mq(700px) {
     font-size: 50pt;
   }
-}
 
-// Add white background behind text
-.hp-second-feature-head .tz-h-link {
-  display: inline;
-  padding-right: 6px;
-  box-shadow: 0px -39px 0 #FFF inset;
-  // box-shadow y-value must change relative font-size in hp-second-feature-head
-
-  @include mq(500px) {
-    box-shadow: 0px -47px 0 #FFF inset;
-  }
-  @include mq(600px) {
-    box-shadow: 0px -59px 0 #FFF inset;
-  }
-  @include mq(700px) {
-    box-shadow: 0px -70px 0 #FFF inset;
+  // Remove standard link hover style
+  .tz-h-link:hover {
+    text-decoration: none;
   }
 
+  .tz-h-link {
+    position: relative;
+    display: inline;
 
-  // Fallback in case box-shadow isn't supported
-  .no-boxshadow & {
-    display: block;
+    // this combination creates apperance of padding
+    // that surrounds each line of words
+    // see more about technique here: http://css-tricks.com/multi-line-padded-text/
     background-color: #fff;
-  }
-}
+    box-shadow: 13px 0 0 #fff;
+    box-decoration-break: clone; // required for FF32
 
-// Remove standard link hover style
-.hp-second-feature-head .tz-h-link:hover {
-  text-decoration: none;
-}
+    @include mq(600px) {
+      box-shadow: 18px 0 0 #fff;
+    }
+  } // tz-h-link
+
+  .tz-h-link-txt {
+    position: relative;
+    z-index: 1;
+  }
+
+} //hp-second-feature-head
+
+
 
 .hp-second-feature-txt {
+  position: relative;
   display: block;
   background-color: #fff;
   width: 100%;
@@ -292,12 +294,6 @@
   font-weight: $font-weight-lt;
   color: $black;
   line-height: 145%;
-
-  @include mq(500px) {
-    padding-left: 10px;
-    // matches border from hp-second-feature-head
-    // and padding-left from hp-second-feature-topic
-  }
 
   @include mq($bp-large) {
     width: 70%;

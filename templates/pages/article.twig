@@ -51,8 +51,8 @@
           </div> <!-- /article-tools-btm-right -->
 
           <div class="article-tools-btm-left">
-            <a class="article-comment-link icon-disqus" id="comment-trigger" href="#"><i class="icon"></i>
-              <span class="article-comment-number disqus-comment-count" data-disqus-identifier="{{ post.slug }}">No comments</span>
+            <a class="article-comment-link icon-disqus comment-trigger js-comment-trigger" href="#"><i class="icon"></i>
+              <span class="article-comment-number disqus-comment-count" data-disqus-url="{{ post.link }}">No comments</span>
             </a>
           </div> <!-- /article-tool-btm-let -->
 
@@ -61,7 +61,7 @@
 
       <!-- article-comments -->
       {% block article_comments %}
-        <div class="page-mod article-mod" id="comment-mod">
+        <div class="page-mod article-mod comment-mod js-comment-mod">
           <div class="comment-inner">
             {% include "templates/components/disqus.twig" %}
           </div> <!-- /comment-inner -->

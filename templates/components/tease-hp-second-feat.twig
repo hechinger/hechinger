@@ -12,7 +12,9 @@
         </h4>
       {% endif %}
       <h1 class="hp-second-feature-head">
-        <a class="tz-h-link" href="{{ feature.link }}">{{ feature.title|striptags }}</a>
+        <a class="tz-h-link" href="{{ feature.link }}">
+          <span class="tz-h-link-txt">{{ feature.title|striptags }}</span>
+        </a>
       </h1>
       {% if feature.tease_excerpt %}
         <p class="hp-second-feature-txt">{{ feature.tease_excerpt }}<a class="hp-second-feature-read-more" href="{{ feature.link }}">Read more</a></p>

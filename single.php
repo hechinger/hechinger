@@ -14,14 +14,15 @@ $homepage = Timber::get_post('home', 'HechingerPost');
 $context['post'] = $post;
 $context['wp_title'] .= ' - ' . $post->title();
 $context['comment_form'] = TimberHelper::get_comment_form();
-
-//TODO: filter out posts in homepage stream
-$context['latest_posts'] = Timber::get_posts(array('post_type' => 'post'), 'HechingerPost');
+$query_args = array('post__not_in' => array( $post->ID ) );
 
 if (class_exists('TimberStream')) {
   $stream = new TimberStream('homepage');
-  $context['recirc_posts'] = $stream->get_posts(array(), 'HechingerPost');
+  $context['recirc_posts'] = $stream->get_posts($query_args, 'HechingerPost');
 }
+
+$query_args['post__not_in'] = array_merge( $query_args['post__not_in'], wp_list_pluck($context['recirc_posts'],'ID') );
+$context['latest_posts'] = Timber::get_posts($query_args, 'HechingerPost');
 
 $context['zquote'] = get_quote('z2_quote', $homepage);
 

@@ -2,23 +2,54 @@
   "use strict";
 
   // TODO: refoctor to combine initializations
-  function EditorTool_Admin(name, initFunction) {
+  function editorToolInit() {
 
     var builtTool;
-    var toolName = 'tinymce.plugins.' + name;
     var toolObject = {
 
       // custom shortcode init function or generic shortcode function
-      init: typeof initFunction === "function" ? initFunction : function(ed, url) {
-        ed.addCommand(name, function() {
+      init: function(ed, url) {
+
+        // Aside Button
+        ed.addCommand('aside', function() {
           var selected = tinyMCE.activeEditor.selection.getContent();
-          var content =  '[' + name + ' id="" notes=""]';
+          var content =  '[aside num="" notes=""]';
           ed.execCommand('mceInsertContent', false, content);
         });
 
-        ed.addButton(name, {
-          title : 'Place a ' + name + ' shortcode',
-          cmd : name,
+        ed.addButton('aside', {
+          title : 'Place An Aside',
+          cmd : 'aside',
+        });
+
+        // Related Button
+        ed.addCommand('related', function() {
+          var selected = tinyMCE.activeEditor.selection.getContent();
+          var content =  '[related id="" headline="auto"]';
+          ed.execCommand('mceInsertContent', false, content);
+        });
+
+        ed.addButton('related', {
+          title : 'Place a Related link',
+          cmd : 'related',
+        });
+
+        // PullQuote Button
+        ed.addCommand('pullquote', function() {
+          var selected = tinyMCE.activeEditor.selection.getContent();
+          var content = "";
+
+          if(selected) {
+            content = '[pullquote author="" description="" style="new-pullquote"]' + selected + '[/pullquote]';
+          } else {
+            content =  '[pullquote author="" description="" style="new-pullquote"]Pull Quote Goes Here[/pullquote]';
+          }
+          ed.execCommand('mceInsertContent', false, content);
+        });
+
+        ed.addButton('pullquote', {
+          title : 'Add a Pull Quote',
+          cmd : 'pullquote',
         });
       },
 
@@ -28,61 +59,17 @@
 
       getInfo : function() {
         return {
-          longname : 'Hechinger ' + name + ' Button',
-          author : 'Ups',
-          version : "0.1"
+          longname : 'Hechinger Editor Buttons',
+          author : 'Upstatement',
+          version : "0.2"
         };
       }
     };
 
-    builtTool = tinymce.create(toolName, toolObject);
-    return tinymce.PluginManager.add(name, tinymce.plugins[name]);
+    builtTool = tinymce.create('tinymce.plugins.editorTools', toolObject);
+    return tinymce.PluginManager.add('editor_button_script', tinymce.plugins.editorTools);
   }
 
-  var asideTool = new EditorTool_Admin('aside', function(ed, url) {
-    ed.addCommand('aside', function() {
-      var selected = tinyMCE.activeEditor.selection.getContent();
-      var content =  '[aside num="" notes=""]';
-      ed.execCommand('mceInsertContent', false, content);
-    });
-
-    ed.addButton('aside', {
-      title : 'Place An Aside',
-      cmd : 'aside',
-    });
-  });
-
-  var relatedTool = new EditorTool_Admin('related', function(ed, url) {
-    ed.addCommand('related', function() {
-      var selected = tinyMCE.activeEditor.selection.getContent();
-      var content =  '[related id="" headline="auto"]';
-      ed.execCommand('mceInsertContent', false, content);
-    });
-
-    ed.addButton('related', {
-      title : 'Place a Related link',
-      cmd : 'related',
-    });
-  });
-
-  var pullquoteTool = new EditorTool_Admin('pullquote', function(ed, url) {
-    ed.addCommand('pullquote', function() {
-      var selected = tinyMCE.activeEditor.selection.getContent();
-      var content = "";
-
-      if(selected) {
-        content = '[pullquote author="" description="" style="new-pullquote"]' + selected + '[/pullquote]';
-      } else {
-        content =  '[pullquote author="" description="" style="new-pullquote"]Pull Quote Goes Here[/pullquote]';
-      }
-
-      ed.execCommand('mceInsertContent', false, content);
-    });
-
-    ed.addButton('pullquote', {
-      title : 'Add a Pull Quote',
-      cmd : 'pullquote',
-    });
-  });
+  editorToolInit();
 
 }(window.tinyMCE, window.tinymce));

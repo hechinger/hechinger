@@ -265,4 +265,57 @@ class HechingerSite extends TimberSite {
     }
     return $field;
   }
+
+  public static function sync_categories( $taxonomy_slug ) {
+
+    if( !taxonomy_exists( $taxonomy_slug ) ) {
+      echo 'Whoops! You specified a taxonomy that doesn\'t exist in the database.';
+      return;
+    }
+
+    if( !file_exists( __DIR__ . "/content-import/$taxonomy_slug.txt" ) ) {
+      echo 'Term Import File is missing!';
+      return;
+    }
+
+    $import_file = file_get_contents( __DIR__ . "/content-import/$taxonomy_slug.txt" );
+
+    //put it in an array - new line = new term
+    $term_names = explode("\n", $import_file);
+
+    if( !$term_names || !is_array($term_names) ) {
+      echo 'Whoops! The term file import failed :(';
+      return;
+    }
+
+    $file_terms_count = count($term_names);
+    echo "Found $file_terms_count terms in the imported file ($taxonomy_slug.txt).\n<br />";
+
+    $terms = $errors = array();
+    foreach( $term_names as $term_name ) {
+      $term = get_term_by( 'name', $term_name, 'category' );
+      if( $term && isset( $term->term_id ) ) {
+        $terms[(int)$term->term_id] = $term;
+      }else{
+        $errors[] = "Couldn't associate $term_name with a term from the database.";
+      }
+    }
+
+    $db_terms_count = count($terms);
+    echo "Associated $db_terms_count terms from the imported file to terms in the database.\n<br />";
+
+    if( $errors ) {
+      echo implode("\n<br />", $errors);
+    }
+    //todo: complete and think about how to avoid db transactions from here on out
+    foreach( $terms as $term_id => $term ){
+      $args = array(
+          'post_type' => 'post',
+          'tax_query' => array(
+              'taxonomy' => $taxonomy_slug
+          ),
+      );
+    }
+  }
+
 }

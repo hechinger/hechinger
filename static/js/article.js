@@ -11,24 +11,26 @@ window.onload = (function($){
 
 
   // Testing whether quote begins with a double or single quote mark
-  if( $('.article-quote') ) {
+  if( $('.js-article-quote-h').length ) {
 
+    var $quoteH = $('.js-article-quote-h');
     var string1 = "\“";
     var string2 = "\‘";
 
-    $('.article-quote').each(function(i) {
-      var quoteContainer = $('.article-quote');
-      var theQuote = $(this).text();
-      var testQuote = $('.article-quote-h').text();
-      var theTest = theQuote.substring(2,4);
+    $quoteH.each(function(i) {
+      var $this = $(this);
+      var $parent = $this.parent();
+      var theQuote = $this.text();
+      var theTest = theQuote.substring(0,2);
 
       if ( typeof theTest=="string" && theTest.match(string1) ) {
-        $(this).addClass('is-double-quote');
+        $parent.addClass('is-double-quote');
       } else if( typeof theTest=="string" && theTest.match(string2)  ) {
-          $(this).addClass('is-single-quote');
+          $parent.addClass('is-single-quote');
       }
     });
 
   } // article quote test
 
 }(jQuery));
+

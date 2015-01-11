@@ -206,7 +206,7 @@ $bp-subzone-ends-layout: 800px;
   .grid-item + .grid-item {
     @include mq($bp-zone-has-layout, max) {
       margin-top: $grid-item-med;
-      padding-top: $grid-item-sm;
+      padding-top: 20px; // non-uniform value creates appropriate space above hp-list-mod
       margin-bottom: 0;
       border-top: $bdr-thin;
     }

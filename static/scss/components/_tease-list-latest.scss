@@ -22,8 +22,8 @@
   @include pie-clearfix;
   position: relative;
   & + & {
-    margin-top: 0.85em;
-    padding-top: 0.85em;
+    margin-top: 21px;
+    padding-top: 18px;
     border-top: $bdr-thin--lt;
   }
 }

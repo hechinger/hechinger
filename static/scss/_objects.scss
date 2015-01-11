@@ -286,7 +286,7 @@ $icons: twitter,
 // --------------------------------------------
 
 .section-hdr-container {
-  border-top: 2px solid black;
+  border-top: 2px solid #000;
   border-bottom: $bdr-thin;
   padding: 20px 5px;
   margin-bottom: 20px;
@@ -294,9 +294,9 @@ $icons: twitter,
 
 
 .section-hdr--lg {
-  border-top: 2px solid black;
+  border-top: 2px solid #000;
   border-bottom: $bdr-thin;
-  padding: 20px 5px 18px;
+  padding: 17px 5px 18px;
   margin-bottom: 20px;
   font-family: $he-accent;
   font-size: 24px;

@@ -390,8 +390,15 @@
 
   @include mq($bp-medium) {
     @include pair(auto, 20px);
-  }
-}
+
+    // Increases spacing around big numbers
+    margin-top: 5px;
+    margin-bottom: 35px;
+    .l-recirc-zone & {
+      margin-top: 15px;
+    }
+  } //mq
+} // l-pair-tz-special-stat
 
 
 

@@ -20,7 +20,17 @@
   } //mq
 }
 
-.l-hp-zone--feat { }
+.l-hp-zone--b {
+  // More space around the big number/quote
+  @include mq($bp-zone-has-layout) {
+    .hp-zone--middle {
+      padding-top: 30px;
+    }
+    .hp-zone--bottom {
+      margin-top: 35px;
+    }
+  } // mq
+}
 
 
 

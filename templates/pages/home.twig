@@ -9,10 +9,10 @@
 {% block body %}
   <div class="l-content">
 
-    <!-- Homepage Zone 1 -->
+    <!-- Homepage Zone A -->
     <!-- ===================================== -->
     {% block hp_zoneA %}
-      <div class="l-hp-zone">
+      <div class="l-hp-zone l-hp-zone--a">
 
         <!-- hp main feature -->
         <div class="hp-feat-mod">
@@ -72,7 +72,7 @@
     <!-- Homepage Zone B -->
     <!-- ===================================== -->
     {% block hp_zoneB %}
-      <div class="l-hp-zone">
+      <div class="l-hp-zone l-hp-zone--b">
         <div class="hp-zone--top">
           <div class="l-zone-dos--art">
             {% for post in home.get_zone(2) %}
@@ -123,7 +123,7 @@
     <!-- Homepage Zone C -->
     <!-- ===================================== -->
     {% block hp_zoneC %}
-      <div class="l-hp-zone">
+      <div class="l-hp-zone l-hp-zone--c">
 
         <!-- Zone 3 Top -->
         <div class="hp-zone--top">

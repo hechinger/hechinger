@@ -63,6 +63,7 @@ class HechingerSite extends TimberSite {
     add_action( 'init', array( $this, 'add_reports' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
     add_action( 'admin_init', array( $this, 'bootstrap_content' ) );
+    add_action( 'admin_notices', array( $this, 'admin_sync_categories' ) );
   }
 
   function fix_custom_field_conflict() {
@@ -266,17 +267,38 @@ class HechingerSite extends TimberSite {
     return $field;
   }
 
-  public static function sync_categories( $to = 'special-report', $from = 'category' ) {
+  public static function admin_sync_categories() {
+    //todo - could refactor so message is an object, with type defining div class as updated or error
+    if( isset( $_GET['hech_sync_to'] ) ) {
+      $from = isset( $_GET['hech_sync_from'] ) ? sanitize_text_field( $_GET['hech_sync_from'] ) : 'category';
+      $to = sanitize_text_field( $_GET['hech_sync_to'] );
+      $message = self::sync_categories( $to, $from );
+      ?>
+        <div class="updated">
+          <p><?= $message; ?></p>
+        </div>
+      <?php
+    }
+  }
 
+  //you can call this directly, or just hit any admin page
+  //like /wp-admin/?hech_sync_to=special-report&hech_sync_from=category
+  public static function sync_categories( $to = 'special-report', $from = 'category' ) {
+    $message = '';
     if( !taxonomy_exists( $to ) ) {
-      echo 'Whoops! You specified a taxonomy that doesn\'t exist in the database.' . "\n<br />";
-      echo 'Please create the taxonomy you want to convert to and rerun this script.';
-      return;
+      $message .= 'Whoops! You specified a taxonomy that doesn\'t exist in the database.' . "\n<br />";
+      $message .= 'Please create the taxonomy you want to convert to and rerun this script.';
+      return $message;
+    }
+    if( !taxonomy_exists( $from ) ) {
+      $message .= 'Whoops! You specified a taxonomy that doesn\'t exist in the database.' . "\n<br />";
+      $message .= 'Please create the taxonomy you want to convert from and rerun this script.';
+      return $message;
     }
 
     if( !file_exists( __DIR__ . "/content-import/$to.txt" ) ) {
-      echo 'Import File is missing!';
-      return;
+      $message .= 'Import File is missing!';
+      return $message;
     }
 
     $import_file = file_get_contents( __DIR__ . "/content-import/$to.txt" );
@@ -285,13 +307,13 @@ class HechingerSite extends TimberSite {
     $from_names = explode("\n", $import_file);
 
     if( !$from_names || !is_array($from_names) ) {
-      echo 'Whoops! The file import failed :(. Please ensure that  ' . __DIR__;
-      echo '/content-import/' . $to . '.txt exists and try again';
-      return;
+      $message .= 'Whoops! The file import failed :(. Please ensure that  ' . __DIR__;
+      $message .= '/content-import/' . $to . '.txt exists and try again';
+      return $message;
     }
 
     $file_terms_count = count($from_names);
-    echo "Found $file_terms_count $from terms in the imported file ($to.txt).\n<br />";
+    $message .= "Found $file_terms_count $from terms in the imported file ($to.txt).\n<br />";
 
     $from_terms = $errors = array();
     foreach( $from_names as $from_name ) {
@@ -305,7 +327,7 @@ class HechingerSite extends TimberSite {
             'slug' => $from_term->slug
           );
           $to_term = wp_insert_term( $from_term->name, $to, $term_args );
-          echo "Inserted {$from_term->name} into the $to taxonomy.\n<br />";
+          $message .= "Inserted {$from_term->name} into the $to taxonomy.\n<br />";
         }
         $from_term->matching_term_id = (int)$to_term['term_id'];
         $from_terms[(int)$from_term->term_id] = $from_term;
@@ -315,10 +337,10 @@ class HechingerSite extends TimberSite {
     }
 
     $db_terms_count = count($from_terms);
-    echo "Associated $db_terms_count $from terms from the imported file to $from terms in the database.\n<br />";
+    $message .= "Associated $db_terms_count $from terms from the imported file to $from terms in the database.\n<br />";
 
     if( $errors ) {
-      echo implode("\n<br />", $errors);
+      $message .= implode("\n<br />", $errors);
       $errors = array();
     }
 
@@ -329,7 +351,7 @@ class HechingerSite extends TimberSite {
 
     $matching_posts = get_posts( $args );
     $posts_count = count($matching_posts);
-    echo "Retrieved $posts_count posts with terms from the imported $from file.\n<br />";
+    $message .= "Retrieved $posts_count posts with terms from the imported $from file.\n<br />";
 
     $added_terms = array();
     //loop over the terms
@@ -350,15 +372,15 @@ class HechingerSite extends TimberSite {
       }
     }
     $added_terms_count = count($added_terms);
-    echo "Synced $added_terms_count terms from $posts_count posts";
+    $message .= "Synced $added_terms_count terms from $posts_count posts";
 
     if( $errors ) {
-      echo implode("\n<br />", $errors);
+      $message .= implode("\n<br />", $errors);
       $errors = array();
     }
 
-    //todo: complete and think about how to avoid db transactions from here on out
-
+    return $message;
+    
   }
 
 }

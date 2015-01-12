@@ -339,6 +339,7 @@ class HechingerSite extends TimberSite {
           }
         }
       }
+      wp_delete_term( $from_term->term_id, $from );
     }
     $added_terms_count = count($added_terms);
     $message .= "Synced $added_terms_count terms from $posts_count posts";

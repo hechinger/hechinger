@@ -98,11 +98,13 @@ $has-margin:          800px;
 
 .l-recirc-zone {
   // margin-top: 45px;
-  margin-top: $grid-item-lg;
+  margin-top: $grid-item-sm;
+  @include mq($bp-medium) { margin-top: $grid-item-med; }
   & + & {
     // padding-top: 45px;
-    padding-top: $grid-item-lg;
+    padding-top: $grid-item-sm;
     border-top: $bdr-thin;
+    @include mq($bp-medium) { padding-top: $grid-item-med; }
   }
 }
 

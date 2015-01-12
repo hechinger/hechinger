@@ -20,11 +20,14 @@
     border-top-width: 15px;
   }
 
-  @include mq($bp-aside-negative-margin) {
-    margin-left: -$site-margin;
-  }
+  // @include mq($bp-aside-negative-margin) {
+  //   margin-left: -$site-margin;
+  //   background-color: blue;
+  // }
 
-  @include mq($bp-desktop) { margin-left: -($site-margin*2); }
+  // @include mq($bp-desktop) { margin-left: -($site-margin*2); }
+
+  @include mq($bp-desktop) { margin-left: -$site-margin; }
 }
 
 
@@ -34,6 +37,26 @@
   font-size: 24px;
   line-height: 1.291666667;   // 31/24
   color: black;
+
+  // If the quote begins with quote marks.
+  // This class is added via JS
+  .is-double-quote & {
+    text-indent: -17px;
+    padding-left: 17px;
+  }
+
+  .is-single-quote & {
+    text-indent: -11px;
+    padding-left: 11px;
+  }
+
+  // If the quote has more than one paragraph.
+  // i.e. a hard return was entered in wp-admin
+  // Add space between graphs and take away any text-indent
+  p + p {
+    margin-top: 17px;
+    text-indent: 0;
+  }
 }
 
 
@@ -45,6 +68,9 @@
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: 1px;
+
+  .is-double-quote & { padding-left: 17px; }
+  .is-single-quote & { padding-left: 11px; }
 
 }
 

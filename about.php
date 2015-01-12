@@ -26,4 +26,10 @@ if ( isset($users) && is_array($users) ) {
   }
 }
 
+$awards = $context['post']->get_field('awards');
+
+if ( isset($awards) && is_array($awards)) {
+  $context['awards'] = $awards;
+}
+
 Timber::render('pages/about.twig', $context);

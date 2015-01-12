@@ -73,9 +73,9 @@
                     <p class="about-text">{{ post.our_awards }}</p>
                   {% endif %}
                   <div class="about-bottom-mod">
-                    {% if post.awards|length %}
+                    {% if awards|length %}
                       <ul class="about-award-items">
-                        {% for award in post.awards %}
+                        {% for award in awards %}
                           <li class="l-pair-award">
                             <div class="art-bd">
                               <h4 class="award-year">{{ award.year }}</h4>

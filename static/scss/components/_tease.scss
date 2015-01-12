@@ -245,7 +245,7 @@
 
 
 .tz-h--feat-lg .tz-h-link {
-  @include trans(.3s, box-shadow, $animation-timing);
+  @include trans(.15s, box-shadow, $animation-timing);
   @include feat-lg--hoverAnimation(4px, -12px);
 
   @include mq($bp-medium) {

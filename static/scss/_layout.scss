@@ -22,6 +22,12 @@ $space-grid--threequarter:  75px;
 $space-grid--double:        100px;
 
 
+// Variables to control spacing between items and zones
+$grid-item-sm:              15px;
+$grid-item-med:             25px;
+$grid-item-lg:              45px;
+
+
 
 // Site Width
 // --------------------------------------------
@@ -69,7 +75,11 @@ $has-margin:          800px;
 }
 
 
-
+.grid-item {
+  // margin-bottom: 20px;
+  position: relative;
+  // background-color: green;
+}
 
 
 // --------------------------------------------
@@ -87,10 +97,14 @@ $has-margin:          800px;
 // --------------------------------------------
 
 .l-recirc-zone {
-  margin-top: 45px;
+  // margin-top: 45px;
+  margin-top: $grid-item-sm;
+  @include mq($bp-medium) { margin-top: $grid-item-med; }
   & + & {
-    padding-top: 45px;
+    // padding-top: 45px;
+    padding-top: $grid-item-sm;
     border-top: $bdr-thin;
+    @include mq($bp-medium) { padding-top: $grid-item-med; }
   }
 }
 
@@ -100,26 +114,44 @@ $has-margin:          800px;
 // --------------------------------------------
 
 .l-hp-zone {
+  // margin-top: 45px;
+  // padding-top: 45px;
+  // background-color: green;
   > * + * {
-    padding-top: 45px;
-    margin-top: 45px;
+    // padding-top: 45px;
+    // margin-top: 45px;
+    // margin-top: 25px;
+    // padding-top: 25px;
+    margin-top: $grid-item-med;
+    padding-top: $grid-item-med;
     border-top: $bdr-thin;
+    // background-color: red;
 
     @include mq($bp-medium, max) {
       // Spacing matches `hp-top-feat-mod`
-      padding-top: 25px;
-      margin-top: 25px;
+      // padding-top: 25px;
+      // margin-top: 25px;
+      margin-top: $grid-item-med;
+      padding-top: $grid-item-med;
     }
   }
 
   & + & {
-    margin-top: 45px;
-    padding-top: 45px;
+    // background-color: pink;
+    // margin-top: 45px;
+    // padding-top: 45px;
+    // margin-top: 25px;
+    // padding-top: 25px;
     border-top: $bdr-thin;
+    margin-top: $grid-item-lg;
+    padding-top: $grid-item-med;
 
-    @include mq($bp-medium, max) {
-      padding-top: 25px;
-      margin-top: 25px;
+    // background-color: blue;
+
+    @include mq($bp-medium-plus, max) {
+      // background-color: blue;
+      padding-top: $grid-item-med;
+      margin-top: $grid-item-med;
     }
   }
 }
@@ -144,7 +176,18 @@ $bp-subzone-ends-layout: 800px;
   @include mq($bp-zone-has-layout) {
     @include media-grid(2, 25px, '.grid-item');
     .grid-item {
-      margin-bottom: 25px;
+      margin-bottom: $grid-item-med;
+      // take away bottom margin for last two items
+      &:nth-last-child(-1n+2) { margin-bottom: 0;}
+    }
+  }
+
+  @include mq($bp-zone-has-layout, max) {
+    .grid-item {
+      margin-bottom: $grid-item-sm;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -160,8 +203,9 @@ $bp-subzone-ends-layout: 800px;
 
   .grid-item + .grid-item {
     @include mq($bp-zone-has-layout, max) {
-      margin-top: 25px;
-      padding-top: 25px;
+      // background-color: yellow;
+      margin-top: $grid-item-sm;
+      padding-top: $grid-item-sm;
       margin-bottom: 0;
       border-top: $bdr-thin;
     }
@@ -171,7 +215,10 @@ $bp-subzone-ends-layout: 800px;
     display: flex;
     @include media-grid(2, 60px, '.grid-item');
     @include grid-rule(2, -30px);
-    .grid-item { padding-top: 15px; padding-bottom: 15px; }
+    .grid-item {
+      padding-top: $grid-item-sm;
+      padding-bottom: $grid-item-sm;
+    }
   }
 }
 
@@ -187,13 +234,18 @@ $bp-subzone-ends-layout: 800px;
   @include mq($bp-medium) {
     @include media-grid(2, 60px, '.grid-item');
     @include grid-rule(2, -30px);
-    .grid-item { padding-top: 15px; padding-bottom: 15px; }
+    display: flex;
+    .grid-item {
+      padding-top: $grid-item-sm;
+      padding-bottom: $grid-item-sm;
+      margin-bottom: 0;
+    }
   }
 
   .grid-item {
     @include mq($bp-medium, max) {
-      padding-bottom: 25px;
-      margin-bottom: 25px;
+      padding-bottom: $grid-item-sm;
+      margin-bottom: $grid-item-sm;
       border-bottom: $bdr-thin;
       &:last-child {
         padding-bottom: 0;
@@ -219,8 +271,8 @@ $bp-subzone-ends-layout: 800px;
   // l-zone-dos--split-inside
   @include mq($bp-medium) {
     .top-grid-item--left {
-      padding-top: 15px;
-      padding-bottom: 15px;
+      padding-top: $grid-item-sm;
+      padding-bottom: $grid-item-sm;
     }
   }
 
@@ -268,8 +320,8 @@ $bp-subzone-ends-layout: 800px;
     @include mq($bp-medium-plus, max) {
       @include mq($bp-medium, max) {
         border-bottom: $bdr-thin;
-        padding-bottom: 25px;
-        margin-bottom: 25px;
+        padding-bottom: $grid-item-sm;
+        margin-bottom: $grid-item-sm;
         &:last-child {
           border-bottom: 0;
           padding-bottom: 0;
@@ -281,10 +333,13 @@ $bp-subzone-ends-layout: 800px;
 
   // Controlling art size for all items
   .art-bd {
-    @include mq(400px, $bp-medium) {
-      max-width: 150px;
+    @include mq($bp-medium, max) {
+      max-width: 100px;
       float: right;
       margin-left: 25px;
+    }
+    @include mq($bp-medium, 700px) {
+      max-width: 175px;
     }
   }
 
@@ -308,8 +363,8 @@ $bp-subzone-ends-layout: 800px;
 // The top right zone within l-zone-dos--split
 .top-grid-item--right {
   @include mq($bp-medium, $bp-medium-plus) {
-    margin-top: 25px;
-    padding-top: 25px;
+    margin-top: $grid-item-sm;
+    padding-top: $grid-item-sm;
     border-top: $bdr-thin;
   }
 }
@@ -318,8 +373,9 @@ $bp-subzone-ends-layout: 800px;
 // The bottom right zone within l-zone-dos--slit
 // this is in the stat area in zone 3 on hp
 .top-grid-item--right-lower {
-  padding-top: 25px;
-  margin-top: 25px;
+  padding-top: $grid-item-sm;
+  margin-top: $grid-item-sm;
+  // margin-top: 15px;
   border-top: $bdr-thin;
 }
 
@@ -372,8 +428,9 @@ $bp-subzone-ends-layout: 800px;
     @include media-grid(3, 50px, '.grid-item');
     @include grid-rule(3, -25px);
     > .grid-item {
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-top: $grid-item-sm;
+      padding-bottom: $grid-item-sm;
+      margin-bottom: 0;
     }
   }
 
@@ -383,8 +440,8 @@ $bp-subzone-ends-layout: 800px;
     .grid-item {
       @include mq($bp-medium, max) {
         border-bottom: $bdr-thin;
-        padding-bottom: 25px;
-        margin-bottom: 25px;
+        padding-bottom: $grid-item-sm;
+        margin-bottom: $grid-item-sm;
         &:last-child {
           border-bottom: 0;
           padding-bottom: 0;
@@ -393,8 +450,8 @@ $bp-subzone-ends-layout: 800px;
       }
       &:first-of-type {
         @include mq($bp-medium, $bp-medium-plus) {
-          margin-bottom: 25px;
-          padding-bottom: 25px;
+          margin-bottom: $grid-item-sm;
+          padding-bottom: $grid-item-sm;
           border-bottom: $bdr-thin;
         }
       }
@@ -402,14 +459,30 @@ $bp-subzone-ends-layout: 800px;
 
     // When an image appears in slot 2 or three of this layout zone
     .extra-grid-item {
-      @include mq($bp-medium) {
+      background-color: yellow;
+      @include mq(700px) {
         width: 66.666%;
         &:after {
           position: static;
         }
       }
       .l-pair-tz-hp-stub {
-        @include pair(40%, 3%, top);
+        // @include pair(40%, 3%, top);
+        // background-color: pink;
+        @include mq(700px) {
+          @include pair(40%, 3%, top);
+        }
+
+        .art-bd {
+          @include mq($bp-medium, max) {
+            float: right;
+            max-width: 100px;
+          }
+          @include mq($bp-medium, 700px) {
+            float: right;
+            max-width: 175px;
+          }
+        }
       }
     }
 
@@ -446,11 +519,11 @@ $bp-subzone-ends-layout: 800px;
       &:nth-child(2n + 3),
       &:nth-child(2n + 4) {
         position: relative;
-        margin-top: 25px;
+        margin-top: $grid-item-sm;
         &:before {
           position: absolute;
           content: '';
-          top: -25px;
+          top: -$grid-item-sm;
           width: 100%;
           height: 1px;
           background-color: $bdr-thin-color;
@@ -462,8 +535,8 @@ $bp-subzone-ends-layout: 800px;
   .grid-item {
     @include mq($bp-medium, max) {
       border-bottom: $bdr-thin;
-      padding-bottom: 25px;
-      margin-bottom: 25px;
+      padding-bottom: $grid-item-sm;
+      margin-bottom: $grid-item-sm;
       &:last-child {
         border-bottom: 0;
         padding-bottom: 0;
@@ -502,8 +575,10 @@ $bp-subzone-ends-layout: 800px;
 
 .l-zone-tres--art {
   overflow: hidden;
+  // display: flex;
   @include pie-clearfix;
-  @include mq($bp-medium-plus) {
+  @include mq(700px) {
+    display: flex;
     @include media-grid(4, 50px, '.grid-item');
     @include grid-rule(3, -25px);
     .grid-item.extra-grid-item {
@@ -513,19 +588,22 @@ $bp-subzone-ends-layout: 800px;
 
   // Controlling the first grid item
   .grid-item.extra-grid-item {
-    @include mq($bp-medium-plus, max) {
+    @include mq(700px, max) {
       width: 100%;
       float: none;
       border-bottom: $bdr-thin;
-      padding-bottom: 25px;
-      margin-bottom: 25px;
+      padding-bottom: $grid-item-sm;
+      margin-bottom: $grid-item-sm;
     }
 
     // Controlling size of art for first grid item
     .l-pair-tz-hp-stub {
-      @include mq(450px) { @include pair(150px, 25px, top); }
+      // background-color: yellow;
+      @include mq(600px, max) { @include pair(100px, 25px, top, right); }
 
-      @include mq($bp-medium) { @include pair(200px, 25px, top); }
+      @include mq(600px, 700px) { @include pair(175px, 25px, top, right); }
+
+      @include mq(700px) { @include pair(200px, 25px, top); }
     }
 
   }
@@ -533,47 +611,110 @@ $bp-subzone-ends-layout: 800px;
   // This for intermediate breakpoints when
   // There is one item which 100%
   // and two items that have layout
-  @include mq($bp-medium, $bp-medium-plus) {
-      .grid-item {
-        position: relative;
-        width: 45%;
-        float: left;
-        &:after {
-          position: absolute;
-          content: '\0020';
-          top: 0;
-          bottom: 0;
-          right: -11%;
-          width: 1px;
-          background-color: $bdr-thin-color;
-        }
-        &:nth-of-type(3n) {
-          float: right;
-          // &:after { position: static; width: 0; }
-        }
-      }
-    }
+  // @include mq($bp-medium, $bp-medium-plus) {
+  //     .grid-item {
+  //       position: relative;
+  //       width: 45%;
+  //       float: left;
+  //       &:after {
+  //         position: absolute;
+  //         content: '\0020';
+  //         top: 0;
+  //         bottom: 0;
+  //         right: -11%;
+  //         width: 1px;
+  //         background-color: $bdr-thin-color;
+  //       }
+  //       &:nth-of-type(3n) {
+  //         float: right;
+  //         // &:after { position: static; width: 0; }
+  //       }
+  //     }
+  //   }
 
   .grid-item {
-    @include mq($bp-medium, max) {
-      border-bottom: $bdr-thin;
-      padding-bottom: 25px;
-      margin-bottom: 25px;
-      &:last-child {
-        border-bottom: 0;
-        padding-bottom: 0;
-        margin-bottom: 0;
-      }
-    }
+    margin-bottom: 0;
     &:last-child {
       &:after {
         position: relative;
         width: 0;
       }
     }
+    @include mq(700px, max) {
+      border-bottom: $bdr-thin;
+      padding-bottom: $grid-item-sm;
+      margin-bottom: $grid-item-sm;
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    @include mq(700px) {
+      padding-top: $grid-item-sm;
+      padding-bottom: $grid-item-sm;
+    }
+
   }
 
 }
+
+
+// Two up with one grid having art
+// --------------------------------------------
+
+// Used on the Home page in Zone 2 Top (hp-zone-top)
+
+.l-zone-dos--art {
+  overflow: hidden;
+  // display: flex;
+  @include pie-clearfix;
+  @include mq(700px) {
+    display: flex;
+    @include grid-rule(2, -25px);
+
+    // Layout of zone
+    .grid-item {
+      width: 33.333%;
+      float: left;
+    }
+    .grid-item.extra-grid-item {
+      width: 66.666%;
+      float: right;
+      padding-left: 50px;
+
+    }
+  }
+
+  // Bottom rules for grid items
+  .grid-item {
+    @include mq(700px, max) {
+      border-bottom: $bdr-thin;
+      padding-bottom: $grid-item-sm;
+      margin-bottom: $grid-item-sm;
+      &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .grid-item.extra-grid-item {
+    margin-bottom: 0;
+    // Controlling size of art for item with art
+    .l-pair-tz-hp-stub {
+      @include mq(600px, max) { @include pair(100px, 25px, top, right); }
+
+      @include mq(600px, 700px) { @include pair(175px, 25px, top, right); }
+
+      @include mq(700px) { @include pair(200px, 25px, top); }
+    }
+  }
+
+}
+
 
 
 

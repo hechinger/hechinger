@@ -73,18 +73,18 @@
                     <p class="about-text">{{ post.our_awards }}</p>
                   {% endif %}
                   <div class="about-bottom-mod">
-                    {% if post.awards|length %}
+                    {% if awards|length %}
                       <ul class="about-award-items">
-                        {% for award in post.awards %}
+                        {% for award in awards %}
                           <li class="l-pair-award">
                             <div class="art-bd">
                               <h4 class="award-year">{{ award.year }}</h4>
                             </div> <!-- /art-bd -->
                             <div class="txt-bd">
                               <h4 class="award-h">
-                                <a class="award-h-link" href="/awards">{{ award.name }}</a>
+                                <a class="award-h-link" href="{{ award.link|length ? award.link : '/awards' }}">{{ award.headline }}</a>
                               </h4> <!-- /award-h -->
-                              <p class="award-text">{{ award.description }}<a class="award-read-more" href="/awards">Read More</a></p>
+                              <p class="award-text">{{ award.description }}<a class="award-read-more" href="{{ award.link|length ? award.link : '/awards' }}">Read More</a></p>
                             </div> <!-- /txt-bd -->
                           </li> <!-- /l-pair-award -->
                         {% endfor %}

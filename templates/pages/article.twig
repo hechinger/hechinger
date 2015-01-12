@@ -28,17 +28,17 @@
           {% endif %}
         {% endblock %}
 
-        <div class="article-body article-text">
+        <div class="article-body article-text js-article-text">
           {{ post.content }}
 
-          <div class="bottom-aside-container">
             {% block article_related %}
               {% if post.related_heading or post.post_related_aside %}
+                <div class="bottom-aside-container">
                 {% include "/templates/components/article-aside-related.twig" %}
+                </div> <!-- /bottom-aside-container -->
               {% endif %}
             {% endblock %}
 
-          </div> <!-- /bottom-aside-container -->
         </div> <!-- /article-body -->
       </article> <!-- /article-main -->
 
@@ -51,8 +51,8 @@
           </div> <!-- /article-tools-btm-right -->
 
           <div class="article-tools-btm-left">
-            <a class="article-comment-link icon-disqus" id="comment-trigger" href="#"><i class="icon"></i>
-              <span class="article-comment-number disqus-comment-count" data-disqus-identifier="{{ post.slug }}">No comments</span>
+            <a class="article-comment-link icon-disqus comment-trigger js-comment-trigger" href="#"><i class="icon"></i>
+              <span class="article-comment-number disqus-comment-count" data-disqus-url="{{ post.link }}">No comments</span>
             </a>
           </div> <!-- /article-tool-btm-let -->
 
@@ -61,7 +61,7 @@
 
       <!-- article-comments -->
       {% block article_comments %}
-        <div class="page-mod article-mod" id="comment-mod">
+        <div class="page-mod article-mod comment-mod js-comment-mod">
           <div class="comment-inner">
             {% include "templates/components/disqus.twig" %}
           </div> <!-- /comment-inner -->
@@ -136,5 +136,7 @@
   <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/comment.js"></script>
   <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/QuickShare/dist/quickshare.js"></script>
   <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/share.js"></script>
+  <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/blockquote.js"></script>
+  <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/partner-move.js"></script>
   <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/article.js"></script>
 {% endblock %}

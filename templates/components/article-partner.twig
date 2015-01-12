@@ -1,5 +1,5 @@
 <!-- article-aside -->
-<aside class="partner-aside">
+<aside class="partner-aside js-partner-aside">
   {% for partner in post.partners %}
     <div class="aside-partner-logo">
       <img class="aside-partner-img" src="{{ TimberImage(partner.logo).src | resize(400) }}" alt="{{ partner.name }}" />

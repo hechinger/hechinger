@@ -5,11 +5,7 @@ class RelatedAdmin extends EditorTool_Core implements EditorTool_Interface {
   var $slug = 'related';
 
   function shortcode($atts, $content) {
-    $atts['headline'] = null;
     if (isset($atts['id']) && $atts['id']) {
-      if (isset($atts['headline']) && $atts['headline'] && trim($atts['headline']) != 'auto') {
-        $headline = $atts['headline'];
-      }
       return $this->render('templates/components/article-text-related.twig', $atts);
     }
   }
@@ -25,7 +21,8 @@ class RelatedAdmin extends EditorTool_Core implements EditorTool_Interface {
       $post = new HechingerPost($link);
       $link = $post->link();
     }
-    if ($atts['headline'] == null && isset($post)) {
+    $headline = $atts['headline'];
+    if ($headline == null && isset($post)) {
       $headline = $post->title();
     }
     $args = array('link' => $link, 'headline' => $headline);

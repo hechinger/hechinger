@@ -20,7 +20,7 @@ class EditorTool_Core {
   }
 
   function add_plugin( $plugin_array ) {
-    $plugin_array[$this->slug] = get_template_directory_uri().'/static/js/editor-tool-factory.js';
+    $plugin_array['editor_button_script'] = get_template_directory_uri().'/static/js/editor-tool-factory.js';
     return $plugin_array;
   }
 

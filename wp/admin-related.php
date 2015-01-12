@@ -20,9 +20,12 @@ class RelatedAdmin extends EditorTool_Core implements EditorTool_Interface {
     if (is_numeric($link)) {
       $post = new HechingerPost($link);
       $link = $post->link();
+    } else {
+      return;
     }
-    $headline = $atts['headline'];
-    if ($headline == null && isset($post)) {
+    if ($atts['headline'] && $atts['headline'] !== 'auto') {
+      $headline = $atts['headline'];
+    } else {
       $headline = $post->title();
     }
     $args = array('link' => $link, 'headline' => $headline);

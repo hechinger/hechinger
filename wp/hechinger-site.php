@@ -60,7 +60,6 @@ class HechingerSite extends TimberSite {
   function addActions() {
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
-    add_action( 'init', array( $this, 'add_reports' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
     add_action( 'admin_init', array( $this, 'bootstrap_content' ) );
     add_action( 'admin_notices', array( $this, 'admin_sync_categories' ) );
@@ -213,45 +212,6 @@ class HechingerSite extends TimberSite {
     return $twig;
   }
 
-  function add_reports( $reports ) {
-
-    $reports = array (
-      array(
-        'name' => 'California',
-        'slug' => 'california'
-      ),
-      array(
-        'name' => 'Mississippi Learning',
-        'slug' => 'mississippi-learning'
-      ),
-      array(
-        'name' => 'Higher Education',
-        'slug' => 'higher-education'
-      ),
-      array(
-        'name' => 'Common Core',
-        'slug' => 'common-core'
-      )
-    );
-
-    foreach ($reports as $report) {
-      if ( !term_exists( $report['name'], 'special-report') ) {
-        $parent_term = term_exists( $report['name'], 'special-report' );
-        $parent_term_id = $parent_term['term_id'];
-
-        wp_insert_term(
-          $report['name'],
-          'special-report',
-          array(
-            'description'=> $report['name'] . ' is one of The Hechinger Report\'s featured Special Reports.',
-            'slug' => $report['slug'],
-            'parent'=> $parent_term_id
-          )
-        );
-      }
-    }
-  }
-
   static function set_primary_special_report( $field ) {
     global $post;
     if ( !$post ) {
@@ -332,7 +292,8 @@ class HechingerSite extends TimberSite {
         $from_term->matching_term_id = (int)$to_term['term_id'];
         $from_terms[(int)$from_term->term_id] = $from_term;
       }else{
-        $errors[] = "Couldn't associate $from_term with a $from from the database.";
+        $errors[] = "Couldn't associate $from_name with a $from from the database.\n<br />";
+        wp_insert_term( $from_name, $to );
       }
     }
 
@@ -346,6 +307,8 @@ class HechingerSite extends TimberSite {
 
     $args = array(
         'post_type' => 'post',
+        'posts_per_page' => -1,
+        'nopaging' => true,
         'category__in' => array_keys( $from_terms )
     );
 
@@ -380,7 +343,7 @@ class HechingerSite extends TimberSite {
     }
 
     return $message;
-    
+
   }
 
 }

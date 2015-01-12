@@ -318,6 +318,9 @@ class HechingerSite extends TimberSite {
 
     $added_terms = array();
     //loop over the terms
+    //built this way (terms -> posts) because has_term is cached
+    //if we looped over posts then terms, we'd forgo the benefit of that caching
+    //since we'd only hit each post once
     foreach( $from_terms as $from_term ){
       //loop over all posts
       foreach($matching_posts as $post ) {
@@ -327,7 +330,10 @@ class HechingerSite extends TimberSite {
           //make sure to append the term to existing terms, not replace
           $added_term = wp_set_post_terms( $post->ID, array( $from_term->matching_term_id ), $to, $append = true);
           if( $added_term && !is_wp_error( $added_term ) ) {
-            $added_terms[] = $added_term;
+            //harmless logger
+            $added_terms[] = array( 'post' => $post->ID, 'from' => $from_term->term_id, 'to' => $from_term->matching_term_id );
+            //remove the term from the "from" taxonomy
+            wp_remove_object_terms( $post->ID, $from_term->term_id, $from );
           }else{
             $errors[] = "Failed to add {$from_term->name} to {$post->post_title}.";
           }

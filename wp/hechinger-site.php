@@ -266,56 +266,99 @@ class HechingerSite extends TimberSite {
     return $field;
   }
 
-  public static function sync_categories( $taxonomy_slug ) {
+  public static function sync_categories( $to = 'special-report', $from = 'category' ) {
 
-    if( !taxonomy_exists( $taxonomy_slug ) ) {
-      echo 'Whoops! You specified a taxonomy that doesn\'t exist in the database.';
+    if( !taxonomy_exists( $to ) ) {
+      echo 'Whoops! You specified a taxonomy that doesn\'t exist in the database.' . "\n<br />";
+      echo 'Please create the taxonomy you want to convert to and rerun this script.';
       return;
     }
 
-    if( !file_exists( __DIR__ . "/content-import/$taxonomy_slug.txt" ) ) {
-      echo 'Term Import File is missing!';
+    if( !file_exists( __DIR__ . "/content-import/$to.txt" ) ) {
+      echo 'Import File is missing!';
       return;
     }
 
-    $import_file = file_get_contents( __DIR__ . "/content-import/$taxonomy_slug.txt" );
+    $import_file = file_get_contents( __DIR__ . "/content-import/$to.txt" );
 
     //put it in an array - new line = new term
-    $term_names = explode("\n", $import_file);
+    $from_names = explode("\n", $import_file);
 
-    if( !$term_names || !is_array($term_names) ) {
-      echo 'Whoops! The term file import failed :(';
+    if( !$from_names || !is_array($from_names) ) {
+      echo 'Whoops! The file import failed :(. Please ensure that  ' . __DIR__;
+      echo '/content-import/' . $to . '.txt exists and try again';
       return;
     }
 
-    $file_terms_count = count($term_names);
-    echo "Found $file_terms_count terms in the imported file ($taxonomy_slug.txt).\n<br />";
+    $file_terms_count = count($from_names);
+    echo "Found $file_terms_count $from terms in the imported file ($to.txt).\n<br />";
 
-    $terms = $errors = array();
-    foreach( $term_names as $term_name ) {
-      $term = get_term_by( 'name', $term_name, 'category' );
-      if( $term && isset( $term->term_id ) ) {
-        $terms[(int)$term->term_id] = $term;
+    $from_terms = $errors = array();
+    foreach( $from_names as $from_name ) {
+      $from_term = get_term_by( 'name', $from_name, 'category' );
+      if( $from_term && isset( $from_term->term_id ) ) {
+        //insert/check the term in the "$to" taxonomy
+        $to_term = term_exists( $from_term->slug, $to );
+        if( !$to_term ) {
+          $term_args = array(
+            'description' => $from_term->description,
+            'slug' => $from_term->slug
+          );
+          $to_term = wp_insert_term( $from_term->name, $to, $term_args );
+          echo "Inserted {$from_term->name} into the $to taxonomy.\n<br />";
+        }
+        $from_term->matching_term_id = (int)$to_term['term_id'];
+        $from_terms[(int)$from_term->term_id] = $from_term;
       }else{
-        $errors[] = "Couldn't associate $term_name with a term from the database.";
+        $errors[] = "Couldn't associate $from_term with a $from from the database.";
       }
     }
 
-    $db_terms_count = count($terms);
-    echo "Associated $db_terms_count terms from the imported file to terms in the database.\n<br />";
+    $db_terms_count = count($from_terms);
+    echo "Associated $db_terms_count $from terms from the imported file to $from terms in the database.\n<br />";
 
     if( $errors ) {
       echo implode("\n<br />", $errors);
+      $errors = array();
     }
+
+    $args = array(
+        'post_type' => 'post',
+        'category__in' => array_keys( $from_terms )
+    );
+
+    $matching_posts = get_posts( $args );
+    $posts_count = count($matching_posts);
+    echo "Retrieved $posts_count posts with terms from the imported $from file.\n<br />";
+
+    $added_terms = array();
+    //loop over the terms
+    foreach( $from_terms as $from_term ){
+      //loop over all posts
+      foreach($matching_posts as $post ) {
+        //check if the current post has the "from" term, but NOT the "to" term
+        if( has_term( $from_term->term_id, $from, $post->ID ) && !has_term( $from_term->slug, $to, $post->ID ) ) {
+          //if it does, migrate it to the new taxonomy
+          //make sure to append the term to existing terms, not replace
+          $added_term = wp_set_post_terms( $post->ID, array( $from_term->matching_term_id ), $to, $append = true);
+          if( $added_term && !is_wp_error( $added_term ) ) {
+            $added_terms[] = $added_term;
+          }else{
+            $errors[] = "Failed to add {$from_term->name} to {$post->post_title}.";
+          }
+        }
+      }
+    }
+    $added_terms_count = count($added_terms);
+    echo "Synced $added_terms_count terms from $posts_count posts";
+
+    if( $errors ) {
+      echo implode("\n<br />", $errors);
+      $errors = array();
+    }
+
     //todo: complete and think about how to avoid db transactions from here on out
-    foreach( $terms as $term_id => $term ){
-      $args = array(
-          'post_type' => 'post',
-          'tax_query' => array(
-              'taxonomy' => $taxonomy_slug
-          ),
-      );
-    }
+
   }
 
 }

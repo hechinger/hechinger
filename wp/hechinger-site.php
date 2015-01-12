@@ -60,9 +60,9 @@ class HechingerSite extends TimberSite {
   function addActions() {
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
-    add_action( 'init', array( $this, 'add_reports' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
     add_action( 'admin_init', array( $this, 'bootstrap_content' ) );
+    add_action( 'admin_notices', array( $this, 'admin_sync_categories' ) );
   }
 
   function fix_custom_field_conflict() {
@@ -212,45 +212,6 @@ class HechingerSite extends TimberSite {
     return $twig;
   }
 
-  function add_reports( $reports ) {
-
-    $reports = array (
-      array(
-        'name' => 'California',
-        'slug' => 'california'
-      ),
-      array(
-        'name' => 'Mississippi Learning',
-        'slug' => 'mississippi-learning'
-      ),
-      array(
-        'name' => 'Higher Education',
-        'slug' => 'higher-education'
-      ),
-      array(
-        'name' => 'Common Core',
-        'slug' => 'common-core'
-      )
-    );
-
-    foreach ($reports as $report) {
-      if ( !term_exists( $report['name'], 'special-report') ) {
-        $parent_term = term_exists( $report['name'], 'special-report' );
-        $parent_term_id = $parent_term['term_id'];
-
-        wp_insert_term(
-          $report['name'],
-          'special-report',
-          array(
-            'description'=> $report['name'] . ' is one of The Hechinger Report\'s featured Special Reports.',
-            'slug' => $report['slug'],
-            'parent'=> $parent_term_id
-          )
-        );
-      }
-    }
-  }
-
   static function set_primary_special_report( $field ) {
     global $post;
     if ( !$post ) {
@@ -265,4 +226,131 @@ class HechingerSite extends TimberSite {
     }
     return $field;
   }
+
+  public static function admin_sync_categories() {
+    //todo - could refactor so message is an object, with type defining div class as updated or error
+    if( isset( $_GET['hech_sync_to'] ) ) {
+      $from = isset( $_GET['hech_sync_from'] ) ? sanitize_text_field( $_GET['hech_sync_from'] ) : 'category';
+      $to = sanitize_text_field( $_GET['hech_sync_to'] );
+      $message = self::sync_categories( $to, $from );
+      ?>
+        <div class="updated">
+          <p><?= $message; ?></p>
+        </div>
+      <?php
+    }
+  }
+
+  //you can call this directly, or just hit any admin page
+  //like /wp-admin/?hech_sync_to=special-report&hech_sync_from=category
+  public static function sync_categories( $to = 'special-report', $from = 'category' ) {
+    $message = '';
+    if( !taxonomy_exists( $to ) ) {
+      $message .= 'Whoops! You specified a taxonomy that doesn\'t exist in the database.' . "\n<br />";
+      $message .= 'Please create the taxonomy you want to convert to and rerun this script.';
+      return $message;
+    }
+    if( !taxonomy_exists( $from ) ) {
+      $message .= 'Whoops! You specified a taxonomy that doesn\'t exist in the database.' . "\n<br />";
+      $message .= 'Please create the taxonomy you want to convert from and rerun this script.';
+      return $message;
+    }
+
+    if( !file_exists( __DIR__ . "/content-import/$to.txt" ) ) {
+      $message .= 'Import File is missing!';
+      return $message;
+    }
+
+    $import_file = file_get_contents( __DIR__ . "/content-import/$to.txt" );
+
+    //put it in an array - new line = new term
+    $from_names = explode("\n", $import_file);
+
+    if( !$from_names || !is_array($from_names) ) {
+      $message .= 'Whoops! The file import failed :(. Please ensure that  ' . __DIR__;
+      $message .= '/content-import/' . $to . '.txt exists and try again';
+      return $message;
+    }
+
+    $file_terms_count = count($from_names);
+    $message .= "Found $file_terms_count $from terms in the imported file ($to.txt).\n<br />";
+
+    $from_terms = $errors = array();
+    foreach( $from_names as $from_name ) {
+      $from_term = get_term_by( 'name', $from_name, 'category' );
+      if( $from_term && isset( $from_term->term_id ) ) {
+        //insert/check the term in the "$to" taxonomy
+        $to_term = term_exists( $from_term->slug, $to );
+        if( !$to_term ) {
+          $term_args = array(
+            'description' => $from_term->description,
+            'slug' => $from_term->slug
+          );
+          $to_term = wp_insert_term( $from_term->name, $to, $term_args );
+          $message .= "Inserted {$from_term->name} into the $to taxonomy.\n<br />";
+        }
+        $from_term->matching_term_id = (int)$to_term['term_id'];
+        $from_terms[(int)$from_term->term_id] = $from_term;
+      }else{
+        $errors[] = "Couldn't associate $from_name with a $from from the database.\n<br />";
+        wp_insert_term( $from_name, $to );
+      }
+    }
+
+    $db_terms_count = count($from_terms);
+    $message .= "Associated $db_terms_count $from terms from the imported file to $from terms in the database.\n<br />";
+
+    if( $errors ) {
+      $message .= implode("\n<br />", $errors);
+      $errors = array();
+    }
+
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => -1,
+        'nopaging' => true,
+        'category__in' => array_keys( $from_terms )
+    );
+
+    $matching_posts = get_posts( $args );
+    $posts_count = count($matching_posts);
+    $message .= "Retrieved $posts_count posts with terms from the imported $from file.\n<br />";
+
+    $added_terms = array();
+    //loop over the terms
+    //built this way (terms -> posts) because has_term is cached
+    //if we looped over posts then terms, we'd forgo the benefit of that caching
+    //since we'd only hit each post once
+    foreach( $from_terms as $from_term ){
+      //loop over all posts
+      foreach($matching_posts as $post ) {
+        //check if the current post has the "from" term, but NOT the "to" term
+        if( has_term( $from_term->term_id, $from, $post->ID ) && !has_term( $from_term->slug, $to, $post->ID ) ) {
+          //if it does, migrate it to the new taxonomy
+          //make sure to append the term to existing terms, not replace
+          $added_term = wp_set_post_terms( $post->ID, array( $from_term->matching_term_id ), $to, $append = true);
+          if( $added_term && !is_wp_error( $added_term ) ) {
+            //harmless logger
+            $added_terms[] = array( 'post' => $post->ID, 'from' => $from_term->term_id, 'to' => $from_term->matching_term_id );
+            //remove the term from the "from" taxonomy
+            wp_remove_object_terms( $post->ID, $from_term->term_id, $from );
+          }else{
+            $errors[] = "Failed to add {$from_term->name} to {$post->post_title}.";
+          }
+        }
+      }
+      wp_delete_term( $from_term->term_id, $from );
+    }
+    $added_terms_count = count($added_terms);
+    $message .= "Synced $added_terms_count terms from $posts_count posts";
+
+    if( $errors ) {
+      $message .= implode("\n<br />", $errors);
+      $errors = array();
+    }
+
+    return $message;
+
+  }
+
 }

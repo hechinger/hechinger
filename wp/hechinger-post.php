@@ -118,13 +118,6 @@ class HechingerPost extends TimberPost {
     }
   }
 
-  function awards() {
-    $awards = $this->get_field('awards');
-    if ( isset($awards) && is_array($awards)) {
-      return $awards;
-    }
-  }
-
   function fred_photo() {
     $image = new HechingerImage($this->fred_photo);
     return isset($image) ? $image : null;

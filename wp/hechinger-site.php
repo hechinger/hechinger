@@ -63,7 +63,7 @@ class HechingerSite extends TimberSite {
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
     add_action( 'admin_init', array( $this, 'bootstrap_content' ) );
-    add_action( 'admin_notices', array( $this, 'admin_sync_categories' ) );
+    add_action( 'admin_notices', array( $this, 'bootstrap_sync' ) );
   }
 
   function fix_custom_field_conflict() {
@@ -233,18 +233,67 @@ class HechingerSite extends TimberSite {
     return $args;
   }
 
-  public static function admin_sync_categories() {
+  public static function bootstrap_sync() {
+    $message = '';
     //todo - could refactor so message is an object, with type defining div class as updated or error
     if( isset( $_GET['hech_sync_to'] ) ) {
+      $message .= '<br />';
       $from = isset( $_GET['hech_sync_from'] ) ? sanitize_text_field( $_GET['hech_sync_from'] ) : 'category';
       $to = sanitize_text_field( $_GET['hech_sync_to'] );
-      $message = self::sync_categories( $to, $from );
-      ?>
-        <div class="updated">
-          <p><?= $message; ?></p>
-        </div>
-      <?php
+      $message .= self::sync_categories( $to, $from );
+
     }
+    if( isset( $_GET['hech_sync_partners'] ) ) {
+      $message .= '<br />';
+      $message .= self::sync_partners();
+
+    }
+    if( $message ) {
+      ?>
+      <div class="updated">
+        <p><?= $message; ?></p>
+      </div>
+    <?php
+    }
+  }
+
+  public static function sync_partners() {
+    $message = '';
+    $args = array( 'meta_key'=>'logo' );
+    $posts = get_posts( $args );
+    $taxonomy_slug = 'partner';
+    $sync_count = 0;
+    $bookmarks_to_delete = array();
+    if( $posts ) {
+      foreach( $posts as $post ) {
+        $bookmark_id = (int)$post->logo;
+        if( $bookmark_id ) {
+          $partner_bookmark = get_bookmark( $bookmark_id );
+          if( $partner_bookmark ) {
+            $bookmarks_to_delete[] = $bookmark_id;
+            $partner_term_id_arr = term_exists( $partner_bookmark->link_name, $taxonomy_slug );
+            if( !$partner_term_id_arr ) {
+              $partner_term_id_arr = wp_insert_term( $partner_bookmark->link_name, $taxonomy_slug );
+            }
+            if( !isset( $partner_term_id_arr['term_id'] ) )
+              continue;
+            $partner_term_id = (int)$partner_term_id_arr['term_id'];
+            //be sure to append and not replace terms for each post
+            wp_set_object_terms( $post->ID, array( $partner_term_id ), $taxonomy_slug, true );
+            $sync_count++;
+            if( function_exists( 'update_field' ) ) {
+              update_field( 'field_54735ab1383f6', $partner_bookmark->link_url, "{$taxonomy_slug}_{$partner_term_id}" );
+            }
+          }
+        }
+      }
+      //must run this after the above loop or bookmarks will get prematurely deleted
+      foreach( $bookmarks_to_delete as $bookmark_id ) {
+        wp_delete_link( $bookmark_id );
+      }
+    }
+    $message = "Migrated $sync_count bookmarks to the $taxonomy_slug taxonomy";
+    return $message;
   }
 
   //you can call this directly, or just hit any admin page

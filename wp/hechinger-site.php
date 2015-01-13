@@ -55,6 +55,7 @@ class HechingerSite extends TimberSite {
     add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
     add_filter( 'acf/load_field/key=field_5492eb43d3984', array($this, 'set_primary_special_report'), 2, 2 );
     add_filter( 'coauthors_edit_author_cap', function(){ return 'read'; } );
+    add_filter( 'acf/fields/relationship/query', array( $this, 'acf_relationship_sort' ), 10, 3 );
   }
 
   function addActions() {
@@ -225,6 +226,11 @@ class HechingerSite extends TimberSite {
       }
     }
     return $field;
+  }
+
+  function acf_relationship_sort( $args, $field, $post_id ) {
+    $args['orderby'] = 'date';
+    return $args;
   }
 
   public static function admin_sync_categories() {

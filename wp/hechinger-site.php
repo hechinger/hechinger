@@ -235,7 +235,6 @@ class HechingerSite extends TimberSite {
 
   public static function bootstrap_sync() {
     $message = '';
-    //todo - could refactor so message is an object, with type defining div class as updated or error
     if( isset( $_GET['hech_sync_to'] ) ) {
       $message .= '<br />';
       $from = isset( $_GET['hech_sync_from'] ) ? sanitize_text_field( $_GET['hech_sync_from'] ) : 'category';
@@ -280,6 +279,7 @@ class HechingerSite extends TimberSite {
             $partner_term_id = (int)$partner_term_id_arr['term_id'];
             //be sure to append and not replace terms for each post
             wp_set_object_terms( $post->ID, array( $partner_term_id ), $taxonomy_slug, true );
+            delete_post_meta( $post->ID, 'logo' );
             $sync_count++;
             if( function_exists( 'update_field' ) ) {
               update_field( 'field_54735ab1383f6', $partner_bookmark->link_url, "{$taxonomy_slug}_{$partner_term_id}" );

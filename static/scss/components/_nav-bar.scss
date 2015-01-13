@@ -133,11 +133,13 @@
   display: block;
   padding: 17px 10px 10px;
   width: 220px;
+  height: 43px;
   background-color: $black;
   @include trans(.15s);
 
   @include mq($bp-small) {
     width: 240px;
+    height: 51px;
   }
 
   @include mq($bp-medium) {

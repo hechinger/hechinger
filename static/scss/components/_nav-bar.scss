@@ -905,15 +905,37 @@
   @include mq($bp-medium) {
     opacity: 0;
     transform: translateY(-10px);
-    @include trans(.2s, all, $animation-timing);
-
-    .search-form-wrap.is-open & {
-      animation-delay: .05s;
-      animation-duration: 0.4s;
-      animation-name: navSearchAnimation;
-      animation-fill-mode: forwards;
-    }
   } //mq
+}
+
+.cssanimations {
+  & .search-text-input,
+  & .search-submit-button {
+    @include mq($bp-medium) {
+      @include trans(.2s, all, $animation-timing);
+    }
+  }
+
+  & .search-form-wrap.is-open {
+    & .search-text-input,
+    & .search-submit-button {
+      @include mq($bp-medium) {
+        animation-delay: .05s;
+        animation-duration: 0.4s;
+        animation-name: navSearchAnimation;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+.no-cssanimations .search-form-wrap.is-open {
+  & .search-text-input,
+  & .search-submit-button {
+    @include mq($bp-medium) {
+      opacity: 1;
+    }
+  }
 }
 
 @keyframes navSearchAnimation {

@@ -16,4 +16,4 @@ window.onload = (function($, FastClick){
     responsiveBg = HE_responsiveBg.init();
   }
 
-}(jQuery, FastClick));
+}(window.jQuery, window.FastClick));

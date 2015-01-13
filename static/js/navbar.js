@@ -58,8 +58,8 @@ var HE_navbar = (function($){
   function init() {
     $menuButton.on('click', openMenu);
     $searchButton.on('click', openSearch);
-    $topicsButton.on('mouseenter', openTopics);
-    $topicsButton.on('mouseleave', closeTopics);
+    $topicsButton.hover(openTopics, closeTopics);
+    //$topicsButton.on('mouseleave', closeTopics);
   }
 
   return {

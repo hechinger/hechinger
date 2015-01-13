@@ -86,9 +86,7 @@ $bp-subzone-ends-layout: 800px;
 
 
 .grid-item {
-  // margin-bottom: 20px;
   position: relative;
-  // background-color: green;
 }
 
 
@@ -127,42 +125,23 @@ $bp-subzone-ends-layout: 800px;
 // --------------------------------------------
 
 .l-hp-zone {
-  // margin-top: 45px;
-  // padding-top: 45px;
-  // background-color: green;
   > * + * {
-    // padding-top: 45px;
-    // margin-top: 45px;
-    // margin-top: 25px;
-    // padding-top: 25px;
     margin-top: $grid-item-med;
     padding-top: $grid-item-med;
     border-top: $bdr-thin;
-    // background-color: red;
 
     @include mq($bp-medium, max) {
-      // Spacing matches `hp-top-feat-mod`
-      // padding-top: 25px;
-      // margin-top: 25px;
       margin-top: $grid-item-med;
       padding-top: $grid-item-med;
     }
   }
 
   & + & {
-    // background-color: pink;
-    // margin-top: 45px;
-    // padding-top: 45px;
-    // margin-top: 25px;
-    // padding-top: 25px;
     border-top: $bdr-thin;
     margin-top: $grid-item-lg;
     padding-top: $grid-item-med;
 
-    // background-color: blue;
-
     @include mq($bp-medium-plus, max) {
-      // background-color: blue;
       padding-top: $grid-item-med;
       margin-top: $grid-item-med;
     }
@@ -260,10 +239,8 @@ $bp-subzone-ends-layout: 800px;
 
 
 
-// xxxx
-// --------------------------------------------
-
 // Used in Zone 3 Top on Homepage
+// --------------------------------------------
 
 .l-zone-dos--split {
   @include pie-clearfix;
@@ -280,7 +257,6 @@ $bp-subzone-ends-layout: 800px;
   // size adjustment so art for three across art lines up
   @include mq($bp-medium-plus) {
     .top-grid-item--left {
-      // .tz-img-mod { width: 97.4452555%; }
       .tz-img-mod { width: 95.4452555%; }
     }
   }
@@ -376,7 +352,6 @@ $bp-subzone-ends-layout: 800px;
 .top-grid-item--right-lower {
   padding-top: $grid-item-sm;
   margin-top: $grid-item-sm;
-  // margin-top: 15px;
   border-top: $bdr-thin;
 }
 
@@ -468,8 +443,6 @@ $bp-subzone-ends-layout: 800px;
         }
       }
       .l-pair-tz-hp-stub {
-        // @include pair(40%, 3%, top);
-        // background-color: pink;
         @include mq(700px) {
           @include pair(40%, 3%, top);
         }
@@ -576,7 +549,6 @@ $bp-subzone-ends-layout: 800px;
 
 .l-zone-tres--art {
   overflow: hidden;
-  // display: flex;
   @include pie-clearfix;
   @include mq(700px) {
     display: flex;
@@ -599,7 +571,6 @@ $bp-subzone-ends-layout: 800px;
 
     // Controlling size of art for first grid item
     .l-pair-tz-hp-stub {
-      // background-color: yellow;
       @include mq(600px, max) { @include pair(100px, 25px, top, right); }
 
       @include mq(600px, 700px) { @include pair(175px, 25px, top, right); }
@@ -608,30 +579,6 @@ $bp-subzone-ends-layout: 800px;
     }
 
   }
-
-  // This for intermediate breakpoints when
-  // There is one item which 100%
-  // and two items that have layout
-  // @include mq($bp-medium, $bp-medium-plus) {
-  //     .grid-item {
-  //       position: relative;
-  //       width: 45%;
-  //       float: left;
-  //       &:after {
-  //         position: absolute;
-  //         content: '\0020';
-  //         top: 0;
-  //         bottom: 0;
-  //         right: -11%;
-  //         width: 1px;
-  //         background-color: $bdr-thin-color;
-  //       }
-  //       &:nth-of-type(3n) {
-  //         float: right;
-  //         // &:after { position: static; width: 0; }
-  //       }
-  //     }
-  //   }
 
   .grid-item {
     margin-bottom: 0;
@@ -657,9 +604,9 @@ $bp-subzone-ends-layout: 800px;
       padding-bottom: $grid-item-sm;
     }
 
-  }
+  } //grid-item
+} // l-zone-tres-art
 
-}
 
 
 // Two up with one grid having art
@@ -669,7 +616,6 @@ $bp-subzone-ends-layout: 800px;
 
 .l-zone-dos--art {
   overflow: hidden;
-  // display: flex;
   @include pie-clearfix;
   @include mq(700px) {
     display: flex;

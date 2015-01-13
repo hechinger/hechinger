@@ -2666,8 +2666,9 @@ img {
   .page-content .aligncenter,
   .page-content .alignnone {
     max-width: 550px;
-    margin-left: 25px;
-    margin-right: 0;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 

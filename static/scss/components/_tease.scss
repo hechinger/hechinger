@@ -388,6 +388,16 @@
     margin-top: 0;
   }
 
+  // overrides styles applied to .art-bd from l-dos-split--inside
+  .art-bd {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .l-zone-dos--split & .art-bd {
+    max-width: auto;
+  }
+
   @include mq($bp-medium) {
     @include pair(auto, 20px);
 

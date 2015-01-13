@@ -148,6 +148,8 @@ img { @include resp-img; }
   margin-top: -1px; // offsets borders, correctly centering circle
   transform: translateY(-35px);
   @include trans(.2s);
+
+  .no-svg & { background-color: transparent; }
 }
 
 .icon--reg {

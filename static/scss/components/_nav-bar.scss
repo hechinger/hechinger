@@ -639,6 +639,17 @@
 .nav-search-icon--reverse {
   opacity: 0;
   @include svg(icn-search-reverse);
+
+  // hiding the reverse button for no svg browsers
+  .no-svg & { display: none; }
+
+  .no-svg .js-nav-search-button:hover & {
+    display: block;
+  }
+
+  .no-svg .js-nav-search-button.is-open:hover & {
+    display: none;
+  }
 }
 
 .nav-search-icon--close {
@@ -646,6 +657,13 @@
   @include svg(icn-close-reverse);
   @include trans(.15s);
   transform: translateY(-22px);
+
+  // hiding the close button for no svg
+  .no-svg & { display: none; }
+
+  .no-svg .js-nav-search-button.is-open & {
+    display: block;
+  }
 
   // Hide fallback close button (&times;)
   display: block;

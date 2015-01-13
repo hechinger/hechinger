@@ -156,7 +156,7 @@
   // Size matches:
   // tz-h--stub-med,
   // tz-special-sub-h
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.15;
 }
 
@@ -286,19 +286,25 @@
 .tz-special-h {
   position: relative;
   font-family: $he-accent;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.194444444;
   font-weight: 900;
   color: $he-secondary;
-  margin: 12px 0 5px;
+  margin-bottom: 5px;
 
   @include mq($bp-medium) {
-    margin-top: 0;
+    font-size: 26px;
+  }
+
+  @include mq($bp-medium-plus) {
+    font-size: 28px;
   }
 }
 
 
 .tz-special-sub-h {
+  @include display-type;
+
   // Size matches:
   // tz-h--stub-med,
   // tz-h--reg-med
@@ -312,6 +318,7 @@
   @include bullet(after);
   color: $tease-head-color;
   text-decoration: underline;
+  letter-spacing: -1px;
 
   &:hover {
     text-decoration: none;
@@ -330,18 +337,35 @@
 .tz-special-number {
   position: relative;
   font-family: $he-accent;
-  font-size: 72px;
-  line-height: 0.7;
+  font-size: 59px;
+  line-height: 0.75;
   font-weight: 900;
   color: $he-secondary;
   letter-spacing: -1px;
 
-  @include mq(650px) {
+  @include mq($bp-small) {
+    font-size: 90px;
+    line-height: 0.78;
+  }
+
+  @include mq($bp-medium) {
+    font-size: 104px;
+  }
+
+  @include mq($bp-medium-plus) {
     font-size: 112px;
     letter-spacing: -3px;
   }
 }
 
+// Quotes need extra space to
+// sit nicely in the overall layout
+.tz-special-quote {
+  margin: 10px 0;
+  @include mq($bp-medium-plus) {
+    margin-bottom: 0;
+  }
+}
 
 .tz-special-precent {
   font-size: 0.5em;
@@ -350,16 +374,41 @@
 
 
 .l-pair-tz-special-stat {
-  @include mq($bp-medium) { @include pair(auto, 30px); }
-
-  @include mq($bp-medium, max) {
-    .art-bd {
-      float: none;
-      max-width: auto;
-      margin-left: 0;
+  .tz-stat-mod {
+    // Apply these properties only until
+    // the pair mixin applies at med-plus bp
+    @include mq($bp-medium, max) {
+      float: left;
+      margin-right: 15px;
     }
   }
-}
+
+  .txt-bd {
+    // overrides greedy tz-inner > * + * selector
+    margin-top: 0;
+  }
+
+  // overrides styles applied to .art-bd from l-dos-split--inside
+  .art-bd {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .l-zone-dos--split & .art-bd {
+    max-width: auto;
+  }
+
+  @include mq($bp-medium) {
+    @include pair(auto, 20px);
+
+    // Increases spacing around big numbers
+    margin-top: 5px;
+    margin-bottom: 35px;
+    .l-recirc-zone & {
+      margin-top: 15px;
+    }
+  } //mq
+} // l-pair-tz-special-stat
 
 
 

@@ -33,7 +33,7 @@
   @include pie-clearfix;
   position: relative;
   height: 100%;
-  padding: 20px 25px;
+  padding: 23px 25px;
   @include mq($bp-small) {
     padding: 30px;
   }
@@ -49,7 +49,7 @@
   @include pie-clearfix;
   position: relative;
   height: 100%;
-  padding: 30px 0 0;
+  padding: 30px;
 
   @include mq($bp-medium) {
     padding: 35px;
@@ -185,7 +185,7 @@
   position: relative;
   height: 6px;
   width: 100%;
-  background-color: black;
+  background-color: $black;
 
   @include mq($bp-medium) {
     height: 8px;
@@ -197,11 +197,10 @@
     content: '\0020';
     width: 6px;
     height: 25px;
-    background-color: transparent;
+    background-color: $black;
 
     @include mq($bp-medium) {
       width: 8px;
-      background-color: $black;
     }
 
     @include mq($bp-large) {
@@ -219,18 +218,16 @@
 
 
 .promo-bdr--top {
-  &:after, &:before { top: 0; }
+  &:after, &:before {
+    top: 0;
+  }
 }
 
 
 .promo-bdr--bottom {
-  display: none;
-
-  @include mq($bp-medium) {
-    display: block;
+  &:after, &:before {
+    bottom: 0;
   }
-
-  &:after, &:before { bottom: 0; }
 }
 
 

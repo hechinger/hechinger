@@ -11,6 +11,15 @@
 // sans-serif face.
 body {
   font-family: $he-sans;
+  // Autoprefixer does not support these properties
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Applying only to larger devices to
+  // sidestep Anrdoid and other mobile bugs
+  @media (min-device-width : 600px) {
+    text-rendering: optimizeLegibility;
+  }
 }
 
 // This makes sure that all links take on a

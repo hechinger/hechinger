@@ -7,12 +7,6 @@
 // --------------------------------------------
 
 
-// Site Margin
-// --------------------------------------------
-$site-margin: 20px;
-
-
-
 // Spacers
 // --------------------------------------------
 $space-grid--quarter:       12.5px;
@@ -34,6 +28,15 @@ $grid-item-lg:              45px;
 $content-max:         960px;
 $content-max--inner:  860px;
 $has-margin:          800px;
+
+
+// Mode Variables
+// --------------------------------------------
+
+$bp-zone-has-layout:     700px;
+$bp-subzone-has-layout:  500px;
+$bp-subzone-ends-layout: 800px;
+
 
 
 .content-wrapper {
@@ -59,19 +62,26 @@ $has-margin:          800px;
 }
 
 
-.l-content--inner { margin: 0 auto; }
+.l-content--inner {
+  margin: 0 auto;
+}
 
-
-.l-article--inner { margin: 0 auto; }
+.l-article--inner {
+  margin: 0 auto;
+}
 
 
 // Used for page headers and article page headers
 .l-page-hdr {
   max-width: $content-max;
 
-  @include mq($has-margin) { margin: 0 $site-margin; }
+  @include mq($has-margin) {
+    margin: 0 $site-margin;
+  }
 
-  @include mq($bp-no-content-margin) { margin: 0 auto; }
+  @include mq($bp-no-content-margin) {
+    margin: 0 auto;
+  }
 }
 
 
@@ -97,15 +107,18 @@ $has-margin:          800px;
 // --------------------------------------------
 
 .l-recirc-zone {
-  // margin-top: 45px;
   margin-top: $grid-item-sm;
-  @include mq($bp-medium) { margin-top: $grid-item-med; }
   & + & {
-    // padding-top: 45px;
-    padding-top: $grid-item-sm;
+    padding-top: $grid-item-med;
     border-top: $bdr-thin;
-    @include mq($bp-medium) { padding-top: $grid-item-med; }
   }
+
+  @include mq($bp-zone-has-layout) {
+    margin-top: $grid-item-sm;
+    & + & {
+      padding-top: $grid-item-sm;
+    }
+  } //mq
 }
 
 
@@ -158,17 +171,6 @@ $has-margin:          800px;
 
 
 
-// Mode Variables
-// --------------------------------------------
-
-$bp-zone-has-layout:     700px;
-$bp-subzone-has-layout:  500px;
-$bp-subzone-ends-layout: 800px;
-
-
-
-
-
 // Two up
 // --------------------------------------------
 .l-zone-dos {
@@ -191,7 +193,7 @@ $bp-subzone-ends-layout: 800px;
     }
   }
 
-}
+} // l-zone-dos
 
 
 
@@ -203,9 +205,8 @@ $bp-subzone-ends-layout: 800px;
 
   .grid-item + .grid-item {
     @include mq($bp-zone-has-layout, max) {
-      // background-color: yellow;
-      margin-top: $grid-item-sm;
-      padding-top: $grid-item-sm;
+      margin-top: $grid-item-med;
+      padding-top: 20px; // non-uniform value creates appropriate space above hp-list-mod
       margin-bottom: 0;
       border-top: $bdr-thin;
     }

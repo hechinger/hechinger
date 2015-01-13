@@ -40,7 +40,9 @@ img { @include resp-img; }
   @include pie-clearfix;
   display: inline-block;
   &.social--with-name {
-    @include mq($bp-small, max) { display: block; }
+    @include mq($bp-small, max) {
+      display: block;
+    }
   }
 }
 
@@ -51,22 +53,31 @@ img { @include resp-img; }
   text-indent: -9999em;
   margin-top: 0;
   font-size: 12px;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
 
   & + & { margin-left: 10px; }
 
   .social--ftr & {
     margin-left: 15px;
-    &:first-child { margin-left: 0; }
+    &:first-child {
+      margin-left: 0;
+    }
   }
 
   .social--with-name & {
     @include mq($bp-small, max) {
       width: 47%;
-      &.icon-facebook { margin-left: 6%; }
-    }
+      &.icon-facebook {
+        margin-left: 6%;
+      }
+    } //mq
   }
 }
 
+.social--with-name .icon-twitter .social-item-link {
+  text-indent: 37px;
+}
 
 .social-item-link {
   display: block;
@@ -100,8 +111,8 @@ img { @include resp-img; }
     text-decoration: none;
 
     @include mq($bp-small) {
-      width: 100px;
-      line-height: 35px;
+      width: 110px;
+      line-height: 33px;
       height: 35px;
     }
 
@@ -286,7 +297,7 @@ $icons: twitter,
 // --------------------------------------------
 
 .section-hdr-container {
-  border-top: 2px solid black;
+  border-top: 2px solid #000;
   border-bottom: $bdr-thin;
   padding: 20px 5px;
   margin-bottom: 20px;
@@ -294,14 +305,17 @@ $icons: twitter,
 
 
 .section-hdr--lg {
-  border-top: 2px solid black;
+  border-top: 2px solid #000;
   border-bottom: $bdr-thin;
-  padding: 20px 5px 18px;
+  padding: 14px 5px 15px;
   margin-bottom: 20px;
   font-family: $he-accent;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 900;
   color: $hdr-color;
+  @include mq($bp-medium) {
+    font-size: 24px;
+  }
 
   // Recirculation on article pages
   .recirculation-container & {

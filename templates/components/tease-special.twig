@@ -1,7 +1,7 @@
 {% extends '/templates/components/tease-layout.twig' %}
 
 {% block tease_content %}
-  <div class="tz-inner l-pair-{{ css_class ? css_class : '' }}">
+  <div class="tz-inner {% if show_stat %}l-pair-{{ css_class ? css_class : '' }}{% else %}tz-special-quote{% endif %}">
 
     {% block tease_stat %}
       {% if show_stat %}

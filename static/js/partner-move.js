@@ -11,7 +11,7 @@ var HE_partner = (function($){
       return;
     }
     // find the third paragraph or the last paragraph if article less than 3 paragraphs
-    $targetParagraph = findParagraph(3);
+    $targetParagraph = findParagraph(2);
 
     if (typeof $targetParagraph !== 'undefined' || !$targetParagraph || !$targetParagraph.length) {
       $partnerAside.insertAfter($targetParagraph);
@@ -20,10 +20,13 @@ var HE_partner = (function($){
 
   // find a paragraph by index, if article is shorter than index, find the last paragraph recursively
   function findParagraph(index) {
-    var graph;
+    var graph, $graph;
+
     if (index > 0) {
-      graph = $('.js-article-text p:nth-child(' + index + ')');
-      return graph !== 'undefined' && graph.length ? graph : findParagraph(index - 1);
+      // eliminate paragraphs in asides or captions
+      graph = $('.js-article-text').find('p').not('.article-aside p').not('.img-caption-text')[index];
+      $graph = $(graph);
+      return $graph !== 'undefined' && $graph.length ? $graph : findParagraph(index - 1);
     } else {
       return false;
     }

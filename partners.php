@@ -77,9 +77,9 @@ $context['partners'] = array(
     "link" => "xxxxx"
   ),
   array(
-    "name" => "Gotham Schools",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "Gotham Schools (Chalkbeat??????)",
+    "image" => "icn-partner-gotham_schools.png",
+    "link" => "http://chalkbeat.org/"
   ),
   array(
     "name" => "Indianapolis Star",
@@ -213,100 +213,154 @@ $context['partners'] = array(
   ),
   array(
     "name" => "The Arizona Republic",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-arizona_republic.png",
     "link" => "http://www.azcentral.com/topic/e85b7e4c-ae59-4084-9af1-020df1406d1d/the-arizona-republic-online/"
   ),
   array(
     "name" => "The Atlantic",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-atlantic.png",
     "link" => "http://theatlantic.com"
   ),
   array(
     "name" => "The Boston Globe",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-boston_globe.png",
     "link" => "http://www.bostonglobe.com/"
   ),
   array(
     "name" => "The Chicago Tribune",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-chicago_tribune.png",
     "link" => "http://www.chicagotribune.com/"
   ),
   array(
     "name" => "The Christian Science Monitor",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-christian_science_monitor.png",
     "link" => "http://www.csmonitor.com/"
   ),
   array(
     "name" => "The Chronical of Higher Education",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-chronicle_of_higher_ed.png",
     "link" => "http://chronicle.com/"
   ),
   array(
     "name" => "The Clarion Ledger",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-clarion_ledger.png",
     "link" => "http://www.clarionledger.com/"
   ),
   array(
     "name" => "The Commerical Appeal",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-commercial_appeal.png",
     "link" => "http://www.commercialappeal.com/"
   ),
   array(
     "name" => "The CT Mirror",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-ct_mirror.png",
     "link" => "http://ctmirror.org/"
   ),
   array(
     "name" => "The Dallas Morning News",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-dallas_morning_news.png",
     "link" => "http://www.dallasnews.com/"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Huffington Post",
+    "image" => "icn-partner-huffington_post.png",
+    "link" => "http://www.huffingtonpost.com/"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Lens",
+    "image" => "icn-partner-the_lens.png",
+    "link" => "http://thelensnola.org/"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Los Angeles Times",
+    "image" => "icn-partner-LA_times.png",
+    "link" => "http://www.latimes.com/"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Miami Herald",
+    "image" => "icn-partner-miami_herald.png",
+    "link" => "http://www.miamiherald.com/"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Milwaukee Journal Sentinel",
+    "image" => "icn-partner-milwaukee_journal_sentinel.png",
+    "link" => "http://www.jsonline.com/"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Nation",
+    "image" => "icn-partner-nation.png",
+    "link" => "http://www.thenation.com/"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Philadelphia Inquirer",
+    "image" => "icn-partner-philadelphia_inquirer.png",
+    "link" => "http://www.philly.com/"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Seattle Times",
+    "image" => "icn-partner-seattle_times.png",
+    "link" => "http://seattletimes.com/html/home/index.html"
   ),
   array(
-    "name" => "xxxx",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
+    "name" => "The Tennessean",
+    "image" => "icn-partner-tennessean.png",
+    "link" => "http://www.tennessean.com/"
   ),
-
+  array(
+    "name" => "The Texas Tribune",
+    "image" => "icn-partner-texas_tribune.png",
+    "link" => "https://www.texastribune.org/"
+  ),
+  array(
+    "name" => "The Times-Picayune",
+    "image" => "icn-partner-times_picayune.png",
+    "link" => "http://www.nola.com/t-p/"
+  ),
+  array(
+    "name" => "The Washington Post",
+    "image" => "icn-partner-washington_post.png",
+    "link" => "http://www.washingtonpost.com/"
+  ),
+  array(
+    "name" => "Time",
+    "image" => "icn-partner-time.png",
+    "link" => "http://time.com"
+  ),
+  array(
+    "name" => "Us News and World Report",
+    "image" => "icn-partner-us_news_and_world_report.png",
+    "link" => "http://www.usnews.com/"
+  ),
+  array(
+    "name" => "USA Today",
+    "image" => "icn-partner-usa_today.png",
+    "link" => "http://www.usatoday.com/"
+  ),
+  array(
+    "name" => "Washington Monthly",
+    "image" => "icn-partner-washington_monthly.png",
+    "link" => "http://www.washingtonmonthly.com/"
+  ),
+  array(
+    "name" => "WBEZ 91.5 Chicago",
+    "image" => "icn-partner-wbez.png",
+    "link" => "http://www.wbez.org/"
+  ),
+  array(
+    "name" => "WGBH",
+    "image" => "icn-partner-wgbh.png",
+    "link" => "http://www.wgbh.org/"
+  ),
+  array(
+    "name" => "WNYC",
+    "image" => "icn-partner-wnyc.png",
+    "link" => "http://www.wnyc.org/"
+  ),
+  array(
+    "name" => "WWNO",
+    "image" => "icn-partner-wwno.png",
+    "link" => "http://wwno.org/"
+  )
 
 );
 

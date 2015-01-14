@@ -9,13 +9,10 @@
           </div> <!-- /article-column-img -->
         {% endif %}
         <h3 class="hp-list-head">
-          {% if lpost.is_column and not lpost.author.columnist_image %}
-            <span class="hp-list-type">Column</span>
-          {% endif %}
-          {% if lpost.is_opinion %}
-            <span class="hp-list-type">Opinion</span>
-          {% endif %}
-          <a class="hp-list-link" href="{{ lpost.link }}">{{ lpost.title }}</a>
+          <a class="hp-list-link" href="{{ lpost.link }}">
+            {% include "/templates/components/tease-article-type.twig" with { post: lpost } %}
+            {{ lpost.title }}
+          </a>
         </h3>
       </li> <!-- /hp-list-item -->
     {% endfor %}

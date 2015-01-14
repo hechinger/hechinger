@@ -11,7 +11,10 @@
 
     <div class="txt-bd">
       <h1 class="tz-full-h">
-        <a class="tz-full-h-link" href="{{ post.link }}">{{ post.title|striptags }}</a>
+        <a class="tz-full-h-link" href="{{ post.link }}">
+          {% include "/templates/components/tease-article-type.twig" %}
+          {{ post.title|striptags }}
+        </a>
       </h1>
 
       {% if post.tease_excerpt %}

@@ -1,9 +1,9 @@
-window.onload = (function($, fitText){
+(function($){
   "use strict";
 
   var $window = $(window);
   var windowWidth = $window.width();
-  var $topHeadline = $(".js-tz-hp-lead");
+  var $topHeadline = $('.js-tz-h--feat-lg');
 
   function headlineResizer() {
     if (windowWidth > 400  && windowWidth < 499) {
@@ -59,8 +59,6 @@ window.onload = (function($, fitText){
     headlineResizer();
   }
 
-  if (typeof fitText !== undefined && $topHeadline !== undefined && $topHeadline.length ) {
-    init();
-  }
+  window.onload = init();
 
-}(jQuery, window.fitText));
+}(window.jQuery));

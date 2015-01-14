@@ -33,6 +33,9 @@ class HechingerRoutes {
     Timber::add_route('supporters', function($params){
       Timber::load_view('supporters.php', null, 200, $params);
     });
+     Timber::add_route('partners', function($params){
+      Timber::load_view('partners.php', null, 200, $params);
+    });
     Timber::add_route('search', function($params){
       Timber::load_view('search.php', null, 200, $params);
     });

@@ -1,0 +1,38 @@
+{% extends '/pages/staff.twig' %}
+
+{% block header %}
+    {% include 'components/section-front-header.twig' with { section_front_title : "Partners", post: post, subhead: "word", link_heading: post.link_heading, link_to_page: post.link_to_page } %}
+  {% endblock header %}
+
+{% block staff_content %}
+
+  <div class="staff-content">
+    <div class="l-content">
+      <ul class="supporter-items l-logo-grid">
+
+        {% for partner in partners %}
+          <li class="grid-item">
+              {% if partner.image %}
+                <div class="art-bd">
+                    {% if partner.link %}
+                      <a href="{{ partner.link }}">
+                        <img src="/wp-content/themes/hechinger/static/img/partners/{{ partner.image }}" alt="Photo of {{ partner.name }}">
+                      </a>
+                    {% else %}
+                        <img src="/wp-content/themes/hechinger/static/img/partners/{{ partner.image }}" alt="Photo of {{ partner.name }}">
+                    {% endif %}
+                </div> <!-- /art-bd -->
+              {% endif %}
+
+              <div class="txt-bd">
+                <h3 class="logo-name-h">
+                  <a class="logo-name-h-link" href="{{ partner.link ? partner.link : '' }}">{{ partner.name }}</a>
+                </h3> <!-- staff-name-h -->
+              </div> <!-- /txt-bd -->
+          </li> <!-- / staff-item -->
+        {% endfor %}
+
+      </ul> <!-- /partner-items -->
+    </div> <!-- /l-content -->
+  </div> <!-- /staff-content -->
+{% endblock staff_content %}

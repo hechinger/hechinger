@@ -44,7 +44,7 @@
             "default_value": "",
             "placeholder": "",
             "maxlength": "",
-            "rows": "2",
+            "rows": "",
             "new_lines": "wpautop",
             "readonly": 0,
             "disabled": 0

@@ -153,7 +153,7 @@ $context['partners'] = array(
   ),
   array(
     "name" => "Politico Magazine",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-politico_magazine.png",
     "link" => "http://www.politico.com/magazine/"
   ),
   array(

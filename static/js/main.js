@@ -16,8 +16,4 @@ window.onload = (function($, FastClick, HE_navbar, HE_responsiveBg){
     responsiveBg = HE_responsiveBg.init();
   }
 
-<<<<<<< HEAD
-}(window.jQuery, window.FastClick));
-=======
 }(window.jQuery, window.FastClick, window.HE_navbar, window.HE_responsiveBg));
->>>>>>> f314a78... improved mobile menu on ie8 + 9. #406

@@ -133,11 +133,13 @@
   display: block;
   padding: 17px 10px 10px;
   width: 220px;
+  height: 43px;
   background-color: $black;
   @include trans(.15s);
 
   @include mq($bp-small) {
     width: 240px;
+    height: 51px;
   }
 
   @include mq($bp-medium) {
@@ -171,7 +173,8 @@
 }
 
 
-.nav-logo-img {
+.nav-logo-img,
+.footer-logo-img {
   &.logo-fallback {
     display: none;
   }
@@ -638,6 +641,17 @@
 .nav-search-icon--reverse {
   opacity: 0;
   @include svg(icn-search-reverse);
+
+  // hiding the reverse button for no svg browsers
+  .no-svg & { display: none; }
+
+  .no-svg .js-nav-search-button:hover & {
+    display: block;
+  }
+
+  .no-svg .js-nav-search-button.is-open:hover & {
+    display: none;
+  }
 }
 
 .nav-search-icon--close {
@@ -645,6 +659,13 @@
   @include svg(icn-close-reverse);
   @include trans(.15s);
   transform: translateY(-22px);
+
+  // hiding the close button for no svg
+  .no-svg & { display: none; }
+
+  .no-svg .js-nav-search-button.is-open & {
+    display: block;
+  }
 
   // Hide fallback close button (&times;)
   display: block;

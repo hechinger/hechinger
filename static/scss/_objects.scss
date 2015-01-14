@@ -148,6 +148,8 @@ img { @include resp-img; }
   margin-top: -1px; // offsets borders, correctly centering circle
   transform: translateY(-35px);
   @include trans(.2s);
+
+  .no-svg & { background-color: transparent; }
 }
 
 .icon--reg {
@@ -399,8 +401,10 @@ $button-main: $he-secondary;
   letter-spacing: 1px;
   color: #fff;
 
+  @include trans(.25s);
+
   &:hover {
-    // background-color: darken($button-main, 5%);
+    background-color: darken($button-main, 5%);
   }
   &:active {
     // background-color: darken($button-main, 8%);

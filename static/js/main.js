@@ -1,4 +1,4 @@
-window.onload = (function($, FastClick){
+window.onload = (function($, FastClick, HE_navbar, HE_responsiveBg){
   "use strict";
 
   var navbar, responsiveBg;
@@ -12,8 +12,8 @@ window.onload = (function($, FastClick){
     navbar = HE_navbar.init();
   }
 
-  if (typeof HE_navbar !== undefined && typeof HE_responsiveBg.init !== undefined) {
+  if (typeof HE_responsiveBg !== undefined && typeof HE_responsiveBg.init !== undefined) {
     responsiveBg = HE_responsiveBg.init();
   }
 
-}(window.jQuery, window.FastClick));
+}(window.jQuery, window.FastClick, window.HE_navbar, window.HE_responsiveBg));

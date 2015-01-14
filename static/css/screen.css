@@ -7537,7 +7537,24 @@ input:-webkit-autofill:focus {
           transform: translateY(0);
 }
 
-/* line 822, ../scss/components/_nav-bar.scss */
+/* line 823, ../scss/components/_nav-bar.scss */
+.no-cssanimations .nav-menu {
+  visibility: visible;
+}
+/* line 826, ../scss/components/_nav-bar.scss */
+.no-cssanimations .nav-menu-close {
+  visibility: hidden;
+}
+/* line 830, ../scss/components/_nav-bar.scss */
+.no-cssanimations .nav-is-open .nav-menu {
+  visibility: hidden;
+}
+/* line 833, ../scss/components/_nav-bar.scss */
+.no-cssanimations .nav-is-open .nav-menu-close {
+  visibility: visible;
+}
+
+/* line 839, ../scss/components/_nav-bar.scss */
 .search-form-wrap {
   display: none;
   position: relative;
@@ -7546,19 +7563,19 @@ input:-webkit-autofill:focus {
   margin: 0 10px;
 }
 @media (min-width: 450px) {
-  /* line 822, ../scss/components/_nav-bar.scss */
+  /* line 839, ../scss/components/_nav-bar.scss */
   .search-form-wrap {
     margin: 0 20px;
   }
 }
 @media (min-width: 1007px) {
-  /* line 822, ../scss/components/_nav-bar.scss */
+  /* line 839, ../scss/components/_nav-bar.scss */
   .search-form-wrap {
     margin: 0 auto;
   }
 }
 @media (min-width: 600px) {
-  /* line 822, ../scss/components/_nav-bar.scss */
+  /* line 839, ../scss/components/_nav-bar.scss */
   .search-form-wrap {
     display: block;
     overflow: hidden;
@@ -7569,25 +7586,25 @@ input:-webkit-autofill:focus {
     -webkit-transition: height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
-  /* line 843, ../scss/components/_nav-bar.scss */
+  /* line 860, ../scss/components/_nav-bar.scss */
   .search-form-wrap.is-open {
     overflow: visible;
     height: 61px;
   }
 }
 @media (min-width: 900px) {
-  /* line 850, ../scss/components/_nav-bar.scss */
+  /* line 867, ../scss/components/_nav-bar.scss */
   .search-form-wrap.is-open {
     height: 76px;
   }
 }
 
-/* line 856, ../scss/components/_nav-bar.scss */
+/* line 873, ../scss/components/_nav-bar.scss */
 .nav-is-open .search-form-wrap {
   margin-top: 20px;
 }
 
-/* line 860, ../scss/components/_nav-bar.scss */
+/* line 877, ../scss/components/_nav-bar.scss */
 .search-text-input {
   border: 0;
   background-color: transparent;
@@ -7633,7 +7650,7 @@ input:-webkit-autofill:focus {
   color: rgba(255, 255, 255, 0.7);
 }
 @media (min-width: 900px) {
-  /* line 860, ../scss/components/_nav-bar.scss */
+  /* line 877, ../scss/components/_nav-bar.scss */
   .search-text-input {
     height: 76px;
     padding: 4px 85px 10px 23px;
@@ -7641,7 +7658,7 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* line 886, ../scss/components/_nav-bar.scss */
+/* line 903, ../scss/components/_nav-bar.scss */
 .search-submit-button {
   border: 0;
   background-color: transparent;
@@ -7662,7 +7679,7 @@ input:-webkit-autofill:focus {
   outline: 0;
 }
 @media (min-width: 900px) {
-  /* line 886, ../scss/components/_nav-bar.scss */
+  /* line 903, ../scss/components/_nav-bar.scss */
   .search-submit-button {
     width: 80px;
     padding: 30px;
@@ -7670,7 +7687,7 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 600px) {
-  /* line 903, ../scss/components/_nav-bar.scss */
+  /* line 920, ../scss/components/_nav-bar.scss */
   .search-text-input,
   .search-submit-button {
     opacity: 0;
@@ -7681,14 +7698,14 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 600px) {
-  /* line 912, ../scss/components/_nav-bar.scss */
+  /* line 929, ../scss/components/_nav-bar.scss */
   .cssanimations .search-text-input, .cssanimations .search-submit-button {
     -webkit-transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 }
 @media (min-width: 600px) {
-  /* line 920, ../scss/components/_nav-bar.scss */
+  /* line 937, ../scss/components/_nav-bar.scss */
   .cssanimations .search-form-wrap.is-open .search-text-input, .cssanimations .search-form-wrap.is-open .search-submit-button {
     -webkit-animation-delay: .05s;
             animation-delay: .05s;
@@ -7702,7 +7719,7 @@ input:-webkit-autofill:focus {
 }
 
 @media (min-width: 600px) {
-  /* line 933, ../scss/components/_nav-bar.scss */
+  /* line 950, ../scss/components/_nav-bar.scss */
   .no-cssanimations .search-form-wrap.is-open .search-text-input, .no-cssanimations .search-form-wrap.is-open .search-submit-button {
     opacity: 1;
   }

@@ -819,6 +819,23 @@
   }
 }
 
+.no-cssanimations {
+  .nav-menu {
+    visibility: visible;
+  }
+  .nav-menu-close {
+    visibility: hidden;
+  }
+  .nav-is-open {
+    .nav-menu {
+      visibility: hidden;
+    }
+    .nav-menu-close {
+      visibility: visible;
+    }
+  }
+}
+
 .search-form-wrap {
   display: none;
   position: relative;

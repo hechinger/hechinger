@@ -16,6 +16,10 @@ $latest_posts_query = array();
 
 if ( isset($second_feature) && is_array($second_feature) ) {
   $context['second_feature'] = new HechingerPost($second_feature[0]->ID);
+  $second_feature_headline = $homepage->get_field('second_feature_headline');
+  if( $second_feature_headline ) {
+    $context['second_feature']->post_title = $second_feature_headline;
+  }
 }
 
 if (class_exists('TimberStream')) {

@@ -10,6 +10,7 @@ class HechingerHome extends TimberStream {
   var $avail_posts = array();
   var $zone_posts = array();
   var $zone_posts_ids = array();
+  var $zone2_has_image = false;
 
   function __construct() {
     parent::__construct('homepage');
@@ -84,6 +85,10 @@ class HechingerHome extends TimberStream {
     return $posts;
   }
 
+  public function z2_has_image() {
+    return $this->zone2_has_image;
+  }
+
   protected function get_zone_1_posts() {
     $avail_posts = $this->avail_posts;
     $posts = array();
@@ -99,18 +104,17 @@ class HechingerHome extends TimberStream {
     $avail_posts = $this->avail_posts;
     $pointer = $this->get_zone_pointer(2);
     $posts = array();
-    $found_image = false;
     for ($i = $pointer; $i < $pointer + 3; $i++) {
       $posts[] = $avail_posts[$i];
       if ($avail_posts[$i]->thumbnail()) {
-        $found_image = true;
+        $this->zone2_has_image = true;
       }
-      if ($found_image && count($posts) >= 3) {
+      if ($this->zone2_has_image && count($posts) >= 3) {
         break;
       }
     }
     // swap the post with the image for the second position
-    if ($found_image) {
+    if ($this->zone2_has_image) {
       $posts = $this->swap_posts($posts, 1);
     }
     return $posts;

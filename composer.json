@@ -9,7 +9,8 @@
     "require" : {
     	"wpackagist-plugin/co-authors-plus" : "*",
         "wpackagist-plugin/jigsaw" : "*",
-        "wpackagist-plugin/timber-library" : "0.20.*"
+        "wpackagist-plugin/timber-library" : "0.20.*",
+        "wpackagist-plugin/zoneboard" : "*"
     },
      "extra": {
         "installer-paths": {

@@ -1,8 +1,9 @@
 {% extends '/pages/staff.twig' %}
+{# TODO refactor staff and partners to extend a common template. Will make code more clear. #}
 
 {% block header %}
-    {% include 'components/section-front-header.twig' with { section_front_title : "Partners", post: post, subhead: "word", link_heading: post.link_heading, link_to_page: post.link_to_page } %}
-  {% endblock header %}
+  {% include 'components/section-front-header.twig' with { section_front_title : "Partners", post: post, subhead: post.subhead, link_heading: post.link_heading, link_to_page: post.link_to_page } %}
+{% endblock header %}
 
 {% block staff_content %}
 

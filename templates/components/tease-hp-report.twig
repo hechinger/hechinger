@@ -6,9 +6,12 @@
     <h4 class="special-report-tz-hdr">{{ report.title }}</h4>
   </a>
   <ul class="special-report-tz-items">
-    {% for srpost in report.get_posts('numberposts=2') %}
+    {% for srpost in report.get_posts('numberposts=2', 'any', 'HechingerPost') %}
       <li class="special-report-tz-item">
-        <a class="special-report-tz-link" href="{{ srpost.link }}">{{ srpost.title|striptags }}</a>
+        <a class="special-report-tz-link" href="{{ srpost.link }}">
+          {% include "/templates/components/tease-article-type.twig" with { post: srpost } %}
+          {{ srpost.title|striptags }}
+        </a>
       </li> <!-- /special-report-tz-item -->
    {% endfor %}
   </ul> <!-- /special-report-tz-items -->

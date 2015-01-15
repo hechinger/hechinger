@@ -1,0 +1,40 @@
+{
+    "key": "group_54b7e2990bed6",
+    "title": "Staff Members",
+    "fields": [
+        {
+            "key": "field_54b7e2b0041a8",
+            "label": "Staff",
+            "name": "staff_users",
+            "prefix": "",
+            "type": "user",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "role": "",
+            "allow_null": 0,
+            "multiple": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "10730"
+            }
+        ]
+    ],
+    "menu_order": -5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1421337374
+}

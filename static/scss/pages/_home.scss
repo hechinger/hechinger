@@ -335,8 +335,9 @@
   background-size: cover;
 
   .ie8 & {
+    background-image: none !important;
     background-color: black;
-    width: 460px;
+    // width: 460px;
   }
 
   // Here, absolute positioning stretches background

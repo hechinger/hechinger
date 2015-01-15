@@ -53,8 +53,8 @@
     <!-- Homepage Zone Special Reports -->
     <!-- ===================================== -->
     {% block hp_reports %}
-      <div class="l-hp-zone l-hp-zone--reports">
-        <div class="l-zone-dos">
+      <div class="l-hp-zone">
+        <div class="l-zone-dos l-hp-zone--reports">
           {% for report in special_reports %}
             {% if report.slug in ['california', 'common-core', 'blended-learning', 'mississippi-learning'] %}
               <div class="grid-item">

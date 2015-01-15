@@ -230,6 +230,7 @@ class HechingerSite extends TimberSite {
 
   function acf_relationship_sort( $args, $field, $post_id ) {
     $args['orderby'] = 'date';
+    $args['order'] = 'DESC';
     return $args;
   }
 

@@ -11,10 +11,10 @@
 $context = Timber::get_context();
 $context['users'] = array();
 $context['post'] = new HechingerPost($post);
-$staff_users = new WP_User_Query( array( 'meta_key' => 'hech_role', 'meta_value' => 'staff' ) );
+$staff_users = $context['post']->get_field('staff_users');
 
-if ( isset($staff_users->results) && is_array($staff_users->results) ) {
-  foreach ($staff_users->results as $user) {
+if ( is_array($staff_users) && count($staff_users) ) {
+  foreach ($staff_users as $user) {
     $context['users'][] = new HechingerUser($user);
   }
 }

@@ -3,6 +3,10 @@
 class HechingerPost extends TimberPost {
 
   function overline() {
+    $article_type = $this->article_type();
+    if( is_array( $article_type ) && count( $article_type ) ) {
+      return new HechingerTerm( $article_type[0] );
+    }
     $primary = $this->get_field('primary_special_report');
     if ($primary) {
       return new HechingerTerm($primary);

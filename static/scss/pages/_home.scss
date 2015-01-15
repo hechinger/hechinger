@@ -8,15 +8,23 @@
 
 .l-hp-zone--reports {
   @include mq($bp-zone-has-layout) {
-    .l-zone-dos {
+
       display: flex;
       flex-flow: row wrap;
-    }
 
-    .grid-item {
-      flex: 0 0 50%;
-      min-height: 230px;
-    }
+      // for browser that only support legacy flexbox
+      // and might choke on flexbox
+      .flexboxlegacy & { display: block; }
+
+      // for modern browsers that support both
+      // syntax of flexbox
+      .flexbox.flexboxlegacy & { display: flex; }
+
+    // .grid-item {
+    //   flex: 0 0 50%;
+    //   // min-height: 230px;
+    //   // border: 1px solid red;
+    // }
   } //mq
 }
 
@@ -325,6 +333,11 @@
   background-image: url("/wp-content/themes/hechinger/static/img/special-reports/img-special_report_tease-California-465-258.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
+  .ie8 & {
+    background-color: black;
+    width: 460px;
+  }
 
   // Here, absolute positioning stretches background
   // to fill entire width and height of container ...

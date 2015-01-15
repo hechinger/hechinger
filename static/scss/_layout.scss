@@ -156,6 +156,7 @@ $bp-subzone-ends-layout: 800px;
   @include pie-clearfix;
   @include mq($bp-zone-has-layout) {
     @include media-grid(2, 25px, '.grid-item');
+
     .grid-item {
       margin-bottom: $grid-item-med;
       // take away bottom margin for last two items

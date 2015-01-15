@@ -17,11 +17,6 @@ $context['partners'] = array(
     "link" => "http://www.americanpublicmedia.org/"
   ),
   array(
-    "name" => "Atlanta Blackstar",
-    "image" => "icn-partner-atlanta_blackstar.png",
-    "link" => "http://atlantablackstar.com/"
-  ),
-  array(
     "name" => "Business Insider",
     "image" => "icn-partner-business_insider.png",
     "link" => "http://www.businessinsider.com/"
@@ -65,21 +60,6 @@ $context['partners'] = array(
     "name" => "Education Writer's Association",
     "image" => "icn-partner-ewa.png",
     "link" => "http://www.ewa.org/"
-  ),
-  array(
-    "name" => "Fresno Bee",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
-  ),
-  array(
-    "name" => "Goleta Valley Voice",
-    "image" => "xxxxx.png",
-    "link" => "xxxxx"
-  ),
-  array(
-    "name" => "Gotham Schools (Chalkbeat??????)",
-    "image" => "icn-partner-gotham_schools.png",
-    "link" => "http://chalkbeat.org/"
   ),
   array(
     "name" => "Indianapolis Star",
@@ -173,7 +153,7 @@ $context['partners'] = array(
   ),
   array(
     "name" => "Politico Magazine",
-    "image" => "xxxxx.png",
+    "image" => "icn-partner-politico_magazine.png",
     "link" => "http://www.politico.com/magazine/"
   ),
   array(

@@ -20,7 +20,7 @@
         <div class="tz-content-mod txt-bd">
           {% block tease_overline %}
             <h4 class="tz-overline tz-overline--{{ context_class ? context_class: '' }}">
-              <a class="tz-overline-link" href="{{ post.overline.link }}">{{ post.overline }}</a>
+              <a class="tz-overline-link" href="{{ post.overline('tease') .link }}">{{ post.overline('tease') }}</a>
             </h4>
           {% endblock tease_overline %}
 

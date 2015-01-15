@@ -2,10 +2,14 @@
 
 class HechingerPost extends TimberPost {
 
-  function overline() {
+  function overline( $context = '' ) {
     $article_type = $this->article_type();
-    if( is_array( $article_type ) && count( $article_type ) ) {
-      return new HechingerTerm( $article_type[0] );
+    if( $context !== 'tease' && is_array( $article_type ) && count( $article_type ) ) {
+      foreach( $article_type as $type ) {
+        if ( $type !== 'Feature' ) {
+          return new HechingerTerm( $type );
+        }
+      }
     }
     $primary = $this->get_field('primary_special_report');
     if ($primary) {

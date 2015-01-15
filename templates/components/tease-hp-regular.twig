@@ -2,7 +2,7 @@
 
 {% block tease_overline_above_img %}
   <h4 class="tz-overline">
-    <a class="tz-overline-link" href="{{ post.overline.link }}">{{ post.overline }}</a>
+    <a class="tz-overline-link" href="{{ post.overline('tease').link }}">{{ post.overline('tease') }}</a>
   </h4>
 {% endblock tease_overline_above_img %}
 

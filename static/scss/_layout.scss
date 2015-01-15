@@ -161,6 +161,8 @@ $bp-subzone-ends-layout: 800px;
       margin-bottom: $grid-item-med;
       // take away bottom margin for last two items
       &:nth-last-child(-1n+2) { margin-bottom: 0;}
+
+      .ie8 & { min-height: 255px; }
     }
   }
 

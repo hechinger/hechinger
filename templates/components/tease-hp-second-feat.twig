@@ -8,7 +8,7 @@
     <div class="hp-second-feature-txt-inner">
       {% if feature.overline %}
         <h4 class="hp-second-feature-topic">
-          <a class="tz-overline-link" href="{{ feature.overline.link }}">{{ feature.overline }}</a>
+          <a class="tz-overline-link" href="{{ feature.overline('tease').link }}">{{ feature.overline('tease') }}</a>
         </h4>
       {% endif %}
       <h1 class="hp-second-feature-head">

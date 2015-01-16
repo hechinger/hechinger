@@ -211,7 +211,9 @@
 .nav-is-open {
   padding-bottom: 0px;
   .nav-item-wrap {
-    display: initial;
+    // display: initial;
+    display: block;
+    // background-color: green;
   }
   .search-form-wrap {
     @include mq($bp-medium, max) {

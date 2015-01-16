@@ -3337,42 +3337,42 @@ img {
   /* line 332, ../scss/components/_footer.scss */
   .ftr-promo-mod {
     margin-bottom: -100px;
-    margin-top: 100px;
+    margin-top: 45px;
   }
 }
 @media (min-width: 600px) and (max-width: 979px) {
-  /* line 341, ../scss/components/_footer.scss */
+  /* line 342, ../scss/components/_footer.scss */
   .ftr-promo-mod .l-content {
     margin-left: 10px;
     margin-right: 10px;
   }
 }
-/* line 349, ../scss/components/_footer.scss */
+/* line 350, ../scss/components/_footer.scss */
 .ftr-promo-mod .promo-text--bold {
   display: none;
 }
 @media (min-width: 750px) {
-  /* line 349, ../scss/components/_footer.scss */
+  /* line 350, ../scss/components/_footer.scss */
   .ftr-promo-mod .promo-text--bold {
     display: inline;
   }
 }
 
-/* line 359, ../scss/components/_footer.scss */
+/* line 360, ../scss/components/_footer.scss */
 .ftr-promo-outer {
   background-color: #fff;
   margin-left: -6px;
   margin-right: -6px;
 }
 @media (min-width: 400px) and (max-width: 986px) {
-  /* line 359, ../scss/components/_footer.scss */
+  /* line 360, ../scss/components/_footer.scss */
   .ftr-promo-outer {
     margin-left: 0;
     margin-right: 0;
   }
 }
 @media (min-width: 600px) {
-  /* line 359, ../scss/components/_footer.scss */
+  /* line 360, ../scss/components/_footer.scss */
   .ftr-promo-outer {
     padding: 15px;
   }
@@ -9533,7 +9533,7 @@ img.alignleft {
   *zoom: 1;
   padding: 10px 15px;
   max-width: 550px;
-  margin: 0 auto 15px;
+  margin: 15px auto;
 }
 /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
 .partner-aside:after {

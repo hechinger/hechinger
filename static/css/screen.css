@@ -2629,20 +2629,20 @@ img {
     margin-right: 20px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1150px) {
   /* line 33, ../scss/components/_image.scss */
   .article-text .alignleft,
   .page-content .alignleft {
     margin-left: -100px;
   }
 }
-/* line 44, ../scss/components/_image.scss */
+/* line 45, ../scss/components/_image.scss */
 .article-text .alignleft .img-container-inner,
 .page-content .alignleft .img-container-inner {
   max-height: 350px;
 }
 @media (min-width: 550px) {
-  /* line 48, ../scss/components/_image.scss */
+  /* line 49, ../scss/components/_image.scss */
   .article-text .alignright,
   .page-content .alignright {
     float: right;
@@ -2653,21 +2653,21 @@ img {
   }
 }
 @media (min-width: 1024px) {
-  /* line 48, ../scss/components/_image.scss */
+  /* line 49, ../scss/components/_image.scss */
   .article-text .alignright,
   .page-content .alignright {
     max-width: 450px;
     margin-right: -40px;
   }
 }
-/* line 62, ../scss/components/_image.scss */
+/* line 63, ../scss/components/_image.scss */
 .article-text .alignright .img-container-inner,
 .page-content .alignright .img-container-inner {
   max-height: 350px;
 }
 
 @media (min-width: 820px) {
-  /* line 79, ../scss/components/_image.scss */
+  /* line 80, ../scss/components/_image.scss */
   .page-content .aligncenter,
   .page-content .alignnone {
     max-width: 550px;

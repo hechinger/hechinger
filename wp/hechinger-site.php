@@ -257,13 +257,25 @@ class HechingerSite extends TimberSite {
     }
   }
 
+  /* sync partners in a safe way
+  * such that no "relationships" or links are deleted
+   * we can delete these at a later date by looking at the
+   * hech_bookmarks_to_delete option, as well as deleting all
+   * `logo` post meta
+   */
   public static function sync_partners() {
     $message = '';
-    $args = array( 'meta_key'=>'logo' );
+    $args = array(
+        'meta_key'=>'logo',
+        'posts_per_page' => -1,
+        'nopaging' => true
+    );
     $posts = get_posts( $args );
+    $posts_count = count( $posts );
+    $message .= "$posts_count posts were found with the `logo` meta key\n<br />";
     $taxonomy_slug = 'partner';
     $sync_count = 0;
-    $bookmarks_to_delete = array();
+    $bookmarks_to_delete = $not_found = array();
     if( $posts ) {
       foreach( $posts as $post ) {
         $bookmark_id = (int)$post->logo;
@@ -280,20 +292,35 @@ class HechingerSite extends TimberSite {
             $partner_term_id = (int)$partner_term_id_arr['term_id'];
             //be sure to append and not replace terms for each post
             wp_set_object_terms( $post->ID, array( $partner_term_id ), $taxonomy_slug, true );
-            delete_post_meta( $post->ID, 'logo' );
+            //delete_post_meta( $post->ID, 'logo' );
             $sync_count++;
             if( function_exists( 'update_field' ) ) {
               update_field( 'field_54735ab1383f6', $partner_bookmark->link_url, "{$taxonomy_slug}_{$partner_term_id}" );
             }
+          }else{
+            $not_found[] = $bookmark_id;
           }
         }
       }
-      //must run this after the above loop or bookmarks will get prematurely deleted
-      foreach( $bookmarks_to_delete as $bookmark_id ) {
-        wp_delete_link( $bookmark_id );
+      if($not_found) {
+        $not_found_count = count( $not_found );
+        $message .= "We tried to process not-found links {$not_found_count} times\n<br />";
+        $not_found = array_unique($not_found);
+        foreach( $not_found as $not_found_id ) {
+          $message .= "No link found with ID ${not_found_id}\n<br />";
+        }
       }
+      $cur = get_option( 'hech_bookmarks_to_delete' );
+      if( is_array( $cur ) ) {
+        $bookmarks_to_delete = array_merge( $cur, $bookmarks_to_delete );
+      }
+      update_option( 'hech_bookmarks_to_delete', $bookmarks_to_delete );
+      //must run this after the above loop or bookmarks will get prematurely deleted
+      /*foreach( $bookmarks_to_delete as $bookmark_id ) {
+        wp_delete_link( $bookmark_id );
+      }*/
     }
-    $message = "Migrated $sync_count bookmarks to the $taxonomy_slug taxonomy";
+    $message .= "Migrated $sync_count bookmarks to the $taxonomy_slug taxonomy";
     return $message;
   }
 

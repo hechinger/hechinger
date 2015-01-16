@@ -1,4 +1,4 @@
-<article class="tz tz-{{ post.post_type }} {{ css_class ? css_class : '' }}" id="tz-{{ post.id }}">
+<article class="tz tz-{{ post.post_type }} {{ css_class ? css_class : '' }}" id="{{ post.id ? 'tz-' ~ post.id : '' }}">
   <div class="tz-outer">
 
     {% block tease_content %}

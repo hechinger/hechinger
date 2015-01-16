@@ -16,8 +16,8 @@ class HechingerImage extends TimberImage {
 
       //call timber's resize function 3 times to get sm, med, lg imgs
       foreach ($sizes as $divisor) {
-        $srcset_attr .= TimberImageHelper::resize($this->src, $width/$divisor, $height/$divisor, $crop);
-        $srcset_attr .= ' '. strval($width/$divisor) . 'w';
+        $srcset_attr .= TimberImageHelper::resize($this->src, floor($width/$divisor), floor($height/$divisor), $crop);
+        $srcset_attr .= ' '. strval(floor($width/$divisor)) . 'w';
         if ($divisor !== end($sizes)) {
           $srcset_attr .= ', ';
         }

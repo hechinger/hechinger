@@ -25,7 +25,9 @@
 
         <div class="page-hdr-h">
           <h1 class="page-h">{{ post.title }}</h1>
-          <h2 class="page-sub-h">{{ post.subhead }}</h2>
+          {% if post.subhead %}
+            <h2 class="page-sub-h">{{ post.subhead }}</h2>
+          {% endif %}
         </div> <!-- /page-hdr-h -->
       </div> <!-- /page-hdr-inner -->
     </div> <!-- /page-hdr -->

@@ -335,7 +335,8 @@
   margin-bottom: 25px;
   @include mq($bp-medium) {
     margin-bottom: -100px;
-    margin-top: 100px;
+    // margin-top: 100px;
+    margin-top: 45px;
   }
 
   .l-content {

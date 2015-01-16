@@ -20,7 +20,7 @@
   @if $pos == before { &:#{$pos} { left: 0;} }
   @else {
     padding-right: 0.85em;
-    &:#{$pos} { right: 0; }
+    &:#{$pos} { right: 0; top: 0; }
   }
 
 }

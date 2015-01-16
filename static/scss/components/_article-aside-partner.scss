@@ -10,7 +10,7 @@
   @include pie-clearfix;
   padding: 10px 15px;
   max-width: 550px;
-  margin: 0 auto 15px;
+  margin: 15px auto;
 
   @include mq(820px, max) {
     background-color: $ui-bg-color;

@@ -100,8 +100,9 @@
     // font-size: 16px;
     font-size: 18px;
     line-height: 1.6;
-    // margin: 10px 0;
+    margin: 10px 0;
     margin: 1em auto;
+    margin: 1em 0;
   }
 
 
@@ -244,6 +245,7 @@
     font-family: $he-sans;
     font-size: 16px;
     margin-left: 20px;
+    max-width: $article-bd-max;
 
     li { margin-top: 10px; }
     a {}

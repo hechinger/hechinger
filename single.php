@@ -12,7 +12,6 @@ $context = Timber::get_context();
 $post = Timber::query_post('HechingerPost');
 $homepage = Timber::get_post('home', 'HechingerPost');
 $context['post'] = $post;
-$context['wp_title'] .= ' - ' . $post->title();
 $context['comment_form'] = TimberHelper::get_comment_form();
 $query_args = array('post__not_in' => array( $post->ID ) );
 

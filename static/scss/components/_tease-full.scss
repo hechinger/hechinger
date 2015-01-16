@@ -15,18 +15,22 @@
     padding-top: 0;
   }
 
-  // &:not(:first-child) {
-  //   border-top: $bdr-thin;
-  //   margin-top: 40px;
-  //   padding-top: 40px;
-
-  //   @include mq($bp-medium, max) {
-  //     margin-top: 25px;
-  //     padding-top: 25px;
-  //   }
-  // }
-
 }
+
+
+// takes away border and padding from first item
+// on author list page
+  .author-article-feed-heading-wrap {
+    + .tz-full-mod {
+      border-top: 0;
+      padding-top: 0;
+    }
+  }
+
+
+
+
+
 
 
 .promo-mod + .tz-full-mod {
@@ -186,7 +190,6 @@
   padding-top: 25px;
   border-top: $bdr-thin;
 }
-
 
 .promo-mod + .tz-feat-mod {
   border-top: none;

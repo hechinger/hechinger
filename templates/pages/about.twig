@@ -84,7 +84,7 @@
                               <h4 class="award-h">
                                 <a class="award-h-link" href="{{ award.link|length ? award.link : '/awards' }}">{{ award.headline }}</a>
                               </h4> <!-- /award-h -->
-                              <p class="award-text">{{ award.description }}<a class="award-read-more" href="{{ award.link|length ? award.link : '/awards' }}">Read More</a></p>
+                              <p class="award-text">{{ award.description|striptags("<a><em><i><strong><b>") }}</p><p><a class="award-read-more" href="{{ award.link|length ? award.link : '/awards' }}">Read More</a></p>
                             </div> <!-- /txt-bd -->
                           </li> <!-- /l-pair-award -->
                         {% endfor %}

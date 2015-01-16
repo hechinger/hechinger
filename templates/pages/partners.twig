@@ -11,25 +11,25 @@
       <ul class="supporter-items l-logo-grid">
 
         {% for partner in partners %}
-          <li class="grid-item">
-              {% if partner.logo %}
-                <div class="art-bd">
-                    {% if partner.partner_homepage_url %}
-                      <a href="{{ partner.partner_homepage_url }}">
-                        <img src="{{ partner.logo }}" alt="Photo of {{ partner.name }}">
-                      </a>
-                    {% else %}
-                        <img src="{{ partner.logo }}" alt="Photo of {{ partner.name }}">
-                    {% endif %}
-                </div> <!-- /art-bd -->
-              {% endif %}
+          {% if partner.logo %}
+            <li class="grid-item">
+              <div class="art-bd">
+                  {% if partner.partner_homepage_url %}
+                    <a href="{{ partner.partner_homepage_url }}">
+                      <img src="{{ partner.logo }}" alt="Photo of {{ partner.name }}">
+                    </a>
+                  {% else %}
+                      <img src="{{ partner.logo }}" alt="Photo of {{ partner.name }}">
+                  {% endif %}
+              </div> <!-- /art-bd -->
 
               <div class="txt-bd">
                 <h3 class="logo-name-h">
                   <a class="logo-name-h-link" href="{{ partner.partner_homepage_url ? partner.partner_homepage_url : '' }}">{{ partner.name }}</a>
                 </h3> <!-- staff-name-h -->
               </div> <!-- /txt-bd -->
-          </li> <!-- / staff-item -->
+            </li> <!-- / staff-item -->
+          {% endif %}
         {% endfor %}
 
       </ul> <!-- /partner-items -->

@@ -555,11 +555,21 @@
 
 .article-related-text-link {
   @include bullet(after);
+  position: relative;
   color: $he-secondary;
   text-decoration: none;
   &:hover { text-decoration: underline; }
   // &:after { line-height: 1.5; }
-  &:after{ line-height: 2.2; }
+  &:after { line-height: 2.2; }
+  // &:after{
+  //   position: absolute;
+  //   display: inline-block;
+  //   content: '→';
+  //   color: inherit;
+  //   font-size: 0.85em;
+  //   line-height: 2.2;
+  //   margin-left: 0.15em;
+  // }
 }
 
 

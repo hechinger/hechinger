@@ -958,11 +958,11 @@ mark {
   .l-zone-dos--rule > .grid-item.n3 {
     clear: left;
   }
-  /* line 46, ../scss/_mixins.scss */
+  /* line 49, ../scss/_mixins.scss */
   .l-zone-dos--rule .grid-item {
     position: relative;
   }
-  /* line 48, ../scss/_mixins.scss */
+  /* line 51, ../scss/_mixins.scss */
   .l-zone-dos--rule .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -972,7 +972,7 @@ mark {
     width: 1px;
     background-color: #dad7d7;
   }
-  /* line 60, ../scss/_mixins.scss */
+  /* line 63, ../scss/_mixins.scss */
   .l-zone-dos--rule .grid-item:nth-child(2n + 2):after {
     position: static;
     width: 0;
@@ -1024,11 +1024,11 @@ mark {
   .l-zone-dos--split-inside > .grid-item.n3 {
     clear: left;
   }
-  /* line 46, ../scss/_mixins.scss */
+  /* line 49, ../scss/_mixins.scss */
   .l-zone-dos--split-inside .grid-item {
     position: relative;
   }
-  /* line 48, ../scss/_mixins.scss */
+  /* line 51, ../scss/_mixins.scss */
   .l-zone-dos--split-inside .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -1038,7 +1038,7 @@ mark {
     width: 1px;
     background-color: #dad7d7;
   }
-  /* line 60, ../scss/_mixins.scss */
+  /* line 63, ../scss/_mixins.scss */
   .l-zone-dos--split-inside .grid-item:nth-child(2n + 2):after {
     position: static;
     width: 0;
@@ -1284,11 +1284,11 @@ mark {
   .l-zone-tres--rule > .grid-item.n4 {
     clear: left;
   }
-  /* line 46, ../scss/_mixins.scss */
+  /* line 49, ../scss/_mixins.scss */
   .l-zone-tres--rule .grid-item {
     position: relative;
   }
-  /* line 48, ../scss/_mixins.scss */
+  /* line 51, ../scss/_mixins.scss */
   .l-zone-tres--rule .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -1298,7 +1298,7 @@ mark {
     width: 1px;
     background-color: #dad7d7;
   }
-  /* line 60, ../scss/_mixins.scss */
+  /* line 63, ../scss/_mixins.scss */
   .l-zone-tres--rule .grid-item:nth-child(3n + 3):after {
     position: static;
     width: 0;
@@ -1496,11 +1496,11 @@ mark {
   .l-zone-cuatro--rule > .grid-item.n3 {
     clear: left;
   }
-  /* line 46, ../scss/_mixins.scss */
+  /* line 49, ../scss/_mixins.scss */
   .l-zone-cuatro--rule .grid-item {
     position: relative;
   }
-  /* line 48, ../scss/_mixins.scss */
+  /* line 51, ../scss/_mixins.scss */
   .l-zone-cuatro--rule .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -1510,7 +1510,7 @@ mark {
     width: 1px;
     background-color: #dad7d7;
   }
-  /* line 60, ../scss/_mixins.scss */
+  /* line 63, ../scss/_mixins.scss */
   .l-zone-cuatro--rule .grid-item:nth-child(2n + 2):after {
     position: static;
     width: 0;
@@ -1578,11 +1578,11 @@ mark {
   .l-zone-cuatro--rule > .grid-item.n5 {
     clear: left;
   }
-  /* line 46, ../scss/_mixins.scss */
+  /* line 49, ../scss/_mixins.scss */
   .l-zone-cuatro--rule .grid-item {
     position: relative;
   }
-  /* line 48, ../scss/_mixins.scss */
+  /* line 51, ../scss/_mixins.scss */
   .l-zone-cuatro--rule .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -1592,7 +1592,7 @@ mark {
     width: 1px;
     background-color: #dad7d7;
   }
-  /* line 60, ../scss/_mixins.scss */
+  /* line 63, ../scss/_mixins.scss */
   .l-zone-cuatro--rule .grid-item:nth-child(4n + 4):after {
     position: static;
     width: 0;
@@ -1645,11 +1645,11 @@ mark {
   .l-zone-tres--art > .grid-item.n5 {
     clear: left;
   }
-  /* line 46, ../scss/_mixins.scss */
+  /* line 49, ../scss/_mixins.scss */
   .l-zone-tres--art .grid-item {
     position: relative;
   }
-  /* line 48, ../scss/_mixins.scss */
+  /* line 51, ../scss/_mixins.scss */
   .l-zone-tres--art .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -1659,7 +1659,7 @@ mark {
     width: 1px;
     background-color: #dad7d7;
   }
-  /* line 60, ../scss/_mixins.scss */
+  /* line 63, ../scss/_mixins.scss */
   .l-zone-tres--art .grid-item:nth-child(3n + 3):after {
     position: static;
     width: 0;
@@ -1828,11 +1828,11 @@ mark {
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 46, ../scss/_mixins.scss */
+  /* line 49, ../scss/_mixins.scss */
   .l-zone-dos--art .grid-item {
     position: relative;
   }
-  /* line 48, ../scss/_mixins.scss */
+  /* line 51, ../scss/_mixins.scss */
   .l-zone-dos--art .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -1842,7 +1842,7 @@ mark {
     width: 1px;
     background-color: #dad7d7;
   }
-  /* line 60, ../scss/_mixins.scss */
+  /* line 63, ../scss/_mixins.scss */
   .l-zone-dos--art .grid-item:nth-child(2n + 2):after {
     position: static;
     width: 0;
@@ -2426,8 +2426,7 @@ img {
 }
 /* line 23, ../scss/_mixins.scss */
 .quote-link:after {
-  right: 0;
-  top: 0;
+  padding-left: 0.15em;
 }
 
 /* line 388, ../scss/_objects.scss */
@@ -3158,8 +3157,7 @@ img {
 }
 /* line 23, ../scss/_mixins.scss */
 .ftr-link-black:after {
-  right: 0;
-  top: 0;
+  padding-left: 0.15em;
 }
 /* line 232, ../scss/components/_footer.scss */
 .ftr-link-black:hover {
@@ -3850,8 +3848,7 @@ img {
 }
 /* line 23, ../scss/_mixins.scss */
 .article-bio-link:after {
-  right: 0;
-  top: 0;
+  padding-left: 0.15em;
 }
 /* line 451, ../scss/pages/_article.scss */
 .article-bio-link:hover {
@@ -3942,6 +3939,7 @@ img {
 .article-related-text-link {
   position: relative;
   padding-right: 0.85em;
+  position: relative;
   color: #00aeef;
   text-decoration: none;
 }
@@ -3956,19 +3954,18 @@ img {
 }
 /* line 23, ../scss/_mixins.scss */
 .article-related-text-link:after {
-  right: 0;
-  top: 0;
+  padding-left: 0.15em;
 }
-/* line 560, ../scss/pages/_article.scss */
+/* line 561, ../scss/pages/_article.scss */
 .article-related-text-link:hover {
   text-decoration: underline;
 }
-/* line 562, ../scss/pages/_article.scss */
+/* line 563, ../scss/pages/_article.scss */
 .article-related-text-link:after {
   line-height: 2.2;
 }
 
-/* line 577, ../scss/pages/_article.scss */
+/* line 587, ../scss/pages/_article.scss */
 .article-comment-link {
   position: relative;
   display: block;
@@ -3987,7 +3984,7 @@ img {
   transition: all 0.25s ease-in;
 }
 @media (min-width: 450px) {
-  /* line 577, ../scss/pages/_article.scss */
+  /* line 587, ../scss/pages/_article.scss */
   .article-comment-link {
     width: 140px;
     height: 35px;
@@ -3995,16 +3992,16 @@ img {
     line-height: 35px;
   }
 }
-/* line 601, ../scss/pages/_article.scss */
+/* line 611, ../scss/pages/_article.scss */
 .article-comment-link:hover {
   background-color: black;
 }
-/* line 604, ../scss/pages/_article.scss */
+/* line 614, ../scss/pages/_article.scss */
 .article-comment-link:active {
   background-color: #000;
 }
 
-/* line 611, ../scss/pages/_article.scss */
+/* line 621, ../scss/pages/_article.scss */
 .comment-mod {
   max-height: 0;
   margin-top: 0;
@@ -4012,26 +4009,26 @@ img {
   -webkit-transition: max-height 1s cubic-bezier(0.54, 0.24, 0.85, 0.23);
           transition: max-height 1s cubic-bezier(0.54, 0.24, 0.85, 0.23);
 }
-/* line 618, ../scss/pages/_article.scss */
+/* line 628, ../scss/pages/_article.scss */
 .comment-mod.comment-mod--is-active {
   max-height: 5500px;
   margin-top: 17px;
   display: block;
 }
 
-/* line 633, ../scss/pages/_article.scss */
+/* line 643, ../scss/pages/_article.scss */
 #disqus_thread a:link {
   color: #00aeef;
 }
-/* line 634, ../scss/pages/_article.scss */
+/* line 644, ../scss/pages/_article.scss */
 #disqus_thread a:hover {
   color: #00aeef;
 }
-/* line 635, ../scss/pages/_article.scss */
+/* line 645, ../scss/pages/_article.scss */
 #disqus_thread a:active {
   color: #00aeef;
 }
-/* line 636, ../scss/pages/_article.scss */
+/* line 646, ../scss/pages/_article.scss */
 #disqus_thread a:visited {
   color: #00aeef;
 }
@@ -4226,11 +4223,11 @@ img {
   .l-sr-landing-dos > .grid-item.n3 {
     clear: left;
   }
-  /* line 46, ../scss/_mixins.scss */
+  /* line 49, ../scss/_mixins.scss */
   .l-sr-landing-dos .grid-item {
     position: relative;
   }
-  /* line 48, ../scss/_mixins.scss */
+  /* line 51, ../scss/_mixins.scss */
   .l-sr-landing-dos .grid-item:after {
     position: absolute;
     content: '\0020';
@@ -4240,7 +4237,7 @@ img {
     width: 1px;
     background-color: #dad7d7;
   }
-  /* line 60, ../scss/_mixins.scss */
+  /* line 63, ../scss/_mixins.scss */
   .l-sr-landing-dos .grid-item:nth-child(2n + 2):after {
     position: static;
     width: 0;
@@ -4359,8 +4356,7 @@ img {
 }
 /* line 23, ../scss/_mixins.scss */
 .sr-landing-link:after {
-  right: 0;
-  top: 0;
+  padding-left: 0.15em;
 }
 /* line 153, ../scss/pages/_special-reports-landing.scss */
 .sr-landing-link:hover {
@@ -5538,8 +5534,7 @@ input:-webkit-autofill:focus {
 }
 /* line 23, ../scss/_mixins.scss */
 .hp-second-feature-read-more:after {
-  right: 0;
-  top: 0;
+  padding-left: 0.15em;
 }
 /* line 317, ../scss/pages/_home.scss */
 .hp-second-feature-read-more:hover {
@@ -6332,8 +6327,7 @@ input:-webkit-autofill:focus {
 }
 /* line 23, ../scss/_mixins.scss */
 .staff-bio-link:after {
-  right: 0;
-  top: 0;
+  padding-left: 0.15em;
 }
 
 @media (min-width: 400px) and (max-width: 649px) {
@@ -7029,8 +7023,7 @@ input:-webkit-autofill:focus {
   }
   /* line 23, ../scss/_mixins.scss */
   .nav-sub-item-link:after {
-    right: 0;
-    top: 0;
+    padding-left: 0.15em;
   }
   /* line 456, ../scss/components/_nav-bar.scss */
   .nav-sub-item-link:after {
@@ -8139,8 +8132,7 @@ input:-webkit-autofill:focus {
   }
   /* line 23, ../scss/_mixins.scss */
   .section-front-summary-link:after {
-    right: 0;
-    top: 0;
+    padding-left: 0.15em;
   }
 }
 
@@ -10041,8 +10033,7 @@ img.alignleft {
 }
 /* line 23, ../scss/_mixins.scss */
 .tz-special-link:after {
-  right: 0;
-  top: 0;
+  padding-left: 0.15em;
 }
 /* line 323, ../scss/components/_tease.scss */
 .tz-special-link:hover {

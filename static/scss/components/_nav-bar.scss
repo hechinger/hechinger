@@ -355,9 +355,10 @@
 .nav-topics-menu {
   // Only applies to expanded navigation menu
   @include mq($bp-medium) {
-    // opacity: 0;
+    opacity: 0;
     transform: translateY(-6px);
     overflow: hidden;
+    .no-cssanimations & { opacity: 1; }
     @include trans(.2s, all, $animation-timing);
 
     .topics-is-open &,

@@ -851,6 +851,15 @@
   }
 }
 
+// Disable clicks elsewhere on menu
+// when search is focused on touch devices
+// - Helps prevent false clicks
+// - Allows user to tap anywhere
+//    to dismiss search/keyboard
+.touch .search-is-focused .nav-topics-list {
+  pointer-events: none;
+}
+
 //
 // Nav Menu Button
 //

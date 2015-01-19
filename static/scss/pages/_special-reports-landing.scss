@@ -107,7 +107,6 @@ $sr-content-max-width: 820px;
   display: inline-block;
   position: relative;
   margin-bottom: 1.25em;
-  // font-size: 26px;
   font-size: 24px;
   line-height: 1.35;
   &:after {
@@ -124,14 +123,14 @@ $sr-content-max-width: 820px;
   // Slightly larger size for the top grid
   .tz-sr-landing-grid & {
     @include mq($bp-medium-plus) {
-      font-size: 32px;
+      font-size: 28px;
     }
   }
 }
 
 
 .sr-landing-h-link {
-  color: black;
+  color: #000;
   text-decoration: none;
 }
 
@@ -139,7 +138,7 @@ $sr-content-max-width: 820px;
 .sr-landing-desc {
   font-family: $he-sans;
   font-style: italic;
-  font-size: 22px;
+  font-size: 19px;
   line-height: 1.35;
 }
 

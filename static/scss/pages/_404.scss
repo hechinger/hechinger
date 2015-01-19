@@ -2,18 +2,28 @@
   background-color: $he-main;
 
   //overrides the background color for footer promos
-  .ftr-promo-outer { background-color: $he-main; }
+  .ftr-promo-outer {
+    background-color: $he-main;
+  }
 }
 
-// .four-oh-four-body {
-//   background-color: $he-main;
-// }
 
 .four-oh-four-hdr {
-  color: $black;
+  font-size: 50px;
   font-weight: $font-weight-bold;
-  font-size: 100px;
   line-height: .95;
+  letter-spacing: -1px;
+  color: $black;
+
+  @include mq($bp-small) {
+    font-size: 68px;
+  }
+  @include mq($bp-medium) {
+    font-size: 82px;
+  }
+  @include mq($bp-large) {
+    font-size: 100px;
+  }
 }
 
 .error-span {

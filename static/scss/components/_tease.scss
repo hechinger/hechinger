@@ -25,7 +25,7 @@
     z-index: 1;
     margin-top: -100px !important;
     width: 93%;
-    padding: 20px 0 0 20px;
+    padding: 20px 10px 0 6px;
     background-color: #fff;
   }
 }
@@ -210,6 +210,9 @@
   color: $tease-head-color;
   letter-spacing: 0;
   margin-bottom: 18px;
+  .tz-hp-feat--main-img & {
+    margin-bottom: 12px;
+  }
 
   @include mq($bp-medium) {
     font-size: 65px;
@@ -364,6 +367,17 @@
   margin: 10px 0;
   @include mq($bp-medium-plus) {
     margin-bottom: 0;
+  }
+}
+
+// Increas spacing in recirc zone
+.l-recirc-zone .tz-special-quote {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  @include mq($bp-medium) {
+    margin-top: 15px;
+    margin-bottom: 35px;
   }
 }
 

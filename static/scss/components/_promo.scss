@@ -49,8 +49,10 @@
   @include pie-clearfix;
   position: relative;
   height: 100%;
-  padding: 30px;
-
+  padding: 25px;
+  @include mq($bp-small) {
+    padding: 30px;
+  }
   @include mq($bp-medium) {
     padding: 35px;
   }
@@ -274,6 +276,7 @@
 
 .promo-btn-donate {
   margin-top: 30px;
+  font-weight: $font-weight-bold;
 }
 
 .promo-input {

@@ -31,10 +31,12 @@ var HE_navbar = (function($){
     if (searchIsOpen) {
       $searchButton.removeClass('is-open');
       $searchForm.removeClass('is-open');
+      $body.removeClass('search-is-open')
       searchIsOpen = false;
     } else {
       $searchButton.addClass('is-open');
       $searchForm.addClass('is-open');
+      $body.addClass('search-is-open')
       searchIsOpen = true;
     }
   }

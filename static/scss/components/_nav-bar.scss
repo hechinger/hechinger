@@ -451,10 +451,14 @@
       max-height: 157px + $search-height--med;
     }
     // if homepage AND lead tease has art
-    .hp-tz-has-img & {
+    // - or -
+    // if article has a feature presentation with art
+    .hp-tz-has-img &,
+    .article-has-feat-img & {
       height: 57px;
     }
-    .hp-tz-has-img.search-is-open & {
+    .hp-tz-has-img.search-is-open &,
+    .article-has-feat-img.search-is-open & {
       max-height: 57px + $search-height--med;
     }
     // if 404 page, yellow covers top-to-bottom
@@ -488,6 +492,13 @@
     }
     .hp-tz-has-img.search-is-open & {
       max-height: 107px + $search-height--large;
+    }
+    // if article has a feature presentation with art
+    .article-has-feat-img & {
+      height: 72px;
+    }
+    .article-has-feat-img.search-is-open & {
+      max-height: 72px + $search-height--large;
     }
   } //mq
 

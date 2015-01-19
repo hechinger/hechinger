@@ -1,4 +1,12 @@
 {% extends "layout.twig" %}
+
+{# Set body class if it's a feature story with image #}
+{% if post.is_feature and post.thumbnail.src %}
+  {% set extra_body_class = 'article-has-feat-img' %}
+{% endif %}
+
+
+
 {% block body %}
 
   <!-- Article Layout -->
@@ -52,7 +60,7 @@
 
           <div class="article-tools-btm-left">
             <a class="article-comment-link icon-disqus comment-trigger js-comment-trigger" href="#"><i class="icon"></i>
-              <span class="article-comment-number disqus-comment-count" data-disqus-url="{{ post.link }}">No comments</span>
+              <span class="article-comment-number disqus-comment-count" data-disqus-url="{{ post.link }}">Add Comment</span>
             </a>
           </div> <!-- /article-tool-btm-let -->
 

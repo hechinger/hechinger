@@ -13,7 +13,9 @@
 
       <div class="article-hdr-h">
         <h1 class="article-h">{{ post.title|striptags }}</h1>
-        <h2 class="article-sub-h">{{ post.subhead }}</h2>
+        {% if post.subhead %}
+          <h2 class="article-sub-h">{{ post.subhead }}</h2>
+        {% endif %}
       </div> <!-- /article-hdr-middle -->
 
       <div class="article-hdr-meta-container {% block column_context_class %}{% endblock %}">

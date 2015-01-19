@@ -211,7 +211,9 @@
 .nav-is-open {
   padding-bottom: 0px;
   .nav-item-wrap {
-    display: initial;
+    // display: initial;
+    display: block;
+    // background-color: green;
   }
   .search-form-wrap {
     @include mq($bp-medium, max) {
@@ -356,6 +358,7 @@
     opacity: 0;
     transform: translateY(-6px);
     overflow: hidden;
+    .no-cssanimations & { opacity: 1; }
     @include trans(.2s, all, $animation-timing);
 
     .topics-is-open &,
@@ -521,6 +524,7 @@
     opacity: 0;
     transform: translateY(-30px);
     @include trans(.4s, all, $animation-timing);
+    .no-cssanimations & { opacity: 1; }
     & + & {
       animation-delay: .04s;
     }

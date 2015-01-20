@@ -2222,133 +2222,133 @@ img {
 .icon-twitter .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-twitter.png?1419017255');
-  background-image: url('../img/icons/icn-twitter.svg?1416606731'), none;
+  background-image: url('../img/icons/icn-twitter.png?1419022161');
+  background-image: url('../img/icons/icn-twitter.svg?1416443341'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-twitter .icon {
-  background-image: url('../img/icons/icn-twitter.png?1419017255');
+  background-image: url('../img/icons/icn-twitter.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-facebook .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-facebook.png?1419017255');
-  background-image: url('../img/icons/icn-facebook.svg?1416606731'), none;
+  background-image: url('../img/icons/icn-facebook.png?1419022161');
+  background-image: url('../img/icons/icn-facebook.svg?1416443341'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-facebook .icon {
-  background-image: url('../img/icons/icn-facebook.png?1419017255');
+  background-image: url('../img/icons/icn-facebook.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-disqus .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-disqus.png?1419017255');
-  background-image: url('../img/icons/icn-disqus.svg?1416606731'), none;
+  background-image: url('../img/icons/icn-disqus.png?1419022161');
+  background-image: url('../img/icons/icn-disqus.svg?1416443341'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-disqus .icon {
-  background-image: url('../img/icons/icn-disqus.png?1419017255');
+  background-image: url('../img/icons/icn-disqus.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-twitter-author .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-twitter-author.png?1419017255');
-  background-image: url('../img/icons/icn-twitter-author.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-twitter-author.png?1419022161');
+  background-image: url('../img/icons/icn-twitter-author.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-twitter-author .icon {
-  background-image: url('../img/icons/icn-twitter-author.png?1419017255');
+  background-image: url('../img/icons/icn-twitter-author.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-email .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-email.png?1419017255');
-  background-image: url('../img/icons/icn-email.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-email.png?1419022161');
+  background-image: url('../img/icons/icn-email.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-email .icon {
-  background-image: url('../img/icons/icn-email.png?1419017255');
+  background-image: url('../img/icons/icn-email.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-telephone .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-telephone.png?1419017255');
-  background-image: url('../img/icons/icn-telephone.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-telephone.png?1419022161');
+  background-image: url('../img/icons/icn-telephone.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-telephone .icon {
-  background-image: url('../img/icons/icn-telephone.png?1419017255');
+  background-image: url('../img/icons/icn-telephone.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-twitter-footer .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-twitter-footer.png?1419017255');
-  background-image: url('../img/icons/icn-twitter-footer.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-twitter-footer.png?1419022161');
+  background-image: url('../img/icons/icn-twitter-footer.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-twitter-footer .icon {
-  background-image: url('../img/icons/icn-twitter-footer.png?1419017255');
+  background-image: url('../img/icons/icn-twitter-footer.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-instagram-footer .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-instagram-footer.png?1416634384');
-  background-image: url('../img/icons/icn-instagram-footer.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-instagram-footer.png?1416968652');
+  background-image: url('../img/icons/icn-instagram-footer.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-instagram-footer .icon {
-  background-image: url('../img/icons/icn-instagram-footer.png?1416634384');
+  background-image: url('../img/icons/icn-instagram-footer.png?1416968652');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-rss-footer .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-rss-footer.png?1419017255');
-  background-image: url('../img/icons/icn-rss-footer.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-rss-footer.png?1419022161');
+  background-image: url('../img/icons/icn-rss-footer.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-rss-footer .icon {
-  background-image: url('../img/icons/icn-rss-footer.png?1419017255');
+  background-image: url('../img/icons/icn-rss-footer.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-facebook-footer .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-facebook-footer.png?1419017255');
-  background-image: url('../img/icons/icn-facebook-footer.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-facebook-footer.png?1419022161');
+  background-image: url('../img/icons/icn-facebook-footer.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-facebook-footer .icon {
-  background-image: url('../img/icons/icn-facebook-footer.png?1419017255');
+  background-image: url('../img/icons/icn-facebook-footer.png?1419022161');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-search .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-search.png?1421258120');
-  background-image: url('../img/icons/icn-search.svg?1420816208'), none;
+  background-image: url('../img/icons/icn-search.png?1421253014');
+  background-image: url('../img/icons/icn-search.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-search .icon {
-  background-image: url('../img/icons/icn-search.png?1421258120');
+  background-image: url('../img/icons/icn-search.png?1421253014');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-search-reverse .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-search-reverse.png?1421258120');
-  background-image: url('../img/icons/icn-search-reverse.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-search-reverse.png?1421253014');
+  background-image: url('../img/icons/icn-search-reverse.svg?1421158248'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-search-reverse .icon {
-  background-image: url('../img/icons/icn-search-reverse.png?1421258120');
+  background-image: url('../img/icons/icn-search-reverse.png?1421253014');
 }
 
 /* line 298, ../scss/_objects.scss */
@@ -3049,36 +3049,36 @@ img {
 .icon-twitter-footer .icon--reverse {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-twitter-footer--white.png?1420648191');
-  background-image: url('../img/icons/icn-twitter-footer--white.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-twitter-footer--white.png?1420813545');
+  background-image: url('../img/icons/icn-twitter-footer--white.svg?1420481765'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-twitter-footer .icon--reverse {
-  background-image: url('../img/icons/icn-twitter-footer--white.png?1420648191');
+  background-image: url('../img/icons/icn-twitter-footer--white.png?1420813545');
 }
 
 /* line 167, ../scss/components/_footer.scss */
 .icon-facebook-footer .icon--reverse {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-facebook-footer--white.png?1420648191');
-  background-image: url('../img/icons/icn-facebook-footer--white.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-facebook-footer--white.png?1420813545');
+  background-image: url('../img/icons/icn-facebook-footer--white.svg?1420481765'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-facebook-footer .icon--reverse {
-  background-image: url('../img/icons/icn-facebook-footer--white.png?1420648191');
+  background-image: url('../img/icons/icn-facebook-footer--white.png?1420813545');
 }
 
 /* line 171, ../scss/components/_footer.scss */
 .icon-rss-footer .icon--reverse {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-rss-footer--white.png?1420648191');
-  background-image: url('../img/icons/icn-rss-footer--white.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-rss-footer--white.png?1420813545');
+  background-image: url('../img/icons/icn-rss-footer--white.svg?1420481765'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-rss-footer .icon--reverse {
-  background-image: url('../img/icons/icn-rss-footer--white.png?1420648191');
+  background-image: url('../img/icons/icn-rss-footer--white.png?1420813545');
 }
 
 /* line 175, ../scss/components/_footer.scss */
@@ -3681,14 +3681,14 @@ img {
   margin-left: 0;
   padding-left: 0;
 }
-/* line 215, ../scss/_type.scss */
+/* line 214, ../scss/_type.scss */
 .article-text > ol li {
   position: relative;
   margin: 0 0 6px 25px;
   padding: 4px 0;
   list-style: none;
 }
-/* line 221, ../scss/_type.scss */
+/* line 220, ../scss/_type.scss */
 .article-text > ol li:before {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
@@ -7445,15 +7445,15 @@ input:-webkit-autofill:focus {
 .nav-search-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-search.png?1421258120');
-  background-image: url('../img/icons/icn-search.svg?1420816208'), none;
+  background-image: url('../img/icons/icn-search.png?1421253014');
+  background-image: url('../img/icons/icn-search.svg?1421158248'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search.png?1421258120')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search.png?1421258120')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search.png?1421253014')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search.png?1421253014')', sizingMethod='scale')";
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-search-icon {
-  background-image: url('../img/icons/icn-search.png?1421258120');
+  background-image: url('../img/icons/icn-search.png?1421253014');
 }
 
 /* line 783, ../scss/components/_nav-bar.scss */
@@ -7461,15 +7461,15 @@ input:-webkit-autofill:focus {
   opacity: 0;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-search-reverse.png?1421258120');
-  background-image: url('../img/icons/icn-search-reverse.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-search-reverse.png?1421253014');
+  background-image: url('../img/icons/icn-search-reverse.svg?1421158248'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search-reverse.png?1421258120')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search-reverse.png?1421258120')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search-reverse.png?1421253014')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search-reverse.png?1421253014')', sizingMethod='scale')";
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-search-icon--reverse {
-  background-image: url('../img/icons/icn-search-reverse.png?1421258120');
+  background-image: url('../img/icons/icn-search-reverse.png?1421253014');
 }
 /* line 788, ../scss/components/_nav-bar.scss */
 .no-svg .nav-search-icon--reverse {
@@ -7495,11 +7495,11 @@ input:-webkit-autofill:focus {
   top: 50%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-close-reverse.png?1420481329');
-  background-image: url('../img/icons/icn-close-reverse.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-close-reverse.png?1420481765');
+  background-image: url('../img/icons/icn-close-reverse.svg?1420481765'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close-reverse.png?1420481329')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close-reverse.png?1420481329')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close-reverse.png?1420481765')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close-reverse.png?1420481765')', sizingMethod='scale')";
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
   -webkit-transform: translateY(-22px);
@@ -7510,7 +7510,7 @@ input:-webkit-autofill:focus {
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-search-icon--close {
-  background-image: url('../img/icons/icn-close-reverse.png?1420481329');
+  background-image: url('../img/icons/icn-close-reverse.png?1420481765');
 }
 /* line 806, ../scss/components/_nav-bar.scss */
 .no-svg .nav-search-icon--close {
@@ -7665,34 +7665,34 @@ input:-webkit-autofill:focus {
 .nav-menu-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-menu.png?1420481329');
-  background-image: url('../img/icons/icn-menu.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-menu.png?1420481765');
+  background-image: url('../img/icons/icn-menu.svg?1420481765'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-menu.png?1420481329')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-menu.png?1420481329')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-menu.png?1420481765')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-menu.png?1420481765')', sizingMethod='scale')";
   top: 2px;
   left: 3px;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-menu-icon {
-  background-image: url('../img/icons/icn-menu.png?1420481329');
+  background-image: url('../img/icons/icn-menu.png?1420481765');
 }
 
 /* line 941, ../scss/components/_nav-bar.scss */
 .nav-menu-close-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-close.png?1420481329');
-  background-image: url('../img/icons/icn-close.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-close.png?1420481765');
+  background-image: url('../img/icons/icn-close.svg?1420481765'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close.png?1420481329')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close.png?1420481329')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close.png?1420481765')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close.png?1420481765')', sizingMethod='scale')";
   top: 2px;
   text-indent: -99999em;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-menu-close-icon {
-  background-image: url('../img/icons/icn-close.png?1420481329');
+  background-image: url('../img/icons/icn-close.png?1420481765');
 }
 @media (min-width: 450px) {
   /* line 941, ../scss/components/_nav-bar.scss */
@@ -9789,7 +9789,6 @@ img.alignleft {
 .article-text .aside-related-item-link em, .article-text .aside-related-item-link b, .article-text .aside-related-item-link strong {
   position: relative;
   background-color: #ffcf31;
-  vertical-align: text-bottom;
   font-style: normal;
   padding: 0 0.2em;
   font-size: 1em;
@@ -10007,7 +10006,6 @@ img.alignleft {
 .hp-list-link mark {
   position: relative;
   background-color: #ffcf31;
-  vertical-align: text-bottom;
   font-style: normal;
   padding: 0 0.2em;
 }
@@ -10497,7 +10495,6 @@ img.alignleft {
 .tz-h--stub-lg .tz-h-link mark {
   position: relative;
   background-color: #ffcf31;
-  vertical-align: text-bottom;
   font-style: normal;
   padding: 0 0.2em;
 }

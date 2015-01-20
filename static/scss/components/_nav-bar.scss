@@ -311,10 +311,25 @@
   @include mq($bp-medium) {
     @include absolute-center(290px);
     top: 60px;
+    height: 317px;
 
     padding: 10px 25px 2px;
     margin-top: 0;
     background-color: $black;
+
+    // See Topics Menu Faux Shadow for more ...
+    box-shadow: -5px 5px 0 #fff,
+                  5px 5px 0 #fff,
+                  -5px -5px 0 $he-main,
+                  5px -5px 0 $he-main;
+
+    // All yellow shadow for all-yellow 404 page
+    .error404 & {
+      box-shadow: -5px 5px 0 $he-main,
+                    5px 5px 0 $he-main,
+                    -5px -5px 0 $he-main,
+                    5px -5px 0 $he-main;
+    }
   } //mq
 }
 
@@ -333,7 +348,7 @@
 // Topics List Show/Hide Animation
 //
 
-// Toipcs Menu Animation
+// Topics Menu Animation
 // - - - - - - - - - - - - - - -
 // Bring to full opacity and
 // add subtle downward animation
@@ -374,6 +389,128 @@
 } // nav-topics-menu
 
 
+// Topics Menu Faux Shadow
+// - - - - - - - - - - - - - - -
+// Creates separation when topic menu
+// overlaps with other items on page.
+// Handled as independent pseudo elements
+// so we can control height and keep within
+// bounds of the yellow site header
+
+.nav-topics-menu,
+.nav-topics-menu-shadow {
+  @include mq($bp-medium) {
+    &:before,
+    &:after {
+        @include pseudo(0 n n n);
+        width: 5px;
+    }
+    &:before {
+      left: -5px;
+    }
+    &:after {
+      right: -5px;
+    }
+  } //mq
+} // before-after
+
+// White shadow
+// - Sit near bottom, overlaps body
+// - Spans height of menu, obscured by yellow
+.nav-topics-menu:before,
+.nav-topics-menu-shadow:after {
+  @include mq($bp-medium) {
+    background-color: #fff;
+    bottom: 0;
+  } //mq
+}
+
+// Yellow shadow
+// - Sit near top, overlap header
+.nav-topics-menu-shadow:before,
+.nav-topics-menu:after {
+  @include mq($bp-medium) {
+    background-color: $he-main;
+    height: 137px;
+    .search-is-open & {
+      bottom: 0;
+      max-height: 137px + $search-height--med;
+    }
+    // if site-header has an image
+    .site-header--with-image & {
+      height: 187px;
+    }
+    .search-is-open .site-header--with-image & {
+      max-height: 187px + $search-height--med;
+    }
+    // if homepage
+    .home & {
+      height: 157px;
+    }
+    .home.search-is-open & {
+      max-height: 157px + $search-height--med;
+    }
+    // if homepage AND lead tease has art
+    // - or -
+    // if article has a feature presentation with art
+    .hp-tz-has-img &,
+    .article-has-feat-img & {
+      height: 57px;
+    }
+    .hp-tz-has-img.search-is-open &,
+    .article-has-feat-img.search-is-open & {
+      max-height: 57px + $search-height--med;
+    }
+    // if 404 page, yellow covers top-to-bottom
+    .error404 & {
+      height: auto;
+      bottom: 0;
+    }
+  } //mq
+  @include mq($bp-large) {
+    height: 152px;
+    .search-is-open & {
+      max-height: 152px + $search-height--large;
+    }
+    // if site-header has an image
+    .site-header--with-image & {
+      height: 227px;
+    }
+    .search-is-open .site-header--with-image & {
+      max-height: 227px + $search-height--large;
+    }
+    // if homepage
+    .home & {
+      height: 242px;
+    }
+    .home.search-is-open & {
+      max-height: 242px + $search-height--large;
+    }
+    // if homepage AND lead tease has art
+    .hp-tz-has-img & {
+      height: 107px;
+    }
+    .hp-tz-has-img.search-is-open & {
+      max-height: 107px + $search-height--large;
+    }
+    // if article has a feature presentation with art
+    .article-has-feat-img & {
+      height: 72px;
+    }
+    .article-has-feat-img.search-is-open & {
+      max-height: 72px + $search-height--large;
+    }
+  } //mq
+
+  // make sure height is set to auto
+  // when search is open
+  .search-is-open & {
+    height: auto;
+  }
+} // yellow-shadow
+
+
+
 // Tick Mark Animation
 // - - - - - - - - - - - - - - -
 // When topics nav opens, subtly
@@ -408,7 +545,7 @@
   }
 }
 
-// Lead Tease Animation
+// Search Open Animation
 // - - - - - - - - - - - - - - -
 // When topics nav is open, lighten
 // elements close to page top in order
@@ -423,8 +560,6 @@
   }
 }
 
-.l-page-hdr,
-.hp-feat-mod,
 .search-form-wrap.is-open {
   @include trans(.3s, opacity, $animation-timing);
   .topics-is-open & {
@@ -436,6 +571,9 @@
   }
 }
 
+//
+// Nav Sub Items
+//
 
 .nav-sub-item {
   position: relative;
@@ -724,6 +862,15 @@
   }
 }
 
+// Disable clicks elsewhere on menu
+// when search is focused on touch devices
+// - Helps prevent false clicks
+// - Allows user to tap anywhere
+//    to dismiss search/keyboard
+.touch .search-is-focused .nav-topics-list {
+  pointer-events: none;
+}
+
 //
 // Nav Menu Button
 //
@@ -863,13 +1010,13 @@
     @include trans(.3s, height, $animation-timing);
     &.is-open {
       overflow: visible;
-      height: 61px; // see also - search-text-input (below)
+      height: $search-height--med;
     }
   }//mq
 
   @include mq($bp-large) {
     &.is-open {
-      height: 76px; // see also - search-text-input (below)
+      height: $search-height--large;
     }
   }
 }
@@ -884,7 +1031,7 @@
   @include input-default;
   @include sans-bold;
   width: 100%;
-  height: 61px; // see also - search-form-wrap (above)
+  height: $search-height--med;
   padding: 6px 63px 10px 14px;
   background-color: $black;
   font-size: 30px;
@@ -898,7 +1045,7 @@
   );
 
   @include mq($bp-large) {
-    height: 76px; // see also - search-form-wrap (above)
+    height: $search-height--large;
     padding: 4px 85px 10px 23px;
     font-size: 36px;
   } //mq
@@ -930,14 +1077,14 @@
 }
 
 .cssanimations {
-  & .search-text-input,
-  & .search-submit-button {
+  .search-text-input,
+  .search-submit-button {
     @include mq($bp-medium) {
       @include trans(.2s, all, $animation-timing);
     }
   }
 
-  & .search-form-wrap.is-open {
+  .search-form-wrap.is-open {
     & .search-text-input,
     & .search-submit-button {
       @include mq($bp-medium) {
@@ -951,8 +1098,8 @@
 }
 
 .no-cssanimations .search-form-wrap.is-open {
-  & .search-text-input,
-  & .search-submit-button {
+  .search-text-input,
+  .search-submit-button {
     @include mq($bp-medium) {
       opacity: 1;
     }

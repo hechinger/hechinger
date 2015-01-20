@@ -8,32 +8,88 @@
 
 .article-feat-mod {
   position: relative;
-  padding-top: 20px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
 
+  @include mq($bp-small) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
   @include mq($bp-medium) {
     margin-top: 20px;
+    padding-top: 20px;
     padding-right: 20px;
+    padding-left: 20px;
+  }
+  @include mq($bp-medium-plus) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  @include mq($bp-article-not-centered) {
+    width: 90%;
+    margin-left: 0;
+    padding-left: 10px;
   }
 }
 
+// Stretch meta bar to fill length of box
+.article-feat-mod  .article-hdr-meta {
+  margin-left: -8px;
+  margin-right: -8px;
+  @include mq($bp-small) {
+    margin-left: -13px;
+    margin-right: -13px;
+  }
+  @include mq($bp-medium-plus) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+// Make topic header smaller
+.article-feat-mod  .article-hdr-topic {
+  font-size: 16px;
+  @include mq($bp-small) {
+    font-size: 18px;
+  }
+  @include mq($bp-medium) {
+    font-size: 20px;
+  }
+}
 
 .article-feat-mod--has-img {
   margin-top: -40px;
   background-color: #fff;
   max-width: 800px;
-
-  @include mq($bp-medium) {
-    width: 80%;
-  }
 }
 
 
 .article-feat-h {
-  font-size: 45px;
+  font-size: 36px;
   font-style: italic;
   font-weight: 900;
   color: #000;
-  letter-spacing: -2px;
+  line-height: 95%;
+  letter-spacing: -1px;
 
-  @include mq($bp-medium-plus) { font-size: 72px; }
+  @include mq($bp-small) {
+    font-size: 50px;
+  }
+
+  @include mq($bp-medium) {
+    font-size: 62px;
+  }
+
+  @include mq($bp-medium-plus) {
+    font-size: 69px;
+  }
+
+  @include mq($bp-large) {
+    font-size: 76px;
+    letter-spacing: -2px;
+  }
+
 }

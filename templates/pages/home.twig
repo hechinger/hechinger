@@ -1,5 +1,7 @@
 {% extends "layout.twig" %}
 
+{% set extra_body_class = home.get_zone(1)[0].thumbnail.src ? 'hp-tz-has-img' : 'hp-tz-no-img' %}
+
 
 {% block navbar %}
   {% include 'components/nav-bar.twig' with { css_class: "site-header--hp" } %}

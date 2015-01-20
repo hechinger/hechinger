@@ -27,16 +27,18 @@
         </div> <!-- /article-hdr-h -->
 
         <div class="article-hdr-meta">
-        <p class="article-byline">by
-          {% for author in post.coauthors %}
-            <a class="article-author" href="{{ author.link }}">{{ author.name }}</a>
-            {% if not loop.last %}
-              &nbsp;and&nbsp;
-            {% endif %}
-          {% endfor %}
-        </p>
+          <div class="article-hdr-meta-inner">
+            <p class="article-byline">by
+              {% for author in post.coauthors %}
+                <a class="article-author" href="{{ author.link }}">{{ author.name }}</a>
+                {% if not loop.last %}
+                  &nbsp;and&nbsp;
+                {% endif %}
+              {% endfor %}
+            </p>
 
-        <p class="article-date">{{ post.date }}</p>
+            <p class="article-date">{{ post.date }}</p>
+          </div> <!-- /article-hdr-meta-inner -->
       </div> <!-- /article-hdr-meta -->
 
       </div> <!-- /articleFeat-mod -->

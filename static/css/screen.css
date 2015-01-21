@@ -3917,19 +3917,20 @@ img {
   font-size: 17px;
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
+  line-height: 130%;
   color: black;
 }
-/* line 545, ../scss/pages/_article.scss */
+/* line 546, ../scss/pages/_article.scss */
 .article-text h4.article-related-h:after {
   position: static;
 }
 
-/* line 551, ../scss/pages/_article.scss */
+/* line 552, ../scss/pages/_article.scss */
 .related-label {
   margin-right: 2px;
 }
 
-/* line 556, ../scss/pages/_article.scss */
+/* line 557, ../scss/pages/_article.scss */
 .article-related-text-link {
   position: relative;
   padding-right: 0.85em;
@@ -3950,16 +3951,16 @@ img {
 .article-related-text-link:after {
   padding-left: 0.15em;
 }
-/* line 561, ../scss/pages/_article.scss */
+/* line 562, ../scss/pages/_article.scss */
 .article-related-text-link:hover {
   text-decoration: underline;
 }
-/* line 563, ../scss/pages/_article.scss */
+/* line 564, ../scss/pages/_article.scss */
 .article-related-text-link:after {
-  line-height: 2.2;
+  line-height: 1.65;
 }
 
-/* line 587, ../scss/pages/_article.scss */
+/* line 588, ../scss/pages/_article.scss */
 .article-comment-link {
   position: relative;
   display: block;
@@ -3979,7 +3980,7 @@ img {
   transition: all 0.25s ease-in;
 }
 @media (min-width: 450px) {
-  /* line 587, ../scss/pages/_article.scss */
+  /* line 588, ../scss/pages/_article.scss */
   .article-comment-link {
     width: 140px;
     height: 35px;
@@ -3987,12 +3988,12 @@ img {
     line-height: 33px;
   }
 }
-/* line 611, ../scss/pages/_article.scss */
+/* line 612, ../scss/pages/_article.scss */
 .article-comment-link:hover, .article-comment-link:active {
   border-color: #00aeef;
 }
 
-/* line 619, ../scss/pages/_article.scss */
+/* line 620, ../scss/pages/_article.scss */
 .comment-mod {
   max-height: 0;
   margin-top: 0;
@@ -4000,26 +4001,26 @@ img {
   -webkit-transition: max-height 1s cubic-bezier(0.54, 0.24, 0.85, 0.23);
           transition: max-height 1s cubic-bezier(0.54, 0.24, 0.85, 0.23);
 }
-/* line 626, ../scss/pages/_article.scss */
+/* line 627, ../scss/pages/_article.scss */
 .comment-mod.comment-mod--is-active {
   max-height: 5500px;
   margin-top: 17px;
   display: block;
 }
 
-/* line 641, ../scss/pages/_article.scss */
+/* line 642, ../scss/pages/_article.scss */
 #disqus_thread a:link {
   color: #00aeef;
 }
-/* line 642, ../scss/pages/_article.scss */
+/* line 643, ../scss/pages/_article.scss */
 #disqus_thread a:hover {
   color: #00aeef;
 }
-/* line 643, ../scss/pages/_article.scss */
+/* line 644, ../scss/pages/_article.scss */
 #disqus_thread a:active {
   color: #00aeef;
 }
-/* line 644, ../scss/pages/_article.scss */
+/* line 645, ../scss/pages/_article.scss */
 #disqus_thread a:visited {
   color: #00aeef;
 }

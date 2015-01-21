@@ -311,7 +311,6 @@
   @include mq($bp-medium) {
     @include absolute-center(290px);
     top: 60px;
-    height: 317px;
 
     padding: 10px 25px 2px;
     margin-top: 0;
@@ -415,7 +414,7 @@
 } // before-after
 
 // White shadow
-// - Sit near bottom, overlaps body
+// - Sits near bottom, overlaps body
 // - Spans height of menu, obscured by yellow
 .nav-topics-menu:before,
 .nav-topics-menu-shadow:after {
@@ -426,7 +425,7 @@
 }
 
 // Yellow shadow
-// - Sit near top, overlap header
+// - Sits near top, overlaps header
 .nav-topics-menu-shadow:before,
 .nav-topics-menu:after {
   @include mq($bp-medium) {
@@ -461,6 +460,18 @@
     .article-has-feat-img.search-is-open & {
       max-height: 57px + $search-height--med;
     }
+    // if article, author, or default page template
+    // (the one where a white box slightly overlaps yellow header)
+    .single &,
+    .author &,
+    .page-template-default & {
+      height: 87px;
+    }
+    .single &,
+    .author &,
+    .page-template-default & {
+      max-height: 87px + $search-height--med;
+    }
     // if 404 page, yellow covers top-to-bottom
     .error404 & {
       height: auto;
@@ -492,6 +503,18 @@
     }
     .hp-tz-has-img.search-is-open & {
       max-height: 107px + $search-height--large;
+    }
+    // if article, author, or default page template
+    // (the one where a white box slightly overlaps yellow header)
+    .single &,
+    .author &,
+    .page-template-default & {
+      height: 102px;
+    }
+    .single &,
+    .author &,
+    .page-template-default & {
+      max-height: 102px + $search-height--large;
     }
     // if article has a feature presentation with art
     .article-has-feat-img & {

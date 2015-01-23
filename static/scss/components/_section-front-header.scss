@@ -44,6 +44,11 @@
   &:hover {
     text-decoration: none;
   }
+  // This fixes a weird bug in Firefox where the arrows is misplaces
+  // when the text is breaking on its own line
+  &:after {
+    top: 0;
+  }
 
   @include mq($bp-small) {
     @include bullet(after);

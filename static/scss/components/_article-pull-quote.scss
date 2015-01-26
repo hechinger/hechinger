@@ -42,12 +42,12 @@
   // This class is added via JS
   .is-double-quote & {
     text-indent: -12px;
-    padding-left: 12px;
+    padding-left: 12px; //see also article-quote-attr
   }
 
   .is-single-quote & {
     text-indent: -6px;
-    padding-left: 6px;
+    padding-left: 6px; //see also article-quote-attr
   }
 
   // If the quote has more than one paragraph.
@@ -65,12 +65,12 @@
   margin-top: 15px;
   font-family: $he-sans;
   font-weight: $font-weight-bold;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 1px;
+  font-size: 15px;
+  line-height: 130%;
+  color: $black-40;
 
-  .is-double-quote & { padding-left: 17px; }
-  .is-single-quote & { padding-left: 11px; }
+  .is-double-quote & { padding-left: 12px; }
+  .is-single-quote & { padding-left: 6px; }
 
 }
 

@@ -37,3 +37,5 @@ ACFHacks::map_page_rule_to_slug(17996, 'about');
 if (class_exists('Jigsaw')) {
   Jigsaw::add_css('static/css/hechinger-admin.css');
 }
+
+define( 'DISALLOW_FILE_EDIT', true );

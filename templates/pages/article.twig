@@ -88,6 +88,7 @@
       <!-- article-bio -->
       {% block article_bio %}
         {% for author in post.coauthors %}
+          {% if author.description %}
           <div class="page-mod article-mod">
             <div class="article-bio">
               <div class="{{ author.author_image ? 'l-article-bio' : '' }}">
@@ -116,6 +117,7 @@
               </div> <!-- /l-article-bio -->
             </div> <!-- /article-bio -->
           </div> <!-- /page-mod -->
+          {% endif %} {# / author.description #}
         {% endfor %}
       {% endblock %} {# /article_bio #}
 

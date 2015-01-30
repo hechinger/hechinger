@@ -13,7 +13,10 @@ class HechingerPost extends TimberPost {
     }
     $primary = $this->get_field('primary_special_report');
     if ($primary) {
-      return new HechingerTerm($primary);
+      $term = new HechingerTerm($primary);
+      if( property_exists( $term, 'name' ) && $term->name ) {
+        return $term;
+      }
     }
     $st = $this->get_terms('special-report');
     if (is_array($st) && count($st) ) { 
@@ -24,8 +27,11 @@ class HechingerPost extends TimberPost {
 
   function getBanner($shape = 'yellow_banner') {
     $st = $this->overline();
-    if (isset($st->$shape)) {
-      return new HechingerImage($st->$shape);
+    if ( isset( $st->$shape ) && $st->$shape ) {
+      $banner = new HechingerImage( $st->$shape );
+      if( $banner->ID ) {
+        return $banner;
+      }
     }
   }
 

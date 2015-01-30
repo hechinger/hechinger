@@ -10,7 +10,7 @@
 .page-content {
 
   .img-container-inner {
-    max-height: $img-ht-med;
+    // max-height: $img-ht-med;
     overflow: hidden;
   }
 
@@ -42,7 +42,7 @@
     // @include mq($bp-desktop) { margin-left: -100px; }
     @include mq(1150px) { margin-left: -100px; }
 
-    .img-container-inner { max-height: $img-ht-sm; }
+    // .img-container-inner { max-height: $img-ht-sm; }
   }
 
 
@@ -60,7 +60,7 @@
       margin-right: -($site-margin*2);
     }
 
-    .img-container-inner { max-height: $img-ht-sm; }
+    // .img-container-inner { max-height: $img-ht-sm; }
   }
 
 }

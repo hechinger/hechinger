@@ -2585,7 +2585,6 @@ img {
 /* line 12, ../scss/components/_image.scss */
 .article-text .img-container-inner,
 .page-content .img-container-inner {
-  max-height: 450px;
   overflow: hidden;
 }
 /* line 18, ../scss/components/_image.scss */
@@ -2634,11 +2633,6 @@ img {
     margin-left: -100px;
   }
 }
-/* line 45, ../scss/components/_image.scss */
-.article-text .alignleft .img-container-inner,
-.page-content .alignleft .img-container-inner {
-  max-height: 350px;
-}
 @media (min-width: 550px) {
   /* line 49, ../scss/components/_image.scss */
   .article-text .alignright,
@@ -2657,11 +2651,6 @@ img {
     max-width: 450px;
     margin-right: -40px;
   }
-}
-/* line 63, ../scss/components/_image.scss */
-.article-text .alignright .img-container-inner,
-.page-content .alignright .img-container-inner {
-  max-height: 350px;
 }
 
 @media (min-width: 820px) {

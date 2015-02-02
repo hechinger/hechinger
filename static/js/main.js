@@ -1,4 +1,4 @@
-window.onload = (function($, FastClick, HE_navbar, HE_responsiveBg){
+window.onload = (function($, FastClick, HE_navbar, HE_responsiveBg, quickshare, undefined){
   "use strict";
 
   var navbar, responsiveBg;
@@ -16,4 +16,8 @@ window.onload = (function($, FastClick, HE_navbar, HE_responsiveBg){
     responsiveBg = HE_responsiveBg.init();
   }
 
-}(window.jQuery, window.FastClick, window.HE_navbar, window.HE_responsiveBg));
+  if (typeof quickShare == 'function') {
+    quickShare();
+  }
+
+}(window.jQuery, window.FastClick, window.HE_navbar, window.HE_responsiveBg, window.quickshare));

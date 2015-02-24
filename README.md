@@ -1,9 +1,26 @@
 The Hechinger Report
 ====================
 
-This repo covers the WordPress theme for the Hechinger Report. If you are new to the project follow the setup steps below.
+This repo covers the WordPress theme for the Hechinger Report. If you are new to the project follow the setup steps below. Otherwise, see the [day-to-day](#day-to-day) guidelines.
 
-### Setup
+- [Day-to-day](#day-to-day)
+- [Setup](#setup)
+ 
+# Day to day
+
+## Getting Started
+Regardless of what you're authoring, it's a good idea to have your vagrant instance up and running.
+In your CLI, navigate to your hechinger_vagrant directory and run `vagrant up`
+
+## Authoring files
+Regardless of what types of files you're editing, make sure you're following our GitHub workflow.
+
+## Authoring CSS
+In order for your sass to be compiled, you'll need to have compass watching your sass files.
+In your CLI, navigate to your theme directory (`hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger`) and run `compass watch`
+Happy Styling!
+
+# Setup
 
 Setting up the Hechinger theme for development takes a few steps. You'll be installing some softwore, runnig some terminal commands, and activating some plugins.
 

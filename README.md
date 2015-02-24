@@ -1,8 +1,6 @@
 The Hechinger Report
 ====================
 
-Davin was here. 
-
 This repo covers the WordPress theme for the Hechinger Report. If you are new to the project follow the setup steps below.
 
 ### Setup

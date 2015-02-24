@@ -20,6 +20,14 @@ In order for your sass to be compiled, you'll need to have compass watching your
 In your CLI, navigate to your theme directory (`hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger`) and run `compass watch`
 Happy Styling!
 
+### Deploying Code
+Code gets deployed directly from GitHub's master branch to the server. Keep in mind that it fully overwrites the theme on the server with the theme from this repository, so don't make any changes directly on the server!
+To deploy code:
+1. Login to DeployHQ
+2. Click "Deploy Now!"
+3. Preview the deployment
+4. Click "Run Deployment"
+
 # Setup
 
 Setting up the Hechinger theme for development takes a few steps. You'll be installing some softwore, runnig some terminal commands, and activating some plugins.

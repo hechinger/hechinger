@@ -10,7 +10,7 @@ Setting up the Hechinger theme for development takes a few steps. You'll be inst
 1. Follow the directions [here](https://github.com/Upstatement/hechinger_vagrant) to set up a Vagrant environment. Then come back here.
 2. Install Dependencies Using Composer following the directions below.
 3. [Import the Hechinger database](#import-database) to get actual Hechinger content.
-4. [Import Hechinger Uploads folder](#import-uploads-folder) to get images for the site.
+4. [Follow the uploads instructions](#uploads-instructions) to get images for the site.
 5. [Install dependencies.](#install-dependencies)
 6. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
 
@@ -45,40 +45,8 @@ The site also uses [respond.js](https://github.com/scottjehl/Respond) to provide
 
 There are a few more dependencies not managed with composer that we need to install. You'll find the directions below:
 
-1. Mesh
-2. Advanced Custom Fields
-3. Stream Manager
-
-## Mesh
-
-We use mesh to bootstrap custom taxonomies, pages, and post types. This is especially helpful to avoid DB imports and exports and bootstrap static pages.
-
-To get Mesh follow the new [instructions in the readme](https://github.com/Upstatement/hechinger/compare/43_page_scaffold?expand=1#diff-04c6e90faac2675aa89e2176d2eec7d8R15). Specifically this can be run on an existing Hechinger install. Mesh should be installed by composer, but in the event that it isn't open a terminal:
-
-```
-$ vagrant ssh
-$ cd /srv/www/wordpress-he/
-$ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activate
-```
-
-#### To Bootstrap a Page
-
-To create a new page, add to the `functions.php` file's `HechingerSite::bootstap_content` method...
-
-```php
-function bootstap_content() {
-  if ( class_exists( 'Mesh' ) ) {
-    $article = new Mesh\Post( 'article', 'page' );
-    $article = new Mesh\Post( 'Special Reports', 'page' );
-    $article = new Mesh\Post( 'About Fred Hechinger', 'page' );
-    $article = new Mesh\Post( 'My Cool Page', 'page' );
-  }
-}
-```
-
-#### Now populate that page
-
-To populate these you'll need a file called `hechinger/templates/pages/page-my-cool-page.twig` and then populate that as you would other pages on the site
+1. Advanced Custom Fields
+1. Stream Manager
 
 ### Advanced Custom Fields
 
@@ -87,19 +55,10 @@ Advanced Custom Fields (ACF) powers the custom fields on the new Hechinger site.
 ```
 $ vagrant ssh
 $ cd /srv/www/wordpress-he/
-$ wp plugin install https://www.dropbox.com/s/msici5rzsadpf0w/advanced-custom-fields-pro.zip?dl=1 --activate
+$ wp plugin install http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzQwMzh8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA5IDEyOjU4OjA4 --activate
 $ exit
 ```
 In the wp-admin, activate the license with the Upstatement license key here: https://github.com/Upstatement/Upstatement/wiki/Upstatement%20WordPress%20Plugins#advanced-custom-fields
-
-**Important Last Step** You'll have to import the ACF "settings".
-
-1. In the wordpress admin go to Advanced Custom Fields -> Import/Export. Scroll down to "Import"
-2. Click ""Choose File" and find all your ACF files in the project /themes/hechinger/acf-json
-3. Select all of them, click okay
-4. Click import.
-
-You've done it. You now have all the ACF fsettings the site needs.
 
 ### Stream Manager
 
@@ -140,7 +99,7 @@ Developers will be using a capture of the actual Hechinger Report database to de
 ```
 
 $ vagrant ssh
-$ cd /srv/database && wget https://www.dropbox.com/s/1be3oh84cujtt2l/he_db_11-12.sql?dl=1 && mysql -u root -proot wordpress_he < he_db_11-12.sql\?dl\=1
+$ cd /srv/database wp db import hechinger.sql
 
 ```
 
@@ -148,17 +107,17 @@ That's it. You should have a bunch of Hechinger posts and pages imported.
 
 To exit vagrant ssh just run `exit`.
 
-### Import Uploads Folder
+### Uploads Instructions
 
-You'll need all the images from Hechinger's uploads folder too. You'll have to copy the folder from dropbox into wp-content.
-
-First find the `uploads` folder in Upstatement's dropbox:
-
-`Upstatement > Clients > Hechinger > 4. Development`
-
-Copy `uploads` into `hechinger_vagant > www > wordpress-he > wp-content`
-
-Now you should have the images for the site. Check out some posts in the WP Admin to make sure they are there.
+If it's not already installed, install the Uploads by Proxy plugin:
+```
+$ vagrant ssh -c "cd /srv/www/wordpress-he && wp plugin install uploads-by-proxy --activate"
+```
+Then, set the config up with the live URL for this site by adding the following lines to your wp-config.php
+```php
+define('UBP_LIVE_DOMAIN', 'http://hechingerreport.org/');
+define('UBP_IS_LOCAL', true );
+```
 
 ## Database Administration
 

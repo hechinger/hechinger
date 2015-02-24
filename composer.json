@@ -1,18 +1,32 @@
 {
-	"name"	:	"upstatement/hechinger",
-	 "repositories":[
+    "name": "upstatement/hechinger",
+    "repositories": [
         {
-            "type":"composer",
-            "url":"http://wpackagist.org"
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "advanced-custom-fields/advanced-custom-fields-pro",
+                "version": "5.0",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzQwMzh8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA5IDEyOjU4OjA4"
+                }
+            }
         }
     ],
-    "require" : {
-    	"wpackagist-plugin/co-authors-plus" : "*",
-        "wpackagist-plugin/jigsaw" : "*",
-        "wpackagist-plugin/timber-library" : "0.20.*",
-        "wpackagist-plugin/zoneboard" : "*"
+    "require": {
+        "wpackagist-plugin/co-authors-plus": "*",
+        "advanced-custom-fields/advanced-custom-fields-pro": "*",
+        "wpackagist-plugin/jigsaw": "*",
+        "wpackagist-plugin/timber-library": "0.20.*",
+        "wpackagist-plugin/zoneboard": "*",
+        "wpackagist-plugin/uploads-by-proxy": "*"
     },
-     "extra": {
+    "extra": {
         "installer-paths": {
             "../../plugins/{$name}/": ["type:wordpress-plugin", "wpackagist-plugin/*"]
         }

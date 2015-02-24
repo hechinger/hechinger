@@ -23,6 +23,7 @@ Happy Styling!
 ### Deploying Code
 Code gets deployed directly from GitHub's master branch to the server. Keep in mind that it fully overwrites the theme on the server with the theme from this repository, so don't make any changes directly on the server!
 To deploy code:
+
 1. Login to DeployHQ
 2. Click "Deploy Now!"
 3. Preview the deployment

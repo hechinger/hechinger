@@ -8,14 +8,14 @@ This repo covers the WordPress theme for the Hechinger Report. If you are new to
  
 # Day to day
 
-## Getting Started
+### Getting Started
 Regardless of what you're authoring, it's a good idea to have your vagrant instance up and running.
 In your CLI, navigate to your hechinger_vagrant directory and run `vagrant up`
 
-## Authoring files
-Regardless of what types of files you're editing, make sure you're following our GitHub workflow.
+### Authoring files
+Regardless of what types of files you're editing, make sure you're following our [GitHub workflow guide](https://github.com/Upstatement/public-wiki/wiki/GitHub-Workflow)
 
-## Authoring CSS
+### Authoring CSS
 In order for your sass to be compiled, you'll need to have compass watching your sass files.
 In your CLI, navigate to your theme directory (`hechinger_vagrant/www/wordpress-he/wp-content/themes/hechinger`) and run `compass watch`
 Happy Styling!

@@ -99,7 +99,7 @@ Developers will be using a capture of the actual Hechinger Report database to de
 ```
 
 $ vagrant ssh
-$ cd /srv/database wp db import hechinger.sql
+$ cd /srv/database && wp db import hechinger.sql --path=/srv/www/wordpress-he
 
 ```
 

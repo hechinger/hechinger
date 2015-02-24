@@ -16,9 +16,9 @@ Setting up the Hechinger theme for development takes a few steps. You'll be inst
 
 ### Install Dependencies
 
-Hechinger has a few dependencies we need to install. First we'll use Bower to install Upbase, jQuery, and other packages we need. Then're going to compile our `.scss` files with Compass. You will need [Composer](https://getcomposer.org/doc/00-intro.md#globally).
+Hechinger has a few dependencies we need to install. These are managed by composer (PHP package manager) and bower (front end package manager).
 
-First we will update composer:
+#### PHP Dependencies
 
 ```bash
 $ vagrant ssh
@@ -27,28 +27,43 @@ $ composer update
 $ exit
 ```
 
-Then we will get the front end dependencies. Open a terminal and navagte to your hechinger theme folder.
+#### Front End Dependencies
+
+First, make sure you have node installed. Node is a javascript application that serves as the backbone for bower (among other things).
+[Download the installer](http://nodejs.org/download/) for your operating system.
+
+Next, install [Bower](http://bower.io/). Bower is a package manager for front end dependencies.
+`npm install -g bower`
+
+Finally, open a terminal, navigate to your hechinger theme folder, and run the following commands.
+These:
+- Install front end dependencies via bower
+- Get ruby up to date
+- Install compass
+- Install sass
+- Install Autoprefixer
+- Start the compass watch process (which watches + compiles our sass)
 
 ```bash
 $ bower install
+$ gem update --system
+$ gem install compass
+$ gem install sass
 $ gem install autoprefixer-rails
 $ compass watch
 ```
-
-**Sometimes the WordPress plugins you installed aren't activated. Just go into the WordPress admin and check that you've activated the plugins.**
 
 [Autoprefixer](https://github.com/postcss/autoprefixer) is a gem that works with Compass to add browser prefixes to our compiled sass.
 The site also uses [respond.js](https://github.com/scottjehl/Respond) to provide media queries for IE8 and lower.
 
 **Protip: If you ever find the site is "broken" or has no stylesheets always try `bower install` and `compass watch` before asking for help.**
 
-There are a few more dependencies not managed with composer that we need to install. You'll find the directions below:
+#### Other Dependencies
+These are dependencies that Composer may have been unable to install for us. Ensure you *need* to install these by verifying they don't already exist in their respective locations.
 
-1. Stream Manager
+#### Stream Manager
 
-### Stream Manager
-
-[Stream Manager](http://github.com/Upstatement/Stream-Manager) allows editors to intuitivly sort recent posts for the homepage to install, navigate to your vagrant install for Hechinger. Composer should install the Stream Manager for us, but if it isn't:
+[Stream Manager](http://github.com/Upstatement/Stream-Manager) allows editors to intuitivly sort recent posts for the homepage to install, navigate to your vagrant install for Hechinger.
 
 ```
 $ cd www/wordpress-he/wp-content/plugins

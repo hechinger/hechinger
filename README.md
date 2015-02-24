@@ -8,11 +8,10 @@ This repo covers the WordPress theme for the Hechinger Report. If you are new to
 Setting up the Hechinger theme for development takes a few steps. You'll be installing some softwore, runnig some terminal commands, and activating some plugins.
 
 1. Follow the directions [here](https://github.com/Upstatement/hechinger_vagrant) to set up a Vagrant environment. Then come back here.
-2. Install Dependencies Using Composer following the directions below.
-3. [Import the Hechinger database](#import-database) to get actual Hechinger content.
-4. [Follow the uploads instructions](#uploads-instructions) to get images for the site.
-5. [Install dependencies.](#install-dependencies)
-6. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
+1. [Install dependencies.](#install-dependencies)
+1. [Import the Hechinger database](#import-database) to get actual Hechinger content.
+1. [Follow the uploads instructions](#uploads-instructions) to get images for the site.
+1. Read our [wiki](https://github.com/Upstatement/hechinger/wiki) and happy coding!
 
 
 ### Install Dependencies
@@ -36,7 +35,7 @@ $ gem install autoprefixer-rails
 $ compass watch
 ```
 
-**Sometimes the WordPress plugins you installed aren't activated. Just go into the WordPress admin and check that you've actiated the plugins.**
+**Sometimes the WordPress plugins you installed aren't activated. Just go into the WordPress admin and check that you've activated the plugins.**
 
 [Autoprefixer](https://github.com/postcss/autoprefixer) is a gem that works with Compass to add browser prefixes to our compiled sass.
 The site also uses [respond.js](https://github.com/scottjehl/Respond) to provide media queries for IE8 and lower.
@@ -45,20 +44,7 @@ The site also uses [respond.js](https://github.com/scottjehl/Respond) to provide
 
 There are a few more dependencies not managed with composer that we need to install. You'll find the directions below:
 
-1. Advanced Custom Fields
 1. Stream Manager
-
-### Advanced Custom Fields
-
-Advanced Custom Fields (ACF) powers the custom fields on the new Hechinger site. Downloading and activating this plugin will give you access to the custom fields Upstatement's dev team has created. ACF will be install by composer, but if it isn't open a terminal:
-
-```
-$ vagrant ssh
-$ cd /srv/www/wordpress-he/
-$ wp plugin install http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzQwMzh8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA5IDEyOjU4OjA4 --activate
-$ exit
-```
-In the wp-admin, activate the license with the Upstatement license key here: https://github.com/Upstatement/Upstatement/wiki/Upstatement%20WordPress%20Plugins#advanced-custom-fields
 
 ### Stream Manager
 
@@ -72,29 +58,14 @@ $ cd /srv/www/wordpress-he/
 $ wp plugin activate stream-manager
 ```
 
-### Timber
-
-Timber helps you create fully-customized WordPress themes faster with more sustainable code. With Timber, you write your HTML using the Twig Template Engine separate from your PHP files.
-
-If composer doesn't install Timber you'll need to install the Timber plugin using the terminal commands below.
-
-Open a terminal and navagte to your hechinger_vagrant install
-
-```
-$ vagrant ssh
-$ cd /srv/www/wordpress-he/
-$ wp plugin install https://github.com/jarednova/mesh/archive/master.zip --activate
-$ exit
-```
-
 ## Database Management
 
 ### Import Database
 
-Developers will be using a capture of the actual Hechinger Report database to develop the site. The most recent database dump will be located in the `development` folder in the `Upstatement/Hechinger` dropbox in the form of an sql file.
+Developers will be using a capture of the actual Hechinger Report database to develop the site. Here's how to get that:
 
 - Open a terminal and navigate to your `hechinger_vagrant` root directory.
-- You'll be running a these terminal commands import the DB:
+- You'll be running these terminal commands to import the DB:
 
 ```
 

@@ -61,7 +61,7 @@ The site also uses [respond.js](https://github.com/scottjehl/Respond) to provide
 #### Other Dependencies
 These are dependencies that Composer may have been unable to install for us. Ensure you *need* to install these by verifying they don't already exist in their respective locations.
 
-#### Stream Manager
+##### Stream Manager
 
 [Stream Manager](http://github.com/Upstatement/Stream-Manager) allows editors to intuitivly sort recent posts for the homepage to install, navigate to your vagrant install for Hechinger.
 

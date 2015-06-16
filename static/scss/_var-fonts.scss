@@ -20,14 +20,20 @@
 // National Font Calls
 // --------------------------------------------
 
-@include fontFace(National, WebLF, 300, Book);
-@include fontFace(National, WebLF, 300, BookItalic, italic);
+@include fontFace(National, Web, 300, Book);
+@include fontFace(National, Web, 300, BookItalic, italic);
 
-@include fontFace(National, WebLF, 700, Bold);
-@include fontFace(National, WebLF, 700, BoldItalic, italic);
+@include fontFace(National, Web, 700, Bold);
+@include fontFace(National, Web, 700, BoldItalic, italic);
 
-@include fontFace(National, WebLF, 900, Black);
-@include fontFace(National, WebLF, 900, BlackItalic, italic);
+@include fontFace(National, Web, 900, Black);
+
+// Once Black Italic is available, uncomment this line and do the following
+// 1. Change the font style in tease.scss, line 208 to italic.
+// 2. Change the font style in home.scss, line 238 to italic.
+// 3. Change the font style in article-header-feat.scss, line 70 to italic.
+// 4. That should be it.
+// @include fontFace(National, WebLF, 900, BlackItalic, italic);
 
 
 

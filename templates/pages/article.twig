@@ -36,6 +36,17 @@
           {% endif %}
         {% endblock %}
 
+        {# ************************************ #}
+        {# Static Ad Code #}
+        {# The Ads are currently moved into place with ad-move.js. This is a copy and pasted version of the partner-move.js module that Chris wrote to move the Media Partners into place. There's probably a better method of achieving the correct placement. However, this might come in handy if we place more than one ad within a given article for longer articles.
+        #}
+        {% block article_ad %}
+          {% include "/templates/components/article-advert.twig" %}
+        {% endblock %}
+
+        {# ************************************ #}
+
+
         <div class="article-body article-text js-article-text">
           {{ post.content }}
 
@@ -46,6 +57,7 @@
                 </div> <!-- /bottom-aside-container -->
               {% endif %}
             {% endblock %}
+
 
         </div> <!-- /article-body -->
       </article> <!-- /article-main -->
@@ -146,5 +158,6 @@
   <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/comment.js"></script>
   <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/blockquote.js"></script>
   <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/partner-move.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/ad-move.js"></script>
   <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/article.js"></script>
 {% endblock %}

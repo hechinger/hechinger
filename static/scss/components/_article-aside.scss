@@ -42,7 +42,6 @@
   }
 
 
-
   // ---------------------------
   // Headline Styles
 
@@ -260,3 +259,56 @@
 
 
 .aside-body { margin-left: 0 }
+
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Ads
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$ad-width: 300px;
+
+
+.article-ad {
+  @include article-bd-layout;
+  @include pie-clearfix;
+  border-top: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  @include mq($bp-article-not-centered) {
+    width: $ad-width;
+    max-width: $ad-width;
+    float: right;
+    clear: right;
+  }
+}
+
+.article-ad-content {
+  width: 100%;
+  max-width: $ad-width;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  @include mq($bp-article-not-centered) {
+    margin:0;
+  }
+}
+
+
+.aside-ad-hdr {
+  color: $black-40;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: $he-sans;
+  margin-bottom: 7px;
+}
+

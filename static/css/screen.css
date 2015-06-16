@@ -9527,7 +9527,7 @@ img.alignleft {
   font-size: 14px;
   margin: 10px 0;
 }
-/* line 49, ../scss/components/_article-aside.scss */
+/* line 48, ../scss/components/_article-aside.scss */
 .article-aside h1,
 .article-aside h2 {
   font-family: National, Helvetica, Arial, sans-serif;
@@ -9537,7 +9537,7 @@ img.alignleft {
   color: black;
   margin-top: 15px;
 }
-/* line 57, ../scss/components/_article-aside.scss */
+/* line 56, ../scss/components/_article-aside.scss */
 .article-aside h3,
 .article-aside h4 {
   font-family: National, Helvetica, Arial, sans-serif;
@@ -9547,7 +9547,7 @@ img.alignleft {
   color: black;
   margin-top: 15px;
 }
-/* line 66, ../scss/components/_article-aside.scss */
+/* line 65, ../scss/components/_article-aside.scss */
 .article-aside h5,
 .article-aside h6 {
   font-family: National, Helvetica, Arial, sans-serif;
@@ -9559,29 +9559,29 @@ img.alignleft {
   color: black;
   margin-top: 15px;
 }
-/* line 81, ../scss/components/_article-aside.scss */
+/* line 80, ../scss/components/_article-aside.scss */
 .article-aside blockquote {
   padding-top: 10px;
   margin: 25px 0 !important;
   border-top: 3px solid #00aeef;
   color: #908b8c;
 }
-/* line 95, ../scss/components/_article-aside.scss */
+/* line 94, ../scss/components/_article-aside.scss */
 .article-aside ul, .article-aside ol {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 14px;
   margin: 10px 0 10px 20px;
 }
-/* line 102, ../scss/components/_article-aside.scss */
+/* line 101, ../scss/components/_article-aside.scss */
 .article-aside ul {
   list-style-type: disc;
 }
-/* line 105, ../scss/components/_article-aside.scss */
+/* line 104, ../scss/components/_article-aside.scss */
 .article-aside ul ul {
   list-style-type: circle !important;
   margin-left: 20px;
 }
-/* line 111, ../scss/components/_article-aside.scss */
+/* line 110, ../scss/components/_article-aside.scss */
 .article-aside ol {
   counter-reset: li;
   /* Initiate a counter */
@@ -9590,7 +9590,7 @@ img.alignleft {
   padding-left: 0;
   /* Remove the default left padding */
 }
-/* line 117, ../scss/components/_article-aside.scss */
+/* line 116, ../scss/components/_article-aside.scss */
 .article-aside ol > li {
   position: relative;
   /* Create a positioning context */
@@ -9601,7 +9601,7 @@ img.alignleft {
   list-style: none;
   /* Disable the normal item numbering */
 }
-/* line 124, ../scss/components/_article-aside.scss */
+/* line 123, ../scss/components/_article-aside.scss */
 .article-aside ol > li:before {
   content: counter(li) ".";
   /* Use the counter as content */
@@ -9621,32 +9621,32 @@ img.alignleft {
   font-family: National, Helvetica, Arial, sans-serif;
   text-align: center;
 }
-/* line 142, ../scss/components/_article-aside.scss */
+/* line 141, ../scss/components/_article-aside.scss */
 .article-aside li ol,
 .article-aside li ul {
   margin-top: 6px;
 }
-/* line 145, ../scss/components/_article-aside.scss */
+/* line 144, ../scss/components/_article-aside.scss */
 .article-aside ol ol li:last-child {
   margin-bottom: 0;
 }
-/* line 152, ../scss/components/_article-aside.scss */
+/* line 151, ../scss/components/_article-aside.scss */
 .article-aside a, .article-aside a:visited {
   color: #00aeef;
   text-decoration: none;
 }
-/* line 155, ../scss/components/_article-aside.scss */
+/* line 154, ../scss/components/_article-aside.scss */
 .article-aside a:hover, .article-aside a:visited:hover, .article-aside a:visited:hover, .article-aside a:visited:visited:hover {
   text-decoration: underline;
 }
-/* line 160, ../scss/components/_article-aside.scss */
+/* line 159, ../scss/components/_article-aside.scss */
 .article-aside > address {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-style: italic;
   font-weight: 300;
 }
-/* line 170, ../scss/components/_article-aside.scss */
+/* line 169, ../scss/components/_article-aside.scss */
 .article-aside p img {
   margin: 15px 0 15px 25px;
   float: left;
@@ -9655,67 +9655,67 @@ img.alignleft {
   height: auto;
 }
 @media (min-width: 550px) {
-  /* line 170, ../scss/components/_article-aside.scss */
+  /* line 169, ../scss/components/_article-aside.scss */
   .article-aside p img {
     margin: 15px 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 170, ../scss/components/_article-aside.scss */
+  /* line 169, ../scss/components/_article-aside.scss */
   .article-aside p img {
     width: 100%;
     float: none;
   }
 }
-/* line 189, ../scss/components/_article-aside.scss */
+/* line 188, ../scss/components/_article-aside.scss */
 .article-aside .img-container {
   width: 100%;
 }
 @media (min-width: 750px) {
-  /* line 189, ../scss/components/_article-aside.scss */
+  /* line 188, ../scss/components/_article-aside.scss */
   .article-aside .img-container {
     display: inline-block;
   }
 }
-/* line 196, ../scss/components/_article-aside.scss */
+/* line 195, ../scss/components/_article-aside.scss */
 .article-aside .img-caption-text {
   margin: 0;
 }
-/* line 200, ../scss/components/_article-aside.scss */
+/* line 199, ../scss/components/_article-aside.scss */
 .article-aside .img-caption {
   width: 65%;
   margin: 15px 0;
   float: right;
 }
 @media (min-width: 550px) {
-  /* line 200, ../scss/components/_article-aside.scss */
+  /* line 199, ../scss/components/_article-aside.scss */
   .article-aside .img-caption {
     width: 70%;
     margin: 5px 0 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 200, ../scss/components/_article-aside.scss */
+  /* line 199, ../scss/components/_article-aside.scss */
   .article-aside .img-caption {
     float: none;
     width: 100%;
     margin: 0;
   }
 }
-/* line 217, ../scss/components/_article-aside.scss */
+/* line 216, ../scss/components/_article-aside.scss */
 .article-aside .wp-caption-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 14px;
 }
-/* line 222, ../scss/components/_article-aside.scss */
+/* line 221, ../scss/components/_article-aside.scss */
 .article-aside .wp-image-38 {
   margin-right: 20px;
   height: auto;
 }
 
-/* line 248, ../scss/components/_article-aside.scss */
+/* line 247, ../scss/components/_article-aside.scss */
 .aside-hdr {
   font-size: 16px;
   font-family: Tiempos, Georgia, Times, serif !important;
@@ -9723,15 +9723,79 @@ img.alignleft {
   margin-top: 0 !important;
 }
 
-/* line 256, ../scss/components/_article-aside.scss */
+/* line 255, ../scss/components/_article-aside.scss */
 .aside-borders {
   border-top: 6px solid #2a272b;
   border-bottom: 1px solid #dad7d7;
 }
 
-/* line 262, ../scss/components/_article-aside.scss */
+/* line 261, ../scss/components/_article-aside.scss */
 .aside-body {
   margin-left: 0;
+}
+
+/* line 278, ../scss/components/_article-aside.scss */
+.article-ad {
+  max-width: 550px;
+  *zoom: 1;
+  border-top: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+@media (max-width: 819px) {
+  /* line 278, ../scss/components/_article-aside.scss */
+  .article-ad {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 820px) {
+  /* line 278, ../scss/components/_article-aside.scss */
+  .article-ad {
+    margin-left: 25px;
+  }
+}
+/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+.article-ad:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 820px) {
+  /* line 278, ../scss/components/_article-aside.scss */
+  .article-ad {
+    width: 300px;
+    max-width: 300px;
+    float: right;
+    clear: right;
+  }
+}
+
+/* line 292, ../scss/components/_article-aside.scss */
+.article-ad-content {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+}
+@media (min-width: 820px) {
+  /* line 292, ../scss/components/_article-aside.scss */
+  .article-ad-content {
+    margin: 0;
+  }
+}
+
+/* line 305, ../scss/components/_article-aside.scss */
+.aside-ad-hdr {
+  color: #908b8c;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: National, Helvetica, Arial, sans-serif;
+  margin-bottom: 7px;
 }
 
 /* line 12, ../scss/components/_article-aside-related.scss */

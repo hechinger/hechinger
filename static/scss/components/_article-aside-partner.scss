@@ -53,3 +53,42 @@
   font-size: 13px;
   line-height: 120%;
 }
+
+
+.partner-aside-content {
+  & + & {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid $bdr-thin-lt-color;
+  }
+}
+
+
+
+
+// --------------------------------------------
+// --------------------------------------------
+//
+// Article Underwrite
+//
+// --------------------------------------------
+// --------------------------------------------
+
+.underwrite-h {
+  font-size: 14px;
+  font-family: $he-serif;
+  font-weight: $font-weight-black;
+}
+
+.underwrite-link {
+  color: $he-secondary;
+  text-decoration: none;
+}
+
+
+.underwrite-text {
+  font-family: $he-sans;
+  font-weight: $font-weight-lt;
+  font-size: 13px;
+  line-height: 18px;
+}

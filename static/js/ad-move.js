@@ -11,7 +11,7 @@ var HE_ad = (function($){
       return;
     }
     // find the fifth paragraph or the last paragraph if article less than 5 paragraphs
-    $targetParagraph = findParagraph(4);
+    $targetParagraph = findParagraph(3);
 
     if (typeof $targetParagraph !== 'undefined' || !$targetParagraph || !$targetParagraph.length) {
       $adAside.insertAfter($targetParagraph);
@@ -24,7 +24,7 @@ var HE_ad = (function($){
 
     if (index > 0) {
       // eliminate paragraphs in asides or captions
-      graph = $('.js-article-text').find('p').not('.article-aside p').not('.img-caption-text')[index];
+      graph = $('.js-article-text').find('p').not('.article-aside p').not('.img-caption-text').not('.js-partner-aside p')[index];
       $graph = $(graph);
       return $graph !== 'undefined' && $graph.length ? $graph : findParagraph(index - 1);
     } else {

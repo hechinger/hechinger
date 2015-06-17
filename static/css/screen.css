@@ -9734,70 +9734,6 @@ img.alignleft {
   margin-left: 0;
 }
 
-/* line 278, ../scss/components/_article-aside.scss */
-.article-ad {
-  max-width: 550px;
-  *zoom: 1;
-  border-top: 0;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-@media (max-width: 819px) {
-  /* line 278, ../scss/components/_article-aside.scss */
-  .article-ad {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media (min-width: 820px) {
-  /* line 278, ../scss/components/_article-aside.scss */
-  .article-ad {
-    margin-left: 25px;
-  }
-}
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
-.article-ad:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-@media (min-width: 820px) {
-  /* line 278, ../scss/components/_article-aside.scss */
-  .article-ad {
-    width: 300px;
-    max-width: 300px;
-    float: right;
-    clear: right;
-  }
-}
-
-/* line 292, ../scss/components/_article-aside.scss */
-.article-ad-content {
-  width: 100%;
-  max-width: 300px;
-  height: 250px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
-}
-@media (min-width: 820px) {
-  /* line 292, ../scss/components/_article-aside.scss */
-  .article-ad-content {
-    margin: 0;
-  }
-}
-
-/* line 305, ../scss/components/_article-aside.scss */
-.aside-ad-hdr {
-  color: #908b8c;
-  text-align: center;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-family: National, Helvetica, Arial, sans-serif;
-  margin-bottom: 7px;
-}
-
 /* line 12, ../scss/components/_article-aside-related.scss */
 .article-text .aside-hdr {
   font-family: Tiempos, Georgia, Times, serif;
@@ -10004,6 +9940,98 @@ img.alignleft {
   font-style: italic;
   font-size: 13px;
   line-height: 120%;
+}
+
+/* line 59, ../scss/components/_article-aside-partner.scss */
+.partner-aside-content + .partner-aside-content {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #e6e4e4;
+}
+
+/* line 77, ../scss/components/_article-aside-partner.scss */
+.underwrite-h {
+  font-size: 14px;
+  font-family: Tiempos, Georgia, Times, serif;
+  font-weight: 900;
+}
+
+/* line 83, ../scss/components/_article-aside-partner.scss */
+.underwrite-link {
+  color: #00aeef;
+  text-decoration: none;
+}
+
+/* line 89, ../scss/components/_article-aside-partner.scss */
+.underwrite-text {
+  font-family: National, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 12, ../scss/components/_article-aside-ad.scss */
+.article-ad {
+  max-width: 550px;
+  *zoom: 1;
+  border-top: 0;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+@media (max-width: 819px) {
+  /* line 12, ../scss/components/_article-aside-ad.scss */
+  .article-ad {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 820px) {
+  /* line 12, ../scss/components/_article-aside-ad.scss */
+  .article-ad {
+    margin-left: 25px;
+  }
+}
+/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+.article-ad:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 820px) {
+  /* line 12, ../scss/components/_article-aside-ad.scss */
+  .article-ad {
+    width: 300px;
+    max-width: 300px;
+    float: right;
+    clear: right;
+  }
+}
+
+/* line 26, ../scss/components/_article-aside-ad.scss */
+.article-ad-content {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+}
+@media (min-width: 820px) {
+  /* line 26, ../scss/components/_article-aside-ad.scss */
+  .article-ad-content {
+    margin: 0;
+  }
+}
+
+/* line 39, ../scss/components/_article-aside-ad.scss */
+.aside-ad-hdr {
+  color: #908b8c;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: National, Helvetica, Arial, sans-serif;
+  margin-bottom: 7px;
 }
 
 /* line 9, ../scss/components/_tease-list-latest.scss */
@@ -10584,24 +10612,24 @@ img.alignleft {
   font: inherit;
 }
 
-/* line 109, ../scss/screen.scss */
+/* line 110, ../scss/screen.scss */
 .index--nav-items {
   margin: 80px auto;
   padding-left: 50px;
 }
 
-/* line 114, ../scss/screen.scss */
+/* line 115, ../scss/screen.scss */
 .index--nav-item {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 45px;
 }
 
-/* line 119, ../scss/screen.scss */
+/* line 120, ../scss/screen.scss */
 .index--nav-item-link {
   text-decoration: none;
   color: black;
 }
-/* line 122, ../scss/screen.scss */
+/* line 123, ../scss/screen.scss */
 .index--nav-item-link:hover {
   text-decoration: underline;
 }

@@ -62,8 +62,10 @@ class HechingerSite extends TimberSite {
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
+    add_action( 'init', array( $this, 'register_sidebar' ) );
     add_action( 'admin_init', array( $this, 'bootstrap_content' ) );
     add_action( 'admin_notices', array( $this, 'bootstrap_sync' ) );
+
   }
 
   function fix_custom_field_conflict() {
@@ -194,6 +196,16 @@ class HechingerSite extends TimberSite {
         'rewrite'               => array( 'slug' => 'article-type' ),
     );
     register_taxonomy( 'article-type', 'post', $args );
+  }
+
+  function register_sidebar() {
+    register_sidebar( array (
+      'name'      => 'Ad sidebar',
+      'id'      => 'ad_sidebar',
+      'before_widget' => '<div class="article-ad-content"><p class="aside-ad-hdr">Advertisement</p>',
+      'after_widget'  => '</div>'
+    ));
+
   }
 
   function add_to_context( $context ) {

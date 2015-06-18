@@ -6,7 +6,6 @@
             "key": "field_548efcd1d1c85",
             "label": "Promote this special report?",
             "name": "is_promoted",
-            "prefix": "",
             "type": "true_false",
             "instructions": "Promote this special report in teases throughout the site?",
             "required": 0,
@@ -23,7 +22,6 @@
             "key": "field_548ef971fe525",
             "label": "Promo Tease Text",
             "name": "promo_text",
-            "prefix": "",
             "type": "textarea",
             "instructions": "Text for the promo teases for this special report. You can bold a sentence by wrapping it with <em> tags.",
             "required": 1,
@@ -53,7 +51,6 @@
             "key": "field_547f460a7e61e",
             "label": "Square Image",
             "name": "square",
-            "prefix": "",
             "type": "image",
             "instructions": "Upload a yellow image of dimensions. Appears in the homepage Second Feature zone.",
             "required": 0,
@@ -65,13 +62,19 @@
             },
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "uploadedTo"
+            "library": "uploadedTo",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_54866d89fa5cf",
             "label": "Yellow Panoramic",
             "name": "yellow_pano",
-            "prefix": "",
             "type": "image",
             "instructions": "Upload a yellow panoramic image for Special Report page banners.",
             "required": 0,
@@ -83,13 +86,19 @@
             },
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "uploadedTo"
+            "library": "uploadedTo",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_5486792c8884d",
             "label": "Yellow Rectangle",
             "name": "yellow_rect",
-            "prefix": "",
             "type": "image",
             "instructions": "A yellow rectangular image for shorter special report boxes.",
             "required": 0,
@@ -101,13 +110,19 @@
             },
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "uploadedTo"
+            "library": "uploadedTo",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_548678fe8884c",
             "label": "B&W Panoramic",
             "name": "bw_pano",
-            "prefix": "",
             "type": "image",
             "instructions": "Black and white panoramic image for banners and full width house ads.",
             "required": 0,
@@ -119,13 +134,19 @@
             },
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "uploadedTo"
+            "library": "uploadedTo",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_5480ccb1d38cc",
             "label": "B&W Rectangle",
             "name": "bw_rect",
-            "prefix": "",
             "type": "image",
             "instructions": "A Black and white rectangular image that appears in house ads for special reports.",
             "required": 0,
@@ -137,7 +158,14 @@
             },
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "uploadedTo"
+            "library": "uploadedTo",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -154,5 +182,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434640021
 }

@@ -6,7 +6,6 @@
             "key": "field_547f2ea3ea0c7",
             "label": "Second Feature",
             "name": "second_feature",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Select a post to for the second feature slot. If none is selected it will display the most recent.",
             "required": 0,
@@ -19,7 +18,9 @@
             "post_type": [
                 "post"
             ],
-            "taxonomy": "",
+            "taxonomy": [
+
+            ],
             "filters": [
                 "search",
                 "post_type",
@@ -27,13 +28,13 @@
             ],
             "elements": "",
             "max": 1,
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         },
         {
             "key": "field_54b698ef887c4",
             "label": "Second Feature Headline",
             "name": "second_feature_headline",
-            "prefix": "",
             "type": "text",
             "instructions": "Optionally enter a headline different from the post title of the selected Second Feature.",
             "required": 0,
@@ -55,7 +56,6 @@
             "key": "field_548785e7dd1bf",
             "label": "Zone 2",
             "name": "",
-            "prefix": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -65,13 +65,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Enter content for Homepage Zone 2"
+            "message": "Enter content for Homepage Zone 2",
+            "esc_html": 0
         },
         {
             "key": "field_5485c75211fad",
             "label": "Zone 2 Quote Link",
             "name": "z2_quote_link",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Select a story to link to with this tease.",
             "required": 0,
@@ -81,8 +81,12 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
-            "taxonomy": "",
+            "post_type": [
+
+            ],
+            "taxonomy": [
+
+            ],
             "filters": [
                 "search",
                 "post_type",
@@ -90,13 +94,13 @@
             ],
             "elements": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         },
         {
             "key": "field_5485c7d311fae",
             "label": "Zone 2 Quote",
             "name": "z2_quote_text",
-            "prefix": "",
             "type": "text",
             "instructions": "The Text of the pull quote or statistic.",
             "required": 0,
@@ -118,7 +122,6 @@
             "key": "field_5485d6df0e39d",
             "label": "Zone 2 Stat Number",
             "name": "z2_quote_number",
-            "prefix": "",
             "type": "text",
             "instructions": "If the tease is a statistic, enter the number here. (limit: 6 characters)",
             "required": 0,
@@ -140,7 +143,6 @@
             "key": "field_5485c81b11faf",
             "label": "Zone 2 Quote Subhead",
             "name": "z2_quote_subhead",
-            "prefix": "",
             "type": "text",
             "instructions": "Subheading for this link.",
             "required": 0,
@@ -162,7 +164,6 @@
             "key": "field_548785e7dd1bg",
             "label": "Zone 3",
             "name": "",
-            "prefix": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -172,13 +173,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": ""
+            "message": "",
+            "esc_html": 0
         },
         {
             "key": "field_5485c866eba22",
             "label": "Zone 3 Quote Link",
             "name": "z3_quote_link",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Select a second story to link with this tease.",
             "required": 0,
@@ -188,8 +189,12 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
-            "taxonomy": "",
+            "post_type": [
+
+            ],
+            "taxonomy": [
+
+            ],
             "filters": [
                 "search",
                 "post_type",
@@ -197,13 +202,13 @@
             ],
             "elements": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         },
         {
             "key": "field_5485c878f8231",
             "label": "Zone 3 Quote",
             "name": "z3_quote_text",
-            "prefix": "",
             "type": "text",
             "instructions": "The Text of the pull quote or statistic.",
             "required": 0,
@@ -225,7 +230,6 @@
             "key": "field_5485d72295056",
             "label": "Zone 3 Stat Number",
             "name": "z3_quote_number",
-            "prefix": "",
             "type": "text",
             "instructions": "If the tease is a statistic, enter the number here. (limit: 4 characters)",
             "required": 0,
@@ -247,7 +251,6 @@
             "key": "field_5485c89911ec3",
             "label": "Zone 3 Quote Subhead",
             "name": "z3_quote_subhead",
-            "prefix": "",
             "type": "text",
             "instructions": "Subheading for this link.",
             "required": 0,
@@ -284,5 +287,6 @@
         "the_content",
         "featured_image"
     ],
-    "modified": 1421252986
+    "modified": 1434640021,
+    "local": "json"
 }

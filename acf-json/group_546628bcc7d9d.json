@@ -6,11 +6,15 @@
             "key": "field_546628c5dbd34",
             "label": "Related Heading",
             "name": "related_heading",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "Heading for Related links",
             "prepend": "",
@@ -23,20 +27,29 @@
             "key": "field_546629c1ff0ca",
             "label": "Relationship Link",
             "name": "relationship_link",
-            "prefix": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "post_type": "",
-            "taxonomy": "",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+
+            ],
+            "taxonomy": [
+
+            ],
             "filters": [
                 "search",
                 "taxonomy"
             ],
             "elements": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         }
     ],
     "location": [
@@ -53,5 +66,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434640021
 }

@@ -6,7 +6,6 @@
             "key": "field_54662a79335bf",
             "label": "Aside Group",
             "name": "aside_group",
-            "prefix": "",
             "type": "repeater",
             "instructions": "To add an aside click \"Add Aside.\"",
             "required": 0,
@@ -25,7 +24,6 @@
                     "key": "field_54662832b5fd4",
                     "label": "Aside Heading",
                     "name": "aside_heading",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -47,7 +45,6 @@
                     "key": "field_5466286ab5fd5",
                     "label": "Aside content",
                     "name": "aside_content",
-                    "prefix": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 1,
@@ -66,7 +63,6 @@
                     "key": "field_54875d6af3f46",
                     "label": "Aside Number",
                     "name": "aside_num",
-                    "prefix": "",
                     "type": "number",
                     "instructions": "Number your aside and then place an aside shortcode with \"id=<your-number>\".",
                     "required": 1,
@@ -103,5 +99,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434640021
 }

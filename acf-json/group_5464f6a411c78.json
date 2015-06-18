@@ -6,11 +6,15 @@
             "key": "field_5465075a1e231",
             "label": "Job Title",
             "name": "job_title",
-            "prefix": "",
             "type": "text",
             "instructions": "Title of staff member at Hechinger.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "ex. Executive Editor",
             "prepend": "",
@@ -23,24 +27,39 @@
             "key": "field_5464f7c5e6588",
             "label": "Author Image",
             "name": "author_image",
-            "prefix": "",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_54650595341a8",
             "label": "Staff or Author?",
             "name": "hech_role",
-            "prefix": "",
             "type": "radio",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "Author": "Author",
                 "Staff": "Staff"
@@ -54,11 +73,15 @@
             "key": "field_5464fe37c30fa",
             "label": "Name of Column",
             "name": "column_name",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -71,14 +94,25 @@
             "key": "field_54650d5bd3117",
             "label": "Columnist Image",
             "name": "columnist_image",
-            "prefix": "",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "uploadedTo"
+            "library": "uploadedTo",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -95,5 +129,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434640021
 }

@@ -13,6 +13,7 @@ $post = Timber::query_post('HechingerPost');
 $homepage = Timber::get_post('home', 'HechingerPost');
 $context['post'] = $post;
 $context['comment_form'] = TimberHelper::get_comment_form();
+$context['ad_sidebar'] = Timber::get_widgets('ad_sidebar');
 $query_args = array('post__not_in' => array( $post->ID ) );
 
 if (class_exists('TimberStream')) {

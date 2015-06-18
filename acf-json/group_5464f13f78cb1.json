@@ -6,11 +6,15 @@
             "key": "field_5474fa036d434",
             "label": "Show Additional Contact Info?",
             "name": "show_contact_info",
-            "prefix": "",
             "type": "true_false",
             "instructions": "Check to show author\/staff member's email, twitter, & phone number.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "message": "",
             "default_value": 0
         },
@@ -18,11 +22,15 @@
             "key": "field_5464f1d68de6b",
             "label": "Twitter Handle",
             "name": "twitter_handle",
-            "prefix": "",
             "type": "text",
             "instructions": "The author's twitter handle.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -35,11 +43,15 @@
             "key": "field_5464f2548de6c",
             "label": "Phone Number",
             "name": "phone_number",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -63,5 +75,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434640021
 }

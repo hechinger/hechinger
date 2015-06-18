@@ -6,7 +6,6 @@
             "key": "field_548125262dbd6",
             "label": "Subheading",
             "name": "subhead",
-            "prefix": "",
             "type": "text",
             "instructions": "A short description or subheading for the page.",
             "required": 0,
@@ -28,7 +27,6 @@
             "key": "field_548125c82fc2c",
             "label": "Link to another page",
             "name": "link_to_page",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Link to another page which appears at the end of the heading. For example you may link to the Mission page or About Fred Hechinger.",
             "required": 0,
@@ -41,19 +39,21 @@
             "post_type": [
                 "page"
             ],
-            "taxonomy": "",
+            "taxonomy": [
+
+            ],
             "filters": [
                 "search"
             ],
             "elements": "",
             "max": 1,
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         },
         {
             "key": "field_5481260c2fc2d",
             "label": "Link Heading",
             "name": "link_heading",
-            "prefix": "",
             "type": "text",
             "instructions": "Heading for the page link at the end of the subheading.",
             "required": 0,
@@ -101,5 +101,7 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434640021
 }

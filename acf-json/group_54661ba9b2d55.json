@@ -6,7 +6,6 @@
             "key": "field_5492eb43d3984",
             "label": "Primary Special Report",
             "name": "primary_special_report",
-            "prefix": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -48,5 +47,6 @@
     "hide_on_screen": [
         "format"
     ],
-    "modified": 1420733947
+    "modified": 1434640021,
+    "local": "json"
 }

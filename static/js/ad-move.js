@@ -3,19 +3,30 @@ var HE_ad = (function($){
 
   var $adAside;
   var $targetParagraph;
+  var $adAside2;
+  var $targetParagraph2;
 
   function init() {
     // get the partner aside
     $adAside = $('.js-ad-aside');
-    if (typeof $adAside === 'undefined' || !$adAside.length) {
-      return;
-    }
-    // find the fifth paragraph or the last paragraph if article less than 5 paragraphs
-    $targetParagraph = findParagraph(3);
+    $targetParagraph = findParagraph(4);
+    $adAside2 = $('.js-ad-aside2');
+    $targetParagraph2 = findParagraph(35);
 
-    if (typeof $targetParagraph !== 'undefined' || !$targetParagraph || !$targetParagraph.length) {
-      $adAside.insertAfter($targetParagraph);
+    function setAdSpot(ad, paragraph){
+        if (typeof ad === 'undefined' || !ad.length) {
+          return;
+        }
+        // find the fifth paragraph or the last paragraph if article less than 5 paragraphs 
+
+        if (typeof paragraph !== 'undefined' || !paragraph || !paragraph.length) {
+          ad.insertAfter(paragraph);
+        }
     }
+
+    setAdSpot($adAside, $targetParagraph)
+    setAdSpot($adAside2, $targetParagraph2)   
+
   }
 
   // find a paragraph by index, if article is shorter than index, find the last paragraph recursively

@@ -200,8 +200,15 @@ class HechingerSite extends TimberSite {
 
   function register_sidebar() {
     register_sidebar( array (
-      'name'      => 'Ad sidebar',
+      'name'      => 'Ad Slot',
       'id'      => 'ad_sidebar',
+      'before_widget' => '<div class="article-ad-content"><p class="aside-ad-hdr">Advertisement</p>',
+      'after_widget'  => '</div>'
+    ));
+
+    register_sidebar( array (
+      'name'      => 'Secondary Ad Slot',
+      'id'      => 'ad_sidebar2',
       'before_widget' => '<div class="article-ad-content"><p class="aside-ad-hdr">Advertisement</p>',
       'after_widget'  => '</div>'
     ));

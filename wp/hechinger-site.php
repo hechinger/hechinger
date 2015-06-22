@@ -196,6 +196,36 @@ class HechingerSite extends TimberSite {
         'rewrite'               => array( 'slug' => 'article-type' ),
     );
     register_taxonomy( 'article-type', 'post', $args );
+
+    $labels = array(
+      'name'                       => _x( 'Underwriter', 'taxonomy general name' ),
+      'singular_name'              => _x( 'Underwriter', 'taxonomy singular name' ),
+      'search_items'               => __( 'Search Underwriters' ),
+      'popular_items'              => __( 'Popular Underwriters' ),
+      'all_items'                  => __( 'All Underwriters' ),
+      'parent_item'                => null,
+      'parent_item_colon'          => null,
+      'edit_item'                  => __( 'Edit Underwriter' ),
+      'update_item'                => __( 'Update Underwriter' ),
+      'add_new_item'               => __( 'Add New Underwriter' ),
+      'new_item_name'              => __( 'New Underwriter Name' ),
+      'separate_items_with_commas' => __( 'Separate Underwriters with commas' ),
+      'add_or_remove_items'        => __( 'Add or remove Underwriters' ),
+      'choose_from_most_used'      => __( 'Choose from the most used Underwriters' ),
+      'not_found'                  => __( 'No Underwriters found.' ),
+      'menu_name'                  => __( 'Underwriters' ),
+    );
+
+    $args = array(
+      'hierarchical'          => true,
+      'labels'                => $labels,
+      'show_ui'               => true,
+      'show_admin_column'     => true,
+      'update_count_callback' => '_update_post_term_count',
+      'query_var'             => true,
+      'rewrite'               => array( 'slug' => 'partners' ),
+    );
+    register_taxonomy( 'underwriter', 'post', $args );
   }
 
   function register_sidebar() {

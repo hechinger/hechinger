@@ -13,7 +13,10 @@
   </div> <!-- /partner-aside-content -->
 
   {# if there's a underwriter #}
-  {% include "/templates/components/article-underwrite.twig" %}
+  {% if post.terms('underwriter') %}
+    {% include "/templates/components/article-underwrite.twig" %}
+  {% endif %}  
+ 
 
 
 </aside> <!-- /article-aside -->

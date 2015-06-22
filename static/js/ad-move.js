@@ -11,7 +11,7 @@ var HE_ad = (function($){
     $adAside = $('.js-ad-aside');
     $targetParagraph = findParagraph(4);
     $adAside2 = $('.js-ad-aside2');
-    $targetParagraph2 = findParagraph(35);
+    $targetParagraph2 = findParagraph(30);
 
     function setAdSpot(ad, paragraph){
         if (typeof ad === 'undefined' || !ad.length) {

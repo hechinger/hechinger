@@ -17,7 +17,7 @@ $context['ad_sidebar'] = Timber::get_widgets('ad_sidebar');
 
 // Only show second ad if there are more than 30 paragraphs
 $postSplit = explode("\n", $post->post_content);
-if ( (count($postSplit)/2) > 30 ) {
+if ( (count($postSplit)/2) > 35 ) {
   $context['ad_sidebar2'] = Timber::get_widgets('ad_sidebar2'); 
 }
 

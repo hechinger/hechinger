@@ -18,3 +18,8 @@
   content: "\f310";
   font-size: 20px;
 }
+
+/* line 21, ../scss/hechinger-admin.scss */
+.taxonomy-underwriter .term-slug-wrap, .taxonomy-underwriter .term-parent-wrap, .taxonomy-underwriter .term-description-wrap, .taxonomy-underwriter .term-name-wrap p {
+  display: none;
+}

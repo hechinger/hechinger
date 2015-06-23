@@ -32,3 +32,7 @@ class RelatedAdmin extends EditorTool_Core implements EditorTool_Interface {
     return parent::render($template, $args);
   }
 }
+
+
+
+

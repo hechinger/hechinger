@@ -15,9 +15,9 @@ $context['post'] = $post;
 $context['comment_form'] = TimberHelper::get_comment_form();
 $context['ad_sidebar'] = Timber::get_widgets('ad_sidebar');
 
-// Only show second ad if there are more than 30 paragraphs
-$postSplit = explode("\n", $post->post_content);
-if ( (count($postSplit)/2) > 35 ) {
+// Only show second ad if article is longer than 1800 words
+$word_count = str_word_count($post->post_content);
+if ( $word_count > 1800 ) {
   $context['ad_sidebar2'] = Timber::get_widgets('ad_sidebar2'); 
 }
 

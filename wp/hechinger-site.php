@@ -56,7 +56,12 @@ class HechingerSite extends TimberSite {
     add_filter( 'acf/load_field/key=field_5492eb43d3984', array($this, 'set_primary_special_report'), 2, 2 );
     add_filter( 'coauthors_edit_author_cap', function(){ return 'read'; } );
     add_filter( 'acf/fields/relationship/query', array( $this, 'acf_relationship_sort' ), 10, 3 );
+    add_filter('manage_edit-underwriter_columns', array($this, 'theme_columns') );
   }
+
+
+
+
 
   function addActions() {
     add_action( 'init', array( $this, 'register_post_types' ) );
@@ -198,29 +203,30 @@ class HechingerSite extends TimberSite {
     register_taxonomy( 'article-type', 'post', $args );
 
     $labels = array(
-      'name'                       => _x( 'Underwriter', 'taxonomy general name' ),
-      'singular_name'              => _x( 'Underwriter', 'taxonomy singular name' ),
-      'search_items'               => __( 'Search Underwriters' ),
-      'popular_items'              => __( 'Popular Underwriters' ),
-      'all_items'                  => __( 'All Underwriters' ),
+      'name'                       => _x( 'Underwriting', 'taxonomy general name' ),
+      'singular_name'              => _x( 'Underwrite Message', 'taxonomy singular name' ),
+      'search_items'               => __( 'Search' ),
+      'popular_items'              => null,
+      'all_items'                  => __( 'All' ),
       'parent_item'                => null,
       'parent_item_colon'          => null,
-      'edit_item'                  => __( 'Edit Underwriter' ),
-      'update_item'                => __( 'Update Underwriter' ),
-      'add_new_item'               => __( 'Add New Underwriter' ),
-      'new_item_name'              => __( 'New Underwriter Name' ),
-      'separate_items_with_commas' => __( 'Separate Underwriters with commas' ),
-      'add_or_remove_items'        => __( 'Add or remove Underwriters' ),
-      'choose_from_most_used'      => __( 'Choose from the most used Underwriters' ),
-      'not_found'                  => __( 'No Underwriters found.' ),
-      'menu_name'                  => __( 'Underwriters' ),
+      'edit_item'                  => __( 'Edit' ),
+      'update_item'                => __( 'Update ' ),
+      'add_new_item'               => __( 'Add New'),
+      'new_item_name'              => __( 'New' ),
+      'separate_items_with_commas' => __( 'Separate with commas' ),
+      'add_or_remove_items'        => __( 'Add or remove' ),
+      'choose_from_most_used'      => __( 'Choose from the most used ' ),
+      'not_found'                  => __( 'No messages found.' ),
+      'menu_name'                  => __( 'Underwriting' ),
+
     );
 
     $args = array(
       'hierarchical'          => true,
       'labels'                => $labels,
       'show_ui'               => true,
-      'show_admin_column'     => true,
+      'show_admin_column'     => false,
       'update_count_callback' => '_update_post_term_count',
       'query_var'             => true,
       'rewrite'               => array( 'slug' => 'partners' ),
@@ -243,6 +249,14 @@ class HechingerSite extends TimberSite {
       'after_widget'  => '</div>'
     ));
 
+  }
+
+  function theme_columns($theme_columns) {
+        $new_columns = array(
+          'name'    => __('Name'),
+          'posts'   => __('Posts')
+        );
+        return $new_columns;
   }
 
   function add_to_context( $context ) {

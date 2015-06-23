@@ -14,7 +14,7 @@ $ad-width: 300px;
   @include pie-clearfix;
   border-top: 0;
   margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 60px;
   @include mq($bp-article-not-centered) {
     width: $ad-width;
     max-width: $ad-width;

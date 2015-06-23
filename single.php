@@ -15,8 +15,10 @@ $context['post'] = $post;
 $context['comment_form'] = TimberHelper::get_comment_form();
 $context['ad_sidebar'] = Timber::get_widgets('ad_sidebar');
 
-// Only show second ad if article is longer than 1800 words
-$word_count = str_word_count($post->post_content);
+/** Only show second ad if article is longer than 1800 words.  
+ * This word limit encompasses only the extended features, acounting for about 2/10 articles on the site 
+ */
+$word_count = str_word_count($post->post_content); 
 if ( $word_count > 1800 ) {
   $context['ad_sidebar2'] = Timber::get_widgets('ad_sidebar2'); 
 }

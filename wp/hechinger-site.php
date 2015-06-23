@@ -204,7 +204,7 @@ class HechingerSite extends TimberSite {
 
     $labels = array(
       'name'                       => _x( 'Underwriting', 'taxonomy general name' ),
-      'singular_name'              => _x( 'Underwrite Message', 'taxonomy singular name' ),
+      'singular_name'              => _x( 'Underwriting Message', 'taxonomy singular name' ),
       'search_items'               => __( 'Search' ),
       'popular_items'              => null,
       'all_items'                  => __( 'All' ),
@@ -231,7 +231,7 @@ class HechingerSite extends TimberSite {
       'query_var'             => true,
       'rewrite'               => array( 'slug' => 'partners' ),
     );
-    register_taxonomy( 'underwriter', 'post', $args );
+    register_taxonomy( 'underwriting', 'post', $args );
   }
 
   function register_sidebar() {

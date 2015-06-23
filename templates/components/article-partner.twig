@@ -1,19 +1,21 @@
 <!-- article-aside -->
 <aside class="partner-aside js-partner-aside">
-  <div class="partner-aside-content">
-    {% for partner in post.partners %}
-      {% if partner.logo %}
-        <div class="aside-partner-logo">
-          <img class="aside-partner-img" src="{{ TimberImage(partner.logo).src | resize(400) }}" alt="{{ partner.name }}" />
-        </div> <!-- /article-partner-logo -->
-      {% endif %}
-    {% endfor %}
+  {% if post.partners|length %}
+    <div class="partner-aside-content">
+      {% for partner in post.partners %}
+        {% if partner.logo %}
+          <div class="aside-partner-logo">
+            <img class="aside-partner-img" src="{{ TimberImage(partner.logo).src | resize(400) }}" alt="{{ partner.name }}" />
+          </div> <!-- /article-partner-logo -->
+        {% endif %}
+      {% endfor %}
 
-    <p class="aside-partner-text">This story also appeared in {{ post.partner_names }}</p>
-  </div> <!-- /partner-aside-content -->
+      <p class="aside-partner-text">This story also appeared in {{ post.partner_names }}</p>
+    </div> <!-- /partner-aside-content -->
+  {% endif %}
 
   {# if there's a underwriter #}
-  {% if post.terms('underwriter') %}
+  {% if post.terms('underwriting') %}
     {% include "/templates/components/article-underwrite.twig" %}
   {% endif %}  
  

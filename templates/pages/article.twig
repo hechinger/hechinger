@@ -33,9 +33,9 @@
       <article class="article-main">
 
         {% block article_partner %}
-          {% if post.partners|length %}
-              {% include "/templates/components/article-partner.twig" with { partner: partner, contextClass: 'article-aside-borders' } %}
-          {% endif %}
+          {% if (post.partners|length or post.terms('underwriting')) %} 
+              {% include "/templates/components/article-partner.twig" with { partner: partner, contextClass: 'article-aside-borders' } %} 
+          {% endif %} 
         {% endblock %}
 
         {# ************************************ #}

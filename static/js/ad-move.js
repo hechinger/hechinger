@@ -21,6 +21,7 @@ var HE_ad = (function($){
 
         if (typeof paragraph !== 'undefined' || !paragraph || !paragraph.length) {
           ad.insertAfter(paragraph);
+          ad.css('opacity','1');
         }
     }
 

@@ -15,6 +15,7 @@ var HE_partner = (function($){
 
     if (typeof $targetParagraph !== 'undefined' || !$targetParagraph || !$targetParagraph.length) {
       $partnerAside.insertAfter($targetParagraph);
+      $partnerAside.css('opacity','1');
     }
   }
 

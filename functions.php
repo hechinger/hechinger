@@ -22,6 +22,7 @@ require_once('wp/editor-tool-interface.php');
 require_once('wp/admin-pullquote.php');
 require_once('wp/admin-aside.php');
 require_once('wp/admin-related.php');
+require_once('wp/admin-ads.php');
 
 require_once('wp/routes.php');
 require_once('wp/hechinger-site.php');

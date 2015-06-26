@@ -9890,6 +9890,7 @@ img.alignleft {
   max-width: 550px;
   margin: 15px -5px;
   background-color: #f3f1f1;
+  opacity: 0;
 }
 /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .partner-aside:after {
@@ -9917,7 +9918,7 @@ img.alignleft {
   }
 }
 
-/* line 32, ../scss/components/_article-aside-partner.scss */
+/* line 33, ../scss/components/_article-aside-partner.scss */
 .aside-partner-logo {
   display: inline-block;
   position: relative;
@@ -9927,14 +9928,14 @@ img.alignleft {
   color: #fff;
 }
 @media (min-width: 820px) {
-  /* line 32, ../scss/components/_article-aside-partner.scss */
+  /* line 33, ../scss/components/_article-aside-partner.scss */
   .aside-partner-logo {
     max-width: 150px;
     margin-bottom: 10px;
   }
 }
 
-/* line 50, ../scss/components/_article-aside-partner.scss */
+/* line 51, ../scss/components/_article-aside-partner.scss */
 .aside-partner-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-style: italic;
@@ -9942,27 +9943,27 @@ img.alignleft {
   line-height: 120%;
 }
 
-/* line 59, ../scss/components/_article-aside-partner.scss */
+/* line 60, ../scss/components/_article-aside-partner.scss */
 .partner-aside-content + .partner-aside-content {
   margin-top: 20px;
   padding-top: 10px;
   border-top: 1px solid #e6e4e4;
 }
 
-/* line 77, ../scss/components/_article-aside-partner.scss */
+/* line 78, ../scss/components/_article-aside-partner.scss */
 .underwrite-h {
   font-size: 14px;
   font-family: Tiempos, Georgia, Times, serif;
   font-weight: 900;
 }
 
-/* line 83, ../scss/components/_article-aside-partner.scss */
+/* line 84, ../scss/components/_article-aside-partner.scss */
 .underwrite-link {
   color: #00aeef;
   text-decoration: none;
 }
 
-/* line 89, ../scss/components/_article-aside-partner.scss */
+/* line 90, ../scss/components/_article-aside-partner.scss */
 .underwrite-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -9977,6 +9978,7 @@ img.alignleft {
   border-top: 0;
   margin-top: 25px;
   margin-bottom: 60px;
+  opacity: 0;
 }
 @media (max-width: 819px) {
   /* line 12, ../scss/components/_article-aside-ad.scss */
@@ -10007,7 +10009,7 @@ img.alignleft {
   }
 }
 
-/* line 26, ../scss/components/_article-aside-ad.scss */
+/* line 27, ../scss/components/_article-aside-ad.scss */
 .article-ad-content {
   width: 100%;
   max-width: 300px;
@@ -10017,13 +10019,13 @@ img.alignleft {
   background-color: #fff;
 }
 @media (min-width: 820px) {
-  /* line 26, ../scss/components/_article-aside-ad.scss */
+  /* line 27, ../scss/components/_article-aside-ad.scss */
   .article-ad-content {
     margin: 0;
   }
 }
 
-/* line 39, ../scss/components/_article-aside-ad.scss */
+/* line 40, ../scss/components/_article-aside-ad.scss */
 .aside-ad-hdr {
   color: #908b8c;
   text-align: center;

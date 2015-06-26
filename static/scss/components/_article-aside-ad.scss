@@ -15,6 +15,7 @@ $ad-width: 300px;
   border-top: 0;
   margin-top: 25px;
   margin-bottom: 60px;
+  opacity: 0;
   @include mq($bp-article-not-centered) {
     width: $ad-width;
     max-width: $ad-width;

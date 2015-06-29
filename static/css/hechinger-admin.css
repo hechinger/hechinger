@@ -23,3 +23,8 @@
 .taxonomy-underwriting .term-slug-wrap, .taxonomy-underwriting .term-parent-wrap, .taxonomy-underwriting .term-description-wrap, .taxonomy-underwriting .term-name-wrap p {
   display: none;
 }
+
+/* line 25, ../scss/hechinger-admin.scss */
+.adrotate_page_srv-www-wordpress-hechinger-wp-content-themes-hechinger-wp-admin-ads .form-table {
+  display: none;
+}

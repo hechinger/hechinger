@@ -1,10 +1,17 @@
-<aside class="article-ad js-ad-aside">  
-  	 {{primary_ad}}
+<aside class="article-ad js-ad-aside">
+	<p class="aside-ad-hdr">Advertisement</p>  
+	<div class="article-ad-content">
+  	 	{{primary_ad}}
+  	</div>
 </aside> <!-- /article-aside -->
-{% if secondary_ad|length %}
+{% if secondary_ad|length %}		
 	<aside class="article-ad js-ad-aside2">  
-	  	 {{secondary_ad}}
+	    <p class="aside-ad-hdr">Advertisement</p> 
+		<div class="article-ad-content">
+	  	 	{{secondary_ad}}
+	  	</div>
 	</aside>
+	
 {% endif %}
 
 

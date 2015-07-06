@@ -11,9 +11,14 @@ var HE_ad = (function($){
   function init() {
     // get the partner aside
     $adAside = $('.js-ad-aside');
-    $targetParagraph = findParagraph(10, false);
+    $targetParagraph = findParagraph(4, false);
     $adAside2 = $('.js-ad-aside2');
     $targetParagraph2 = findParagraph(20, false);
+
+    if ($('.a-single').length < 1) {
+      $('.article-ad').hide();
+    }
+
 
     function setAdSpot(ad, paragraph){
 

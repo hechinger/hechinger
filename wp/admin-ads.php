@@ -23,6 +23,7 @@ function section_text() {
 
 function ad_fields() {
     $options = get_option('assigned_ad');
+
     global $wpdb;
     $single_ads = $wpdb->get_results("SELECT id, title FROM wp_adrotate");
     $groups = $wpdb->get_results("SELECT id, name FROM wp_adrotate_groups")?>
@@ -65,7 +66,9 @@ function ad_fields() {
 		    				  }?>
 		    			</select>
 		    		</div>
+		    	
 		    </div>
+		    
 	    </div>
 	    <div class='postbox-container' style='width: 49%; padding-left:.5%;'>
 		    <div class='postbox'>
@@ -106,7 +109,41 @@ function ad_fields() {
 		    		</div>
 		    </div>
 	    </div>
+
+	    <div class="postbox-container" style='width:100%;'>
+	    	Select categories for ad to appear:</br></br>
+    		<div class="postbox">
+		    	<div style="overflow:scroll; height:300px; padding:20px; border-top: 1px solid #f0f0f0;">
+				    		
+				    		<ul>
+				    			<?php if(isset($options['category1'][1001])){ ?>
+				    				<li style='display:block; margin:10px'><input class="all_cat" type="checkbox" value="all_categories" name='assigned_ad[category1][1001]' checked/>All Categories</li>
+				    			<?php } else { ?>
+				    				<li style='display:block; margin:10px'><input class="all_cat" type="checkbox" value="all_categories" name='assigned_ad[category1][1001]'/>All Categories</li>
+				    		    <?php }
+				    		
+				    			$cats = get_categories(array('orderby' => 'term_group')); 
+				    			foreach($cats as $index=>$category) {
+				    				$tabbed = "";
+				    				if($category->parent != 0) {
+				    					$tabbed = " style='margin-left:20px'";
+				    				}
+				    				if(isset($options['category1'][$index]) || isset($options['category1'][1001])) {
+				    					echo "<li style='display:block; margin:10px;'><input type='checkbox' value ='".$category->name. "' name='assigned_ad[category1][".$index."]' checked".$tabbed."/>";
+				    				}else {
+				    					echo "<li style='display:block; margin:10px;'><input type='checkbox' value ='".$category->name. "' name='assigned_ad[category1][".$index."]'".$tabbed."/>";
+				    				}
+				    				echo $category->name;
+				    				echo "</br></li>";
+				    			}
+				    			
+				    		?>
+				    	</ul>
+				</div>
+			</div>
+		</div></br>
     </div>
+
     <table style="display:none;"><tbody><tr><td>
     <script>
     (function($) {
@@ -144,6 +181,12 @@ function ad_fields() {
 	    		
 	    	}	
     	}
+
+    	$('.all_cat').change(function(){
+    		if(this.checked) {
+		        $('input[type=checkbox]').attr('checked','true');
+		    } 
+    	})
 
 
     })( jQuery );

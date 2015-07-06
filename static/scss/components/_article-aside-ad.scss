@@ -27,9 +27,10 @@ $ad-width: 300px;
 .article-ad-content {
   width: 100%;
   max-width: $ad-width;
-  height: 250px;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
+  overflow:hidden;
   background-color: #fff;
   @include mq($bp-article-not-centered) {
     margin:0;

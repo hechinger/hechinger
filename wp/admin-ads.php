@@ -40,6 +40,7 @@ function ad_fields() {
 		    					echo "<option value='single'>Single Ad</option>";
 		    					echo "<option value='group'  selected='selected'>Ad Group</option>";
 		    				}?>
+
 		    			</select>
 		    			<select name='assigned_ad[primary]' class='ad_options'>
 		    				<?php 
@@ -57,7 +58,11 @@ function ad_fields() {
 		    						echo "<option class='group' value='".$row->id."'>".$row->name."</option>";
 		    					}
 		    				  }
-		    				  ?>
+		    				  if($options['primary'] == 0) {
+		    				  	echo "<option value='0' selected='selected'>No Ad</option>";
+		    				  } else {
+		    				  	echo "<option value='0'>No Ad</option>";
+		    				  }?>
 		    			</select>
 		    		</div>
 		    </div>
@@ -90,6 +95,11 @@ function ad_fields() {
 		    					} else { 
 		    						echo "<option class='group' value='".$row->id."'>".$row->name."</option>";
 		    					}
+		    				  }
+		    				  if($options['secondary'] == 0) {
+		    				  	echo "<option value='0' selected='selected'>No Ad</option>";
+		    				  } else {
+		    				  	echo "<option value='0'>No Ad</option>";
 		    				  }
 		    				  ?>
 		    			</select>

@@ -15,11 +15,15 @@ $context['post'] = $post;
 $context['comment_form'] = TimberHelper::get_comment_form();
 
 $ad_ids = get_option('assigned_ad');
+$word_count = str_word_count($post->post_content); 
 
-if($ad_ids['type1'] == 'single'){
-  $context['primary_ad'] = adrotate_ad($ad_ids['primary']);
-} elseif ($ad_ids['type1'] == 'group') {
-  $context['primary_ad'] = adrotate_group($ad_ids['primary']);
+
+if($word_count > 300) {
+  if($ad_ids['type1'] == 'single' && $ad_ids['primary'] != 0){
+    $context['primary_ad'] = adrotate_ad($ad_ids['primary']);
+  } elseif ($ad_ids['type1'] == 'group' && $ad_ids['primary'] != 0) {
+    $context['primary_ad'] = adrotate_group($ad_ids['primary']);
+  }
 }
 
 
@@ -30,11 +34,12 @@ if($ad_ids['type1'] == 'single'){
  * If this word count is changed, make sure to also change the number paragraph the ad is aligned with,
  * defined in static/js/ad-move.js. 
  */
-$word_count = str_word_count($post->post_content); 
+
+
 if ( $word_count > 1800 ) {
-    if($ad_ids['type2'] == 'single'){
+    if($ad_ids['type2'] == 'single' && $ad_ids['secondary'] != 0){
       $context['secondary_ad'] = adrotate_ad($ad_ids['secondary']);
-    } elseif ($ad_ids['type2'] == 'group') {
+    } elseif ($ad_ids['type2'] == 'group' && $ad_ids['secondary'] != 0) {
       $context['secondary_ad'] = adrotate_group($ad_ids['secondary']);
     }
 }

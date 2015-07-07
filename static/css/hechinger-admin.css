@@ -28,3 +28,8 @@
 .adrotate_page_srv-www-wordpress-hechinger-wp-content-themes-hechinger-wp-admin-ads .form-table {
   display: none;
 }
+
+/* line 29, ../scss/hechinger-admin.scss */
+#underwriting-add-toggle {
+  display: none;
+}

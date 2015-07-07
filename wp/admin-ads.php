@@ -213,3 +213,11 @@ function ad_settings_page() {
 <?php 
 
 } 
+
+function add_admin_scripts() {
+   wp_enqueue_script(  'underwriting-metabox', get_bloginfo('template_directory').'/static/js/underwriting-metabox.js', array( 'jquery' ) );  
+}
+add_action('admin_enqueue_scripts','add_admin_scripts');
+
+
+

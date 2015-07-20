@@ -1,0 +1,49 @@
+// --------------------------------------------
+// --------------------------------------------
+//
+// Ads
+//
+// --------------------------------------------
+// --------------------------------------------
+
+$ad-width: 300px;
+
+
+.article-ad {
+  @include article-bd-layout;
+  @include pie-clearfix;
+  border-top: 0;
+  margin-top: 25px;
+  margin-bottom: 60px;
+  opacity: 0;
+  @include mq($bp-article-not-centered) {
+    width: $ad-width;
+    max-width: $ad-width;
+    float: right;
+    clear: right;
+  }
+}
+
+.article-ad-content {
+  width: 100%;
+  max-width: $ad-width;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow:hidden;
+  background-color: #fff;
+  @include mq($bp-article-not-centered) {
+    margin:0;
+  }
+}
+
+
+.aside-ad-hdr {
+  color: $black-40;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: $he-sans;
+  margin-bottom: 7px;
+}

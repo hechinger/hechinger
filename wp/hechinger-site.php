@@ -56,14 +56,21 @@ class HechingerSite extends TimberSite {
     add_filter( 'acf/load_field/key=field_5492eb43d3984', array($this, 'set_primary_special_report'), 2, 2 );
     add_filter( 'coauthors_edit_author_cap', function(){ return 'read'; } );
     add_filter( 'acf/fields/relationship/query', array( $this, 'acf_relationship_sort' ), 10, 3 );
+    add_filter('manage_edit-underwriter_columns', array($this, 'theme_columns') );
   }
+
+
+
+
 
   function addActions() {
     add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_action( 'init', array( $this, 'register_menus' ) );
+    add_action( 'init', array( $this, 'register_sidebar' ) );
     add_action( 'admin_init', array( $this, 'bootstrap_content' ) );
     add_action( 'admin_notices', array( $this, 'bootstrap_sync' ) );
+
   }
 
   function fix_custom_field_conflict() {
@@ -194,6 +201,46 @@ class HechingerSite extends TimberSite {
         'rewrite'               => array( 'slug' => 'article-type' ),
     );
     register_taxonomy( 'article-type', 'post', $args );
+
+    $labels = array(
+      'name'                       => _x( 'Underwriting', 'taxonomy general name' ),
+      'singular_name'              => _x( 'Underwriting Message', 'taxonomy singular name' ),
+      'search_items'               => __( 'Search' ),
+      'popular_items'              => null,
+      'all_items'                  => __( 'All' ),
+      'parent_item'                => null,
+      'parent_item_colon'          => null,
+      'edit_item'                  => __( 'Edit' ),
+      'update_item'                => __( 'Update ' ),
+      'add_new_item'               => __( 'Add New'),
+      'new_item_name'              => __( 'New' ),
+      'separate_items_with_commas' => __( 'Separate with commas' ),
+      'add_or_remove_items'        => __( 'Add or remove' ),
+      'choose_from_most_used'      => __( 'Choose from the most used ' ),
+      'not_found'                  => __( 'No messages found.' ),
+      'menu_name'                  => __( 'Underwriting' ),
+
+    );
+
+    $args = array(
+      'hierarchical'          => true,
+      'labels'                => $labels,
+      'show_ui'               => true,
+      'show_admin_column'     => false,
+      'update_count_callback' => '_update_post_term_count',
+      'query_var'             => true,
+      'rewrite'               => array( 'slug' => 'partners' ),
+    );
+    register_taxonomy( 'underwriting', 'post', $args );
+  }
+
+
+  function theme_columns($theme_columns) {
+        $new_columns = array(
+          'name'    => __('Name'),
+          'posts'   => __('Posts')
+        );
+        return $new_columns;
   }
 
   function add_to_context( $context ) {

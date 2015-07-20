@@ -1,0 +1,59 @@
+{
+    "key": "group_55882cad04a04",
+    "title": "Underwriting",
+    "fields": [
+        {
+            "key": "field_5588e29bcd32b",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Note that the 'name' field is used only as an identifying key and will not be outputted anywhere in the theme.  The message intended to accompany the article should be entered below.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_55882cbfe26b3",
+            "label": "Underwriting Message",
+            "name": "message",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "underwriting"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1436302762
+}

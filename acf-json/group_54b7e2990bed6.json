@@ -6,7 +6,6 @@
             "key": "field_54b7e2b0041a8",
             "label": "Staff",
             "name": "staff_users",
-            "prefix": "",
             "type": "user",
             "instructions": "",
             "required": 0,
@@ -36,5 +35,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1421337374
+    "modified": 1434662529,
+    "local": "json"
 }

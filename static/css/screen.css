@@ -422,7 +422,7 @@ button {
     margin-left: -20px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-grid-2:after {
     content: "";
     display: table;
@@ -457,7 +457,7 @@ button {
   margin-left: -20px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-grid-3:after {
   content: "";
   display: table;
@@ -488,7 +488,7 @@ button {
   margin-left: -20px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-grid-4:after {
   content: "";
   display: table;
@@ -515,7 +515,7 @@ button {
   margin-left: -40px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-grid-2--rules:after {
   content: "";
   display: table;
@@ -546,7 +546,7 @@ button {
   margin-left: -40px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-grid-3--rules:after {
   content: "";
   display: table;
@@ -581,7 +581,7 @@ button {
   margin-left: -40px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-grid-4--rules:after {
   content: "";
   display: table;
@@ -846,7 +846,7 @@ mark {
 .l-zone-dos {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-dos:after {
   content: "";
   display: table;
@@ -858,7 +858,7 @@ mark {
     margin-left: -25px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-dos:after {
     content: "";
     display: table;
@@ -906,7 +906,7 @@ mark {
 .l-zone-dos--rule {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-dos--rule:after {
   content: "";
   display: table;
@@ -931,7 +931,7 @@ mark {
     margin-left: -60px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-dos--rule:after {
     content: "";
     display: table;
@@ -981,7 +981,7 @@ mark {
 .l-zone-dos--split-inside {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-dos--split-inside:after {
   content: "";
   display: table;
@@ -997,7 +997,7 @@ mark {
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-dos--split-inside:after {
     content: "";
     display: table;
@@ -1062,7 +1062,7 @@ mark {
 .l-zone-dos--split {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-dos--split:after {
   content: "";
   display: table;
@@ -1174,13 +1174,13 @@ mark {
   margin-left: -25px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-tres:after {
   content: "";
   display: table;
   clear: both;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-tres:after {
   content: "";
   display: table;
@@ -1210,7 +1210,7 @@ mark {
   *zoom: 1;
   overflow: hidden;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-tres--rule:after {
   content: "";
   display: table;
@@ -1253,7 +1253,7 @@ mark {
     margin-left: -50px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-tres--rule:after {
     content: "";
     display: table;
@@ -1344,7 +1344,7 @@ mark {
   .l-zone-tres--rule .extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-tres--rule .extra-grid-item .l-pair-tz-hp-stub:after {
     content: "";
     display: table;
@@ -1391,7 +1391,7 @@ mark {
 .l-zone-cuatro {
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-cuatro:after {
   content: "";
   display: table;
@@ -1403,7 +1403,7 @@ mark {
     margin-left: -25px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-cuatro:after {
     content: "";
     display: table;
@@ -1430,7 +1430,7 @@ mark {
     margin-left: -25px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-cuatro:after {
     content: "";
     display: table;
@@ -1457,7 +1457,7 @@ mark {
   *zoom: 1;
   overflow: hidden;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-cuatro--rule:after {
   content: "";
   display: table;
@@ -1469,7 +1469,7 @@ mark {
     margin-left: -50px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-cuatro--rule:after {
     content: "";
     display: table;
@@ -1551,7 +1551,7 @@ mark {
     margin-left: -50px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-cuatro--rule:after {
     content: "";
     display: table;
@@ -1602,7 +1602,7 @@ mark {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-tres--art:after {
   content: "";
   display: table;
@@ -1618,7 +1618,7 @@ mark {
     margin-left: -50px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-tres--art:after {
     content: "";
     display: table;
@@ -1677,7 +1677,7 @@ mark {
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub:after {
     content: "";
     display: table;
@@ -1710,7 +1710,7 @@ mark {
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub:after {
     content: "";
     display: table;
@@ -1743,7 +1743,7 @@ mark {
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-tres--art .grid-item.extra-grid-item .l-pair-tz-hp-stub:after {
     content: "";
     display: table;
@@ -1807,7 +1807,7 @@ mark {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-zone-dos--art:after {
   content: "";
   display: table;
@@ -1875,7 +1875,7 @@ mark {
   .l-zone-dos--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-dos--art .grid-item.extra-grid-item .l-pair-tz-hp-stub:after {
     content: "";
     display: table;
@@ -1908,7 +1908,7 @@ mark {
   .l-zone-dos--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-dos--art .grid-item.extra-grid-item .l-pair-tz-hp-stub:after {
     content: "";
     display: table;
@@ -1941,7 +1941,7 @@ mark {
   .l-zone-dos--art .grid-item.extra-grid-item .l-pair-tz-hp-stub {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-zone-dos--art .grid-item.extra-grid-item .l-pair-tz-hp-stub:after {
     content: "";
     display: table;
@@ -1998,7 +1998,7 @@ img {
   *zoom: 1;
   display: inline-block;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .social-items:after {
   content: "";
   display: table;
@@ -2215,133 +2215,133 @@ img {
 .icon-twitter .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-twitter.png?1419017255');
-  background-image: url('../img/icons/icn-twitter.svg?1416606731'), none;
+  background-image: url('../img/icons/icn-twitter.png?1434637979');
+  background-image: url('../img/icons/icn-twitter.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-twitter .icon {
-  background-image: url('../img/icons/icn-twitter.png?1419017255');
+  background-image: url('../img/icons/icn-twitter.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-facebook .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-facebook.png?1419017255');
-  background-image: url('../img/icons/icn-facebook.svg?1416606731'), none;
+  background-image: url('../img/icons/icn-facebook.png?1434637979');
+  background-image: url('../img/icons/icn-facebook.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-facebook .icon {
-  background-image: url('../img/icons/icn-facebook.png?1419017255');
+  background-image: url('../img/icons/icn-facebook.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-disqus .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-disqus.png?1419017255');
-  background-image: url('../img/icons/icn-disqus.svg?1416606731'), none;
+  background-image: url('../img/icons/icn-disqus.png?1434637979');
+  background-image: url('../img/icons/icn-disqus.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-disqus .icon {
-  background-image: url('../img/icons/icn-disqus.png?1419017255');
+  background-image: url('../img/icons/icn-disqus.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-twitter-author .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-twitter-author.png?1419017255');
-  background-image: url('../img/icons/icn-twitter-author.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-twitter-author.png?1434637979');
+  background-image: url('../img/icons/icn-twitter-author.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-twitter-author .icon {
-  background-image: url('../img/icons/icn-twitter-author.png?1419017255');
+  background-image: url('../img/icons/icn-twitter-author.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-email .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-email.png?1419017255');
-  background-image: url('../img/icons/icn-email.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-email.png?1434637979');
+  background-image: url('../img/icons/icn-email.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-email .icon {
-  background-image: url('../img/icons/icn-email.png?1419017255');
+  background-image: url('../img/icons/icn-email.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-telephone .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-telephone.png?1419017255');
-  background-image: url('../img/icons/icn-telephone.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-telephone.png?1434637979');
+  background-image: url('../img/icons/icn-telephone.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-telephone .icon {
-  background-image: url('../img/icons/icn-telephone.png?1419017255');
+  background-image: url('../img/icons/icn-telephone.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-twitter-footer .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-twitter-footer.png?1419017255');
-  background-image: url('../img/icons/icn-twitter-footer.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-twitter-footer.png?1434637979');
+  background-image: url('../img/icons/icn-twitter-footer.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-twitter-footer .icon {
-  background-image: url('../img/icons/icn-twitter-footer.png?1419017255');
+  background-image: url('../img/icons/icn-twitter-footer.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-instagram-footer .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-instagram-footer.png?1416634384');
-  background-image: url('../img/icons/icn-instagram-footer.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-instagram-footer.png?1434637979');
+  background-image: url('../img/icons/icn-instagram-footer.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-instagram-footer .icon {
-  background-image: url('../img/icons/icn-instagram-footer.png?1416634384');
+  background-image: url('../img/icons/icn-instagram-footer.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-rss-footer .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-rss-footer.png?1419017255');
-  background-image: url('../img/icons/icn-rss-footer.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-rss-footer.png?1434637979');
+  background-image: url('../img/icons/icn-rss-footer.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-rss-footer .icon {
-  background-image: url('../img/icons/icn-rss-footer.png?1419017255');
+  background-image: url('../img/icons/icn-rss-footer.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-facebook-footer .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-facebook-footer.png?1419017255');
-  background-image: url('../img/icons/icn-facebook-footer.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-facebook-footer.png?1434637979');
+  background-image: url('../img/icons/icn-facebook-footer.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-facebook-footer .icon {
-  background-image: url('../img/icons/icn-facebook-footer.png?1419017255');
+  background-image: url('../img/icons/icn-facebook-footer.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-search .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-search.png?1421258120');
-  background-image: url('../img/icons/icn-search.svg?1420816208'), none;
+  background-image: url('../img/icons/icn-search.png?1434637979');
+  background-image: url('../img/icons/icn-search.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-search .icon {
-  background-image: url('../img/icons/icn-search.png?1421258120');
+  background-image: url('../img/icons/icn-search.png?1434637979');
 }
 /* line 252, ../scss/_objects.scss */
 .icon-search-reverse .icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-search-reverse.png?1421258120');
-  background-image: url('../img/icons/icn-search-reverse.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-search-reverse.png?1434637979');
+  background-image: url('../img/icons/icn-search-reverse.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-search-reverse .icon {
-  background-image: url('../img/icons/icn-search-reverse.png?1421258120');
+  background-image: url('../img/icons/icn-search-reverse.png?1434637979');
 }
 
 /* line 298, ../scss/_objects.scss */
@@ -2670,7 +2670,7 @@ img {
   border: 1px solid #dad7d7;
   padding: 2em;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .snippet-mod:after {
   content: "";
   display: table;
@@ -2776,7 +2776,7 @@ img {
   background-color: #ffcf31;
   overflow: hidden;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .site-ftr:after {
   content: "";
   display: table;
@@ -2796,7 +2796,7 @@ img {
   margin-bottom: 25px;
   padding-bottom: 35px;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .ftr-top:after {
   content: "";
   display: table;
@@ -2816,7 +2816,7 @@ img {
   padding: 20px 0;
   background-color: #000000;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .ftr-bottom:after {
   content: "";
   display: table;
@@ -2841,7 +2841,7 @@ img {
     margin-left: -50px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-ftr-info:after {
     content: "";
     display: table;
@@ -2868,7 +2868,7 @@ img {
     margin-left: -60px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-ftr-info:after {
     content: "";
     display: table;
@@ -2912,7 +2912,7 @@ img {
   margin-left: -5px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-ftr-partners:after {
   content: "";
   display: table;
@@ -2970,7 +2970,7 @@ img {
   border-bottom: 1px solid #474245;
   padding-bottom: 25px;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .ftr-logo-mod:after {
   content: "";
   display: table;
@@ -3006,7 +3006,7 @@ img {
   display: block;
   text-align: center;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .ftr-social-container:after {
   content: "";
   display: table;
@@ -3031,36 +3031,36 @@ img {
 .icon-twitter-footer .icon--reverse {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-twitter-footer--white.png?1420648191');
-  background-image: url('../img/icons/icn-twitter-footer--white.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-twitter-footer--white.png?1434637979');
+  background-image: url('../img/icons/icn-twitter-footer--white.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-twitter-footer .icon--reverse {
-  background-image: url('../img/icons/icn-twitter-footer--white.png?1420648191');
+  background-image: url('../img/icons/icn-twitter-footer--white.png?1434637979');
 }
 
 /* line 167, ../scss/components/_footer.scss */
 .icon-facebook-footer .icon--reverse {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-facebook-footer--white.png?1420648191');
-  background-image: url('../img/icons/icn-facebook-footer--white.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-facebook-footer--white.png?1434637979');
+  background-image: url('../img/icons/icn-facebook-footer--white.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-facebook-footer .icon--reverse {
-  background-image: url('../img/icons/icn-facebook-footer--white.png?1420648191');
+  background-image: url('../img/icons/icn-facebook-footer--white.png?1434637979');
 }
 
 /* line 171, ../scss/components/_footer.scss */
 .icon-rss-footer .icon--reverse {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-rss-footer--white.png?1420648191');
-  background-image: url('../img/icons/icn-rss-footer--white.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-rss-footer--white.png?1434637979');
+  background-image: url('../img/icons/icn-rss-footer--white.svg?1434637979'), none;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .icon-rss-footer .icon--reverse {
-  background-image: url('../img/icons/icn-rss-footer--white.png?1420648191');
+  background-image: url('../img/icons/icn-rss-footer--white.png?1434637979');
 }
 
 /* line 175, ../scss/components/_footer.scss */
@@ -3173,7 +3173,7 @@ img {
     margin-left: -20px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-ftr-nav:after {
     content: "";
     display: table;
@@ -3200,7 +3200,7 @@ img {
     margin-left: -20px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-ftr-nav:after {
     content: "";
     display: table;
@@ -3237,7 +3237,7 @@ img {
   *zoom: 1;
   text-align: left;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .ftr-nav-items:after {
   content: "";
   display: table;
@@ -3371,7 +3371,7 @@ img {
   *zoom: 1;
   margin-bottom: 30px;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-body:after {
   content: "";
   display: table;
@@ -3387,7 +3387,7 @@ img {
   margin-top: 30px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .recirculation-container:after {
   content: "";
   display: table;
@@ -3406,7 +3406,7 @@ img {
   margin-top: 17px;
   max-width: 550px;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .page-mod:after {
   content: "";
   display: table;
@@ -3740,7 +3740,7 @@ img {
     *zoom: 1;
     display: table;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-article-bio:after {
     content: "";
     display: table;
@@ -3843,7 +3843,7 @@ img {
   border-top: 1px solid #dad7d7;
   border-bottom: 1px solid #dad7d7;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-tag-container:after {
   content: "";
   display: table;
@@ -4188,7 +4188,7 @@ img {
   *zoom: 1;
   overflow: hidden;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-sr-landing-dos:after {
   content: "";
   display: table;
@@ -4200,7 +4200,7 @@ img {
     margin-left: -70px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-sr-landing-dos:after {
     content: "";
     display: table;
@@ -4379,7 +4379,7 @@ img {
   .l-pair-sr-feed {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-sr-feed:after {
     content: "";
     display: table;
@@ -4510,7 +4510,7 @@ img {
     *zoom: 1;
     display: table;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-author-bio:after {
     content: "";
     display: table;
@@ -5838,7 +5838,7 @@ input:-webkit-autofill:focus {
     *zoom: 1;
     display: table;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-about:after {
     content: "";
     display: table;
@@ -5883,7 +5883,7 @@ input:-webkit-autofill:focus {
     *zoom: 1;
     display: table;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-about:after {
     content: "";
     display: table;
@@ -5933,7 +5933,7 @@ input:-webkit-autofill:focus {
     margin-left: -1px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-grid-img:after {
     content: "";
     display: table;
@@ -5960,7 +5960,7 @@ input:-webkit-autofill:focus {
     margin-left: -1px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-grid-img:after {
     content: "";
     display: table;
@@ -6024,7 +6024,7 @@ input:-webkit-autofill:focus {
   *zoom: 1;
   display: table;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-pair-award:after {
   content: "";
   display: table;
@@ -6122,7 +6122,7 @@ input:-webkit-autofill:focus {
     margin-left: -15px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-about-partners:after {
     content: "";
     display: table;
@@ -6149,7 +6149,7 @@ input:-webkit-autofill:focus {
     margin-left: -25px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-about-partners:after {
     content: "";
     display: table;
@@ -6183,7 +6183,7 @@ input:-webkit-autofill:focus {
   max-width: 820px;
   margin: 0 auto;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-pair-staff-page:after {
   content: "";
   display: table;
@@ -6204,7 +6204,7 @@ input:-webkit-autofill:focus {
     *zoom: 1;
     display: table;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-staff-page:after {
     content: "";
     display: table;
@@ -6341,7 +6341,7 @@ input:-webkit-autofill:focus {
     margin-left: -45px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-logo-grid:after {
     content: "";
     display: table;
@@ -6368,7 +6368,7 @@ input:-webkit-autofill:focus {
     margin-left: -45px;
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-logo-grid:after {
     content: "";
     display: table;
@@ -6568,7 +6568,7 @@ input:-webkit-autofill:focus {
   position: relative;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-nav-mod:after {
   content: "";
   display: table;
@@ -6594,7 +6594,7 @@ input:-webkit-autofill:focus {
   max-width: 960px;
   *zoom: 1;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .l-nav-wrap:after {
   content: "";
   display: table;
@@ -7454,15 +7454,15 @@ input:-webkit-autofill:focus {
 .nav-search-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-search.png?1421258120');
-  background-image: url('../img/icons/icn-search.svg?1420816208'), none;
+  background-image: url('../img/icons/icn-search.png?1434637979');
+  background-image: url('../img/icons/icn-search.svg?1434637979'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search.png?1421258120')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search.png?1421258120')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search.png?1434637979')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search.png?1434637979')', sizingMethod='scale')";
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-search-icon {
-  background-image: url('../img/icons/icn-search.png?1421258120');
+  background-image: url('../img/icons/icn-search.png?1434637979');
 }
 
 /* line 806, ../scss/components/_nav-bar.scss */
@@ -7470,15 +7470,15 @@ input:-webkit-autofill:focus {
   opacity: 0;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-search-reverse.png?1421258120');
-  background-image: url('../img/icons/icn-search-reverse.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-search-reverse.png?1434637979');
+  background-image: url('../img/icons/icn-search-reverse.svg?1434637979'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search-reverse.png?1421258120')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search-reverse.png?1421258120')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search-reverse.png?1434637979')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-search-reverse.png?1434637979')', sizingMethod='scale')";
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-search-icon--reverse {
-  background-image: url('../img/icons/icn-search-reverse.png?1421258120');
+  background-image: url('../img/icons/icn-search-reverse.png?1434637979');
 }
 /* line 811, ../scss/components/_nav-bar.scss */
 .no-svg .nav-search-icon--reverse {
@@ -7504,11 +7504,11 @@ input:-webkit-autofill:focus {
   top: 50%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-close-reverse.png?1420481329');
-  background-image: url('../img/icons/icn-close-reverse.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-close-reverse.png?1434637979');
+  background-image: url('../img/icons/icn-close-reverse.svg?1434637979'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close-reverse.png?1420481329')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close-reverse.png?1420481329')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close-reverse.png?1434637979')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close-reverse.png?1434637979')', sizingMethod='scale')";
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
   -webkit-transform: translateY(-22px);
@@ -7519,7 +7519,7 @@ input:-webkit-autofill:focus {
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-search-icon--close {
-  background-image: url('../img/icons/icn-close-reverse.png?1420481329');
+  background-image: url('../img/icons/icn-close-reverse.png?1434637979');
 }
 /* line 829, ../scss/components/_nav-bar.scss */
 .no-svg .nav-search-icon--close {
@@ -7674,34 +7674,34 @@ input:-webkit-autofill:focus {
 .nav-menu-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-menu.png?1420481329');
-  background-image: url('../img/icons/icn-menu.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-menu.png?1434637979');
+  background-image: url('../img/icons/icn-menu.svg?1434637979'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-menu.png?1420481329')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-menu.png?1420481329')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-menu.png?1434637979')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-menu.png?1434637979')', sizingMethod='scale')";
   top: 2px;
   left: 3px;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-menu-icon {
-  background-image: url('../img/icons/icn-menu.png?1420481329');
+  background-image: url('../img/icons/icn-menu.png?1434637979');
 }
 
 /* line 964, ../scss/components/_nav-bar.scss */
 .nav-menu-close-icon {
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-image: url('../img/icons/icn-close.png?1420481329');
-  background-image: url('../img/icons/icn-close.svg?1420481329'), none;
+  background-image: url('../img/icons/icn-close.png?1434637979');
+  background-image: url('../img/icons/icn-close.svg?1434637979'), none;
   background-size: cover;
-  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close.png?1420481329')', sizingMethod='scale')";
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close.png?1420481329')', sizingMethod='scale')";
+  filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close.png?1434637979')', sizingMethod='scale')";
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='url('../img/icons/icn-close.png?1434637979')', sizingMethod='scale')";
   top: 2px;
   text-indent: -99999em;
 }
 /* line 550, ../vendor/Upbase/components/_mixins.scss */
 .no-svg .nav-menu-close-icon {
-  background-image: url('../img/icons/icn-close.png?1420481329');
+  background-image: url('../img/icons/icn-close.png?1434637979');
 }
 @media (min-width: 450px) {
   /* line 964, ../scss/components/_nav-bar.scss */
@@ -8024,7 +8024,7 @@ input:-webkit-autofill:focus {
   .l-pair-full {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-full:after {
     content: "";
     display: table;
@@ -8057,7 +8057,7 @@ input:-webkit-autofill:focus {
   .l-pair-full {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-full:after {
     content: "";
     display: table;
@@ -8212,7 +8212,7 @@ input:-webkit-autofill:focus {
   padding-top: 25px;
   border-top: 1px solid #dad7d7;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .tz-feat-mod:after {
   content: "";
   display: table;
@@ -8466,7 +8466,7 @@ input:-webkit-autofill:focus {
   font-size: 11px;
   font-size: 13px;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-hdr-meta-container:after {
   content: "";
   display: table;
@@ -8478,7 +8478,7 @@ input:-webkit-autofill:focus {
   *zoom: 1;
   padding-top: 10px;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .article-hdr-meta:after {
   content: "";
   display: table;
@@ -8741,7 +8741,7 @@ input:-webkit-autofill:focus {
   height: 100%;
   padding: 23px 25px;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .promo-inner:after {
   content: "";
   display: table;
@@ -8773,7 +8773,7 @@ input:-webkit-autofill:focus {
   height: 100%;
   padding: 25px;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .promo-signup-inner:after {
   content: "";
   display: table;
@@ -8996,7 +8996,7 @@ input:-webkit-autofill:focus {
   padding-bottom: 8px;
   border-bottom: 1px solid #dad7d7;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .promo-form:after {
   content: "";
   display: table;
@@ -9186,7 +9186,7 @@ input:-webkit-autofill:focus {
   .l-pair-full {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-full:after {
     content: "";
     display: table;
@@ -9219,7 +9219,7 @@ input:-webkit-autofill:focus {
   .l-pair-full {
     *zoom: 1;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-full:after {
     content: "";
     display: table;
@@ -9374,7 +9374,7 @@ input:-webkit-autofill:focus {
   padding-top: 25px;
   border-top: 1px solid #dad7d7;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .tz-feat-mod:after {
   content: "";
   display: table;
@@ -9527,7 +9527,7 @@ img.alignleft {
   font-size: 14px;
   margin: 10px 0;
 }
-/* line 49, ../scss/components/_article-aside.scss */
+/* line 48, ../scss/components/_article-aside.scss */
 .article-aside h1,
 .article-aside h2 {
   font-family: National, Helvetica, Arial, sans-serif;
@@ -9537,7 +9537,7 @@ img.alignleft {
   color: black;
   margin-top: 15px;
 }
-/* line 57, ../scss/components/_article-aside.scss */
+/* line 56, ../scss/components/_article-aside.scss */
 .article-aside h3,
 .article-aside h4 {
   font-family: National, Helvetica, Arial, sans-serif;
@@ -9547,7 +9547,7 @@ img.alignleft {
   color: black;
   margin-top: 15px;
 }
-/* line 66, ../scss/components/_article-aside.scss */
+/* line 65, ../scss/components/_article-aside.scss */
 .article-aside h5,
 .article-aside h6 {
   font-family: National, Helvetica, Arial, sans-serif;
@@ -9559,29 +9559,29 @@ img.alignleft {
   color: black;
   margin-top: 15px;
 }
-/* line 81, ../scss/components/_article-aside.scss */
+/* line 80, ../scss/components/_article-aside.scss */
 .article-aside blockquote {
   padding-top: 10px;
   margin: 25px 0 !important;
   border-top: 3px solid #00aeef;
   color: #908b8c;
 }
-/* line 95, ../scss/components/_article-aside.scss */
+/* line 94, ../scss/components/_article-aside.scss */
 .article-aside ul, .article-aside ol {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 14px;
   margin: 10px 0 10px 20px;
 }
-/* line 102, ../scss/components/_article-aside.scss */
+/* line 101, ../scss/components/_article-aside.scss */
 .article-aside ul {
   list-style-type: disc;
 }
-/* line 105, ../scss/components/_article-aside.scss */
+/* line 104, ../scss/components/_article-aside.scss */
 .article-aside ul ul {
   list-style-type: circle !important;
   margin-left: 20px;
 }
-/* line 111, ../scss/components/_article-aside.scss */
+/* line 110, ../scss/components/_article-aside.scss */
 .article-aside ol {
   counter-reset: li;
   /* Initiate a counter */
@@ -9590,7 +9590,7 @@ img.alignleft {
   padding-left: 0;
   /* Remove the default left padding */
 }
-/* line 117, ../scss/components/_article-aside.scss */
+/* line 116, ../scss/components/_article-aside.scss */
 .article-aside ol > li {
   position: relative;
   /* Create a positioning context */
@@ -9601,7 +9601,7 @@ img.alignleft {
   list-style: none;
   /* Disable the normal item numbering */
 }
-/* line 124, ../scss/components/_article-aside.scss */
+/* line 123, ../scss/components/_article-aside.scss */
 .article-aside ol > li:before {
   content: counter(li) ".";
   /* Use the counter as content */
@@ -9621,32 +9621,32 @@ img.alignleft {
   font-family: National, Helvetica, Arial, sans-serif;
   text-align: center;
 }
-/* line 142, ../scss/components/_article-aside.scss */
+/* line 141, ../scss/components/_article-aside.scss */
 .article-aside li ol,
 .article-aside li ul {
   margin-top: 6px;
 }
-/* line 145, ../scss/components/_article-aside.scss */
+/* line 144, ../scss/components/_article-aside.scss */
 .article-aside ol ol li:last-child {
   margin-bottom: 0;
 }
-/* line 152, ../scss/components/_article-aside.scss */
+/* line 151, ../scss/components/_article-aside.scss */
 .article-aside a, .article-aside a:visited {
   color: #00aeef;
   text-decoration: none;
 }
-/* line 155, ../scss/components/_article-aside.scss */
+/* line 154, ../scss/components/_article-aside.scss */
 .article-aside a:hover, .article-aside a:visited:hover, .article-aside a:visited:hover, .article-aside a:visited:visited:hover {
   text-decoration: underline;
 }
-/* line 160, ../scss/components/_article-aside.scss */
+/* line 159, ../scss/components/_article-aside.scss */
 .article-aside > address {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-style: italic;
   font-weight: 300;
 }
-/* line 170, ../scss/components/_article-aside.scss */
+/* line 169, ../scss/components/_article-aside.scss */
 .article-aside p img {
   margin: 15px 0 15px 25px;
   float: left;
@@ -9655,67 +9655,67 @@ img.alignleft {
   height: auto;
 }
 @media (min-width: 550px) {
-  /* line 170, ../scss/components/_article-aside.scss */
+  /* line 169, ../scss/components/_article-aside.scss */
   .article-aside p img {
     margin: 15px 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 170, ../scss/components/_article-aside.scss */
+  /* line 169, ../scss/components/_article-aside.scss */
   .article-aside p img {
     width: 100%;
     float: none;
   }
 }
-/* line 189, ../scss/components/_article-aside.scss */
+/* line 188, ../scss/components/_article-aside.scss */
 .article-aside .img-container {
   width: 100%;
 }
 @media (min-width: 750px) {
-  /* line 189, ../scss/components/_article-aside.scss */
+  /* line 188, ../scss/components/_article-aside.scss */
   .article-aside .img-container {
     display: inline-block;
   }
 }
-/* line 196, ../scss/components/_article-aside.scss */
+/* line 195, ../scss/components/_article-aside.scss */
 .article-aside .img-caption-text {
   margin: 0;
 }
-/* line 200, ../scss/components/_article-aside.scss */
+/* line 199, ../scss/components/_article-aside.scss */
 .article-aside .img-caption {
   width: 65%;
   margin: 15px 0;
   float: right;
 }
 @media (min-width: 550px) {
-  /* line 200, ../scss/components/_article-aside.scss */
+  /* line 199, ../scss/components/_article-aside.scss */
   .article-aside .img-caption {
     width: 70%;
     margin: 5px 0 0;
   }
 }
 @media (min-width: 700px) {
-  /* line 200, ../scss/components/_article-aside.scss */
+  /* line 199, ../scss/components/_article-aside.scss */
   .article-aside .img-caption {
     float: none;
     width: 100%;
     margin: 0;
   }
 }
-/* line 217, ../scss/components/_article-aside.scss */
+/* line 216, ../scss/components/_article-aside.scss */
 .article-aside .wp-caption-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 14px;
 }
-/* line 222, ../scss/components/_article-aside.scss */
+/* line 221, ../scss/components/_article-aside.scss */
 .article-aside .wp-image-38 {
   margin-right: 20px;
   height: auto;
 }
 
-/* line 248, ../scss/components/_article-aside.scss */
+/* line 247, ../scss/components/_article-aside.scss */
 .aside-hdr {
   font-size: 16px;
   font-family: Tiempos, Georgia, Times, serif !important;
@@ -9723,13 +9723,13 @@ img.alignleft {
   margin-top: 0 !important;
 }
 
-/* line 256, ../scss/components/_article-aside.scss */
+/* line 255, ../scss/components/_article-aside.scss */
 .aside-borders {
   border-top: 6px solid #2a272b;
   border-bottom: 1px solid #dad7d7;
 }
 
-/* line 262, ../scss/components/_article-aside.scss */
+/* line 261, ../scss/components/_article-aside.scss */
 .aside-body {
   margin-left: 0;
 }
@@ -9890,8 +9890,9 @@ img.alignleft {
   max-width: 550px;
   margin: 15px -5px;
   background-color: #f3f1f1;
+  opacity: 0;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .partner-aside:after {
   content: "";
   display: table;
@@ -9917,7 +9918,7 @@ img.alignleft {
   }
 }
 
-/* line 32, ../scss/components/_article-aside-partner.scss */
+/* line 33, ../scss/components/_article-aside-partner.scss */
 .aside-partner-logo {
   display: inline-block;
   position: relative;
@@ -9927,19 +9928,113 @@ img.alignleft {
   color: #fff;
 }
 @media (min-width: 820px) {
-  /* line 32, ../scss/components/_article-aside-partner.scss */
+  /* line 33, ../scss/components/_article-aside-partner.scss */
   .aside-partner-logo {
     max-width: 150px;
     margin-bottom: 10px;
   }
 }
 
-/* line 50, ../scss/components/_article-aside-partner.scss */
+/* line 51, ../scss/components/_article-aside-partner.scss */
 .aside-partner-text {
   font-family: National, Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 13px;
   line-height: 120%;
+}
+
+/* line 60, ../scss/components/_article-aside-partner.scss */
+.partner-aside-content + .partner-aside-content {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #e6e4e4;
+}
+
+/* line 78, ../scss/components/_article-aside-partner.scss */
+.underwrite-h {
+  font-size: 14px;
+  font-family: Tiempos, Georgia, Times, serif;
+  font-weight: 900;
+}
+
+/* line 84, ../scss/components/_article-aside-partner.scss */
+.underwrite-link {
+  color: #00aeef;
+  text-decoration: none;
+}
+
+/* line 90, ../scss/components/_article-aside-partner.scss */
+.underwrite-text {
+  font-family: National, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 12, ../scss/components/_article-aside-ad.scss */
+.article-ad {
+  max-width: 550px;
+  *zoom: 1;
+  border-top: 0;
+  margin-top: 25px;
+  margin-bottom: 60px;
+  opacity: 0;
+}
+@media (max-width: 819px) {
+  /* line 12, ../scss/components/_article-aside-ad.scss */
+  .article-ad {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 820px) {
+  /* line 12, ../scss/components/_article-aside-ad.scss */
+  .article-ad {
+    margin-left: 25px;
+  }
+}
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+.article-ad:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 820px) {
+  /* line 12, ../scss/components/_article-aside-ad.scss */
+  .article-ad {
+    width: 300px;
+    max-width: 300px;
+    float: right;
+    clear: right;
+  }
+}
+
+/* line 27, ../scss/components/_article-aside-ad.scss */
+.article-ad-content {
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  background-color: #fff;
+}
+@media (min-width: 820px) {
+  /* line 27, ../scss/components/_article-aside-ad.scss */
+  .article-ad-content {
+    margin: 0;
+  }
+}
+
+/* line 41, ../scss/components/_article-aside-ad.scss */
+.aside-ad-hdr {
+  color: #908b8c;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: National, Helvetica, Arial, sans-serif;
+  margin-bottom: 7px;
 }
 
 /* line 9, ../scss/components/_tease-list-latest.scss */
@@ -9961,7 +10056,7 @@ img.alignleft {
   *zoom: 1;
   position: relative;
 }
-/* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
 .hp-list-item:after {
   content: "";
   display: table;
@@ -10459,7 +10554,7 @@ img.alignleft {
     margin-top: 5px;
     margin-bottom: 35px;
   }
-  /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.1/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../../../.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .l-pair-tz-special-stat:after {
     content: "";
     display: table;
@@ -10520,24 +10615,24 @@ img.alignleft {
   font: inherit;
 }
 
-/* line 109, ../scss/screen.scss */
+/* line 110, ../scss/screen.scss */
 .index--nav-items {
   margin: 80px auto;
   padding-left: 50px;
 }
 
-/* line 114, ../scss/screen.scss */
+/* line 115, ../scss/screen.scss */
 .index--nav-item {
   font-family: National, Helvetica, Arial, sans-serif;
   font-size: 45px;
 }
 
-/* line 119, ../scss/screen.scss */
+/* line 120, ../scss/screen.scss */
 .index--nav-item-link {
   text-decoration: none;
   color: black;
 }
-/* line 122, ../scss/screen.scss */
+/* line 123, ../scss/screen.scss */
 .index--nav-item-link:hover {
   text-decoration: underline;
 }

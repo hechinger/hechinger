@@ -6,7 +6,6 @@
             "key": "field_5464ed1b1559e",
             "label": "Subhead",
             "name": "subhead",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -39,5 +38,7 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434662529
 }

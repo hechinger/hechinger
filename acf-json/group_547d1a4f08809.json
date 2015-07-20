@@ -6,11 +6,15 @@
             "key": "field_547d1a59126d8",
             "label": "credit",
             "name": "credit",
-            "prefix": "",
             "type": "text",
             "instructions": "The source or citation for this image.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "ex. AP Photo\/John Doe",
             "prepend": "",
@@ -34,5 +38,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434662529
 }

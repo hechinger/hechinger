@@ -6,24 +6,39 @@
             "key": "field_547359d9383f5",
             "label": "Logo",
             "name": "logo",
-            "prefix": "",
             "type": "image",
             "instructions": "Please upload a Black and White version of the partner's logo.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "url",
             "preview_size": "thumbnail",
-            "library": "uploadedTo"
+            "library": "uploadedTo",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_54735ab1383f6",
             "label": "partner homepage url",
             "name": "partner_homepage_url",
-            "prefix": "",
             "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": ""
         }
@@ -42,5 +57,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1434662529
 }

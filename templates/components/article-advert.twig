@@ -1,0 +1,19 @@
+{% if primary_ad|length %}
+	<aside class="article-ad js-ad-aside">
+		<p class="aside-ad-hdr">Advertisement</p>  
+		<div class="article-ad-content">
+	  	 	{{primary_ad}}
+	  	</div>
+	</aside> <!-- /article-aside -->
+{% endif %}
+{% if secondary_ad|length %}		
+	<aside class="article-ad js-ad-aside2">  
+	    <p class="aside-ad-hdr">Advertisement</p> 
+		<div class="article-ad-content">
+	  	 	{{secondary_ad}}
+	  	</div>
+	</aside>
+	
+{% endif %}
+
+

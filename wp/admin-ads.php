@@ -122,7 +122,7 @@ function ad_fields() {
 				    				<li style='display:block; margin:10px'><input class="all_cat" type="checkbox" value="all_categories" name='assigned_ad[category1][1001]'/>All Categories</li>
 				    		    <?php }
 				    		
-				    			$cats = get_categories(array('orderby' => 'term_group')); 
+				    			$cats = get_categories(array('orderby' => 'term_group', 'hide_empty' => 0)); 
 				    			foreach($cats as $index=>$category) {
 				    				$tabbed = "";
 				    				if($category->parent != 0) {

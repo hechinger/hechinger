@@ -5,11 +5,10 @@ var HE_ad = (function($){
   var $targetParagraph;
   var $adAside2;
   var $targetParagraph2;
-  var $longEnough;
-  var $isStorify;
+
 
   function init() {
-    // get the partner aside
+    // get the ad aside
     $adAside = $('.js-ad-aside');
     $targetParagraph = findParagraph(4, false);
     $adAside2 = $('.js-ad-aside2');
@@ -34,8 +33,8 @@ var HE_ad = (function($){
       
     }
     
-      setAdSpot($adAside, $targetParagraph, $longEnough);
-      setAdSpot($adAside2, $targetParagraph2, $longEnough);  
+      setAdSpot($adAside, $targetParagraph);
+      setAdSpot($adAside2, $targetParagraph2);  
     
 
   }

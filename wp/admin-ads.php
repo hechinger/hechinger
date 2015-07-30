@@ -1,6 +1,6 @@
- <?php 
+<?php 
 
- add_action('admin_menu', 'ad_create_menu');
+add_action('admin_menu', 'ad_create_menu');
 
 function ad_create_menu() {
 

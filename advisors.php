@@ -93,7 +93,7 @@ $context['advisors'] = array(
    array(
     "name" => "Susan Sawyers",
     "image" => "sawyers-susan.jpg",
-    "description" => "Susan Sawyers is a New York City based multimedia journalist and social media strategist. Mother of two, wife of one, she is interested in education, philanthropy and lifestyle reporting. Susan works as a researcher and producer for Bloomberg EDU with Jane Williams, Bloomberg Radio’s weekly program on education. Her writing and reporting has appeared in The New York Times, USA Today, The Huffington Post, The Hechinger Report and New York Social Diary. A graduate of Columbia University Graduate School of Journalism and Grinnell College, she was the former director/curator of the Los Angeles-based Iris and B. Gerald Cantor Foundation. She is a friend of The Future Project and a DoSomething speedcatcher and judge."
+    "description" => "Susan Sawyers is a New York City based multimedia journalist and social media strategist. She is interested in education, philanthropy and lifestyle reporting. A former producer and researcher for “Bloomberg EDU with Jane Williams,” Bloomberg Radio’s weekly program on education, Susan’s writing and reporting has appeared in The New York Times, USA Today, The Huffington Post, The Hechinger Report and New York Social Diary. A graduate of Columbia University Graduate School of Journalism and Grinnell College, she was the former director and curator of the Los Angeles-based Iris and B. Gerald Cantor Foundation. She speaks French fluently and taught English and French to students in France and in Washington, D.C."
   ),
   array(
     "name" => "Bill Thompson",

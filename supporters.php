@@ -22,9 +22,19 @@ $context['supporters'] = array(
     "link" => "http://www.jkcf.org"
   ),
   array(
+    "name" => "The Bill & Melinda Gates Foundation",
+    "image" => "supporter-gates.png",
+    "link" => "http://www.gatesfoundation.org"
+  ),
+  array(
     "name" => "The Ford Foundation",
     "image" => "supporter-ford-foundation.png",
     "link" => "http://www.fordfoundation.org/"
+  ),
+  array(
+    "name" => "The Heising-Simons Foundation",
+    "image" => "supporter-heising.png",
+    "link" => "http://heisingsimons.org"
   ),
   array(
     "name" => "The Leona M. and Harry B. Helmsley Charitable Trust",
@@ -32,9 +42,9 @@ $context['supporters'] = array(
     "link" => "http://helmsleytrust.org"
   ),
   array(
-    "name" => "The Joyce Foundation",
-    "image" => "supporter-joyce.png",
-    "link" => "http://www.joycefdn.org"
+    "name" => "The William and Flora Hewlett Foundation",
+    "image" => "supporter-hewlett.png",
+    "link" => "http://www.hewlett.org"
   ),
   array(
     "name" => "The W.K. Kellogg Foundation",

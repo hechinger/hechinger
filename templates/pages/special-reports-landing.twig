@@ -25,7 +25,7 @@
               <div class="l-sr-landing-dos">
 
                 {% for report in special_reports %}
-                  {% if report.slug in ['california', 'common-core', 'blended-learning', 'mississippi-learning'] %}
+                  {% if report.slug in ['higher-education', 'high-school-reform', 'early-education', 'teacher-preparation', 'california', 'common-core', 'blended-learning', 'mississippi-learning'] %}
                     <div class="grid-item tz-sr-landing-grid">
                       <article class="tz-sr-landing">
                         <a href="{{report.link}}">
@@ -64,7 +64,7 @@
               <div class="l-sr-landing-feed">
 
                 {% for sreport in special_reports %}
-                  {% if sreport.slug not in ['california', 'common-core', 'blended-learning', 'mississippi-learning'] %}
+                  {% if sreport.slug not in ['higher-education', 'high-school-reform', 'early-education', 'teacher-preparation', 'california', 'common-core', 'blended-learning', 'mississippi-learning'] %}
                     <article class="tz-sr-feed-grid l-pair-sr-feed">
                       <a class="art-bd" href="{{sreport.link}}">
                           <img src="{{ sreport.get_image('bw_rect').src | resize(221, 123) | default(site.theme.path ~ "/static/img/defaults/default_bw_rectangle.jpg") }}" alt="">

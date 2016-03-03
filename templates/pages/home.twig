@@ -58,7 +58,7 @@
       <div class="l-hp-zone">
         <div class="l-zone-dos l-hp-zone--reports">
           {% for report in special_reports %}
-            {% if report.slug in ['higher-education', ‘teacher-preparation’, 'blended-learning', 'high-school-reform'] %}
+            {% if report.slug in ['higher-education', 'teacher-preparation', 'blended-learning', 'high-school-reform'] %}
               <div class="grid-item">
                 <div class="hp-special-tz">
                   {% include "templates/components/tease-hp-report.twig" with { report:report } %}

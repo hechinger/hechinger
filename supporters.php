@@ -62,11 +62,6 @@ $context['supporters'] = array(
     "link" => "http://www.wallacefoundation.org/"
   ),
   array(
-    "name" => "The Wasserman Foundation",
-    "image" => "supporter-wasserman.png",
-    "link" => "http://www.wassermanfoundation.org"
-  ),
-  array(
     "name" => "American Institutes for Research",
     "image" => "supporter-american-institutes.png",
     "link" => "http://www.air.org"

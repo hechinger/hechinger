@@ -32,16 +32,6 @@ $context['supporters'] = array(
     "link" => "http://heisingsimons.org"
   ),
   array(
-    "name" => "The Leona M. and Harry B. Helmsley Charitable Trust",
-    "image" => "supporter-helmsley.png",
-    "link" => "http://helmsleytrust.org"
-  ),
-  array(
-    "name" => "The William and Flora Hewlett Foundation",
-    "image" => "supporter-hewlett.png",
-    "link" => "http://www.hewlett.org"
-  ),
-  array(
     "name" => "The W.K. Kellogg Foundation",
     "image" => "supporter-kellogg.png",
     "link" => "http://www.wkkf.org"
@@ -50,11 +40,6 @@ $context['supporters'] = array(
     "name" => "Lumina Foundation for Education",
     "image" => "supporter-lumina.png",
     "link" => "http://www.luminafoundation.org"
-  ),
-  array(
-    "name" => "The Spencer Foundation",
-    "image" => "supporter-spencer.png",
-    "link" => "http://www.spencer.org"
   ),
   array(
     "name" => "The Wallace Foundation",

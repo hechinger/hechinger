@@ -33,7 +33,7 @@ $context['supporters'] = array(
   ),
 	array(
     "name" => "The Nellie Mae Education Foundation",
-    "image" => "http://hechingerreport.org/wp-content/uploads/2016/08/nelliemae.jpg",
+    "image" => "supporter-nelliemae.png",
     "link" => "http://www.nmefoundation.org/"
   ),
   array(

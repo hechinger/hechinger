@@ -64,7 +64,7 @@
               <div class="l-sr-landing-feed">
 
                 {% for sreport in special_reports %}
-                  {% if sreport.slug not in ['higher-education', 'high-school-reform', 'early-education', 'teacher-preparation', 'california', 'common-core', 'blended-learning', 'mississippi-learning'] %}
+                  {% if sreport.slug not in ['higher-education', 'high-school-reform', 'early-education', 'teacher-preparation', 'blended-learning', 'mississippi-learning'] %}
                     <article class="tz-sr-feed-grid l-pair-sr-feed">
                       <a class="art-bd" href="{{sreport.link}}">
                           <img src="{{ sreport.get_image('bw_rect').src | resize(221, 123) | default(site.theme.path ~ "/static/img/defaults/default_bw_rectangle.jpg") }}" alt="">

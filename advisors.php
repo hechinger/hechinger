@@ -83,7 +83,7 @@ $context['advisors'] = array(
   array(
     "name" => "Michael H. Oreskes",
     "image" => "oreskes-michael.jpg",
-    "description" => "Michael “Mike” Oreskes is Vice President and Senior Managing Editor of The Associated Press (AP). He supervises the news cooperative’s daily all-format and global report. Mike came to the AP in 2008 from the International Herald Tribune where he was executive editor of the Paris-based daily owned by The New York Times. He spent 27 years with The New York Times Co. He began in 1981 as reporter for the Times, covering local, state and national politics; he was later appointed Metro editor, Washington bureau chief and deputy managing editor."
+    "description" => "Michael Oreskes is senior vice president for news and editorial director​for National Public Radio. He was formerly a top Associated Press executive and  New York Times editor who has led newsrooms in such global centers as New York, Washington and Paris."
   ),
   array(
     "name" => "Jennifer Preston",

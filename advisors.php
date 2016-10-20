@@ -88,7 +88,7 @@ $context['advisors'] = array(
   array(
     "name" => "Jennifer Preston",
     "image" => "preston-jennifer.jpg",
-    "description" => "Jennifer Preston is a reporter for The New York Times who writes about the role of social media in politics, government and real life. She recently joined The Lede blog, where she is drawing on the explosion of user generated content now shared on social media platforms to report stories. Jennifer returned to reporting in January 2011 after working as the newsroom’s first Social Media Editor. She began at The New York Times in 1995 as a political reporter and state house bureau chief. She previously worked at New York Newsday as deputy metropolitan editor and City Hall bureau chief."
+    "description" => "Jennifer Preston is a vice-president for journalism at the Knight Foundation. Previously, Preston was an award-winning journalist for The New York Times for almost 19 years, with broad experience as a digital journalist, reporter and senior editor. In 2009 she became the company’s first social media editor. In 2011 she returned to a reporting role where she focused on the impact of social media in politics, government, business and real life. Her most recent work as an editor focused on extending digital media and social media storytelling and curation across the newsroom. Preston also worked as an editor and circulation marketing manager at New York Newsday, where she won numerous awards for an investigative reporting project that examined the police use of deadly force by off-duty police officers in New York. Preston was a 2010 fellow in the Sulzberger Leadership Program at Columbia University and is on the board of directors of the Online News Association."
   ),
    array(
     "name" => "Susan Sawyers",

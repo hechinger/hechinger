@@ -42,9 +42,11 @@
         {# Static Ad Code #}
         {# The Ads are currently moved into place with ad-move.js. This is a copy and pasted version of the partner-move.js module that Chris wrote to move the Media Partners into place. There's probably a better method of achieving the correct placement. However, this might come in handy if we place more than one ad within a given article for longer articles.
         #}
+ 	{% if not post.is_clean %}
         {% block article_ad %}
           {% include "/templates/components/article-advert.twig" %}
         {% endblock %}
+	{% endif %}
 
         {# ************************************ #}
 

@@ -93,8 +93,8 @@ class HechingerPost extends TimberPost {
     return has_term( 'feature', 'article-type', $this );
   }
   
-    function is_clean() {
-    return has_term( 'feature', 'article-type', $this );
+  function is_clean() {
+    return has_term( 'clean', 'article-type', $this );
   }
   
    function partners() {

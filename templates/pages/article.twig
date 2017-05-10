@@ -83,15 +83,6 @@
         </div> <!-- /page-mod -->
       {% endblock %} {# /article-social #}
 
-      <!-- article-comments -->
-      {% block article_comments %}
-        <div class="page-mod article-mod comment-mod js-comment-mod">
-          <div class="comment-inner">
-            {% include "templates/components/disqus.twig" %}
-          </div> <!-- /comment-inner -->
-        </div> <!-- /page-mod -->
-      {% endblock article_comments %}
-
       <!-- article-tag -->
       {% block article_tag %}
         {% if post.story_tags|length %}

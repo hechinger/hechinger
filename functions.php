@@ -1,5 +1,26 @@
 <?php
 
+/*====================================================*/
+/* DAGO'S LETTERS ACF SETTINGS PAGE
+======================================================*/
+
+if( function_exists('acf_add_options_page') ) {
+
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Dago\'s Letters Settings',
+    'menu_title'  => 'DL Settings',
+    'parent_slug' => 'dagos-letters',
+    'capability'  => 'edit_posts',
+    'redirect'    => false
+  ));
+  
+}
+
+/*====================================================*/
+/* END DAGO'S LETTERS SETTINGS PAGE
+======================================================*/
+
+
 if ( !class_exists( 'Timber' ) ) {
   add_action( 'admin_notices', function() {
       echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . admin_url( 'plugins.php#timber' ) . '">' . admin_url( 'plugins.php' ) . '</a></p></div>';

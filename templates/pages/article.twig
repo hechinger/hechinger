@@ -136,6 +136,13 @@
           {% endif %} {# / author.description #}
         {% endfor %}
       {% endblock %} {# /article_bio #}
+      
+          <!-- article-letters -->
+      {% block article_letters %}
+        <div class="page-mod article-mod js-comment-mod comment-mod">
+            {% include "templates/components/dagos-letters.twig" %}
+        </div> <!-- /page-mod -->
+      {% endblock article_letters %}
 
     </div> <!-- /l-content-inner -->
   </div> <!-- /l-content -->

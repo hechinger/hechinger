@@ -1,0 +1,49 @@
+<div id="dagos-letters">
+  <div id="dagos-letters-submit">
+    <h4 class="section-hdr--lg">Letters to the Editor</h4>  
+    <div id="dagos-letters-form-container">
+      <h5>Send us your thoughts</h5>  
+
+      <form action="http://hechingerreport.org/wp-content/plugins/dagos-letters/admin/dagos-letters-admin-post.php" method="POST" id="dagos-letters-form">
+        <p class="dagos-letters-header">
+          <span>At The Hechinger Report, we publish thoughtful letters from readers that contribute to the ongoing discussion about the education topics we cover. Please <a href="https://hechingerreport.org/guidelines">read our guidelines</a> for more information.</span><br \><br \>
+
+          <span>By submitting your name, you grant us permission to publish it with your letter. We will never publish your email. You must fill out all fields to submit a letter.</span>
+        </p>
+        <div class="dagos-letters-type"> 
+        <p>
+          <label>Type of Letter: <span>&#x2731</span></label>
+          <select id="type" name="type" required="required">
+              <option value="correction">Correction</option>
+              <option value="letter">Letter</option>
+              <option value="information">Request Information</option>
+          </select>
+        </p>
+        </div>
+        <p class="dagos-letters-content">
+          <label for="letter">Letter: <span>&#x2731</span></label><br />
+          <textarea id="letter" name="letter" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>
+        </p>
+        <p class="dagos-letters-author">
+          <label for="author">Name: <span>&#x2731</span></label><br />
+          <input id="author" name="author" type="text" value size="30" maxlength="245" aria-required="true" required="required">
+        </p>
+        <p class="dagos-letters-email">
+          <label for="email">Email: <span>&#x2731</span></label><br />
+          <input id="email" name="email" type="text" value size="30" maxlength="100" aria-required="true" required="required">
+        </p>
+        <div class="g-recaptcha" data-sitekey="6LfjKRoUAAAAALcXbu7Dp0Il7LZI62qlHnSmuTr3"></div>
+        <p class="dagos-letters-submit"><br />
+          <input name="submit" type="submit" value="Submit Letter">
+          {{ function( 'dagos_letters_twig_bridge', 'post_id' ) }}          
+        </p>
+      </form>
+      <p class="dagos-letters-message"></p>
+    </div>
+  </div>
+  <div id="dagos-letters-approved">
+    <div id="dagos-letters-approved-list">
+      {{ function( 'dagos_letters_twig_bridge', 'populate_letters' ) }}
+    </div>
+  </div>
+</div>

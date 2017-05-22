@@ -51,6 +51,11 @@ $context['supporters'] = array(
     "image" => "supporter-lumina.png",
     "link" => "http://www.luminafoundation.org"
   ),
+    array(
+    "name" => "Raikes Foundation",
+    "image" => "supporter-raikes.png",
+    "link" => "http://raikesfoundation.org"
+  ),
   array(
     "name" => "The Wallace Foundation",
     "image" => "supporter-wallace.png",

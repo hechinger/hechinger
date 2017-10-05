@@ -7403,12 +7403,12 @@ input:-webkit-autofill:focus {
 }
 
 /* line 764, ../scss/components/_nav-bar.scss */
-.sub-about-item {
+.sub-about-item, .sub-donate-item {
   margin: 20px 0 10px;
 }
 @media (min-width: 600px) {
   /* line 764, ../scss/components/_nav-bar.scss */
-  .sub-about-item {
+  .sub-about-item, .sub-donate-item {
     display: none;
   }
 }
@@ -7428,12 +7428,12 @@ input:-webkit-autofill:focus {
 }
 
 /* line 784, ../scss/components/_nav-bar.scss */
-.nav-about-link {
+.nav-about-link, .nav-donate-link {
   display: none;
 }
 @media (min-width: 600px) {
   /* line 784, ../scss/components/_nav-bar.scss */
-  .nav-about-link {
+  .nav-about-link, .nav-donate-link {
     display: block;
   }
 }

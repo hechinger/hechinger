@@ -762,7 +762,7 @@
 } // nav-sub-item-link
 
 
-.sub-about-item {
+.sub-about-item, .sub-donate-item {
   margin: 20px 0 10px;
   @include mq($bp-medium) {
     display: none;
@@ -782,7 +782,7 @@
 }
 
 
-.nav-about-link, .nav-about-link {
+.nav-about-link, .nav-about-link, .nav-donate-link, .nav-donate-link {
   display: none;
   @include mq($bp-medium) {
     display: block;

@@ -236,7 +236,8 @@
 }
 
 .nav-about-link,
-.nav-topics-link {
+.nav-topics-link, 
+.nav-donate-link {
   @include sans;
   display: block;
   padding-top: 22px;
@@ -257,7 +258,7 @@
 
 .nav-about-link:hover,
 .topics-is-open .nav-topics-link,
-.nav-topics-menu-mod:hover .nav-topics-link {
+.nav-topics-menu-mod:hover .nav-topics-link, .nav-donate-link:hover {
     box-shadow: 0 9px 0 #000 inset;
     @include trans(.1s, all, $animation-timing);
 }
@@ -781,7 +782,7 @@
 }
 
 
-.nav-about-link {
+.nav-about-link, .nav-about-link {
   display: none;
   @include mq($bp-medium) {
     display: block;

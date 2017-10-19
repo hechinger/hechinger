@@ -16,14 +16,14 @@ $context['advisors'] = array(
     "description" => "Joshua Benton is director of the Nieman Journalism Lab at Harvard University, a project to help journalism adapt to the demands of the Internet age. Before coming to Harvard in 2007 as a Nieman Fellow, he spend seven years as an education reporter for The Dallas Morning News, during which he won five first-place awards in the National Awards for Education Reporting, in investigative reporting, beat reporting, and opinion writing. He also won the Philip Meyer Journalism Award from Investigative Reporters & Editors and the Fred M. Hechinger Grand Prize for Distinguished Education Reporting. He is a native of south Louisiana."
   ),
   array(
+    "name" => "John Branam",
+    "image" => "branam-john.jpg",
+    "description" => "John Branam is the Executive Director of the 1Million Project, a national effort to give free high-speed access and digital devices to students without internet access at home. John is a former middle school teacher and Peace Corp volunteer with more than fifteen years of experience in the education field and was previously a partner with The Learning Accelerator, an education consultancy focused on accelerating blended learning. He also served as director of programs for the Higher Achievement Program, a rigorous out-of-school academic enrichment program and deputy director for Grantmakers for Education, a national nonprofit whose mission is to promote excellence in education philanthropy. He earned his B.A. in political science from Washington and Lee University and a J.D. from the University of Oregon School of Law."
+  ),
+  array(
     "name" => "Celeste Ford",
     "image" => "ford-celeste.jpg",
     "description" => "Celeste Ford is the Manager of Media Relations for Carnegie Corporation of New York. She is a former TV news reporter of 25 years who worked her way up from smaller markets to the nation’s top local station–WABC-TV in New York City. She also reported for PBS and CNBC. During her 15 years at WABC-TV, Celeste started and ran the station’s first unit dedicated to education issues. Her reporting was honored with a number of the broadcast industry’s top awards including a DuPont-Columbia University Award and two Edward R. Murrow awards."
-  ),
-   array(
-    "name" => "Louis Freedberg",
-    "image" => "freedberg-louis.jpg",
-    "description" => "Louis Freedberg is the executive director for EdSource, a nonprofit organization that provides data tools and research on education issues in California. Previously he was a senior reporter and an adviser to California Watch. As a co-founder, Louis was the first director of California Watch until May 2010. He previously was director of the California Media Collaborative, based at the Commonwealth Club of California. Until 2007, he worked at the San Francisco Chronicle in a variety of roles: columnist and member of its editorial board, Washington correspondent during the presidency of Bill Clinton, and higher education reporter."
   ),
   array(
     "name" => "Mitch Gelman",
@@ -56,11 +56,6 @@ $context['advisors'] = array(
     "description" => "Judith Johnson is the former Superintendent of Schools for the Peekskill City School District, serving from 2001 to 2011. Johnson was the first woman and African-American to serve in that post. From 1997 to 2000, Judith served in the Clinton administration as Deputy Assistant Secretary for Elementary and Secondary Education and later as Acting Assistant Secretary for Elementary and Secondary Education. Ms. Johnson began her educational career in the New York City Public schools as a teacher, guidance counselor, and administrator for High School Redirection, one of the first alternative high schools established in New York City."
   ),
   array(
-    "name" => "Liam Kerr",
-    "image" => "kerr-liam.jpg",
-    "description" => "Liam Kerr is the Massachusetts State Director for Democrats for Education Reform (DFER). Prior to DFER, Liam worked for the management consultancy The Parthenon Group and the national venture philanthropy fund New Profit Inc. Liam started his career as an AmeriCorps volunteer with California Library Literacy Services, where he helped expand a library-based adult literacy program. He has advised youth sports nonprofits throughout Massachusetts, an NGO consultancy in the Czech Republic, a charter school incubator, and a charter school network."
-  ),
-  array(
     "name" => "Harold Levy",
     "image" => "levy-harold.jpg",
     "description" => "Harold Levy is executive director of the Jack Kent Cooke Foundation, a private, independent foundation dedicated to advancing the education of exceptionally promising students who have financial need. Mr. Levy was formerly the New York City Schools Chancellor, where he created and published the first set of accountability metrics, started the Teaching Fellows program, instituted a math initiative that resulted in significant test score increases and led the system during the 9/11 attacks and their aftermath. He has also served as Executive Vice President of Kaplan, Inc., a subsidiary of the Washington Post Company, where he started Kaplan University’s online School of Education."
@@ -69,11 +64,6 @@ $context['advisors'] = array(
     "name" => "Vernon Loeb",
     "image" => "loeb-vernon.jpg",
     "description" => "Vernon Loeb is managing editor of the Houston Chronicle. Previously he was local editor for The Washington Post and before that, deputy managing editor/news at The Philadelphia Inquirer, where he was a reporter earlier in his career. Before returning to Philadelphia, he was Metro investigations editor at the Los Angeles Times and a defense reporter at The Washington Post."
-  ),
-   array(
-    "name" => "Kay McClenney",
-    "image" => "mcclenney-kay.jpg",
-    "description" => "Kay McClenney is Director of the Center for Community College Student Engagement and Sid W. Richardson Endowed Fellow in the Community College Leadership Program (CCLP) at The University of Texas at Austin. She also directs the Center’s Initiative on Student Success, supported by the MetLife Foundation and Houston Endowment Inc."
   ),
   array(
     "name" => "Deborah McGriff",

@@ -55,6 +55,11 @@ $context['advisors'] = array(
     "image" => "johnson-judith.jpg",
     "description" => "Judith Johnson is the former Superintendent of Schools for the Peekskill City School District, serving from 2001 to 2011. Johnson was the first woman and African-American to serve in that post. From 1997 to 2000, Judith served in the Clinton administration as Deputy Assistant Secretary for Elementary and Secondary Education and later as Acting Assistant Secretary for Elementary and Secondary Education. Ms. Johnson began her educational career in the New York City Public schools as a teacher, guidance counselor, and administrator for High School Redirection, one of the first alternative high schools established in New York City."
   ),
+    array(
+    "name" => "Kiki Keating",
+    "image" => "keating-kiki.jpg",
+    "description" => "Kiki Keating is the founder and director of KikiNetwork, where she brings a wealth of experience in communications strategy and practice from around the world. She was previously founding Director of Public and Media Relations at Dartmouth College’s Tuck School of Business. An experienced trial attorney, Kiki is also a certified mediator/arbitrator and a recognized leader in the business education communications world. She is also a frequent speaker at global business school conferences. Kiki earned a BA from Smith College and a JD from the University of Maine. She resides in Hanover, NH and commutes regularly to Boston, New York, and locations around the world for event and media relations assignments."
+  ),
   array(
     "name" => "Harold Levy",
     "image" => "levy-harold.jpg",
@@ -69,11 +74,6 @@ $context['advisors'] = array(
     "name" => "Deborah McGriff",
     "image" => "mcgriff-deborah.jpg",
     "description" => "Deborah McGriff is a partner at NewSchools Venture Fund, where she leads the firm’s Academic Systems Initiative, and contributes to investment strategy and management assistance for a variety of its portfolio ventures."
-  ),
-  array(
-    "name" => "Michael H. Oreskes",
-    "image" => "oreskes-michael.jpg",
-    "description" => "Michael Oreskes is senior vice president for news and editorial director​for National Public Radio. He was formerly a top Associated Press executive and  New York Times editor who has led newsrooms in such global centers as New York, Washington and Paris."
   ),
   array(
     "name" => "Jennifer Preston",

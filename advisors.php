@@ -58,6 +58,9 @@ $context['advisors'] = array(
     "description" => "Judith Johnson is the former Superintendent of Schools for the Peekskill City School District, serving from 2001 to 2011. Johnson was the first woman and African-American to serve in that post. From 1997 to 2000, Judith served in the Clinton administration as Deputy Assistant Secretary for Elementary and Secondary Education and later as Acting Assistant Secretary for Elementary and Secondary Education. Ms. Johnson began her educational career in the New York City Public schools as a teacher, guidance counselor, and administrator for High School Redirection, one of the first alternative high schools established in New York City."
   ),
     array(
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
     "name" => "Kiki Keating",
     "image" => "keating-kiki.jpg",

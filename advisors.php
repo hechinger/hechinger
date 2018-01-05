@@ -41,27 +41,6 @@ $context['advisors'] = array(
     "description" => "Paul Hechinger is a veteran of broadcast and online journalism. He has produced cross-medium journalism for Time, Court TV, NPR and The MacNeil/Lehrer NewsHour."
   ),
     array(
-<<<<<<< HEAD
-=======
-    "name" => "Michael B. Horn",
-    "image" => "horn-michael.jpg",
-    "description" => "Michael B. Horn is the co-founder and executive director of the education practice of Innosight Institute, a non-profit think tank devoted to applying the theories of disruptive innovation to solve problems in the social sector. Tech&Learning magazine named Horn to its list of the 100 most important people in the creation and advancement of the use of technology in education."
-  ),
-   array(
-    "name" => "Luis Huerta",
-    "image" => "huerta-luis.jpg",
-    "description" => "Luis Huerta is an associate professor of education at Teachers College, Columbia University. His scholarly interests include education policy, decentralization in education, school choice (charter schools, vouchers, home schooling, tuition tax credits), privatization in education, and school finance."
-  ),
-  array(
-    "name" => "Judith Johnson",
-    "image" => "johnson-judith.jpg",
-    "description" => "Judith Johnson is the former Superintendent of Schools for the Peekskill City School District, serving from 2001 to 2011. Johnson was the first woman and African-American to serve in that post. From 1997 to 2000, Judith served in the Clinton administration as Deputy Assistant Secretary for Elementary and Secondary Education and later as Acting Assistant Secretary for Elementary and Secondary Education. Ms. Johnson began her educational career in the New York City Public schools as a teacher, guidance counselor, and administrator for High School Redirection, one of the first alternative high schools established in New York City."
-  ),
-    array(
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
     "name" => "Kiki Keating",
     "image" => "keating-kiki.jpg",
     "description" => "Kiki Keating is the founder and director of KikiNetwork, where she brings a wealth of experience in communications strategy and practice from around the world. She was previously founding Director of Public and Media Relations at Dartmouth College’s Tuck School of Business. An experienced trial attorney, Kiki is also a certified mediator/arbitrator and a recognized leader in the business education communications world. She is also a frequent speaker at global business school conferences. Kiki earned a BA from Smith College and a JD from the University of Maine. She resides in Hanover, NH and commutes regularly to Boston, New York, and locations around the world for event and media relations assignments."

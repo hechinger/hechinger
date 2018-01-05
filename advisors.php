@@ -56,11 +56,6 @@ $context['advisors'] = array(
     "description" => "Vernon Loeb is managing editor of the Houston Chronicle. Previously he was local editor for The Washington Post and before that, deputy managing editor/news at The Philadelphia Inquirer, where he was a reporter earlier in his career. Before returning to Philadelphia, he was Metro investigations editor at the Los Angeles Times and a defense reporter at The Washington Post."
   ),
   array(
-    "name" => "Deborah McGriff",
-    "image" => "mcgriff-deborah.jpg",
-    "description" => "Deborah McGriff is a partner at NewSchools Venture Fund, where she leads the firm’s Academic Systems Initiative, and contributes to investment strategy and management assistance for a variety of its portfolio ventures."
-  ),
-  array(
     "name" => "Jennifer Preston",
     "image" => "preston-jennifer.jpg",
     "description" => "Jennifer Preston is a vice-president for journalism at the Knight Foundation. Previously, Preston was an award-winning journalist for The New York Times for almost 19 years, with broad experience as a digital journalist, reporter and senior editor. In 2009 she became the company’s first social media editor. In 2011 she returned to a reporting role where she focused on the impact of social media in politics, government, business and real life. Her most recent work as an editor focused on extending digital media and social media storytelling and curation across the newsroom. Preston also worked as an editor and circulation marketing manager at New York Newsday, where she won numerous awards for an investigative reporting project that examined the police use of deadly force by off-duty police officers in New York. Preston was a 2010 fellow in the Sulzberger Leadership Program at Columbia University and is on the board of directors of the Online News Association."
@@ -69,11 +64,6 @@ $context['advisors'] = array(
     "name" => "Susan Sawyers",
     "image" => "sawyers-susan.jpg",
     "description" => "Susan Sawyers is a New York City based multimedia journalist and social media strategist. She is interested in education, philanthropy and lifestyle reporting. A former producer and researcher for “Bloomberg EDU with Jane Williams,” Bloomberg Radio’s weekly program on education, Susan’s writing and reporting has appeared in The New York Times, USA Today, The Huffington Post, The Hechinger Report and New York Social Diary. A graduate of Columbia University Graduate School of Journalism and Grinnell College, she was the former director and curator of the Los Angeles-based Iris and B. Gerald Cantor Foundation. She speaks French fluently and taught English and French to students in France and in Washington, D.C."
-  ),
-  array(
-    "name" => "Bill Thompson",
-    "image" => "thompson-bill.jpg",
-    "description" => "Bill Thompson, a former New York City Comptroller and five-term president of the New York City Board of Education, is a senior managing director at Siebert Brandford Shank, the nation’s largest minority-owned firm in the field of municipal underwriting. As comptroller, Thompson also served as custodian and investment advisor to the five New York City Pension Funds, where he managed a combined portfolio amounting to more than $100 billion at the close of his tenure. During his tenure, Thompson also worked with leaders of the financial services industry to reform the operations of the New York Stock Exchange, and spearheaded the city’s Banking Development District program."
   ),
   array(
     "name" => "Richard Tofel",

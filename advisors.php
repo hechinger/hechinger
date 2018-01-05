@@ -79,7 +79,7 @@ $context['advisors'] = array(
     "name" => "Richard Tofel",
     "image" => "tofel-richard.jpg",
     "description" => "Richard Tofel is general manager of ProPublica, with responsibility for all of its non-journalism operations, including communications, legal, finance and budgeting and human resources. He was formerly the assistant publisher of The Wall Street Journal and, earlier, an assistant managing editor of the paper, vice president, corporate communications for Dow Jones & Company, and an assistant general counsel of Dow Jones. Most recently, he served as vice president, general counsel and secretary of The Rockefeller Foundation, and earlier as president and chief operating officer of The International Freedom Center, a museum and cultural center that was planned for the World Trade Center site."
-  )
+  ),
       array(
     "name" => "Robin White Goode",
     "image" => "white-goode-robin.jpg",

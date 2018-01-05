@@ -16,14 +16,14 @@ $context['advisors'] = array(
     "description" => "Joshua Benton is director of the Nieman Journalism Lab at Harvard University, a project to help journalism adapt to the demands of the Internet age. Before coming to Harvard in 2007 as a Nieman Fellow, he spend seven years as an education reporter for The Dallas Morning News, during which he won five first-place awards in the National Awards for Education Reporting, in investigative reporting, beat reporting, and opinion writing. He also won the Philip Meyer Journalism Award from Investigative Reporters & Editors and the Fred M. Hechinger Grand Prize for Distinguished Education Reporting. He is a native of south Louisiana."
   ),
   array(
+    "name" => "John Branam",
+    "image" => "branam-john.jpg",
+    "description" => "John Branam is the Executive Director of the 1Million Project, a national effort to give free high-speed access and digital devices to students without internet access at home. John is a former middle school teacher and Peace Corp volunteer with more than fifteen years of experience in the education field and was previously a partner with The Learning Accelerator, an education consultancy focused on accelerating blended learning. He also served as director of programs for the Higher Achievement Program, a rigorous out-of-school academic enrichment program and deputy director for Grantmakers for Education, a national nonprofit whose mission is to promote excellence in education philanthropy. He earned his B.A. in political science from Washington and Lee University and a J.D. from the University of Oregon School of Law."
+  ),
+  array(
     "name" => "Celeste Ford",
     "image" => "ford-celeste.jpg",
     "description" => "Celeste Ford is the Manager of Media Relations for Carnegie Corporation of New York. She is a former TV news reporter of 25 years who worked her way up from smaller markets to the nation’s top local station–WABC-TV in New York City. She also reported for PBS and CNBC. During her 15 years at WABC-TV, Celeste started and ran the station’s first unit dedicated to education issues. Her reporting was honored with a number of the broadcast industry’s top awards including a DuPont-Columbia University Award and two Edward R. Murrow awards."
-  ),
-   array(
-    "name" => "Louis Freedberg",
-    "image" => "freedberg-louis.jpg",
-    "description" => "Louis Freedberg is the executive director for EdSource, a nonprofit organization that provides data tools and research on education issues in California. Previously he was a senior reporter and an adviser to California Watch. As a co-founder, Louis was the first director of California Watch until May 2010. He previously was director of the California Media Collaborative, based at the Commonwealth Club of California. Until 2007, he worked at the San Francisco Chronicle in a variety of roles: columnist and member of its editorial board, Washington correspondent during the presidency of Bill Clinton, and higher education reporter."
   ),
   array(
     "name" => "Mitch Gelman",
@@ -41,6 +41,8 @@ $context['advisors'] = array(
     "description" => "Paul Hechinger is a veteran of broadcast and online journalism. He has produced cross-medium journalism for Time, Court TV, NPR and The MacNeil/Lehrer NewsHour."
   ),
     array(
+<<<<<<< HEAD
+=======
     "name" => "Michael B. Horn",
     "image" => "horn-michael.jpg",
     "description" => "Michael B. Horn is the co-founder and executive director of the education practice of Innosight Institute, a non-profit think tank devoted to applying the theories of disruptive innovation to solve problems in the social sector. Tech&Learning magazine named Horn to its list of the 100 most important people in the creation and advancement of the use of technology in education."
@@ -55,10 +57,11 @@ $context['advisors'] = array(
     "image" => "johnson-judith.jpg",
     "description" => "Judith Johnson is the former Superintendent of Schools for the Peekskill City School District, serving from 2001 to 2011. Johnson was the first woman and African-American to serve in that post. From 1997 to 2000, Judith served in the Clinton administration as Deputy Assistant Secretary for Elementary and Secondary Education and later as Acting Assistant Secretary for Elementary and Secondary Education. Ms. Johnson began her educational career in the New York City Public schools as a teacher, guidance counselor, and administrator for High School Redirection, one of the first alternative high schools established in New York City."
   ),
-  array(
-    "name" => "Liam Kerr",
-    "image" => "kerr-liam.jpg",
-    "description" => "Liam Kerr is the Massachusetts State Director for Democrats for Education Reform (DFER). Prior to DFER, Liam worked for the management consultancy The Parthenon Group and the national venture philanthropy fund New Profit Inc. Liam started his career as an AmeriCorps volunteer with California Library Literacy Services, where he helped expand a library-based adult literacy program. He has advised youth sports nonprofits throughout Massachusetts, an NGO consultancy in the Czech Republic, a charter school incubator, and a charter school network."
+    array(
+>>>>>>> origin/master
+    "name" => "Kiki Keating",
+    "image" => "keating-kiki.jpg",
+    "description" => "Kiki Keating is the founder and director of KikiNetwork, where she brings a wealth of experience in communications strategy and practice from around the world. She was previously founding Director of Public and Media Relations at Dartmouth College’s Tuck School of Business. An experienced trial attorney, Kiki is also a certified mediator/arbitrator and a recognized leader in the business education communications world. She is also a frequent speaker at global business school conferences. Kiki earned a BA from Smith College and a JD from the University of Maine. She resides in Hanover, NH and commutes regularly to Boston, New York, and locations around the world for event and media relations assignments."
   ),
   array(
     "name" => "Harold Levy",
@@ -70,20 +73,10 @@ $context['advisors'] = array(
     "image" => "loeb-vernon.jpg",
     "description" => "Vernon Loeb is managing editor of the Houston Chronicle. Previously he was local editor for The Washington Post and before that, deputy managing editor/news at The Philadelphia Inquirer, where he was a reporter earlier in his career. Before returning to Philadelphia, he was Metro investigations editor at the Los Angeles Times and a defense reporter at The Washington Post."
   ),
-   array(
-    "name" => "Kay McClenney",
-    "image" => "mcclenney-kay.jpg",
-    "description" => "Kay McClenney is Director of the Center for Community College Student Engagement and Sid W. Richardson Endowed Fellow in the Community College Leadership Program (CCLP) at The University of Texas at Austin. She also directs the Center’s Initiative on Student Success, supported by the MetLife Foundation and Houston Endowment Inc."
-  ),
   array(
     "name" => "Deborah McGriff",
     "image" => "mcgriff-deborah.jpg",
     "description" => "Deborah McGriff is a partner at NewSchools Venture Fund, where she leads the firm’s Academic Systems Initiative, and contributes to investment strategy and management assistance for a variety of its portfolio ventures."
-  ),
-  array(
-    "name" => "Michael H. Oreskes",
-    "image" => "oreskes-michael.jpg",
-    "description" => "Michael Oreskes is senior vice president for news and editorial director​for National Public Radio. He was formerly a top Associated Press executive and  New York Times editor who has led newsrooms in such global centers as New York, Washington and Paris."
   ),
   array(
     "name" => "Jennifer Preston",
@@ -105,6 +98,11 @@ $context['advisors'] = array(
     "image" => "tofel-richard.jpg",
     "description" => "Richard Tofel is general manager of ProPublica, with responsibility for all of its non-journalism operations, including communications, legal, finance and budgeting and human resources. He was formerly the assistant publisher of The Wall Street Journal and, earlier, an assistant managing editor of the paper, vice president, corporate communications for Dow Jones & Company, and an assistant general counsel of Dow Jones. Most recently, he served as vice president, general counsel and secretary of The Rockefeller Foundation, and earlier as president and chief operating officer of The International Freedom Center, a museum and cultural center that was planned for the World Trade Center site."
   )
+      array(
+    "name" => "Robin White Goode",
+    "image" => "white-goode-robin.jpg",
+    "description" => "Robin White Goode is the education editor at Black Enterprise, a multimedia company whose flagship publication, Black Enterprise magazine, reaches six million readers every other month. She helped develop Black Enterprise’s education-focused initiative, BE Smart. This multi-platform approach brings together leaders in business, policy, philanthropy, and education to effect substantive change in areas of education equity and workplace readiness. White Goode is an award-winning writer who co-wrote a series of articles published in Black Enterprise that examines the education crisis in the black community. She previously taught her own two children at home for eight years. Both have graced their respective school’s dean’s list."
+  ),
 );
 
 $context['post'] = new HechingerPost($post);

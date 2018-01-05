@@ -6741,7 +6741,8 @@ input:-webkit-autofill:focus {
 
 /* line 238, ../scss/components/_nav-bar.scss */
 .nav-about-link,
-.nav-topics-link {
+.nav-topics-link,
+.nav-donate-link {
   font-family: National, Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -6759,12 +6760,13 @@ input:-webkit-autofill:focus {
 }
 /* line 253, ../scss/components/_nav-bar.scss */
 .nav-about-link:not(:first-child),
-.nav-topics-link:not(:first-child) {
+.nav-topics-link:not(:first-child),
+.nav-donate-link:not(:first-child) {
   margin-left: 15px;
 }
 
 /* line 258, ../scss/components/_nav-bar.scss */
-.nav-about-link:hover,
+.nav-about-link:hover, .nav-donate-link:hover,
 .topics-is-open .nav-topics-link,
 .nav-topics-menu-mod:hover .nav-topics-link {
   box-shadow: 0 9px 0 #000 inset;
@@ -7401,12 +7403,12 @@ input:-webkit-autofill:focus {
 }
 
 /* line 764, ../scss/components/_nav-bar.scss */
-.sub-about-item {
+.sub-about-item, .sub-donate-item {
   margin: 20px 0 10px;
 }
 @media (min-width: 600px) {
   /* line 764, ../scss/components/_nav-bar.scss */
-  .sub-about-item {
+  .sub-about-item, .sub-donate-item {
     display: none;
   }
 }
@@ -7426,12 +7428,12 @@ input:-webkit-autofill:focus {
 }
 
 /* line 784, ../scss/components/_nav-bar.scss */
-.nav-about-link {
+.nav-about-link, .nav-donate-link {
   display: none;
 }
 @media (min-width: 600px) {
   /* line 784, ../scss/components/_nav-bar.scss */
-  .nav-about-link {
+  .nav-about-link, .nav-donate-link {
     display: block;
   }
 }

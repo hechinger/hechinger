@@ -35,10 +35,15 @@ $context['advisors'] = array(
     "image" => "hancock-lynnell.jpg",
     "description" => "LynNell Hancock is a reporter and writer specializing in education and child and family policy issues, who has taught journalism at Columbia University’s Graduate School of Journalism since 1993. She is the director of the Spencer Fellowship for Education Journalism. In addition to contributing to Newsweek, Columbia Journalism Review, The Nation and The New York Times, she served on staff of The Village Voice, the New York Daily News, and Newsweek where she covered national and local education issues."
   ),
+    array(
+    "name" => "John Hechinger",
+    "image" => "hechinger-john.jpg",
+    "description" => "John Hechinger is a senior editor at Bloomberg News, where he was a 2011 finalist for the Pulitzer Prize in Public Service and a two-time winner of the George Polk Award for his reporting on higher education. He is the author of True Gentlemen, The Broken Pledge of America's Fraternities (PublicAffairs-Hachette, 2017). Before joining Bloomberg in 2010, he was a senior special writer at The Wall Street Journal, where he focused on education and finance.​ He is the son of Fred Hechinger, for whom The Hechinger Report is named.​"
+  ),
   array(
     "name" => "Paul Hechinger",
     "image" => "hechinger-paul.jpg",
-    "description" => "Paul Hechinger is a veteran of broadcast and online journalism. He has produced cross-medium journalism for Time, Court TV, NPR and The MacNeil/Lehrer NewsHour."
+    "description" => "Paul Hechinger is a veteran of broadcast and online journalism. He has produced cross-medium journalism for Time, Court TV, NPR and The MacNeil/Lehrer NewsHour. He is the son of former journalist Fred Hechinger, for whom the Hechinger Report is named."
   ),
     array(
     "name" => "Kiki Keating",

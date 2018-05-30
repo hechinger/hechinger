@@ -38,7 +38,7 @@ $context['advisors'] = array(
     array(
     "name" => "John Hechinger",
     "image" => "hechinger-john.jpg",
-    "description" => "<a href="https://www.johnhechinger.com/">John Hechinger</a> is a senior editor at Bloomberg News, where he was a 2011 finalist for the Pulitzer Prize in Public Service and a two-time winner of the George Polk Award for his reporting on higher education. He is the author of True Gentlemen, The Broken Pledge of America's Fraternities (PublicAffairs-Hachette, 2017). Before joining Bloomberg in 2010, he was a senior special writer at The Wall Street Journal, where he focused on education and finance.​ He is the son of Fred Hechinger, for whom The Hechinger Report is named."
+    "description" => "John Hechinger is a senior editor at Bloomberg News, where he was a 2011 finalist for the Pulitzer Prize in Public Service and a two-time winner of the George Polk Award for his reporting on higher education. He is the author of True Gentlemen, The Broken Pledge of America's Fraternities (PublicAffairs-Hachette, 2017). Before joining Bloomberg in 2010, he was a senior special writer at The Wall Street Journal, where he focused on education and finance.​ He is the son of Fred Hechinger, for whom The Hechinger Report is named."
   ),
   array(
     "name" => "Paul Hechinger",

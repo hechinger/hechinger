@@ -60,6 +60,11 @@ $context['advisors'] = array(
     "image" => "loeb-vernon.jpg",
     "description" => "Vernon Loeb is managing editor of the Houston Chronicle. Previously he was local editor for The Washington Post and before that, deputy managing editor/news at The Philadelphia Inquirer, where he was a reporter earlier in his career. Before returning to Philadelphia, he was Metro investigations editor at the Los Angeles Times and a defense reporter at The Washington Post."
   ),
+    array(
+    "name" => "Jeevan Padiyar",
+    "image" => "jeevan.jpg",
+    "description" => "Jeevan Padiyar is a technology investor, entrepreneur and product team leader. He most recently served as Chief Product Officer at the Jack Kent Cooke Foundation. Prior to joining JKCF, he managed education product portfolio for Palm Ventures, a private equity firm.  Padiyar made his entrepreneurial debut in college when he started a remote-controlled blimp company, which he grew from a dorm room startup to 150 employees and sold for $95MM. He studied medicine as a Howard Hughes Medical Institute Fellow at the Albert Einstein College of Medicine after earning degrees in Chemistry and Biochemistry at Kansas State University. Jeevan brings deep experience in innovation management, technology product development, and conversion optimization with expertise in education."
+  ),
   array(
     "name" => "Jennifer Preston",
     "image" => "preston-jennifer.jpg",

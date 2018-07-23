@@ -1,0 +1,180 @@
+{% extends 'layout.twig' %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/wp-content/themes/hechinger/static/donate/styles/app.css">
+{% endblock %}
+
+{% block navbar %}
+  {% include 'components/nav-bar.twig' with {background_image: true, banner: post.thumbnail } %}
+{% endblock %}
+
+
+{# archive page layouts go here #}
+{% block body %}
+
+  {% block header %}
+    {% include 'components/section-front-header.twig' with { banner: post.thumbnail, section_front_title : "Support Us", subhead: post.subhead, link_to_page: post.link_to_page, link_heading: post.link_heading } %}
+  {% endblock header %}
+
+  {% block about_content %}
+<article class="support-content">
+  <div class="l-support-content">
+    <div class="l-support-inner">
+      <div class="support-levels">
+	<div class="support-level -thumb">
+	  <div class="support-level-table">
+	    <div class="thumb">
+	      <img src="/wp-content/themes/hechinger/static/donate/img/tier1.png" />
+	    </div>
+	    <div class="thumb-align">
+	      <div class="art-bd">
+		<h2 class="about-h">Understand</h2>
+		<div class="range"><a target="_blank" href="https://checkout.fundjournalism.org/memberform?amount=15&installmentPeriod=monthly&org_id=hechingerreport&campaign=701f40000012JSJ">$35 - $149</a></div>
+		<ul class="benefits">
+		  <li>
+		    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		    <span>Monthly behind-the-scenes member newsletter</span>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="support-level -thumb">
+	  <div class="support-level-table">
+	    <div class="thumb">
+	      <img src="/wp-content/themes/hechinger/static/donate/img/tier2.png" />
+	    </div>
+	    <div class="thumb-align">
+	      <div class="art-bd">
+		<h2 class="about-h">Think Critically</h2>
+		<div class="range"><a target="_blank" href="https://checkout.fundjournalism.org/memberform?amount=25&installmentPeriod=monthly&org_id=hechingerreport&campaign=701f40000012JSJ">$150 - $499</a></div>
+		<ul class="benefits">
+		  <li>
+		    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		    <span>Member newsletter</span>
+		  </li>
+		  <li>
+		    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		    <span>Hechinger-branded back-to-school gift</span>
+		  </li>
+		  <li>
+		    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		    <span>Be the first to know about our biggest reporting projects</span>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="support-level -thumb">
+	  <div class="support-level-table">
+	    <div class="thumb">
+	      <img src="/wp-content/themes/hechinger/static/donate/img/tier3.png" />
+	    </div>
+	    <div class="thumb-align">
+	      <div class="art-bd">
+		<h2 class="about-h">Build</h2>
+		<div class="range"><a target="_blank" href="https://checkout.fundjournalism.org/memberform?amount=70&installmentPeriod=monthly&org_id=hechingerreport&campaign=701f40000012JSJ">$500 - $999</a></div>
+		<ul class="benefits">
+		  <li>
+		    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		    <span>Member newsletter</span>
+		  </li>
+		  <li>
+		    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		    <span>Helchinger-branded back-to-school gift</span>
+		  </li>
+		  <li>
+		    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		    <span>Be the first to know about our biggest reporting projects</span>
+		  </li>
+		  <li>
+		    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+		    <span>Participate in exclusive conversations with Hechinger reporters</span>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+      </div>
+
+      <div class="support-callout">
+	<h4 class="callout-title">
+	  I'm a Teacher!
+	</h4>
+	<p>Teacher members will receive special communications from The Hechinger Report and a small gift
+	  for their classrooms. If you’re a teacher, just check the box on the check-out page.</p>
+      </div>
+
+      <div class="support-cta">
+	<a class="button" target="_blank" href="https://checkout.fundjournalism.org/memberform?amount=15&installmentPeriod=monthly&org_id=hechingerreport&campaign=701f40000012JSO">Become a Member Today</a>
+      </div>
+
+      <div class="support-faqs">
+	<h2 class="about-h">FAQs</h2>
+	<div class="support-rich-text">
+	  <div class="question">
+	    <h5>Is The Hechinger Report a nonprofit?</h5>
+	    <p>Yes. The Hechinger Report is an independent unit of
+	      <a href="#">Teachers College, Columbia University</a>. You will receive a receipt for your
+	      donation with proof of our tax-exempt status. Our EIN number is: 13-1624202.</p>
+	  </div>
+	  <div class="question">
+	    <h5>What kind of back-to-school gifts will I get?</h5>
+	    <p>Everyone who gives at or above the Think Critically level — either as a one-time donor or as a monthly sustainer — will receive a gift in the mail the September following their donation. The gift could be a mug, a water bottle, a tote bag, or something else. We’ll surprise you.</p>
+	  </div>
+	  <div class="question">
+	    <h5>I prefer not to receive a physical gift;
+	      I want my entire donation to support The Hechinger Report.</h5>
+	    <p>No problem. Don't give us your address on the check-out page and we won’t mail you anything. You’ll still receive all the other benefits at your giving level.</p>
+	  </div>
+	  <div class="question">
+	    <h5>Why do you care if I’m a teacher?</h5>
+	    <p>At The Hechinger Report, it's our job to tell the stories of real people involved in the day-to-day work of educating young people. We also strive to write stories teachers find worthwhile to read. If you’re a teacher, check the “I’m a teacher” box on the donation page to receive some special communications from The Hechinger Report and a small gift for your classroom.</p>
+	  </div>
+	  <div class="question">
+	    <h5>I’d like to give you more than $1,000.</h5>
+	    <p>Great! You are welcome to write any custom amount when you donate. Please note that all donors who give more than $1,000 will be listed by name on our supporters page.</p>
+	  </div>
+	  <div class="question">
+	    <h5>Instead of donating online, can I write you a paper check?</h5>
+	    <p>Yes. Please mail checks to:</p>
+	    <p class="indent">The Hechinger Report<br/>
+	      Attn: Matt Bruderle<br/>
+	      475 Riverside Drive, Suite 650<br/>
+	      New York NY 10115</p>
+	  </div>
+	  <div class="question">
+	    <h5>Can I send you a wire transfer through a donor advised fund?</h5>
+	    <p>Yes. For donations through a donor-advised fund, please email Lillian Mongeau, our membership manager. You can reach her at <a href="mailto:donationshelp@hechingerreport.org">donationshelp@hechingerreport.org</a>.</p>
+	  </div>
+	  <div class="question">
+	    <h5>I have another question that isn’t listed here.</h5>
+	    <p>No problem, please reach out to <a href="mailto:donationshelp@hechingerreport.org">Lillian Mongeau</a>, our membership manager.</p>
+	  </div>
+	</div>
+      </div>
+
+      <div class="support-contact">
+	<h2 class="about-h">Contact</h2>
+	<p><strong>Lillian Mongeau,</strong> Membership Manager – <a href="mailto:donationshelp@hechingerreport.org">donationshelp@hechingerreport.org</a>.</p>
+      </div>
+    </div>
+  </div>
+</article>
+  {% endblock about_content %}
+
+{% endblock body %}
+
+{% block scripts %}
+<script type="text/javascript" src="/wp-content/themes/hechinger/static/donate/scripts/app.js"></script>
+{% endblock %}
+
+
+
+
+

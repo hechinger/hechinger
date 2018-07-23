@@ -1,0 +1,102 @@
+{% extends 'layout.twig' %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/wp-content/themes/hechinger/static/donate/styles/app.css">
+{% endblock %}
+
+{% block navbar %}
+  {% include 'components/nav-bar.twig' with {background_image: true, banner: post.thumbnail } %}
+{% endblock %}
+
+
+{# archive page layouts go here #}
+{% block body %}
+
+  {% block header %}
+    {% include 'components/section-front-header.twig' with { banner: post.thumbnail, section_front_title : "Join Us", subhead: post.subhead, link_to_page: post.link_to_page, link_heading: post.link_heading } %}
+  {% endblock header %}
+
+  {% block about_content %}
+  <article class="join-content"
+  	 data-module="donate-form"
+  	 data-donate-path="https://checkout.fundjournalism.org/donateform"
+  	 data-subscribe-path="https://checkout.fundjournalism.org/memberform"
+  	 data-min-donation="5"
+  	 data-levels="35,150,500"
+  	 data-labels="|Understand|Think Critically|Build|">
+    
+    <div class="l-content">
+      <div class="l-join-inner">
+        <div class="join-form">
+  	<form action="https://checkout.fundjournalism.org/memberform" target="_blank" method="GET">
+  	  <div class="form-body">
+  	    <div class="fields -x3">
+  	      <label for="amount">I would like to donate</label>
+  	      <div class="input -prefix">
+  		<div class="prefix">$</div>
+  		<input type="text" name="amount" value="15" />
+  	      </div>
+  	      <div class="actions">
+  		<input type="hidden" name="installmentPeriod" class="freq" value="" />
+  		<input type="hidden" name="org_id" value="hechingerreport" />
+  		<input type="hidden" name="campaign" value="701f40000012JSE" />
+  		<span class="radio btn -on" data-value="monthly">Per Month</span>
+  		<span class="radio btn" data-value="yearly">Per Year</span>
+  		<span class="radio btn" data-value="once">One Time</span>
+  	      </div>
+  	    </div>
+  	    <div class="field --inline-message">
+  	      <div class="message -error">
+  	      </div>
+  	    </div>
+  	    <div class="field">
+  	      <div class="donation-level-ticker">
+  		This donation will make you a member at the <var>--</var> level.
+  	      </div>
+  	    </div>
+  	  </div>
+  	  <div class="form-footer">
+  	    <button class="button">Give Now</button>
+  	  </div>
+  	</form>
+        </div>
+  
+        <div class="join-tiers">
+  	<h2 class="about-h">Membership</h2>
+  	<div class="tiers">
+  	  <div class="tier">
+  	    <img src="/wp-content/themes/hechinger/static/donate/img/tier1.png" />
+  	    <h3>Understand</h3>
+  	    <div class="range"><a target="_blank" href="https://checkout.fundjournalism.org/memberform?amount=15&installmentPeriod=monthly&org_id=hechingerreport&campaign=701f40000012JSE">$35 - $149</a></div>
+  	  </div>
+  	  <div class="tier">
+  	    <img src="/wp-content/themes/hechinger/static/donate/img/tier2.png" />
+  	    <h3>Think Critically</h3>
+  	    <div class="range"><a target="_blank" href="https://checkout.fundjournalism.org/memberform?amount=25&installmentPeriod=monthly&org_id=hechingerreport&campaign=701f40000012JSE">$150 - $499</a></div>
+  	  </div>
+  	  <div class="tier">
+  	    <img src="/wp-content/themes/hechinger/static/donate/img/tier3.png" />
+  	    <h3>Build</h3>
+  	    <div class="range"><a target="_blank" href="https://checkout.fundjournalism.org/memberform?amount=70&installmentPeriod=monthly&org_id=hechingerreport&campaign=701f40000012JSE">$500 - $999</a></div>
+  	  </div>
+  	</div>
+  	<div class="tiers-description">
+  	  Hechinger Report members receive exclusive benefits and early access to our biggest reporting projects. Make an investment in quality education journalism and become a member today. <a href="/support-us">Learn more <i class="fa fa-arrow-right"></i></a>
+  	</div>
+        </div>
+      </div>
+    </div>
+  </article>
+  {% endblock about_content %}
+
+{% endblock body %}
+
+{% block scripts %}
+<script type="text/javascript" src="/wp-content/themes/hechinger/static/donate/scripts/app.js"></script>
+{% endblock %}
+
+
+
+

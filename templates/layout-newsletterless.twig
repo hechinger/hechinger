@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js ie ie6 lt-ie9 lt-ie8 lt-ie7" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 7]><html class="no-js ie ie7 lt-ie9 lt-ie8" {{site.language_attributes}}> <![endif]-->
+<!--[if IE 8]><html class="no-js ie ie8 lt-ie9" {{site.language_attributes}}> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" {{site.language_attributes}}> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{{ wp_title ? wp_title : "The Hechinger Report" }}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/wp-content/themes/hechinger/static/img/favicon/favicon.png">
+    <!--[if IE]><link rel="shortcut icon" href="/favicon.ico"><![endif]-->
+
+    <!-- Touch Icons  -->
+    <link rel="apple-touch-icon-precomposed" href="/wp-content/themes/hechinger/static/img/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="The Hechinger Report">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/wp-content/themes/hechinger/static/img/favicon/tileicon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Site Styles -->
+    <link rel="stylesheet" href="/wp-content/themes/hechinger/static/css/screen.css">
+
+    <!-- Modernizr -->
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/modernizr/modernizr.js"></script>
+
+    <!-- Template Specific Styles -->
+    {% block styles %}{# page-specific stylesheets #}{% endblock %}
+
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/respondJs/dest/respond.min.js"></script>
+    <![endif]-->
+
+    {{ function('wp_head') }}
+  </head>
+
+
+  <body class="{{ body_class ? body_class : ''}} {{ extra_body_class ? extra_body_class : ''}}">
+
+    <!-- Site Header -->
+    <!-- ===================================== -->
+      {% block navbar %}
+        {% include 'components/nav-bar.twig' %}
+      {% endblock %}
+
+    <!-- Content -->
+    <!-- ===================================== -->
+    <section id="content" role="main" class="content-wrapper">
+      {% block body %}{# page content goes here  #}{% endblock %}
+    </section> <!-- /content content-wrapper -->
+
+    <!-- Footer -->
+    <!-- ===================================== -->
+    {% block site_footer %}
+      {% include 'components/footer-newsletter.twig' %}
+    {% endblock %}
+
+    <!-- Javascript -->
+    <!-- ===================================== -->
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/resp-bg.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/navbar.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/fastclick/lib/fastclick.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/vendor/QuickShare/dist/quickshare.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/hechinger/static/js/main.js"></script>
+
+    {% block scripts %}{# page-specific scripts #}{% endblock %}
+
+    {{function('wp_footer')}}
+  </body>
+
+</html>

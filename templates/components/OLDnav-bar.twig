@@ -1,0 +1,70 @@
+{% if background_image == true %}
+  <header class="site-header site-header--with-image {{ css_class ? css_class : '' }}" style="background-image: url({{ banner.src|resize(700) | default(site.theme.path ~ '/static/img/defaults/default_yellow_pano.jpg')|resize(700) }})" data-resp="{{ banner.src | default(site.theme.path ~ '/static/img/defaults/default_yellow_pano.jpg') }}" data-resp-width="700" >
+{% else %}
+  <header class="site-header {{ css_class ? css_class : '' }}">
+{% endif %}
+
+  <div class="l-nav-mod js-nav-mod">
+    <nav class="l-nav-wrap">
+
+      <a class="nav-logo-link" href="/">
+        <div class="nav-logo">
+          <h1 class="nav-site-h">
+            <img class="nav-logo-img" src="/wp-content/themes/hechinger/static/img/icons/hr-logo.svg" alt="The Hechinger Report">
+            <img class="nav-logo-img logo-fallback" src="/wp-content/themes/hechinger/static/img/icons/hr-logo.png" alt="The Hechinger Report">
+          </h1> <!-- /nav-site-h -->
+        </div> <!-- /nav-logo -->
+      </a> <!-- /nav-logo-link -->
+      <h2 class="nav-sub-h"><a class="nav-sub-h-link" href="/about">Covering Innovation &amp; Inequality in Education</a></h2>
+
+      <div class="nav-item-wrap">
+        <div class="nav-item nav-topics-menu-mod js-topics-trigger">
+          <a class="nav-topics-link" href="/special-reports">Topics</a>
+
+          <div class="nav-topics-menu">
+            <span class="nav-topics-menu-tick"></span>
+            <div class="nav-topics-menu-shadow">
+              <ul class="nav-topics-list">
+                {% for item in nav_menu.get_items %}
+                  <li class="nav-sub-item">
+                    <a class="nav-sub-item-link" href="{{ item.get_link }}">{{ item.title }}</a>
+                  </li> <!-- /nav-sub-item -->
+                {% endfor %}
+                <li class="nav-sub-item all-topics-item"><a class="nav-sub-item-link all-topics-link" href="/special-reports">All Topics</a></li>
+                <li class="nav-sub-item sub-about-item"><a class="nav-sub-item-link nav-sub-about" href="/about">About Hechinger</a></li>
+              </ul>
+            </div> <!-- /nav-topics-menu-shadow -->
+          </div> <!-- /nav-topics-menu -->
+        </div> <!-- /nav-topics-menu-mod -->
+
+        <a class="nav-item nav-about-link" href="/about">About</a>
+
+        <a class="nav-item nav-search-button {{ is_search ? 'is-search-page' : 'js-nav-search-button' }}" href="/search">
+          <span class="nav-search-icon"></span>
+          <span class="nav-search-icon--reverse"></span>
+          <span class="nav-search-icon--close">&times;</span>
+        </a>
+      </div> <!-- /nav-item-wrap -->
+
+      <button class="nav-menu-button js-nav-menu-button">
+        <div class="nav-menu-mask">
+          <span class="nav-menu-close">
+            Close <span class="nav-menu-close-icon">&times;</span>
+          </span>
+          <span class="nav-menu">
+            Menu <span class="nav-menu-icon"></span>
+          </span>
+        </div>
+      </button>
+    </nav> <!-- /l-nav-wrap -->
+
+    <div class="search-form-wrap">
+      <form id="searchform" method="get" action="/index.php">
+        <input class="search-text-input" type="text" name="s" id="s" size="15" placeholder="Search" />
+        <button class="search-submit-button icon-search-reverse" type="submit" value=""><span class="icon"></span></button>
+      </form>
+    </div> <!-- /search-form-wrap -->
+
+  </div> <!-- /l-nav-mod -->
+</header> <!-- /site-header -->
+

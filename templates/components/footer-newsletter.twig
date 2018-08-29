@@ -1,0 +1,154 @@
+{% block above_footer %}
+  <div class="ftr-promo-mod">
+    <div class="l-content">
+     
+    </div> <!-- /l-content -->
+  </div> <!-- /ftr-promo-mod -->
+{% endblock %} {# above_footer #}
+
+<footer style="width: 100%;
+padding-top: 35px;
+background-color: #ffcf31;
+overflow: hidden;">
+  <div class="l-content">
+  <div class="ftr-top">
+
+    <!-- Logo/social block -->
+    <div class="ftr-logo-mod">
+      <div class="ftr-logo-container">
+        <a href="/">
+          <img class="footer-logo-img" src="/wp-content/themes/hechinger/static/img/icons/icn-footer-logo-599-73.svg" alt="Hechinger Report logo">
+          <img class="footer-logo-img logo-fallback" src="/wp-content/themes/hechinger/static/img/icons/icn-footer-logo-599-73.png" alt="Hechinger Report logo">
+        </a>
+      </div> <!-- /footer-logo-container -->
+
+      <div class="ftr-social-container">
+        <ul class="social-items social--ftr">
+          <li class="social-item icon-twitter-footer">
+            <a target="_blank" class="social-item-link" href="http://twitter.com/hechingerreport">
+              <span class="social-item-hover">
+                <i class="icon icon--reverse"></i>
+              </span>
+              <i class="icon icon--reg"></i>
+              Twitter
+            </a>
+          </li> <!-- social-items social-footer -->
+
+          <li class="social-item icon-facebook-footer">
+            <a target="_blank" class="social-item-link" href="http://www.facebook.com/pages/The-Hechinger-Report/366800351160">
+              <span class="social-item-hover">
+                <i class="icon icon--reverse"></i>
+              </span>
+              <i class="icon icon--reg"></i>
+              Facebook
+            </a>
+          </li> <!-- social-items social-ftr -->
+
+          {#
+           <li class="social-item icon-instagram-footer">
+            <a target="_blank" class="social-item-link" href="#">
+              <span class="social-item-hover">
+                <i class="icon icon--reverse"></i>
+              </span>
+              <i class="icon icon--reg"></i>
+              Instagram
+            </a>
+          </li> <!-- social-items social--ftr -->
+          #}
+
+           <li class="social-item icon-rss-footer">
+            <a target="_blank" class="social-item-link" href="http://feeds.feedburner.com/HechingerReport">
+              <span class="social-item-hover">
+                <i class="icon icon--reverse"></i>
+              </span>
+              <i class="icon icon--reg"></i>
+              RSS
+            </a>
+          </li> <!-- social-items social-ftr -->
+        </ul> <!-- /social-items -->
+      </div> <!-- /ftr-social-container -->
+    </div> <!-- /ftr-logo-mod -->
+
+   <!-- About -->
+    <div class="l-ftr-info">
+    <div class="grid-item">
+      <div class="ftr-grid-item">
+      <h4 class="ftr-hdr"><a href="/about">About Us</a></h4>
+        <p class="ftr-text">We cover inequality and innovation in education with in-depth journalism that uses research, data and stories from classrooms and campuses to show the public how education can be improved and why it matters.</p>
+      <a class="ftr-link-black" href="/about">Learn more about us</a>
+      </div> <!-- .ftr-grid-item -->
+    </div> <!-- .grid-item -->
+
+   <!-- Media Partners -->
+    <div class="grid-item">
+      <div class="ftr-grid-item">
+      <h4 class="ftr-hdr"><a href="/partners">Media Partners</a></h4>
+        <p class="ftr-text">Our collaborations with news organizations across the nation enable us to reach even wider audiences.</p>
+        <div class="l-ftr-partners">
+          <div class="media-block">
+            <a href="/partners">
+            <img class="ftr-partner-logo ftr-partner-logo--nbc" partner src="{{ site.theme.path ~ '/static/img/partners/icn-partner-nbc_news.svg' }}" alt="NBC logo">
+            <!--[if lt IE 9]>
+              <img src="{{ site.theme.path ~ '/static/img/partners/icn-partner-nbc_news.png' }}" alt="NBC logo">
+            <![endif]-->
+            </a>
+          </div> <!-- /media-block -->
+
+           <div class="media-block">
+            <a href="/partners">
+            <img class="ftr-partner-logo ftr-partner-logo--time" src="{{ site.theme.path ~ '/static/img/partners/icn-partner-time.svg' }}" alt="Time Magazine logo">
+            <!--[if lt IE 9]>
+              <img src="{{ site.theme.path ~ '/static/img/partners/icn-partner-time.png' }}" alt="Time logo">
+            <![endif]-->
+            </a>
+          </div> <!-- /media-block -->
+
+           <div class="media-block">
+            <a href="/partners">
+            <img class="ftr-partner-logo ftr-partner-logo--slate" src="{{ site.theme.path ~ '/static/img/partners/icn-partner-slate.svg' }}" alt="Slate logo">
+            <!--[if lt IE 9]>
+              <img src="{{ site.theme.path ~ '/static/img/partners/icn-partner-slate.png' }}" alt="Slate logo">
+            <![endif]-->
+            </a>
+          </div> <!-- /media-block -->
+
+           <div class="media-block">
+            <a href="/partners">
+            <img class="ftr-partner-logo ftr-partner-logo--huffpo" src="/wp-content/themes/hechinger/static/img/partners/icn-partner-huffington_post.svg" alt="Huffington Post logo">
+            <!--[if lt IE 9]>
+              <img src="{{ site.theme.path ~ '/static/img/partners/icn-partner-huffington_post.png' }}" alt="Huffington Post Logo">
+            <![endif]-->
+            </a>
+          </div> <!-- /media-block -->
+        </div> <!-- /l-ftr-partner -->
+
+      <a class="ftr-link-black" href="/partners">All Media Partners</a>
+      </div> <!-- .ftr-grid-item -->
+    </div> <!-- .ftr-partner-block -->
+  </div> <!-- .ftr-page -->
+  </div> <!-- /l-content -->
+</div> <!-- /ftr-top -->
+
+  <div class="ftr-bottom">
+   <!-- Site Nav & Copyright -->
+  <div class="site-nav-copyright">
+    <nav class="ftr-site-nav">
+      <ul class="ftr-nav-items l-ftr-nav">
+
+        {% for item in footer_menu.get_items %}
+          <li class="ftr-nav-item">
+            <a class="ftr-nav-link" href="{{ item.get_link }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+
+      </ul> <!-- /ftr-nav-items -->
+    </nav> <!-- .ftr-site-nav -->
+
+    <p class="ftr-copyright-msg">
+      Copyright © 2010-2018 by Teachers College at Columbia University. All rights reserved.
+    </p>
+    <p class="ftr-copyright-msg">This website uses cookies as well as similar tools and technologies to understand visitors' experiences. By continuing to use this website, you consent to Teachers College, Columbia University's usage of cookies and similar technologies, in accordance with the <a href="http://www.tc.columbia.edu/policylibrary/Cookie_Notice">Teachers College, Columbia University's Website Cookie Notice.</a></p>
+  </div> <!-- .site-nav-copyright -->
+  </div> <!-- /ftr-bottom -->
+
+</footer> <!-- /site-ftr -->

@@ -1,9 +1,0 @@
-{% extends "pages/archive.twig" %}
-
-{% block navbar %}
-  {% include 'components/nav-bar.twig' with { background_image: true } %}
-{% endblock %}
-
-{% block header %}
-  {% include 'components/section-front-header.twig' with { section_front_title : term.name, subhead: term.description, link_to_page: '/special-reports', link_heading: 'See all our Special Reports', banner: banner } %}
-{% endblock header %}

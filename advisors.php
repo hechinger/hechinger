@@ -58,7 +58,7 @@ $context['advisors'] = array(
     array(
     "name" => "Vernon Loeb",
     "image" => "loeb-vernon.jpg",
-    "description" => "Vernon Loeb is managing editor of the Houston Chronicle. Previously he was local editor for The Washington Post and before that, deputy managing editor/news at The Philadelphia Inquirer, where he was a reporter earlier in his career. Before returning to Philadelphia, he was Metro investigations editor at the Los Angeles Times and a defense reporter at The Washington Post."
+    "description" => "Vernon Loeb is politics editor at The Atlantic. Before that he was managing editor of the Houston Chronicle. Previously he has served as local editor for The Washington Post and deputy managing editor/news at The Philadelphia Inquirer, where he was a reporter earlier in his career. Before returning to Philadelphia, he was Metro investigations editor at the Los Angeles Times and a defense reporter at The Washington Post."
   ),
     array(
     "name" => "Jeevan Padiyar",

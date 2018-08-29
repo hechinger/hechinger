@@ -1,0 +1,42 @@
+{% extends 'layout.twig' %}
+
+{% block body %}{# page content goes here  #}
+
+  <!-- To do -->
+  <!--
+        1. Using namespaced components from the Article page here is confusing.
+        2. Examine how other pages are doing headers, content areas, etc and make more similar.
+  -->
+
+  {% block page_header %}
+    <div class="page-hdr">
+      <div class="page-hdr-inner">
+        <div class="page-hdr-top">
+          <h4 class="page-hdr-topic">
+            <a class="page-topic-link" href="/about">About</a>
+          </h4>
+
+          {% block page_header_social %}
+            <div class="article-social-container">
+              {% include "/templates/components/article-social.twig" %}
+            </div> <!-- /article-social-container-->
+          </div> <!-- /page-hdr-top -->
+        {% endblock %} {# /page_header_social #}
+
+        <div class="page-hdr-h">
+          <h1 class="page-h">{{ post.title }}</h1>
+          {% if post.subhead %}
+            <h2 class="page-sub-h">{{ post.subhead }}</h2>
+          {% endif %}
+        </div> <!-- /page-hdr-h -->
+      </div> <!-- /page-hdr-inner -->
+    </div> <!-- /page-hdr -->
+  {% endblock %} {# /page_header #}
+
+  <article class="page-content">
+    <div class="page-content-inner">
+      {{ post.content }}
+    </div> <!-- /page-content-inner -->
+  </article> <!-- /page-content -->
+
+{% endblock %} {# /body #}

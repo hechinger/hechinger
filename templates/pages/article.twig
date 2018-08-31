@@ -53,7 +53,7 @@
 
         <div class="article-body article-text js-article-text">
           {{ post.content }}
-
+			{% include "/templates/components/article-aside-related.twig" %}
             {% block article_related %}
               {% if post.related_heading or post.post_related_aside %}
                 <div class="bottom-aside-container">

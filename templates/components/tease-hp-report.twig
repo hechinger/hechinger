@@ -9,7 +9,7 @@
     {% for srpost in report.get_posts('numberposts=2', 'any', 'HechingerPost') %}
       <li class="special-report-tz-item">
         <a class="special-report-tz-link" href="{{ srpost.link }}">
-          {% include "/templates/components/tease-article-type.twig" with { post: srpost } %}
+          {% include "/templates/components/tease-article-type-special.twig" with { post: srpost } %}
           {{ srpost.title|striptags }}
         </a>
       </li> <!-- /special-report-tz-item -->

@@ -50,11 +50,6 @@ $context['advisors'] = array(
     "image" => "keating-kiki.jpg",
     "description" => "Kiki Keating is the founder and director of KikiNetwork, where she brings a wealth of experience in communications strategy and practice from around the world. She was previously founding Director of Public and Media Relations at Dartmouth College’s Tuck School of Business. An experienced trial attorney, Kiki is also a certified mediator/arbitrator and a recognized leader in the business education communications world. She is also a frequent speaker at global business school conferences. Kiki earned a BA from Smith College and a JD from the University of Maine. She resides in Hanover, NH and commutes regularly to Boston, New York, and locations around the world for event and media relations assignments."
   ),
-  array(
-    "name" => "Harold Levy",
-    "image" => "levy-harold.jpg",
-    "description" => "Harold Levy is executive director of the Jack Kent Cooke Foundation, a private, independent foundation dedicated to advancing the education of exceptionally promising students who have financial need. Mr. Levy was formerly the New York City Schools Chancellor, where he created and published the first set of accountability metrics, started the Teaching Fellows program, instituted a math initiative that resulted in significant test score increases and led the system during the 9/11 attacks and their aftermath. He has also served as Executive Vice President of Kaplan, Inc., a subsidiary of the Washington Post Company, where he started Kaplan University’s online School of Education."
-  ),
     array(
     "name" => "Vernon Loeb",
     "image" => "loeb-vernon.jpg",

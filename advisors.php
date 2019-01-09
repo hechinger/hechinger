@@ -11,6 +11,11 @@ $context = Timber::get_context();
 
 $context['advisors'] = array(
   array(
+    "name" => "David Beard",
+    "image" => "beard-david.jpg",
+    "description" => "David Beard is a writer, editor and strategist who specializes in audience engagement. He is a former Associated Press foreign correspondent, assistant managing editor of the Boston Globe, director of digital content at the Washington Post and executive editor of Public Radio International (pri.org). He has consulted with the AP, the Knight Foundation, the Pulitzer Prizes and  Mother Jones and is a contributing editor to the Poynter Institute. He is a graduate of Northwestern University's Medill School and was a 2017 research fellow at Harvard's Shorenstein Center."
+  ),
+    array(
     "name" => "Joshua Benton",
     "image" => "benton-joshua.jpg",
     "description" => "Joshua Benton is director of the Nieman Journalism Lab at Harvard University, a project to help journalism adapt to the demands of the Internet age. Before coming to Harvard in 2007 as a Nieman Fellow, he spend seven years as an education reporter for The Dallas Morning News, during which he won five first-place awards in the National Awards for Education Reporting, in investigative reporting, beat reporting, and opinion writing. He also won the Philip Meyer Journalism Award from Investigative Reporters & Editors and the Fred M. Hechinger Grand Prize for Distinguished Education Reporting. He is a native of south Louisiana."

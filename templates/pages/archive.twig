@@ -12,6 +12,9 @@
     <header class="l-archive-hdr-wrap l-page-hdr">
       <h1 class="archive-hdr">{{ title }}</h1>
     </header>
+    {% if subhead %}
+    <p class="section-front-summary-text">{{ subhead }}
+     {% endif %}
   {% endblock header %}
 
   {% block feed %}

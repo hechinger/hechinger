@@ -33,7 +33,7 @@ $context['advisors'] = array(
   array(
     "name" => "Mitch Gelman",
     "image" => "gelman-mitch.jpg",
-    "description" => "Mitch Gelman is the chief technology officer at The Newseum in Washington, D.C. which promotes and defends the five freedoms of the First Amendment: religion, speech, press, assembly and petition. An experienced digital media executive and Pulitzer Prize–winning journalist, Gelman’s experience spans journalism, entertainment technology and digital media. In his new role, Gelman is helping the Newseum expand its deep commitment to using the latest technology to tell vivid stories. Before joining the Newseum, Gelman was vice president of product at Gannett Co., overseeing digital product development in key areas for more than 90 national and local news entities across the USA TODAY Network. He was previously a reporter at  New York Newsday, executive producer at CNN.com, vice president at Examiner.com and chief operating officer at THX, Ltd."
+    "description" => "Mitch Gelman is the president and chief executive of WCNY in Central New York. An experienced digital media executive and Pulitzer Prize–winning journalist, Gelman’s experience spans journalism, entertainment technology and digital media. Gelman formerly worked as chief technology officer at The Newseum in Washington, D.C. and as vice president of product at Gannett Co., overseeing digital product development in key areas for more than 90 national and local news entities across the USA TODAY Network. He was also a reporter at New York Newsday, executive producer at CNN.com, vice president at Examiner.com and chief operating officer at THX, Ltd."
   ),
   array(
     "name" => "LynNell Hancock",

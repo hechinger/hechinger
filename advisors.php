@@ -10,7 +10,12 @@
 $context = Timber::get_context();
 
 $context['advisors'] = array(
-  array(
+    array(
+    "name" => "Mila Atmos",
+    "image" => "atmos-mila.jpg",
+    "description" => "Mila Atmos is the founder and host of Future Hindsight, a podcast that aims to spark civic engagement through in-depth conversations with citizen changemakers. She is interested in the ingredients that bolster humanity and vibrant societies, including education, public policy, and the arts. Mila has also been published in HuffPost, Quartz, and Medium. She earned her B.A. in history from Columbia University and a Masters in International Affairs from the School of International and Public Affairs at Columbia."
+  ),
+    array(
     "name" => "David Beard",
     "image" => "beard-david.jpg",
     "description" => "David Beard is a writer, editor and strategist who specializes in audience engagement. He is a former Associated Press foreign correspondent, assistant managing editor of the Boston Globe, director of digital content at the Washington Post and executive editor of Public Radio International (pri.org). He has consulted with the AP, the Knight Foundation, the Pulitzer Prizes and  Mother Jones and is a contributing editor to the Poynter Institute. He is a graduate of Northwestern University's Medill School and was a 2017 research fellow at Harvard's Shorenstein Center."

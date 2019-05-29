@@ -28,7 +28,7 @@ $context['advisors'] = array(
   array(
     "name" => "John Branam",
     "image" => "branam-john.jpg",
-    "description" => "John Branam is the Executive Director of the 1Million Project, a national effort to give free high-speed access and digital devices to students without internet access at home. John is a former middle school teacher and Peace Corp volunteer with more than fifteen years of experience in the education field and was previously a partner with The Learning Accelerator, an education consultancy focused on accelerating blended learning. He also served as director of programs for the Higher Achievement Program, a rigorous out-of-school academic enrichment program and deputy director for Grantmakers for Education, a national nonprofit whose mission is to promote excellence in education philanthropy. He earned his B.A. in political science from Washington and Lee University and a J.D. from the University of Oregon School of Law."
+    "description" => "Jon Branam is executive director of Get Schooled, an organization that offers tips, tools and advice to help people succeed in education. John is a former middle school teacher and Peace Corp volunteer with more than fifteen years of experience in the education field and was previously a partner with The Learning Accelerator, an education consultancy focused on accelerating blended learning. He also served as director of programs for the Higher Achievement Program, a rigorous out-of-school academic enrichment program and deputy director for Grantmakers for Education, a national nonprofit whose mission is to promote excellence in education philanthropy. He earned his B.A. in political science from Washington and Lee University and a J.D. from the University of Oregon School of Law."
   ),
   array(
     "name" => "Celeste Ford",
@@ -63,7 +63,7 @@ $context['advisors'] = array(
     array(
     "name" => "Vernon Loeb",
     "image" => "loeb-vernon.jpg",
-    "description" => "Vernon Loeb is politics editor at The Atlantic. Before that he was managing editor of the Houston Chronicle. Previously he has served as local editor for The Washington Post and deputy managing editor/news at The Philadelphia Inquirer, where he was a reporter earlier in his career. Before returning to Philadelphia, he was Metro investigations editor at the Los Angeles Times and a defense reporter at The Washington Post."
+    "description" => "Vernon Loeb is senior editor for investigations, enterprise and innovations at Inside Climate News, the Brooklyn-based non-profit that won a Pulitzer for national reporting. Previously he has served as politics editor at The Atlantic, managing editor of the Houston Chronicle, local editor for The Washington Post and deputy managing editor/news at The Philadelphia Inquirer, where he was a reporter earlier in his career. Before returning to Philadelphia, he was Metro investigations editor at the Los Angeles Times and a defense reporter at The Washington Post."
   ),
     array(
     "name" => "Jeevan Padiyar",

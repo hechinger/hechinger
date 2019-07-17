@@ -52,6 +52,7 @@
 
 
         <div class="article-body article-text js-article-text">
+          {% include "/templates/components/article-topper.twig" %}
           {{ post.content }}
 			{% include "/templates/components/article-donate.twig" %}
             {% block article_related %}

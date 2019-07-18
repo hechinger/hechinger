@@ -13,7 +13,7 @@ $context['advisors'] = array(
     array(
     "name" => "Mila Atmos",
     "image" => "atmos-mila.jpg",
-    "description" => "Mila Atmos is the founder and host of Future Hindsight, a podcast that aims to spark civic engagement through in-depth conversations with citizen changemakers. She is interested in the ingredients that bolster humanity and vibrant societies, including education, public policy, and the arts. Mila has also been published in HuffPost, Quartz, and Medium. She earned her B.A. in history from Columbia University and a Masters in International Affairs from the School of International and Public Affairs at Columbia."
+    "description" => "Mila Atmos is the founder and host of Future Hindsight, a podcast that aims to inspire civic engagement through in-depth conversations with citizen changemakers. She explores the factors that support humanity and foster vibrant, democratic societies, including education, public policy, and the arts. Mila has been a contributor to HuffPost and Quartz, among other publications. She earned a B.A. in history from Columbia University and a masters degree in international affairs from the School of International and Public Affairs at Columbia."
   ),
     array(
     "name" => "David Beard",

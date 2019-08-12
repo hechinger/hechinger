@@ -26,6 +26,11 @@ $context['supporters'] = array(
     "image" => "supporter-cooke.png",
     "link" => "http://www.jkcf.org"
   ),
+    array(
+    "name" => "ECMC Foundation",
+    "image" => "supporter-ecmc.png",
+    "link" => "https://www.ecmcfoundation.org"
+  ),
   array(
     "name" => "The Bill & Melinda Gates Foundation",
     "image" => "supporter-gates.png",
@@ -87,9 +92,9 @@ $context['supporters'] = array(
     "link" => "https://powherful.org/"
   ),
     array(
-    "name" => "Raikes Foundation",
-    "image" => "supporter-raikes.png",
-    "link" => "http://raikesfoundation.org"
+    "name" => "The Spencer Foundation",
+    "image" => "supporter-spencer.png",
+    "link" => "https://www.spencer.org"
   ),
   array(
     "name" => "The Wallace Foundation",

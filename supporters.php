@@ -12,6 +12,11 @@ $context = Timber::get_context();
 $context['post'] = new HechingerPost($post);
 $context['supporters'] = array(
   array(
+    "name" => "Arnold Ventures",
+    "image" => "supporter-arnold.png",
+    "link" => "http://arnoldventures.org"
+  ),
+    array(
     "name" => "Carnegie Corporation of New York",
     "image" => "supporter-carnegie.png",
     "link" => "http://www.carnegie.org"

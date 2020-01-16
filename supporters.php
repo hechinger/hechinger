@@ -11,6 +11,11 @@
 $context = Timber::get_context();
 $context['post'] = new HechingerPost($post);
 $context['supporters'] = array(
+	array(
+    "name" => "American Student Assistance",
+    "image" => "supporter-asa.png",
+    "link" => "https://www.asa.org/"
+  ),
   array(
     "name" => "Arnold Ventures",
     "image" => "supporter-arnold.png",
@@ -95,6 +100,11 @@ $context['supporters'] = array(
     "name" => "The PowHERful Foundation",
     "image" => "supporter-powherful.png",
     "link" => "https://powherful.org/"
+  ),
+    array(
+    "name" => "Charles and Lynn Schusterman Family Foundation",
+    "image" => "supporter-schusterman.png",
+    "link" => "https://www.schusterman.org"
   ),
     array(
     "name" => "The Spencer Foundation",

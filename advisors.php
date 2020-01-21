@@ -33,7 +33,7 @@ $context['advisors'] = array(
   array(
     "name" => "Celeste Ford",
     "image" => "ford-celeste.jpg",
-    "description" => "Celeste Ford is the Director of Media Relations for Carnegie Corporation of New York. She is a former TV news reporter of 25 years who worked her way up from smaller markets to the nation’s top local station–WABC-TV in New York City. She also reported for PBS and CNBC. During her 15 years at WABC-TV, Celeste started and ran the station’s first unit dedicated to education issues. Her reporting was honored with a number of the broadcast industry’s top awards including a DuPont-Columbia University Award and two Edward R. Murrow awards."
+    "description" => "Celeste Ford is the Director of External Relations for Carnegie Corporation of New York. She is a former TV news reporter of 25 years who worked her way up from smaller markets to the nation’s top local station–WABC-TV in New York City. She also reported for PBS and CNBC. During her 15 years at WABC-TV, Celeste started and ran the station’s first unit dedicated to education issues. Her reporting was honored with a number of the broadcast industry’s top awards including a DuPont-Columbia University Award and two Edward R. Murrow awards."
   ),
   array(
     "name" => "Mitch Gelman",
